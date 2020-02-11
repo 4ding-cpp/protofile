@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/any.proto";
+
+message DBMessage {
+    int64 affect_row = 1;
+    int64 insert_id = 2;
+}
+
+message PageLimit {
+    int64 length = 1;
+    int64 page_index = 2;
+    int64 page_size = 3;
+}
+
+message Sort {
+    bool desc = 1;
+    string f = 2;
+}
+
+message Condition {
+    string f = 1;
+    string v = 2;
+    repeated int64 s = 3;
+    enum Operand {
+        UNIVERSAL = 0;
+        LT = 1;
+        LTE = 2;
+        GT = 3;
+        GTE = 4;
+        IN = 5;
+    }
+    Operand o = 4;
+}
+
+message Set {
+    string f = 1;
+    string v = 2;
+}
+
+message Modify {
+    google.protobuf.Any pb = 1;
+    repeated string cols = 2;
+    repeated Condition condition = 3;
+}
+
+message Query {
+    PageLimit pageLimit = 1;
+    repeated Sort sort = 2;
+    repeated Condition condition = 3;
+};
+
+message SignRecord {
+    int64 user_id = 2;
+    string account = 3;
+    string type = 4;
+    string os = 5;
+    string browser = 6;
+    int64 created = 7;
+    int64 on_time = 8;
+    int64 off_time = 9;
+}
+
+message Result {
+    PageLimit pageLimit = 1;
+    repeated Sort sort = 2;
+    repeated google.protobuf.Any result = 3;
+}

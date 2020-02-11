@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "address.proto";
+import "stack.proto";
+
+message OrderNew {
+    int64 store = 1;
+    int64 customer_id = 2;
+    string pay_method = 3;
+    string delivery_method = 4;
+    string come_from = 5;
+    Address address = 6;
+    repeated Stack stack = 7;
+}
+
+message Order {
+    int64 id = 1;
+    string code = 2;
+    int64 store = 3;
+    int64 activity_id = 4;
+    int64 address_id = 5;
+    int64 customer_id = 6;
+    int64 saler_id = 7;
+    string pay_method = 8;
+    string delivery_method = 9;
+    int32 state = 10;
+    int32 pay_state = 11;
+    int32 delivery_state = 12;
+    string come_from = 13;
+    int32 count = 14;
+    double amount = 15;
+    int32 freight = 16;
+    bool re_order = 17;
+    int64 track = 18;
+    string operator = 19;
+    int64 change_t = 20;
+    int64 create_t = 21;
+}

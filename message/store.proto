@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Store {
+    int64 id = 1;
+    string status = 2;
+    int32 type = 3;
+    string name = 4;
+    string url = 5;
+    int64 p_business = 6;
+    int64 p_group = 7;
+    int64 c_business = 8;
+    int64 c_group = 9;
+    string operator = 10;
+    int64 change_t = 11;
+    int64 create_t = 12;
+}
+
+message StoreView {
+    int64 id = 1;
+    string status = 2;
+    int32 type = 3;
+    string name = 4;
+    string url = 5;
+    string p_status = 6;
+    string c_status = 7;
+    string operator = 8;
+    int64 create_t = 9;
+}
+
+message StoreRemind {
+    int64 id = 1;
+    string event = 2;
+    bool email = 3;
+    bool letter = 4;
+}

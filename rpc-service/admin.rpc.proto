@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "sql.proto";
+import "admin.proto";
+import "business.proto";
+import "info.proto";
+import "announcement.proto";
+import "point.proto";
+import "adv.proto";
+
+
+service AdminRPC {
+    rpc Ping(google.protobuf.Empty) returns (google.protobuf.StringValue);
+    rpc ChangePassword(Admin) returns (DBMessage);
+
+    rpc CreateAdmin(Admin) returns (DBMessage);
+    rpc UpdateAdmin(Modify) returns (DBMessage);
+    rpc FindAdmin(Query) returns (Result);
+    rpc RecordAdmin(Query) returns (Result);
+
+    rpc CreateBusiness(Business) returns (DBMessage);
+    rpc UpdateBusiness(Modify) returns (DBMessage);
+    rpc FindBusiness(Query) returns (Result);
+    rpc SignBusiness(Query) returns (Result);
+    rpc RecordBusiness(Query) returns (Result);
+    
+    rpc CreateInfo(Info) returns (DBMessage);
+    rpc UpdateInfo(Modify) returns (DBMessage);
+    rpc FindInfo(Query) returns (Result);
+
+    rpc CreateAnnouncement(Announcement) returns (DBMessage);
+    rpc UpdateAnnouncement(Modify) returns (DBMessage);
+    rpc FindAnnouncement(Query) returns (Result);
+    
+    
+    rpc CreatePoint(Point) returns (DBMessage);
+    rpc ComfirmPoint(Point) returns (DBMessage);
+    rpc ApprovePoint(Point) returns (DBMessage);
+    rpc FindPoint(Query) returns (Result);
+
+    rpc CreatePointFlow(PointFlow) returns (DBMessage);
+    rpc FindPointFlow(Query) returns (Result);
+
+    rpc CreatePointBill(PointBill) returns (DBMessage);
+    rpc FindPointBill(Query) returns (Result);
+
+    rpc CreatePointBonus(PointBonus) returns (DBMessage);
+    rpc FindPointBonus(Query) returns (Result);
+
+    rpc CreateAdv(Adv) returns (DBMessage);
+    rpc ApproveAdv(Adv) returns (DBMessage);
+    rpc UpdateAdv(Modify) returns (DBMessage);
+    rpc FindAdv(Query) returns (Result);
+
+    rpc CreateAdvRecord(AdvRecord) returns (DBMessage);
+    rpc UpdateAdvRecord(Modify) returns (DBMessage);
+    rpc FindAdvRecord(Query) returns (Result);
+}

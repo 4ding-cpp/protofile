@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "type.proto";
+
+message Product {
+    int64 id = 1;
+    int32 status = 2;
+    string code = 3;
+    map<string, string> name = 4;
+    map<string, double> cost = 5;
+    map<string, double> price = 6;
+    map<string, double> reduce = 7;
+    double weight = 8;
+    bool store_pickup = 9;
+    string operator = 10;
+    int64 change_t = 11;
+    string photo = 12;
+    repeated Image image = 13;
+}
+
+message ProductLabel {
+    string name = 1;
+    repeated int64 target = 2;
+}
+
+message ProductGroup {
+    int64 id = 1;
+    string code = 2;
+    repeated int64 target = 3;
+    string operator = 4;
+    int64 change_t = 5;
+}
+
+message ProductLinker {
+    int64 id = 1;
+    string status = 2;
+    int64 group_id = 3;
+    int64 store_id = 4;
+    double reward = 5;
+    string operator = 6;
+    int64 change_t = 7;
+}
+
+message ProductSpec {
+    int64 id = 1;
+    int64 product_id = 2;
+    int32 status = 3;
+    map<string, string> spec1 = 4;
+    map<string, string> spec2 = 5;
+    map<string, string> spec3 = 6;
+    string sku = 7;
+    string operator = 9;
+    int64 change_t = 10;
+    string photo = 11;
+    Image image = 12;
+}

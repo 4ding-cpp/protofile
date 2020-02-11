@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Customer {
+    int64 id = 1;
+    string status = 2;
+    string phone = 3;
+    string email = 4;
+    string name = 5;
+    int32 pay_times = 6;
+    int32 pay_amount = 7;
+    string password = 8;
+    string come_from = 9;
+    string operator = 10;
+    int64 change_t = 11;
+}
+
+message CustomerLabel {
+    string name = 1;
+    repeated int64 target = 2;
+}
+
+message CustomerGroup {
+    int64 id = 1;
+    string code = 2;
+    repeated int64 target = 3;
+    string operator = 4;
+    int64 change_t = 5;
+}
+
+message CustomerLinker {
+    int64 id = 1;
+    string status = 2;
+    int64 group_id = 3;
+    int64 store_id = 4;
+    double reward = 5;
+    string operator = 6;
+    int64 change_t = 7;
+}

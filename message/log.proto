@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Log {
+    int64 id = 1;
+    int64 log_t = 2;
+    string operator = 3;
+    int64 target_id = 4;
+    string different = 5;
+}
+
+message Different {
+    string f = 1;
+    string old = 2;
+    string new = 3;
+}

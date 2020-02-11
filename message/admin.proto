@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "type.proto";
+
+message Admin {
+    int64 id = 1;
+    int32 status = 2;
+    string phone = 3;
+    string email = 4;
+    string name = 5;
+    string title = 6;
+    bool online = 7;
+    string password = 8;
+    string operator = 9;
+    int64 change_t = 10;
+    bool super = 11;
+    repeated Option permission = 12;
+    repeated string whilelist = 13;
+}

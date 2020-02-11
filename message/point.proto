@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Point {
+    int64 id = 1;
+    int64 business = 2;
+    int32 state = 3;
+    int32 price = 4;
+    string bank_code = 5;
+    string last_code = 6;
+    int32 point = 7;
+    string operator = 8;
+    int64 change_t = 9;
+    int64 create_t = 10;
+}
+
+message PointFlow {
+    int64 id = 1;
+    int64 business = 2;
+    string item = 3;
+    int32 point = 4;
+    int64 related = 5;
+    string operator = 6;
+    int64 change_t = 7;
+    int64 create_t = 8;
+}
+
+message PointDetail {
+    int64 id = 1;
+    int64 business = 2;
+    int64 store = 3;
+    int64 flow_id = 4;
+    string item = 5;
+    double unit_price = 6;
+    int32 use_val = 7;
+    int32 sub_total = 8;
+    string operator = 9;
+    int64 change_t = 10;
+    int64 create_t = 11;
+}
+
+message PointBill {
+    string item = 1;
+    repeated PointDetail detail = 2;
+}
+
+
+message PointBonus {
+    int64 id = 1;
+    int32 on_event = 2;
+    string item = 3;
+    int32 point = 4;
+    int32 percent = 5;
+    string operator = 6;
+    int64 change_t = 7;
+    int64 create_t = 8;
+}

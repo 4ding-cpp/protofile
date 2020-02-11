@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Announcement {
+    int64 id = 1;
+    int64 enable_t = 2;
+    string area = 3;
+    int32 type = 4;
+    string title = 5;
+    string content = 6;
+    string operator = 7;
+    int64 change_t = 8;
+}

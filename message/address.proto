@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Address {
+	int64 id = 1;
+    int64 customer_id = 2;
+    string recipient = 3;
+    string phone = 4;
+    string content = 5;
+    string operator = 6;
+    int64 change_t = 7;
+}

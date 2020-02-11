@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "message-letter.proto";
+import "message-edm.proto";
+import "google/protobuf/wrappers.proto";
+
+service MessageRPC {
+    rpc SendSMS(Letter) returns (LetterResult);
+    rpc CancelSMS(LetterResult) returns (LetterUndo);
+
+    rpc SendEmail(Email) returns (EmailResult);
+    rpc CancelEmail(Email) returns (EmailResult);
+
+    rpc Now(google.protobuf.StringValue) returns (stream google.protobuf.StringValue);
+}
