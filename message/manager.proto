@@ -5,18 +5,26 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "type.proto";
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message Manager {
-    int64 id = 1;
-    int64 main_id = 2;
+    double id = 1;
+    double main_id = 2;
     string status = 3;
-    int64 store_id = 4;
+    double store_id = 4;
     string phone = 5;
     string email = 6;
     string name = 7;
     repeated Option permission = 8;
     repeated string whitelist = 9;
     string password = 10;
-    string operator = 11;
-    int64 change_t = 12;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

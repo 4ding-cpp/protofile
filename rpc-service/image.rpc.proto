@@ -9,6 +9,6 @@ import "sql.proto";
 
 service ImageRPC {
     rpc CreateImage(Image) returns (DBMessage);
-    rpc UpdateImage(Modify) returns (DBMessage);
+    rpc UpdateImage(Image) returns (DBMessage);
     rpc FindImage(Query) returns (Result);
 }

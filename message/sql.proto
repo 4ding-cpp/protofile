@@ -4,11 +4,23 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Response {
+    uint32 code = 1;
+    string message = 2;
+    int64 insert_id = 3;
+    int64 affect_row = 4;
+    PageLimit pageLimit = 5;
+    repeated Sort sort = 6;
+    repeated Condition condition = 7;
+    google.protobuf.Value result = 8;
+}
 
 message DBMessage {
-    int64 affect_row = 1;
     int64 insert_id = 2;
+    int64 affect_row = 3;
 }
 
 message PageLimit {
@@ -25,7 +37,7 @@ message Sort {
 message Condition {
     string f = 1;
     string v = 2;
-    repeated int64 s = 3;
+    repeated int32 s = 3;
     enum Operand {
         UNIVERSAL = 0;
         LT = 1;
@@ -33,40 +45,31 @@ message Condition {
         GT = 3;
         GTE = 4;
         IN = 5;
+        LIKE = 6;
     }
     Operand o = 4;
 }
 
-message Set {
-    string f = 1;
-    string v = 2;
-}
-
-message Modify {
-    google.protobuf.Any pb = 1;
-    repeated string cols = 2;
-    repeated Condition condition = 3;
-}
-
 message Query {
-    PageLimit pageLimit = 1;
+    PageLimit page_limit = 1;
     repeated Sort sort = 2;
     repeated Condition condition = 3;
+    google.protobuf.Struct self = 4;
 };
 
 message SignRecord {
-    int64 user_id = 2;
+    int32 user_id = 2;
     string account = 3;
     string type = 4;
     string os = 5;
     string browser = 6;
-    int64 created = 7;
-    int64 on_time = 8;
-    int64 off_time = 9;
+    int32 created = 7;
+    google.protobuf.Timestamp online_at = 8;
+    google.protobuf.Timestamp offline_at = 9;
 }
 
 message Result {
-    PageLimit pageLimit = 1;
-    repeated Sort sort = 2;
-    repeated google.protobuf.Any result = 3;
+    PageLimit page_limit = 2;
+    repeated Sort sort = 3;
+    google.protobuf.Value result = 4;
 }

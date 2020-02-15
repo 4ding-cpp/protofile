@@ -5,80 +5,92 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "type.proto";
+import "sql.proto";
 import "product.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message ProductD {
-    int64 id = 1;
-    int64 store = 2;
-    int64 product_id = 3;
-    int64 class_id = 4;
+    double id = 1;
+    double store = 2;
+    double product_id = 3;
+    double class_id = 4;
     string state = 5;
     bool pre_order = 6;
     string url = 7;
     SEO seo = 8;
     repeated Block block = 9;
-    string operator = 10;
-    int64 change_t = 11;
-    int64 create_t = 12;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductF {
-    int64 id = 1;
-    int64 product_id = 2;
+    double id = 1;
+    double product_id = 2;
     string state = 3;
-    map<string, string> class_name = 4;
-    map<string, string> name = 5;
-    map<string, double> reduce = 6;
-    map<string, double> price = 7;
+    google.protobuf.Struct class_name = 4;
+    google.protobuf.Struct name = 5;
+    google.protobuf.Struct reduce = 6;
+    google.protobuf.Struct price = 7;
     string status = 8;
     repeated string photo = 9;
 }
 
 message ProductG{
-    int64 id = 1;
+    double id = 1;
     string state = 2;
     bool pre_order = 3;
     string url = 4;
     double freight_add = 5;
     SEO seo = 6;
     repeated Block block = 7;
-    int64 class_id = 8;
+    double class_id = 8;
     string status = 9;
-    map<string, string> name = 10;
-    map<string, double> cost = 11;
-    map<string, double> price = 12;
-    map<string, double> reduce = 13;
+    google.protobuf.Struct name = 10;
+    google.protobuf.Struct cost = 11;
+    google.protobuf.Struct price = 12;
+    google.protobuf.Struct reduce = 13;
     repeated string photo = 14;
     double weight = 15;
-    bool super_pickup = 16;
+    bool store_pickup = 16;
     repeated ProductSpec specs = 17;
 }
 
 message ProductClass {
-    int64 id = 1;
+    double id = 1;
     string path = 2;
-    map<string, string> name = 3;
+    google.protobuf.Struct name = 3;
     SEO seo = 4;
     string photo = 5;
-    string operator = 6;
-    int64 change_time = 7;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message StoreStock {
-    int64 product_id = 1;
-    int32 sales = 2;
+    double product_id = 1;
+    double sales = 2;
     repeated string photo = 3;
-    map<string, string> name = 4;
+    google.protobuf.Struct name = 4;
     int32 amount = 5;
 }
 
 message StoreStockSpec {
-    int64 product_id = 1;
-    int64 spec_id = 2;
-    int32 sales = 3;
+    double product_id = 1;
+    double spec_id = 2;
+    double sales = 3;
     string sku = 4;
-    map<string, string> spec1 = 5;
-    map<string, string> spec2 = 6;
-    map<string, string> spec3 = 7;
+    google.protobuf.Struct spec1 = 5;
+    google.protobuf.Struct spec2 = 6;
+    google.protobuf.Struct spec3 = 7;
     int32 amount = 8;
 }

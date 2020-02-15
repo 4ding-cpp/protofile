@@ -4,32 +4,45 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
-message CustomerD {
-    int64 id = 1;
-    int64 store = 2;
-    int64 customer_id = 3;
-    int64 level_id = 4;
-    bool receive_news = 5;
-    string operator = 6;
-    int64 change_t = 7;
-    int64 create_t = 8;
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
-    string name = 9;
-    string phone = 10;
-    string email = 11;
-    string password = 12;
-    string status = 13;
+message CustomerD {
+    double id = 1;
+    double store = 2;
+    double customer_id = 3;
+    double level_id = 4;
+    bool receive_news = 5;
+
+    string name = 6;
+    string phone = 7;
+    string email = 8;
+    string password = 9;
+    string status = 10;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message CustomerLevel {
-    int64 id = 1;
-    int64 store = 2;
+    double id = 1;
+    double store = 2;
     int32 status = 3;
     string name = 4;
     double pay_amount = 5;
     int32 pay_times = 6;
     bool auto = 7;
     int32 priority = 8;
-    string operator = 9;
-    int64 change_t = 10;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

@@ -4,36 +4,41 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
 message Store {
-    int64 id = 1;
+    double id = 1;
     string status = 2;
     int32 type = 3;
     string name = 4;
     string url = 5;
-    int64 p_business = 6;
-    int64 p_group = 7;
-    int64 c_business = 8;
-    int64 c_group = 9;
-    string operator = 10;
-    int64 change_t = 11;
-    int64 create_t = 12;
+    double p_business = 6;
+    double p_froup = 7;
+    double c_business = 8;
+    double c_group = 9;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message StoreView {
-    int64 id = 1;
+    double id = 1;
     string status = 2;
     int32 type = 3;
     string name = 4;
     string url = 5;
     string p_status = 6;
     string c_status = 7;
-    string operator = 8;
-    int64 create_t = 9;
-}
-
-message StoreRemind {
-    int64 id = 1;
-    string event = 2;
-    bool email = 3;
-    bool letter = 4;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
 }

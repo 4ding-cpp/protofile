@@ -7,30 +7,31 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "sql.proto";
 import "order.proto";
+import "manager.proto";
 import "customer-d.proto";
 import "product-d.proto";
 import "activity.proto";
 
 service ManagerRPC {
-    rpc ChangePassword(Modify) returns (DBMessage);
-    rpc ChangeInfo(Modify) returns (DBMessage);
-    rpc ChangeWhitelist(Modify) returns (DBMessage);
+    rpc ChangePassword(Manager) returns (DBMessage);
+    rpc ChangeInfo(Manager) returns (DBMessage);
+    rpc ChangeWhitelist(Manager) returns (DBMessage);
 
     rpc CreateCustomerD(CustomerD) returns (DBMessage);
-    rpc UpdateCustomerD(Modify) returns (DBMessage);
+    rpc UpdateCustomerD(CustomerD) returns (DBMessage);
     rpc FindCustomerD(Query) returns (Result);
 
     rpc CreateCustomerLevel(CustomerLevel) returns (DBMessage);
-    rpc UpdateCustomerLevel(Modify) returns (DBMessage);
+    rpc UpdateCustomerLevel(CustomerLevel) returns (DBMessage);
     rpc FindCustomerLevel(Query) returns (Result);
 
     rpc CreateProductD(ProductD) returns (DBMessage);
-    rpc UpdateProductD(Modify) returns (DBMessage);
+    rpc UpdateProductD(ProductD) returns (DBMessage);
     rpc GetProductG(Query) returns (ProductG);
     rpc FindProductF(Query) returns (Result);
 
     rpc CreateProductClass(ProductClass) returns (DBMessage);
-    rpc UpdateProductClass(Modify) returns (DBMessage);
+    rpc UpdateProductClass(ProductClass) returns (DBMessage);
     rpc FindProductClass(Query) returns (Result);
 
     rpc FindProductStack(Query) returns (Result);
@@ -46,6 +47,6 @@ service Holder {
     rpc FindDiscount(Query) returns (Result);
 
     rpc CreateOrder(OrderNew) returns (DBMessage);
-    rpc UpdateOrder(Modify) returns (DBMessage);
+    rpc UpdateOrder(Order) returns (DBMessage);
     rpc FindOrder(Query) returns (Result);
 }

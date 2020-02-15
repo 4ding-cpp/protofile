@@ -4,12 +4,14 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "google/protobuf/timestamp.proto";
+
 message Sign {
-    int64 id = 1;
-    int64 user_id = 2;
-    int64 on_t = 3;
-    int64 off_t = 4;
+    double id = 1;
+    double user_id = 2;
+    google.protobuf.Timestamp online_at = 3;
+    google.protobuf.Timestamp offline_at = 4;
     int32 requests = 5;
     string address = 6;
-    string user_agent = 7;
+    string userAgent = 7;
 }

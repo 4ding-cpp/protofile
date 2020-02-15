@@ -5,56 +5,86 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "type.proto";
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message Product {
-    int64 id = 1;
+    double id = 1;
     int32 status = 2;
     string code = 3;
-    map<string, string> name = 4;
-    map<string, double> cost = 5;
-    map<string, double> price = 6;
-    map<string, double> reduce = 7;
+    google.protobuf.Struct name = 4;
+    google.protobuf.Struct cost = 5;
+    google.protobuf.Struct price = 6;
+    google.protobuf.Struct reduce = 7;
     double weight = 8;
     bool store_pickup = 9;
-    string operator = 10;
-    int64 change_t = 11;
-    string photo = 12;
-    repeated Image image = 13;
+    string photo = 10;
+    repeated Image image = 11;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductLabel {
     string name = 1;
-    repeated int64 target = 2;
+    repeated double target = 2;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductGroup {
-    int64 id = 1;
+    double id = 1;
     string code = 2;
-    repeated int64 target = 3;
-    string operator = 4;
-    int64 change_t = 5;
+    repeated double target = 3;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductLinker {
-    int64 id = 1;
+    double id = 1;
     string status = 2;
-    int64 group_id = 3;
-    int64 store_id = 4;
+    double group_id = 3;
+    double store_id = 4;
     double reward = 5;
-    string operator = 6;
-    int64 change_t = 7;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductSpec {
-    int64 id = 1;
-    int64 product_id = 2;
+    double id = 1;
+    double product_id = 2;
     int32 status = 3;
-    map<string, string> spec1 = 4;
-    map<string, string> spec2 = 5;
-    map<string, string> spec3 = 6;
+    google.protobuf.Struct spec1 = 4;
+    google.protobuf.Struct spec2 = 5;
+    google.protobuf.Struct spec3 = 6;
     string sku = 7;
-    string operator = 9;
-    int64 change_t = 10;
-    string photo = 11;
-    Image image = 12;
+    string photo = 8;
+    Image image = 9;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

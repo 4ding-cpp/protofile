@@ -4,11 +4,13 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "google/protobuf/timestamp.proto";
+
 message Log {
-    int64 id = 1;
-    int64 log_t = 2;
+    double id = 1;
+    google.protobuf.Timestamp log_at = 2;
     string operator = 3;
-    int64 target_id = 4;
+    double target_id = 4;
     string different = 5;
 }
 

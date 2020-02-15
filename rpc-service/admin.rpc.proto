@@ -17,48 +17,52 @@ import "adv.proto";
 
 service AdminRPC {
     rpc Ping(google.protobuf.Empty) returns (google.protobuf.StringValue);
-    rpc ChangePassword(Admin) returns (DBMessage);
 
-    rpc CreateAdmin(Admin) returns (DBMessage);
-    rpc UpdateAdmin(Modify) returns (DBMessage);
-    rpc FindAdmin(Query) returns (Result);
-    rpc RecordAdmin(Query) returns (Result);
+    rpc WhoAmI(google.protobuf.Empty) returns (Response);
+    rpc ChangePassword(Admin) returns (Response);
+    rpc ChangeInfo(Admin) returns (Response);
+    rpc ChangeWhitelist(Admin) returns (Response);
 
-    rpc CreateBusiness(Business) returns (DBMessage);
-    rpc UpdateBusiness(Modify) returns (DBMessage);
-    rpc FindBusiness(Query) returns (Result);
-    rpc SignBusiness(Query) returns (Result);
-    rpc RecordBusiness(Query) returns (Result);
+    rpc CreateAdmin(Admin) returns (Response);
+    rpc UpdateAdmin(Admin) returns (Response);
+    rpc FindAdmin(Query) returns (Response);
+    rpc RecordAdmin(Query) returns (Response);
+
+    rpc CreateBusiness(Business) returns (Response);
+    rpc UpdateBusiness(Business) returns (Response);
+    rpc FindBusiness(Query) returns (Response);
+    rpc SignBusiness(Query) returns (Response);
+    rpc RecordBusiness(Query) returns (Response);
     
-    rpc CreateInfo(Info) returns (DBMessage);
-    rpc UpdateInfo(Modify) returns (DBMessage);
-    rpc FindInfo(Query) returns (Result);
+    rpc CreateInfo(Info) returns (Response);
+    rpc UpdateInfo(Info) returns (Response);
+    rpc FindInfo(Query) returns (Response);
 
-    rpc CreateAnnouncement(Announcement) returns (DBMessage);
-    rpc UpdateAnnouncement(Modify) returns (DBMessage);
-    rpc FindAnnouncement(Query) returns (Result);
+    rpc CreateAnnouncement(Announcement) returns (Response);
+    rpc UpdateAnnouncement(Announcement) returns (Response);
+    rpc FindAnnouncement(Query) returns (Response);
     
     
-    rpc CreatePoint(Point) returns (DBMessage);
-    rpc ComfirmPoint(Point) returns (DBMessage);
-    rpc ApprovePoint(Point) returns (DBMessage);
-    rpc FindPoint(Query) returns (Result);
+    rpc CreatePoint(Point) returns (Response);
+    rpc ComfirmPoint(Point) returns (Response);
+    rpc ApprovePoint(Point) returns (Response);
+    rpc FindPoint(Query) returns (Response);
 
-    rpc CreatePointFlow(PointFlow) returns (DBMessage);
-    rpc FindPointFlow(Query) returns (Result);
+    rpc CreatePointFlow(PointFlow) returns (Response);
+    rpc FindPointFlow(Query) returns (Response);
 
-    rpc CreatePointBill(PointBill) returns (DBMessage);
-    rpc FindPointBill(Query) returns (Result);
+    rpc CreatePointBill(PointBill) returns (Response);
+    rpc FindPointBill(Query) returns (Response);
 
-    rpc CreatePointBonus(PointBonus) returns (DBMessage);
-    rpc FindPointBonus(Query) returns (Result);
+    rpc CreatePointBonus(PointBonus) returns (Response);
+    rpc FindPointBonus(Query) returns (Response);
 
-    rpc CreateAdv(Adv) returns (DBMessage);
-    rpc ApproveAdv(Adv) returns (DBMessage);
-    rpc UpdateAdv(Modify) returns (DBMessage);
-    rpc FindAdv(Query) returns (Result);
+    rpc CreateAdv(Adv) returns (Response);
+    rpc ApproveAdv(Adv) returns (Response);
+    rpc UpdateAdv(Adv) returns (Response);
+    rpc FindAdv(Query) returns (Response);
 
-    rpc CreateAdvRecord(AdvRecord) returns (DBMessage);
-    rpc UpdateAdvRecord(Modify) returns (DBMessage);
-    rpc FindAdvRecord(Query) returns (Result);
+    rpc CreateAdvRecord(AdvRecord) returns (Response);
+    rpc UpdateAdvRecord(AdvRecord) returns (Response);
+    rpc FindAdvRecord(Query) returns (Response);
 }

@@ -6,10 +6,13 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "address.proto";
 import "stack.proto";
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message OrderNew {
-    int64 store = 1;
-    int64 customer_id = 2;
+    double store = 1;
+    double customer_id = 2;
     string pay_method = 3;
     string delivery_method = 4;
     string come_from = 5;
@@ -18,13 +21,13 @@ message OrderNew {
 }
 
 message Order {
-    int64 id = 1;
+    double id = 1;
     string code = 2;
-    int64 store = 3;
-    int64 activity_id = 4;
-    int64 address_id = 5;
-    int64 customer_id = 6;
-    int64 saler_id = 7;
+    double store = 3;
+    double activity_id = 4;
+    double address_id = 5;
+    double customer_id = 6;
+    double saler_id = 7;
     string pay_method = 8;
     string delivery_method = 9;
     int32 state = 10;
@@ -35,8 +38,12 @@ message Order {
     double amount = 15;
     int32 freight = 16;
     bool re_order = 17;
-    int64 track = 18;
-    string operator = 19;
-    int64 change_t = 20;
-    int64 create_t = 21;
+    int32 track = 18;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

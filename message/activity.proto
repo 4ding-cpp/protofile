@@ -4,11 +4,15 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
 message Activity {
-    int64 id = 1;
-    int64 store_id = 2;
-    int64 begin_t = 3;
-    int64 end_t = 4;
+    double id = 1;
+    double store_id = 2;
+    google.protobuf.Timestamp begin_at = 3;
+    google.protobuf.Timestamp end_at = 4;
     string name = 5;
     string type = 6;
     string item = 7;
@@ -17,20 +21,30 @@ message Activity {
     bool repeat = 10;
     string exec = 11;
     double exec_v = 12;
-    string operator = 13;
-    int64 create_t = 14;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message Discount {
-    int64 id = 1;
-    int64 store_id = 2;
-    int64 level_id = 3;
-    string begin_time = 4;
-    string end_time = 5;
+    double id = 1;
+    double store_id = 2;
+    double level_id = 3;
+    google.protobuf.Timestamp begin_at = 4;
+    google.protobuf.Timestamp end_at = 5;
     string name = 6;
     bool auto_set = 7;
     string set_code = 8;
     int32 times = 9;
-    string operator = 10;
-    int64 create_time = 11;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

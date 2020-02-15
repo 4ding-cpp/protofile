@@ -8,7 +8,7 @@ message Letter {
     string subject = 1;
     string message = 2;
     repeated string dest = 3;
-    string schedule_time = 4;
+    string scheduleTime = 4;
 }
 
 message LetterResult {

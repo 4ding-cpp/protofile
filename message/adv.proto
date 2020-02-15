@@ -4,35 +4,47 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
 message Adv {
-    int64 id = 1;
-    int32 state = 2;
+    double id = 1;
+    double state = 2;
     string company = 3;
     string identify = 4;
     string name = 5;
     string title = 6;
     string phone = 7;
     string email = 8;
-    int32 price = 9;
+    double price = 9;
     string bank_code = 10;
     string last_code = 11;
     string location = 12;
     string motive = 13;
     string mgr_type = 14;
-    int32 turnover = 15;
-    map<string, string> other = 16;
-    string operator = 17;
-    int64 change_t = 18;
-    int64 create_t = 19;
+    double turnover = 15;
+    google.protobuf.Struct other = 16;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message AdvRecord {
-    int64 id = 1;
-    int64 adv_id = 2;
-    int64 phone_t = 3;
-    int64 interview_t = 4;
+    double id = 1;
+    double adv_id = 2;
+    google.protobuf.Timestamp phone_at = 3;
+    google.protobuf.Timestamp interview_at = 4;
     string cancel_reason = 5;
-    string operator = 6;
-    int64 change_t = 7;
-    int64 create_t = 8;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
