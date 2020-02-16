@@ -45,7 +45,8 @@ message ProductLabel {
 message ProductGroup {
     double id = 1;
     string code = 2;
-    repeated double target = 3;
+    string name = 3;
+    repeated double target = 4;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

@@ -42,7 +42,8 @@ message CustomerLabel {
 message CustomerGroup {
     double id = 1;
     string code = 2;
-    repeated double target = 3;
+    string name = 3;
+    repeated double target = 4;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -54,7 +55,7 @@ message CustomerGroup {
 
 message CustomerLinker {
     double id = 1;
-    string status = 2;
+    int32 status = 2;
     double group_id = 3;
     double store_id = 4;
     double reward = 5;

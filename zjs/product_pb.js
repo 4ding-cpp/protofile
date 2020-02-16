@@ -1436,7 +1436,7 @@ proto.ding4.ProductLabel.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.ProductGroup.repeatedFields_ = [3,73,74];
+proto.ding4.ProductGroup.repeatedFields_ = [4,73,74];
 
 
 
@@ -1471,7 +1471,8 @@ proto.ding4.ProductGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     code: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1524,6 +1525,10 @@ proto.ding4.ProductGroup.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCode(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
       var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
       msg.setTargetList(value);
       break;
@@ -1598,10 +1603,17 @@ proto.ding4.ProductGroup.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getTargetList();
   if (f.length > 0) {
     writer.writePackedDouble(
-      3,
+      4,
       f
     );
   }
@@ -1691,11 +1703,29 @@ proto.ding4.ProductGroup.prototype.setCode = function(value) {
 
 
 /**
- * repeated double target = 3;
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.ding4.ProductGroup.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.ProductGroup} returns this
+ */
+proto.ding4.ProductGroup.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated double target = 4;
  * @return {!Array<number>}
  */
 proto.ding4.ProductGroup.prototype.getTargetList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 3));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 4));
 };
 
 
@@ -1704,7 +1734,7 @@ proto.ding4.ProductGroup.prototype.getTargetList = function() {
  * @return {!proto.ding4.ProductGroup} returns this
  */
 proto.ding4.ProductGroup.prototype.setTargetList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
@@ -1714,7 +1744,7 @@ proto.ding4.ProductGroup.prototype.setTargetList = function(value) {
  * @return {!proto.ding4.ProductGroup} returns this
  */
 proto.ding4.ProductGroup.prototype.addTarget = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 

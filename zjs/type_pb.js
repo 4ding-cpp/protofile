@@ -1574,7 +1574,8 @@ proto.ding4.Image.toObject = function(includeInstance, msg) {
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     colsList: (f = jspb.Message.getRepeatedField(msg, 73)) == null ? undefined : f,
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
-    sql_pb.Condition.toObject, includeInstance)
+    sql_pb.Condition.toObject, includeInstance),
+    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1677,6 +1678,11 @@ proto.ding4.Image.deserializeBinaryFromReader = function(msg, reader) {
       var value = new sql_pb.Condition;
       reader.readMessage(value,sql_pb.Condition.deserializeBinaryFromReader);
       msg.addCondition(value);
+      break;
+    case 75:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -1820,6 +1826,14 @@ proto.ding4.Image.serializeBinaryToWriter = function(message, writer) {
       74,
       f,
       sql_pb.Condition.serializeBinaryToWriter
+    );
+  }
+  f = message.getSelf();
+  if (f != null) {
+    writer.writeMessage(
+      75,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
   }
 };
@@ -2187,6 +2201,43 @@ proto.ding4.Image.prototype.addCondition = function(opt_value, opt_index) {
  */
 proto.ding4.Image.prototype.clearConditionList = function() {
   return this.setConditionList([]);
+};
+
+
+/**
+ * optional google.protobuf.Struct self = 75;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ding4.Image.prototype.getSelf = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 75));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ding4.Image} returns this
+*/
+proto.ding4.Image.prototype.setSelf = function(value) {
+  return jspb.Message.setWrapperField(this, 75, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Image} returns this
+ */
+proto.ding4.Image.prototype.clearSelf = function() {
+  return this.setSelf(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Image.prototype.hasSelf = function() {
+  return jspb.Message.getField(this, 75) != null;
 };
 
 

@@ -15,7 +15,7 @@ message Store {
     string name = 4;
     string url = 5;
     double p_business = 6;
-    double p_froup = 7;
+    double p_group = 7;
     double c_business = 8;
     double c_group = 9;
     

@@ -1245,7 +1245,7 @@ proto.ding4.CustomerLabel.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.CustomerGroup.repeatedFields_ = [3,73,74];
+proto.ding4.CustomerGroup.repeatedFields_ = [4,73,74];
 
 
 
@@ -1280,7 +1280,8 @@ proto.ding4.CustomerGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     code: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f,
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1333,6 +1334,10 @@ proto.ding4.CustomerGroup.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCode(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
       var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
       msg.setTargetList(value);
       break;
@@ -1407,10 +1412,17 @@ proto.ding4.CustomerGroup.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getTargetList();
   if (f.length > 0) {
     writer.writePackedDouble(
-      3,
+      4,
       f
     );
   }
@@ -1500,11 +1512,29 @@ proto.ding4.CustomerGroup.prototype.setCode = function(value) {
 
 
 /**
- * repeated double target = 3;
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.ding4.CustomerGroup.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.CustomerGroup} returns this
+ */
+proto.ding4.CustomerGroup.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated double target = 4;
  * @return {!Array<number>}
  */
 proto.ding4.CustomerGroup.prototype.getTargetList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 3));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 4));
 };
 
 
@@ -1513,7 +1543,7 @@ proto.ding4.CustomerGroup.prototype.getTargetList = function() {
  * @return {!proto.ding4.CustomerGroup} returns this
  */
 proto.ding4.CustomerGroup.prototype.setTargetList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
@@ -1523,7 +1553,7 @@ proto.ding4.CustomerGroup.prototype.setTargetList = function(value) {
  * @return {!proto.ding4.CustomerGroup} returns this
  */
 proto.ding4.CustomerGroup.prototype.addTarget = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
@@ -1780,7 +1810,7 @@ proto.ding4.CustomerLinker.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.CustomerLinker.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    status: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     groupId: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     storeId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     reward: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
@@ -1832,7 +1862,7 @@ proto.ding4.CustomerLinker.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setStatus(value);
       break;
     case 3:
@@ -1912,8 +1942,8 @@ proto.ding4.CustomerLinker.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       2,
       f
     );
@@ -2007,20 +2037,20 @@ proto.ding4.CustomerLinker.prototype.setId = function(value) {
 
 
 /**
- * optional string status = 2;
- * @return {string}
+ * optional int32 status = 2;
+ * @return {number}
  */
 proto.ding4.CustomerLinker.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.CustomerLinker} returns this
  */
 proto.ding4.CustomerLinker.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

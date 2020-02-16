@@ -17,80 +17,85 @@ import "supplier.proto";
 
 
 service BusinessRPC {
-    rpc ChangePassword(Business) returns (DBMessage);
-    rpc ChangeInfo(Business) returns (DBMessage);
-    rpc ChangeWhitelist(Business) returns (DBMessage);
+    rpc ChangePassword(Business) returns (Response);
+    rpc ChangeInfo(Business) returns (Response);
+    rpc ChangeWhitelist(Business) returns (Response);
 
-    rpc FindPoint(Query) returns (Result);
-    rpc FindPointFlow(Query) returns (Result);
-    rpc FindPointBill(Query) returns (Result);
-    rpc FindPermission(Query) returns (Permission);
+    rpc FindPoint(Query) returns (Response);
+    rpc FindPointFlow(Query) returns (Response);
+    rpc FindPointBill(Query) returns (Response);
+    rpc FindPermission(Query) returns (Response);
     
-    rpc CreateBusiness(Business) returns (DBMessage);
-    rpc UpdateBusiness(Business) returns (DBMessage);
-    rpc FindBusiness(Query) returns (Result);
+    rpc CreateBusiness(Business) returns (Response);
+    rpc UpdateBusiness(Business) returns (Response);
+    rpc FindBusiness(Query) returns (Response);
 
-    rpc CreateProduct(Product) returns (DBMessage);
-    rpc UpdateProduct(Product) returns (DBMessage);
-    rpc FindProduct(Query) returns (Result);
-    rpc RecordProduct(Query) returns (Result);
+    rpc CreateProduct(Product) returns (Response);
+    rpc UpdateProduct(Product) returns (Response);
+    rpc FindProduct(Query) returns (Response);
+    rpc RecordProduct(Query) returns (Response);
 
-    rpc CreateProductLabel(ProductLabel) returns (DBMessage);
-    rpc UpdateProductLabel(ProductLabel) returns (DBMessage);
-    rpc FindProductLabel(Query) returns (Result);
+    rpc CreateProductLabel(ProductLabel) returns (Response);
+    rpc UpdateProductLabel(ProductLabel) returns (Response);
+    rpc FindProductLabel(Query) returns (Response);
 
-    rpc CreateProductGroup(ProductGroup) returns (DBMessage);
-    rpc UpdateProductGroup(ProductGroup) returns (DBMessage);
-    rpc FindProductGroup(Query) returns (Result);
+    rpc CreateProductGroup(ProductGroup) returns (Response);
+    rpc AppendProductGroup(ProductGroup) returns (Response);
+    rpc SubtractProductGroup(ProductGroup) returns (Response);
+    rpc UpdateProductGroup(ProductGroup) returns (Response);
+    rpc FindProductGroup(Query) returns (Response);
 
-    rpc CreateProductLinker(ProductLinker) returns (DBMessage);
-    rpc UpdateProductLinker(ProductLinker) returns (DBMessage);
-    rpc FindProductLinker(Query) returns (Result);
+    rpc CreateProductLinker(ProductLinker) returns (Response);
+    rpc UpdateProductLinker(ProductLinker) returns (Response);
+    rpc FindProductLinker(Query) returns (Response);
 
-    rpc CreateProductSpec(ProductSpec) returns (DBMessage);
-    rpc UpdateProductSpec(ProductSpec) returns (DBMessage);
-    rpc FindProductSpec(Query) returns (Result);
+    rpc CreateProductSpec(ProductSpec) returns (Response);
+    rpc UpdateProductSpec(ProductSpec) returns (Response);
+    rpc FindProductSpec(Query) returns (Response);
 
-    rpc CreateImage(Image) returns (DBMessage);
-    rpc UpdateImage(Image) returns (DBMessage);
-    rpc FindImage(Query) returns (Result);
+    rpc CreateImage(Image) returns (Response);
+    rpc UpdateImage(Image) returns (Response);
+    rpc FindImage(Query) returns (Response);
 
-    rpc CreateCustomer(Customer) returns (DBMessage);
-    rpc UpdateCustomer(Customer) returns (DBMessage);
-    rpc FindCustomer(Query) returns (Result);
-    rpc RecordCustomer(Query) returns (Result);
+    rpc CreateCustomer(Customer) returns (Response);
+    rpc UpdateCustomer(Customer) returns (Response);
+    rpc FindCustomer(Query) returns (Response);
+    rpc RecordCustomer(Query) returns (Response);
 
-    rpc CreateCustomerLabel(CustomerLabel) returns (DBMessage);
-    rpc UpdateCustomerLabel(CustomerLabel) returns (DBMessage);
-    rpc FindCustomerLabel(Query) returns (Result);
+    rpc CreateCustomerLabel(CustomerLabel) returns (Response);
+    rpc UpdateCustomerLabel(CustomerLabel) returns (Response);
+    rpc FindCustomerLabel(Query) returns (Response);
 
-    rpc CreateCustomerGroup(CustomerGroup) returns (DBMessage);
-    rpc UpdateCustomerGroup(CustomerGroup) returns (DBMessage);
-    rpc FindCustomerGroup(Query) returns (Result);
+    rpc CreateCustomerGroup(CustomerGroup) returns (Response);
+    rpc AppendCustomerGroup(CustomerGroup) returns (Response);
+    rpc SubtractCustomerGroup(CustomerGroup) returns (Response);
+    rpc UpdateCustomerGroup(CustomerGroup) returns (Response);
+    rpc FindCustomerGroup(Query) returns (Response);
 
-    rpc CreateCustomerLinker(CustomerLinker) returns (DBMessage);
-    rpc UpdateCustomerLinker(CustomerLinker) returns (DBMessage);
-    rpc FindCustomerLinker(Query) returns (Result);
+    rpc CreateCustomerLinker(CustomerLinker) returns (Response);
+    rpc UpdateCustomerLinker(CustomerLinker) returns (Response);
+    rpc FindCustomerLinker(Query) returns (Response);
 
-    rpc CreateStore(Store) returns (DBMessage);
-    rpc UpdateStore(Store) returns (DBMessage);
-    rpc FindStore(Query) returns (Result);
-    rpc RecordStore(Query) returns (Result);
+    rpc CreateStore(Store) returns (Response);
+    rpc UpdateStore(Store) returns (Response);
+    rpc FindStore(Query) returns (Response);
+    rpc RecordStore(Query) returns (Response);
 
-    rpc CreateOrder(OrderNew) returns (DBMessage);
-    rpc UpdateOrder(Order) returns (DBMessage);
-    rpc FindOrder(Query) returns (Result);
+    rpc CreateOrder(OrderNew) returns (Response);
+    rpc UpdateOrder(Order) returns (Response);
+    rpc FindOrder(Query) returns (Response);
 
-    rpc UpdateAddress(Address) returns (DBMessage);
-    rpc FindAddress(Query) returns (Result);
+    rpc CreateAddress(Address) returns (Response);
+    rpc UpdateAddress(Address) returns (Response);
+    rpc FindAddress(Query) returns (Response);
 
-    rpc CreateStack(Stack) returns (DBMessage);
-    rpc FindStack(Query) returns (Result);
+    rpc CreateStack(Stack) returns (Response);
+    rpc FindStack(Query) returns (Response);
 
-    rpc FindProductStack(Query) returns (Result);
-    rpc FindSpecStack(Query) returns (Result);
+    rpc FindProductStack(Query) returns (Response);
+    rpc FindSpecStack(Query) returns (Response);
 
-    rpc CreateSupplier(Supplier) returns (DBMessage);
-    rpc UpdateSupplier(Supplier) returns (DBMessage);
-    rpc FindSupplier(Query) returns (Result);
+    rpc CreateSupplier(Supplier) returns (Response);
+    rpc UpdateSupplier(Supplier) returns (Response);
+    rpc FindSupplier(Query) returns (Response);
 }

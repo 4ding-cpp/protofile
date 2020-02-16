@@ -23,8 +23,8 @@ export class Store extends jspb.Message {
   getPBusiness(): number;
   setPBusiness(value: number): void;
 
-  getPFroup(): number;
-  setPFroup(value: number): void;
+  getPGroup(): number;
+  setPGroup(value: number): void;
 
   getCBusiness(): number;
   setCBusiness(value: number): void;
@@ -76,7 +76,7 @@ export namespace Store {
     name: string,
     url: string,
     pBusiness: number,
-    pFroup: number,
+    pGroup: number,
     cBusiness: number,
     cGroup: number,
     operator: string,

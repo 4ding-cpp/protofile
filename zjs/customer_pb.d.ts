@@ -153,6 +153,9 @@ export class CustomerGroup extends jspb.Message {
   getCode(): string;
   setCode(value: string): void;
 
+  getName(): string;
+  setName(value: string): void;
+
   getTargetList(): Array<number>;
   setTargetList(value: Array<number>): void;
   clearTargetList(): void;
@@ -198,6 +201,7 @@ export namespace CustomerGroup {
   export type AsObject = {
     id: number,
     code: string,
+    name: string,
     targetList: Array<number>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -212,8 +216,8 @@ export class CustomerLinker extends jspb.Message {
   getId(): number;
   setId(value: number): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
   getGroupId(): number;
   setGroupId(value: number): void;
@@ -263,7 +267,7 @@ export class CustomerLinker extends jspb.Message {
 export namespace CustomerLinker {
   export type AsObject = {
     id: number,
-    status: string,
+    status: number,
     groupId: number,
     storeId: number,
     reward: number,

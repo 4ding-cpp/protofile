@@ -107,7 +107,7 @@ proto.ding4.Store.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     url: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pBusiness: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    pFroup: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    pGroup: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     cBusiness: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     cGroup: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
@@ -179,7 +179,7 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setPFroup(value);
+      msg.setPGroup(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readDouble());
@@ -288,7 +288,7 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPFroup();
+  f = message.getPGroup();
   if (f !== 0.0) {
     writer.writeDouble(
       7,
@@ -467,10 +467,10 @@ proto.ding4.Store.prototype.setPBusiness = function(value) {
 
 
 /**
- * optional double p_froup = 7;
+ * optional double p_group = 7;
  * @return {number}
  */
-proto.ding4.Store.prototype.getPFroup = function() {
+proto.ding4.Store.prototype.getPGroup = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
 };
 
@@ -479,7 +479,7 @@ proto.ding4.Store.prototype.getPFroup = function() {
  * @param {number} value
  * @return {!proto.ding4.Store} returns this
  */
-proto.ding4.Store.prototype.setPFroup = function(value) {
+proto.ding4.Store.prototype.setPGroup = function(value) {
   return jspb.Message.setProto3FloatField(this, 7, value);
 };
 

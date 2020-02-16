@@ -63,4 +63,5 @@ message Image {
     google.protobuf.Timestamp update_at = 72;
     repeated string cols = 73;
     repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }

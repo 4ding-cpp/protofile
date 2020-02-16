@@ -172,6 +172,9 @@ export class ProductGroup extends jspb.Message {
   getCode(): string;
   setCode(value: string): void;
 
+  getName(): string;
+  setName(value: string): void;
+
   getTargetList(): Array<number>;
   setTargetList(value: Array<number>): void;
   clearTargetList(): void;
@@ -217,6 +220,7 @@ export namespace ProductGroup {
   export type AsObject = {
     id: number,
     code: string,
+    name: string,
     targetList: Array<number>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
