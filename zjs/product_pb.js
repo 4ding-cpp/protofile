@@ -12,10 +12,10 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var type_pb = require('./type_pb.js');
-goog.object.extend(proto, type_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var image_pb = require('./image_pb.js');
+goog.object.extend(proto, image_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -136,7 +136,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Product.repeatedFields_ = [11,73,74];
+proto.ding4.Product.repeatedFields_ = [12,73,74];
 
 
 
@@ -169,18 +169,19 @@ proto.ding4.Product.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Product.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    productId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     code: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: (f = msg.getName()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    cost: (f = msg.getCost()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    price: (f = msg.getPrice()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    reduce: (f = msg.getReduce()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+    name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     weight: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    storePickup: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    photo: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    preOrder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    storePickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    photo: jspb.Message.getFieldWithDefault(msg, 11, ""),
     imageList: jspb.Message.toObjectList(msg.getImageList(),
-    type_pb.Image.toObject, includeInstance),
+    image_pb.Image.toObject, includeInstance),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -225,8 +226,8 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -237,23 +238,20 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCode(value);
       break;
     case 4:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setName(value);
       break;
     case 5:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setCost(value);
       break;
     case 6:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setPrice(value);
       break;
     case 7:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setReduce(value);
       break;
     case 8:
@@ -262,15 +260,19 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStorePickup(value);
+      msg.setPreOrder(value);
       break;
     case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStorePickup(value);
+      break;
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhoto(value);
       break;
-    case 11:
-      var value = new type_pb.Image;
-      reader.readMessage(value,type_pb.Image.deserializeBinaryFromReader);
+    case 12:
+      var value = new image_pb.Image;
+      reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
       msg.addImage(value);
       break;
     case 70:
@@ -330,9 +332,9 @@ proto.ding4.Product.prototype.serializeBinary = function() {
  */
 proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -356,31 +358,28 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       4,
       f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getCost();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0.0) {
+    writer.writeDouble(
       5,
-      f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      f
     );
   }
   f = message.getPrice();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0.0) {
+    writer.writeDouble(
       6,
-      f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      f
     );
   }
   f = message.getReduce();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0.0) {
+    writer.writeDouble(
       7,
-      f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      f
     );
   }
   f = message.getWeight();
@@ -390,26 +389,33 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getStorePickup();
+  f = message.getPreOrder();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
+  f = message.getStorePickup();
+  if (f) {
+    writer.writeBool(
+      10,
+      f
+    );
+  }
   f = message.getPhoto();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      11,
       f
     );
   }
   f = message.getImageList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      11,
+      12,
       f,
-      type_pb.Image.serializeBinaryToWriter
+      image_pb.Image.serializeBinaryToWriter
     );
   }
   f = message.getOperator();
@@ -462,20 +468,20 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string product_id = 1;
+ * @return {string}
  */
-proto.ding4.Product.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Product.prototype.getProductId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Product.prototype.setProductId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -516,17 +522,17 @@ proto.ding4.Product.prototype.setCode = function(value) {
 
 
 /**
- * optional google.protobuf.Struct name = 4;
- * @return {?proto.google.protobuf.Struct}
+ * optional google.protobuf.Value name = 4;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.Product.prototype.getName = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 4));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.ding4.Product} returns this
 */
 proto.ding4.Product.prototype.setName = function(value) {
@@ -553,113 +559,56 @@ proto.ding4.Product.prototype.hasName = function() {
 
 
 /**
- * optional google.protobuf.Struct cost = 5;
- * @return {?proto.google.protobuf.Struct}
+ * optional double cost = 5;
+ * @return {number}
  */
 proto.ding4.Product.prototype.getCost = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {number} value
  * @return {!proto.ding4.Product} returns this
-*/
+ */
 proto.ding4.Product.prototype.setCost = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.Product} returns this
- */
-proto.ding4.Product.prototype.clearCost = function() {
-  return this.setCost(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.Product.prototype.hasCost = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional google.protobuf.Struct price = 6;
- * @return {?proto.google.protobuf.Struct}
+ * optional double price = 6;
+ * @return {number}
  */
 proto.ding4.Product.prototype.getPrice = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 6));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {number} value
  * @return {!proto.ding4.Product} returns this
-*/
+ */
 proto.ding4.Product.prototype.setPrice = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.Product} returns this
- */
-proto.ding4.Product.prototype.clearPrice = function() {
-  return this.setPrice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.Product.prototype.hasPrice = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional google.protobuf.Struct reduce = 7;
- * @return {?proto.google.protobuf.Struct}
+ * optional double reduce = 7;
+ * @return {number}
  */
 proto.ding4.Product.prototype.getReduce = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 7));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {number} value
  * @return {!proto.ding4.Product} returns this
-*/
+ */
 proto.ding4.Product.prototype.setReduce = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.Product} returns this
- */
-proto.ding4.Product.prototype.clearReduce = function() {
-  return this.setReduce(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.Product.prototype.hasReduce = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
@@ -682,10 +631,10 @@ proto.ding4.Product.prototype.setWeight = function(value) {
 
 
 /**
- * optional bool store_pickup = 9;
+ * optional bool pre_order = 9;
  * @return {boolean}
  */
-proto.ding4.Product.prototype.getStorePickup = function() {
+proto.ding4.Product.prototype.getPreOrder = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -694,17 +643,35 @@ proto.ding4.Product.prototype.getStorePickup = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setStorePickup = function(value) {
+proto.ding4.Product.prototype.setPreOrder = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional string photo = 10;
+ * optional bool store_pickup = 10;
+ * @return {boolean}
+ */
+proto.ding4.Product.prototype.getStorePickup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.Product} returns this
+ */
+proto.ding4.Product.prototype.setStorePickup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * optional string photo = 11;
  * @return {string}
  */
 proto.ding4.Product.prototype.getPhoto = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -713,17 +680,17 @@ proto.ding4.Product.prototype.getPhoto = function() {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.setPhoto = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * repeated Image image = 11;
+ * repeated Image image = 12;
  * @return {!Array<!proto.ding4.Image>}
  */
 proto.ding4.Product.prototype.getImageList = function() {
   return /** @type{!Array<!proto.ding4.Image>} */ (
-    jspb.Message.getRepeatedWrapperField(this, type_pb.Image, 11));
+    jspb.Message.getRepeatedWrapperField(this, image_pb.Image, 12));
 };
 
 
@@ -732,7 +699,7 @@ proto.ding4.Product.prototype.getImageList = function() {
  * @return {!proto.ding4.Product} returns this
 */
 proto.ding4.Product.prototype.setImageList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
 };
 
 
@@ -742,7 +709,7 @@ proto.ding4.Product.prototype.setImageList = function(value) {
  * @return {!proto.ding4.Image}
  */
 proto.ding4.Product.prototype.addImage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.ding4.Image, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.ding4.Image, opt_index);
 };
 
 
@@ -999,7 +966,7 @@ proto.ding4.ProductLabel.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.ProductLabel.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
+    targetList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1048,8 +1015,8 @@ proto.ding4.ProductLabel.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
-      msg.setTargetList(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTarget(value);
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -1117,7 +1084,7 @@ proto.ding4.ProductLabel.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getTargetList();
   if (f.length > 0) {
-    writer.writePackedDouble(
+    writer.writeRepeatedString(
       2,
       f
     );
@@ -1190,16 +1157,16 @@ proto.ding4.ProductLabel.prototype.setName = function(value) {
 
 
 /**
- * repeated double target = 2;
- * @return {!Array<number>}
+ * repeated string target = 2;
+ * @return {!Array<string>}
  */
 proto.ding4.ProductLabel.prototype.getTargetList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.ding4.ProductLabel} returns this
  */
 proto.ding4.ProductLabel.prototype.setTargetList = function(value) {
@@ -1208,7 +1175,7 @@ proto.ding4.ProductLabel.prototype.setTargetList = function(value) {
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.ding4.ProductLabel} returns this
  */
@@ -1469,10 +1436,9 @@ proto.ding4.ProductGroup.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ProductGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    code: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    productGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    targetList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 4)) == null ? undefined : f,
+    targetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1517,20 +1483,16 @@ proto.ding4.ProductGroup.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCode(value);
+      msg.setProductGroupId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     case 4:
-      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
-      msg.setTargetList(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTarget(value);
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -1589,17 +1551,10 @@ proto.ding4.ProductGroup.prototype.serializeBinary = function() {
  */
 proto.ding4.ProductGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
-      1,
-      f
-    );
-  }
-  f = message.getCode();
+  f = message.getProductGroupId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
@@ -1612,7 +1567,7 @@ proto.ding4.ProductGroup.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getTargetList();
   if (f.length > 0) {
-    writer.writePackedDouble(
+    writer.writeRepeatedString(
       4,
       f
     );
@@ -1667,29 +1622,11 @@ proto.ding4.ProductGroup.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
- */
-proto.ding4.ProductGroup.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.ProductGroup} returns this
- */
-proto.ding4.ProductGroup.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
-};
-
-
-/**
- * optional string code = 2;
+ * optional string product_group_id = 1;
  * @return {string}
  */
-proto.ding4.ProductGroup.prototype.getCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.ding4.ProductGroup.prototype.getProductGroupId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1697,8 +1634,8 @@ proto.ding4.ProductGroup.prototype.getCode = function() {
  * @param {string} value
  * @return {!proto.ding4.ProductGroup} returns this
  */
-proto.ding4.ProductGroup.prototype.setCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.ding4.ProductGroup.prototype.setProductGroupId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1721,16 +1658,16 @@ proto.ding4.ProductGroup.prototype.setName = function(value) {
 
 
 /**
- * repeated double target = 4;
- * @return {!Array<number>}
+ * repeated string target = 4;
+ * @return {!Array<string>}
  */
 proto.ding4.ProductGroup.prototype.getTargetList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.ding4.ProductGroup} returns this
  */
 proto.ding4.ProductGroup.prototype.setTargetList = function(value) {
@@ -1739,7 +1676,7 @@ proto.ding4.ProductGroup.prototype.setTargetList = function(value) {
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.ding4.ProductGroup} returns this
  */
@@ -2000,10 +1937,10 @@ proto.ding4.ProductLinker.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ProductLinker.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    productLinkerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     status: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    groupId: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    storeId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    productGroupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     reward: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -2049,19 +1986,19 @@ proto.ding4.ProductLinker.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductLinkerId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setGroupId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductGroupId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setStoreId(value);
       break;
     case 5:
@@ -2125,9 +2062,9 @@ proto.ding4.ProductLinker.prototype.serializeBinary = function() {
  */
 proto.ding4.ProductLinker.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductLinkerId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2139,16 +2076,16 @@ proto.ding4.ProductLinker.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getGroupId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductGroupId();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getStoreId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -2210,20 +2147,20 @@ proto.ding4.ProductLinker.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string product_linker_id = 1;
+ * @return {string}
  */
-proto.ding4.ProductLinker.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.ProductLinker.prototype.getProductLinkerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.ProductLinker} returns this
  */
-proto.ding4.ProductLinker.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.ProductLinker.prototype.setProductLinkerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2246,38 +2183,38 @@ proto.ding4.ProductLinker.prototype.setStatus = function(value) {
 
 
 /**
- * optional double group_id = 3;
- * @return {number}
+ * optional string product_group_id = 3;
+ * @return {string}
  */
-proto.ding4.ProductLinker.prototype.getGroupId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+proto.ding4.ProductLinker.prototype.getProductGroupId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.ProductLinker} returns this
  */
-proto.ding4.ProductLinker.prototype.setGroupId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
+proto.ding4.ProductLinker.prototype.setProductGroupId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional double store_id = 4;
- * @return {number}
+ * optional string store_id = 4;
+ * @return {string}
  */
 proto.ding4.ProductLinker.prototype.getStoreId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.ProductLinker} returns this
  */
 proto.ding4.ProductLinker.prototype.setStoreId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2542,15 +2479,15 @@ proto.ding4.ProductSpec.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ProductSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    productId: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    productSpecId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    spec1: (f = msg.getSpec1()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    spec2: (f = msg.getSpec2()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    spec3: (f = msg.getSpec3()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+    spec1: (f = msg.getSpec1()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    spec2: (f = msg.getSpec2()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    spec3: (f = msg.getSpec3()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     sku: jspb.Message.getFieldWithDefault(msg, 7, ""),
     photo: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    image: (f = msg.getImage()) && type_pb.Image.toObject(includeInstance, f),
+    image: (f = msg.getImage()) && image_pb.Image.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -2595,11 +2532,11 @@ proto.ding4.ProductSpec.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductSpecId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProductId(value);
       break;
     case 3:
@@ -2607,18 +2544,18 @@ proto.ding4.ProductSpec.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStatus(value);
       break;
     case 4:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setSpec1(value);
       break;
     case 5:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setSpec2(value);
       break;
     case 6:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setSpec3(value);
       break;
     case 7:
@@ -2630,8 +2567,8 @@ proto.ding4.ProductSpec.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPhoto(value);
       break;
     case 9:
-      var value = new type_pb.Image;
-      reader.readMessage(value,type_pb.Image.deserializeBinaryFromReader);
+      var value = new image_pb.Image;
+      reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
       msg.setImage(value);
       break;
     case 70:
@@ -2691,16 +2628,16 @@ proto.ding4.ProductSpec.prototype.serializeBinary = function() {
  */
 proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductSpecId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProductId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2717,7 +2654,7 @@ proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       4,
       f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getSpec2();
@@ -2725,7 +2662,7 @@ proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       5,
       f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getSpec3();
@@ -2733,7 +2670,7 @@ proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       6,
       f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getSku();
@@ -2755,7 +2692,7 @@ proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       9,
       f,
-      type_pb.Image.serializeBinaryToWriter
+      image_pb.Image.serializeBinaryToWriter
     );
   }
   f = message.getOperator();
@@ -2808,38 +2745,38 @@ proto.ding4.ProductSpec.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string product_spec_id = 1;
+ * @return {string}
  */
-proto.ding4.ProductSpec.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.ProductSpec.prototype.getProductSpecId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.ProductSpec} returns this
  */
-proto.ding4.ProductSpec.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.ProductSpec.prototype.setProductSpecId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double product_id = 2;
- * @return {number}
+ * optional string product_id = 2;
+ * @return {string}
  */
 proto.ding4.ProductSpec.prototype.getProductId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.ProductSpec} returns this
  */
 proto.ding4.ProductSpec.prototype.setProductId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2862,17 +2799,17 @@ proto.ding4.ProductSpec.prototype.setStatus = function(value) {
 
 
 /**
- * optional google.protobuf.Struct spec1 = 4;
- * @return {?proto.google.protobuf.Struct}
+ * optional google.protobuf.Value spec1 = 4;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductSpec.prototype.getSpec1 = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 4));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.ding4.ProductSpec} returns this
 */
 proto.ding4.ProductSpec.prototype.setSpec1 = function(value) {
@@ -2899,17 +2836,17 @@ proto.ding4.ProductSpec.prototype.hasSpec1 = function() {
 
 
 /**
- * optional google.protobuf.Struct spec2 = 5;
- * @return {?proto.google.protobuf.Struct}
+ * optional google.protobuf.Value spec2 = 5;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductSpec.prototype.getSpec2 = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.ding4.ProductSpec} returns this
 */
 proto.ding4.ProductSpec.prototype.setSpec2 = function(value) {
@@ -2936,17 +2873,17 @@ proto.ding4.ProductSpec.prototype.hasSpec2 = function() {
 
 
 /**
- * optional google.protobuf.Struct spec3 = 6;
- * @return {?proto.google.protobuf.Struct}
+ * optional google.protobuf.Value spec3 = 6;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductSpec.prototype.getSpec3 = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 6));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.ding4.ProductSpec} returns this
 */
 proto.ding4.ProductSpec.prototype.setSpec3 = function(value) {
@@ -3014,7 +2951,7 @@ proto.ding4.ProductSpec.prototype.setPhoto = function(value) {
  */
 proto.ding4.ProductSpec.prototype.getImage = function() {
   return /** @type{?proto.ding4.Image} */ (
-    jspb.Message.getWrapperField(this, type_pb.Image, 9));
+    jspb.Message.getWrapperField(this, image_pb.Image, 9));
 };
 
 

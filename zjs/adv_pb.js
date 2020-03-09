@@ -101,8 +101,8 @@ proto.ding4.Adv.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Adv.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    state: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    advId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    state: jspb.Message.getFieldWithDefault(msg, 2, 0),
     company: jspb.Message.getFieldWithDefault(msg, 3, ""),
     identify: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -115,8 +115,8 @@ proto.ding4.Adv.toObject = function(includeInstance, msg) {
     location: jspb.Message.getFieldWithDefault(msg, 12, ""),
     motive: jspb.Message.getFieldWithDefault(msg, 13, ""),
     mgrType: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    turnover: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
-    other: (f = msg.getOther()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+    turnover: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    other: (f = msg.getOther()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -161,11 +161,11 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdvId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setState(value);
       break;
     case 3:
@@ -217,12 +217,12 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMgrType(value);
       break;
     case 15:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTurnover(value);
       break;
     case 16:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setOther(value);
       break;
     case 70:
@@ -282,16 +282,16 @@ proto.ding4.Adv.prototype.serializeBinary = function() {
  */
 proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getAdvId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getState();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       2,
       f
     );
@@ -381,8 +381,8 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTurnover();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       15,
       f
     );
@@ -392,7 +392,7 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       16,
       f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getOperator();
@@ -445,29 +445,29 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string adv_id = 1;
+ * @return {string}
  */
-proto.ding4.Adv.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Adv.prototype.getAdvId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Adv} returns this
  */
-proto.ding4.Adv.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Adv.prototype.setAdvId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double state = 2;
+ * optional int32 state = 2;
  * @return {number}
  */
 proto.ding4.Adv.prototype.getState = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -476,7 +476,7 @@ proto.ding4.Adv.prototype.getState = function() {
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setState = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -697,11 +697,11 @@ proto.ding4.Adv.prototype.setMgrType = function(value) {
 
 
 /**
- * optional double turnover = 15;
+ * optional int32 turnover = 15;
  * @return {number}
  */
 proto.ding4.Adv.prototype.getTurnover = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
@@ -710,22 +710,22 @@ proto.ding4.Adv.prototype.getTurnover = function() {
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setTurnover = function(value) {
-  return jspb.Message.setProto3FloatField(this, 15, value);
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
 /**
- * optional google.protobuf.Struct other = 16;
- * @return {?proto.google.protobuf.Struct}
+ * optional google.protobuf.Value other = 16;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.Adv.prototype.getOther = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 16));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 16));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Struct|undefined} value
+ * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.ding4.Adv} returns this
 */
 proto.ding4.Adv.prototype.setOther = function(value) {
@@ -994,8 +994,8 @@ proto.ding4.AdvRecord.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.AdvRecord.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    advId: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    advRecordId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    advId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     phoneAt: (f = msg.getPhoneAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     interviewAt: (f = msg.getInterviewAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     cancelReason: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -1043,11 +1043,11 @@ proto.ding4.AdvRecord.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdvRecordId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAdvId(value);
       break;
     case 3:
@@ -1121,16 +1121,16 @@ proto.ding4.AdvRecord.prototype.serializeBinary = function() {
  */
 proto.ding4.AdvRecord.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getAdvRecordId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getAdvId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1208,38 +1208,38 @@ proto.ding4.AdvRecord.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string adv_record_id = 1;
+ * @return {string}
  */
-proto.ding4.AdvRecord.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.AdvRecord.prototype.getAdvRecordId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.AdvRecord} returns this
  */
-proto.ding4.AdvRecord.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.AdvRecord.prototype.setAdvRecordId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double adv_id = 2;
- * @return {number}
+ * optional string adv_id = 2;
+ * @return {string}
  */
 proto.ding4.AdvRecord.prototype.getAdvId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.AdvRecord} returns this
  */
 proto.ding4.AdvRecord.prototype.setAdvId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "activity.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Car {
+    string car_id = 1;
+    string store_id = 3;
+    string customer_id = 4;
+    string discount_id = 5;
+    int32 state = 6;
+    int32 count = 7;
+    double amount = 8;
+    repeated Commodity commodity = 9;
+    repeated Activity activity = 10;
+    
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;    
+}
+
+message Commodity {
+    string commodity_id = 1;
+    string store_id = 2;
+    string car_id = 3;
+    string product_id = 4;
+    string product_spec_id = 5;
+    int32 count = 6;
+
+    string activity_id = 9;
+    google.protobuf.Value name = 10;
+    double price = 11;
+    double reduce = 12;
+    double active = 13;
+    string photo = 14;
+    
+    google.protobuf.Struct self = 75; 
+}

@@ -10,7 +10,7 @@ import "google/protobuf/timestamp.proto";
 message Response {
     uint32 code = 1;
     string message = 2;
-    int64 insert_id = 3;
+    string insert_id = 3;
     int64 affect_row = 4;
     PageLimit pageLimit = 5;
     repeated Sort sort = 6;

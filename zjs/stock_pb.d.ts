@@ -5,20 +5,20 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Stock extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getStockId(): string;
+  setStockId(value: string): void;
 
-  getOrderId(): number;
-  setOrderId(value: number): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
-  getSupplierId(): number;
-  setSupplierId(value: number): void;
+  getSupplierId(): string;
+  setSupplierId(value: string): void;
 
-  getProductId(): number;
-  setProductId(value: number): void;
+  getProductId(): string;
+  setProductId(value: string): void;
 
-  getSpecId(): number;
-  setSpecId(value: number): void;
+  getProductSpecId(): string;
+  setProductSpecId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -64,11 +64,11 @@ export class Stock extends jspb.Message {
 
 export namespace Stock {
   export type AsObject = {
-    id: number,
-    orderId: number,
-    supplierId: number,
-    productId: number,
-    specId: number,
+    stockId: string,
+    orderId: string,
+    supplierId: string,
+    productId: string,
+    productSpecId: string,
     amount: number,
     cost: number,
     operator: string,
@@ -81,8 +81,8 @@ export namespace Stock {
 }
 
 export class StockGroup extends jspb.Message {
-  getProductId(): number;
-  setProductId(value: number): void;
+  getProductId(): string;
+  setProductId(value: string): void;
 
   getPhotoList(): Array<string>;
   setPhotoList(value: Array<string>): void;
@@ -105,7 +105,7 @@ export class StockGroup extends jspb.Message {
 
 export namespace StockGroup {
   export type AsObject = {
-    productId: number,
+    productId: string,
     photoList: Array<string>,
     nameMap: Array<[string, string]>,
     amount: number,

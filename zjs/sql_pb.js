@@ -234,7 +234,7 @@ proto.ding4.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     code: jspb.Message.getFieldWithDefault(msg, 1, 0),
     message: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    insertId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    insertId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     affectRow: jspb.Message.getFieldWithDefault(msg, 4, 0),
     pagelimit: (f = msg.getPagelimit()) && proto.ding4.PageLimit.toObject(includeInstance, f),
     sortList: jspb.Message.toObjectList(msg.getSortList(),
@@ -287,7 +287,7 @@ proto.ding4.Response.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMessage(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setInsertId(value);
       break;
     case 4:
@@ -358,8 +358,8 @@ proto.ding4.Response.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getInsertId();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -443,20 +443,20 @@ proto.ding4.Response.prototype.setMessage = function(value) {
 
 
 /**
- * optional int64 insert_id = 3;
- * @return {number}
+ * optional string insert_id = 3;
+ * @return {string}
  */
 proto.ding4.Response.prototype.getInsertId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Response} returns this
  */
 proto.ding4.Response.prototype.setInsertId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

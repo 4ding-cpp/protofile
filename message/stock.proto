@@ -9,11 +9,11 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Stock {
-    double id = 1;
-    double order_id = 2;
-    double supplier_id = 3;
-    double product_id = 4;
-    double spec_id = 5;
+    string stock_id = 1;
+    string order_id = 2;
+    string supplier_id = 3;
+    string product_id = 4;
+    string product_spec_id = 5;
     int32 amount = 6;
     int32 cost = 7;
     
@@ -26,7 +26,7 @@ message Stock {
 }
 
 message StockGroup {
-    double product_id = 1;
+    string product_id = 1;
     repeated string photo = 2;
     map<string, string> name = 3;
     int32 amount = 4;

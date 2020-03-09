@@ -69,12 +69,13 @@ proto.ding4.Sign.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.Sign.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    userId: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     onlineAt: (f = msg.getOnlineAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     offlineAt: (f = msg.getOfflineAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    requests: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    address: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    useragent: jspb.Message.getFieldWithDefault(msg, 7, "")
+    requests: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    address: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    useragent: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -116,28 +117,32 @@ proto.ding4.Sign.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setUserId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
       break;
     case 3:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setOnlineAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setOfflineAt(value);
+      msg.setOnlineAt(value);
       break;
     case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setOfflineAt(value);
+      break;
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setRequests(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setAddress(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUseragent(value);
       break;
@@ -177,22 +182,21 @@ proto.ding4.Sign.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getUserId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getType();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getOnlineAt();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
       3,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getOfflineAt();
+  f = message.getOnlineAt();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -200,24 +204,32 @@ proto.ding4.Sign.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getOfflineAt();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getRequests();
   if (f !== 0) {
     writer.writeInt32(
-      5,
+      6,
       f
     );
   }
   f = message.getAddress();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      7,
       f
     );
   }
   f = message.getUseragent();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      8,
       f
     );
   }
@@ -243,30 +255,48 @@ proto.ding4.Sign.prototype.setId = function(value) {
 
 
 /**
- * optional double user_id = 2;
- * @return {number}
+ * optional string type = 2;
+ * @return {string}
  */
-proto.ding4.Sign.prototype.getUserId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.ding4.Sign.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
+ * @return {!proto.ding4.Sign} returns this
+ */
+proto.ding4.Sign.prototype.setType = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string user_id = 3;
+ * @return {string}
+ */
+proto.ding4.Sign.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
  * @return {!proto.ding4.Sign} returns this
  */
 proto.ding4.Sign.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp online_at = 3;
+ * optional google.protobuf.Timestamp online_at = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.Sign.prototype.getOnlineAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
@@ -275,7 +305,7 @@ proto.ding4.Sign.prototype.getOnlineAt = function() {
  * @return {!proto.ding4.Sign} returns this
 */
 proto.ding4.Sign.prototype.setOnlineAt = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -293,17 +323,17 @@ proto.ding4.Sign.prototype.clearOnlineAt = function() {
  * @return {boolean}
  */
 proto.ding4.Sign.prototype.hasOnlineAt = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp offline_at = 4;
+ * optional google.protobuf.Timestamp offline_at = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.Sign.prototype.getOfflineAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
@@ -312,7 +342,7 @@ proto.ding4.Sign.prototype.getOfflineAt = function() {
  * @return {!proto.ding4.Sign} returns this
 */
 proto.ding4.Sign.prototype.setOfflineAt = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -330,16 +360,16 @@ proto.ding4.Sign.prototype.clearOfflineAt = function() {
  * @return {boolean}
  */
 proto.ding4.Sign.prototype.hasOfflineAt = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 requests = 5;
+ * optional int32 requests = 6;
  * @return {number}
  */
 proto.ding4.Sign.prototype.getRequests = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -348,33 +378,15 @@ proto.ding4.Sign.prototype.getRequests = function() {
  * @return {!proto.ding4.Sign} returns this
  */
 proto.ding4.Sign.prototype.setRequests = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional string address = 6;
+ * optional string address = 7;
  * @return {string}
  */
 proto.ding4.Sign.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.Sign} returns this
- */
-proto.ding4.Sign.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string userAgent = 7;
- * @return {string}
- */
-proto.ding4.Sign.prototype.getUseragent = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -383,8 +395,26 @@ proto.ding4.Sign.prototype.getUseragent = function() {
  * @param {string} value
  * @return {!proto.ding4.Sign} returns this
  */
-proto.ding4.Sign.prototype.setUseragent = function(value) {
+proto.ding4.Sign.prototype.setAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string userAgent = 8;
+ * @return {string}
+ */
+proto.ding4.Sign.prototype.getUseragent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Sign} returns this
+ */
+proto.ding4.Sign.prototype.setUseragent = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

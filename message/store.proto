@@ -9,15 +9,29 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Store {
-    double id = 1;
-    string status = 2;
-    int32 type = 3;
-    string name = 4;
-    string url = 5;
-    double p_business = 6;
-    double p_group = 7;
-    double c_business = 8;
-    double c_group = 9;
+    string store_id = 1;
+    int32 model = 3;
+    int32 type = 4;
+    string name = 5;
+    string host = 6;
+    string identify = 7;
+    string product_business_id = 8;
+    string product_group_id = 9;
+    string product_status = 10;
+    string customer_business_id = 11;
+    string customer_group_id = 12;
+    string customer_status = 13;
+    bool open = 14;
+    string phone = 15;
+    string address_code = 16;
+    string address_city = 17;
+    string address_township = 18;
+    string address_detail = 19;
+    string facebook = 20;
+    string facebook_message = 21;
+    string instagram_id = 22;
+    string line_id = 23;
+    string line_at = 24;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -27,18 +41,18 @@ message Store {
     google.protobuf.Struct self = 75;
 }
 
-message StoreView {
-    double id = 1;
-    string status = 2;
-    int32 type = 3;
-    string name = 4;
-    string url = 5;
-    string p_status = 6;
-    string c_status = 7;
-    
+message StoreApply {
+    int32 model = 1;
+    int32 type = 2;
+    string product_business_id = 3;
+    string product_group_id = 4;
+    string customer_business_id = 5;
+    string customer_group_id = 6;
+
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
     repeated string cols = 73;
     repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;    
 }

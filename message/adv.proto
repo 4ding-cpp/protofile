@@ -9,8 +9,8 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Adv {
-    double id = 1;
-    double state = 2;
+    string adv_id = 1;
+    int32 state = 2;
     string company = 3;
     string identify = 4;
     string name = 5;
@@ -23,8 +23,8 @@ message Adv {
     string location = 12;
     string motive = 13;
     string mgr_type = 14;
-    double turnover = 15;
-    google.protobuf.Struct other = 16;
+    int32 turnover = 15;
+    google.protobuf.Value other = 16;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -35,8 +35,8 @@ message Adv {
 }
 
 message AdvRecord {
-    double id = 1;
-    double adv_id = 2;
+    string adv_record_id = 1;
+    string adv_id = 2;
     google.protobuf.Timestamp phone_at = 3;
     google.protobuf.Timestamp interview_at = 4;
     string cancel_reason = 5;

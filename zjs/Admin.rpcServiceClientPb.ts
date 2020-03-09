@@ -9,11 +9,11 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
+import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as sql_pb from './sql_pb';
 import * as admin_pb from './admin_pb';
 import * as business_pb from './business_pb';
+import * as label_pb from './label_pb';
 import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
@@ -39,18 +39,18 @@ export class AdminRPCClient {
   }
 
   methodInfoPing = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_wrappers_pb.StringValue,
-    (request: google_protobuf_empty_pb.Empty) => {
+    google_protobuf_struct_pb.Value,
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
-    google_protobuf_wrappers_pb.StringValue.deserializeBinary
+    google_protobuf_struct_pb.Value.deserializeBinary
   );
 
   ping(
-    request: google_protobuf_empty_pb.Empty,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_wrappers_pb.StringValue) => void) {
+               response: google_protobuf_struct_pb.Value) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.AdminRPC/Ping',
@@ -60,16 +60,35 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoTime = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_struct_pb.Value,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_struct_pb.Value.deserializeBinary
+  );
+
+  time(
+    request: sql_pb.Query,
+    metadata?: grpcWeb.Metadata) {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/ding4.AdminRPC/Time',
+      request,
+      metadata || {},
+      this.methodInfoTime);
+  }
+
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: google_protobuf_empty_pb.Empty) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   whoAmI(
-    request: google_protobuf_empty_pb.Empty,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -236,6 +255,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoSignAdmin = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signAdmin(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/SignAdmin',
+      request,
+      metadata || {},
+      this.methodInfoSignAdmin,
+      callback);
+  }
+
   methodInfoCreateBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: business_pb.Business) => {
@@ -302,6 +343,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoRecordBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordBusiness(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/RecordBusiness',
+      request,
+      metadata || {},
+      this.methodInfoRecordBusiness,
+      callback);
+  }
+
   methodInfoSignBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -324,7 +387,51 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoRecordBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreateLabel',
+      request,
+      metadata || {},
+      this.methodInfoCreateLabel,
+      callback);
+  }
+
+  methodInfoUpdateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdateLabel',
+      request,
+      metadata || {},
+      this.methodInfoUpdateLabel,
+      callback);
+  }
+
+  methodInfoFindLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -332,17 +439,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  recordBusiness(
+  findLabel(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/RecordBusiness',
+        '/ding4.AdminRPC/FindLabel',
       request,
       metadata || {},
-      this.methodInfoRecordBusiness,
+      this.methodInfoFindLabel,
       callback);
   }
 

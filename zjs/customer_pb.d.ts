@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Customer extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
 
   getStatus(): string;
   setStatus(value: string): void;
@@ -70,7 +70,7 @@ export class Customer extends jspb.Message {
 
 export namespace Customer {
   export type AsObject = {
-    id: number,
+    customerId: string,
     status: string,
     phone: string,
     email: string,
@@ -92,10 +92,10 @@ export class CustomerLabel extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getTargetList(): Array<number>;
-  setTargetList(value: Array<number>): void;
+  getTargetList(): Array<string>;
+  setTargetList(value: Array<string>): void;
   clearTargetList(): void;
-  addTarget(value: number, index?: number): void;
+  addTarget(value: string, index?: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -136,7 +136,7 @@ export class CustomerLabel extends jspb.Message {
 export namespace CustomerLabel {
   export type AsObject = {
     name: string,
-    targetList: Array<number>,
+    targetList: Array<string>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -147,19 +147,16 @@ export namespace CustomerLabel {
 }
 
 export class CustomerGroup extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
-  getCode(): string;
-  setCode(value: string): void;
+  getCustomerGroupId(): string;
+  setCustomerGroupId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
 
-  getTargetList(): Array<number>;
-  setTargetList(value: Array<number>): void;
+  getTargetList(): Array<string>;
+  setTargetList(value: Array<string>): void;
   clearTargetList(): void;
-  addTarget(value: number, index?: number): void;
+  addTarget(value: string, index?: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -199,10 +196,9 @@ export class CustomerGroup extends jspb.Message {
 
 export namespace CustomerGroup {
   export type AsObject = {
-    id: number,
-    code: string,
+    customerGroupId: string,
     name: string,
-    targetList: Array<number>,
+    targetList: Array<string>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -213,17 +209,17 @@ export namespace CustomerGroup {
 }
 
 export class CustomerLinker extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getCustomerLinkerId(): string;
+  setCustomerLinkerId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
 
-  getGroupId(): number;
-  setGroupId(value: number): void;
+  getCustomerGroupId(): string;
+  setCustomerGroupId(value: string): void;
 
-  getStoreId(): number;
-  setStoreId(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   getReward(): number;
   setReward(value: number): void;
@@ -266,10 +262,10 @@ export class CustomerLinker extends jspb.Message {
 
 export namespace CustomerLinker {
   export type AsObject = {
-    id: number,
+    customerLinkerId: string,
     status: number,
-    groupId: number,
-    storeId: number,
+    customerGroupId: string,
+    storeId: string,
     reward: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

@@ -6,8 +6,11 @@ export class Sign extends jspb.Message {
   getId(): number;
   setId(value: number): void;
 
-  getUserId(): number;
-  setUserId(value: number): void;
+  getType(): string;
+  setType(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
 
   getOnlineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -39,7 +42,8 @@ export class Sign extends jspb.Message {
 export namespace Sign {
   export type AsObject = {
     id: number,
-    userId: number,
+    type: string,
+    userId: string,
     onlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     offlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     requests: number,

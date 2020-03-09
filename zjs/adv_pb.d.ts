@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Adv extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getAdvId(): string;
+  setAdvId(value: string): void;
 
   getState(): number;
   setState(value: number): void;
@@ -50,8 +50,8 @@ export class Adv extends jspb.Message {
   getTurnover(): number;
   setTurnover(value: number): void;
 
-  getOther(): google_protobuf_struct_pb.Struct | undefined;
-  setOther(value?: google_protobuf_struct_pb.Struct): void;
+  getOther(): google_protobuf_struct_pb.Value | undefined;
+  setOther(value?: google_protobuf_struct_pb.Value): void;
   hasOther(): boolean;
   clearOther(): void;
 
@@ -93,7 +93,7 @@ export class Adv extends jspb.Message {
 
 export namespace Adv {
   export type AsObject = {
-    id: number,
+    advId: string,
     state: number,
     company: string,
     identify: string,
@@ -108,7 +108,7 @@ export namespace Adv {
     motive: string,
     mgrType: string,
     turnover: number,
-    other?: google_protobuf_struct_pb.Struct.AsObject,
+    other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -119,11 +119,11 @@ export namespace Adv {
 }
 
 export class AdvRecord extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getAdvRecordId(): string;
+  setAdvRecordId(value: string): void;
 
-  getAdvId(): number;
-  setAdvId(value: number): void;
+  getAdvId(): string;
+  setAdvId(value: string): void;
 
   getPhoneAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setPhoneAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -176,8 +176,8 @@ export class AdvRecord extends jspb.Message {
 
 export namespace AdvRecord {
   export type AsObject = {
-    id: number,
-    advId: number,
+    advRecordId: string,
+    advId: string,
     phoneAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     interviewAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     cancelReason: string,

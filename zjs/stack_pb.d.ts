@@ -5,29 +5,29 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Stack extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getStackId(): string;
+  setStackId(value: string): void;
 
-  getBusiness(): number;
-  setBusiness(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getStore(): number;
-  setStore(value: number): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
-  getOrderId(): number;
-  setOrderId(value: number): void;
+  getProductId(): string;
+  setProductId(value: string): void;
 
-  getProductId(): number;
-  setProductId(value: number): void;
+  getProductSpecId(): string;
+  setProductSpecId(value: string): void;
 
-  getSpecId(): number;
-  setSpecId(value: number): void;
+  getActivityId(): string;
+  setActivityId(value: string): void;
 
-  getActivityId(): number;
-  setActivityId(value: number): void;
+  getDiscountId(): string;
+  setDiscountId(value: string): void;
 
-  getSalerId(): number;
-  setSalerId(value: number): void;
+  getSalerId(): string;
+  setSalerId(value: string): void;
 
   getType(): number;
   setType(value: number): void;
@@ -82,14 +82,14 @@ export class Stack extends jspb.Message {
 
 export namespace Stack {
   export type AsObject = {
-    id: number,
-    business: number,
-    store: number,
-    orderId: number,
-    productId: number,
-    specId: number,
-    activityId: number,
-    salerId: number,
+    stackId: string,
+    storeId: string,
+    orderId: string,
+    productId: string,
+    productSpecId: string,
+    activityId: string,
+    discountId: string,
+    salerId: string,
     type: number,
     countIn: number,
     cost: number,

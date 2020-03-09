@@ -79,7 +79,7 @@ proto.ding4.Supplier.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Supplier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    supplierId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 3, ""),
     remark: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -127,8 +127,8 @@ proto.ding4.Supplier.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSupplierId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -199,9 +199,9 @@ proto.ding4.Supplier.prototype.serializeBinary = function() {
  */
 proto.ding4.Supplier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getSupplierId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -277,20 +277,20 @@ proto.ding4.Supplier.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string supplier_id = 1;
+ * @return {string}
  */
-proto.ding4.Supplier.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Supplier.prototype.getSupplierId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Supplier} returns this
  */
-proto.ding4.Supplier.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Supplier.prototype.setSupplierId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

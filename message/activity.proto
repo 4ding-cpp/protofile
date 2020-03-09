@@ -9,18 +9,19 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Activity {
-    double id = 1;
-    double store_id = 2;
+    string activity_id = 1;
+    string store_id = 2;
     google.protobuf.Timestamp begin_at = 3;
     google.protobuf.Timestamp end_at = 4;
-    string name = 5;
-    string type = 6;
-    string item = 7;
-    string cond = 8;
-    double cond_v = 9;
-    bool repeat = 10;
-    string exec = 11;
-    double exec_v = 12;
+    google.protobuf.Value name = 5;
+    int32 type = 6;         // 活動類型 1:全館 2:活動館 3:單品
+    int64 item = 7;         // 活動館ID 或 單品ID
+    int32 cond = 8;         // 達成條件 1:金額 2:數量
+    int32 cond_v = 9;       // 須達成的條件數值
+    bool repeated = 10;     // 是否累計
+    int32 active = 11;      // 活動內容 1:免運 2:折扣 3:折價 4:贈品
+    int32 active_v = 12;
+    int32 value = 13;       // 累計
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -30,16 +31,26 @@ message Activity {
     google.protobuf.Struct self = 75;
 }
 
+message ActivityProduct {
+    string activity_id = 1;
+    repeated string product_id = 2;
+    google.protobuf.Struct self = 3;
+}
+
 message Discount {
-    double id = 1;
-    double store_id = 2;
-    double level_id = 3;
+    string discount_id = 1;
+    string store_id = 2;
+    string level_id = 3;
     google.protobuf.Timestamp begin_at = 4;
     google.protobuf.Timestamp end_at = 5;
-    string name = 6;
-    bool auto_set = 7;
-    string set_code = 8;
-    int32 times = 9;
+    google.protobuf.Value name = 6;
+    int32 cond = 7;         // 達成條件 1:金額 2:數量
+    double cond_v = 8;      // 須達成的條件數值
+    int32 active = 9;
+    double active_v = 10;
+    bool auto_set = 11;
+    string set_code = 12;
+    int32 times = 13;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -47,4 +58,12 @@ message Discount {
     repeated string cols = 73;
     repeated Condition condition = 74;
     google.protobuf.Struct self = 75;
+}
+
+message DiscountMap {
+    int64 id = 1;
+    string discount_id = 2;
+    string customer_id = 3;
+    string code = 4;
+    google.protobuf.Struct self = 5;
 }

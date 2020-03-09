@@ -81,10 +81,10 @@ proto.ding4.Manager.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Manager.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    mainId: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    status: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    storeId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    managerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    mainId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 4, 0),
     phone: jspb.Message.getFieldWithDefault(msg, 5, ""),
     email: jspb.Message.getFieldWithDefault(msg, 6, ""),
     name: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -136,20 +136,20 @@ proto.ding4.Manager.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setManagerId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setMainId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
+      msg.setStoreId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStoreId(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setStatus(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -233,30 +233,30 @@ proto.ding4.Manager.prototype.serializeBinary = function() {
  */
 proto.ding4.Manager.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getManagerId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getMainId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getStatus();
+  f = message.getStoreId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getStoreId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStatus();
+  if (f !== 0) {
+    writer.writeInt32(
       4,
       f
     );
@@ -354,46 +354,46 @@ proto.ding4.Manager.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string manager_id = 1;
+ * @return {string}
  */
-proto.ding4.Manager.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Manager.prototype.getManagerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Manager.prototype.setManagerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double main_id = 2;
- * @return {number}
+ * optional string main_id = 2;
+ * @return {string}
  */
 proto.ding4.Manager.prototype.getMainId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Manager} returns this
  */
 proto.ding4.Manager.prototype.setMainId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string status = 3;
+ * optional string store_id = 3;
  * @return {string}
  */
-proto.ding4.Manager.prototype.getStatus = function() {
+proto.ding4.Manager.prototype.getStoreId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -402,17 +402,17 @@ proto.ding4.Manager.prototype.getStatus = function() {
  * @param {string} value
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.setStatus = function(value) {
+proto.ding4.Manager.prototype.setStoreId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional double store_id = 4;
+ * optional int32 status = 4;
  * @return {number}
  */
-proto.ding4.Manager.prototype.getStoreId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.ding4.Manager.prototype.getStatus = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -420,8 +420,8 @@ proto.ding4.Manager.prototype.getStoreId = function() {
  * @param {number} value
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.setStoreId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+proto.ding4.Manager.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

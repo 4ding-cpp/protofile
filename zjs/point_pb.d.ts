@@ -5,11 +5,11 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Point extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getPointId(): string;
+  setPointId(value: string): void;
 
-  getBusiness(): number;
-  setBusiness(value: number): void;
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
 
   getState(): number;
   setState(value: number): void;
@@ -64,8 +64,8 @@ export class Point extends jspb.Message {
 
 export namespace Point {
   export type AsObject = {
-    id: number,
-    business: number,
+    pointId: string,
+    businessId: string,
     state: number,
     price: number,
     bankCode: string,
@@ -81,11 +81,11 @@ export namespace Point {
 }
 
 export class PointFlow extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getPointFlowId(): string;
+  setPointFlowId(value: string): void;
 
-  getBusiness(): number;
-  setBusiness(value: number): void;
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
 
   getItem(): string;
   setItem(value: string): void;
@@ -93,8 +93,8 @@ export class PointFlow extends jspb.Message {
   getPoint(): number;
   setPoint(value: number): void;
 
-  getRelated(): number;
-  setRelated(value: number): void;
+  getRelated(): string;
+  setRelated(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -134,11 +134,11 @@ export class PointFlow extends jspb.Message {
 
 export namespace PointFlow {
   export type AsObject = {
-    id: number,
-    business: number,
+    pointFlowId: string,
+    businessId: string,
     item: string,
     point: number,
-    related: number,
+    related: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -149,17 +149,17 @@ export namespace PointFlow {
 }
 
 export class PointDetail extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getPointDetailId(): string;
+  setPointDetailId(value: string): void;
 
-  getBusiness(): number;
-  setBusiness(value: number): void;
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
 
-  getStore(): number;
-  setStore(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getFlowId(): number;
-  setFlowId(value: number): void;
+  getPointFlowId(): string;
+  setPointFlowId(value: string): void;
 
   getItem(): string;
   setItem(value: string): void;
@@ -211,10 +211,10 @@ export class PointDetail extends jspb.Message {
 
 export namespace PointDetail {
   export type AsObject = {
-    id: number,
-    business: number,
-    store: number,
-    flowId: number,
+    pointDetailId: string,
+    businessId: string,
+    storeId: string,
+    pointFlowId: string,
     item: string,
     unitPrice: number,
     useVal: number,
@@ -253,8 +253,8 @@ export namespace PointBill {
 }
 
 export class PointBonus extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getPointBonusId(): string;
+  setPointBonusId(value: string): void;
 
   getOnEvent(): number;
   setOnEvent(value: number): void;
@@ -306,7 +306,7 @@ export class PointBonus extends jspb.Message {
 
 export namespace PointBonus {
   export type AsObject = {
-    id: number,
+    pointBonusId: string,
     onEvent: number,
     item: string,
     point: number,

@@ -123,11 +123,11 @@ proto.ding4.Stock.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Stock.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    orderId: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    supplierId: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    productId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    specId: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    stockId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    supplierId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    productSpecId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     cost: jspb.Message.getFieldWithDefault(msg, 7, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
@@ -174,24 +174,24 @@ proto.ding4.Stock.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStockId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrderId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSupplierId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProductId(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSpecId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductSpecId(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -258,37 +258,37 @@ proto.ding4.Stock.prototype.serializeBinary = function() {
  */
 proto.ding4.Stock.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStockId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getOrderId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getSupplierId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getProductId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
-  f = message.getSpecId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductSpecId();
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -357,92 +357,92 @@ proto.ding4.Stock.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string stock_id = 1;
+ * @return {string}
  */
-proto.ding4.Stock.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Stock.prototype.getStockId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stock} returns this
  */
-proto.ding4.Stock.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Stock.prototype.setStockId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double order_id = 2;
- * @return {number}
+ * optional string order_id = 2;
+ * @return {string}
  */
 proto.ding4.Stock.prototype.getOrderId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stock} returns this
  */
 proto.ding4.Stock.prototype.setOrderId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional double supplier_id = 3;
- * @return {number}
+ * optional string supplier_id = 3;
+ * @return {string}
  */
 proto.ding4.Stock.prototype.getSupplierId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stock} returns this
  */
 proto.ding4.Stock.prototype.setSupplierId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional double product_id = 4;
- * @return {number}
+ * optional string product_id = 4;
+ * @return {string}
  */
 proto.ding4.Stock.prototype.getProductId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stock} returns this
  */
 proto.ding4.Stock.prototype.setProductId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional double spec_id = 5;
- * @return {number}
+ * optional string product_spec_id = 5;
+ * @return {string}
  */
-proto.ding4.Stock.prototype.getSpecId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+proto.ding4.Stock.prototype.getProductSpecId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stock} returns this
  */
-proto.ding4.Stock.prototype.setSpecId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+proto.ding4.Stock.prototype.setProductSpecId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -725,7 +725,7 @@ proto.ding4.StockGroup.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.StockGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    productId: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    productId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     photoList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     nameMap: (f = msg.getNameMap()) ? f.toObject(includeInstance, undefined) : [],
     amount: jspb.Message.getFieldWithDefault(msg, 4, 0)
@@ -766,7 +766,7 @@ proto.ding4.StockGroup.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProductId(value);
       break;
     case 2:
@@ -813,8 +813,8 @@ proto.ding4.StockGroup.prototype.serializeBinary = function() {
 proto.ding4.StockGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProductId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -841,20 +841,20 @@ proto.ding4.StockGroup.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double product_id = 1;
- * @return {number}
+ * optional string product_id = 1;
+ * @return {string}
  */
 proto.ding4.StockGroup.prototype.getProductId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.StockGroup} returns this
  */
 proto.ding4.StockGroup.prototype.setProductId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

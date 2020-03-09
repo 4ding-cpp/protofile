@@ -6,8 +6,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Admin extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getAdminId(): string;
+  setAdminId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
@@ -81,7 +81,7 @@ export class Admin extends jspb.Message {
 
 export namespace Admin {
   export type AsObject = {
-    id: number,
+    adminId: string,
     status: number,
     phone: string,
     email: string,

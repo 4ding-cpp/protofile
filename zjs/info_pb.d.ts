@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Info extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getInfoId(): string;
+  setInfoId(value: string): void;
 
   getArea(): string;
   setArea(value: string): void;
@@ -55,7 +55,7 @@ export class Info extends jspb.Message {
 
 export namespace Info {
   export type AsObject = {
-    id: number,
+    infoId: string,
     area: string,
     item: string,
     content: string,

@@ -4,46 +4,67 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
-import "address.proto";
-import "stack.proto";
 import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-message OrderNew {
-    double store = 1;
-    double customer_id = 2;
-    string pay_method = 3;
-    string delivery_method = 4;
-    string come_from = 5;
-    Address address = 6;
-    repeated Stack stack = 7;
-}
-
 message Order {
-    double id = 1;
-    string code = 2;
-    double store = 3;
-    double activity_id = 4;
-    double address_id = 5;
-    double customer_id = 6;
-    double saler_id = 7;
-    string pay_method = 8;
-    string delivery_method = 9;
-    int32 state = 10;
-    int32 pay_state = 11;
-    int32 delivery_state = 12;
-    string come_from = 13;
-    int32 count = 14;
-    double amount = 15;
-    int32 freight = 16;
-    bool re_order = 17;
-    int32 track = 18;
+    reserved  2,5;
+    string order_id = 1;
+    string store_id = 3;
+    string activity_id = 4;
+    string customer_id = 6;
+    string car_id = 7;
+    string discount_id = 8;
+    uint32 pay_method = 9;
+    uint32 delivery_method = 10;
+    uint32 state = 11;
+    uint32 pay_state = 12;
+    uint32 delivery_state = 13;
+    string come_from = 14;
+    int32 count = 15;
+    double amount = 16;
+    double freight = 17;
+    bool re_order = 18;
+    int32 track = 19;
+
+    string payer_email = 20;
+    string payer_name = 21;
+    string payer_phone = 22;
+    string payer_address_code = 23;
+    string payer_address_city = 24;
+    string payer_address_township = 25;
+    string payer_address_detail = 26;
+    string receiver_name = 27;
+    string receiver_phone = 28;
+    string receiver_address_code = 29;
+    string receiver_address_city = 30;
+    string receiver_address_township = 31;
+    string receiver_address_detail = 32;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
     repeated string cols = 73;
     repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
+}
+
+message OrderD {
+    double customer_id = 1;
+    string payer_email = 2;
+    string payer_name = 3;
+    string payer_phone = 4;
+    string payer_address_code = 5;
+    string payer_address_city = 6;
+    string payer_address_township = 7;
+    string payer_address_detail = 8;
+    string receiver_name = 9;
+    string receiver_phone = 10;
+    string receiver_address_code = 11;
+    string receiver_address_city = 12;
+    string receiver_address_township = 13;
+    string receiver_address_detail = 14;
+
     google.protobuf.Struct self = 75;
 }

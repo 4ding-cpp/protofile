@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "image.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message WebLayout {
+    string web_layout_id = 1;
+    string store_id = 2;
+    bool display = 3;
+    int32 type = 4;
+    int32 priority = 5;
+    string title = 6;
+    int32 second = 7;
+    string product_class_id = 8;
+    int32 count = 9;
+    string content = 10;
+    repeated Image image = 11;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;   
+}

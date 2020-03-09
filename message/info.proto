@@ -9,7 +9,7 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Info {
-    double id = 1;
+    string info_id = 1;
     string area = 2;
     string item = 3;
     string content = 4;

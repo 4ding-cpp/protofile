@@ -5,11 +5,11 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Store extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getModel(): number;
+  setModel(value: number): void;
 
   getType(): number;
   setType(value: number): void;
@@ -17,20 +17,62 @@ export class Store extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getUrl(): string;
-  setUrl(value: string): void;
+  getHost(): string;
+  setHost(value: string): void;
 
-  getPBusiness(): number;
-  setPBusiness(value: number): void;
+  getIdentify(): string;
+  setIdentify(value: string): void;
 
-  getPGroup(): number;
-  setPGroup(value: number): void;
+  getProductBusinessId(): string;
+  setProductBusinessId(value: string): void;
 
-  getCBusiness(): number;
-  setCBusiness(value: number): void;
+  getProductGroupId(): string;
+  setProductGroupId(value: string): void;
 
-  getCGroup(): number;
-  setCGroup(value: number): void;
+  getProductStatus(): string;
+  setProductStatus(value: string): void;
+
+  getCustomerBusinessId(): string;
+  setCustomerBusinessId(value: string): void;
+
+  getCustomerGroupId(): string;
+  setCustomerGroupId(value: string): void;
+
+  getCustomerStatus(): string;
+  setCustomerStatus(value: string): void;
+
+  getOpen(): boolean;
+  setOpen(value: boolean): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
+
+  getAddressCode(): string;
+  setAddressCode(value: string): void;
+
+  getAddressCity(): string;
+  setAddressCity(value: string): void;
+
+  getAddressTownship(): string;
+  setAddressTownship(value: string): void;
+
+  getAddressDetail(): string;
+  setAddressDetail(value: string): void;
+
+  getFacebook(): string;
+  setFacebook(value: string): void;
+
+  getFacebookMessage(): string;
+  setFacebookMessage(value: string): void;
+
+  getInstagramId(): string;
+  setInstagramId(value: string): void;
+
+  getLineId(): string;
+  setLineId(value: string): void;
+
+  getLineAt(): string;
+  setLineAt(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -70,15 +112,29 @@ export class Store extends jspb.Message {
 
 export namespace Store {
   export type AsObject = {
-    id: number,
-    status: string,
+    storeId: string,
+    model: number,
     type: number,
     name: string,
-    url: string,
-    pBusiness: number,
-    pGroup: number,
-    cBusiness: number,
-    cGroup: number,
+    host: string,
+    identify: string,
+    productBusinessId: string,
+    productGroupId: string,
+    productStatus: string,
+    customerBusinessId: string,
+    customerGroupId: string,
+    customerStatus: string,
+    open: boolean,
+    phone: string,
+    addressCode: string,
+    addressCity: string,
+    addressTownship: string,
+    addressDetail: string,
+    facebook: string,
+    facebookMessage: string,
+    instagramId: string,
+    lineId: string,
+    lineAt: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -88,27 +144,24 @@ export namespace Store {
   }
 }
 
-export class StoreView extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
-  getStatus(): string;
-  setStatus(value: string): void;
+export class StoreApply extends jspb.Message {
+  getModel(): number;
+  setModel(value: number): void;
 
   getType(): number;
   setType(value: number): void;
 
-  getName(): string;
-  setName(value: string): void;
+  getProductBusinessId(): string;
+  setProductBusinessId(value: string): void;
 
-  getUrl(): string;
-  setUrl(value: string): void;
+  getProductGroupId(): string;
+  setProductGroupId(value: string): void;
 
-  getPStatus(): string;
-  setPStatus(value: string): void;
+  getCustomerBusinessId(): string;
+  setCustomerBusinessId(value: string): void;
 
-  getCStatus(): string;
-  setCStatus(value: string): void;
+  getCustomerGroupId(): string;
+  setCustomerGroupId(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -133,28 +186,33 @@ export class StoreView extends jspb.Message {
   clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StoreView.AsObject;
-  static toObject(includeInstance: boolean, msg: StoreView): StoreView.AsObject;
-  static serializeBinaryToWriter(message: StoreView, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StoreView;
-  static deserializeBinaryFromReader(message: StoreView, reader: jspb.BinaryReader): StoreView;
+  toObject(includeInstance?: boolean): StoreApply.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreApply): StoreApply.AsObject;
+  static serializeBinaryToWriter(message: StoreApply, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreApply;
+  static deserializeBinaryFromReader(message: StoreApply, reader: jspb.BinaryReader): StoreApply;
 }
 
-export namespace StoreView {
+export namespace StoreApply {
   export type AsObject = {
-    id: number,
-    status: string,
+    model: number,
     type: number,
-    name: string,
-    url: string,
-    pStatus: string,
-    cStatus: string,
+    productBusinessId: string,
+    productGroupId: string,
+    customerBusinessId: string,
+    customerGroupId: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

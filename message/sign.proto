@@ -8,10 +8,11 @@ import "google/protobuf/timestamp.proto";
 
 message Sign {
     double id = 1;
-    double user_id = 2;
-    google.protobuf.Timestamp online_at = 3;
-    google.protobuf.Timestamp offline_at = 4;
-    int32 requests = 5;
-    string address = 6;
-    string userAgent = 7;
+    string type = 2;
+    string user_id = 3;
+    google.protobuf.Timestamp online_at = 4;
+    google.protobuf.Timestamp offline_at = 5;
+    int32 requests = 6;
+    string address = 7;
+    string userAgent = 8;
 }

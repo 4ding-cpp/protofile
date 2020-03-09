@@ -6,17 +6,17 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Manager extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getManagerId(): string;
+  setManagerId(value: string): void;
 
-  getMainId(): number;
-  setMainId(value: number): void;
+  getMainId(): string;
+  setMainId(value: string): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getStoreId(): number;
-  setStoreId(value: number): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -78,10 +78,10 @@ export class Manager extends jspb.Message {
 
 export namespace Manager {
   export type AsObject = {
-    id: number,
-    mainId: number,
-    status: string,
-    storeId: number,
+    managerId: string,
+    mainId: string,
+    storeId: string,
+    status: number,
     phone: string,
     email: string,
     name: string,

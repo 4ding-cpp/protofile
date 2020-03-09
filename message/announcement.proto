@@ -9,7 +9,7 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Announcement {
-    double id = 1;
+    string announcement_id = 1;
     google.protobuf.Timestamp enable_at = 2;
     string area = 3;
     int32 type = 4;

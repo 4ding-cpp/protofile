@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Announcement extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getAnnouncementId(): string;
+  setAnnouncementId(value: string): void;
 
   getEnableAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setEnableAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -63,7 +63,7 @@ export class Announcement extends jspb.Message {
 
 export namespace Announcement {
   export type AsObject = {
-    id: number,
+    announcementId: string,
     enableAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     area: string,
     type: number,

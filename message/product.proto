@@ -4,23 +4,24 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
-import "type.proto";
 import "sql.proto";
+import "image.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Product {
-    double id = 1;
+    string product_id = 1;
     int32 status = 2;
     string code = 3;
-    google.protobuf.Struct name = 4;
-    google.protobuf.Struct cost = 5;
-    google.protobuf.Struct price = 6;
-    google.protobuf.Struct reduce = 7;
+    google.protobuf.Value name = 4;
+    double cost = 5;
+    double price = 6;
+    double reduce = 7;
     double weight = 8;
-    bool store_pickup = 9;
-    string photo = 10;
-    repeated Image image = 11;
+    bool pre_order = 9;
+    bool store_pickup = 10;
+    string photo = 11;
+    repeated Image image = 12;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -32,7 +33,7 @@ message Product {
 
 message ProductLabel {
     string name = 1;
-    repeated double target = 2;
+    repeated string target = 2;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -43,10 +44,9 @@ message ProductLabel {
 }
 
 message ProductGroup {
-    double id = 1;
-    string code = 2;
+    string product_group_id = 1;
     string name = 3;
-    repeated double target = 4;
+    repeated string target = 4;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -57,10 +57,10 @@ message ProductGroup {
 }
 
 message ProductLinker {
-    double id = 1;
+    string product_linker_id = 1;
     string status = 2;
-    double group_id = 3;
-    double store_id = 4;
+    string product_group_id = 3;
+    string store_id = 4;
     double reward = 5;
     
     string operator = 70;
@@ -72,12 +72,12 @@ message ProductLinker {
 }
 
 message ProductSpec {
-    double id = 1;
-    double product_id = 2;
+    string product_spec_id = 1;
+    string product_id = 2;
     int32 status = 3;
-    google.protobuf.Struct spec1 = 4;
-    google.protobuf.Struct spec2 = 5;
-    google.protobuf.Struct spec3 = 6;
+    google.protobuf.Value spec1 = 4;
+    google.protobuf.Value spec2 = 5;
+    google.protobuf.Value spec3 = 6;
     string sku = 7;
     string photo = 8;
     Image image = 9;

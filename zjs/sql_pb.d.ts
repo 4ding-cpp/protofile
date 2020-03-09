@@ -10,8 +10,8 @@ export class Response extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
-  getInsertId(): number;
-  setInsertId(value: number): void;
+  getInsertId(): string;
+  setInsertId(value: string): void;
 
   getAffectRow(): number;
   setAffectRow(value: number): void;
@@ -48,7 +48,7 @@ export namespace Response {
   export type AsObject = {
     code: number,
     message: string,
-    insertId: number,
+    insertId: string,
     affectRow: number,
     pagelimit?: PageLimit.AsObject,
     sortList: Array<Sort.AsObject>,

@@ -79,7 +79,7 @@ proto.ding4.Info.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Info.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    infoId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     area: jspb.Message.getFieldWithDefault(msg, 2, ""),
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
     content: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -127,8 +127,8 @@ proto.ding4.Info.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInfoId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -199,9 +199,9 @@ proto.ding4.Info.prototype.serializeBinary = function() {
  */
 proto.ding4.Info.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getInfoId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -277,20 +277,20 @@ proto.ding4.Info.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string info_id = 1;
+ * @return {string}
  */
-proto.ding4.Info.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Info.prototype.getInfoId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Info} returns this
  */
-proto.ding4.Info.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Info.prototype.setInfoId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

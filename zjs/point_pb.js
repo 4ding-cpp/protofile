@@ -167,9 +167,9 @@ proto.ding4.Point.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Point.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    business: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    state: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    pointId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    state: jspb.Message.getFieldWithDefault(msg, 3, 0),
     price: jspb.Message.getFieldWithDefault(msg, 4, 0),
     bankCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
     lastCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -218,15 +218,15 @@ proto.ding4.Point.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPointId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setBusiness(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBusinessId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setState(value);
       break;
     case 4:
@@ -302,23 +302,23 @@ proto.ding4.Point.prototype.serializeBinary = function() {
  */
 proto.ding4.Point.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getPointId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getBusiness();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getBusinessId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getState();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       3,
       f
     );
@@ -401,47 +401,47 @@ proto.ding4.Point.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string point_id = 1;
+ * @return {string}
  */
-proto.ding4.Point.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Point.prototype.getPointId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Point.prototype.setPointId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double business = 2;
- * @return {number}
+ * optional string business_id = 2;
+ * @return {string}
  */
-proto.ding4.Point.prototype.getBusiness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.ding4.Point.prototype.getBusinessId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setBusiness = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+proto.ding4.Point.prototype.setBusinessId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional double state = 3;
+ * optional int32 state = 3;
  * @return {number}
  */
 proto.ding4.Point.prototype.getState = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -450,7 +450,7 @@ proto.ding4.Point.prototype.getState = function() {
  * @return {!proto.ding4.Point} returns this
  */
 proto.ding4.Point.prototype.setState = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -769,11 +769,11 @@ proto.ding4.PointFlow.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.PointFlow.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    business: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    pointFlowId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
     point: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    related: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    related: jspb.Message.getFieldWithDefault(msg, 5, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -818,12 +818,12 @@ proto.ding4.PointFlow.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPointFlowId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setBusiness(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBusinessId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -834,7 +834,7 @@ proto.ding4.PointFlow.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPoint(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRelated(value);
       break;
     case 70:
@@ -894,16 +894,16 @@ proto.ding4.PointFlow.prototype.serializeBinary = function() {
  */
 proto.ding4.PointFlow.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getPointFlowId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getBusiness();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getBusinessId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -923,8 +923,8 @@ proto.ding4.PointFlow.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getRelated();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -979,38 +979,38 @@ proto.ding4.PointFlow.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string point_flow_id = 1;
+ * @return {string}
  */
-proto.ding4.PointFlow.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.PointFlow.prototype.getPointFlowId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointFlow} returns this
  */
-proto.ding4.PointFlow.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.PointFlow.prototype.setPointFlowId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double business = 2;
- * @return {number}
+ * optional string business_id = 2;
+ * @return {string}
  */
-proto.ding4.PointFlow.prototype.getBusiness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.ding4.PointFlow.prototype.getBusinessId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointFlow} returns this
  */
-proto.ding4.PointFlow.prototype.setBusiness = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+proto.ding4.PointFlow.prototype.setBusinessId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1051,20 +1051,20 @@ proto.ding4.PointFlow.prototype.setPoint = function(value) {
 
 
 /**
- * optional int32 related = 5;
- * @return {number}
+ * optional string related = 5;
+ * @return {string}
  */
 proto.ding4.PointFlow.prototype.getRelated = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointFlow} returns this
  */
 proto.ding4.PointFlow.prototype.setRelated = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1311,10 +1311,10 @@ proto.ding4.PointDetail.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.PointDetail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    business: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    store: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    flowId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    pointDetailId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    pointFlowId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     item: jspb.Message.getFieldWithDefault(msg, 5, ""),
     unitPrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     useVal: jspb.Message.getFieldWithDefault(msg, 7, 0),
@@ -1363,20 +1363,20 @@ proto.ding4.PointDetail.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPointDetailId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setBusiness(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBusinessId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStore(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStoreId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setFlowId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPointFlowId(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1451,30 +1451,30 @@ proto.ding4.PointDetail.prototype.serializeBinary = function() {
  */
 proto.ding4.PointDetail.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getPointDetailId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getBusiness();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getBusinessId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getStore();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStoreId();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getFlowId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getPointFlowId();
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -1557,74 +1557,74 @@ proto.ding4.PointDetail.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string point_detail_id = 1;
+ * @return {string}
  */
-proto.ding4.PointDetail.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.PointDetail.prototype.getPointDetailId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointDetail} returns this
  */
-proto.ding4.PointDetail.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.PointDetail.prototype.setPointDetailId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double business = 2;
- * @return {number}
+ * optional string business_id = 2;
+ * @return {string}
  */
-proto.ding4.PointDetail.prototype.getBusiness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.ding4.PointDetail.prototype.getBusinessId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointDetail} returns this
  */
-proto.ding4.PointDetail.prototype.setBusiness = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+proto.ding4.PointDetail.prototype.setBusinessId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional double store = 3;
- * @return {number}
+ * optional string store_id = 3;
+ * @return {string}
  */
-proto.ding4.PointDetail.prototype.getStore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+proto.ding4.PointDetail.prototype.getStoreId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointDetail} returns this
  */
-proto.ding4.PointDetail.prototype.setStore = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
+proto.ding4.PointDetail.prototype.setStoreId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional double flow_id = 4;
- * @return {number}
+ * optional string point_flow_id = 4;
+ * @return {string}
  */
-proto.ding4.PointDetail.prototype.getFlowId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.ding4.PointDetail.prototype.getPointFlowId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointDetail} returns this
  */
-proto.ding4.PointDetail.prototype.setFlowId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+proto.ding4.PointDetail.prototype.setPointFlowId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2133,7 +2133,7 @@ proto.ding4.PointBonus.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    pointBonusId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     onEvent: jspb.Message.getFieldWithDefault(msg, 2, 0),
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
     point: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -2182,8 +2182,8 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPointBonusId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2258,9 +2258,9 @@ proto.ding4.PointBonus.prototype.serializeBinary = function() {
  */
 proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getPointBonusId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2343,20 +2343,20 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string point_bonus_id = 1;
+ * @return {string}
  */
-proto.ding4.PointBonus.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.PointBonus.prototype.getPointBonusId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.PointBonus.prototype.setPointBonusId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

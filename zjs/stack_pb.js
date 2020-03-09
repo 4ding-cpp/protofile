@@ -123,19 +123,19 @@ proto.ding4.Stack.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Stack.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    business: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    store: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    orderId: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    productId: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    specId: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    activityId: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    salerId: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    type: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    countIn: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
-    countOut: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
+    stackId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    orderId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    productSpecId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    activityId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    discountId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    salerId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    countIn: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
+    countOut: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -180,54 +180,54 @@ proto.ding4.Stack.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setBusiness(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStackId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStore(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStoreId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrderId(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProductId(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSpecId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductSpecId(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setActivityId(value);
       break;
     case 8:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSalerId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDiscountId(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setType(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSalerId(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCountIn(value);
+      msg.setType(value);
       break;
     case 11:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCountIn(value);
+      break;
+    case 12:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setCost(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCountOut(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setProfit(value);
       break;
@@ -288,94 +288,94 @@ proto.ding4.Stack.prototype.serializeBinary = function() {
  */
 proto.ding4.Stack.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStackId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getBusiness();
-  if (f !== 0.0) {
-    writer.writeDouble(
-      2,
-      f
-    );
-  }
-  f = message.getStore();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStoreId();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getOrderId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
   f = message.getProductId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
   }
-  f = message.getSpecId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getProductSpecId();
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
   }
   f = message.getActivityId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
   }
-  f = message.getSalerId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getDiscountId();
+  if (f.length > 0) {
+    writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getSalerId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
   f = message.getType();
   if (f !== 0) {
     writer.writeInt32(
-      9,
+      10,
       f
     );
   }
   f = message.getCountIn();
   if (f !== 0) {
     writer.writeInt32(
-      10,
+      11,
       f
     );
   }
   f = message.getCost();
   if (f !== 0.0) {
     writer.writeDouble(
-      11,
+      12,
       f
     );
   }
   f = message.getCountOut();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      13,
       f
     );
   }
   f = message.getProfit();
   if (f !== 0.0) {
     writer.writeDouble(
-      13,
+      14,
       f
     );
   }
@@ -429,172 +429,154 @@ proto.ding4.Stack.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string stack_id = 1;
+ * @return {string}
  */
-proto.ding4.Stack.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Stack.prototype.getStackId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
-proto.ding4.Stack.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Stack.prototype.setStackId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional double business = 2;
- * @return {number}
+ * optional string store_id = 3;
+ * @return {string}
  */
-proto.ding4.Stack.prototype.getBusiness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.ding4.Stack.prototype.getStoreId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
-proto.ding4.Stack.prototype.setBusiness = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+proto.ding4.Stack.prototype.setStoreId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional double store = 3;
- * @return {number}
- */
-proto.ding4.Stack.prototype.getStore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Stack} returns this
- */
-proto.ding4.Stack.prototype.setStore = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
-};
-
-
-/**
- * optional double order_id = 4;
- * @return {number}
+ * optional string order_id = 4;
+ * @return {string}
  */
 proto.ding4.Stack.prototype.getOrderId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setOrderId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional double product_id = 5;
- * @return {number}
+ * optional string product_id = 5;
+ * @return {string}
  */
 proto.ding4.Stack.prototype.getProductId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setProductId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional double spec_id = 6;
- * @return {number}
+ * optional string product_spec_id = 6;
+ * @return {string}
  */
-proto.ding4.Stack.prototype.getSpecId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+proto.ding4.Stack.prototype.getProductSpecId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
-proto.ding4.Stack.prototype.setSpecId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+proto.ding4.Stack.prototype.setProductSpecId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional double activity_id = 7;
- * @return {number}
+ * optional string activity_id = 7;
+ * @return {string}
  */
 proto.ding4.Stack.prototype.getActivityId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setActivityId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional double saler_id = 8;
- * @return {number}
+ * optional string discount_id = 8;
+ * @return {string}
+ */
+proto.ding4.Stack.prototype.getDiscountId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Stack} returns this
+ */
+proto.ding4.Stack.prototype.setDiscountId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string saler_id = 9;
+ * @return {string}
  */
 proto.ding4.Stack.prototype.getSalerId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setSalerId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional int32 type = 9;
+ * optional int32 type = 10;
  * @return {number}
  */
 proto.ding4.Stack.prototype.getType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Stack} returns this
- */
-proto.ding4.Stack.prototype.setType = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
-};
-
-
-/**
- * optional int32 count_in = 10;
- * @return {number}
- */
-proto.ding4.Stack.prototype.getCountIn = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -603,17 +585,35 @@ proto.ding4.Stack.prototype.getCountIn = function() {
  * @param {number} value
  * @return {!proto.ding4.Stack} returns this
  */
-proto.ding4.Stack.prototype.setCountIn = function(value) {
+proto.ding4.Stack.prototype.setType = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional double cost = 11;
+ * optional int32 count_in = 11;
+ * @return {number}
+ */
+proto.ding4.Stack.prototype.getCountIn = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Stack} returns this
+ */
+proto.ding4.Stack.prototype.setCountIn = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional double cost = 12;
  * @return {number}
  */
 proto.ding4.Stack.prototype.getCost = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
 
@@ -622,16 +622,16 @@ proto.ding4.Stack.prototype.getCost = function() {
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setCost = function(value) {
-  return jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
 /**
- * optional int32 count_out = 12;
+ * optional int32 count_out = 13;
  * @return {number}
  */
 proto.ding4.Stack.prototype.getCountOut = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
@@ -640,16 +640,16 @@ proto.ding4.Stack.prototype.getCountOut = function() {
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setCountOut = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
 /**
- * optional double profit = 13;
+ * optional double profit = 14;
  * @return {number}
  */
 proto.ding4.Stack.prototype.getProfit = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
 };
 
 
@@ -658,7 +658,7 @@ proto.ding4.Stack.prototype.getProfit = function() {
  * @return {!proto.ding4.Stack} returns this
  */
 proto.ding4.Stack.prototype.setProfit = function(value) {
-  return jspb.Message.setProto3FloatField(this, 13, value);
+  return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 

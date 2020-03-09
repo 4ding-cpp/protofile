@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 export class Log extends jspb.Message {
   getId(): number;
@@ -14,11 +15,13 @@ export class Log extends jspb.Message {
   getOperator(): string;
   setOperator(value: string): void;
 
-  getTargetId(): number;
-  setTargetId(value: number): void;
+  getTargetId(): string;
+  setTargetId(value: string): void;
 
-  getDifferent(): string;
-  setDifferent(value: string): void;
+  getDifferent(): google_protobuf_struct_pb.Struct | undefined;
+  setDifferent(value?: google_protobuf_struct_pb.Struct): void;
+  hasDifferent(): boolean;
+  clearDifferent(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Log.AsObject;
@@ -33,34 +36,8 @@ export namespace Log {
     id: number,
     logAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     operator: string,
-    targetId: number,
-    different: string,
-  }
-}
-
-export class Different extends jspb.Message {
-  getF(): string;
-  setF(value: string): void;
-
-  getOld(): string;
-  setOld(value: string): void;
-
-  getNew(): string;
-  setNew(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Different.AsObject;
-  static toObject(includeInstance: boolean, msg: Different): Different.AsObject;
-  static serializeBinaryToWriter(message: Different, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Different;
-  static deserializeBinaryFromReader(message: Different, reader: jspb.BinaryReader): Different;
-}
-
-export namespace Different {
-  export type AsObject = {
-    f: string,
-    old: string,
-    pb_new: string,
+    targetId: string,
+    different?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

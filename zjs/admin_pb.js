@@ -81,7 +81,7 @@ proto.ding4.Admin.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Admin.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    adminId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     phone: jspb.Message.getFieldWithDefault(msg, 3, ""),
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -137,8 +137,8 @@ proto.ding4.Admin.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdminId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -238,9 +238,9 @@ proto.ding4.Admin.prototype.serializeBinary = function() {
  */
 proto.ding4.Admin.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getAdminId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -366,20 +366,20 @@ proto.ding4.Admin.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional string admin_id = 1;
+ * @return {string}
  */
-proto.ding4.Admin.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Admin.prototype.getAdminId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Admin} returns this
  */
-proto.ding4.Admin.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.ding4.Admin.prototype.setAdminId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

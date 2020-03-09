@@ -5,11 +5,11 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Activity extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getActivityId(): string;
+  setActivityId(value: string): void;
 
-  getStoreId(): number;
-  setStoreId(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -21,29 +21,34 @@ export class Activity extends jspb.Message {
   hasEndAt(): boolean;
   clearEndAt(): void;
 
-  getName(): string;
-  setName(value: string): void;
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getType(): number;
+  setType(value: number): void;
 
-  getItem(): string;
-  setItem(value: string): void;
+  getItem(): number;
+  setItem(value: number): void;
 
-  getCond(): string;
-  setCond(value: string): void;
+  getCond(): number;
+  setCond(value: number): void;
 
   getCondV(): number;
   setCondV(value: number): void;
 
-  getRepeat(): boolean;
-  setRepeat(value: boolean): void;
+  getRepeated(): boolean;
+  setRepeated(value: boolean): void;
 
-  getExec(): string;
-  setExec(value: string): void;
+  getActive(): number;
+  setActive(value: number): void;
 
-  getExecV(): number;
-  setExecV(value: number): void;
+  getActiveV(): number;
+  setActiveV(value: number): void;
+
+  getValue(): number;
+  setValue(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -83,18 +88,19 @@ export class Activity extends jspb.Message {
 
 export namespace Activity {
   export type AsObject = {
-    id: number,
-    storeId: number,
+    activityId: string,
+    storeId: string,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    name: string,
-    type: string,
-    item: string,
-    cond: string,
+    name?: google_protobuf_struct_pb.Value.AsObject,
+    type: number,
+    item: number,
+    cond: number,
     condV: number,
-    repeat: boolean,
-    exec: string,
-    execV: number,
+    repeated: boolean,
+    active: number,
+    activeV: number,
+    value: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -104,15 +110,45 @@ export namespace Activity {
   }
 }
 
+export class ActivityProduct extends jspb.Message {
+  getActivityId(): string;
+  setActivityId(value: string): void;
+
+  getProductIdList(): Array<string>;
+  setProductIdList(value: Array<string>): void;
+  clearProductIdList(): void;
+  addProductId(value: string, index?: number): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActivityProduct.AsObject;
+  static toObject(includeInstance: boolean, msg: ActivityProduct): ActivityProduct.AsObject;
+  static serializeBinaryToWriter(message: ActivityProduct, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActivityProduct;
+  static deserializeBinaryFromReader(message: ActivityProduct, reader: jspb.BinaryReader): ActivityProduct;
+}
+
+export namespace ActivityProduct {
+  export type AsObject = {
+    activityId: string,
+    productIdList: Array<string>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
 export class Discount extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getDiscountId(): string;
+  setDiscountId(value: string): void;
 
-  getStoreId(): number;
-  setStoreId(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getLevelId(): number;
-  setLevelId(value: number): void;
+  getLevelId(): string;
+  setLevelId(value: string): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -124,8 +160,22 @@ export class Discount extends jspb.Message {
   hasEndAt(): boolean;
   clearEndAt(): void;
 
-  getName(): string;
-  setName(value: string): void;
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
+
+  getCond(): number;
+  setCond(value: number): void;
+
+  getCondV(): number;
+  setCondV(value: number): void;
+
+  getActive(): number;
+  setActive(value: number): void;
+
+  getActiveV(): number;
+  setActiveV(value: number): void;
 
   getAutoSet(): boolean;
   setAutoSet(value: boolean): void;
@@ -174,12 +224,16 @@ export class Discount extends jspb.Message {
 
 export namespace Discount {
   export type AsObject = {
-    id: number,
-    storeId: number,
-    levelId: number,
+    discountId: string,
+    storeId: string,
+    levelId: string,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    name: string,
+    name?: google_protobuf_struct_pb.Value.AsObject,
+    cond: number,
+    condV: number,
+    active: number,
+    activeV: number,
     autoSet: boolean,
     setCode: string,
     times: number,
@@ -188,6 +242,42 @@ export namespace Discount {
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class DiscountMap extends jspb.Message {
+  getId(): number;
+  setId(value: number): void;
+
+  getDiscountId(): string;
+  setDiscountId(value: string): void;
+
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
+
+  getCode(): string;
+  setCode(value: string): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DiscountMap.AsObject;
+  static toObject(includeInstance: boolean, msg: DiscountMap): DiscountMap.AsObject;
+  static serializeBinaryToWriter(message: DiscountMap, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DiscountMap;
+  static deserializeBinaryFromReader(message: DiscountMap, reader: jspb.BinaryReader): DiscountMap;
+}
+
+export namespace DiscountMap {
+  export type AsObject = {
+    id: number,
+    discountId: string,
+    customerId: string,
+    code: string,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }

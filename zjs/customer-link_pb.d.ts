@@ -4,18 +4,18 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class CustomerD extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+export class CustomerLink extends jspb.Message {
+  getCustomerLinkId(): string;
+  setCustomerLinkId(value: string): void;
 
-  getStore(): number;
-  setStore(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getCustomerId(): number;
-  setCustomerId(value: number): void;
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
 
-  getLevelId(): number;
-  setLevelId(value: number): void;
+  getLevelId(): string;
+  setLevelId(value: string): void;
 
   getReceiveNews(): boolean;
   setReceiveNews(value: boolean): void;
@@ -64,19 +64,19 @@ export class CustomerD extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomerD.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomerD): CustomerD.AsObject;
-  static serializeBinaryToWriter(message: CustomerD, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomerD;
-  static deserializeBinaryFromReader(message: CustomerD, reader: jspb.BinaryReader): CustomerD;
+  toObject(includeInstance?: boolean): CustomerLink.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomerLink): CustomerLink.AsObject;
+  static serializeBinaryToWriter(message: CustomerLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomerLink;
+  static deserializeBinaryFromReader(message: CustomerLink, reader: jspb.BinaryReader): CustomerLink;
 }
 
-export namespace CustomerD {
+export namespace CustomerLink {
   export type AsObject = {
-    id: number,
-    store: number,
-    customerId: number,
-    levelId: number,
+    customerLinkId: string,
+    storeId: string,
+    customerId: string,
+    levelId: string,
     receiveNews: boolean,
     name: string,
     phone: string,
@@ -93,11 +93,11 @@ export namespace CustomerD {
 }
 
 export class CustomerLevel extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getCustomerLevelId(): string;
+  setCustomerLevelId(value: string): void;
 
-  getStore(): number;
-  setStore(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
@@ -155,8 +155,8 @@ export class CustomerLevel extends jspb.Message {
 
 export namespace CustomerLevel {
   export type AsObject = {
-    id: number,
-    store: number,
+    customerLevelId: string,
+    storeId: string,
     status: number,
     name: string,
     payAmount: number,

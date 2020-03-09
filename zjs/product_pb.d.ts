@@ -1,13 +1,13 @@
 import * as jspb from "google-protobuf"
 
-import * as type_pb from './type_pb';
 import * as sql_pb from './sql_pb';
+import * as image_pb from './image_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Product extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getProductId(): string;
+  setProductId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
@@ -15,28 +15,25 @@ export class Product extends jspb.Message {
   getCode(): string;
   setCode(value: string): void;
 
-  getName(): google_protobuf_struct_pb.Struct | undefined;
-  setName(value?: google_protobuf_struct_pb.Struct): void;
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
   clearName(): void;
 
-  getCost(): google_protobuf_struct_pb.Struct | undefined;
-  setCost(value?: google_protobuf_struct_pb.Struct): void;
-  hasCost(): boolean;
-  clearCost(): void;
+  getCost(): number;
+  setCost(value: number): void;
 
-  getPrice(): google_protobuf_struct_pb.Struct | undefined;
-  setPrice(value?: google_protobuf_struct_pb.Struct): void;
-  hasPrice(): boolean;
-  clearPrice(): void;
+  getPrice(): number;
+  setPrice(value: number): void;
 
-  getReduce(): google_protobuf_struct_pb.Struct | undefined;
-  setReduce(value?: google_protobuf_struct_pb.Struct): void;
-  hasReduce(): boolean;
-  clearReduce(): void;
+  getReduce(): number;
+  setReduce(value: number): void;
 
   getWeight(): number;
   setWeight(value: number): void;
+
+  getPreOrder(): boolean;
+  setPreOrder(value: boolean): void;
 
   getStorePickup(): boolean;
   setStorePickup(value: boolean): void;
@@ -44,10 +41,10 @@ export class Product extends jspb.Message {
   getPhoto(): string;
   setPhoto(value: string): void;
 
-  getImageList(): Array<type_pb.Image>;
-  setImageList(value: Array<type_pb.Image>): void;
+  getImageList(): Array<image_pb.Image>;
+  setImageList(value: Array<image_pb.Image>): void;
   clearImageList(): void;
-  addImage(value?: type_pb.Image, index?: number): type_pb.Image;
+  addImage(value?: image_pb.Image, index?: number): image_pb.Image;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -87,17 +84,18 @@ export class Product extends jspb.Message {
 
 export namespace Product {
   export type AsObject = {
-    id: number,
+    productId: string,
     status: number,
     code: string,
-    name?: google_protobuf_struct_pb.Struct.AsObject,
-    cost?: google_protobuf_struct_pb.Struct.AsObject,
-    price?: google_protobuf_struct_pb.Struct.AsObject,
-    reduce?: google_protobuf_struct_pb.Struct.AsObject,
+    name?: google_protobuf_struct_pb.Value.AsObject,
+    cost: number,
+    price: number,
+    reduce: number,
     weight: number,
+    preOrder: boolean,
     storePickup: boolean,
     photo: string,
-    imageList: Array<type_pb.Image.AsObject>,
+    imageList: Array<image_pb.Image.AsObject>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -111,10 +109,10 @@ export class ProductLabel extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getTargetList(): Array<number>;
-  setTargetList(value: Array<number>): void;
+  getTargetList(): Array<string>;
+  setTargetList(value: Array<string>): void;
   clearTargetList(): void;
-  addTarget(value: number, index?: number): void;
+  addTarget(value: string, index?: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -155,7 +153,7 @@ export class ProductLabel extends jspb.Message {
 export namespace ProductLabel {
   export type AsObject = {
     name: string,
-    targetList: Array<number>,
+    targetList: Array<string>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -166,19 +164,16 @@ export namespace ProductLabel {
 }
 
 export class ProductGroup extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
-  getCode(): string;
-  setCode(value: string): void;
+  getProductGroupId(): string;
+  setProductGroupId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
 
-  getTargetList(): Array<number>;
-  setTargetList(value: Array<number>): void;
+  getTargetList(): Array<string>;
+  setTargetList(value: Array<string>): void;
   clearTargetList(): void;
-  addTarget(value: number, index?: number): void;
+  addTarget(value: string, index?: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -218,10 +213,9 @@ export class ProductGroup extends jspb.Message {
 
 export namespace ProductGroup {
   export type AsObject = {
-    id: number,
-    code: string,
+    productGroupId: string,
     name: string,
-    targetList: Array<number>,
+    targetList: Array<string>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -232,17 +226,17 @@ export namespace ProductGroup {
 }
 
 export class ProductLinker extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getProductLinkerId(): string;
+  setProductLinkerId(value: string): void;
 
   getStatus(): string;
   setStatus(value: string): void;
 
-  getGroupId(): number;
-  setGroupId(value: number): void;
+  getProductGroupId(): string;
+  setProductGroupId(value: string): void;
 
-  getStoreId(): number;
-  setStoreId(value: number): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   getReward(): number;
   setReward(value: number): void;
@@ -285,10 +279,10 @@ export class ProductLinker extends jspb.Message {
 
 export namespace ProductLinker {
   export type AsObject = {
-    id: number,
+    productLinkerId: string,
     status: string,
-    groupId: number,
-    storeId: number,
+    productGroupId: string,
+    storeId: string,
     reward: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -300,27 +294,27 @@ export namespace ProductLinker {
 }
 
 export class ProductSpec extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getProductSpecId(): string;
+  setProductSpecId(value: string): void;
 
-  getProductId(): number;
-  setProductId(value: number): void;
+  getProductId(): string;
+  setProductId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
 
-  getSpec1(): google_protobuf_struct_pb.Struct | undefined;
-  setSpec1(value?: google_protobuf_struct_pb.Struct): void;
+  getSpec1(): google_protobuf_struct_pb.Value | undefined;
+  setSpec1(value?: google_protobuf_struct_pb.Value): void;
   hasSpec1(): boolean;
   clearSpec1(): void;
 
-  getSpec2(): google_protobuf_struct_pb.Struct | undefined;
-  setSpec2(value?: google_protobuf_struct_pb.Struct): void;
+  getSpec2(): google_protobuf_struct_pb.Value | undefined;
+  setSpec2(value?: google_protobuf_struct_pb.Value): void;
   hasSpec2(): boolean;
   clearSpec2(): void;
 
-  getSpec3(): google_protobuf_struct_pb.Struct | undefined;
-  setSpec3(value?: google_protobuf_struct_pb.Struct): void;
+  getSpec3(): google_protobuf_struct_pb.Value | undefined;
+  setSpec3(value?: google_protobuf_struct_pb.Value): void;
   hasSpec3(): boolean;
   clearSpec3(): void;
 
@@ -330,8 +324,8 @@ export class ProductSpec extends jspb.Message {
   getPhoto(): string;
   setPhoto(value: string): void;
 
-  getImage(): type_pb.Image | undefined;
-  setImage(value?: type_pb.Image): void;
+  getImage(): image_pb.Image | undefined;
+  setImage(value?: image_pb.Image): void;
   hasImage(): boolean;
   clearImage(): void;
 
@@ -373,15 +367,15 @@ export class ProductSpec extends jspb.Message {
 
 export namespace ProductSpec {
   export type AsObject = {
-    id: number,
-    productId: number,
+    productSpecId: string,
+    productId: string,
     status: number,
-    spec1?: google_protobuf_struct_pb.Struct.AsObject,
-    spec2?: google_protobuf_struct_pb.Struct.AsObject,
-    spec3?: google_protobuf_struct_pb.Struct.AsObject,
+    spec1?: google_protobuf_struct_pb.Value.AsObject,
+    spec2?: google_protobuf_struct_pb.Value.AsObject,
+    spec3?: google_protobuf_struct_pb.Value.AsObject,
     sku: string,
     photo: string,
-    image?: type_pb.Image.AsObject,
+    image?: image_pb.Image.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

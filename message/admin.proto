@@ -10,7 +10,7 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 message Admin {
-    double id = 1;
+    string admin_id = 1;
     int32 status = 2;
     string phone = 3;
     string email = 4;

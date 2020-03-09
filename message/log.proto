@@ -5,17 +5,12 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
 
 message Log {
     double id = 1;
     google.protobuf.Timestamp log_at = 2;
     string operator = 3;
-    double target_id = 4;
-    string different = 5;
-}
-
-message Different {
-    string f = 1;
-    string old = 2;
-    string new = 3;
+    string target_id = 4;
+    google.protobuf.Struct different = 5;
 }

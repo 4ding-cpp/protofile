@@ -4,16 +4,19 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
-import "type.proto";
 import "sql.proto";
 import "business.proto";
-import "product.proto";
+import "manager.proto";
 import "customer.proto";
+import "product.proto";
+import "label.proto";
+import "image.proto";
 import "store.proto";
+import "remind.proto";
 import "order.proto";
-import "address.proto";
 import "stack.proto";
 import "supplier.proto";
+import "setting.proto";
 
 
 service BusinessRPC {
@@ -29,33 +32,12 @@ service BusinessRPC {
     rpc CreateBusiness(Business) returns (Response);
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
+    rpc RecordBusiness(Query) returns (Response);
 
-    rpc CreateProduct(Product) returns (Response);
-    rpc UpdateProduct(Product) returns (Response);
-    rpc FindProduct(Query) returns (Response);
-    rpc RecordProduct(Query) returns (Response);
-
-    rpc CreateProductLabel(ProductLabel) returns (Response);
-    rpc UpdateProductLabel(ProductLabel) returns (Response);
-    rpc FindProductLabel(Query) returns (Response);
-
-    rpc CreateProductGroup(ProductGroup) returns (Response);
-    rpc AppendProductGroup(ProductGroup) returns (Response);
-    rpc SubtractProductGroup(ProductGroup) returns (Response);
-    rpc UpdateProductGroup(ProductGroup) returns (Response);
-    rpc FindProductGroup(Query) returns (Response);
-
-    rpc CreateProductLinker(ProductLinker) returns (Response);
-    rpc UpdateProductLinker(ProductLinker) returns (Response);
-    rpc FindProductLinker(Query) returns (Response);
-
-    rpc CreateProductSpec(ProductSpec) returns (Response);
-    rpc UpdateProductSpec(ProductSpec) returns (Response);
-    rpc FindProductSpec(Query) returns (Response);
-
-    rpc CreateImage(Image) returns (Response);
-    rpc UpdateImage(Image) returns (Response);
-    rpc FindImage(Query) returns (Response);
+    rpc CreateManager(Manager) returns (Response);
+    rpc UpdateManager(Manager) returns (Response);
+    rpc FindManager(Query) returns (Response);
+    rpc RecordManager(Query) returns (Response);
 
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
@@ -74,20 +56,52 @@ service BusinessRPC {
 
     rpc CreateCustomerLinker(CustomerLinker) returns (Response);
     rpc UpdateCustomerLinker(CustomerLinker) returns (Response);
-    rpc FindCustomerLinker(Query) returns (Response);
+    rpc FindCustomerLinker(Query) returns (Response);    
 
+    rpc CreateProduct(Product) returns (Response);
+    rpc UpdateProduct(Product) returns (Response);
+    rpc FindProduct(Query) returns (Response);
+    rpc RecordProduct(Query) returns (Response);
+    rpc CreateProductImage(Image) returns (Response);
+    rpc UpdateProductImage(Image) returns (Response);
+    rpc DeleteProductImage(Image) returns (Response);
+
+    rpc CreateProductLabel(Label) returns (Response);
+    rpc UpdateProductLabel(Label) returns (Response);
+    rpc FindProductLabel(Query) returns (Response);
+
+    rpc CreateProductGroup(ProductGroup) returns (Response);
+    rpc AppendProductGroup(ProductGroup) returns (Response);
+    rpc SubtractProductGroup(ProductGroup) returns (Response);
+    rpc UpdateProductGroup(ProductGroup) returns (Response);
+    rpc FindProductGroup(Query) returns (Response);
+
+    rpc CreateProductLinker(ProductLinker) returns (Response);
+    rpc UpdateProductLinker(ProductLinker) returns (Response);
+    rpc FindProductLinker(Query) returns (Response);
+
+    rpc CreateProductSpec(ProductSpec) returns (Response);
+    rpc UpdateProductSpec(ProductSpec) returns (Response);
+    rpc FindProductSpec(Query) returns (Response);
+    rpc CreateProductSpecImage(Image) returns (Response);
+    rpc UpdateProductSpecImage(Image) returns (Response);
+    rpc DeleteProductSpecImage(Image) returns (Response);    
+
+    rpc RegisterStore(StoreApply) returns (Response);
     rpc CreateStore(Store) returns (Response);
     rpc UpdateStore(Store) returns (Response);
     rpc FindStore(Query) returns (Response);
     rpc RecordStore(Query) returns (Response);
 
-    rpc CreateOrder(OrderNew) returns (Response);
-    rpc UpdateOrder(Order) returns (Response);
-    rpc FindOrder(Query) returns (Response);
+    rpc CreateRemind(Remind) returns (Response);
+    rpc UpdateRemind(Remind) returns (Response);
+    rpc FindRemind(Query) returns (Response);
 
-    rpc CreateAddress(Address) returns (Response);
-    rpc UpdateAddress(Address) returns (Response);
-    rpc FindAddress(Query) returns (Response);
+    rpc CreateOrder(Order) returns (Response);
+    rpc PaymentOrder(Order) returns (Response);
+    rpc UpdatePayState(Order) returns (Response);
+    rpc UpdateDeliveryState(Order) returns (Response);
+    rpc FindOrder(Query) returns (Response);
 
     rpc CreateStack(Stack) returns (Response);
     rpc FindStack(Query) returns (Response);
@@ -98,4 +112,9 @@ service BusinessRPC {
     rpc CreateSupplier(Supplier) returns (Response);
     rpc UpdateSupplier(Supplier) returns (Response);
     rpc FindSupplier(Query) returns (Response);
+
+    rpc CreateSetting(Setting) returns (Response);
+    rpc UpdateSetting(Setting) returns (Response);
+    rpc DeleteSetting(Setting) returns (Response);
+    rpc FindSetting(Query) returns (Response);
 }

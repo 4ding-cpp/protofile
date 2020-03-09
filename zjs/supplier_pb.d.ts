@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Supplier extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getSupplierId(): string;
+  setSupplierId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -55,7 +55,7 @@ export class Supplier extends jspb.Message {
 
 export namespace Supplier {
   export type AsObject = {
-    id: number,
+    supplierId: string,
     name: string,
     phone: string,
     remark: string,
