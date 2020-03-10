@@ -431,6 +431,50 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoAppendLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  appendLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/AppendLabel',
+      request,
+      metadata || {},
+      this.methodInfoAppendLabel,
+      callback);
+  }
+
+  methodInfoSubtractLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  subtractLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/SubtractLabel',
+      request,
+      metadata || {},
+      this.methodInfoSubtractLabel,
+      callback);
+  }
+
   methodInfoFindLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {

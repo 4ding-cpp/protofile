@@ -38,6 +38,8 @@ service AdminRPC {
 
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
+    rpc AppendLabel(Label) returns (Response);
+    rpc SubtractLabel(Label) returns (Response);
     rpc FindLabel(Query) returns (Response);
     
     rpc CreateInfo(Info) returns (Response);
