@@ -7,6 +7,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 import "sql.proto";
 import "business.proto";
 import "manager.proto";
+import "linker.proto";
 import "customer.proto";
 import "product.proto";
 import "label.proto";
@@ -39,24 +40,20 @@ service BusinessRPC {
     rpc FindManager(Query) returns (Response);
     rpc RecordManager(Query) returns (Response);
 
+    rpc CreateLabel(Label) returns (Response);
+    rpc UpdateLabel(Label) returns (Response);
+    rpc AppendLabel(Label) returns (Response);
+    rpc SubtractLabel(Label) returns (Response);
+    rpc FindLabel(Query) returns (Response);
+
+    rpc CreateLinker(Linker) returns (Response);
+    rpc UpdateLinker(Linker) returns (Response);
+    rpc FindLinker(Query) returns (Response);    
+
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Query) returns (Response);
-
-    rpc CreateCustomerLabel(CustomerLabel) returns (Response);
-    rpc UpdateCustomerLabel(CustomerLabel) returns (Response);
-    rpc FindCustomerLabel(Query) returns (Response);
-
-    rpc CreateCustomerGroup(CustomerGroup) returns (Response);
-    rpc AppendCustomerGroup(CustomerGroup) returns (Response);
-    rpc SubtractCustomerGroup(CustomerGroup) returns (Response);
-    rpc UpdateCustomerGroup(CustomerGroup) returns (Response);
-    rpc FindCustomerGroup(Query) returns (Response);
-
-    rpc CreateCustomerLinker(CustomerLinker) returns (Response);
-    rpc UpdateCustomerLinker(CustomerLinker) returns (Response);
-    rpc FindCustomerLinker(Query) returns (Response);    
 
     rpc CreateProduct(Product) returns (Response);
     rpc UpdateProduct(Product) returns (Response);
@@ -66,20 +63,6 @@ service BusinessRPC {
     rpc UpdateProductImage(Image) returns (Response);
     rpc DeleteProductImage(Image) returns (Response);
 
-    rpc CreateProductLabel(Label) returns (Response);
-    rpc UpdateProductLabel(Label) returns (Response);
-    rpc FindProductLabel(Query) returns (Response);
-
-    rpc CreateProductGroup(ProductGroup) returns (Response);
-    rpc AppendProductGroup(ProductGroup) returns (Response);
-    rpc SubtractProductGroup(ProductGroup) returns (Response);
-    rpc UpdateProductGroup(ProductGroup) returns (Response);
-    rpc FindProductGroup(Query) returns (Response);
-
-    rpc CreateProductLinker(ProductLinker) returns (Response);
-    rpc UpdateProductLinker(ProductLinker) returns (Response);
-    rpc FindProductLinker(Query) returns (Response);
-
     rpc CreateProductSpec(ProductSpec) returns (Response);
     rpc UpdateProductSpec(ProductSpec) returns (Response);
     rpc FindProductSpec(Query) returns (Response);
@@ -87,7 +70,7 @@ service BusinessRPC {
     rpc UpdateProductSpecImage(Image) returns (Response);
     rpc DeleteProductSpecImage(Image) returns (Response);    
 
-    rpc RegisterStore(StoreApply) returns (Response);
+    rpc RegisterStore(Store) returns (Response);
     rpc CreateStore(Store) returns (Response);
     rpc UpdateStore(Store) returns (Response);
     rpc FindStore(Query) returns (Response);

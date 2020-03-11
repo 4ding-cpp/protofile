@@ -26,8 +26,8 @@ export class Store extends jspb.Message {
   getProductBusinessId(): string;
   setProductBusinessId(value: string): void;
 
-  getProductGroupId(): string;
-  setProductGroupId(value: string): void;
+  getProductLabelId(): string;
+  setProductLabelId(value: string): void;
 
   getProductStatus(): string;
   setProductStatus(value: string): void;
@@ -35,8 +35,8 @@ export class Store extends jspb.Message {
   getCustomerBusinessId(): string;
   setCustomerBusinessId(value: string): void;
 
-  getCustomerGroupId(): string;
-  setCustomerGroupId(value: string): void;
+  getCustomerLabelId(): string;
+  setCustomerLabelId(value: string): void;
 
   getCustomerStatus(): string;
   setCustomerStatus(value: string): void;
@@ -119,10 +119,10 @@ export namespace Store {
     host: string,
     identify: string,
     productBusinessId: string,
-    productGroupId: string,
+    productLabelId: string,
     productStatus: string,
     customerBusinessId: string,
-    customerGroupId: string,
+    customerLabelId: string,
     customerStatus: string,
     open: boolean,
     phone: string,
@@ -135,78 +135,6 @@ export namespace Store {
     instagramId: string,
     lineId: string,
     lineAt: string,
-    operator: string,
-    createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
-  }
-}
-
-export class StoreApply extends jspb.Message {
-  getModel(): number;
-  setModel(value: number): void;
-
-  getType(): number;
-  setType(value: number): void;
-
-  getProductBusinessId(): string;
-  setProductBusinessId(value: string): void;
-
-  getProductGroupId(): string;
-  setProductGroupId(value: string): void;
-
-  getCustomerBusinessId(): string;
-  setCustomerBusinessId(value: string): void;
-
-  getCustomerGroupId(): string;
-  setCustomerGroupId(value: string): void;
-
-  getOperator(): string;
-  setOperator(value: string): void;
-
-  getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreateAt(): boolean;
-  clearCreateAt(): void;
-
-  getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
-
-  getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
-
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StoreApply.AsObject;
-  static toObject(includeInstance: boolean, msg: StoreApply): StoreApply.AsObject;
-  static serializeBinaryToWriter(message: StoreApply, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StoreApply;
-  static deserializeBinaryFromReader(message: StoreApply, reader: jspb.BinaryReader): StoreApply;
-}
-
-export namespace StoreApply {
-  export type AsObject = {
-    model: number,
-    type: number,
-    productBusinessId: string,
-    productGroupId: string,
-    customerBusinessId: string,
-    customerGroupId: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

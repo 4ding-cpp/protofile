@@ -18,6 +18,8 @@ var business_pb = require('./business_pb.js');
 goog.object.extend(proto, business_pb);
 var manager_pb = require('./manager_pb.js');
 goog.object.extend(proto, manager_pb);
+var linker_pb = require('./linker_pb.js');
+goog.object.extend(proto, linker_pb);
 var customer_pb = require('./customer_pb.js');
 goog.object.extend(proto, customer_pb);
 var product_pb = require('./product_pb.js');

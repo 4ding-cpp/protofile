@@ -23,6 +23,7 @@ service AdminRPC {
     rpc ChangePassword(Admin) returns (Response);
     rpc ChangeInfo(Admin) returns (Response);
     rpc ChangeWhitelist(Admin) returns (Response);
+    rpc FindPermission(Query) returns (Response);
 
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);

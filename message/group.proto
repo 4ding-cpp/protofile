@@ -8,11 +8,11 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-message Label {
-    string label_id = 1;
+message Group {
+    string group_id = 1;
     string type = 2;
     string name = 3;
-    repeated string item = 4;
+    bool all = 4;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

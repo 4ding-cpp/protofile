@@ -8,16 +8,18 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-message Label {
-    string label_id = 1;
+message Linker {
+    string linker_id = 1;
     string type = 2;
-    string name = 3;
-    repeated string item = 4;
+    int32 status = 3;
+    string label_id = 4;
+    string store_id = 5;
+    double reward = 6;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
     repeated string cols = 73;
     repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;    
+    google.protobuf.Struct self = 75;        
 }

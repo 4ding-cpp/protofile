@@ -4,20 +4,24 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class Label extends jspb.Message {
-  getLabelId(): string;
-  setLabelId(value: string): void;
+export class Linker extends jspb.Message {
+  getLinkerId(): string;
+  setLinkerId(value: string): void;
 
   getType(): string;
   setType(value: string): void;
 
-  getName(): string;
-  setName(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
-  getItemList(): Array<string>;
-  setItemList(value: Array<string>): void;
-  clearItemList(): void;
-  addItem(value: string, index?: number): void;
+  getLabelId(): string;
+  setLabelId(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
+  getReward(): number;
+  setReward(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -48,19 +52,21 @@ export class Label extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Label.AsObject;
-  static toObject(includeInstance: boolean, msg: Label): Label.AsObject;
-  static serializeBinaryToWriter(message: Label, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Label;
-  static deserializeBinaryFromReader(message: Label, reader: jspb.BinaryReader): Label;
+  toObject(includeInstance?: boolean): Linker.AsObject;
+  static toObject(includeInstance: boolean, msg: Linker): Linker.AsObject;
+  static serializeBinaryToWriter(message: Linker, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Linker;
+  static deserializeBinaryFromReader(message: Linker, reader: jspb.BinaryReader): Linker;
 }
 
-export namespace Label {
+export namespace Linker {
   export type AsObject = {
-    labelId: string,
+    linkerId: string,
     type: string,
-    name: string,
-    itemList: Array<string>,
+    status: number,
+    labelId: string,
+    storeId: string,
+    reward: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

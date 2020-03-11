@@ -4,9 +4,9 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class Label extends jspb.Message {
-  getLabelId(): string;
-  setLabelId(value: string): void;
+export class Group extends jspb.Message {
+  getGroupId(): string;
+  setGroupId(value: string): void;
 
   getType(): string;
   setType(value: string): void;
@@ -14,10 +14,8 @@ export class Label extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getItemList(): Array<string>;
-  setItemList(value: Array<string>): void;
-  clearItemList(): void;
-  addItem(value: string, index?: number): void;
+  getAll(): boolean;
+  setAll(value: boolean): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -48,19 +46,19 @@ export class Label extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Label.AsObject;
-  static toObject(includeInstance: boolean, msg: Label): Label.AsObject;
-  static serializeBinaryToWriter(message: Label, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Label;
-  static deserializeBinaryFromReader(message: Label, reader: jspb.BinaryReader): Label;
+  toObject(includeInstance?: boolean): Group.AsObject;
+  static toObject(includeInstance: boolean, msg: Group): Group.AsObject;
+  static serializeBinaryToWriter(message: Group, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Group;
+  static deserializeBinaryFromReader(message: Group, reader: jspb.BinaryReader): Group;
 }
 
-export namespace Label {
+export namespace Group {
   export type AsObject = {
-    labelId: string,
+    groupId: string,
     type: string,
     name: string,
-    itemList: Array<string>,
+    all: boolean,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
