@@ -18,6 +18,7 @@ import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
 import * as adv_pb from './adv_pb';
+import * as setting_pb from './setting_pb';
 
 export class AdminRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -409,6 +410,94 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoCreateBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: business_pb.BusinessHost) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createBusinessHost(
+    request: business_pb.BusinessHost,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreateBusinessHost',
+      request,
+      metadata || {},
+      this.methodInfoCreateBusinessHost,
+      callback);
+  }
+
+  methodInfoDeleteBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: business_pb.BusinessHost) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteBusinessHost(
+    request: business_pb.BusinessHost,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteBusinessHost',
+      request,
+      metadata || {},
+      this.methodInfoDeleteBusinessHost,
+      callback);
+  }
+
+  methodInfoFindBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findBusinessHost(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindBusinessHost',
+      request,
+      metadata || {},
+      this.methodInfoFindBusinessHost,
+      callback);
+  }
+
+  methodInfoFlushBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  flushBusinessHost(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FlushBusinessHost',
+      request,
+      metadata || {},
+      this.methodInfoFlushBusinessHost,
+      callback);
+  }
+
   methodInfoCreateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: label_pb.Label) => {
@@ -651,6 +740,50 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoCreatePointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBonus) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createPointBonus(
+    request: point_pb.PointBonus,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreatePointBonus',
+      request,
+      metadata || {},
+      this.methodInfoCreatePointBonus,
+      callback);
+  }
+
+  methodInfoFindPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPointBonus(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindPointBonus',
+      request,
+      metadata || {},
+      this.methodInfoFindPointBonus,
+      callback);
+  }
+
   methodInfoCreatePoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.Point) => {
@@ -739,6 +872,94 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoCreatePointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBill) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createPointBill(
+    request: point_pb.PointBill,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreatePointBill',
+      request,
+      metadata || {},
+      this.methodInfoCreatePointBill,
+      callback);
+  }
+
+  methodInfoComfirmPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBill) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  comfirmPointBill(
+    request: point_pb.PointBill,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/ComfirmPointBill',
+      request,
+      metadata || {},
+      this.methodInfoComfirmPointBill,
+      callback);
+  }
+
+  methodInfoFindPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPointBill(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindPointBill',
+      request,
+      metadata || {},
+      this.methodInfoFindPointBill,
+      callback);
+  }
+
+  methodInfoFindPointDetail = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPointDetail(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindPointDetail',
+      request,
+      metadata || {},
+      this.methodInfoFindPointDetail,
+      callback);
+  }
+
   methodInfoCreatePointFlow = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.PointFlow) => {
@@ -780,94 +1001,6 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoFindPointFlow,
-      callback);
-  }
-
-  methodInfoCreatePointBill = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: point_pb.PointBill) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createPointBill(
-    request: point_pb.PointBill,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/CreatePointBill',
-      request,
-      metadata || {},
-      this.methodInfoCreatePointBill,
-      callback);
-  }
-
-  methodInfoFindPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findPointBill(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/FindPointBill',
-      request,
-      metadata || {},
-      this.methodInfoFindPointBill,
-      callback);
-  }
-
-  methodInfoCreatePointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: point_pb.PointBonus) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createPointBonus(
-    request: point_pb.PointBonus,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/CreatePointBonus',
-      request,
-      metadata || {},
-      this.methodInfoCreatePointBonus,
-      callback);
-  }
-
-  methodInfoFindPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findPointBonus(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/FindPointBonus',
-      request,
-      metadata || {},
-      this.methodInfoFindPointBonus,
       callback);
   }
 
@@ -1022,6 +1155,72 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoFindAdvRecord,
+      callback);
+  }
+
+  methodInfoCreateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: setting_pb.Setting) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createSetting(
+    request: setting_pb.Setting,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreateSetting',
+      request,
+      metadata || {},
+      this.methodInfoCreateSetting,
+      callback);
+  }
+
+  methodInfoUpdateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: setting_pb.Setting) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateSetting(
+    request: setting_pb.Setting,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdateSetting',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSetting,
+      callback);
+  }
+
+  methodInfoFindSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findSetting(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindSetting',
+      request,
+      metadata || {},
+      this.methodInfoFindSetting,
       callback);
   }
 

@@ -104,7 +104,7 @@ proto.ding4.CustomerLink.toObject = function(includeInstance, msg) {
     customerLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     customerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    levelId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    customerLevelId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     receiveNews: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -168,7 +168,7 @@ proto.ding4.CustomerLink.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLevelId(value);
+      msg.setCustomerLevelId(value);
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -272,7 +272,7 @@ proto.ding4.CustomerLink.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLevelId();
+  f = message.getCustomerLevelId();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -425,10 +425,10 @@ proto.ding4.CustomerLink.prototype.setCustomerId = function(value) {
 
 
 /**
- * optional string level_id = 4;
+ * optional string customer_level_id = 4;
  * @return {string}
  */
-proto.ding4.CustomerLink.prototype.getLevelId = function() {
+proto.ding4.CustomerLink.prototype.getCustomerLevelId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -437,7 +437,7 @@ proto.ding4.CustomerLink.prototype.getLevelId = function() {
  * @param {string} value
  * @return {!proto.ding4.CustomerLink} returns this
  */
-proto.ding4.CustomerLink.prototype.setLevelId = function(value) {
+proto.ding4.CustomerLink.prototype.setCustomerLevelId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

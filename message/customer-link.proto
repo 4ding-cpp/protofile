@@ -12,7 +12,7 @@ message CustomerLink {
     string customer_link_id = 1;
     string store_id = 2;
     string customer_id = 3;
-    string level_id = 4;
+    string customer_level_id = 4;
     bool receive_news = 5;
 
     string name = 6;

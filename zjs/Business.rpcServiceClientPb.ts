@@ -945,6 +945,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoOpenStore = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: store_pb.Store) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  openStore(
+    request: store_pb.Store,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/OpenStore',
+      request,
+      metadata || {},
+      this.methodInfoOpenStore,
+      callback);
+  }
+
   methodInfoCreateStore = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: store_pb.Store) => {

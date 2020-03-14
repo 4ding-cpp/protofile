@@ -71,6 +71,7 @@ service BusinessRPC {
     rpc DeleteProductSpecImage(Image) returns (Response);    
 
     rpc RegisterStore(Store) returns (Response);
+    rpc OpenStore(Store) returns (Response);
     rpc CreateStore(Store) returns (Response);
     rpc UpdateStore(Store) returns (Response);
     rpc FindStore(Query) returns (Response);

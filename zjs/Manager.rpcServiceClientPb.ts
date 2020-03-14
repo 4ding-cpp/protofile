@@ -109,6 +109,28 @@ export class ManagerRPCClient {
       callback);
   }
 
+  methodInfoFindPermission = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPermission(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/FindPermission',
+      request,
+      metadata || {},
+      this.methodInfoFindPermission,
+      callback);
+  }
+
   methodInfoCreateActivity = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: activity_pb.Activity) => {
@@ -175,7 +197,7 @@ export class ManagerRPCClient {
       callback);
   }
 
-  methodInfoAddActivityProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAppendActivityProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: activity_pb.ActivityProduct) => {
       return request.serializeBinary();
@@ -183,21 +205,21 @@ export class ManagerRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  addActivityProduct(
+  appendActivityProduct(
     request: activity_pb.ActivityProduct,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/AddActivityProduct',
+        '/ding4.ManagerRPC/AppendActivityProduct',
       request,
       metadata || {},
-      this.methodInfoAddActivityProduct,
+      this.methodInfoAppendActivityProduct,
       callback);
   }
 
-  methodInfoDelActivityProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSubstractActivityProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: activity_pb.ActivityProduct) => {
       return request.serializeBinary();
@@ -205,17 +227,17 @@ export class ManagerRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  delActivityProduct(
+  substractActivityProduct(
     request: activity_pb.ActivityProduct,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/DelActivityProduct',
+        '/ding4.ManagerRPC/SubstractActivityProduct',
       request,
       metadata || {},
-      this.methodInfoDelActivityProduct,
+      this.methodInfoSubstractActivityProduct,
       callback);
   }
 
@@ -329,25 +351,25 @@ export class ManagerRPCClient {
       callback);
   }
 
-  methodInfoAddDiscountCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoExchangeDiscount = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity_pb.DiscountMap) => {
+    (request: activity_pb.DiscountItem) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  addDiscountCustomer(
-    request: activity_pb.DiscountMap,
+  exchangeDiscount(
+    request: activity_pb.DiscountItem,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/AddDiscountCustomer',
+        '/ding4.ManagerRPC/ExchangeDiscount',
       request,
       metadata || {},
-      this.methodInfoAddDiscountCustomer,
+      this.methodInfoExchangeDiscount,
       callback);
   }
 
@@ -637,7 +659,7 @@ export class ManagerRPCClient {
       callback);
   }
 
-  methodInfoCreateClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateProductClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: image_pb.Image) => {
       return request.serializeBinary();
@@ -645,21 +667,21 @@ export class ManagerRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  createClassImage(
+  createProductClassImage(
     request: image_pb.Image,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/CreateClassImage',
+        '/ding4.ManagerRPC/CreateProductClassImage',
       request,
       metadata || {},
-      this.methodInfoCreateClassImage,
+      this.methodInfoCreateProductClassImage,
       callback);
   }
 
-  methodInfoUpdateClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateProductClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: image_pb.Image) => {
       return request.serializeBinary();
@@ -667,21 +689,21 @@ export class ManagerRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  updateClassImage(
+  updateProductClassImage(
     request: image_pb.Image,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/UpdateClassImage',
+        '/ding4.ManagerRPC/UpdateProductClassImage',
       request,
       metadata || {},
-      this.methodInfoUpdateClassImage,
+      this.methodInfoUpdateProductClassImage,
       callback);
   }
 
-  methodInfoDeleteClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteProductClassImage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: image_pb.Image) => {
       return request.serializeBinary();
@@ -689,17 +711,17 @@ export class ManagerRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  deleteClassImage(
+  deleteProductClassImage(
     request: image_pb.Image,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ManagerRPC/DeleteClassImage',
+        '/ding4.ManagerRPC/DeleteProductClassImage',
       request,
       metadata || {},
-      this.methodInfoDeleteClassImage,
+      this.methodInfoDeleteProductClassImage,
       callback);
   }
 
@@ -1451,28 +1473,6 @@ export class ManagerRPCClient {
       callback);
   }
 
-  methodInfoCreateWebBase = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$base_pb.WebBase) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createWebBase(
-    request: web$base_pb.WebBase,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ManagerRPC/CreateWebBase',
-      request,
-      metadata || {},
-      this.methodInfoCreateWebBase,
-      callback);
-  }
-
   methodInfoUpdateWebBase = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: web$base_pb.WebBase) => {
@@ -1492,28 +1492,6 @@ export class ManagerRPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateWebBase,
-      callback);
-  }
-
-  methodInfoDeleteWebBase = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$base_pb.WebBase) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteWebBase(
-    request: web$base_pb.WebBase,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ManagerRPC/DeleteWebBase',
-      request,
-      metadata || {},
-      this.methodInfoDeleteWebBase,
       callback);
   }
 

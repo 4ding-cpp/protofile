@@ -14,8 +14,8 @@ export class CustomerLink extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
-  getLevelId(): string;
-  setLevelId(value: string): void;
+  getCustomerLevelId(): string;
+  setCustomerLevelId(value: string): void;
 
   getReceiveNews(): boolean;
   setReceiveNews(value: boolean): void;
@@ -76,7 +76,7 @@ export namespace CustomerLink {
     customerLinkId: string,
     storeId: string,
     customerId: string,
-    levelId: string,
+    customerLevelId: string,
     receiveNews: boolean,
     name: string,
     phone: string,

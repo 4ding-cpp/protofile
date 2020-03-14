@@ -8,6 +8,25 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+
+message PointBonus {
+    string point_bonus_id = 1;
+    int32 on_event = 2;
+    google.protobuf.Timestamp begin_at = 3;
+    google.protobuf.Timestamp end_at = 4;
+    string item = 5;
+    int32 cond = 6;
+    int32 point = 7;
+    int32 percent = 8;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
+}
+
 message Point {
     string point_id = 1;
     string business_id = 2;
@@ -25,12 +44,13 @@ message Point {
     google.protobuf.Struct self = 75;
 }
 
-message PointFlow {
-    string point_flow_id = 1;
+message PointBill {
+    string point_bill_id = 1;
     string business_id = 2;
     string item = 3;
-    int32 point = 4;
-    string related = 5;
+    int32 state = 4;
+    int32 amount = 5;
+    repeated PointDetail detail = 6;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -58,18 +78,12 @@ message PointDetail {
     google.protobuf.Struct self = 75;
 }
 
-message PointBill {
-    string item = 1;
-    repeated PointDetail detail = 2;
-}
-
-
-message PointBonus {
-    string point_bonus_id = 1;
-    int32 on_event = 2;
+message PointFlow {
+    string point_flow_id = 1;
+    string business_id = 2;
     string item = 3;
     int32 point = 4;
-    int32 percent = 5;
+    string related = 5;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

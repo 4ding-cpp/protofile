@@ -23,19 +23,20 @@ service ManagerRPC {
     rpc ChangePassword(Manager) returns (Response);
     rpc ChangeInfo(Manager) returns (Response);
     rpc ChangeWhitelist(Manager) returns (Response);
+    rpc FindPermission(Query) returns (Response);
 
     rpc CreateActivity(Activity) returns (Response);
     rpc UpdateActivity(Activity) returns (Response);
     rpc FindActivity(Query) returns (Response);
-    rpc AddActivityProduct(ActivityProduct) returns (Response);
-    rpc DelActivityProduct(ActivityProduct) returns (Response);
+    rpc AppendActivityProduct(ActivityProduct) returns (Response);
+    rpc SubstractActivityProduct(ActivityProduct) returns (Response);
     rpc FindActivityProduct(ActivityProduct) returns (Response);
 
     rpc CreateDiscount(Discount) returns (Response);
     rpc UpdateDiscount(Discount) returns (Response);
     rpc FindDiscount(Query) returns (Response);
     rpc FindDiscountCustomer(Query) returns (Response);
-    rpc AddDiscountCustomer(DiscountMap) returns (Response);
+    rpc ExchangeDiscount(DiscountItem) returns (Response);
 
     rpc CreateCustomerLink(CustomerLink) returns (Response);
     rpc UpdateCustomerLink(CustomerLink) returns (Response);
@@ -53,9 +54,9 @@ service ManagerRPC {
     rpc CreateProductClass(ProductClass) returns (Response);
     rpc UpdateProductClass(ProductClass) returns (Response);
     rpc FindProductClass(Query) returns (Response);
-    rpc CreateClassImage(Image) returns (Response);
-    rpc UpdateClassImage(Image) returns (Response);
-    rpc DeleteClassImage(Image) returns (Response);
+    rpc CreateProductClassImage(Image) returns (Response);
+    rpc UpdateProductClassImage(Image) returns (Response);
+    rpc DeleteProductClassImage(Image) returns (Response);
 
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);
@@ -99,9 +100,7 @@ service ManagerRPC {
     rpc DeleteWebItem(WebItem) returns (Response);
     rpc FindWebItem(Query) returns (Response);
 
-    rpc CreateWebBase(WebBase) returns (Response);
     rpc UpdateWebBase(WebBase) returns (Response);
-    rpc DeleteWebBase(WebBase) returns (Response);
     rpc FindWebBase(Query) returns (Response);
 }
 

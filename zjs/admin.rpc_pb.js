@@ -30,3 +30,5 @@ var point_pb = require('./point_pb.js');
 goog.object.extend(proto, point_pb);
 var adv_pb = require('./adv_pb.js');
 goog.object.extend(proto, adv_pb);
+var setting_pb = require('./setting_pb.js');
+goog.object.extend(proto, setting_pb);

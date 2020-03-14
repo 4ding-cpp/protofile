@@ -246,10 +246,7 @@ export namespace Discount {
   }
 }
 
-export class DiscountMap extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
+export class DiscountItem extends jspb.Message {
   getDiscountId(): string;
   setDiscountId(value: string): void;
 
@@ -265,16 +262,15 @@ export class DiscountMap extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DiscountMap.AsObject;
-  static toObject(includeInstance: boolean, msg: DiscountMap): DiscountMap.AsObject;
-  static serializeBinaryToWriter(message: DiscountMap, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DiscountMap;
-  static deserializeBinaryFromReader(message: DiscountMap, reader: jspb.BinaryReader): DiscountMap;
+  toObject(includeInstance?: boolean): DiscountItem.AsObject;
+  static toObject(includeInstance: boolean, msg: DiscountItem): DiscountItem.AsObject;
+  static serializeBinaryToWriter(message: DiscountItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DiscountItem;
+  static deserializeBinaryFromReader(message: DiscountItem, reader: jspb.BinaryReader): DiscountItem;
 }
 
-export namespace DiscountMap {
+export namespace DiscountItem {
   export type AsObject = {
-    id: number,
     discountId: string,
     customerId: string,
     code: string,

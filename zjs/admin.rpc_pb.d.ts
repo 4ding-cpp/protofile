@@ -9,4 +9,5 @@ import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
 import * as adv_pb from './adv_pb';
+import * as setting_pb from './setting_pb';
 

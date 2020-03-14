@@ -60,10 +60,9 @@ message Discount {
     google.protobuf.Struct self = 75;
 }
 
-message DiscountMap {
-    int64 id = 1;
-    string discount_id = 2;
-    string customer_id = 3;
-    string code = 4;
-    google.protobuf.Struct self = 5;
+message DiscountItem {
+    string discount_id = 1;
+    string customer_id = 2;
+    string code = 3;
+    google.protobuf.Struct self = 4;
 }

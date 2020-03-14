@@ -39,6 +39,9 @@ export class Business extends jspb.Message {
   getAdvId(): string;
   setAdvId(value: string): void;
 
+  getFee(): number;
+  setFee(value: number): void;
+
   getPermissionList(): Array<type_pb.Option>;
   setPermissionList(value: Array<type_pb.Option>): void;
   clearPermissionList(): void;
@@ -98,6 +101,7 @@ export namespace Business {
     password: string,
     identify: string,
     advId: string,
+    fee: number,
     permissionList: Array<type_pb.Option.AsObject>,
     whitelistList: Array<string>,
     operator: string,
@@ -109,14 +113,12 @@ export namespace Business {
   }
 }
 
-export class BusinessLabel extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
+export class BusinessHost extends jspb.Message {
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
 
-  getTargetList(): Array<string>;
-  setTargetList(value: Array<string>): void;
-  clearTargetList(): void;
-  addTarget(value: string, index?: number): void;
+  getHttpHost(): string;
+  setHttpHost(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -147,17 +149,17 @@ export class BusinessLabel extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BusinessLabel.AsObject;
-  static toObject(includeInstance: boolean, msg: BusinessLabel): BusinessLabel.AsObject;
-  static serializeBinaryToWriter(message: BusinessLabel, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BusinessLabel;
-  static deserializeBinaryFromReader(message: BusinessLabel, reader: jspb.BinaryReader): BusinessLabel;
+  toObject(includeInstance?: boolean): BusinessHost.AsObject;
+  static toObject(includeInstance: boolean, msg: BusinessHost): BusinessHost.AsObject;
+  static serializeBinaryToWriter(message: BusinessHost, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BusinessHost;
+  static deserializeBinaryFromReader(message: BusinessHost, reader: jspb.BinaryReader): BusinessHost;
 }
 
-export namespace BusinessLabel {
+export namespace BusinessHost {
   export type AsObject = {
-    name: string,
-    targetList: Array<string>,
+    businessId: string,
+    httpHost: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
