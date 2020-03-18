@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as business_pb from './business_pb';
+import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
 import * as linker_pb from './linker_pb';
 import * as customer_pb from './customer_pb';

@@ -1944,10 +1944,11 @@ proto.ding4.ProductClass.toObject = function(includeInstance, msg) {
   var f, obj = {
     productClassId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     activityId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    path: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    labelId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    path: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     seo: (f = msg.getSeo()) && type_pb.SEO.toObject(includeInstance, f),
-    photo: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    photo: jspb.Message.getFieldWithDefault(msg, 7, ""),
     image: (f = msg.getImage()) && image_pb.Image.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -2002,23 +2003,27 @@ proto.ding4.ProductClass.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      msg.setLabelId(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPath(value);
+      break;
+    case 5:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setName(value);
       break;
-    case 5:
+    case 6:
       var value = new type_pb.SEO;
       reader.readMessage(value,type_pb.SEO.deserializeBinaryFromReader);
       msg.setSeo(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhoto(value);
       break;
-    case 7:
+    case 8:
       var value = new image_pb.Image;
       reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
       msg.setImage(value);
@@ -2094,17 +2099,24 @@ proto.ding4.ProductClass.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPath();
+  f = message.getLabelId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getPath();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getName();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
@@ -2112,7 +2124,7 @@ proto.ding4.ProductClass.serializeBinaryToWriter = function(message, writer) {
   f = message.getSeo();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       type_pb.SEO.serializeBinaryToWriter
     );
@@ -2120,14 +2132,14 @@ proto.ding4.ProductClass.serializeBinaryToWriter = function(message, writer) {
   f = message.getPhoto();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      7,
       f
     );
   }
   f = message.getImage();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       image_pb.Image.serializeBinaryToWriter
     );
@@ -2218,10 +2230,10 @@ proto.ding4.ProductClass.prototype.setActivityId = function(value) {
 
 
 /**
- * optional string path = 3;
+ * optional string label_id = 3;
  * @return {string}
  */
-proto.ding4.ProductClass.prototype.getPath = function() {
+proto.ding4.ProductClass.prototype.getLabelId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2230,18 +2242,36 @@ proto.ding4.ProductClass.prototype.getPath = function() {
  * @param {string} value
  * @return {!proto.ding4.ProductClass} returns this
  */
-proto.ding4.ProductClass.prototype.setPath = function(value) {
+proto.ding4.ProductClass.prototype.setLabelId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Value name = 4;
+ * optional string path = 4;
+ * @return {string}
+ */
+proto.ding4.ProductClass.prototype.getPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.ProductClass} returns this
+ */
+proto.ding4.ProductClass.prototype.setPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Value name = 5;
  * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductClass.prototype.getName = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
 };
 
 
@@ -2250,7 +2280,7 @@ proto.ding4.ProductClass.prototype.getName = function() {
  * @return {!proto.ding4.ProductClass} returns this
 */
 proto.ding4.ProductClass.prototype.setName = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -2268,17 +2298,17 @@ proto.ding4.ProductClass.prototype.clearName = function() {
  * @return {boolean}
  */
 proto.ding4.ProductClass.prototype.hasName = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional SEO seo = 5;
+ * optional SEO seo = 6;
  * @return {?proto.ding4.SEO}
  */
 proto.ding4.ProductClass.prototype.getSeo = function() {
   return /** @type{?proto.ding4.SEO} */ (
-    jspb.Message.getWrapperField(this, type_pb.SEO, 5));
+    jspb.Message.getWrapperField(this, type_pb.SEO, 6));
 };
 
 
@@ -2287,7 +2317,7 @@ proto.ding4.ProductClass.prototype.getSeo = function() {
  * @return {!proto.ding4.ProductClass} returns this
 */
 proto.ding4.ProductClass.prototype.setSeo = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2305,16 +2335,16 @@ proto.ding4.ProductClass.prototype.clearSeo = function() {
  * @return {boolean}
  */
 proto.ding4.ProductClass.prototype.hasSeo = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string photo = 6;
+ * optional string photo = 7;
  * @return {string}
  */
 proto.ding4.ProductClass.prototype.getPhoto = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -2323,17 +2353,17 @@ proto.ding4.ProductClass.prototype.getPhoto = function() {
  * @return {!proto.ding4.ProductClass} returns this
  */
 proto.ding4.ProductClass.prototype.setPhoto = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional Image image = 7;
+ * optional Image image = 8;
  * @return {?proto.ding4.Image}
  */
 proto.ding4.ProductClass.prototype.getImage = function() {
   return /** @type{?proto.ding4.Image} */ (
-    jspb.Message.getWrapperField(this, image_pb.Image, 7));
+    jspb.Message.getWrapperField(this, image_pb.Image, 8));
 };
 
 
@@ -2342,7 +2372,7 @@ proto.ding4.ProductClass.prototype.getImage = function() {
  * @return {!proto.ding4.ProductClass} returns this
 */
 proto.ding4.ProductClass.prototype.setImage = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -2360,7 +2390,7 @@ proto.ding4.ProductClass.prototype.clearImage = function() {
  * @return {boolean}
  */
 proto.ding4.ProductClass.prototype.hasImage = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

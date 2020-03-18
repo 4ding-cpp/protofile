@@ -16,6 +16,8 @@ var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
 var business_pb = require('./business_pb.js');
 goog.object.extend(proto, business_pb);
+var point_pb = require('./point_pb.js');
+goog.object.extend(proto, point_pb);
 var manager_pb = require('./manager_pb.js');
 goog.object.extend(proto, manager_pb);
 var linker_pb = require('./linker_pb.js');

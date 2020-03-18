@@ -795,12 +795,13 @@ proto.ding4.CustomerLevel.toObject = function(includeInstance, msg) {
   var f, obj = {
     customerLevelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    payAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    payTimes: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    auto: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    priority: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    labelId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    payAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    payTimes: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    auto: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    priority: jspb.Message.getFieldWithDefault(msg, 9, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -853,26 +854,30 @@ proto.ding4.CustomerLevel.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStoreId(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabelId(value);
+      break;
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setStatus(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setPayAmount(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPayTimes(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAuto(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPriority(value);
       break;
@@ -947,45 +952,52 @@ proto.ding4.CustomerLevel.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getLabelId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getStatus();
   if (f !== 0) {
     writer.writeInt32(
-      3,
+      4,
       f
     );
   }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
   f = message.getPayAmount();
   if (f !== 0.0) {
     writer.writeDouble(
-      5,
+      6,
       f
     );
   }
   f = message.getPayTimes();
   if (f !== 0) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getAuto();
   if (f) {
     writer.writeBool(
-      7,
+      8,
       f
     );
   }
   f = message.getPriority();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      9,
       f
     );
   }
@@ -1075,11 +1087,29 @@ proto.ding4.CustomerLevel.prototype.setStoreId = function(value) {
 
 
 /**
- * optional int32 status = 3;
+ * optional string label_id = 3;
+ * @return {string}
+ */
+proto.ding4.CustomerLevel.prototype.getLabelId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.CustomerLevel} returns this
+ */
+proto.ding4.CustomerLevel.prototype.setLabelId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 status = 4;
  * @return {number}
  */
 proto.ding4.CustomerLevel.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -1088,16 +1118,16 @@ proto.ding4.CustomerLevel.prototype.getStatus = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional string name = 4;
+ * optional string name = 5;
  * @return {string}
  */
 proto.ding4.CustomerLevel.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1106,16 +1136,16 @@ proto.ding4.CustomerLevel.prototype.getName = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional double pay_amount = 5;
+ * optional double pay_amount = 6;
  * @return {number}
  */
 proto.ding4.CustomerLevel.prototype.getPayAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
@@ -1124,16 +1154,16 @@ proto.ding4.CustomerLevel.prototype.getPayAmount = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setPayAmount = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
 /**
- * optional int32 pay_times = 6;
+ * optional int32 pay_times = 7;
  * @return {number}
  */
 proto.ding4.CustomerLevel.prototype.getPayTimes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -1142,16 +1172,16 @@ proto.ding4.CustomerLevel.prototype.getPayTimes = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setPayTimes = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional bool auto = 7;
+ * optional bool auto = 8;
  * @return {boolean}
  */
 proto.ding4.CustomerLevel.prototype.getAuto = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -1160,16 +1190,16 @@ proto.ding4.CustomerLevel.prototype.getAuto = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setAuto = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional int32 priority = 8;
+ * optional int32 priority = 9;
  * @return {number}
  */
 proto.ding4.CustomerLevel.prototype.getPriority = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
@@ -1178,7 +1208,7 @@ proto.ding4.CustomerLevel.prototype.getPriority = function() {
  * @return {!proto.ding4.CustomerLevel} returns this
  */
 proto.ding4.CustomerLevel.prototype.setPriority = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 

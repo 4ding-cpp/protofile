@@ -11,6 +11,7 @@ import * as grpcWeb from 'grpc-web';
 
 import * as sql_pb from './sql_pb';
 import * as business_pb from './business_pb';
+import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
 import * as linker_pb from './linker_pb';
 import * as customer_pb from './customer_pb';
@@ -109,6 +110,94 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoFindPermission = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPermission(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindPermission',
+      request,
+      metadata || {},
+      this.methodInfoFindPermission,
+      callback);
+  }
+
+  methodInfoCreatePoint = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.Point) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createPoint(
+    request: point_pb.Point,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CreatePoint',
+      request,
+      metadata || {},
+      this.methodInfoCreatePoint,
+      callback);
+  }
+
+  methodInfoComfirmPoint = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.Point) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  comfirmPoint(
+    request: point_pb.Point,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ComfirmPoint',
+      request,
+      metadata || {},
+      this.methodInfoComfirmPoint,
+      callback);
+  }
+
+  methodInfoComfirmPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBill) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  comfirmPointBill(
+    request: point_pb.PointBill,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ComfirmPointBill',
+      request,
+      metadata || {},
+      this.methodInfoComfirmPointBill,
+      callback);
+  }
+
   methodInfoFindPoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -175,7 +264,7 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoFindPermission = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindPointDetail = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -183,17 +272,17 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findPermission(
+  findPointDetail(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/FindPermission',
+        '/ding4.BusinessRPC/FindPointDetail',
       request,
       metadata || {},
-      this.methodInfoFindPermission,
+      this.methodInfoFindPointDetail,
       callback);
   }
 

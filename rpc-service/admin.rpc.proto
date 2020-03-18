@@ -14,7 +14,7 @@ import "announcement.proto";
 import "point.proto";
 import "adv.proto";
 import "setting.proto";
-
+import "external.proto";
 
 service AdminRPC {
     rpc Ping(Query) returns (google.protobuf.Value);
@@ -25,6 +25,8 @@ service AdminRPC {
     rpc ChangeInfo(Admin) returns (Response);
     rpc ChangeWhitelist(Admin) returns (Response);
     rpc FindPermission(Query) returns (Response);
+    rpc FindRecord(Query) returns (Response);
+    rpc FindSign(Query) returns (Response);
 
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);
@@ -41,6 +43,7 @@ service AdminRPC {
     rpc CreateBusinessHost(BusinessHost) returns (Response);
     rpc DeleteBusinessHost(BusinessHost) returns (Response);
     rpc FindBusinessHost(Query) returns (Response);
+    rpc RecordBusinessHost(Query) returns (Response);
     rpc FlushBusinessHost(Query) returns (Response);
 
     rpc CreateLabel(Label) returns (Response);
@@ -48,41 +51,58 @@ service AdminRPC {
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
     rpc FindLabel(Query) returns (Response);
+    rpc RecordLabel(Query) returns (Response);
     
     rpc CreateInfo(Info) returns (Response);
     rpc UpdateInfo(Info) returns (Response);
     rpc FindInfo(Query) returns (Response);
+    rpc RecordInfo(Query) returns (Response);
 
     rpc CreateAnnouncement(Announcement) returns (Response);
     rpc UpdateAnnouncement(Announcement) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
+    rpc RecordAnnouncement(Query) returns (Response);
 
     rpc CreatePointBonus(PointBonus) returns (Response);
     rpc FindPointBonus(Query) returns (Response);
+    rpc RecordPointBonus(Query) returns (Response);
 
     rpc CreatePoint(Point) returns (Response);
     rpc ComfirmPoint(Point) returns (Response);
     rpc ApprovePoint(Point) returns (Response);
     rpc FindPoint(Query) returns (Response);
+    rpc RecordPoint(Query) returns (Response);
 
     rpc CreatePointBill(PointBill) returns (Response);
     rpc ComfirmPointBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
     rpc FindPointDetail(Query) returns (Response);
+    rpc RecordPointBill(Query) returns (Response);
+    rpc RecordPointDetail(Query) returns (Response);
 
     rpc CreatePointFlow(PointFlow) returns (Response);
     rpc FindPointFlow(Query) returns (Response);
+    rpc RecordPointFlow(Query) returns (Response);
 
     rpc CreateAdv(Adv) returns (Response);
-    rpc ApproveAdv(Adv) returns (Response);
     rpc UpdateAdv(Adv) returns (Response);
+    rpc ExchangeAdv(Adv) returns (Response);
     rpc FindAdv(Query) returns (Response);
+    rpc RecordAdv(Query) returns (Response);
 
-    rpc CreateAdvRecord(AdvRecord) returns (Response);
-    rpc UpdateAdvRecord(AdvRecord) returns (Response);
-    rpc FindAdvRecord(Query) returns (Response);
+    rpc CreateApp(App) returns (Response);
+    rpc ApproveApp(App) returns (Response);
+    rpc UpdateApp(App) returns (Response);
+    rpc FindApp(Query) returns (Response);
+    rpc RecordApp(Query) returns (Response);
 
     rpc CreateSetting(Setting) returns (Response);
     rpc UpdateSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
+    rpc RecordSetting(Query) returns (Response);
+
+    rpc CreateExternal(External) returns (Response);
+    rpc UpdateExternal(External) returns (Response);
+    rpc FindExternal(Query) returns (Response);
+    rpc RecordExternal(Query) returns (Response);
 }

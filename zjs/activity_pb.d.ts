@@ -29,6 +29,12 @@ export class Activity extends jspb.Message {
   getType(): number;
   setType(value: number): void;
 
+  getLabelId(): string;
+  setLabelId(value: string): void;
+
+  getProductId(): string;
+  setProductId(value: string): void;
+
   getItem(): number;
   setItem(value: number): void;
 
@@ -46,6 +52,9 @@ export class Activity extends jspb.Message {
 
   getActiveV(): number;
   setActiveV(value: number): void;
+
+  getGiveawayId(): string;
+  setGiveawayId(value: string): void;
 
   getValue(): number;
   setValue(value: number): void;
@@ -94,12 +103,15 @@ export namespace Activity {
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     name?: google_protobuf_struct_pb.Value.AsObject,
     type: number,
+    labelId: string,
+    productId: string,
     item: number,
     cond: number,
     condV: number,
     repeated: boolean,
     active: number,
     activeV: number,
+    giveawayId: string,
     value: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -147,8 +159,8 @@ export class Discount extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getLevelId(): string;
-  setLevelId(value: string): void;
+  getLabelId(): string;
+  setLabelId(value: string): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
@@ -226,7 +238,7 @@ export namespace Discount {
   export type AsObject = {
     discountId: string,
     storeId: string,
-    levelId: string,
+    labelId: string,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     name?: google_protobuf_struct_pb.Value.AsObject,

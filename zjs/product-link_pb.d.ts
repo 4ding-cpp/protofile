@@ -242,6 +242,9 @@ export class ProductClass extends jspb.Message {
   getActivityId(): string;
   setActivityId(value: string): void;
 
+  getLabelId(): string;
+  setLabelId(value: string): void;
+
   getPath(): string;
   setPath(value: string): void;
 
@@ -303,6 +306,7 @@ export namespace ProductClass {
   export type AsObject = {
     productClassId: string,
     activityId: string,
+    labelId: string,
     path: string,
     name?: google_protobuf_struct_pb.Value.AsObject,
     seo?: type_pb.SEO.AsObject,

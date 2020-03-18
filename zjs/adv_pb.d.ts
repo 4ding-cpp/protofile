@@ -11,17 +11,11 @@ export class Adv extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
-  getCompany(): string;
-  setCompany(value: string): void;
+  getType(): number;
+  setType(value: number): void;
 
-  getIdentify(): string;
-  setIdentify(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getTitle(): string;
-  setTitle(value: string): void;
+  getContacter(): string;
+  setContacter(value: string): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -29,26 +23,39 @@ export class Adv extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  getPrice(): number;
-  setPrice(value: number): void;
-
-  getBankCode(): string;
-  setBankCode(value: string): void;
-
-  getLastCode(): string;
-  setLastCode(value: string): void;
-
   getLocation(): string;
   setLocation(value: string): void;
 
-  getMotive(): string;
-  setMotive(value: string): void;
+  getContact(): string;
+  setContact(value: string): void;
+
+  getPhoneAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPhoneAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasPhoneAt(): boolean;
+  clearPhoneAt(): void;
+
+  getViewAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setViewAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasViewAt(): boolean;
+  clearViewAt(): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
 
   getMgrType(): string;
   setMgrType(value: string): void;
 
   getTurnover(): number;
   setTurnover(value: number): void;
+
+  getCompany(): string;
+  setCompany(value: string): void;
+
+  getIdentify(): string;
+  setIdentify(value: string): void;
+
+  getMotive(): string;
+  setMotive(value: string): void;
 
   getOther(): google_protobuf_struct_pb.Value | undefined;
   setOther(value?: google_protobuf_struct_pb.Value): void;
@@ -95,19 +102,20 @@ export namespace Adv {
   export type AsObject = {
     advId: string,
     state: number,
-    company: string,
-    identify: string,
-    name: string,
-    title: string,
+    type: number,
+    contacter: string,
     phone: string,
     email: string,
-    price: number,
-    bankCode: string,
-    lastCode: string,
     location: string,
-    motive: string,
+    contact: string,
+    phoneAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    viewAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
     mgrType: string,
     turnover: number,
+    company: string,
+    identify: string,
+    motive: string,
     other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -118,25 +126,47 @@ export namespace Adv {
   }
 }
 
-export class AdvRecord extends jspb.Message {
-  getAdvRecordId(): string;
-  setAdvRecordId(value: string): void;
+export class App extends jspb.Message {
+  getAppId(): string;
+  setAppId(value: string): void;
 
-  getAdvId(): string;
-  setAdvId(value: string): void;
+  getState(): number;
+  setState(value: number): void;
 
-  getPhoneAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setPhoneAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasPhoneAt(): boolean;
-  clearPhoneAt(): void;
+  getType(): number;
+  setType(value: number): void;
 
-  getInterviewAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setInterviewAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasInterviewAt(): boolean;
-  clearInterviewAt(): void;
+  getContacter(): string;
+  setContacter(value: string): void;
 
-  getCancelReason(): string;
-  setCancelReason(value: string): void;
+  getPhone(): string;
+  setPhone(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getLocation(): string;
+  setLocation(value: string): void;
+
+  getContact(): string;
+  setContact(value: string): void;
+
+  getCompany(): string;
+  setCompany(value: string): void;
+
+  getIdentify(): string;
+  setIdentify(value: string): void;
+
+  getBankCode(): string;
+  setBankCode(value: string): void;
+
+  getLastCode(): string;
+  setLastCode(value: string): void;
+
+  getOther(): google_protobuf_struct_pb.Value | undefined;
+  setOther(value?: google_protobuf_struct_pb.Value): void;
+  hasOther(): boolean;
+  clearOther(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -167,20 +197,28 @@ export class AdvRecord extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AdvRecord.AsObject;
-  static toObject(includeInstance: boolean, msg: AdvRecord): AdvRecord.AsObject;
-  static serializeBinaryToWriter(message: AdvRecord, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AdvRecord;
-  static deserializeBinaryFromReader(message: AdvRecord, reader: jspb.BinaryReader): AdvRecord;
+  toObject(includeInstance?: boolean): App.AsObject;
+  static toObject(includeInstance: boolean, msg: App): App.AsObject;
+  static serializeBinaryToWriter(message: App, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): App;
+  static deserializeBinaryFromReader(message: App, reader: jspb.BinaryReader): App;
 }
 
-export namespace AdvRecord {
+export namespace App {
   export type AsObject = {
-    advRecordId: string,
-    advId: string,
-    phoneAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    interviewAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    cancelReason: string,
+    appId: string,
+    state: number,
+    type: number,
+    contacter: string,
+    phone: string,
+    email: string,
+    location: string,
+    contact: string,
+    company: string,
+    identify: string,
+    bankCode: string,
+    lastCode: string,
+    other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

@@ -99,6 +99,9 @@ export class CustomerLevel extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getLabelId(): string;
+  setLabelId(value: string): void;
+
   getStatus(): number;
   setStatus(value: number): void;
 
@@ -157,6 +160,7 @@ export namespace CustomerLevel {
   export type AsObject = {
     customerLevelId: string,
     storeId: string,
+    labelId: string,
     status: number,
     name: string,
     payAmount: number,

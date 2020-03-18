@@ -151,13 +151,16 @@ proto.ding4.Activity.toObject = function(includeInstance, msg) {
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    item: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    cond: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    condV: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    repeated: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    active: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    activeV: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    value: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    labelId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    item: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    cond: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    condV: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    repeated: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    active: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    activeV: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    giveawayId: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    value: jspb.Message.getFieldWithDefault(msg, 16, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -229,30 +232,42 @@ proto.ding4.Activity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabelId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductId(value);
+      break;
+    case 9:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setItem(value);
       break;
-    case 8:
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCond(value);
       break;
-    case 9:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCondV(value);
       break;
-    case 10:
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRepeated(value);
       break;
-    case 11:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setActive(value);
       break;
-    case 12:
+    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setActiveV(value);
       break;
-    case 13:
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGiveawayId(value);
+      break;
+    case 16:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setValue(value);
       break;
@@ -358,52 +373,73 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getLabelId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getProductId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getItem();
   if (f !== 0) {
     writer.writeInt64(
-      7,
+      9,
       f
     );
   }
   f = message.getCond();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      10,
       f
     );
   }
   f = message.getCondV();
   if (f !== 0) {
     writer.writeInt32(
-      9,
+      11,
       f
     );
   }
   f = message.getRepeated();
   if (f) {
     writer.writeBool(
-      10,
+      12,
       f
     );
   }
   f = message.getActive();
   if (f !== 0) {
     writer.writeInt32(
-      11,
+      13,
       f
     );
   }
   f = message.getActiveV();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      14,
+      f
+    );
+  }
+  f = message.getGiveawayId();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
   f = message.getValue();
   if (f !== 0) {
     writer.writeInt32(
-      13,
+      16,
       f
     );
   }
@@ -622,46 +658,46 @@ proto.ding4.Activity.prototype.setType = function(value) {
 
 
 /**
- * optional int64 item = 7;
+ * optional string label_id = 7;
+ * @return {string}
+ */
+proto.ding4.Activity.prototype.getLabelId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setLabelId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string product_id = 8;
+ * @return {string}
+ */
+proto.ding4.Activity.prototype.getProductId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setProductId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional int64 item = 9;
  * @return {number}
  */
 proto.ding4.Activity.prototype.getItem = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Activity} returns this
- */
-proto.ding4.Activity.prototype.setItem = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
-};
-
-
-/**
- * optional int32 cond = 8;
- * @return {number}
- */
-proto.ding4.Activity.prototype.getCond = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Activity} returns this
- */
-proto.ding4.Activity.prototype.setCond = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
-};
-
-
-/**
- * optional int32 cond_v = 9;
- * @return {number}
- */
-proto.ding4.Activity.prototype.getCondV = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -670,34 +706,34 @@ proto.ding4.Activity.prototype.getCondV = function() {
  * @param {number} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setCondV = function(value) {
+proto.ding4.Activity.prototype.setItem = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional bool repeated = 10;
- * @return {boolean}
- */
-proto.ding4.Activity.prototype.getRepeated = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.ding4.Activity} returns this
- */
-proto.ding4.Activity.prototype.setRepeated = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
-};
-
-
-/**
- * optional int32 active = 11;
+ * optional int32 cond = 10;
  * @return {number}
  */
-proto.ding4.Activity.prototype.getActive = function() {
+proto.ding4.Activity.prototype.getCond = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setCond = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional int32 cond_v = 11;
+ * @return {number}
+ */
+proto.ding4.Activity.prototype.getCondV = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -706,34 +742,34 @@ proto.ding4.Activity.prototype.getActive = function() {
  * @param {number} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setActive = function(value) {
+proto.ding4.Activity.prototype.setCondV = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int32 active_v = 12;
- * @return {number}
+ * optional bool repeated = 12;
+ * @return {boolean}
  */
-proto.ding4.Activity.prototype.getActiveV = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+proto.ding4.Activity.prototype.getRepeated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setActiveV = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+proto.ding4.Activity.prototype.setRepeated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional int32 value = 13;
+ * optional int32 active = 13;
  * @return {number}
  */
-proto.ding4.Activity.prototype.getValue = function() {
+proto.ding4.Activity.prototype.getActive = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
@@ -742,8 +778,62 @@ proto.ding4.Activity.prototype.getValue = function() {
  * @param {number} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setValue = function(value) {
+proto.ding4.Activity.prototype.setActive = function(value) {
   return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional int32 active_v = 14;
+ * @return {number}
+ */
+proto.ding4.Activity.prototype.getActiveV = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setActiveV = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional string giveaway_id = 15;
+ * @return {string}
+ */
+proto.ding4.Activity.prototype.getGiveawayId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setGiveawayId = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional int32 value = 16;
+ * @return {number}
+ */
+proto.ding4.Activity.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Activity} returns this
+ */
+proto.ding4.Activity.prototype.setValue = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
@@ -1229,7 +1319,7 @@ proto.ding4.Discount.toObject = function(includeInstance, msg) {
   var f, obj = {
     discountId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    levelId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    labelId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     beginAt: (f = msg.getBeginAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
@@ -1293,7 +1383,7 @@ proto.ding4.Discount.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLevelId(value);
+      msg.setLabelId(value);
       break;
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -1409,7 +1499,7 @@ proto.ding4.Discount.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLevelId();
+  f = message.getLabelId();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1575,10 +1665,10 @@ proto.ding4.Discount.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string level_id = 3;
+ * optional string label_id = 3;
  * @return {string}
  */
-proto.ding4.Discount.prototype.getLevelId = function() {
+proto.ding4.Discount.prototype.getLabelId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1587,7 +1677,7 @@ proto.ding4.Discount.prototype.getLevelId = function() {
  * @param {string} value
  * @return {!proto.ding4.Discount} returns this
  */
-proto.ding4.Discount.prototype.setLevelId = function(value) {
+proto.ding4.Discount.prototype.setLabelId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

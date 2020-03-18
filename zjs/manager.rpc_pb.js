@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var label_pb = require('./label_pb.js');
+goog.object.extend(proto, label_pb);
 var car_pb = require('./car_pb.js');
 goog.object.extend(proto, car_pb);
 var manager_pb = require('./manager_pb.js');

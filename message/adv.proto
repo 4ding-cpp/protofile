@@ -11,20 +11,21 @@ import "google/protobuf/timestamp.proto";
 message Adv {
     string adv_id = 1;
     int32 state = 2;
-    string company = 3;
-    string identify = 4;
-    string name = 5;
-    string title = 6;
-    string phone = 7;
-    string email = 8;
-    double price = 9;
-    string bank_code = 10;
-    string last_code = 11;
-    string location = 12;
-    string motive = 13;
-    string mgr_type = 14;
-    int32 turnover = 15;
-    google.protobuf.Value other = 16;
+    int32 type = 3;
+    string contacter = 4;
+    string phone = 5;
+    string email = 6;
+    string location = 7;
+    string contact = 8;
+    google.protobuf.Timestamp phone_at = 9;
+    google.protobuf.Timestamp view_at = 10;
+    string title = 11;
+    string mgr_type = 12;
+    int32 turnover = 13;
+    string company = 14;
+    string identify = 15;
+    string motive = 16;
+    google.protobuf.Value other = 17;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -34,13 +35,21 @@ message Adv {
     google.protobuf.Struct self = 75;
 }
 
-message AdvRecord {
-    string adv_record_id = 1;
-    string adv_id = 2;
-    google.protobuf.Timestamp phone_at = 3;
-    google.protobuf.Timestamp interview_at = 4;
-    string cancel_reason = 5;
-    
+message App {
+    string app_id = 1;
+    int32 state = 2;
+    int32 type = 3;
+    string contacter = 4;
+    string phone = 5;
+    string email = 6;
+    string location = 7;
+    string contact = 8;
+    string company = 9;
+    string identify = 10;
+    string bank_code = 11;
+    string last_code = 12;
+    google.protobuf.Value other = 13;
+
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

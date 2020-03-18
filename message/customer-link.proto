@@ -32,12 +32,13 @@ message CustomerLink {
 message CustomerLevel {
     string customer_level_id = 1;
     string store_id = 2;
-    int32 status = 3;
-    string name = 4;
-    double pay_amount = 5;
-    int32 pay_times = 6;
-    bool auto = 7;
-    int32 priority = 8;
+    string label_id = 3;
+    int32 status = 4;
+    string name = 5;
+    double pay_amount = 6;
+    int32 pay_times = 7;
+    bool auto = 8;
+    int32 priority = 9;
     
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

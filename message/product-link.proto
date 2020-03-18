@@ -64,11 +64,12 @@ message ProductG{
 message ProductClass {
     string product_class_id = 1;
     string activity_id = 2;
-    string path = 3;
-    google.protobuf.Value name = 4;
-    SEO seo = 5;
-    string photo = 6;
-    Image image = 7;
+    string label_id = 3;
+    string path = 4;
+    google.protobuf.Value name = 5;
+    SEO seo = 6;
+    string photo = 7;
+    Image image = 8;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

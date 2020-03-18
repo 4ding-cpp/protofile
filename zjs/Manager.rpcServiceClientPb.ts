@@ -10,6 +10,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as sql_pb from './sql_pb';
+import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';
 import * as manager_pb from './manager_pb';
 import * as customer$link_pb from './customer-link_pb';
@@ -128,6 +129,116 @@ export class ManagerRPCClient {
       request,
       metadata || {},
       this.methodInfoFindPermission,
+      callback);
+  }
+
+  methodInfoCreateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/CreateLabel',
+      request,
+      metadata || {},
+      this.methodInfoCreateLabel,
+      callback);
+  }
+
+  methodInfoUpdateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/UpdateLabel',
+      request,
+      metadata || {},
+      this.methodInfoUpdateLabel,
+      callback);
+  }
+
+  methodInfoAppendLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  appendLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/AppendLabel',
+      request,
+      metadata || {},
+      this.methodInfoAppendLabel,
+      callback);
+  }
+
+  methodInfoSubtractLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  subtractLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/SubtractLabel',
+      request,
+      metadata || {},
+      this.methodInfoSubtractLabel,
+      callback);
+  }
+
+  methodInfoFindLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findLabel(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/FindLabel',
+      request,
+      metadata || {},
+      this.methodInfoFindLabel,
       callback);
   }
 
@@ -524,6 +635,28 @@ export class ManagerRPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductF,
+      callback);
+  }
+
+  methodInfoFindProductSpec = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findProductSpec(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ManagerRPC/FindProductSpec',
+      request,
+      metadata || {},
+      this.methodInfoFindProductSpec,
       callback);
   }
 

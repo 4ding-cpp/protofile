@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
+import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';
 import * as manager_pb from './manager_pb';
 import * as customer$link_pb from './customer-link_pb';

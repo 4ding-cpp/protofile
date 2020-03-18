@@ -32,3 +32,5 @@ var adv_pb = require('./adv_pb.js');
 goog.object.extend(proto, adv_pb);
 var setting_pb = require('./setting_pb.js');
 goog.object.extend(proto, setting_pb);
+var external_pb = require('./external_pb.js');
+goog.object.extend(proto, external_pb);
