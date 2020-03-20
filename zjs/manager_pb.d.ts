@@ -32,10 +32,10 @@ export class Manager extends jspb.Message {
   clearPermissionList(): void;
   addPermission(value?: type_pb.Option, index?: number): type_pb.Option;
 
-  getWhitelistList(): Array<string>;
-  setWhitelistList(value: Array<string>): void;
-  clearWhitelistList(): void;
-  addWhitelist(value: string, index?: number): void;
+  getWhiteList(): Array<string>;
+  setWhiteList(value: Array<string>): void;
+  clearWhiteList(): void;
+  addWhite(value: string, index?: number): void;
 
   getPassword(): string;
   setPassword(value: string): void;
@@ -86,7 +86,7 @@ export namespace Manager {
     email: string,
     name: string,
     permissionList: Array<type_pb.Option.AsObject>,
-    whitelistList: Array<string>,
+    whiteList: Array<string>,
     password: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

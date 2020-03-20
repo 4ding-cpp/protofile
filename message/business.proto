@@ -24,7 +24,7 @@ message Business {
     string adv_id = 11;
     double fee = 12;
     repeated Option permission = 13;
-    repeated string whitelist = 14;
+    repeated string white = 14;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

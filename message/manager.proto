@@ -18,7 +18,7 @@ message Manager {
     string email = 6;
     string name = 7;
     repeated Option permission = 8;
-    repeated string whitelist = 9;
+    repeated string white = 9;
     string password = 10;
     
     string operator = 70;

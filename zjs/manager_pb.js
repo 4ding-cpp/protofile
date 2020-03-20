@@ -90,7 +90,7 @@ proto.ding4.Manager.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 7, ""),
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     type_pb.Option.toObject, includeInstance),
-    whitelistList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    whiteList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     password: jspb.Message.getFieldWithDefault(msg, 10, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -170,7 +170,7 @@ proto.ding4.Manager.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.addWhitelist(value);
+      msg.addWhite(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -290,7 +290,7 @@ proto.ding4.Manager.serializeBinaryToWriter = function(message, writer) {
       type_pb.Option.serializeBinaryToWriter
     );
   }
-  f = message.getWhitelistList();
+  f = message.getWhiteList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       9,
@@ -518,10 +518,10 @@ proto.ding4.Manager.prototype.clearPermissionList = function() {
 
 
 /**
- * repeated string whitelist = 9;
+ * repeated string white = 9;
  * @return {!Array<string>}
  */
-proto.ding4.Manager.prototype.getWhitelistList = function() {
+proto.ding4.Manager.prototype.getWhiteList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
@@ -530,7 +530,7 @@ proto.ding4.Manager.prototype.getWhitelistList = function() {
  * @param {!Array<string>} value
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.setWhitelistList = function(value) {
+proto.ding4.Manager.prototype.setWhiteList = function(value) {
   return jspb.Message.setField(this, 9, value || []);
 };
 
@@ -540,7 +540,7 @@ proto.ding4.Manager.prototype.setWhitelistList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.addWhitelist = function(value, opt_index) {
+proto.ding4.Manager.prototype.addWhite = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
@@ -549,8 +549,8 @@ proto.ding4.Manager.prototype.addWhitelist = function(value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.ding4.Manager} returns this
  */
-proto.ding4.Manager.prototype.clearWhitelistList = function() {
-  return this.setWhitelistList([]);
+proto.ding4.Manager.prototype.clearWhiteList = function() {
+  return this.setWhiteList([]);
 };
 
 
