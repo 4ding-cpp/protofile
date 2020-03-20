@@ -367,6 +367,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoPrepareBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: business_pb.Business) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  prepareBusiness(
+    request: business_pb.Business,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/PrepareBusiness',
+      request,
+      metadata || {},
+      this.methodInfoPrepareBusiness,
+      callback);
+  }
+
   methodInfoUpdateBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: business_pb.Business) => {

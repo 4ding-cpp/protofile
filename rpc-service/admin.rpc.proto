@@ -35,6 +35,7 @@ service AdminRPC {
     rpc SignAdmin(Query) returns (Response);
 
     rpc CreateBusiness(Business) returns (Response);
+    rpc PrepareBusiness(Business) returns (Response);
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
     rpc RecordBusiness(Query) returns (Response);
