@@ -32,11 +32,11 @@ export class Product extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): void;
 
-  getPreOrder(): boolean;
-  setPreOrder(value: boolean): void;
+  getIsPreorder(): boolean;
+  setIsPreorder(value: boolean): void;
 
-  getStorePickup(): boolean;
-  setStorePickup(value: boolean): void;
+  getIsPickup(): boolean;
+  setIsPickup(value: boolean): void;
 
   getPhoto(): string;
   setPhoto(value: string): void;
@@ -92,8 +92,8 @@ export namespace Product {
     price: number,
     reduce: number,
     weight: number,
-    preOrder: boolean,
-    storePickup: boolean,
+    isPreorder: boolean,
+    isPickup: boolean,
     photo: string,
     imageList: Array<image_pb.Image.AsObject>,
     operator: string,

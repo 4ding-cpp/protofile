@@ -14,14 +14,14 @@ export class Remind extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getEmail(): boolean;
-  setEmail(value: boolean): void;
+  getIsEmail(): boolean;
+  setIsEmail(value: boolean): void;
 
   getEmailTemplate(): string;
   setEmailTemplate(value: string): void;
 
-  getLetter(): boolean;
-  setLetter(value: boolean): void;
+  getIsLetter(): boolean;
+  setIsLetter(value: boolean): void;
 
   getLetterTemplate(): string;
   setLetterTemplate(value: string): void;
@@ -67,9 +67,9 @@ export namespace Remind {
     remindId: string,
     item: string,
     description: string,
-    email: boolean,
+    isEmail: boolean,
     emailTemplate: string,
-    letter: boolean,
+    isLetter: boolean,
     letterTemplate: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

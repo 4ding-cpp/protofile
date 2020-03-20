@@ -44,8 +44,8 @@ export class Activity extends jspb.Message {
   getCondV(): number;
   setCondV(value: number): void;
 
-  getRepeated(): boolean;
-  setRepeated(value: boolean): void;
+  getIsRepeat(): boolean;
+  setIsRepeat(value: boolean): void;
 
   getActive(): number;
   setActive(value: number): void;
@@ -108,7 +108,7 @@ export namespace Activity {
     item: number,
     cond: number,
     condV: number,
-    repeated: boolean,
+    isRepeat: boolean,
     active: number,
     activeV: number,
     giveawayId: string,
@@ -189,8 +189,8 @@ export class Discount extends jspb.Message {
   getActiveV(): number;
   setActiveV(value: number): void;
 
-  getAutoSet(): boolean;
-  setAutoSet(value: boolean): void;
+  getIsAuto(): boolean;
+  setIsAuto(value: boolean): void;
 
   getSetCode(): string;
   setSetCode(value: string): void;
@@ -246,7 +246,7 @@ export namespace Discount {
     condV: number,
     active: number,
     activeV: number,
-    autoSet: boolean,
+    isAuto: boolean,
     setCode: string,
     times: number,
     operator: string,

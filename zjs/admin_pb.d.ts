@@ -24,14 +24,14 @@ export class Admin extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getOnline(): boolean;
-  setOnline(value: boolean): void;
+  getIsLive(): boolean;
+  setIsLive(value: boolean): void;
 
   getPassword(): string;
   setPassword(value: string): void;
 
-  getSuperUser(): boolean;
-  setSuperUser(value: boolean): void;
+  getIsSuper(): boolean;
+  setIsSuper(value: boolean): void;
 
   getPermissionList(): Array<type_pb.Option>;
   setPermissionList(value: Array<type_pb.Option>): void;
@@ -87,9 +87,9 @@ export namespace Admin {
     email: string,
     name: string,
     title: string,
-    online: boolean,
+    isLive: boolean,
     password: string,
-    superUser: boolean,
+    isSuper: boolean,
     permissionList: Array<type_pb.Option.AsObject>,
     whitelistList: Array<string>,
     operator: string,

@@ -25,22 +25,9 @@ message Order {
     int32 count = 15;
     double amount = 16;
     double freight = 17;
-    bool re_order = 18;
+    bool is_resend = 18;
     int32 track = 19;
-
-    string payer_email = 20;
-    string payer_name = 21;
-    string payer_phone = 22;
-    string payer_address_code = 23;
-    string payer_address_city = 24;
-    string payer_address_township = 25;
-    string payer_address_detail = 26;
-    string receiver_name = 27;
-    string receiver_phone = 28;
-    string receiver_address_code = 29;
-    string receiver_address_city = 30;
-    string receiver_address_township = 31;
-    string receiver_address_detail = 32;
+    Address address = 20;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
@@ -50,21 +37,18 @@ message Order {
     google.protobuf.Struct self = 75;
 }
 
-message OrderD {
-    double customer_id = 1;
-    string payer_email = 2;
-    string payer_name = 3;
-    string payer_phone = 4;
-    string payer_address_code = 5;
-    string payer_address_city = 6;
-    string payer_address_township = 7;
-    string payer_address_detail = 8;
-    string receiver_name = 9;
-    string receiver_phone = 10;
-    string receiver_address_code = 11;
-    string receiver_address_city = 12;
-    string receiver_address_township = 13;
-    string receiver_address_detail = 14;
-
-    google.protobuf.Struct self = 75;
+message Address {
+    string payer_email = 1;
+    string payer_name = 2;
+    string payer_phone = 3;
+    string payer_address_code = 4;
+    string payer_address_city = 5;
+    string payer_address_township = 6;
+    string payer_address_detail = 7;
+    string receiver_name = 8;
+    string receiver_phone = 9;
+    string receiver_address_code = 10;
+    string receiver_address_city = 11;
+    string receiver_address_township = 12;
+    string receiver_address_detail = 13;
 }

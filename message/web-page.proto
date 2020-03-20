@@ -12,7 +12,7 @@ import "google/protobuf/timestamp.proto";
 message WebPage {
     string web_page_id = 1;
     string store_id = 2;
-    bool display = 3;
+    bool is_display = 3;
     int32 http_code = 4;
     google.protobuf.Value name = 5;
     string link = 6;

@@ -177,8 +177,8 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     weight: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    preOrder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    storePickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     photo: jspb.Message.getFieldWithDefault(msg, 11, ""),
     imageList: jspb.Message.toObjectList(msg.getImageList(),
     image_pb.Image.toObject, includeInstance),
@@ -260,11 +260,11 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPreOrder(value);
+      msg.setIsPreorder(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStorePickup(value);
+      msg.setIsPickup(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
@@ -389,14 +389,14 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPreOrder();
+  f = message.getIsPreorder();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
-  f = message.getStorePickup();
+  f = message.getIsPickup();
   if (f) {
     writer.writeBool(
       10,
@@ -631,10 +631,10 @@ proto.ding4.Product.prototype.setWeight = function(value) {
 
 
 /**
- * optional bool pre_order = 9;
+ * optional bool is_preorder = 9;
  * @return {boolean}
  */
-proto.ding4.Product.prototype.getPreOrder = function() {
+proto.ding4.Product.prototype.getIsPreorder = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -643,16 +643,16 @@ proto.ding4.Product.prototype.getPreOrder = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setPreOrder = function(value) {
+proto.ding4.Product.prototype.setIsPreorder = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool store_pickup = 10;
+ * optional bool is_pickup = 10;
  * @return {boolean}
  */
-proto.ding4.Product.prototype.getStorePickup = function() {
+proto.ding4.Product.prototype.getIsPickup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
@@ -661,7 +661,7 @@ proto.ding4.Product.prototype.getStorePickup = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setStorePickup = function(value) {
+proto.ding4.Product.prototype.setIsPickup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 

@@ -50,50 +50,16 @@ export class Order extends jspb.Message {
   getFreight(): number;
   setFreight(value: number): void;
 
-  getReOrder(): boolean;
-  setReOrder(value: boolean): void;
+  getIsResend(): boolean;
+  setIsResend(value: boolean): void;
 
   getTrack(): number;
   setTrack(value: number): void;
 
-  getPayerEmail(): string;
-  setPayerEmail(value: string): void;
-
-  getPayerName(): string;
-  setPayerName(value: string): void;
-
-  getPayerPhone(): string;
-  setPayerPhone(value: string): void;
-
-  getPayerAddressCode(): string;
-  setPayerAddressCode(value: string): void;
-
-  getPayerAddressCity(): string;
-  setPayerAddressCity(value: string): void;
-
-  getPayerAddressTownship(): string;
-  setPayerAddressTownship(value: string): void;
-
-  getPayerAddressDetail(): string;
-  setPayerAddressDetail(value: string): void;
-
-  getReceiverName(): string;
-  setReceiverName(value: string): void;
-
-  getReceiverPhone(): string;
-  setReceiverPhone(value: string): void;
-
-  getReceiverAddressCode(): string;
-  setReceiverAddressCode(value: string): void;
-
-  getReceiverAddressCity(): string;
-  setReceiverAddressCity(value: string): void;
-
-  getReceiverAddressTownship(): string;
-  setReceiverAddressTownship(value: string): void;
-
-  getReceiverAddressDetail(): string;
-  setReceiverAddressDetail(value: string): void;
+  getAddress(): Address | undefined;
+  setAddress(value?: Address): void;
+  hasAddress(): boolean;
+  clearAddress(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -148,21 +114,9 @@ export namespace Order {
     count: number,
     amount: number,
     freight: number,
-    reOrder: boolean,
+    isResend: boolean,
     track: number,
-    payerEmail: string,
-    payerName: string,
-    payerPhone: string,
-    payerAddressCode: string,
-    payerAddressCity: string,
-    payerAddressTownship: string,
-    payerAddressDetail: string,
-    receiverName: string,
-    receiverPhone: string,
-    receiverAddressCode: string,
-    receiverAddressCity: string,
-    receiverAddressTownship: string,
-    receiverAddressDetail: string,
+    address?: Address.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -172,10 +126,7 @@ export namespace Order {
   }
 }
 
-export class OrderD extends jspb.Message {
-  getCustomerId(): number;
-  setCustomerId(value: number): void;
-
+export class Address extends jspb.Message {
   getPayerEmail(): string;
   setPayerEmail(value: string): void;
 
@@ -215,22 +166,16 @@ export class OrderD extends jspb.Message {
   getReceiverAddressDetail(): string;
   setReceiverAddressDetail(value: string): void;
 
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderD.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderD): OrderD.AsObject;
-  static serializeBinaryToWriter(message: OrderD, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderD;
-  static deserializeBinaryFromReader(message: OrderD, reader: jspb.BinaryReader): OrderD;
+  toObject(includeInstance?: boolean): Address.AsObject;
+  static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
+  static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Address;
+  static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
 }
 
-export namespace OrderD {
+export namespace Address {
   export type AsObject = {
-    customerId: number,
     payerEmail: string,
     payerName: string,
     payerPhone: string,
@@ -244,7 +189,6 @@ export namespace OrderD {
     receiverAddressCity: string,
     receiverAddressTownship: string,
     receiverAddressDetail: string,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

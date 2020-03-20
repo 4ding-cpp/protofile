@@ -12,7 +12,7 @@ import "google/protobuf/timestamp.proto";
 message WebLayout {
     string web_layout_id = 1;
     string store_id = 2;
-    bool display = 3;
+    bool is_display = 3;
     int32 type = 4;
     int32 priority = 5;
     string title = 6;

@@ -82,9 +82,9 @@ proto.ding4.Remind.toObject = function(includeInstance, msg) {
     remindId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     item: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    email: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    isEmail: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     emailTemplate: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    letter: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    isLetter: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     letterTemplate: jspb.Message.getFieldWithDefault(msg, 7, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -143,7 +143,7 @@ proto.ding4.Remind.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmail(value);
+      msg.setIsEmail(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -151,7 +151,7 @@ proto.ding4.Remind.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLetter(value);
+      msg.setIsLetter(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -235,7 +235,7 @@ proto.ding4.Remind.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEmail();
+  f = message.getIsEmail();
   if (f) {
     writer.writeBool(
       4,
@@ -249,7 +249,7 @@ proto.ding4.Remind.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLetter();
+  f = message.getIsLetter();
   if (f) {
     writer.writeBool(
       6,
@@ -367,10 +367,10 @@ proto.ding4.Remind.prototype.setDescription = function(value) {
 
 
 /**
- * optional bool email = 4;
+ * optional bool is_email = 4;
  * @return {boolean}
  */
-proto.ding4.Remind.prototype.getEmail = function() {
+proto.ding4.Remind.prototype.getIsEmail = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -379,7 +379,7 @@ proto.ding4.Remind.prototype.getEmail = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Remind} returns this
  */
-proto.ding4.Remind.prototype.setEmail = function(value) {
+proto.ding4.Remind.prototype.setIsEmail = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -403,10 +403,10 @@ proto.ding4.Remind.prototype.setEmailTemplate = function(value) {
 
 
 /**
- * optional bool letter = 6;
+ * optional bool is_letter = 6;
  * @return {boolean}
  */
-proto.ding4.Remind.prototype.getLetter = function() {
+proto.ding4.Remind.prototype.getIsLetter = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -415,7 +415,7 @@ proto.ding4.Remind.prototype.getLetter = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Remind} returns this
  */
-proto.ding4.Remind.prototype.setLetter = function(value) {
+proto.ding4.Remind.prototype.setIsLetter = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 

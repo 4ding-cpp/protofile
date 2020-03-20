@@ -12,8 +12,8 @@ export class WebPage extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getDisplay(): boolean;
-  setDisplay(value: boolean): void;
+  getIsDisplay(): boolean;
+  setIsDisplay(value: boolean): void;
 
   getHttpCode(): number;
   setHttpCode(value: number): void;
@@ -74,7 +74,7 @@ export namespace WebPage {
   export type AsObject = {
     webPageId: string,
     storeId: string,
-    display: boolean,
+    isDisplay: boolean,
     httpCode: number,
     name?: google_protobuf_struct_pb.Value.AsObject,
     link: string,

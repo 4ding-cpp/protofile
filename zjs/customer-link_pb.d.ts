@@ -17,8 +17,8 @@ export class CustomerLink extends jspb.Message {
   getCustomerLevelId(): string;
   setCustomerLevelId(value: string): void;
 
-  getReceiveNews(): boolean;
-  setReceiveNews(value: boolean): void;
+  getIsReceive(): boolean;
+  setIsReceive(value: boolean): void;
 
   getName(): string;
   setName(value: string): void;
@@ -77,7 +77,7 @@ export namespace CustomerLink {
     storeId: string,
     customerId: string,
     customerLevelId: string,
-    receiveNews: boolean,
+    isReceive: boolean,
     name: string,
     phone: string,
     email: string,
@@ -114,8 +114,8 @@ export class CustomerLevel extends jspb.Message {
   getPayTimes(): number;
   setPayTimes(value: number): void;
 
-  getAuto(): boolean;
-  setAuto(value: boolean): void;
+  getIsAuto(): boolean;
+  setIsAuto(value: boolean): void;
 
   getPriority(): number;
   setPriority(value: number): void;
@@ -165,7 +165,7 @@ export namespace CustomerLevel {
     name: string,
     payAmount: number,
     payTimes: number,
-    auto: boolean,
+    isAuto: boolean,
     priority: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

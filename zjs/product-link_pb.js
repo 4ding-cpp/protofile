@@ -155,7 +155,7 @@ proto.ding4.ProductLink.toObject = function(includeInstance, msg) {
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     productId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     productClassId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    display: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     url: jspb.Message.getFieldWithDefault(msg, 6, ""),
     seo: (f = msg.getSeo()) && type_pb.SEO.toObject(includeInstance, f),
     blockList: jspb.Message.toObjectList(msg.getBlockList(),
@@ -221,7 +221,7 @@ proto.ding4.ProductLink.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisplay(value);
+      msg.setIsDisplay(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -322,7 +322,7 @@ proto.ding4.ProductLink.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDisplay();
+  f = message.getIsDisplay();
   if (f) {
     writer.writeBool(
       5,
@@ -474,10 +474,10 @@ proto.ding4.ProductLink.prototype.setProductClassId = function(value) {
 
 
 /**
- * optional bool display = 5;
+ * optional bool is_display = 5;
  * @return {boolean}
  */
-proto.ding4.ProductLink.prototype.getDisplay = function() {
+proto.ding4.ProductLink.prototype.getIsDisplay = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -486,7 +486,7 @@ proto.ding4.ProductLink.prototype.getDisplay = function() {
  * @param {boolean} value
  * @return {!proto.ding4.ProductLink} returns this
  */
-proto.ding4.ProductLink.prototype.setDisplay = function(value) {
+proto.ding4.ProductLink.prototype.setIsDisplay = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -823,7 +823,7 @@ proto.ding4.ProductF.toObject = function(includeInstance, msg) {
     productLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     productClassId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    display: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
@@ -879,7 +879,7 @@ proto.ding4.ProductF.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisplay(value);
+      msg.setIsDisplay(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -952,7 +952,7 @@ proto.ding4.ProductF.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDisplay();
+  f = message.getIsDisplay();
   if (f) {
     writer.writeBool(
       4,
@@ -1053,10 +1053,10 @@ proto.ding4.ProductF.prototype.setProductClassId = function(value) {
 
 
 /**
- * optional bool display = 4;
+ * optional bool is_display = 4;
  * @return {boolean}
  */
-proto.ding4.ProductF.prototype.getDisplay = function() {
+proto.ding4.ProductF.prototype.getIsDisplay = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -1065,7 +1065,7 @@ proto.ding4.ProductF.prototype.getDisplay = function() {
  * @param {boolean} value
  * @return {!proto.ding4.ProductF} returns this
  */
-proto.ding4.ProductF.prototype.setDisplay = function(value) {
+proto.ding4.ProductF.prototype.setIsDisplay = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -1220,7 +1220,7 @@ proto.ding4.ProductG.toObject = function(includeInstance, msg) {
   var f, obj = {
     productLinkId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     state: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    preOrder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     url: jspb.Message.getFieldWithDefault(msg, 4, ""),
     freightAdd: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
     seo: (f = msg.getSeo()) && type_pb.SEO.toObject(includeInstance, f),
@@ -1234,7 +1234,7 @@ proto.ding4.ProductG.toObject = function(includeInstance, msg) {
     reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
     photoList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
     weight: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
-    storePickup: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     specsList: jspb.Message.toObjectList(msg.getSpecsList(),
     product_pb.ProductSpec.toObject, includeInstance)
   };
@@ -1283,7 +1283,7 @@ proto.ding4.ProductG.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPreOrder(value);
+      msg.setIsPreorder(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -1338,7 +1338,7 @@ proto.ding4.ProductG.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStorePickup(value);
+      msg.setIsPickup(value);
       break;
     case 17:
       var value = new product_pb.ProductSpec;
@@ -1388,7 +1388,7 @@ proto.ding4.ProductG.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPreOrder();
+  f = message.getIsPreorder();
   if (f) {
     writer.writeBool(
       3,
@@ -1482,7 +1482,7 @@ proto.ding4.ProductG.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getStorePickup();
+  f = message.getIsPickup();
   if (f) {
     writer.writeBool(
       16,
@@ -1537,10 +1537,10 @@ proto.ding4.ProductG.prototype.setState = function(value) {
 
 
 /**
- * optional bool pre_order = 3;
+ * optional bool is_preorder = 3;
  * @return {boolean}
  */
-proto.ding4.ProductG.prototype.getPreOrder = function() {
+proto.ding4.ProductG.prototype.getIsPreorder = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -1549,7 +1549,7 @@ proto.ding4.ProductG.prototype.getPreOrder = function() {
  * @param {boolean} value
  * @return {!proto.ding4.ProductG} returns this
  */
-proto.ding4.ProductG.prototype.setPreOrder = function(value) {
+proto.ding4.ProductG.prototype.setIsPreorder = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
@@ -1848,10 +1848,10 @@ proto.ding4.ProductG.prototype.setWeight = function(value) {
 
 
 /**
- * optional bool store_pickup = 16;
+ * optional bool is_pickup = 16;
  * @return {boolean}
  */
-proto.ding4.ProductG.prototype.getStorePickup = function() {
+proto.ding4.ProductG.prototype.getIsPickup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
@@ -1860,7 +1860,7 @@ proto.ding4.ProductG.prototype.getStorePickup = function() {
  * @param {boolean} value
  * @return {!proto.ding4.ProductG} returns this
  */
-proto.ding4.ProductG.prototype.setStorePickup = function(value) {
+proto.ding4.ProductG.prototype.setIsPickup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 

@@ -20,8 +20,8 @@ export class ProductLink extends jspb.Message {
   getProductClassId(): string;
   setProductClassId(value: string): void;
 
-  getDisplay(): boolean;
-  setDisplay(value: boolean): void;
+  getIsDisplay(): boolean;
+  setIsDisplay(value: boolean): void;
 
   getUrl(): string;
   setUrl(value: string): void;
@@ -78,7 +78,7 @@ export namespace ProductLink {
     storeId: string,
     productId: string,
     productClassId: string,
-    display: boolean,
+    isDisplay: boolean,
     url: string,
     seo?: type_pb.SEO.AsObject,
     blockList: Array<type_pb.Block.AsObject>,
@@ -101,8 +101,8 @@ export class ProductF extends jspb.Message {
   getProductClassId(): string;
   setProductClassId(value: string): void;
 
-  getDisplay(): boolean;
-  setDisplay(value: boolean): void;
+  getIsDisplay(): boolean;
+  setIsDisplay(value: boolean): void;
 
   getStatus(): number;
   setStatus(value: number): void;
@@ -134,7 +134,7 @@ export namespace ProductF {
     productLinkId: string,
     productId: string,
     productClassId: string,
-    display: boolean,
+    isDisplay: boolean,
     status: number,
     name?: google_protobuf_struct_pb.Value.AsObject,
     reduce: number,
@@ -150,8 +150,8 @@ export class ProductG extends jspb.Message {
   getState(): string;
   setState(value: string): void;
 
-  getPreOrder(): boolean;
-  setPreOrder(value: boolean): void;
+  getIsPreorder(): boolean;
+  setIsPreorder(value: boolean): void;
 
   getUrl(): string;
   setUrl(value: string): void;
@@ -197,8 +197,8 @@ export class ProductG extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): void;
 
-  getStorePickup(): boolean;
-  setStorePickup(value: boolean): void;
+  getIsPickup(): boolean;
+  setIsPickup(value: boolean): void;
 
   getSpecsList(): Array<product_pb.ProductSpec>;
   setSpecsList(value: Array<product_pb.ProductSpec>): void;
@@ -217,7 +217,7 @@ export namespace ProductG {
   export type AsObject = {
     productLinkId: string,
     state: string,
-    preOrder: boolean,
+    isPreorder: boolean,
     url: string,
     freightAdd: number,
     seo?: type_pb.SEO.AsObject,
@@ -230,7 +230,7 @@ export namespace ProductG {
     reduce: number,
     photoList: Array<string>,
     weight: number,
-    storePickup: boolean,
+    isPickup: boolean,
     specsList: Array<product_pb.ProductSpec.AsObject>,
   }
 }

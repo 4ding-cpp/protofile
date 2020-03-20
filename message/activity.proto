@@ -20,7 +20,7 @@ message Activity {
     int64 item = 9;         // 活動館ID 或 單品ID
     int32 cond = 10;         // 達成條件 1:金額 2:數量
     int32 cond_v = 11;       // 須達成的條件數值
-    bool repeated = 12;     // 是否累計
+    bool is_repeat = 12;     // 是否累計
     int32 active = 13;      // 活動內容 1:免運 2:折扣 3:折價 4:贈品
     int32 active_v = 14;    // 優惠參數
     string giveaway_id = 15;// 贈品ID
@@ -51,7 +51,7 @@ message Discount {
     double cond_v = 8;      // 須達成的條件數值
     int32 active = 9;
     double active_v = 10;
-    bool auto_set = 11;
+    bool is_auto = 11;
     string set_code = 12;
     int32 times = 13;
 

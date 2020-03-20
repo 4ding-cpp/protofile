@@ -12,8 +12,8 @@ export class WebLayout extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getDisplay(): boolean;
-  setDisplay(value: boolean): void;
+  getIsDisplay(): boolean;
+  setIsDisplay(value: boolean): void;
 
   getType(): number;
   setType(value: number): void;
@@ -81,7 +81,7 @@ export namespace WebLayout {
   export type AsObject = {
     webLayoutId: string,
     storeId: string,
-    display: boolean,
+    isDisplay: boolean,
     type: number,
     priority: number,
     title: string,

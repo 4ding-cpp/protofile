@@ -21,7 +21,7 @@ message Store {
     string customer_business_id = 11;
     string customer_label_id = 12;
     string customer_status = 13;
-    bool open = 14;
+    bool is_open = 14;
     string phone = 15;
     string address_code = 16;
     string address_city = 17;

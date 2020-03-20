@@ -13,7 +13,7 @@ message CustomerLink {
     string store_id = 2;
     string customer_id = 3;
     string customer_level_id = 4;
-    bool receive_news = 5;
+    bool is_receive = 5;
 
     string name = 6;
     string phone = 7;
@@ -37,7 +37,7 @@ message CustomerLevel {
     string name = 5;
     double pay_amount = 6;
     int32 pay_times = 7;
-    bool auto = 8;
+    bool is_auto = 8;
     int32 priority = 9;
     
     string operator = 70;

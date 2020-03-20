@@ -41,8 +41,8 @@ export class Store extends jspb.Message {
   getCustomerStatus(): string;
   setCustomerStatus(value: string): void;
 
-  getOpen(): boolean;
-  setOpen(value: boolean): void;
+  getIsOpen(): boolean;
+  setIsOpen(value: boolean): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -124,7 +124,7 @@ export namespace Store {
     customerBusinessId: string,
     customerLabelId: string,
     customerStatus: string,
-    open: boolean,
+    isOpen: boolean,
     phone: string,
     addressCode: string,
     addressCity: string,

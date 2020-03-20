@@ -12,9 +12,9 @@ message Remind {
     string remind_id = 1;
     string item = 2;
     string description = 3;
-    bool email = 4;
+    bool is_email = 4;
     string email_template = 5;
-    bool letter = 6;
+    bool is_letter = 6;
     string letter_template = 7;
 
     string operator = 70;

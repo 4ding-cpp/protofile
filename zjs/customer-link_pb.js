@@ -105,7 +105,7 @@ proto.ding4.CustomerLink.toObject = function(includeInstance, msg) {
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     customerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     customerLevelId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    receiveNews: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    isReceive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 7, ""),
     email: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -172,7 +172,7 @@ proto.ding4.CustomerLink.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReceiveNews(value);
+      msg.setIsReceive(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -279,7 +279,7 @@ proto.ding4.CustomerLink.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getReceiveNews();
+  f = message.getIsReceive();
   if (f) {
     writer.writeBool(
       5,
@@ -443,10 +443,10 @@ proto.ding4.CustomerLink.prototype.setCustomerLevelId = function(value) {
 
 
 /**
- * optional bool receive_news = 5;
+ * optional bool is_receive = 5;
  * @return {boolean}
  */
-proto.ding4.CustomerLink.prototype.getReceiveNews = function() {
+proto.ding4.CustomerLink.prototype.getIsReceive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -455,7 +455,7 @@ proto.ding4.CustomerLink.prototype.getReceiveNews = function() {
  * @param {boolean} value
  * @return {!proto.ding4.CustomerLink} returns this
  */
-proto.ding4.CustomerLink.prototype.setReceiveNews = function(value) {
+proto.ding4.CustomerLink.prototype.setIsReceive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
@@ -800,7 +800,7 @@ proto.ding4.CustomerLevel.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     payAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     payTimes: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    auto: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    isAuto: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     priority: jspb.Message.getFieldWithDefault(msg, 9, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -875,7 +875,7 @@ proto.ding4.CustomerLevel.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAuto(value);
+      msg.setIsAuto(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt32());
@@ -987,7 +987,7 @@ proto.ding4.CustomerLevel.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAuto();
+  f = message.getIsAuto();
   if (f) {
     writer.writeBool(
       8,
@@ -1177,10 +1177,10 @@ proto.ding4.CustomerLevel.prototype.setPayTimes = function(value) {
 
 
 /**
- * optional bool auto = 8;
+ * optional bool is_auto = 8;
  * @return {boolean}
  */
-proto.ding4.CustomerLevel.prototype.getAuto = function() {
+proto.ding4.CustomerLevel.prototype.getIsAuto = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -1189,7 +1189,7 @@ proto.ding4.CustomerLevel.prototype.getAuto = function() {
  * @param {boolean} value
  * @return {!proto.ding4.CustomerLevel} returns this
  */
-proto.ding4.CustomerLevel.prototype.setAuto = function(value) {
+proto.ding4.CustomerLevel.prototype.setIsAuto = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 

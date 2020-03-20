@@ -91,7 +91,7 @@ proto.ding4.Store.toObject = function(includeInstance, msg) {
     customerBusinessId: jspb.Message.getFieldWithDefault(msg, 11, ""),
     customerLabelId: jspb.Message.getFieldWithDefault(msg, 12, ""),
     customerStatus: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    open: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    isOpen: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     phone: jspb.Message.getFieldWithDefault(msg, 15, ""),
     addressCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
     addressCity: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -195,7 +195,7 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOpen(value);
+      msg.setIsOpen(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -378,7 +378,7 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOpen();
+  f = message.getIsOpen();
   if (f) {
     writer.writeBool(
       14,
@@ -721,10 +721,10 @@ proto.ding4.Store.prototype.setCustomerStatus = function(value) {
 
 
 /**
- * optional bool open = 14;
+ * optional bool is_open = 14;
  * @return {boolean}
  */
-proto.ding4.Store.prototype.getOpen = function() {
+proto.ding4.Store.prototype.getIsOpen = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -733,7 +733,7 @@ proto.ding4.Store.prototype.getOpen = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Store} returns this
  */
-proto.ding4.Store.prototype.setOpen = function(value) {
+proto.ding4.Store.prototype.setIsOpen = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 

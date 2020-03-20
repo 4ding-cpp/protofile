@@ -81,7 +81,7 @@ proto.ding4.WebItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     webItemId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    display: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     priority: jspb.Message.getFieldWithDefault(msg, 4, 0),
     type: jspb.Message.getFieldWithDefault(msg, 5, 0),
     area: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -141,7 +141,7 @@ proto.ding4.WebItem.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisplay(value);
+      msg.setIsDisplay(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -239,7 +239,7 @@ proto.ding4.WebItem.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDisplay();
+  f = message.getIsDisplay();
   if (f) {
     writer.writeBool(
       3,
@@ -375,10 +375,10 @@ proto.ding4.WebItem.prototype.setStoreId = function(value) {
 
 
 /**
- * optional bool display = 3;
+ * optional bool is_display = 3;
  * @return {boolean}
  */
-proto.ding4.WebItem.prototype.getDisplay = function() {
+proto.ding4.WebItem.prototype.getIsDisplay = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -387,7 +387,7 @@ proto.ding4.WebItem.prototype.getDisplay = function() {
  * @param {boolean} value
  * @return {!proto.ding4.WebItem} returns this
  */
-proto.ding4.WebItem.prototype.setDisplay = function(value) {
+proto.ding4.WebItem.prototype.setIsDisplay = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 

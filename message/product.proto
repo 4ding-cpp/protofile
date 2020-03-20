@@ -18,8 +18,8 @@ message Product {
     double price = 6;
     double reduce = 7;
     double weight = 8;
-    bool pre_order = 9;
-    bool store_pickup = 10;
+    bool is_preorder = 9;
+    bool is_pickup = 10;
     string photo = 11;
     repeated Image image = 12;
 

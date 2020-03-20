@@ -16,9 +16,9 @@ message Admin {
     string email = 4;
     string name = 5;
     string title = 6;
-    bool online = 7;
+    bool is_live = 7;
     string password = 8;
-    bool super_user = 9;
+    bool is_super = 9;
     repeated Option permission = 10;
     repeated string whitelist = 11;
 

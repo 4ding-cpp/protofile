@@ -87,9 +87,9 @@ proto.ding4.Admin.toObject = function(includeInstance, msg) {
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     title: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    online: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    isLive: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     password: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    superUser: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    isSuper: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     type_pb.Option.toObject, includeInstance),
     whitelistList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
@@ -162,7 +162,7 @@ proto.ding4.Admin.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnline(value);
+      msg.setIsLive(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -170,7 +170,7 @@ proto.ding4.Admin.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSuperUser(value);
+      msg.setIsSuper(value);
       break;
     case 10:
       var value = new type_pb.Option;
@@ -280,7 +280,7 @@ proto.ding4.Admin.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOnline();
+  f = message.getIsLive();
   if (f) {
     writer.writeBool(
       7,
@@ -294,7 +294,7 @@ proto.ding4.Admin.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSuperUser();
+  f = message.getIsSuper();
   if (f) {
     writer.writeBool(
       9,
@@ -474,10 +474,10 @@ proto.ding4.Admin.prototype.setTitle = function(value) {
 
 
 /**
- * optional bool online = 7;
+ * optional bool is_live = 7;
  * @return {boolean}
  */
-proto.ding4.Admin.prototype.getOnline = function() {
+proto.ding4.Admin.prototype.getIsLive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -486,7 +486,7 @@ proto.ding4.Admin.prototype.getOnline = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Admin} returns this
  */
-proto.ding4.Admin.prototype.setOnline = function(value) {
+proto.ding4.Admin.prototype.setIsLive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
@@ -510,10 +510,10 @@ proto.ding4.Admin.prototype.setPassword = function(value) {
 
 
 /**
- * optional bool super_user = 9;
+ * optional bool is_super = 9;
  * @return {boolean}
  */
-proto.ding4.Admin.prototype.getSuperUser = function() {
+proto.ding4.Admin.prototype.getIsSuper = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -522,7 +522,7 @@ proto.ding4.Admin.prototype.getSuperUser = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Admin} returns this
  */
-proto.ding4.Admin.prototype.setSuperUser = function(value) {
+proto.ding4.Admin.prototype.setIsSuper = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 

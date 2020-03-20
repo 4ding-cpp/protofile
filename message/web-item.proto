@@ -11,11 +11,11 @@ import "google/protobuf/timestamp.proto";
 message WebItem {
     string web_item_id = 1;
     string store_id = 2;
-    bool display = 3;
+    bool is_display = 3;
     int32 priority = 4;
     int32 type = 5;
     string area = 6;
-    int32 rows = 7;
+    int32 line = 7;
     google.protobuf.Value name = 8;
     string link = 9;
     

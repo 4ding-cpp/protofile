@@ -156,7 +156,7 @@ proto.ding4.Activity.toObject = function(includeInstance, msg) {
     item: jspb.Message.getFieldWithDefault(msg, 9, 0),
     cond: jspb.Message.getFieldWithDefault(msg, 10, 0),
     condV: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    repeated: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     active: jspb.Message.getFieldWithDefault(msg, 13, 0),
     activeV: jspb.Message.getFieldWithDefault(msg, 14, 0),
     giveawayId: jspb.Message.getFieldWithDefault(msg, 15, ""),
@@ -253,7 +253,7 @@ proto.ding4.Activity.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRepeated(value);
+      msg.setIsRepeat(value);
       break;
     case 13:
       var value = /** @type {number} */ (reader.readInt32());
@@ -408,7 +408,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRepeated();
+  f = message.getIsRepeat();
   if (f) {
     writer.writeBool(
       12,
@@ -748,10 +748,10 @@ proto.ding4.Activity.prototype.setCondV = function(value) {
 
 
 /**
- * optional bool repeated = 12;
+ * optional bool is_repeat = 12;
  * @return {boolean}
  */
-proto.ding4.Activity.prototype.getRepeated = function() {
+proto.ding4.Activity.prototype.getIsRepeat = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
@@ -760,7 +760,7 @@ proto.ding4.Activity.prototype.getRepeated = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setRepeated = function(value) {
+proto.ding4.Activity.prototype.setIsRepeat = function(value) {
   return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
@@ -1327,7 +1327,7 @@ proto.ding4.Discount.toObject = function(includeInstance, msg) {
     condV: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     active: jspb.Message.getFieldWithDefault(msg, 9, 0),
     activeV: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    autoSet: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    isAuto: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     setCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
     times: jspb.Message.getFieldWithDefault(msg, 13, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
@@ -1418,7 +1418,7 @@ proto.ding4.Discount.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAutoSet(value);
+      msg.setIsAuto(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
@@ -1558,7 +1558,7 @@ proto.ding4.Discount.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAutoSet();
+  f = message.getIsAuto();
   if (f) {
     writer.writeBool(
       11,
@@ -1866,10 +1866,10 @@ proto.ding4.Discount.prototype.setActiveV = function(value) {
 
 
 /**
- * optional bool auto_set = 11;
+ * optional bool is_auto = 11;
  * @return {boolean}
  */
-proto.ding4.Discount.prototype.getAutoSet = function() {
+proto.ding4.Discount.prototype.getIsAuto = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
@@ -1878,7 +1878,7 @@ proto.ding4.Discount.prototype.getAutoSet = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Discount} returns this
  */
-proto.ding4.Discount.prototype.setAutoSet = function(value) {
+proto.ding4.Discount.prototype.setIsAuto = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 

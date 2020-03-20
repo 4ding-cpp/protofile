@@ -16,7 +16,7 @@ message ProductLink {
     string store_id = 2;
     string product_id = 3;
     string product_class_id = 4;
-    bool display = 5;
+    bool is_display = 5;
     string url = 6;
     SEO seo = 7;
     repeated Block block = 8;
@@ -33,7 +33,7 @@ message ProductF {
     string product_link_id = 1;
     string product_id = 2;
     string product_class_id = 3;
-    bool display = 4;
+    bool is_display = 4;
     int32 status = 5;
     google.protobuf.Value name = 6;
     double reduce = 7;
@@ -44,7 +44,7 @@ message ProductF {
 message ProductG{
     string product_link_id = 1;
     string state = 2;
-    bool pre_order = 3;
+    bool is_preorder = 3;
     string url = 4;
     double freight_add = 5;
     SEO seo = 6;
@@ -57,7 +57,7 @@ message ProductG{
     double reduce = 13;
     repeated string photo = 14;
     double weight = 15;
-    bool store_pickup = 16;
+    bool is_pickup = 16;
     repeated ProductSpec specs = 17;
 }
 

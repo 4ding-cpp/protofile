@@ -11,8 +11,8 @@ export class WebItem extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getDisplay(): boolean;
-  setDisplay(value: boolean): void;
+  getIsDisplay(): boolean;
+  setIsDisplay(value: boolean): void;
 
   getPriority(): number;
   setPriority(value: number): void;
@@ -74,7 +74,7 @@ export namespace WebItem {
   export type AsObject = {
     webItemId: string,
     storeId: string,
-    display: boolean,
+    isDisplay: boolean,
     priority: number,
     type: number,
     area: string,
