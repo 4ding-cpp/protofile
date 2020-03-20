@@ -85,7 +85,7 @@ proto.ding4.WebItem.toObject = function(includeInstance, msg) {
     priority: jspb.Message.getFieldWithDefault(msg, 4, 0),
     type: jspb.Message.getFieldWithDefault(msg, 5, 0),
     area: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    rows: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    line: jspb.Message.getFieldWithDefault(msg, 7, 0),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     link: jspb.Message.getFieldWithDefault(msg, 9, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
@@ -157,7 +157,7 @@ proto.ding4.WebItem.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setRows(value);
+      msg.setLine(value);
       break;
     case 8:
       var value = new google_protobuf_struct_pb.Value;
@@ -267,7 +267,7 @@ proto.ding4.WebItem.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRows();
+  f = message.getLine();
   if (f !== 0) {
     writer.writeInt32(
       7,
@@ -447,10 +447,10 @@ proto.ding4.WebItem.prototype.setArea = function(value) {
 
 
 /**
- * optional int32 rows = 7;
+ * optional int32 line = 7;
  * @return {number}
  */
-proto.ding4.WebItem.prototype.getRows = function() {
+proto.ding4.WebItem.prototype.getLine = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -459,7 +459,7 @@ proto.ding4.WebItem.prototype.getRows = function() {
  * @param {number} value
  * @return {!proto.ding4.WebItem} returns this
  */
-proto.ding4.WebItem.prototype.setRows = function(value) {
+proto.ding4.WebItem.prototype.setLine = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 

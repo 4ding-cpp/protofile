@@ -23,8 +23,8 @@ export class WebItem extends jspb.Message {
   getArea(): string;
   setArea(value: string): void;
 
-  getRows(): number;
-  setRows(value: number): void;
+  getLine(): number;
+  setLine(value: number): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
@@ -78,7 +78,7 @@ export namespace WebItem {
     priority: number,
     type: number,
     area: string,
-    rows: number,
+    line: number,
     name?: google_protobuf_struct_pb.Value.AsObject,
     link: string,
     operator: string,
