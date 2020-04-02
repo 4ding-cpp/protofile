@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "sql.proto";
+
+service CustomerRPC {
+    rpc RegisterCustomer(Customer) returns (Response);
+    rpc SignInCustomer(Customer) returns (Response);
+
+    rpc IndexBase(Query) returns (Response);
+    rpc IndexItem(Query) returns (Response);
+    rpc IndexLayout(Query) returns (Response);
+
+    rpc FindProductClass(Query) returns (Response);
+    rpc FindProductF(Query) returns (Response);
+    rpc FindProductSpec(Query) returns (Response);
+
+    rpc FindProductStack(Query) returns (Response);
+    rpc FindSpecStack(Query) returns (Response);
+
+    rpc CreateCar(Car) returns (Response);
+    rpc DeleteCar(Car) returns (Response);
+    rpc CompleteCar(Car) returns (Response);
+    rpc FindCar(Query) returns (Response);
+    rpc AppendCommodity(Commodity) returns (Response);
+    rpc SubtractCommodity(Commodity) returns (Response);
+    rpc AppendDiscount(Car) returns (Response);
+    rpc SubtractDiscount(Car) returns (Response);
+
+    rpc CreateOrder(Order) returns (Response);
+    rpc PaymentOrder(Order) returns (Response);
+    rpc FindOrder(Query) returns (Response);
+}

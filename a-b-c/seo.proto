@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/struct.proto";
+
+message SEO {
+    google.protobuf.Value title = 1;
+    google.protobuf.Value keywords = 2;
+    google.protobuf.Value description = 3;
+}
+
+message Block {
+    google.protobuf.Value title = 1;
+    google.protobuf.Value content = 2;
+}

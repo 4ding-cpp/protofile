@@ -19,6 +19,8 @@ import "web-layout.proto";
 import "web-page.proto";
 import "web-item.proto";
 import "web-base.proto";
+import "template.proto";
+import "message.proto";
 
 service ManagerRPC {
     rpc ChangePassword(Manager) returns (Response);
@@ -110,5 +112,17 @@ service ManagerRPC {
 
     rpc UpdateWebBase(WebBase) returns (Response);
     rpc FindWebBase(Query) returns (Response);
+
+    rpc CreateTemplate(Template) returns (Response);
+    rpc UpdateTemplate(Template) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
+
+    rpc CreateEDM(Message) returns (Response);
+    rpc CancelEDM(Message) returns (Response);
+    rpc FindEDM(Query) returns (Response);
+
+    rpc CreateSMS(Message) returns (Response);
+    rpc CancelSMS(Message) returns (Response);
+    rpc FindSMS(Query) returns (Response);
 }
 

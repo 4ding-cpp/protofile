@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "sql.proto";
+import "image.proto";
+import "template.proto";
+
+service AssetsRPC {
+    rpc CreateImage(Image) returns (Response);
+    rpc UpdateImage(Image) returns (Response);
+    rpc DeleteImage(Image) returns (Response);
+    rpc FindImage(Query) returns (Response);
+
+    rpc CreateTemplate(Template) returns (Response);
+    rpc UpdateTemplate(Template) returns (Response);
+    rpc DeleteTemplate(Template) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
+}

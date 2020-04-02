@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "seo.proto";
+import "sql.proto";
+import "product.proto";
+import "image.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message ProductLink {
+    string product_link_id = 1;
+    string store_id = 2;
+    string product_id = 3;
+    string product_class_id = 4;
+    bool is_display = 5;
+    string url = 6;
+    SEO seo = 7;
+    repeated Block block = 8;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
+}
+
+message ProductF {
+    string product_link_id = 1;
+    string product_id = 2;
+    string product_class_id = 3;
+    bool is_display = 4;
+    int32 status = 5;
+    google.protobuf.Value name = 6;
+    double reduce = 7;
+    double price = 8;
+    string photo = 9;
+}
+
+message ProductG{
+    string product_link_id = 1;
+    string state = 2;
+    bool is_preorder = 3;
+    string url = 4;
+    double freight_add = 5;
+    SEO seo = 6;
+    repeated Block block = 7;
+    string product_class_id = 8;
+    string status = 9;
+    google.protobuf.Value name = 10;
+    double cost = 11;
+    double price = 12;
+    double reduce = 13;
+    repeated string photo = 14;
+    double weight = 15;
+    bool is_pickup = 16;
+    repeated ProductSpec specs = 17;
+}
+
+message ProductClass {
+    string product_class_id = 1;
+    string activity_id = 2;
+    string label_id = 3;
+    string path = 4;
+    google.protobuf.Value name = 5;
+    SEO seo = 6;
+    string photo = 7;
+    Image image = 8;
+
+    string operator = 70;
+    google.protobuf.Timestamp create_at = 71;
+    google.protobuf.Timestamp update_at = 72;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
+}

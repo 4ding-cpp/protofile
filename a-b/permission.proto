@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Permission {
+    repeated Option option = 1;
+}
+
+message Option {
+    string name = 1;
+    bool open = 2;
+}
