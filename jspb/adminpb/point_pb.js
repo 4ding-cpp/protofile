@@ -843,11 +843,11 @@ proto.ding4.Point.toObject = function(includeInstance, msg) {
   var f, obj = {
     pointId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    bankCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    lastCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    point: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    state: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    bankCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    lastCode: jspb.Message.getFieldWithDefault(msg, 7, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -901,23 +901,23 @@ proto.ding4.Point.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setState(value);
+      msg.setType(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPrice(value);
+      msg.setState(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBankCode(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLastCode(value);
+      msg.setBankCode(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPoint(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastCode(value);
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -990,37 +990,37 @@ proto.ding4.Point.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getState();
+  f = message.getType();
   if (f !== 0) {
     writer.writeInt32(
       3,
       f
     );
   }
-  f = message.getPrice();
+  f = message.getState();
   if (f !== 0) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getBankCode();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getPrice();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getLastCode();
+  f = message.getBankCode();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getPoint();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getLastCode();
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
@@ -1111,10 +1111,10 @@ proto.ding4.Point.prototype.setBusinessId = function(value) {
 
 
 /**
- * optional int32 state = 3;
+ * optional int32 type = 3;
  * @return {number}
  */
-proto.ding4.Point.prototype.getState = function() {
+proto.ding4.Point.prototype.getType = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1123,16 +1123,16 @@ proto.ding4.Point.prototype.getState = function() {
  * @param {number} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setState = function(value) {
+proto.ding4.Point.prototype.setType = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional int32 price = 4;
+ * optional int32 state = 4;
  * @return {number}
  */
-proto.ding4.Point.prototype.getPrice = function() {
+proto.ding4.Point.prototype.getState = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -1141,34 +1141,34 @@ proto.ding4.Point.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setPrice = function(value) {
+proto.ding4.Point.prototype.setState = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional string bank_code = 5;
+ * optional int32 price = 5;
+ * @return {number}
+ */
+proto.ding4.Point.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Point} returns this
+ */
+proto.ding4.Point.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string bank_code = 6;
  * @return {string}
  */
 proto.ding4.Point.prototype.getBankCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.Point} returns this
- */
-proto.ding4.Point.prototype.setBankCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string last_code = 6;
- * @return {string}
- */
-proto.ding4.Point.prototype.getLastCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1177,26 +1177,26 @@ proto.ding4.Point.prototype.getLastCode = function() {
  * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setLastCode = function(value) {
+proto.ding4.Point.prototype.setBankCode = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 point = 7;
- * @return {number}
+ * optional string last_code = 7;
+ * @return {string}
  */
-proto.ding4.Point.prototype.getPoint = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+proto.ding4.Point.prototype.getLastCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setPoint = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.ding4.Point.prototype.setLastCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

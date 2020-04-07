@@ -14,6 +14,7 @@ import "info.proto";
 import "announcement.proto";
 import "point.proto";
 import "adv.proto";
+import "app.proto";
 import "setting.proto";
 import "external.proto";
 
@@ -91,6 +92,11 @@ service AdminRPC {
     rpc ExchangeAdv(Adv) returns (Response);
     rpc FindAdv(Query) returns (Response);
     rpc RecordAdv(Query) returns (Response);
+
+    rpc CreateAdvItem(AdvItem) returns (Response);
+    rpc UpdateAdvItem(AdvItem) returns (Response);
+    rpc FindAdvItem(Query) returns (Response);
+    rpc RecordAdvItem(Query) returns (Response);
 
     rpc CreateApp(App) returns (Response);
     rpc ApproveApp(App) returns (Response);

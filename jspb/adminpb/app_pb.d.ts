@@ -1,19 +1,21 @@
 import * as jspb from "google-protobuf"
 
-import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class Business extends jspb.Message {
-  getBusinessId(): string;
-  setBusinessId(value: string): void;
+export class App extends jspb.Message {
+  getAppId(): string;
+  setAppId(value: string): void;
 
-  getMainId(): string;
-  setMainId(value: string): void;
+  getState(): number;
+  setState(value: number): void;
 
-  getStatus(): number;
-  setStatus(value: number): void;
+  getType(): number;
+  setType(value: number): void;
+
+  getContacter(): string;
+  setContacter(value: string): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -21,36 +23,28 @@ export class Business extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  getName(): string;
-  setName(value: string): void;
-
   getLocation(): string;
   setLocation(value: string): void;
 
-  getPoint(): number;
-  setPoint(value: number): void;
+  getContact(): string;
+  setContact(value: string): void;
 
-  getPassword(): string;
-  setPassword(value: string): void;
+  getCompany(): string;
+  setCompany(value: string): void;
 
   getIdentify(): string;
   setIdentify(value: string): void;
 
-  getAdvId(): string;
-  setAdvId(value: string): void;
+  getBankCode(): string;
+  setBankCode(value: string): void;
 
-  getFee(): number;
-  setFee(value: number): void;
+  getLastCode(): string;
+  setLastCode(value: string): void;
 
-  getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): void;
-  clearPermissionList(): void;
-  addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
-
-  getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): void;
-  clearWhiteList(): void;
-  addWhite(value: string, index?: number): void;
+  getOther(): google_protobuf_struct_pb.Value | undefined;
+  setOther(value?: google_protobuf_struct_pb.Value): void;
+  hasOther(): boolean;
+  clearOther(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -81,29 +75,28 @@ export class Business extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Business.AsObject;
-  static toObject(includeInstance: boolean, msg: Business): Business.AsObject;
-  static serializeBinaryToWriter(message: Business, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Business;
-  static deserializeBinaryFromReader(message: Business, reader: jspb.BinaryReader): Business;
+  toObject(includeInstance?: boolean): App.AsObject;
+  static toObject(includeInstance: boolean, msg: App): App.AsObject;
+  static serializeBinaryToWriter(message: App, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): App;
+  static deserializeBinaryFromReader(message: App, reader: jspb.BinaryReader): App;
 }
 
-export namespace Business {
+export namespace App {
   export type AsObject = {
-    businessId: string,
-    mainId: string,
-    status: number,
+    appId: string,
+    state: number,
+    type: number,
+    contacter: string,
     phone: string,
     email: string,
-    name: string,
     location: string,
-    point: number,
-    password: string,
+    contact: string,
+    company: string,
     identify: string,
-    advId: string,
-    fee: number,
-    permissionList: Array<permission_pb.Option.AsObject>,
-    whiteList: Array<string>,
+    bankCode: string,
+    lastCode: string,
+    other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

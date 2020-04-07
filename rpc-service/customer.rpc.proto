@@ -10,8 +10,8 @@ import "car.proto";
 import "order.proto";
 
 service CustomerRPC {
-    rpc RegisterCustomer(Customer) returns (Response);
-    rpc SignInCustomer(Customer) returns (Response);
+    rpc SignUp(Customer) returns (Response);
+    rpc SignIn(Customer) returns (Response);
 
     rpc IndexBase(Query) returns (Response);
     rpc IndexItem(Query) returns (Response);
@@ -20,7 +20,6 @@ service CustomerRPC {
     rpc FindProductClass(Query) returns (Response);
     rpc FindProductF(Query) returns (Response);
     rpc FindProductSpec(Query) returns (Response);
-
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);
 

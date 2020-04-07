@@ -8,6 +8,7 @@ import "sql.proto";
 import "label.proto";
 import "car.proto";
 import "manager.proto";
+import "customer.proto";
 import "customer-link.proto";
 import "product-link.proto";
 import "activity.proto";
@@ -47,9 +48,11 @@ service ManagerRPC {
     rpc FindDiscountCustomer(Query) returns (Response);
     rpc ExchangeDiscount(DiscountItem) returns (Response);
 
+    rpc CreateCustomer(Customer) returns (Response);
     rpc CreateCustomerLink(CustomerLink) returns (Response);
     rpc UpdateCustomerLink(CustomerLink) returns (Response);
     rpc FindCustomerLink(Query) returns (Response);
+    rpc FindCustomerF(Query) returns (Response);
 
     rpc CreateCustomerLevel(CustomerLevel) returns (Response);
     rpc UpdateCustomerLevel(CustomerLevel) returns (Response);

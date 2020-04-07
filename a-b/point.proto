@@ -30,11 +30,11 @@ message PointBonus {
 message Point {
     string point_id = 1;
     string business_id = 2;
-    int32 state = 3;
-    int32 price = 4;
-    string bank_code = 5;
-    string last_code = 6;
-    int32 point = 7;
+    int32 type = 3;
+    int32 state = 4;
+    int32 price = 5;
+    string bank_code = 6;
+    string last_code = 7;
 
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;

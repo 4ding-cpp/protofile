@@ -95,6 +95,9 @@ export class Point extends jspb.Message {
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
+  getType(): number;
+  setType(value: number): void;
+
   getState(): number;
   setState(value: number): void;
 
@@ -106,9 +109,6 @@ export class Point extends jspb.Message {
 
   getLastCode(): string;
   setLastCode(value: string): void;
-
-  getPoint(): number;
-  setPoint(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -150,11 +150,11 @@ export namespace Point {
   export type AsObject = {
     pointId: string,
     businessId: string,
+    type: number,
     state: number,
     price: number,
     bankCode: string,
     lastCode: string,
-    point: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

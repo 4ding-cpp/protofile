@@ -13,11 +13,13 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as sql_pb from './sql_pb';
 import * as admin_pb from './admin_pb';
 import * as business_pb from './business_pb';
+import * as host$map_pb from './host-map_pb';
 import * as label_pb from './label_pb';
 import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
 import * as adv_pb from './adv_pb';
+import * as app_pb from './app_pb';
 import * as setting_pb from './setting_pb';
 import * as external_pb from './external_pb';
 
@@ -477,51 +479,51 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoCreateBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.BusinessHost) => {
+    (request: host$map_pb.HostMap) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createBusinessHost(
-    request: business_pb.BusinessHost,
+  createHostMap(
+    request: host$map_pb.HostMap,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/CreateBusinessHost',
+        '/ding4.AdminRPC/CreateHostMap',
       request,
       metadata || {},
-      this.methodInfoCreateBusinessHost,
+      this.methodInfoCreateHostMap,
       callback);
   }
 
-  methodInfoDeleteBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.BusinessHost) => {
+    (request: host$map_pb.HostMap) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  deleteBusinessHost(
-    request: business_pb.BusinessHost,
+  deleteHostMap(
+    request: host$map_pb.HostMap,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/DeleteBusinessHost',
+        '/ding4.AdminRPC/DeleteHostMap',
       request,
       metadata || {},
-      this.methodInfoDeleteBusinessHost,
+      this.methodInfoDeleteHostMap,
       callback);
   }
 
-  methodInfoFindBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -529,21 +531,21 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findBusinessHost(
+  findHostMap(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FindBusinessHost',
+        '/ding4.AdminRPC/FindHostMap',
       request,
       metadata || {},
-      this.methodInfoFindBusinessHost,
+      this.methodInfoFindHostMap,
       callback);
   }
 
-  methodInfoRecordBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecordHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -551,21 +553,21 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  recordBusinessHost(
+  recordHostMap(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/RecordBusinessHost',
+        '/ding4.AdminRPC/RecordHostMap',
       request,
       metadata || {},
-      this.methodInfoRecordBusinessHost,
+      this.methodInfoRecordHostMap,
       callback);
   }
 
-  methodInfoFlushBusinessHost = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFlushHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -573,17 +575,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  flushBusinessHost(
+  flushHostMap(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FlushBusinessHost',
+        '/ding4.AdminRPC/FlushHostMap',
       request,
       metadata || {},
-      this.methodInfoFlushBusinessHost,
+      this.methodInfoFlushHostMap,
       callback);
   }
 
@@ -1379,16 +1381,104 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoCreateAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adv_pb.AdvItem) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createAdvItem(
+    request: adv_pb.AdvItem,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreateAdvItem',
+      request,
+      metadata || {},
+      this.methodInfoCreateAdvItem,
+      callback);
+  }
+
+  methodInfoUpdateAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adv_pb.AdvItem) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateAdvItem(
+    request: adv_pb.AdvItem,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdateAdvItem',
+      request,
+      metadata || {},
+      this.methodInfoUpdateAdvItem,
+      callback);
+  }
+
+  methodInfoFindAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findAdvItem(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindAdvItem',
+      request,
+      metadata || {},
+      this.methodInfoFindAdvItem,
+      callback);
+  }
+
+  methodInfoRecordAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordAdvItem(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/RecordAdvItem',
+      request,
+      metadata || {},
+      this.methodInfoRecordAdvItem,
+      callback);
+  }
+
   methodInfoCreateApp = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: adv_pb.App) => {
+    (request: app_pb.App) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createApp(
-    request: adv_pb.App,
+    request: app_pb.App,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1403,14 +1493,14 @@ export class AdminRPCClient {
 
   methodInfoApproveApp = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: adv_pb.App) => {
+    (request: app_pb.App) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   approveApp(
-    request: adv_pb.App,
+    request: app_pb.App,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1425,14 +1515,14 @@ export class AdminRPCClient {
 
   methodInfoUpdateApp = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: adv_pb.App) => {
+    (request: app_pb.App) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateApp(
-    request: adv_pb.App,
+    request: app_pb.App,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
