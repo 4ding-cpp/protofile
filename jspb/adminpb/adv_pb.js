@@ -111,10 +111,10 @@ proto.ding4.Adv.toObject = function(includeInstance, msg) {
     contact: jspb.Message.getFieldWithDefault(msg, 8, ""),
     title: jspb.Message.getFieldWithDefault(msg, 9, ""),
     mgrType: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    turnover: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    turnover: jspb.Message.getFieldWithDefault(msg, 11, 0),
     company: jspb.Message.getFieldWithDefault(msg, 12, ""),
     identify: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    motive: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    motive: jspb.Message.getFieldWithDefault(msg, 14, 0),
     other: (f = msg.getOther()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -200,7 +200,7 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMgrType(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTurnover(value);
       break;
     case 12:
@@ -212,7 +212,7 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIdentify(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setMotive(value);
       break;
     case 15:
@@ -348,8 +348,8 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTurnover();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       11,
       f
     );
@@ -369,8 +369,8 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getMotive();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       14,
       f
     );
@@ -613,20 +613,20 @@ proto.ding4.Adv.prototype.setMgrType = function(value) {
 
 
 /**
- * optional string turnover = 11;
- * @return {string}
+ * optional int32 turnover = 11;
+ * @return {number}
  */
 proto.ding4.Adv.prototype.getTurnover = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setTurnover = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -667,20 +667,20 @@ proto.ding4.Adv.prototype.setIdentify = function(value) {
 
 
 /**
- * optional string motive = 14;
- * @return {string}
+ * optional int32 motive = 14;
+ * @return {number}
  */
 proto.ding4.Adv.prototype.getMotive = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setMotive = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 

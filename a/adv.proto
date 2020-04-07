@@ -19,10 +19,10 @@ message Adv {
     string contact = 8;
     string title = 9;
     string mgr_type = 10;
-    string turnover = 11;
+    int32 turnover = 11;
     string company = 12;
     string identify = 13;
-    string motive = 14;
+    int32 motive = 14;
     google.protobuf.Value other = 15;
 
     string operator = 70;

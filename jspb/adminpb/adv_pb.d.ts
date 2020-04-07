@@ -35,8 +35,8 @@ export class Adv extends jspb.Message {
   getMgrType(): string;
   setMgrType(value: string): void;
 
-  getTurnover(): string;
-  setTurnover(value: string): void;
+  getTurnover(): number;
+  setTurnover(value: number): void;
 
   getCompany(): string;
   setCompany(value: string): void;
@@ -44,8 +44,8 @@ export class Adv extends jspb.Message {
   getIdentify(): string;
   setIdentify(value: string): void;
 
-  getMotive(): string;
-  setMotive(value: string): void;
+  getMotive(): number;
+  setMotive(value: number): void;
 
   getOther(): google_protobuf_struct_pb.Value | undefined;
   setOther(value?: google_protobuf_struct_pb.Value): void;
@@ -100,10 +100,10 @@ export namespace Adv {
     contact: string,
     title: string,
     mgrType: string,
-    turnover: string,
+    turnover: number,
     company: string,
     identify: string,
-    motive: string,
+    motive: number,
     other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
