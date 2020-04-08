@@ -1074,6 +1074,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoUpdatePoint = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.Point) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updatePoint(
+    request: point_pb.Point,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdatePoint',
+      request,
+      metadata || {},
+      this.methodInfoUpdatePoint,
+      callback);
+  }
+
   methodInfoFindPoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
