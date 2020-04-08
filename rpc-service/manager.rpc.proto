@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "sql.proto";
+import "password.proto";
 import "label.proto";
 import "car.proto";
 import "manager.proto";
@@ -24,7 +25,8 @@ import "template.proto";
 import "message.proto";
 
 service ManagerRPC {
-    rpc ChangePassword(Manager) returns (Response);
+    rpc WhoAmI(Query) returns (Response);
+    rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Manager) returns (Response);
     rpc ChangeWhitelist(Manager) returns (Response);
     rpc FindPermission(Query) returns (Response);

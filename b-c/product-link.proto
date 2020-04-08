@@ -6,7 +6,6 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "seo.proto";
 import "sql.proto";
-import "product.proto";
 import "image.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
@@ -39,32 +38,15 @@ message ProductF {
     double reduce = 7;
     double price = 8;
     string photo = 9;
-}
 
-message ProductG{
-    string product_link_id = 1;
-    string state = 2;
-    bool is_preorder = 3;
-    string url = 4;
-    double freight_add = 5;
-    SEO seo = 6;
-    repeated Block block = 7;
-    string product_class_id = 8;
-    string status = 9;
-    google.protobuf.Value name = 10;
-    double cost = 11;
-    double price = 12;
-    double reduce = 13;
-    repeated string photo = 14;
-    double weight = 15;
-    bool is_pickup = 16;
-    repeated ProductSpec specs = 17;
+    repeated string cols = 73;
+    repeated Condition condition = 74;
+    google.protobuf.Struct self = 75;
 }
 
 message ProductClass {
     string product_class_id = 1;
     string activity_id = 2;
-    string label_id = 3;
     string path = 4;
     google.protobuf.Value name = 5;
     SEO seo = 6;

@@ -16,6 +16,8 @@ var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_
 goog.object.extend(proto, google_protobuf_struct_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var password_pb = require('./password_pb.js');
+goog.object.extend(proto, password_pb);
 var admin_pb = require('./admin_pb.js');
 goog.object.extend(proto, admin_pb);
 var business_pb = require('./business_pb.js');

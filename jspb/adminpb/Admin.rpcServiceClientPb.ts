@@ -11,6 +11,7 @@ import * as grpcWeb from 'grpc-web';
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as sql_pb from './sql_pb';
+import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
 import * as business_pb from './business_pb';
 import * as host$map_pb from './host-map_pb';
@@ -107,14 +108,14 @@ export class AdminRPCClient {
 
   methodInfoChangePassword = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: admin_pb.Admin) => {
+    (request: password_pb.Password) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   changePassword(
-    request: admin_pb.Admin,
+    request: password_pb.Password,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -765,6 +766,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoDeleteInfo = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: info_pb.Info) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteInfo(
+    request: info_pb.Info,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteInfo',
+      request,
+      metadata || {},
+      this.methodInfoDeleteInfo,
+      callback);
+  }
+
   methodInfoFindInfo = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -850,6 +873,28 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateAnnouncement,
+      callback);
+  }
+
+  methodInfoDeleteAnnouncement = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: announcement_pb.Announcement) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteAnnouncement(
+    request: announcement_pb.Announcement,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteAnnouncement',
+      request,
+      metadata || {},
+      this.methodInfoDeleteAnnouncement,
       callback);
   }
 
@@ -1422,6 +1467,28 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateAdvItem,
+      callback);
+  }
+
+  methodInfoDeleteAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adv_pb.AdvItem) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteAdvItem(
+    request: adv_pb.AdvItem,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteAdvItem',
+      request,
+      metadata || {},
+      this.methodInfoDeleteAdvItem,
       callback);
   }
 

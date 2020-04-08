@@ -6,6 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "google/protobuf/struct.proto";
 import "sql.proto";
+import "password.proto";
 import "admin.proto";
 import "business.proto";
 import "host-map.proto";
@@ -23,7 +24,7 @@ service AdminRPC {
     rpc Time(Query) returns (stream google.protobuf.Value);
 
     rpc WhoAmI(Query) returns (Response);
-    rpc ChangePassword(Admin) returns (Response);
+    rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Admin) returns (Response);
     rpc ChangeWhitelist(Admin) returns (Response);
     rpc FindPermission(Query) returns (Response);
@@ -58,11 +59,13 @@ service AdminRPC {
     
     rpc CreateInfo(Info) returns (Response);
     rpc UpdateInfo(Info) returns (Response);
+    rpc DeleteInfo(Info) returns (Response);
     rpc FindInfo(Query) returns (Response);
     rpc RecordInfo(Query) returns (Response);
 
     rpc CreateAnnouncement(Announcement) returns (Response);
     rpc UpdateAnnouncement(Announcement) returns (Response);
+    rpc DeleteAnnouncement(Announcement) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
     rpc RecordAnnouncement(Query) returns (Response);
 
@@ -95,6 +98,7 @@ service AdminRPC {
 
     rpc CreateAdvItem(AdvItem) returns (Response);
     rpc UpdateAdvItem(AdvItem) returns (Response);
+    rpc DeleteAdvItem(AdvItem) returns (Response);
     rpc FindAdvItem(Query) returns (Response);
     rpc RecordAdvItem(Query) returns (Response);
 

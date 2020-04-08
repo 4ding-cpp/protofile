@@ -1226,8 +1226,8 @@ proto.ding4.Condition.deserializeBinaryFromReader = function(msg, reader) {
       msg.setV(value);
       break;
     case 3:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setSList(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addS(value);
       break;
     case 4:
       var value = /** @type {!proto.ding4.Condition.Operand} */ (reader.readEnum());
@@ -1278,7 +1278,7 @@ proto.ding4.Condition.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getSList();
   if (f.length > 0) {
-    writer.writePackedInt32(
+    writer.writeRepeatedString(
       3,
       f
     );
@@ -1344,16 +1344,16 @@ proto.ding4.Condition.prototype.setV = function(value) {
 
 
 /**
- * repeated int32 s = 3;
- * @return {!Array<number>}
+ * repeated string s = 3;
+ * @return {!Array<string>}
  */
 proto.ding4.Condition.prototype.getSList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.ding4.Condition} returns this
  */
 proto.ding4.Condition.prototype.setSList = function(value) {
@@ -1362,7 +1362,7 @@ proto.ding4.Condition.prototype.setSList = function(value) {
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.ding4.Condition} returns this
  */

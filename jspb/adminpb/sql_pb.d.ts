@@ -134,10 +134,10 @@ export class Condition extends jspb.Message {
   getV(): string;
   setV(value: string): void;
 
-  getSList(): Array<number>;
-  setSList(value: Array<number>): void;
+  getSList(): Array<string>;
+  setSList(value: Array<string>): void;
   clearSList(): void;
-  addS(value: number, index?: number): void;
+  addS(value: string, index?: number): void;
 
   getO(): Condition.Operand;
   setO(value: Condition.Operand): void;
@@ -154,7 +154,7 @@ export namespace Condition {
   export type AsObject = {
     f: string,
     v: string,
-    sList: Array<number>,
+    sList: Array<string>,
     o: Condition.Operand,
   }
 

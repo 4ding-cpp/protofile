@@ -37,7 +37,7 @@ message Sort {
 message Condition {
     string f = 1;
     string v = 2;
-    repeated int32 s = 3;
+    repeated string s = 3;
     enum Operand {
         UNIVERSAL = 0;
         LT = 1;

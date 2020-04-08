@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as sql_pb from './sql_pb';
+import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
 import * as business_pb from './business_pb';
 import * as host$map_pb from './host-map_pb';

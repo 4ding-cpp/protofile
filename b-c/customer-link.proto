@@ -40,7 +40,6 @@ message CustomerF {
 message CustomerLevel {
     string customer_level_id = 1;
     string store_id = 2;
-    string label_id = 3;
     int32 status = 4;
     string name = 5;
     double pay_amount = 6;
