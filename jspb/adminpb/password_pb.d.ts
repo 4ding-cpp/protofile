@@ -3,11 +3,11 @@ import * as jspb from "google-protobuf"
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 export class Password extends jspb.Message {
-  getOld(): string;
-  setOld(value: string): void;
+  getOldP(): string;
+  setOldP(value: string): void;
 
-  getNew(): string;
-  setNew(value: string): void;
+  getNewP(): string;
+  setNewP(value: string): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
   setSelf(value?: google_protobuf_struct_pb.Struct): void;
@@ -24,8 +24,8 @@ export class Password extends jspb.Message {
 
 export namespace Password {
   export type AsObject = {
-    old: string,
-    pb_new: string,
+    oldP: string,
+    newP: string,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }

@@ -68,8 +68,8 @@ proto.ding4.Password.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Password.toObject = function(includeInstance, msg) {
   var f, obj = {
-    old: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pb_new: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    oldP: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    newP: jspb.Message.getFieldWithDefault(msg, 2, ""),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
@@ -109,11 +109,11 @@ proto.ding4.Password.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOld(value);
+      msg.setOldP(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNew(value);
+      msg.setNewP(value);
       break;
     case 15:
       var value = new google_protobuf_struct_pb.Struct;
@@ -149,14 +149,14 @@ proto.ding4.Password.prototype.serializeBinary = function() {
  */
 proto.ding4.Password.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOld();
+  f = message.getOldP();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getNew();
+  f = message.getNewP();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -175,10 +175,10 @@ proto.ding4.Password.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string old = 1;
+ * optional string old_p = 1;
  * @return {string}
  */
-proto.ding4.Password.prototype.getOld = function() {
+proto.ding4.Password.prototype.getOldP = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -187,16 +187,16 @@ proto.ding4.Password.prototype.getOld = function() {
  * @param {string} value
  * @return {!proto.ding4.Password} returns this
  */
-proto.ding4.Password.prototype.setOld = function(value) {
+proto.ding4.Password.prototype.setOldP = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string new = 2;
+ * optional string new_p = 2;
  * @return {string}
  */
-proto.ding4.Password.prototype.getNew = function() {
+proto.ding4.Password.prototype.getNewP = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -205,7 +205,7 @@ proto.ding4.Password.prototype.getNew = function() {
  * @param {string} value
  * @return {!proto.ding4.Password} returns this
  */
-proto.ding4.Password.prototype.setNew = function(value) {
+proto.ding4.Password.prototype.setNewP = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
