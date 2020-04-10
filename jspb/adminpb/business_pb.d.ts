@@ -15,17 +15,11 @@ export class Business extends jspb.Message {
   getStatus(): number;
   setStatus(value: number): void;
 
-  getPhone(): string;
-  setPhone(value: string): void;
-
-  getEmail(): string;
-  setEmail(value: string): void;
+  getDomain(): string;
+  setDomain(value: string): void;
 
   getName(): string;
   setName(value: string): void;
-
-  getLocation(): string;
-  setLocation(value: string): void;
 
   getPoint(): number;
   setPoint(value: number): void;
@@ -33,14 +27,35 @@ export class Business extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
-  getIdentify(): string;
-  setIdentify(value: string): void;
-
-  getAdvId(): string;
-  setAdvId(value: string): void;
-
   getFee(): number;
   setFee(value: number): void;
+
+  getType(): number;
+  setType(value: number): void;
+
+  getContacter(): string;
+  setContacter(value: string): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getLocation(): string;
+  setLocation(value: string): void;
+
+  getMgrType(): number;
+  setMgrType(value: number): void;
+
+  getTurnover(): number;
+  setTurnover(value: number): void;
+
+  getCompany(): string;
+  setCompany(value: string): void;
+
+  getIdentify(): string;
+  setIdentify(value: string): void;
 
   getPermissionList(): Array<permission_pb.Option>;
   setPermissionList(value: Array<permission_pb.Option>): void;
@@ -93,15 +108,20 @@ export namespace Business {
     businessId: string,
     mainId: string,
     status: number,
-    phone: string,
-    email: string,
+    domain: string,
     name: string,
-    location: string,
     point: number,
     password: string,
-    identify: string,
-    advId: string,
     fee: number,
+    type: number,
+    contacter: string,
+    phone: string,
+    email: string,
+    location: string,
+    mgrType: number,
+    turnover: number,
+    company: string,
+    identify: string,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
     operator: string,

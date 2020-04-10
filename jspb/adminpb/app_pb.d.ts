@@ -32,6 +32,15 @@ export class App extends jspb.Message {
   getContact(): string;
   setContact(value: string): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getMgrType(): number;
+  setMgrType(value: number): void;
+
+  getTurnover(): number;
+  setTurnover(value: number): void;
+
   getCompany(): string;
   setCompany(value: string): void;
 
@@ -46,11 +55,6 @@ export class App extends jspb.Message {
 
   getPrice(): number;
   setPrice(value: number): void;
-
-  getOther(): google_protobuf_struct_pb.Value | undefined;
-  setOther(value?: google_protobuf_struct_pb.Value): void;
-  hasOther(): boolean;
-  clearOther(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -99,12 +103,14 @@ export namespace App {
     email: string,
     location: string,
     contact: string,
+    title: string,
+    mgrType: number,
+    turnover: number,
     company: string,
     identify: string,
     bankCode: string,
     lastCode: string,
     price: number,
-    other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

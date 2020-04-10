@@ -18,7 +18,7 @@ message Adv {
     string location = 7;
     string contact = 8;
     string title = 9;
-    string mgr_type = 10;
+    int32 mgr_type = 10;
     int32 turnover = 11;
     string company = 12;
     string identify = 13;

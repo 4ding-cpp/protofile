@@ -110,7 +110,7 @@ proto.ding4.Adv.toObject = function(includeInstance, msg) {
     location: jspb.Message.getFieldWithDefault(msg, 7, ""),
     contact: jspb.Message.getFieldWithDefault(msg, 8, ""),
     title: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    mgrType: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    mgrType: jspb.Message.getFieldWithDefault(msg, 10, 0),
     turnover: jspb.Message.getFieldWithDefault(msg, 11, 0),
     company: jspb.Message.getFieldWithDefault(msg, 12, ""),
     identify: jspb.Message.getFieldWithDefault(msg, 13, ""),
@@ -196,7 +196,7 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTitle(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setMgrType(value);
       break;
     case 11:
@@ -341,8 +341,8 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getMgrType();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       10,
       f
     );
@@ -595,20 +595,20 @@ proto.ding4.Adv.prototype.setTitle = function(value) {
 
 
 /**
- * optional string mgr_type = 10;
- * @return {string}
+ * optional int32 mgr_type = 10;
+ * @return {number}
  */
 proto.ding4.Adv.prototype.getMgrType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setMgrType = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 

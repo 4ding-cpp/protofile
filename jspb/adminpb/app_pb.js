@@ -88,12 +88,14 @@ proto.ding4.App.toObject = function(includeInstance, msg) {
     email: jspb.Message.getFieldWithDefault(msg, 7, ""),
     location: jspb.Message.getFieldWithDefault(msg, 8, ""),
     contact: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    company: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    identify: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    bankCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    lastCode: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    other: (f = msg.getOther()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    mgrType: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    turnover: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    company: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    identify: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    bankCode: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    lastCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 17, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -175,28 +177,35 @@ proto.ding4.App.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCompany(value);
+      msg.setTitle(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIdentify(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMgrType(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBankCode(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTurnover(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLastCode(value);
+      msg.setCompany(value);
       break;
     case 14:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPrice(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIdentify(value);
       break;
     case 15:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setOther(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBankCode(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastCode(value);
+      break;
+    case 17:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -318,47 +327,60 @@ proto.ding4.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCompany();
+  f = message.getTitle();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getIdentify();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getMgrType();
+  if (f !== 0) {
+    writer.writeInt32(
       11,
       f
     );
   }
-  f = message.getBankCode();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getTurnover();
+  if (f !== 0) {
+    writer.writeInt32(
       12,
       f
     );
   }
-  f = message.getLastCode();
+  f = message.getCompany();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
-  f = message.getPrice();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getIdentify();
+  if (f.length > 0) {
+    writer.writeString(
       14,
       f
     );
   }
-  f = message.getOther();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getBankCode();
+  if (f.length > 0) {
+    writer.writeString(
       15,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getLastCode();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getPrice();
+  if (f !== 0) {
+    writer.writeInt32(
+      17,
+      f
     );
   }
   f = message.getOperator();
@@ -573,10 +595,10 @@ proto.ding4.App.prototype.setContact = function(value) {
 
 
 /**
- * optional string company = 10;
+ * optional string title = 10;
  * @return {string}
  */
-proto.ding4.App.prototype.getCompany = function() {
+proto.ding4.App.prototype.getTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -585,52 +607,52 @@ proto.ding4.App.prototype.getCompany = function() {
  * @param {string} value
  * @return {!proto.ding4.App} returns this
  */
-proto.ding4.App.prototype.setCompany = function(value) {
+proto.ding4.App.prototype.setTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string identify = 11;
- * @return {string}
+ * optional int32 mgr_type = 11;
+ * @return {number}
  */
-proto.ding4.App.prototype.getIdentify = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+proto.ding4.App.prototype.getMgrType = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.App} returns this
  */
-proto.ding4.App.prototype.setIdentify = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+proto.ding4.App.prototype.setMgrType = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional string bank_code = 12;
- * @return {string}
+ * optional int32 turnover = 12;
+ * @return {number}
  */
-proto.ding4.App.prototype.getBankCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.ding4.App.prototype.getTurnover = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.App} returns this
  */
-proto.ding4.App.prototype.setBankCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+proto.ding4.App.prototype.setTurnover = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
 /**
- * optional string last_code = 13;
+ * optional string company = 13;
  * @return {string}
  */
-proto.ding4.App.prototype.getLastCode = function() {
+proto.ding4.App.prototype.getCompany = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -639,17 +661,71 @@ proto.ding4.App.prototype.getLastCode = function() {
  * @param {string} value
  * @return {!proto.ding4.App} returns this
  */
-proto.ding4.App.prototype.setLastCode = function(value) {
+proto.ding4.App.prototype.setCompany = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional int32 price = 14;
+ * optional string identify = 14;
+ * @return {string}
+ */
+proto.ding4.App.prototype.getIdentify = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.App} returns this
+ */
+proto.ding4.App.prototype.setIdentify = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string bank_code = 15;
+ * @return {string}
+ */
+proto.ding4.App.prototype.getBankCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.App} returns this
+ */
+proto.ding4.App.prototype.setBankCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string last_code = 16;
+ * @return {string}
+ */
+proto.ding4.App.prototype.getLastCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.App} returns this
+ */
+proto.ding4.App.prototype.setLastCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional int32 price = 17;
  * @return {number}
  */
 proto.ding4.App.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
 };
 
 
@@ -658,44 +734,7 @@ proto.ding4.App.prototype.getPrice = function() {
  * @return {!proto.ding4.App} returns this
  */
 proto.ding4.App.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 14, value);
-};
-
-
-/**
- * optional google.protobuf.Value other = 15;
- * @return {?proto.google.protobuf.Value}
- */
-proto.ding4.App.prototype.getOther = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 15));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Value|undefined} value
- * @return {!proto.ding4.App} returns this
-*/
-proto.ding4.App.prototype.setOther = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.App} returns this
- */
-proto.ding4.App.prototype.clearOther = function() {
-  return this.setOther(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.App.prototype.hasOther = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.setProto3IntField(this, 17, value);
 };
 
 
