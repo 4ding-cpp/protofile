@@ -8,6 +8,9 @@ export class App extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): void;
 
+  getAdvId(): string;
+  setAdvId(value: string): void;
+
   getState(): number;
   setState(value: number): void;
 
@@ -40,6 +43,9 @@ export class App extends jspb.Message {
 
   getLastCode(): string;
   setLastCode(value: string): void;
+
+  getPrice(): number;
+  setPrice(value: number): void;
 
   getOther(): google_protobuf_struct_pb.Value | undefined;
   setOther(value?: google_protobuf_struct_pb.Value): void;
@@ -85,6 +91,7 @@ export class App extends jspb.Message {
 export namespace App {
   export type AsObject = {
     appId: string,
+    advId: string,
     state: number,
     type: number,
     contacter: string,
@@ -96,6 +103,7 @@ export namespace App {
     identify: string,
     bankCode: string,
     lastCode: string,
+    price: number,
     other?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
