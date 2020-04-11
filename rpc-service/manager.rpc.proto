@@ -87,8 +87,9 @@ service ManagerRPC {
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);
+    rpc SignOrder(Order) returns (Response);
     rpc FindOrder(Query) returns (Response);
-
+    
     rpc UpdateRemind(Remind) returns (Response);
     rpc FindRemind(Query) returns (Response);
 

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+service Payment {
+}
