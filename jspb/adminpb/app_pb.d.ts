@@ -29,12 +29,6 @@ export class App extends jspb.Message {
   getLocation(): string;
   setLocation(value: string): void;
 
-  getContact(): string;
-  setContact(value: string): void;
-
-  getTitle(): string;
-  setTitle(value: string): void;
-
   getMgrType(): number;
   setMgrType(value: number): void;
 
@@ -102,8 +96,6 @@ export namespace App {
     phone: string,
     email: string,
     location: string,
-    contact: string,
-    title: string,
     mgrType: number,
     turnover: number,
     company: string,

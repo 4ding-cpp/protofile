@@ -87,8 +87,6 @@ proto.ding4.App.toObject = function(includeInstance, msg) {
     phone: jspb.Message.getFieldWithDefault(msg, 6, ""),
     email: jspb.Message.getFieldWithDefault(msg, 7, ""),
     location: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    contact: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 10, ""),
     mgrType: jspb.Message.getFieldWithDefault(msg, 11, 0),
     turnover: jspb.Message.getFieldWithDefault(msg, 12, 0),
     company: jspb.Message.getFieldWithDefault(msg, 13, ""),
@@ -170,14 +168,6 @@ proto.ding4.App.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocation(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setContact(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTitle(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
@@ -317,20 +307,6 @@ proto.ding4.App.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       8,
-      f
-    );
-  }
-  f = message.getContact();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getTitle();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
       f
     );
   }
@@ -573,42 +549,6 @@ proto.ding4.App.prototype.getLocation = function() {
  */
 proto.ding4.App.prototype.setLocation = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional string contact = 9;
- * @return {string}
- */
-proto.ding4.App.prototype.getContact = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.App} returns this
- */
-proto.ding4.App.prototype.setContact = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string title = 10;
- * @return {string}
- */
-proto.ding4.App.prototype.getTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.App} returns this
- */
-proto.ding4.App.prototype.setTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
