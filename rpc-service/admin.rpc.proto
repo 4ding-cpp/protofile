@@ -118,7 +118,7 @@ service AdminRPC {
     rpc FindAdvItem(Query) returns (Response);
     rpc RecordAdvItem(Query) returns (Response);
 
-    // 開通單 State 1:未審核 2:已開通 3:已取消
+    // State => 1.成立 2.審核中 3.已完成 4.取消
     rpc CreateApp(App) returns (Response);
     rpc ApproveApp(App) returns (Response);
     rpc CancelApp(App) returns (Response);
