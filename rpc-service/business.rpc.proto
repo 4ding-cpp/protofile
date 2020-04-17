@@ -89,9 +89,6 @@ service BusinessRPC {
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);
-    rpc SignOrder(Order) returns (Response);
-    rpc UpdatePayState(Order) returns (Response);
-    rpc UpdateDeliveryState(Order) returns (Response);
     rpc FindOrder(Query) returns (Response);
 
     rpc CreateStack(Stack) returns (Response);

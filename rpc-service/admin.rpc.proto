@@ -23,6 +23,7 @@ service AdminRPC {
     rpc Ping(Query) returns (google.protobuf.Value);
     rpc Time(Query) returns (stream google.protobuf.Value);
 
+    // 自身資訊修改查詢
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Admin) returns (Response);
@@ -31,25 +32,30 @@ service AdminRPC {
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
 
+    // Admin 相關
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);
     rpc FindAdmin(Query) returns (Response);
     rpc RecordAdmin(Query) returns (Response);
     rpc SignAdmin(Query) returns (Response);
 
+    // Business 相關
     rpc CreateBusiness(Business) returns (Response);
+    // 當創建時資料庫不完整可用此方法修正
     rpc PrepareBusiness(Business) returns (Response);
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
     rpc RecordBusiness(Query) returns (Response);
     rpc SignBusiness(Query) returns (Response);
 
+    // 設定業主網域相關
     rpc CreateHostMap(HostMap) returns (Response);
     rpc DeleteHostMap(HostMap) returns (Response);
     rpc FindHostMap(Query) returns (Response);
     rpc RecordHostMap(Query) returns (Response);
     rpc FlushHostMap(Query) returns (Response);
 
+    // 標籤相關
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
     rpc AppendLabel(Label) returns (Response);
@@ -57,29 +63,35 @@ service AdminRPC {
     rpc FindLabel(Query) returns (Response);
     rpc RecordLabel(Query) returns (Response);
     
+    // 公司資訊相關
     rpc CreateInfo(Info) returns (Response);
     rpc UpdateInfo(Info) returns (Response);
     rpc DeleteInfo(Info) returns (Response);
     rpc FindInfo(Query) returns (Response);
     rpc RecordInfo(Query) returns (Response);
 
+    // 公告相關
     rpc CreateAnnouncement(Announcement) returns (Response);
     rpc UpdateAnnouncement(Announcement) returns (Response);
     rpc DeleteAnnouncement(Announcement) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
     rpc RecordAnnouncement(Query) returns (Response);
 
+    // 點數活動相關
     rpc CreatePointBonus(PointBonus) returns (Response);
     rpc FindPointBonus(Query) returns (Response);
     rpc RecordPointBonus(Query) returns (Response);
 
+    // 儲值相關 State 1:未審核 2:已審核 3:已取消
     rpc CreatePoint(Point) returns (Response);
     rpc ComfirmPoint(Point) returns (Response);
     rpc ApprovePoint(Point) returns (Response);
+    rpc CancelPoint(Point) returns (Response);
     rpc UpdatePoint(Point) returns (Response);
     rpc FindPoint(Query) returns (Response);
     rpc RecordPoint(Query) returns (Response);
 
+    // 帳單相關 State 1:未繳 2:自動扣繳失敗 3:扣繳完成
     rpc CreatePointBill(PointBill) returns (Response);
     rpc ComfirmPointBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
@@ -87,33 +99,41 @@ service AdminRPC {
     rpc RecordPointBill(Query) returns (Response);
     rpc RecordPointDetail(Query) returns (Response);
 
+    // 點數流水紀錄
     rpc CreatePointFlow(PointFlow) returns (Response);
     rpc FindPointFlow(Query) returns (Response);
     rpc RecordPointFlow(Query) returns (Response);
 
+    // 諮詢單 State 1.等待預約 2.等待面談 3.待跟進 5.已轉換 6.已取消
     rpc CreateAdv(Adv) returns (Response);
     rpc UpdateAdv(Adv) returns (Response);
     rpc ExchangeAdv(Adv) returns (Response);
     rpc FindAdv(Query) returns (Response);
     rpc RecordAdv(Query) returns (Response);
 
+    // 諮詢單客服紀錄
     rpc CreateAdvItem(AdvItem) returns (Response);
     rpc UpdateAdvItem(AdvItem) returns (Response);
     rpc DeleteAdvItem(AdvItem) returns (Response);
     rpc FindAdvItem(Query) returns (Response);
     rpc RecordAdvItem(Query) returns (Response);
 
+    // 開通單 State 1:未審核 2:已開通 3:已取消
     rpc CreateApp(App) returns (Response);
     rpc ApproveApp(App) returns (Response);
+    rpc CancelApp(App) returns (Response);
     rpc UpdateApp(App) returns (Response);
     rpc FindApp(Query) returns (Response);
     rpc RecordApp(Query) returns (Response);
 
+    // 系統設定 SettingID 需自定義 Item 為項目名稱 Content 項目內容
+    // 例: {"setting_id":"app_price","item":"開通費用","content":"5000"}
     rpc CreateSetting(Setting) returns (Response);
     rpc UpdateSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
     rpc RecordSetting(Query) returns (Response);
 
+    // 外部串接資訊
     rpc CreateExternal(External) returns (Response);
     rpc UpdateExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);

@@ -1074,6 +1074,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoCancelPoint = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.Point) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelPoint(
+    request: point_pb.Point,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CancelPoint',
+      request,
+      metadata || {},
+      this.methodInfoCancelPoint,
+      callback);
+  }
+
   methodInfoUpdatePoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.Point) => {
@@ -1599,6 +1621,28 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoApproveApp,
+      callback);
+  }
+
+  methodInfoCancelApp = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: app_pb.App) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelApp(
+    request: app_pb.App,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CancelApp',
+      request,
+      metadata || {},
+      this.methodInfoCancelApp,
       callback);
   }
 
