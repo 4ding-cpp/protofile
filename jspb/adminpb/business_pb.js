@@ -48,7 +48,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Business.repeatedFields_ = [18,19,20,73,74];
+proto.ding4.Business.repeatedFields_ = [18,19,73,74];
 
 
 
@@ -101,7 +101,7 @@ proto.ding4.Business.toObject = function(includeInstance, msg) {
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     permission_pb.Option.toObject, includeInstance),
     whiteList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-    labelxList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -223,8 +223,10 @@ proto.ding4.Business.deserializeBinaryFromReader = function(msg, reader) {
       msg.addWhite(value);
       break;
     case 20:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addLabelx(value);
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -417,12 +419,9 @@ proto.ding4.Business.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLabelxList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      20,
-      f
-    );
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(20, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -855,40 +854,25 @@ proto.ding4.Business.prototype.clearWhiteList = function() {
 
 
 /**
- * repeated string labelx = 20;
- * @return {!Array<string>}
+ * map<string, bool> labelx = 20;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
  */
-proto.ding4.Business.prototype.getLabelxList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
+proto.ding4.Business.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 20, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.ding4.Business} returns this
  */
-proto.ding4.Business.prototype.setLabelxList = function(value) {
-  return jspb.Message.setField(this, 20, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.ding4.Business} returns this
- */
-proto.ding4.Business.prototype.addLabelx = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ding4.Business} returns this
- */
-proto.ding4.Business.prototype.clearLabelxList = function() {
-  return this.setLabelxList([]);
-};
+proto.ding4.Business.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
