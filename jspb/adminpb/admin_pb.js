@@ -48,7 +48,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Admin.repeatedFields_ = [10,11,73,74];
+proto.ding4.Admin.repeatedFields_ = [10,11,12,73,74];
 
 
 
@@ -93,6 +93,7 @@ proto.ding4.Admin.toObject = function(includeInstance, msg) {
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     permission_pb.Option.toObject, includeInstance),
     whiteList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
+    labelxList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -180,6 +181,10 @@ proto.ding4.Admin.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.addWhite(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addLabelx(value);
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -313,6 +318,13 @@ proto.ding4.Admin.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeRepeatedString(
       11,
+      f
+    );
+  }
+  f = message.getLabelxList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      12,
       f
     );
   }
@@ -599,6 +611,43 @@ proto.ding4.Admin.prototype.addWhite = function(value, opt_index) {
  */
 proto.ding4.Admin.prototype.clearWhiteList = function() {
   return this.setWhiteList([]);
+};
+
+
+/**
+ * repeated string labelx = 12;
+ * @return {!Array<string>}
+ */
+proto.ding4.Admin.prototype.getLabelxList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ding4.Admin} returns this
+ */
+proto.ding4.Admin.prototype.setLabelxList = function(value) {
+  return jspb.Message.setField(this, 12, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Admin} returns this
+ */
+proto.ding4.Admin.prototype.addLabelx = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.Admin} returns this
+ */
+proto.ding4.Admin.prototype.clearLabelxList = function() {
+  return this.setLabelxList([]);
 };
 
 

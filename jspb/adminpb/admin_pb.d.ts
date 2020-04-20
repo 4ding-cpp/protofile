@@ -43,6 +43,11 @@ export class Admin extends jspb.Message {
   clearWhiteList(): void;
   addWhite(value: string, index?: number): void;
 
+  getLabelxList(): Array<string>;
+  setLabelxList(value: Array<string>): void;
+  clearLabelxList(): void;
+  addLabelx(value: string, index?: number): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -92,6 +97,7 @@ export namespace Admin {
     isSuper: boolean,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
+    labelxList: Array<string>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
