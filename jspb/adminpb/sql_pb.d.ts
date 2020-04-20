@@ -167,6 +167,7 @@ export namespace Condition {
     IN = 5,
     LIKE = 6,
     LABEL = 7,
+    UNLABEL = 8,
   }
 }
 
