@@ -47,6 +47,7 @@ service ManagerRPC {
     rpc CreateDiscount(Discount) returns (Response);
     rpc UpdateDiscount(Discount) returns (Response);
     rpc FindDiscount(Query) returns (Response);
+    rpc DistributeDiscount(Distribute) returns (Response);
     rpc FindDiscountCustomer(Query) returns (Response);
     rpc ExchangeDiscount(DiscountItem) returns (Response);
 
