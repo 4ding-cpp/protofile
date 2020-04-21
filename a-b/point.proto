@@ -18,6 +18,7 @@ message PointBonus {
     int32 cond = 6;
     int32 point = 7;
     int32 percent = 8;
+    bool is_repeat = 9;
 
     map<string, bool> labelx = 69;
     string operator = 70;

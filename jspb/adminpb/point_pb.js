@@ -175,6 +175,7 @@ proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
     cond: jspb.Message.getFieldWithDefault(msg, 6, 0),
     point: jspb.Message.getFieldWithDefault(msg, 7, 0),
     percent: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -252,6 +253,10 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPercent(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRepeat(value);
       break;
     case 69:
       var value = msg.getLabelxMap();
@@ -371,6 +376,13 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       8,
+      f
+    );
+  }
+  f = message.getIsRepeat();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -606,6 +618,24 @@ proto.ding4.PointBonus.prototype.getPercent = function() {
  */
 proto.ding4.PointBonus.prototype.setPercent = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional bool is_repeat = 9;
+ * @return {boolean}
+ */
+proto.ding4.PointBonus.prototype.getIsRepeat = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.setIsRepeat = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

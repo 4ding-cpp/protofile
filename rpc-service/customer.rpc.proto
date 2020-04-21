@@ -33,6 +33,5 @@ service CustomerRPC {
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);
-    rpc SignOrder(Order) returns (Response);
     rpc FindOrder(Query) returns (Response);
 }

@@ -65,14 +65,22 @@ message Discount {
 
 message Distribute {
     string discount_id = 1; // 折價券編號
-    repeated string customer_level_id = 2; // 被選取的會員等級編號
-    repeated string customer_id = 3; // 被選取的會員編號
-    google.protobuf.Struct self = 4;
+    repeated Condition condition = 2;
+    google.protobuf.Struct self = 3;
 }
 
 message DiscountItem {
     string discount_id = 1;
     string customer_id = 2;
-    string code = 3;
-    google.protobuf.Struct self = 4;
+    int32 state = 3;
+    google.protobuf.Timestamp begin_at = 4;
+    google.protobuf.Timestamp end_at = 5;
+    google.protobuf.Value name = 6;
+    int32 cond = 7;         // 達成條件 1:金額 2:數量
+    double cond_v = 8;      // 須達成的條件數值
+    int32 active = 9;
+    double active_v = 10;
+    string code = 11;
+
+    google.protobuf.Struct self = 15;
 }

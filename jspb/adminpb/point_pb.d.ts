@@ -33,6 +33,9 @@ export class PointBonus extends jspb.Message {
   getPercent(): number;
   setPercent(value: number): void;
 
+  getIsRepeat(): boolean;
+  setIsRepeat(value: boolean): void;
+
   getLabelxMap(): jspb.Map<string, boolean>;
   clearLabelxMap(): void;
 
@@ -82,6 +85,7 @@ export namespace PointBonus {
     cond: number,
     point: number,
     percent: number,
+    isRepeat: boolean,
     labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
