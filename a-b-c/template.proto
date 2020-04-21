@@ -16,7 +16,8 @@ message Template {
     int32 type = 4;
     string content = 5;
     int32 version = 6;
-
+    
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

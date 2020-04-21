@@ -20,6 +20,7 @@ message ProductLink {
     SEO seo = 7;
     repeated Block block = 8;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
@@ -39,6 +40,7 @@ message ProductF {
     double price = 8;
     string photo = 9;
 
+    map<string, bool> labelx = 69;
     repeated string cols = 73;
     repeated Condition condition = 74;
     google.protobuf.Struct self = 75;
@@ -53,6 +55,7 @@ message ProductClass {
     string photo = 7;
     Image image = 8;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

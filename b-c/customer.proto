@@ -19,46 +19,7 @@ message Customer {
     string password = 8;
     string come_from = 9;
     
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message CustomerLabel {
-    string name = 1;
-    repeated string target = 2;
-
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message CustomerGroup {
-    string customer_group_id = 1;
-    string name = 3;
-    repeated string target = 4;
-    
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message CustomerLinker {
-    string customer_linker_id = 1;
-    int32 status = 2;
-    string customer_group_id = 3;
-    string store_id = 4;
-    double reward = 5;
-    
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

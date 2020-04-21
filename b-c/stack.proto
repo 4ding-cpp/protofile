@@ -23,6 +23,7 @@ message Stack {
     int32 count_out = 13;
     double profit = 14;
     
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

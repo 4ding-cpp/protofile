@@ -11,6 +11,9 @@ export class External extends jspb.Message {
   getInfoMap(): jspb.Map<string, string>;
   clearInfoMap(): void;
 
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -51,6 +54,7 @@ export namespace External {
   export type AsObject = {
     externalId: string,
     infoMap: Array<[string, string]>,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

@@ -19,6 +19,7 @@ message PointBonus {
     int32 point = 7;
     int32 percent = 8;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
@@ -36,6 +37,7 @@ message Point {
     string bank_code = 6;
     string last_code = 7;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
@@ -52,6 +54,7 @@ message PointBill {
     int32 amount = 5;
     repeated PointDetail detail = 6;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
@@ -69,7 +72,8 @@ message PointDetail {
     double unit_price = 6;
     int32 use_val = 7;
     int32 sub_total = 8;
-
+    
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

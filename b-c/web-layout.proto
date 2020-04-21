@@ -22,6 +22,7 @@ message WebLayout {
     string content = 10;
     repeated Image image = 11;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

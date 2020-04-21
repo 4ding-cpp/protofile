@@ -33,6 +33,9 @@ export class PointBonus extends jspb.Message {
   getPercent(): number;
   setPercent(value: number): void;
 
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -79,6 +82,7 @@ export namespace PointBonus {
     cond: number,
     point: number,
     percent: number,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -109,6 +113,9 @@ export class Point extends jspb.Message {
 
   getLastCode(): string;
   setLastCode(value: string): void;
+
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -155,6 +162,7 @@ export namespace Point {
     price: number,
     bankCode: string,
     lastCode: string,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -184,6 +192,9 @@ export class PointBill extends jspb.Message {
   setDetailList(value: Array<PointDetail>): void;
   clearDetailList(): void;
   addDetail(value?: PointDetail, index?: number): PointDetail;
+
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -229,6 +240,7 @@ export namespace PointBill {
     state: number,
     amount: number,
     detailList: Array<PointDetail.AsObject>,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -262,6 +274,9 @@ export class PointDetail extends jspb.Message {
 
   getSubTotal(): number;
   setSubTotal(value: number): void;
+
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -309,6 +324,7 @@ export namespace PointDetail {
     unitPrice: number,
     useVal: number,
     subTotal: number,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

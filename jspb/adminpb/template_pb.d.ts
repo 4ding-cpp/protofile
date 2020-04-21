@@ -23,6 +23,9 @@ export class Template extends jspb.Message {
   getVersion(): number;
   setVersion(value: number): void;
 
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -67,6 +70,7 @@ export namespace Template {
     type: number,
     content: string,
     version: number,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

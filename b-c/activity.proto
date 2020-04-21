@@ -26,6 +26,7 @@ message Activity {
     string giveaway_id = 15;// 贈品ID
     int32 value = 16;       // 累計
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

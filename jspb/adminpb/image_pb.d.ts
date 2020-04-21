@@ -47,6 +47,9 @@ export class Image extends jspb.Message {
   getSource(): string;
   setSource(value: string): void;
 
+  getLabelxMap(): jspb.Map<string, boolean>;
+  clearLabelxMap(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -99,6 +102,7 @@ export namespace Image {
     name: string,
     version: number,
     source: string,
+    labelxMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

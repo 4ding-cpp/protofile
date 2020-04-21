@@ -222,7 +222,7 @@ proto.ding4.Business.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.addWhite(value);
       break;
-    case 20:
+    case 69:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
@@ -421,7 +421,7 @@ proto.ding4.Business.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getLabelxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(20, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -854,14 +854,14 @@ proto.ding4.Business.prototype.clearWhiteList = function() {
 
 
 /**
- * map<string, bool> labelx = 20;
+ * map<string, bool> labelx = 69;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,boolean>}
  */
 proto.ding4.Business.prototype.getLabelxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,boolean>} */ (
-      jspb.Message.getMapField(this, 20, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
       null));
 };
 

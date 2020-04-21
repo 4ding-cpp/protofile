@@ -29,6 +29,7 @@ message Order {
     Logistics logistics = 17;
     Receiver receiver = 18;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

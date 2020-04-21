@@ -21,8 +21,8 @@ message Admin {
     bool is_super = 9;
     repeated Option permission = 10;
     repeated string white = 11;
-    map<string, bool> labelx = 12;
 
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;

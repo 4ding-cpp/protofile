@@ -175,6 +175,7 @@ proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
     cond: jspb.Message.getFieldWithDefault(msg, 6, 0),
     point: jspb.Message.getFieldWithDefault(msg, 7, 0),
     percent: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -251,6 +252,12 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPercent(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -366,6 +373,10 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
       8,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -596,6 +607,28 @@ proto.ding4.PointBonus.prototype.getPercent = function() {
 proto.ding4.PointBonus.prototype.setPercent = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
+
+
+/**
+ * map<string, bool> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.ding4.PointBonus.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -848,6 +881,7 @@ proto.ding4.Point.toObject = function(includeInstance, msg) {
     price: jspb.Message.getFieldWithDefault(msg, 5, 0),
     bankCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
     lastCode: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -918,6 +952,12 @@ proto.ding4.Point.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setLastCode(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -1024,6 +1064,10 @@ proto.ding4.Point.serializeBinaryToWriter = function(message, writer) {
       7,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -1198,6 +1242,28 @@ proto.ding4.Point.prototype.getLastCode = function() {
 proto.ding4.Point.prototype.setLastCode = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
+
+
+/**
+ * map<string, bool> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.ding4.Point.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.Point} returns this
+ */
+proto.ding4.Point.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -1450,6 +1516,7 @@ proto.ding4.PointBill.toObject = function(includeInstance, msg) {
     amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
     detailList: jspb.Message.toObjectList(msg.getDetailList(),
     proto.ding4.PointDetail.toObject, includeInstance),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1517,6 +1584,12 @@ proto.ding4.PointBill.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.PointDetail;
       reader.readMessage(value,proto.ding4.PointDetail.deserializeBinaryFromReader);
       msg.addDetail(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -1617,6 +1690,10 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
       f,
       proto.ding4.PointDetail.serializeBinaryToWriter
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -1793,6 +1870,28 @@ proto.ding4.PointBill.prototype.addDetail = function(opt_value, opt_index) {
 proto.ding4.PointBill.prototype.clearDetailList = function() {
   return this.setDetailList([]);
 };
+
+
+/**
+ * map<string, bool> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.ding4.PointBill.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -2046,6 +2145,7 @@ proto.ding4.PointDetail.toObject = function(includeInstance, msg) {
     unitPrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     useVal: jspb.Message.getFieldWithDefault(msg, 7, 0),
     subTotal: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -2120,6 +2220,12 @@ proto.ding4.PointDetail.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSubTotal(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -2233,6 +2339,10 @@ proto.ding4.PointDetail.serializeBinaryToWriter = function(message, writer) {
       8,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -2425,6 +2535,28 @@ proto.ding4.PointDetail.prototype.getSubTotal = function() {
 proto.ding4.PointDetail.prototype.setSubTotal = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
+
+
+/**
+ * map<string, bool> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
+ */
+proto.ding4.PointDetail.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointDetail} returns this
+ */
+proto.ding4.PointDetail.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**

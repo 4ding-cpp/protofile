@@ -19,6 +19,7 @@ message WebItem {
     google.protobuf.Value name = 8;
     string link = 9;
     
+    map<string, bool> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
