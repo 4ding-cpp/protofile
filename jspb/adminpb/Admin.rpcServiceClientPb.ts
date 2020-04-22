@@ -306,14 +306,14 @@ export class AdminRPCClient {
 
   methodInfoRecordAdmin = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: admin_pb.Admin) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordAdmin(
-    request: sql_pb.Query,
+    request: admin_pb.Admin,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -328,14 +328,14 @@ export class AdminRPCClient {
 
   methodInfoSignAdmin = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: admin_pb.Admin) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   signAdmin(
-    request: sql_pb.Query,
+    request: admin_pb.Admin,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -438,14 +438,14 @@ export class AdminRPCClient {
 
   methodInfoRecordBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: business_pb.Business) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordBusiness(
-    request: sql_pb.Query,
+    request: business_pb.Business,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -460,14 +460,14 @@ export class AdminRPCClient {
 
   methodInfoSignBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: business_pb.Business) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   signBusiness(
-    request: sql_pb.Query,
+    request: business_pb.Business,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -548,14 +548,14 @@ export class AdminRPCClient {
 
   methodInfoRecordHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: host$map_pb.HostMap) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordHostMap(
-    request: sql_pb.Query,
+    request: host$map_pb.HostMap,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -724,14 +724,14 @@ export class AdminRPCClient {
 
   methodInfoRecordLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: label_pb.Label) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordLabel(
-    request: sql_pb.Query,
+    request: label_pb.Label,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -834,14 +834,14 @@ export class AdminRPCClient {
 
   methodInfoRecordInfo = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: info_pb.Info) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordInfo(
-    request: sql_pb.Query,
+    request: info_pb.Info,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -944,14 +944,14 @@ export class AdminRPCClient {
 
   methodInfoRecordAnnouncement = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: announcement_pb.Announcement) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordAnnouncement(
-    request: sql_pb.Query,
+    request: announcement_pb.Announcement,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1032,14 +1032,14 @@ export class AdminRPCClient {
 
   methodInfoRecordPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: point_pb.PointBonus) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordPointBonus(
-    request: sql_pb.Query,
+    request: point_pb.PointBonus,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1186,14 +1186,14 @@ export class AdminRPCClient {
 
   methodInfoRecordPoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: point_pb.Point) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordPoint(
-    request: sql_pb.Query,
+    request: point_pb.Point,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1296,14 +1296,14 @@ export class AdminRPCClient {
 
   methodInfoRecordPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: point_pb.PointBill) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordPointBill(
-    request: sql_pb.Query,
+    request: point_pb.PointBill,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1318,14 +1318,14 @@ export class AdminRPCClient {
 
   methodInfoRecordPointDetail = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: point_pb.PointDetail) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordPointDetail(
-    request: sql_pb.Query,
+    request: point_pb.PointDetail,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1384,14 +1384,14 @@ export class AdminRPCClient {
 
   methodInfoRecordPointFlow = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: point_pb.PointFlow) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordPointFlow(
-    request: sql_pb.Query,
+    request: point_pb.PointFlow,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1494,14 +1494,14 @@ export class AdminRPCClient {
 
   methodInfoRecordAdv = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: adv_pb.Adv) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordAdv(
-    request: sql_pb.Query,
+    request: adv_pb.Adv,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1604,14 +1604,14 @@ export class AdminRPCClient {
 
   methodInfoRecordAdvItem = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: adv_pb.AdvItem) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordAdvItem(
-    request: sql_pb.Query,
+    request: adv_pb.AdvItem,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1736,14 +1736,14 @@ export class AdminRPCClient {
 
   methodInfoRecordApp = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: app_pb.App) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordApp(
-    request: sql_pb.Query,
+    request: app_pb.App,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1824,14 +1824,14 @@ export class AdminRPCClient {
 
   methodInfoRecordSetting = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: setting_pb.Setting) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordSetting(
-    request: sql_pb.Query,
+    request: setting_pb.Setting,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1912,14 +1912,14 @@ export class AdminRPCClient {
 
   methodInfoRecordExternal = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: external_pb.External) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordExternal(
-    request: sql_pb.Query,
+    request: external_pb.External,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

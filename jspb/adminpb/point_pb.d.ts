@@ -8,6 +8,9 @@ export class PointBonus extends jspb.Message {
   getPointBonusId(): string;
   setPointBonusId(value: string): void;
 
+  getStatus(): number;
+  setStatus(value: number): void;
+
   getOnEvent(): number;
   setOnEvent(value: number): void;
 
@@ -78,6 +81,7 @@ export class PointBonus extends jspb.Message {
 export namespace PointBonus {
   export type AsObject = {
     pointBonusId: string,
+    status: number,
     onEvent: number,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

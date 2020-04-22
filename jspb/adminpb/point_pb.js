@@ -168,14 +168,15 @@ proto.ding4.PointBonus.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
   var f, obj = {
     pointBonusId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    onEvent: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    status: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    onEvent: jspb.Message.getFieldWithDefault(msg, 3, 0),
     beginAt: (f = msg.getBeginAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    item: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cond: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    point: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    percent: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    item: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    cond: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    point: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    percent: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -226,35 +227,39 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setOnEvent(value);
+      msg.setStatus(value);
       break;
     case 3:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setBeginAt(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOnEvent(value);
       break;
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setEndAt(value);
+      msg.setBeginAt(value);
       break;
     case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEndAt(value);
+      break;
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setItem(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCond(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPoint(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPercent(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsRepeat(value);
       break;
@@ -328,22 +333,21 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOnEvent();
+  f = message.getStatus();
   if (f !== 0) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getBeginAt();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getOnEvent();
+  if (f !== 0) {
+    writer.writeInt32(
       3,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getEndAt();
+  f = message.getBeginAt();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -351,38 +355,46 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getEndAt();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getItem();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      6,
       f
     );
   }
   f = message.getCond();
   if (f !== 0) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getPoint();
   if (f !== 0) {
     writer.writeInt32(
-      7,
+      8,
       f
     );
   }
   f = message.getPercent();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      9,
       f
     );
   }
   f = message.getIsRepeat();
   if (f) {
     writer.writeBool(
-      9,
+      10,
       f
     );
   }
@@ -458,10 +470,10 @@ proto.ding4.PointBonus.prototype.setPointBonusId = function(value) {
 
 
 /**
- * optional int32 on_event = 2;
+ * optional int32 status = 2;
  * @return {number}
  */
-proto.ding4.PointBonus.prototype.getOnEvent = function() {
+proto.ding4.PointBonus.prototype.getStatus = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -470,18 +482,36 @@ proto.ding4.PointBonus.prototype.getOnEvent = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setOnEvent = function(value) {
+proto.ding4.PointBonus.prototype.setStatus = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp begin_at = 3;
+ * optional int32 on_event = 3;
+ * @return {number}
+ */
+proto.ding4.PointBonus.prototype.getOnEvent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.setOnEvent = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp begin_at = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.PointBonus.prototype.getBeginAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
@@ -490,7 +520,7 @@ proto.ding4.PointBonus.prototype.getBeginAt = function() {
  * @return {!proto.ding4.PointBonus} returns this
 */
 proto.ding4.PointBonus.prototype.setBeginAt = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -508,17 +538,17 @@ proto.ding4.PointBonus.prototype.clearBeginAt = function() {
  * @return {boolean}
  */
 proto.ding4.PointBonus.prototype.hasBeginAt = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp end_at = 4;
+ * optional google.protobuf.Timestamp end_at = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.PointBonus.prototype.getEndAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
@@ -527,7 +557,7 @@ proto.ding4.PointBonus.prototype.getEndAt = function() {
  * @return {!proto.ding4.PointBonus} returns this
 */
 proto.ding4.PointBonus.prototype.setEndAt = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -545,16 +575,16 @@ proto.ding4.PointBonus.prototype.clearEndAt = function() {
  * @return {boolean}
  */
 proto.ding4.PointBonus.prototype.hasEndAt = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string item = 5;
+ * optional string item = 6;
  * @return {string}
  */
 proto.ding4.PointBonus.prototype.getItem = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -563,33 +593,15 @@ proto.ding4.PointBonus.prototype.getItem = function() {
  * @return {!proto.ding4.PointBonus} returns this
  */
 proto.ding4.PointBonus.prototype.setItem = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 cond = 6;
+ * optional int32 cond = 7;
  * @return {number}
  */
 proto.ding4.PointBonus.prototype.getCond = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.PointBonus} returns this
- */
-proto.ding4.PointBonus.prototype.setCond = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional int32 point = 7;
- * @return {number}
- */
-proto.ding4.PointBonus.prototype.getPoint = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -598,16 +610,16 @@ proto.ding4.PointBonus.prototype.getPoint = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setPoint = function(value) {
+proto.ding4.PointBonus.prototype.setCond = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional int32 percent = 8;
+ * optional int32 point = 8;
  * @return {number}
  */
-proto.ding4.PointBonus.prototype.getPercent = function() {
+proto.ding4.PointBonus.prototype.getPoint = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -616,17 +628,35 @@ proto.ding4.PointBonus.prototype.getPercent = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setPercent = function(value) {
+proto.ding4.PointBonus.prototype.setPoint = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional bool is_repeat = 9;
+ * optional int32 percent = 9;
+ * @return {number}
+ */
+proto.ding4.PointBonus.prototype.getPercent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.setPercent = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional bool is_repeat = 10;
  * @return {boolean}
  */
 proto.ding4.PointBonus.prototype.getIsRepeat = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -635,7 +665,7 @@ proto.ding4.PointBonus.prototype.getIsRepeat = function() {
  * @return {!proto.ding4.PointBonus} returns this
  */
 proto.ding4.PointBonus.prototype.setIsRepeat = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
