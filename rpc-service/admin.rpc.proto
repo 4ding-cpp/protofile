@@ -58,6 +58,7 @@ service AdminRPC {
     // 標籤相關
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
+    rpc DeleteLabel(Label) returns (Response);
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
     rpc FindLabel(Query) returns (Response);
@@ -79,6 +80,7 @@ service AdminRPC {
 
     // 點數活動相關
     rpc CreatePointBonus(PointBonus) returns (Response);
+    rpc UpdatePointBonus(PointBonus) returns (Response);
     rpc FindPointBonus(Query) returns (Response);
     rpc RecordPointBonus(Query) returns (Response);
 

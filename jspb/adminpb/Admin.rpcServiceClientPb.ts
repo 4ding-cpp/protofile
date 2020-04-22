@@ -634,6 +634,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoDeleteLabel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: label_pb.Label) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteLabel(
+    request: label_pb.Label,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteLabel',
+      request,
+      metadata || {},
+      this.methodInfoDeleteLabel,
+      callback);
+  }
+
   methodInfoAppendLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: label_pb.Label) => {
@@ -961,6 +983,28 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoCreatePointBonus,
+      callback);
+  }
+
+  methodInfoUpdatePointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBonus) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updatePointBonus(
+    request: point_pb.PointBonus,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdatePointBonus',
+      request,
+      metadata || {},
+      this.methodInfoUpdatePointBonus,
       callback);
   }
 

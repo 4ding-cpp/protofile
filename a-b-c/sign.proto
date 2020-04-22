@@ -12,7 +12,8 @@ message Sign {
     string user_id = 3;
     google.protobuf.Timestamp online_at = 4;
     google.protobuf.Timestamp offline_at = 5;
-    int32 requests = 6;
-    string address = 7;
-    string userAgent = 8;
+    string address = 6;
+    string userAgent = 7;
+    string country = 8;
+    string token = 9;
 }

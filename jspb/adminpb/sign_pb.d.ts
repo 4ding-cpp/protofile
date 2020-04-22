@@ -22,14 +22,17 @@ export class Sign extends jspb.Message {
   hasOfflineAt(): boolean;
   clearOfflineAt(): void;
 
-  getRequests(): number;
-  setRequests(value: number): void;
-
   getAddress(): string;
   setAddress(value: string): void;
 
   getUseragent(): string;
   setUseragent(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  getToken(): string;
+  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sign.AsObject;
@@ -46,9 +49,10 @@ export namespace Sign {
     userId: string,
     onlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     offlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    requests: number,
     address: string,
     useragent: string,
+    country: string,
+    token: string,
   }
 }
 
