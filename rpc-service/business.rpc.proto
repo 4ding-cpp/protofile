@@ -39,19 +39,19 @@ service BusinessRPC {
     rpc CreateBusiness(Business) returns (Response);
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
-    rpc RecordBusiness(Query) returns (Response);
+    rpc RecordBusiness(Business) returns (Response);
 
     rpc CreateManager(Manager) returns (Response);
     rpc UpdateManager(Manager) returns (Response);
     rpc FindManager(Query) returns (Response);
-    rpc RecordManager(Query) returns (Response);
+    rpc RecordManager(Manager) returns (Response);
 
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
     rpc DeleteLabel(Label) returns (Response);
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
-    rpc FindLabel(Query) returns (Response);
+    rpc FindLabel(Label) returns (Response);
 
     rpc CreateLinker(Linker) returns (Response);
     rpc UpdateLinker(Linker) returns (Response);
@@ -60,12 +60,12 @@ service BusinessRPC {
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
-    rpc RecordCustomer(Query) returns (Response);
+    rpc RecordCustomer(Customer) returns (Response);
 
     rpc CreateProduct(Product) returns (Response);
     rpc UpdateProduct(Product) returns (Response);
     rpc FindProduct(Query) returns (Response);
-    rpc RecordProduct(Query) returns (Response);
+    rpc RecordProduct(Product) returns (Response);
     rpc CreateProductImage(Image) returns (Response);
     rpc UpdateProductImage(Image) returns (Response);
     rpc DeleteProductImage(Image) returns (Response);
@@ -82,7 +82,7 @@ service BusinessRPC {
     rpc CreateStore(Store) returns (Response);
     rpc UpdateStore(Store) returns (Response);
     rpc FindStore(Query) returns (Response);
-    rpc RecordStore(Query) returns (Response);
+    rpc RecordStore(Store) returns (Response);
 
     rpc CreateRemind(Remind) returns (Response);
     rpc UpdateRemind(Remind) returns (Response);
