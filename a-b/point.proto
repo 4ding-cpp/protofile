@@ -11,10 +11,10 @@ import "google/protobuf/timestamp.proto";
 
 message PointBonus {
     string point_bonus_id = 1;
-    int32 status = 2;       // 1:停用 2:啟用
-    int32 on_event = 3;     // 1:首儲 2:一般儲
-    google.protobuf.Timestamp begin_at = 4;
-    google.protobuf.Timestamp end_at = 5;
+    int32 on_event = 2;     // 1:首儲 2:一般儲
+    google.protobuf.Timestamp begin_at = 3;
+    google.protobuf.Timestamp end_at = 4;
+    google.protobuf.Timestamp stop_at = 5;
     string item = 6;
     int32 cond = 7;
     int32 point = 8;

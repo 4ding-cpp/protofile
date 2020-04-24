@@ -81,6 +81,8 @@ service AdminRPC {
     // 點數活動相關
     rpc CreatePointBonus(PointBonus) returns (Response);
     rpc UpdatePointBonus(PointBonus) returns (Response);
+    rpc StopPointBonus(PointBonus) returns (Response);
+    rpc CancelPointBonus(PointBonus) returns (Response);
     rpc FindPointBonus(Query) returns (Response);
     rpc RecordPointBonus(PointBonus) returns (Response);
 

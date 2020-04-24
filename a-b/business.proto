@@ -30,7 +30,7 @@ message Business {
     repeated Option permission = 18;
     repeated string white = 19;
     
-    map<string, bool> labelx = 69;
+    map<string, int32> labelx = 69;
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
