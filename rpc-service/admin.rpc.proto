@@ -88,7 +88,7 @@ service AdminRPC {
 
     // 儲值相關 State 1:未審核 2:已審核 3:已取消
     rpc CreatePoint(Point) returns (Response);
-    rpc ComfirmPoint(Point) returns (Response);
+    rpc ConfirmPoint(Point) returns (Response);
     rpc ApprovePoint(Point) returns (Response);
     rpc CancelPoint(Point) returns (Response);
     rpc UpdatePoint(Point) returns (Response);
@@ -97,7 +97,7 @@ service AdminRPC {
 
     // 帳單相關 State 1:未繳 2:自動扣繳失敗 3:扣繳完成
     rpc CreatePointBill(PointBill) returns (Response);
-    rpc ComfirmPointBill(PointBill) returns (Response);
+    rpc ConfirmPointBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
     rpc FindPointDetail(Query) returns (Response);
     rpc RecordPointBill(PointBill) returns (Response);

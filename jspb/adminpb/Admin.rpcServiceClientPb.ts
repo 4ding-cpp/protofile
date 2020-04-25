@@ -1008,6 +1008,50 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoStopPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBonus) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  stopPointBonus(
+    request: point_pb.PointBonus,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/StopPointBonus',
+      request,
+      metadata || {},
+      this.methodInfoStopPointBonus,
+      callback);
+  }
+
+  methodInfoCancelPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBonus) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelPointBonus(
+    request: point_pb.PointBonus,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CancelPointBonus',
+      request,
+      metadata || {},
+      this.methodInfoCancelPointBonus,
+      callback);
+  }
+
   methodInfoFindPointBonus = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -1074,7 +1118,7 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoComfirmPoint = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoConfirmPoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.Point) => {
       return request.serializeBinary();
@@ -1082,17 +1126,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  comfirmPoint(
+  confirmPoint(
     request: point_pb.Point,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/ComfirmPoint',
+        '/ding4.AdminRPC/ConfirmPoint',
       request,
       metadata || {},
-      this.methodInfoComfirmPoint,
+      this.methodInfoConfirmPoint,
       callback);
   }
 
@@ -1228,7 +1272,7 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoComfirmPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoConfirmPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.PointBill) => {
       return request.serializeBinary();
@@ -1236,17 +1280,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  comfirmPointBill(
+  confirmPointBill(
     request: point_pb.PointBill,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/ComfirmPointBill',
+        '/ding4.AdminRPC/ConfirmPointBill',
       request,
       metadata || {},
-      this.methodInfoComfirmPointBill,
+      this.methodInfoConfirmPointBill,
       callback);
   }
 

@@ -29,8 +29,8 @@ service BusinessRPC {
     rpc FindPermission(Query) returns (Response);
 
     rpc CreatePoint(Point) returns (Response);
-    rpc ComfirmPoint(Point) returns (Response);
-    rpc ComfirmPointBill(PointBill) returns (Response);
+    rpc ConfirmPoint(Point) returns (Response);
+    rpc ConfirmPointBill(PointBill) returns (Response);
     rpc FindPoint(Query) returns (Response);
     rpc FindPointFlow(Query) returns (Response);
     rpc FindPointBill(Query) returns (Response);
