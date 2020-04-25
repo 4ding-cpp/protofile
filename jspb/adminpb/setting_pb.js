@@ -151,7 +151,7 @@ proto.ding4.Setting.deserializeBinaryFromReader = function(msg, reader) {
     case 69:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
          });
       break;
     case 70:
@@ -248,7 +248,7 @@ proto.ding4.Setting.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getLabelxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -390,13 +390,13 @@ proto.ding4.Setting.prototype.setContent = function(value) {
 
 
 /**
- * map<string, bool> labelx = 69;
+ * map<string, int32> labelx = 69;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,boolean>}
+ * @return {!jspb.Map<string,number>}
  */
 proto.ding4.Setting.prototype.getLabelxMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,boolean>} */ (
+  return /** @type {!jspb.Map<string,number>} */ (
       jspb.Message.getMapField(this, 69, opt_noLazyCreate,
       null));
 };

@@ -17,7 +17,7 @@ export class Info extends jspb.Message {
   getContent(): string;
   setContent(value: string): void;
 
-  getLabelxMap(): jspb.Map<string, boolean>;
+  getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
   getOperator(): string;
@@ -62,7 +62,7 @@ export namespace Info {
     area: string,
     item: string,
     content: string,
-    labelxMap: Array<[string, boolean]>,
+    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

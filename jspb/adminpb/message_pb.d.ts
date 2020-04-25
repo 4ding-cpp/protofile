@@ -45,7 +45,7 @@ export class Message extends jspb.Message {
   hasTemplate(): boolean;
   clearTemplate(): void;
 
-  getLabelxMap(): jspb.Map<string, boolean>;
+  getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
   getOperator(): string;
@@ -97,7 +97,7 @@ export namespace Message {
     runAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     finishAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     template?: template_pb.Template.AsObject,
-    labelxMap: Array<[string, boolean]>,
+    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
