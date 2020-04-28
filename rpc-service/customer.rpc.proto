@@ -26,7 +26,7 @@ service CustomerRPC {
     rpc MyCar(Query) returns (Response);
     rpc DeleteCar(Car) returns (Response);
     rpc CompleteCar(Car) returns (Response);
-    rpc AppendCommodity(Commodity) returns (Response);
+    rpc AppendCommodity(Car) returns (Response);
     rpc SubtractCommodity(Commodity) returns (Response);
     rpc AppendDiscount(Car) returns (Response);
     rpc SubtractDiscount(Car) returns (Response);
