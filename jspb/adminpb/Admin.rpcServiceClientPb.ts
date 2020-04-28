@@ -1272,6 +1272,50 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoUpdatePointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBill) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updatePointBill(
+    request: point_pb.PointBill,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/UpdatePointBill',
+      request,
+      metadata || {},
+      this.methodInfoUpdatePointBill,
+      callback);
+  }
+
+  methodInfoCancelPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: point_pb.PointBill) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelPointBill(
+    request: point_pb.PointBill,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CancelPointBill',
+      request,
+      metadata || {},
+      this.methodInfoCancelPointBill,
+      callback);
+  }
+
   methodInfoConfirmPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.PointBill) => {

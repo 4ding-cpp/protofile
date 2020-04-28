@@ -23,50 +23,112 @@ message Order {
     int32 payment_charge = 12;
     int32 logistics_charge = 13;
     string code = 14;
-    string track_id = 15;
-
+    string re_order_id = 15;
     Payment payment = 16;
     Logistics logistics = 17;
-    Receiver receiver = 18;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 18;
+    string operator = 19;
+    google.protobuf.Timestamp create_at = 20;
+    google.protobuf.Timestamp update_at = 21;
+    repeated string cols = 22;
+    repeated Condition condition = 23;
+    google.protobuf.Struct self = 24;
 }
-
-
+// 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Payment {
-    int32 payment_state = 1;
-    string payment_id = 2;
-    string payment_type = 3;
+    // 交易狀態
+	string RtnCode = 1;     
+    // 交易訊息 
+	string RtnMsg = 2;      
+    // 第三方金流編號
+	string TradeNo = 3;      
+    // 交易金額
+	string TrandAmt = 4;    
+    // 付款方式 
+	string PaymentType = 5; 
+    // 成立時間
+	string TradeDate = 6;    
+    // 繳費到期日
+	string ExpireDate = 7;   
+	// ATM 條碼
+     // 繳費銀行代碼
+	string BankCode = 8;  
+     // 繳費虛擬帳號
+	string vAccount = 9;
+    // 超商bon 列印條碼
+	string PaymentNo = 10; 
+    // 超商繳費條碼123
+	string Barcode1 = 11;  
+	string Barcode2 = 12;  
+	string Barcode3 = 13; 
 }
-
+// 物流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Logistics {
-    int32 logistics_state = 1;
-    string logistics_id = 2;
-    string logistics_type = 3;
-    string logistics_sub_type = 4;
-}
-
-message Receiver {
-    string receiver_store_id = 1;
-    string receiver_name = 2;
-    string receiver_phone = 3;
-    string receiver_email = 4;
-    ReceiverHome receiver_home = 5;
-}
-
-message ReceiverHome {
-    string receiver_zip_code = 1;
-    string receiver_address = 2;
-    string temperature = 3;
-    string distance = 4;
-    string specification = 5;
-    string scheduled_pickup_time = 6;
-    string scheduled_delivery_time = 7;
-    string scheduled_delivery_date = 8;
+    // 物流狀態
+	string RtnCode = 1;       
+    // 物流訊息    
+	string RtnMsg = 2;        
+    // 第三方物流編號
+	string AllPayLogisticsID = 3;  
+    // 物流類型
+	string LogisticsType = 4;  
+    // 物流子類型
+	string LogisticsSubType = 5;   
+    // 貨物遺失賠償依據
+	string GoodsAmount = 6;   
+    // 剛新狀態時間
+	string UpdateStatusDate = 7;   
+	// 寄件者
+	string SenderName = 8;
+	string SenderPhone = 9; 
+	string SenderCellPhone = 10; 
+	string SenderZipCode = 11;
+	string SenderAddress = 12; 
+	// 收件者
+    // 收件者名稱
+	string ReceiverName = 13;  
+    // 收件者電話
+	string ReceiverPhone = 14; 
+	string ReceiverCellPhone = 15; 
+    // 收件者電子郵件
+	string ReceiverEmail = 16;
+    // 收件者郵遞區號
+	string ReceiverZipCode = 17;
+    // 收件者地址
+	string ReceiverAddress = 18;
+	// 超商取貨資訊
+    // 超商門市編號
+	string CVSStoreID = 19;
+    // 超商門市名稱
+	string CVSStoreName = 20;   
+    // 超商門市地址
+	string CVSAddress = 21;  
+    // 超商門市電話
+	string CVSTelephone = 22;    
+    // 超商門市位置 0:本島 1:離島
+	string CVSOutSide = 23;   
+    // 寄貨編號
+	string CVSPaymentNo = 24;  
+    // 驗證碼
+	string CVSValidationNo= 25;  
+    // 01:取件門市更新 02:退件門市更新
+	string StoreType = 26; 
+    // 選取門市無效 01-04
+	string Status = 27; 
+	// 宅配資訊
+    // 溫層 0001:常溫 0002:冷藏 0003:冷凍
+	string Temperature = 28; 
+    // 距離 00:同縣市 01:外縣市 02:離島    
+	string Distance = 29;    
+      // 規格 0001:60cm 0002:90cm 0003:120cm 0004:150cm
+	string Specification = 30;         
+    // 預定取件時段
+	string ScheduledPickupTime = 31;     
+    // 預定送達時段
+	string ScheduledDeliveryTime= 32;    
+    // 指定送達日
+	string ScheduledDeliveryDate= 33;   
+    // 託運單號 
+	string BookingNode = 34;            
 }

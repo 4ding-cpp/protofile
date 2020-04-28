@@ -22,11 +22,11 @@ message Admin {
     repeated Option permission = 10;
     repeated string white = 11;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }

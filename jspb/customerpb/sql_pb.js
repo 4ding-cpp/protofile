@@ -1304,7 +1304,8 @@ proto.ding4.Condition.Operand = {
   GTE: 4,
   IN: 5,
   LIKE: 6,
-  LABEL: 7
+  LABEL: 7,
+  UNLABEL: 8
 };
 
 /**

@@ -25,12 +25,12 @@ message Adv {
     int32 motive = 14;
     google.protobuf.Value other = 15;
 
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    string operator = 16;
+    google.protobuf.Timestamp create_at = 17;
+    google.protobuf.Timestamp update_at = 18;
+    repeated string cols = 19;
+    repeated Condition condition = 20;
+    google.protobuf.Struct self = 21;
 }
 
 message AdvItem {
@@ -40,10 +40,10 @@ message AdvItem {
     google.protobuf.Timestamp view_at = 4;
     string remark = 5;
 
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    repeated string cols = 9;
+    repeated Condition condition = 10;
+    google.protobuf.Struct self = 11;
 }

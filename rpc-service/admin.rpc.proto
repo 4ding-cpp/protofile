@@ -95,8 +95,10 @@ service AdminRPC {
     rpc FindPoint(Query) returns (Response);
     rpc RecordPoint(Point) returns (Response);
 
-    // 帳單相關 State 1:未繳 2:自動扣繳失敗 3:扣繳完成
+    // 帳單相關 State 1:未繳 2:自動扣繳失敗 3:扣繳完成 9:註銷
     rpc CreatePointBill(PointBill) returns (Response);
+    rpc UpdatePointBill(PointBill) returns (Response);
+    rpc CancelPointBill(PointBill) returns (Response);
     rpc ConfirmPointBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
     rpc FindPointDetail(Query) returns (Response);

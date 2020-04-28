@@ -73,9 +73,10 @@ proto.ding4.Sign.toObject = function(includeInstance, msg) {
     userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     onlineAt: (f = msg.getOnlineAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     offlineAt: (f = msg.getOfflineAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    requests: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    address: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    useragent: jspb.Message.getFieldWithDefault(msg, 8, "")
+    address: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    useragent: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    token: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -135,16 +136,20 @@ proto.ding4.Sign.deserializeBinaryFromReader = function(msg, reader) {
       msg.setOfflineAt(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRequests(value);
-      break;
-    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setAddress(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUseragent(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountry(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
       break;
     default:
       reader.skipField();
@@ -212,24 +217,31 @@ proto.ding4.Sign.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getRequests();
-  if (f !== 0) {
-    writer.writeInt32(
-      6,
-      f
-    );
-  }
   f = message.getAddress();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      6,
       f
     );
   }
   f = message.getUseragent();
   if (f.length > 0) {
     writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getCountry();
+  if (f.length > 0) {
+    writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -365,29 +377,11 @@ proto.ding4.Sign.prototype.hasOfflineAt = function() {
 
 
 /**
- * optional int32 requests = 6;
- * @return {number}
- */
-proto.ding4.Sign.prototype.getRequests = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Sign} returns this
- */
-proto.ding4.Sign.prototype.setRequests = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional string address = 7;
+ * optional string address = 6;
  * @return {string}
  */
 proto.ding4.Sign.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -396,16 +390,16 @@ proto.ding4.Sign.prototype.getAddress = function() {
  * @return {!proto.ding4.Sign} returns this
  */
 proto.ding4.Sign.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string userAgent = 8;
+ * optional string userAgent = 7;
  * @return {string}
  */
 proto.ding4.Sign.prototype.getUseragent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -414,7 +408,43 @@ proto.ding4.Sign.prototype.getUseragent = function() {
  * @return {!proto.ding4.Sign} returns this
  */
 proto.ding4.Sign.prototype.setUseragent = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string country = 8;
+ * @return {string}
+ */
+proto.ding4.Sign.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Sign} returns this
+ */
+proto.ding4.Sign.prototype.setCountry = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string token = 9;
+ * @return {string}
+ */
+proto.ding4.Sign.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Sign} returns this
+ */
+proto.ding4.Sign.prototype.setToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

@@ -51,7 +51,8 @@ service BusinessRPC {
     rpc DeleteLabel(Label) returns (Response);
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
-    rpc FindLabel(Label) returns (Response);
+    rpc FindLabel(Query) returns (Response);
+    rpc RecordLabel(Label) returns (Response);
 
     rpc CreateLinker(Linker) returns (Response);
     rpc UpdateLinker(Linker) returns (Response);
