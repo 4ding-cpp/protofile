@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var password_pb = require('./password_pb.js');
+goog.object.extend(proto, password_pb);
 var business_pb = require('./business_pb.js');
 goog.object.extend(proto, business_pb);
 var point_pb = require('./point_pb.js');

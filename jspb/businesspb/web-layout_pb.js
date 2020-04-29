@@ -93,6 +93,7 @@ proto.ding4.WebLayout.toObject = function(includeInstance, msg) {
     content: jspb.Message.getFieldWithDefault(msg, 10, ""),
     imageList: jspb.Message.toObjectList(msg.getImageList(),
     image_pb.Image.toObject, includeInstance),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -180,6 +181,12 @@ proto.ding4.WebLayout.deserializeBinaryFromReader = function(msg, reader) {
       var value = new image_pb.Image;
       reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
       msg.addImage(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -315,6 +322,10 @@ proto.ding4.WebLayout.serializeBinaryToWriter = function(message, writer) {
       f,
       image_pb.Image.serializeBinaryToWriter
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -581,6 +592,28 @@ proto.ding4.WebLayout.prototype.addImage = function(opt_value, opt_index) {
 proto.ding4.WebLayout.prototype.clearImageList = function() {
   return this.setImageList([]);
 };
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.WebLayout.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.WebLayout} returns this
+ */
+proto.ding4.WebLayout.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**

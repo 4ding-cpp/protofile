@@ -171,10 +171,12 @@ proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
     onEvent: jspb.Message.getFieldWithDefault(msg, 2, 0),
     beginAt: (f = msg.getBeginAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    item: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cond: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    point: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    percent: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    item: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    cond: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    point: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    percent: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -236,21 +238,31 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEndAt(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setItem(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCond(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPoint(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPercent(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRepeat(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -342,30 +354,41 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
   f = message.getItem();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      6,
       f
     );
   }
   f = message.getCond();
   if (f !== 0) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getPoint();
   if (f !== 0) {
     writer.writeInt32(
-      7,
+      8,
       f
     );
   }
   f = message.getPercent();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      9,
       f
     );
+  }
+  f = message.getIsRepeat();
+  if (f) {
+    writer.writeBool(
+      10,
+      f
+    );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -527,11 +550,11 @@ proto.ding4.PointBonus.prototype.hasEndAt = function() {
 
 
 /**
- * optional string item = 5;
+ * optional string item = 6;
  * @return {string}
  */
 proto.ding4.PointBonus.prototype.getItem = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -540,33 +563,15 @@ proto.ding4.PointBonus.prototype.getItem = function() {
  * @return {!proto.ding4.PointBonus} returns this
  */
 proto.ding4.PointBonus.prototype.setItem = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 cond = 6;
+ * optional int32 cond = 7;
  * @return {number}
  */
 proto.ding4.PointBonus.prototype.getCond = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.PointBonus} returns this
- */
-proto.ding4.PointBonus.prototype.setCond = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional int32 point = 7;
- * @return {number}
- */
-proto.ding4.PointBonus.prototype.getPoint = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -575,16 +580,16 @@ proto.ding4.PointBonus.prototype.getPoint = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setPoint = function(value) {
+proto.ding4.PointBonus.prototype.setCond = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional int32 percent = 8;
+ * optional int32 point = 8;
  * @return {number}
  */
-proto.ding4.PointBonus.prototype.getPercent = function() {
+proto.ding4.PointBonus.prototype.getPoint = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -593,9 +598,67 @@ proto.ding4.PointBonus.prototype.getPercent = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBonus} returns this
  */
-proto.ding4.PointBonus.prototype.setPercent = function(value) {
+proto.ding4.PointBonus.prototype.setPoint = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
+
+
+/**
+ * optional int32 percent = 9;
+ * @return {number}
+ */
+proto.ding4.PointBonus.prototype.getPercent = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.setPercent = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional bool is_repeat = 10;
+ * @return {boolean}
+ */
+proto.ding4.PointBonus.prototype.getIsRepeat = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.setIsRepeat = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.PointBonus.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointBonus} returns this
+ */
+proto.ding4.PointBonus.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -843,11 +906,12 @@ proto.ding4.Point.toObject = function(includeInstance, msg) {
   var f, obj = {
     pointId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    bankCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    lastCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    point: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    state: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    bankCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    lastCode: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -901,23 +965,29 @@ proto.ding4.Point.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setState(value);
+      msg.setType(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPrice(value);
+      msg.setState(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBankCode(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLastCode(value);
+      msg.setBankCode(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPoint(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastCode(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -990,40 +1060,44 @@ proto.ding4.Point.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getState();
+  f = message.getType();
   if (f !== 0) {
     writer.writeInt32(
       3,
       f
     );
   }
-  f = message.getPrice();
+  f = message.getState();
   if (f !== 0) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getBankCode();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getPrice();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getLastCode();
+  f = message.getBankCode();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getPoint();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getLastCode();
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -1111,10 +1185,10 @@ proto.ding4.Point.prototype.setBusinessId = function(value) {
 
 
 /**
- * optional int32 state = 3;
+ * optional int32 type = 3;
  * @return {number}
  */
-proto.ding4.Point.prototype.getState = function() {
+proto.ding4.Point.prototype.getType = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1123,16 +1197,16 @@ proto.ding4.Point.prototype.getState = function() {
  * @param {number} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setState = function(value) {
+proto.ding4.Point.prototype.setType = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional int32 price = 4;
+ * optional int32 state = 4;
  * @return {number}
  */
-proto.ding4.Point.prototype.getPrice = function() {
+proto.ding4.Point.prototype.getState = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -1141,34 +1215,34 @@ proto.ding4.Point.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setPrice = function(value) {
+proto.ding4.Point.prototype.setState = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional string bank_code = 5;
+ * optional int32 price = 5;
+ * @return {number}
+ */
+proto.ding4.Point.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Point} returns this
+ */
+proto.ding4.Point.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string bank_code = 6;
  * @return {string}
  */
 proto.ding4.Point.prototype.getBankCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.Point} returns this
- */
-proto.ding4.Point.prototype.setBankCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string last_code = 6;
- * @return {string}
- */
-proto.ding4.Point.prototype.getLastCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1177,27 +1251,49 @@ proto.ding4.Point.prototype.getLastCode = function() {
  * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setLastCode = function(value) {
+proto.ding4.Point.prototype.setBankCode = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 point = 7;
- * @return {number}
+ * optional string last_code = 7;
+ * @return {string}
  */
-proto.ding4.Point.prototype.getPoint = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+proto.ding4.Point.prototype.getLastCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Point} returns this
  */
-proto.ding4.Point.prototype.setPoint = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.ding4.Point.prototype.setLastCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.Point.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.Point} returns this
+ */
+proto.ding4.Point.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -1450,6 +1546,7 @@ proto.ding4.PointBill.toObject = function(includeInstance, msg) {
     amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
     detailList: jspb.Message.toObjectList(msg.getDetailList(),
     proto.ding4.PointDetail.toObject, includeInstance),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1517,6 +1614,12 @@ proto.ding4.PointBill.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.PointDetail;
       reader.readMessage(value,proto.ding4.PointDetail.deserializeBinaryFromReader);
       msg.addDetail(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -1617,6 +1720,10 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
       f,
       proto.ding4.PointDetail.serializeBinaryToWriter
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -1793,6 +1900,28 @@ proto.ding4.PointBill.prototype.addDetail = function(opt_value, opt_index) {
 proto.ding4.PointBill.prototype.clearDetailList = function() {
   return this.setDetailList([]);
 };
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.PointBill.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**
@@ -2046,6 +2175,7 @@ proto.ding4.PointDetail.toObject = function(includeInstance, msg) {
     unitPrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     useVal: jspb.Message.getFieldWithDefault(msg, 7, 0),
     subTotal: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -2120,6 +2250,12 @@ proto.ding4.PointDetail.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSubTotal(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -2233,6 +2369,10 @@ proto.ding4.PointDetail.serializeBinaryToWriter = function(message, writer) {
       8,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -2425,6 +2565,28 @@ proto.ding4.PointDetail.prototype.getSubTotal = function() {
 proto.ding4.PointDetail.prototype.setSubTotal = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.PointDetail.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.PointDetail} returns this
+ */
+proto.ding4.PointDetail.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**

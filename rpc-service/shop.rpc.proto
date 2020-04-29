@@ -9,7 +9,7 @@ import "customer.proto";
 import "car.proto";
 import "order.proto";
 
-service CustomerRPC {
+service ShopRPC {
     rpc SignUp(Customer) returns (Response);
     rpc SignIn(Customer) returns (Response);
 

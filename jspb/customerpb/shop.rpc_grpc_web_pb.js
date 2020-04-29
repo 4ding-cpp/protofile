@@ -20,7 +20,7 @@ var car_pb = require('./car_pb.js')
 
 var order_pb = require('./order_pb.js')
 const proto = {};
-proto.ding4 = require('./customer.rpc_pb.js');
+proto.ding4 = require('./shop.rpc_pb.js');
 
 /**
  * @param {string} hostname
@@ -30,7 +30,7 @@ proto.ding4 = require('./customer.rpc_pb.js');
  * @struct
  * @final
  */
-proto.ding4.CustomerRPCClient =
+proto.ding4.ShopRPCClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'binary';
@@ -56,7 +56,7 @@ proto.ding4.CustomerRPCClient =
  * @struct
  * @final
  */
-proto.ding4.CustomerRPCPromiseClient =
+proto.ding4.ShopRPCPromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'binary';
@@ -80,8 +80,8 @@ proto.ding4.CustomerRPCPromiseClient =
  *   !proto.ding4.Customer,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_SignUp = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/SignUp',
+const methodDescriptor_ShopRPC_SignUp = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SignUp',
   grpc.web.MethodType.UNARY,
   customer_pb.Customer,
   sql_pb.Response,
@@ -102,7 +102,7 @@ const methodDescriptor_CustomerRPC_SignUp = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Customer,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_SignUp = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_SignUp = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Customer} request
@@ -125,13 +125,13 @@ const methodInfo_CustomerRPC_SignUp = new grpc.web.AbstractClientBase.MethodInfo
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.signUp =
+proto.ding4.ShopRPCClient.prototype.signUp =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/SignUp',
+      '/ding4.ShopRPC/SignUp',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SignUp,
+      methodDescriptor_ShopRPC_SignUp,
       callback);
 };
 
@@ -144,13 +144,13 @@ proto.ding4.CustomerRPCClient.prototype.signUp =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.signUp =
+proto.ding4.ShopRPCPromiseClient.prototype.signUp =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/SignUp',
+      '/ding4.ShopRPC/SignUp',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SignUp);
+      methodDescriptor_ShopRPC_SignUp);
 };
 
 
@@ -160,8 +160,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.signUp =
  *   !proto.ding4.Customer,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_SignIn = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/SignIn',
+const methodDescriptor_ShopRPC_SignIn = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SignIn',
   grpc.web.MethodType.UNARY,
   customer_pb.Customer,
   sql_pb.Response,
@@ -182,7 +182,7 @@ const methodDescriptor_CustomerRPC_SignIn = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Customer,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_SignIn = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_SignIn = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Customer} request
@@ -205,13 +205,13 @@ const methodInfo_CustomerRPC_SignIn = new grpc.web.AbstractClientBase.MethodInfo
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.signIn =
+proto.ding4.ShopRPCClient.prototype.signIn =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/SignIn',
+      '/ding4.ShopRPC/SignIn',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SignIn,
+      methodDescriptor_ShopRPC_SignIn,
       callback);
 };
 
@@ -224,13 +224,13 @@ proto.ding4.CustomerRPCClient.prototype.signIn =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.signIn =
+proto.ding4.ShopRPCPromiseClient.prototype.signIn =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/SignIn',
+      '/ding4.ShopRPC/SignIn',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SignIn);
+      methodDescriptor_ShopRPC_SignIn);
 };
 
 
@@ -240,8 +240,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.signIn =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_IndexBase = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/IndexBase',
+const methodDescriptor_ShopRPC_IndexBase = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/IndexBase',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -262,7 +262,7 @@ const methodDescriptor_CustomerRPC_IndexBase = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_IndexBase = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_IndexBase = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -285,13 +285,13 @@ const methodInfo_CustomerRPC_IndexBase = new grpc.web.AbstractClientBase.MethodI
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.indexBase =
+proto.ding4.ShopRPCClient.prototype.indexBase =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexBase',
+      '/ding4.ShopRPC/IndexBase',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexBase,
+      methodDescriptor_ShopRPC_IndexBase,
       callback);
 };
 
@@ -304,13 +304,13 @@ proto.ding4.CustomerRPCClient.prototype.indexBase =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.indexBase =
+proto.ding4.ShopRPCPromiseClient.prototype.indexBase =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexBase',
+      '/ding4.ShopRPC/IndexBase',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexBase);
+      methodDescriptor_ShopRPC_IndexBase);
 };
 
 
@@ -320,8 +320,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.indexBase =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_IndexItem = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/IndexItem',
+const methodDescriptor_ShopRPC_IndexItem = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/IndexItem',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -342,7 +342,7 @@ const methodDescriptor_CustomerRPC_IndexItem = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_IndexItem = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_IndexItem = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -365,13 +365,13 @@ const methodInfo_CustomerRPC_IndexItem = new grpc.web.AbstractClientBase.MethodI
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.indexItem =
+proto.ding4.ShopRPCClient.prototype.indexItem =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexItem',
+      '/ding4.ShopRPC/IndexItem',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexItem,
+      methodDescriptor_ShopRPC_IndexItem,
       callback);
 };
 
@@ -384,13 +384,13 @@ proto.ding4.CustomerRPCClient.prototype.indexItem =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.indexItem =
+proto.ding4.ShopRPCPromiseClient.prototype.indexItem =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexItem',
+      '/ding4.ShopRPC/IndexItem',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexItem);
+      methodDescriptor_ShopRPC_IndexItem);
 };
 
 
@@ -400,8 +400,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.indexItem =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_IndexLayout = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/IndexLayout',
+const methodDescriptor_ShopRPC_IndexLayout = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/IndexLayout',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -422,7 +422,7 @@ const methodDescriptor_CustomerRPC_IndexLayout = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_IndexLayout = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_IndexLayout = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -445,13 +445,13 @@ const methodInfo_CustomerRPC_IndexLayout = new grpc.web.AbstractClientBase.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.indexLayout =
+proto.ding4.ShopRPCClient.prototype.indexLayout =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexLayout',
+      '/ding4.ShopRPC/IndexLayout',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexLayout,
+      methodDescriptor_ShopRPC_IndexLayout,
       callback);
 };
 
@@ -464,13 +464,13 @@ proto.ding4.CustomerRPCClient.prototype.indexLayout =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.indexLayout =
+proto.ding4.ShopRPCPromiseClient.prototype.indexLayout =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/IndexLayout',
+      '/ding4.ShopRPC/IndexLayout',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_IndexLayout);
+      methodDescriptor_ShopRPC_IndexLayout);
 };
 
 
@@ -480,8 +480,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.indexLayout =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindProductClass = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindProductClass',
+const methodDescriptor_ShopRPC_FindProductClass = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindProductClass',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -502,7 +502,7 @@ const methodDescriptor_CustomerRPC_FindProductClass = new grpc.web.MethodDescrip
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindProductClass = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindProductClass = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -525,13 +525,13 @@ const methodInfo_CustomerRPC_FindProductClass = new grpc.web.AbstractClientBase.
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findProductClass =
+proto.ding4.ShopRPCClient.prototype.findProductClass =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductClass',
+      '/ding4.ShopRPC/FindProductClass',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductClass,
+      methodDescriptor_ShopRPC_FindProductClass,
       callback);
 };
 
@@ -544,13 +544,13 @@ proto.ding4.CustomerRPCClient.prototype.findProductClass =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findProductClass =
+proto.ding4.ShopRPCPromiseClient.prototype.findProductClass =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductClass',
+      '/ding4.ShopRPC/FindProductClass',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductClass);
+      methodDescriptor_ShopRPC_FindProductClass);
 };
 
 
@@ -560,8 +560,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.findProductClass =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindProductF = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindProductF',
+const methodDescriptor_ShopRPC_FindProductF = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindProductF',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -582,7 +582,7 @@ const methodDescriptor_CustomerRPC_FindProductF = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindProductF = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindProductF = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -605,13 +605,13 @@ const methodInfo_CustomerRPC_FindProductF = new grpc.web.AbstractClientBase.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findProductF =
+proto.ding4.ShopRPCClient.prototype.findProductF =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductF',
+      '/ding4.ShopRPC/FindProductF',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductF,
+      methodDescriptor_ShopRPC_FindProductF,
       callback);
 };
 
@@ -624,13 +624,13 @@ proto.ding4.CustomerRPCClient.prototype.findProductF =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findProductF =
+proto.ding4.ShopRPCPromiseClient.prototype.findProductF =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductF',
+      '/ding4.ShopRPC/FindProductF',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductF);
+      methodDescriptor_ShopRPC_FindProductF);
 };
 
 
@@ -640,8 +640,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.findProductF =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindProductSpec = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindProductSpec',
+const methodDescriptor_ShopRPC_FindProductSpec = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindProductSpec',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -662,7 +662,7 @@ const methodDescriptor_CustomerRPC_FindProductSpec = new grpc.web.MethodDescript
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindProductSpec = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindProductSpec = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -685,13 +685,13 @@ const methodInfo_CustomerRPC_FindProductSpec = new grpc.web.AbstractClientBase.M
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findProductSpec =
+proto.ding4.ShopRPCClient.prototype.findProductSpec =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductSpec',
+      '/ding4.ShopRPC/FindProductSpec',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductSpec,
+      methodDescriptor_ShopRPC_FindProductSpec,
       callback);
 };
 
@@ -704,13 +704,13 @@ proto.ding4.CustomerRPCClient.prototype.findProductSpec =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findProductSpec =
+proto.ding4.ShopRPCPromiseClient.prototype.findProductSpec =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductSpec',
+      '/ding4.ShopRPC/FindProductSpec',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductSpec);
+      methodDescriptor_ShopRPC_FindProductSpec);
 };
 
 
@@ -720,8 +720,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.findProductSpec =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindProductStack = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindProductStack',
+const methodDescriptor_ShopRPC_FindProductStack = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindProductStack',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -742,7 +742,7 @@ const methodDescriptor_CustomerRPC_FindProductStack = new grpc.web.MethodDescrip
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindProductStack = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindProductStack = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -765,13 +765,13 @@ const methodInfo_CustomerRPC_FindProductStack = new grpc.web.AbstractClientBase.
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findProductStack =
+proto.ding4.ShopRPCClient.prototype.findProductStack =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductStack',
+      '/ding4.ShopRPC/FindProductStack',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductStack,
+      methodDescriptor_ShopRPC_FindProductStack,
       callback);
 };
 
@@ -784,13 +784,13 @@ proto.ding4.CustomerRPCClient.prototype.findProductStack =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findProductStack =
+proto.ding4.ShopRPCPromiseClient.prototype.findProductStack =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindProductStack',
+      '/ding4.ShopRPC/FindProductStack',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindProductStack);
+      methodDescriptor_ShopRPC_FindProductStack);
 };
 
 
@@ -800,8 +800,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.findProductStack =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindSpecStack = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindSpecStack',
+const methodDescriptor_ShopRPC_FindSpecStack = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindSpecStack',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -822,7 +822,7 @@ const methodDescriptor_CustomerRPC_FindSpecStack = new grpc.web.MethodDescriptor
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindSpecStack = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindSpecStack = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -845,13 +845,13 @@ const methodInfo_CustomerRPC_FindSpecStack = new grpc.web.AbstractClientBase.Met
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findSpecStack =
+proto.ding4.ShopRPCClient.prototype.findSpecStack =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindSpecStack',
+      '/ding4.ShopRPC/FindSpecStack',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindSpecStack,
+      methodDescriptor_ShopRPC_FindSpecStack,
       callback);
 };
 
@@ -864,13 +864,13 @@ proto.ding4.CustomerRPCClient.prototype.findSpecStack =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findSpecStack =
+proto.ding4.ShopRPCPromiseClient.prototype.findSpecStack =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindSpecStack',
+      '/ding4.ShopRPC/FindSpecStack',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindSpecStack);
+      methodDescriptor_ShopRPC_FindSpecStack);
 };
 
 
@@ -880,8 +880,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.findSpecStack =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_MyCar = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/MyCar',
+const methodDescriptor_ShopRPC_MyCar = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/MyCar',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -902,7 +902,7 @@ const methodDescriptor_CustomerRPC_MyCar = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_MyCar = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_MyCar = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -925,13 +925,13 @@ const methodInfo_CustomerRPC_MyCar = new grpc.web.AbstractClientBase.MethodInfo(
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.myCar =
+proto.ding4.ShopRPCClient.prototype.myCar =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/MyCar',
+      '/ding4.ShopRPC/MyCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_MyCar,
+      methodDescriptor_ShopRPC_MyCar,
       callback);
 };
 
@@ -944,13 +944,13 @@ proto.ding4.CustomerRPCClient.prototype.myCar =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.myCar =
+proto.ding4.ShopRPCPromiseClient.prototype.myCar =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/MyCar',
+      '/ding4.ShopRPC/MyCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_MyCar);
+      methodDescriptor_ShopRPC_MyCar);
 };
 
 
@@ -960,8 +960,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.myCar =
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_DeleteCar = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/DeleteCar',
+const methodDescriptor_ShopRPC_DeleteCar = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/DeleteCar',
   grpc.web.MethodType.UNARY,
   car_pb.Car,
   sql_pb.Response,
@@ -982,7 +982,7 @@ const methodDescriptor_CustomerRPC_DeleteCar = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_DeleteCar = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_DeleteCar = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Car} request
@@ -1005,13 +1005,13 @@ const methodInfo_CustomerRPC_DeleteCar = new grpc.web.AbstractClientBase.MethodI
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.deleteCar =
+proto.ding4.ShopRPCClient.prototype.deleteCar =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/DeleteCar',
+      '/ding4.ShopRPC/DeleteCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_DeleteCar,
+      methodDescriptor_ShopRPC_DeleteCar,
       callback);
 };
 
@@ -1024,13 +1024,13 @@ proto.ding4.CustomerRPCClient.prototype.deleteCar =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.deleteCar =
+proto.ding4.ShopRPCPromiseClient.prototype.deleteCar =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/DeleteCar',
+      '/ding4.ShopRPC/DeleteCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_DeleteCar);
+      methodDescriptor_ShopRPC_DeleteCar);
 };
 
 
@@ -1040,8 +1040,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.deleteCar =
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_CompleteCar = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/CompleteCar',
+const methodDescriptor_ShopRPC_CompleteCar = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/CompleteCar',
   grpc.web.MethodType.UNARY,
   car_pb.Car,
   sql_pb.Response,
@@ -1062,7 +1062,7 @@ const methodDescriptor_CustomerRPC_CompleteCar = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_CompleteCar = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_CompleteCar = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Car} request
@@ -1085,13 +1085,13 @@ const methodInfo_CustomerRPC_CompleteCar = new grpc.web.AbstractClientBase.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.completeCar =
+proto.ding4.ShopRPCClient.prototype.completeCar =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/CompleteCar',
+      '/ding4.ShopRPC/CompleteCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_CompleteCar,
+      methodDescriptor_ShopRPC_CompleteCar,
       callback);
 };
 
@@ -1104,13 +1104,13 @@ proto.ding4.CustomerRPCClient.prototype.completeCar =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.completeCar =
+proto.ding4.ShopRPCPromiseClient.prototype.completeCar =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/CompleteCar',
+      '/ding4.ShopRPC/CompleteCar',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_CompleteCar);
+      methodDescriptor_ShopRPC_CompleteCar);
 };
 
 
@@ -1120,8 +1120,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.completeCar =
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_AppendCommodity = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/AppendCommodity',
+const methodDescriptor_ShopRPC_AppendCommodity = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/AppendCommodity',
   grpc.web.MethodType.UNARY,
   car_pb.Car,
   sql_pb.Response,
@@ -1142,7 +1142,7 @@ const methodDescriptor_CustomerRPC_AppendCommodity = new grpc.web.MethodDescript
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_AppendCommodity = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_AppendCommodity = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Car} request
@@ -1165,13 +1165,13 @@ const methodInfo_CustomerRPC_AppendCommodity = new grpc.web.AbstractClientBase.M
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.appendCommodity =
+proto.ding4.ShopRPCClient.prototype.appendCommodity =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/AppendCommodity',
+      '/ding4.ShopRPC/AppendCommodity',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_AppendCommodity,
+      methodDescriptor_ShopRPC_AppendCommodity,
       callback);
 };
 
@@ -1184,13 +1184,13 @@ proto.ding4.CustomerRPCClient.prototype.appendCommodity =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.appendCommodity =
+proto.ding4.ShopRPCPromiseClient.prototype.appendCommodity =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/AppendCommodity',
+      '/ding4.ShopRPC/AppendCommodity',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_AppendCommodity);
+      methodDescriptor_ShopRPC_AppendCommodity);
 };
 
 
@@ -1200,8 +1200,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.appendCommodity =
  *   !proto.ding4.Commodity,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_SubtractCommodity = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/SubtractCommodity',
+const methodDescriptor_ShopRPC_SubtractCommodity = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SubtractCommodity',
   grpc.web.MethodType.UNARY,
   car_pb.Commodity,
   sql_pb.Response,
@@ -1222,7 +1222,7 @@ const methodDescriptor_CustomerRPC_SubtractCommodity = new grpc.web.MethodDescri
  *   !proto.ding4.Commodity,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_SubtractCommodity = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_SubtractCommodity = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Commodity} request
@@ -1245,13 +1245,13 @@ const methodInfo_CustomerRPC_SubtractCommodity = new grpc.web.AbstractClientBase
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.subtractCommodity =
+proto.ding4.ShopRPCClient.prototype.subtractCommodity =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/SubtractCommodity',
+      '/ding4.ShopRPC/SubtractCommodity',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SubtractCommodity,
+      methodDescriptor_ShopRPC_SubtractCommodity,
       callback);
 };
 
@@ -1264,13 +1264,13 @@ proto.ding4.CustomerRPCClient.prototype.subtractCommodity =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.subtractCommodity =
+proto.ding4.ShopRPCPromiseClient.prototype.subtractCommodity =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/SubtractCommodity',
+      '/ding4.ShopRPC/SubtractCommodity',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SubtractCommodity);
+      methodDescriptor_ShopRPC_SubtractCommodity);
 };
 
 
@@ -1280,8 +1280,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.subtractCommodity =
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_AppendDiscount = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/AppendDiscount',
+const methodDescriptor_ShopRPC_AppendDiscount = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/AppendDiscount',
   grpc.web.MethodType.UNARY,
   car_pb.Car,
   sql_pb.Response,
@@ -1302,7 +1302,7 @@ const methodDescriptor_CustomerRPC_AppendDiscount = new grpc.web.MethodDescripto
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_AppendDiscount = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_AppendDiscount = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Car} request
@@ -1325,13 +1325,13 @@ const methodInfo_CustomerRPC_AppendDiscount = new grpc.web.AbstractClientBase.Me
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.appendDiscount =
+proto.ding4.ShopRPCClient.prototype.appendDiscount =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/AppendDiscount',
+      '/ding4.ShopRPC/AppendDiscount',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_AppendDiscount,
+      methodDescriptor_ShopRPC_AppendDiscount,
       callback);
 };
 
@@ -1344,13 +1344,13 @@ proto.ding4.CustomerRPCClient.prototype.appendDiscount =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.appendDiscount =
+proto.ding4.ShopRPCPromiseClient.prototype.appendDiscount =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/AppendDiscount',
+      '/ding4.ShopRPC/AppendDiscount',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_AppendDiscount);
+      methodDescriptor_ShopRPC_AppendDiscount);
 };
 
 
@@ -1360,8 +1360,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.appendDiscount =
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_SubtractDiscount = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/SubtractDiscount',
+const methodDescriptor_ShopRPC_SubtractDiscount = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SubtractDiscount',
   grpc.web.MethodType.UNARY,
   car_pb.Car,
   sql_pb.Response,
@@ -1382,7 +1382,7 @@ const methodDescriptor_CustomerRPC_SubtractDiscount = new grpc.web.MethodDescrip
  *   !proto.ding4.Car,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_SubtractDiscount = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_SubtractDiscount = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Car} request
@@ -1405,13 +1405,13 @@ const methodInfo_CustomerRPC_SubtractDiscount = new grpc.web.AbstractClientBase.
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.subtractDiscount =
+proto.ding4.ShopRPCClient.prototype.subtractDiscount =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/SubtractDiscount',
+      '/ding4.ShopRPC/SubtractDiscount',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SubtractDiscount,
+      methodDescriptor_ShopRPC_SubtractDiscount,
       callback);
 };
 
@@ -1424,13 +1424,13 @@ proto.ding4.CustomerRPCClient.prototype.subtractDiscount =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.subtractDiscount =
+proto.ding4.ShopRPCPromiseClient.prototype.subtractDiscount =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/SubtractDiscount',
+      '/ding4.ShopRPC/SubtractDiscount',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_SubtractDiscount);
+      methodDescriptor_ShopRPC_SubtractDiscount);
 };
 
 
@@ -1440,8 +1440,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.subtractDiscount =
  *   !proto.ding4.Order,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_CreateOrder = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/CreateOrder',
+const methodDescriptor_ShopRPC_CreateOrder = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/CreateOrder',
   grpc.web.MethodType.UNARY,
   order_pb.Order,
   sql_pb.Response,
@@ -1462,7 +1462,7 @@ const methodDescriptor_CustomerRPC_CreateOrder = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Order,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_CreateOrder = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_CreateOrder = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Order} request
@@ -1485,13 +1485,13 @@ const methodInfo_CustomerRPC_CreateOrder = new grpc.web.AbstractClientBase.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.createOrder =
+proto.ding4.ShopRPCClient.prototype.createOrder =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/CreateOrder',
+      '/ding4.ShopRPC/CreateOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_CreateOrder,
+      methodDescriptor_ShopRPC_CreateOrder,
       callback);
 };
 
@@ -1504,13 +1504,13 @@ proto.ding4.CustomerRPCClient.prototype.createOrder =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.createOrder =
+proto.ding4.ShopRPCPromiseClient.prototype.createOrder =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/CreateOrder',
+      '/ding4.ShopRPC/CreateOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_CreateOrder);
+      methodDescriptor_ShopRPC_CreateOrder);
 };
 
 
@@ -1520,8 +1520,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.createOrder =
  *   !proto.ding4.Order,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_PaymentOrder = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/PaymentOrder',
+const methodDescriptor_ShopRPC_PaymentOrder = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/PaymentOrder',
   grpc.web.MethodType.UNARY,
   order_pb.Order,
   sql_pb.Response,
@@ -1542,7 +1542,7 @@ const methodDescriptor_CustomerRPC_PaymentOrder = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Order,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_PaymentOrder = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_PaymentOrder = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Order} request
@@ -1565,13 +1565,13 @@ const methodInfo_CustomerRPC_PaymentOrder = new grpc.web.AbstractClientBase.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.paymentOrder =
+proto.ding4.ShopRPCClient.prototype.paymentOrder =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/PaymentOrder',
+      '/ding4.ShopRPC/PaymentOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_PaymentOrder,
+      methodDescriptor_ShopRPC_PaymentOrder,
       callback);
 };
 
@@ -1584,13 +1584,13 @@ proto.ding4.CustomerRPCClient.prototype.paymentOrder =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.paymentOrder =
+proto.ding4.ShopRPCPromiseClient.prototype.paymentOrder =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/PaymentOrder',
+      '/ding4.ShopRPC/PaymentOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_PaymentOrder);
+      methodDescriptor_ShopRPC_PaymentOrder);
 };
 
 
@@ -1600,8 +1600,8 @@ proto.ding4.CustomerRPCPromiseClient.prototype.paymentOrder =
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_CustomerRPC_FindOrder = new grpc.web.MethodDescriptor(
-  '/ding4.CustomerRPC/FindOrder',
+const methodDescriptor_ShopRPC_FindOrder = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/FindOrder',
   grpc.web.MethodType.UNARY,
   sql_pb.Query,
   sql_pb.Response,
@@ -1622,7 +1622,7 @@ const methodDescriptor_CustomerRPC_FindOrder = new grpc.web.MethodDescriptor(
  *   !proto.ding4.Query,
  *   !proto.ding4.Response>}
  */
-const methodInfo_CustomerRPC_FindOrder = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ShopRPC_FindOrder = new grpc.web.AbstractClientBase.MethodInfo(
   sql_pb.Response,
   /**
    * @param {!proto.ding4.Query} request
@@ -1645,13 +1645,13 @@ const methodInfo_CustomerRPC_FindOrder = new grpc.web.AbstractClientBase.MethodI
  * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ding4.CustomerRPCClient.prototype.findOrder =
+proto.ding4.ShopRPCClient.prototype.findOrder =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindOrder',
+      '/ding4.ShopRPC/FindOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindOrder,
+      methodDescriptor_ShopRPC_FindOrder,
       callback);
 };
 
@@ -1664,13 +1664,13 @@ proto.ding4.CustomerRPCClient.prototype.findOrder =
  * @return {!Promise<!proto.ding4.Response>}
  *     A native promise that resolves to the response
  */
-proto.ding4.CustomerRPCPromiseClient.prototype.findOrder =
+proto.ding4.ShopRPCPromiseClient.prototype.findOrder =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ding4.CustomerRPC/FindOrder',
+      '/ding4.ShopRPC/FindOrder',
       request,
       metadata || {},
-      methodDescriptor_CustomerRPC_FindOrder);
+      methodDescriptor_ShopRPC_FindOrder);
 };
 
 

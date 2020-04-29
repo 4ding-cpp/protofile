@@ -92,6 +92,7 @@ proto.ding4.Manager.toObject = function(includeInstance, msg) {
     permission_pb.Option.toObject, includeInstance),
     whiteList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     password: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -175,6 +176,12 @@ proto.ding4.Manager.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
+      break;
+    case 69:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     case 70:
       var value = /** @type {string} */ (reader.readString());
@@ -303,6 +310,10 @@ proto.ding4.Manager.serializeBinaryToWriter = function(message, writer) {
       10,
       f
     );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -570,6 +581,28 @@ proto.ding4.Manager.prototype.getPassword = function() {
 proto.ding4.Manager.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
+
+
+/**
+ * map<string, int32> labelx = 69;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.Manager.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.Manager} returns this
+ */
+proto.ding4.Manager.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**

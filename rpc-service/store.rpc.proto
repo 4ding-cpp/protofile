@@ -24,7 +24,7 @@ import "web-base.proto";
 import "template.proto";
 import "message.proto";
 
-service ManagerRPC {
+service StoreRPC {
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Manager) returns (Response);
