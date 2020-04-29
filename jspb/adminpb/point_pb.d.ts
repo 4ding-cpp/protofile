@@ -21,11 +21,6 @@ export class PointBonus extends jspb.Message {
   hasEndAt(): boolean;
   clearEndAt(): void;
 
-  getStopAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStopAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasStopAt(): boolean;
-  clearStopAt(): void;
-
   getItem(): string;
   setItem(value: string): void;
 
@@ -86,7 +81,6 @@ export namespace PointBonus {
     onEvent: number,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    stopAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     item: string,
     cond: number,
     point: number,

@@ -171,7 +171,6 @@ proto.ding4.PointBonus.toObject = function(includeInstance, msg) {
     onEvent: jspb.Message.getFieldWithDefault(msg, 2, 0),
     beginAt: (f = msg.getBeginAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    stopAt: (f = msg.getStopAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     item: jspb.Message.getFieldWithDefault(msg, 6, ""),
     cond: jspb.Message.getFieldWithDefault(msg, 7, 0),
     point: jspb.Message.getFieldWithDefault(msg, 8, 0),
@@ -238,11 +237,6 @@ proto.ding4.PointBonus.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEndAt(value);
-      break;
-    case 5:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setStopAt(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -353,14 +347,6 @@ proto.ding4.PointBonus.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       4,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getStopAt();
-  if (f != null) {
-    writer.writeMessage(
-      5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -560,43 +546,6 @@ proto.ding4.PointBonus.prototype.clearEndAt = function() {
  */
 proto.ding4.PointBonus.prototype.hasEndAt = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp stop_at = 5;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.ding4.PointBonus.prototype.getStopAt = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.ding4.PointBonus} returns this
-*/
-proto.ding4.PointBonus.prototype.setStopAt = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.PointBonus} returns this
- */
-proto.ding4.PointBonus.prototype.clearStopAt = function() {
-  return this.setStopAt(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.PointBonus.prototype.hasStopAt = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
