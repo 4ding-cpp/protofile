@@ -18,6 +18,7 @@ message Customer {
     int32 pay_amount = 7;
     string password = 8;
     string come_from = 9;
+    map<string, CustomerStoreInfo> store_info = 10;
     
     map<string, int32> labelx = 69;
     string operator = 70;
@@ -26,4 +27,9 @@ message Customer {
     repeated string cols = 73;
     repeated Condition condition = 74;
     google.protobuf.Struct self = 75;
+}
+
+message CustomerStoreInfo {
+    string level_id = 1;
+    bool is_receive = 2;
 }

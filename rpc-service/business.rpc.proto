@@ -41,6 +41,7 @@ service BusinessRPC {
     rpc FindBusiness(Query) returns (Response);
     rpc RecordBusiness(Business) returns (Response);
 
+    rpc ExistsManager(Manager) returns (Response);
     rpc CreateManager(Manager) returns (Response);
     rpc UpdateManager(Manager) returns (Response);
     rpc FindManager(Query) returns (Response);
@@ -58,6 +59,7 @@ service BusinessRPC {
     rpc UpdateLinker(Linker) returns (Response);
     rpc FindLinker(Query) returns (Response);    
 
+    rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);

@@ -1,0 +1,135 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "sql.proto";
+import "password.proto";
+import "label.proto";
+import "car.proto";
+import "manager.proto";
+import "customer.proto";
+import "customer-link.proto";
+import "product-link.proto";
+import "activity.proto";
+import "order.proto";
+import "remind.proto";
+import "image.proto";
+import "setting.proto";
+import "web-layout.proto";
+import "web-page.proto";
+import "web-item.proto";
+import "web-base.proto";
+import "template.proto";
+import "message.proto";
+
+service Store1RPC {
+    rpc WhoAmI(Query) returns (Response);
+    rpc ChangePassword(Password) returns (Response);
+    rpc ChangeInfo(Manager) returns (Response);
+    rpc ChangeWhitelist(Manager) returns (Response);
+    rpc FindPermission(Query) returns (Response);
+
+    rpc CreateLabel(Label) returns (Response);
+    rpc UpdateLabel(Label) returns (Response);
+    rpc AppendLabel(Label) returns (Response);
+    rpc SubtractLabel(Label) returns (Response);
+    rpc FindLabel(Query) returns (Response);
+
+    rpc CreateActivity(Activity) returns (Response);
+    rpc UpdateActivity(Activity) returns (Response);
+    rpc FindActivity(Query) returns (Response);
+    rpc AppendActivityProduct(ActivityProduct) returns (Response);
+    rpc SubstractActivityProduct(ActivityProduct) returns (Response);
+    rpc FindActivityProduct(ActivityProduct) returns (Response);
+
+    rpc CreateDiscount(Discount) returns (Response);
+    rpc UpdateDiscount(Discount) returns (Response);
+    rpc FindDiscount(Query) returns (Response);
+    rpc DistributeDiscount(Distribute) returns (Response);
+    rpc FindDiscountItem(Query) returns (Response);
+    rpc ExchangeDiscount(DiscountItem) returns (Response);
+
+    rpc ExistsCustomer(Customer) returns (Response);
+    rpc CreateCustomer(Customer) returns (Response);
+    rpc CreateCustomerLink(CustomerLink) returns (Response);
+    rpc UpdateCustomerLink(CustomerLink) returns (Response);
+    rpc FindCustomerLink(Query) returns (Response);
+    rpc FindCustomerF(Query) returns (Response);
+
+    rpc CreateCustomerLevel(CustomerLevel) returns (Response);
+    rpc UpdateCustomerLevel(CustomerLevel) returns (Response);
+    rpc FindCustomerLevel(Query) returns (Response);
+
+    rpc FindProductF(Query) returns (Response);
+    rpc FindProductSpec(Query) returns (Response);
+    rpc CreateProductLink(ProductLink) returns (Response);
+    rpc UpdateProductLink(ProductLink) returns (Response);
+    rpc FindProductLink(Query) returns (Response);
+
+    rpc CreateProductClass(ProductClass) returns (Response);
+    rpc UpdateProductClass(ProductClass) returns (Response);
+    rpc FindProductClass(Query) returns (Response);
+    rpc CreateProductClassImage(Image) returns (Response);
+    rpc UpdateProductClassImage(Image) returns (Response);
+    rpc DeleteProductClassImage(Image) returns (Response);
+
+    rpc FindProductStack(Query) returns (Response);
+    rpc FindSpecStack(Query) returns (Response);
+
+    rpc CreateCar(Car) returns (Response);
+    rpc DeleteCar(Car) returns (Response);
+    rpc CompleteCar(Car) returns (Response);
+    rpc FindCar(Query) returns (Response);
+    rpc AppendCommodity(Car) returns (Response);
+    rpc SubtractCommodity(Commodity) returns (Response);
+    rpc AppendDiscount(Car) returns (Response);
+    rpc SubtractDiscount(Car) returns (Response);
+
+    rpc CreateOrder(Order) returns (Response);
+    rpc PaymentOrder(Order) returns (Response);
+    rpc FindOrder(Query) returns (Response);
+    
+    rpc UpdateRemind(Remind) returns (Response);
+    rpc FindRemind(Query) returns (Response);
+
+    rpc CreateSetting(Setting) returns (Response);
+    rpc UpdateSetting(Setting) returns (Response);
+    rpc DeleteSetting(Setting) returns (Response);
+    rpc FindSetting(Query) returns (Response);
+
+    rpc CreateWebLayout(WebLayout) returns (Response);
+    rpc UpdateWebLayout(WebLayout) returns (Response);
+    rpc DeleteWebLayout(WebLayout) returns (Response);
+    rpc FindWebLayout(Query) returns (Response);
+    rpc CreateWebLayoutImage(Image) returns (Response);
+    rpc UpdateWebLayoutImage(Image) returns (Response);
+    rpc DeleteWebLayoutImage(Image) returns (Response);
+
+    rpc CreateWebPage(WebPage) returns (Response);
+    rpc UpdateWebPage(WebPage) returns (Response);
+    rpc DeleteWebPage(WebPage) returns (Response);
+    rpc FindWebPage(Query) returns (Response);
+
+    rpc CreateWebItem(WebItem) returns (Response);
+    rpc UpdateWebItem(WebItem) returns (Response);
+    rpc DeleteWebItem(WebItem) returns (Response);
+    rpc FindWebItem(Query) returns (Response);
+
+    rpc UpdateWebBase(WebBase) returns (Response);
+    rpc FindWebBase(Query) returns (Response);
+
+    rpc CreateTemplate(Template) returns (Response);
+    rpc UpdateTemplate(Template) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
+
+    rpc CreateEDM(Message) returns (Response);
+    rpc CancelEDM(Message) returns (Response);
+    rpc FindEDM(Query) returns (Response);
+
+    rpc CreateSMS(Message) returns (Response);
+    rpc CancelSMS(Message) returns (Response);
+    rpc FindSMS(Query) returns (Response);
+}
+
