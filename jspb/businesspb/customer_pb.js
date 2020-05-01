@@ -106,8 +106,8 @@ proto.ding4.Customer.toObject = function(includeInstance, msg) {
     phone: jspb.Message.getFieldWithDefault(msg, 3, ""),
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    payTimes: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    payAmount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    birthday: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    sex: jspb.Message.getFieldWithDefault(msg, 7, 0),
     password: jspb.Message.getFieldWithDefault(msg, 8, ""),
     comeFrom: jspb.Message.getFieldWithDefault(msg, 9, ""),
     storeInfoMap: (f = msg.getStoreInfoMap()) ? f.toObject(includeInstance, proto.ding4.CustomerStoreInfo.toObject) : [],
@@ -176,12 +176,12 @@ proto.ding4.Customer.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPayTimes(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBirthday(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPayAmount(value);
+      msg.setSex(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -295,14 +295,14 @@ proto.ding4.Customer.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPayTimes();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getBirthday();
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
   }
-  f = message.getPayAmount();
+  f = message.getSex();
   if (f !== 0) {
     writer.writeInt32(
       7,
@@ -471,28 +471,28 @@ proto.ding4.Customer.prototype.setName = function(value) {
 
 
 /**
- * optional int32 pay_times = 6;
- * @return {number}
+ * optional string birthday = 6;
+ * @return {string}
  */
-proto.ding4.Customer.prototype.getPayTimes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.ding4.Customer.prototype.getBirthday = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Customer} returns this
  */
-proto.ding4.Customer.prototype.setPayTimes = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+proto.ding4.Customer.prototype.setBirthday = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 pay_amount = 7;
+ * optional int32 sex = 7;
  * @return {number}
  */
-proto.ding4.Customer.prototype.getPayAmount = function() {
+proto.ding4.Customer.prototype.getSex = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -501,7 +501,7 @@ proto.ding4.Customer.prototype.getPayAmount = function() {
  * @param {number} value
  * @return {!proto.ding4.Customer} returns this
  */
-proto.ding4.Customer.prototype.setPayAmount = function(value) {
+proto.ding4.Customer.prototype.setSex = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 

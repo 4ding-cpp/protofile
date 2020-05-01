@@ -20,11 +20,11 @@ export class Customer extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getPayTimes(): number;
-  setPayTimes(value: number): void;
+  getBirthday(): string;
+  setBirthday(value: string): void;
 
-  getPayAmount(): number;
-  setPayAmount(value: number): void;
+  getSex(): number;
+  setSex(value: number): void;
 
   getPassword(): string;
   setPassword(value: string): void;
@@ -81,8 +81,8 @@ export namespace Customer {
     phone: string,
     email: string,
     name: string,
-    payTimes: number,
-    payAmount: number,
+    birthday: string,
+    sex: number,
     password: string,
     comeFrom: string,
     storeInfoMap: Array<[string, CustomerStoreInfo.AsObject]>,

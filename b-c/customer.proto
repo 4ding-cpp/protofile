@@ -14,8 +14,8 @@ message Customer {
     string phone = 3;
     string email = 4;
     string name = 5;
-    int32 pay_times = 6;
-    int32 pay_amount = 7;
+    string birthday = 6;
+    int32 sex = 7;
     string password = 8;
     string come_from = 9;
     map<string, CustomerStoreInfo> store_info = 10;
