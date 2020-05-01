@@ -100,8 +100,8 @@ export class CustomerStoreInfo extends jspb.Message {
   getLevelId(): string;
   setLevelId(value: string): void;
 
-  getIsReceive(): boolean;
-  setIsReceive(value: boolean): void;
+  getReceive(): string;
+  setReceive(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerStoreInfo.AsObject;
@@ -114,7 +114,7 @@ export class CustomerStoreInfo extends jspb.Message {
 export namespace CustomerStoreInfo {
   export type AsObject = {
     levelId: string,
-    isReceive: boolean,
+    receive: string,
   }
 }
 

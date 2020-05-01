@@ -576,51 +576,29 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateCustomerLink = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer$link_pb.CustomerLink) => {
+    (request: customer_pb.Customer) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createCustomerLink(
-    request: customer$link_pb.CustomerLink,
+  updateCustomer(
+    request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/CreateCustomerLink',
+        '/ding4.Store1RPC/UpdateCustomer',
       request,
       metadata || {},
-      this.methodInfoCreateCustomerLink,
+      this.methodInfoUpdateCustomer,
       callback);
   }
 
-  methodInfoUpdateCustomerLink = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer$link_pb.CustomerLink) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateCustomerLink(
-    request: customer$link_pb.CustomerLink,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateCustomerLink',
-      request,
-      metadata || {},
-      this.methodInfoUpdateCustomerLink,
-      callback);
-  }
-
-  methodInfoFindCustomerLink = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -628,39 +606,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findCustomerLink(
+  findCustomer(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindCustomerLink',
+        '/ding4.Store1RPC/FindCustomer',
       request,
       metadata || {},
-      this.methodInfoFindCustomerLink,
-      callback);
-  }
-
-  methodInfoFindCustomerF = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findCustomerF(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindCustomerF',
-      request,
-      metadata || {},
-      this.methodInfoFindCustomerF,
+      this.methodInfoFindCustomer,
       callback);
   }
 

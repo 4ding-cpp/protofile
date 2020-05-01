@@ -823,7 +823,7 @@ proto.ding4.CustomerStoreInfo.prototype.toObject = function(opt_includeInstance)
 proto.ding4.CustomerStoreInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     levelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    isReceive: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    receive: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -865,8 +865,8 @@ proto.ding4.CustomerStoreInfo.deserializeBinaryFromReader = function(msg, reader
       msg.setLevelId(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsReceive(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReceive(value);
       break;
     default:
       reader.skipField();
@@ -904,9 +904,9 @@ proto.ding4.CustomerStoreInfo.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getIsReceive();
-  if (f) {
-    writer.writeBool(
+  f = message.getReceive();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -933,20 +933,20 @@ proto.ding4.CustomerStoreInfo.prototype.setLevelId = function(value) {
 
 
 /**
- * optional bool is_receive = 2;
- * @return {boolean}
+ * optional string receive = 2;
+ * @return {string}
  */
-proto.ding4.CustomerStoreInfo.prototype.getIsReceive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.ding4.CustomerStoreInfo.prototype.getReceive = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.ding4.CustomerStoreInfo} returns this
  */
-proto.ding4.CustomerStoreInfo.prototype.setIsReceive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
+proto.ding4.CustomerStoreInfo.prototype.setReceive = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
