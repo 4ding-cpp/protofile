@@ -43,12 +43,14 @@ service BusinessRPC {
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
     rpc RecordBusiness(Business) returns (Response);
+    rpc SignBusiness(Business) returns (Response);
 
     rpc ExistsManager(Manager) returns (Response);
     rpc CreateManager(Manager) returns (Response);
     rpc UpdateManager(Manager) returns (Response);
     rpc FindManager(Query) returns (Response);
     rpc RecordManager(Manager) returns (Response);
+    rpc SignManager(Manager) returns (Response);
 
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
@@ -61,12 +63,14 @@ service BusinessRPC {
     rpc CreateLinker(Linker) returns (Response);
     rpc UpdateLinker(Linker) returns (Response);
     rpc FindLinker(Query) returns (Response);    
+    rpc RecordLinker(Linker) returns (Response);
 
     rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Customer) returns (Response);
+    rpc SignCustomer(Customer) returns (Response);
 
     rpc CreateProduct(Product) returns (Response);
     rpc UpdateProduct(Product) returns (Response);
@@ -79,6 +83,7 @@ service BusinessRPC {
     rpc CreateProductSpec(ProductSpec) returns (Response);
     rpc UpdateProductSpec(ProductSpec) returns (Response);
     rpc FindProductSpec(Query) returns (Response);
+    rpc RecordProductSpec(ProductSpec) returns (Response);
     rpc CreateProductSpecImage(Image) returns (Response);
     rpc UpdateProductSpecImage(Image) returns (Response);
     rpc DeleteProductSpecImage(Image) returns (Response);    
@@ -93,23 +98,26 @@ service BusinessRPC {
     rpc CreateRemind(Remind) returns (Response);
     rpc UpdateRemind(Remind) returns (Response);
     rpc FindRemind(Query) returns (Response);
+    rpc RecordRemind(Remind) returns (Response);
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);
     rpc FindOrder(Query) returns (Response);
+    rpc RecordOrder(Order) returns (Response);
 
     rpc CreateStack(Stack) returns (Response);
     rpc FindStack(Query) returns (Response);
-
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);
 
     rpc CreateSupplier(Supplier) returns (Response);
     rpc UpdateSupplier(Supplier) returns (Response);
     rpc FindSupplier(Query) returns (Response);
+    rpc RecordSupplier(Supplier) returns (Response);
 
     rpc CreateSetting(Setting) returns (Response);
     rpc UpdateSetting(Setting) returns (Response);
     rpc DeleteSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
+    rpc RecordSetting(Setting) returns (Response);
 }

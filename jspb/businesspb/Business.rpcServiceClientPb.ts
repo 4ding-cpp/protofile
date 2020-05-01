@@ -463,6 +463,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoSignBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: business_pb.Business) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signBusiness(
+    request: business_pb.Business,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SignBusiness',
+      request,
+      metadata || {},
+      this.methodInfoSignBusiness,
+      callback);
+  }
+
   methodInfoExistsManager = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: manager_pb.Manager) => {
@@ -570,6 +592,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordManager,
+      callback);
+  }
+
+  methodInfoSignManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: manager_pb.Manager) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signManager(
+    request: manager_pb.Manager,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SignManager',
+      request,
+      metadata || {},
+      this.methodInfoSignManager,
       callback);
   }
 
@@ -793,6 +837,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoRecordLinker = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: linker_pb.Linker) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordLinker(
+    request: linker_pb.Linker,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordLinker',
+      request,
+      metadata || {},
+      this.methodInfoRecordLinker,
+      callback);
+  }
+
   methodInfoExistsCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer_pb.Customer) => {
@@ -900,6 +966,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordCustomer,
+      callback);
+  }
+
+  methodInfoSignCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signCustomer(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SignCustomer',
+      request,
+      metadata || {},
+      this.methodInfoSignCustomer,
       callback);
   }
 
@@ -1120,6 +1208,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductSpec,
+      callback);
+  }
+
+  methodInfoRecordProductSpec = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product_pb.ProductSpec) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordProductSpec(
+    request: product_pb.ProductSpec,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordProductSpec',
+      request,
+      metadata || {},
+      this.methodInfoRecordProductSpec,
       callback);
   }
 
@@ -1387,6 +1497,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoRecordRemind = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: remind_pb.Remind) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordRemind(
+    request: remind_pb.Remind,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordRemind',
+      request,
+      metadata || {},
+      this.methodInfoRecordRemind,
+      callback);
+  }
+
   methodInfoCreateOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: order_pb.Order) => {
@@ -1450,6 +1582,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoFindOrder,
+      callback);
+  }
+
+  methodInfoRecordOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordOrder',
+      request,
+      metadata || {},
+      this.methodInfoRecordOrder,
       callback);
   }
 
@@ -1607,6 +1761,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoRecordSupplier = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: supplier_pb.Supplier) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordSupplier(
+    request: supplier_pb.Supplier,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordSupplier',
+      request,
+      metadata || {},
+      this.methodInfoRecordSupplier,
+      callback);
+  }
+
   methodInfoCreateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: setting_pb.Setting) => {
@@ -1692,6 +1868,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoFindSetting,
+      callback);
+  }
+
+  methodInfoRecordSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: setting_pb.Setting) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordSetting(
+    request: setting_pb.Setting,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordSetting',
+      request,
+      metadata || {},
+      this.methodInfoRecordSetting,
       callback);
   }
 
