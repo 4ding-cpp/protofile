@@ -80,86 +80,6 @@ proto.ding4.ShopRPCPromiseClient =
  *   !proto.ding4.Customer,
  *   !proto.ding4.Response>}
  */
-const methodDescriptor_ShopRPC_SignUp = new grpc.web.MethodDescriptor(
-  '/ding4.ShopRPC/SignUp',
-  grpc.web.MethodType.UNARY,
-  customer_pb.Customer,
-  sql_pb.Response,
-  /**
-   * @param {!proto.ding4.Customer} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  sql_pb.Response.deserializeBinary
-);
-
-
-/**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ding4.Customer,
- *   !proto.ding4.Response>}
- */
-const methodInfo_ShopRPC_SignUp = new grpc.web.AbstractClientBase.MethodInfo(
-  sql_pb.Response,
-  /**
-   * @param {!proto.ding4.Customer} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  sql_pb.Response.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ding4.Customer} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ding4.Response)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ding4.ShopRPCClient.prototype.signUp =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ding4.ShopRPC/SignUp',
-      request,
-      metadata || {},
-      methodDescriptor_ShopRPC_SignUp,
-      callback);
-};
-
-
-/**
- * @param {!proto.ding4.Customer} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ding4.Response>}
- *     A native promise that resolves to the response
- */
-proto.ding4.ShopRPCPromiseClient.prototype.signUp =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ding4.ShopRPC/SignUp',
-      request,
-      metadata || {},
-      methodDescriptor_ShopRPC_SignUp);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.ding4.Customer,
- *   !proto.ding4.Response>}
- */
 const methodDescriptor_ShopRPC_SignIn = new grpc.web.MethodDescriptor(
   '/ding4.ShopRPC/SignIn',
   grpc.web.MethodType.UNARY,
@@ -231,6 +151,166 @@ proto.ding4.ShopRPCPromiseClient.prototype.signIn =
       request,
       metadata || {},
       methodDescriptor_ShopRPC_SignIn);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ding4.Customer,
+ *   !proto.ding4.Response>}
+ */
+const methodDescriptor_ShopRPC_SignPassword = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SignPassword',
+  grpc.web.MethodType.UNARY,
+  customer_pb.Customer,
+  sql_pb.Response,
+  /**
+   * @param {!proto.ding4.Customer} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  sql_pb.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ding4.Customer,
+ *   !proto.ding4.Response>}
+ */
+const methodInfo_ShopRPC_SignPassword = new grpc.web.AbstractClientBase.MethodInfo(
+  sql_pb.Response,
+  /**
+   * @param {!proto.ding4.Customer} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  sql_pb.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ding4.Customer} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ding4.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ding4.ShopRPCClient.prototype.signPassword =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ding4.ShopRPC/SignPassword',
+      request,
+      metadata || {},
+      methodDescriptor_ShopRPC_SignPassword,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ding4.Customer} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ding4.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ding4.ShopRPCPromiseClient.prototype.signPassword =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ding4.ShopRPC/SignPassword',
+      request,
+      metadata || {},
+      methodDescriptor_ShopRPC_SignPassword);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ding4.Customer,
+ *   !proto.ding4.Response>}
+ */
+const methodDescriptor_ShopRPC_SignUp = new grpc.web.MethodDescriptor(
+  '/ding4.ShopRPC/SignUp',
+  grpc.web.MethodType.UNARY,
+  customer_pb.Customer,
+  sql_pb.Response,
+  /**
+   * @param {!proto.ding4.Customer} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  sql_pb.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ding4.Customer,
+ *   !proto.ding4.Response>}
+ */
+const methodInfo_ShopRPC_SignUp = new grpc.web.AbstractClientBase.MethodInfo(
+  sql_pb.Response,
+  /**
+   * @param {!proto.ding4.Customer} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  sql_pb.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ding4.Customer} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ding4.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ding4.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ding4.ShopRPCClient.prototype.signUp =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ding4.ShopRPC/SignUp',
+      request,
+      metadata || {},
+      methodDescriptor_ShopRPC_SignUp,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ding4.Customer} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ding4.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ding4.ShopRPCPromiseClient.prototype.signUp =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ding4.ShopRPC/SignUp',
+      request,
+      metadata || {},
+      methodDescriptor_ShopRPC_SignUp);
 };
 
 
