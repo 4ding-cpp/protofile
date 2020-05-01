@@ -10,8 +10,12 @@ import "car.proto";
 import "order.proto";
 
 service ShopRPC {
-    rpc SignUp(Customer) returns (Response);
+    // 登入先輸入 Email 或 Phone 檢查帳號是否存在
     rpc SignIn(Customer) returns (Response);
+    // 帳號存在的話再送剛剛驗證的 Email 或 Phone 及 Password
+    rpc SignPassword(Customer) returns (Response);
+    // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password
+    rpc SignUp(Customer) returns (Response);
 
     // 撈LOGO 及 favicon 
     rpc IndexBase(Query) returns (Response);
