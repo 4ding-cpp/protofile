@@ -53,10 +53,12 @@ service Store1RPC {
 
     rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
-    rpc CreateCustomerLink(CustomerLink) returns (Response);
-    rpc UpdateCustomerLink(CustomerLink) returns (Response);
-    rpc FindCustomerLink(Query) returns (Response);
-    rpc FindCustomerF(Query) returns (Response);
+    rpc UpdateCustomer(Customer) returns (Response);
+    rpc FindCustomer(Query) returns (Response);
+    // rpc CreateCustomerLink(CustomerLink) returns (Response);
+    // rpc UpdateCustomerLink(CustomerLink) returns (Response);
+    // rpc FindCustomerLink(Query) returns (Response);
+    // rpc FindCustomerF(Query) returns (Response);
 
     rpc CreateCustomerLevel(CustomerLevel) returns (Response);
     rpc UpdateCustomerLevel(CustomerLevel) returns (Response);

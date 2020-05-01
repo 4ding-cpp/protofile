@@ -31,5 +31,5 @@ message Customer {
 
 message CustomerStoreInfo {
     string level_id = 1;
-    bool is_receive = 2;
+    string receive = 2;
 }
