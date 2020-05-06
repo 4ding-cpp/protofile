@@ -30,13 +30,19 @@ message ProductLink {
 }
 
 message ProductF {
+    // 怕了吧
     string product_link_id = 1;
+    // 商品ID
     string product_id = 2;
+    // 商品分類ID
     string product_class_id = 3;
     bool is_display = 4;
     int32 status = 5;
+    // 商品名稱
     google.protobuf.Value name = 6;
+    // 優惠價
     double reduce = 7;
+    // 原價
     double price = 8;
     string photo = 9;
 

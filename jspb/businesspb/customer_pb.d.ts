@@ -8,8 +8,8 @@ export class Customer extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -77,7 +77,7 @@ export class Customer extends jspb.Message {
 export namespace Customer {
   export type AsObject = {
     customerId: string,
-    status: string,
+    status: number,
     phone: string,
     email: string,
     name: string,
@@ -115,6 +115,32 @@ export namespace CustomerStoreInfo {
   export type AsObject = {
     levelId: string,
     receive: string,
+  }
+}
+
+export class CustomerBatch extends jspb.Message {
+  getCustomerList(): Array<Customer>;
+  setCustomerList(value: Array<Customer>): void;
+  clearCustomerList(): void;
+  addCustomer(value?: Customer, index?: number): Customer;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomerBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomerBatch): CustomerBatch.AsObject;
+  static serializeBinaryToWriter(message: CustomerBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomerBatch;
+  static deserializeBinaryFromReader(message: CustomerBatch, reader: jspb.BinaryReader): CustomerBatch;
+}
+
+export namespace CustomerBatch {
+  export type AsObject = {
+    customerList: Array<Customer.AsObject>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

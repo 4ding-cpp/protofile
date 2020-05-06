@@ -10,7 +10,7 @@ import "google/protobuf/timestamp.proto";
 
 message Customer {
     string customer_id = 1;
-    string status = 2;
+    int32 status = 2;
     string phone = 3;
     string email = 4;
     string name = 5;
@@ -20,16 +20,22 @@ message Customer {
     string come_from = 9;
     map<string, CustomerStoreInfo> store_info = 10;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 11;
+    string operator = 12;
+    google.protobuf.Timestamp create_at = 13;
+    google.protobuf.Timestamp update_at = 14;
+    repeated string cols = 15;
+    repeated Condition condition = 16;
+    google.protobuf.Struct self = 17;
 }
 
 message CustomerStoreInfo {
     string level_id = 1;
     string receive = 2;
+}
+
+
+message CustomerBatch {
+    repeated Customer customer = 1;
+    google.protobuf.Struct self = 2;
 }

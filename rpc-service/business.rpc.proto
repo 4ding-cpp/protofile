@@ -71,6 +71,10 @@ service BusinessRPC {
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Customer) returns (Response);
     rpc SignCustomer(Customer) returns (Response);
+    rpc UploadCustomer(CustomerBatch) returns (Response);
+
+    // 檢視圖庫
+    rpc FindImage(Query) returns (Response);
 
     rpc CreateProduct(Product) returns (Response);
     rpc UpdateProduct(Product) returns (Response);
