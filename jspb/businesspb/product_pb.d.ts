@@ -46,6 +46,11 @@ export class Product extends jspb.Message {
   clearImageList(): void;
   addImage(value?: image_pb.Image, index?: number): image_pb.Image;
 
+  getSpecList(): Array<ProductSpec>;
+  setSpecList(value: Array<ProductSpec>): void;
+  clearSpecList(): void;
+  addSpec(value?: ProductSpec, index?: number): ProductSpec;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -99,195 +104,8 @@ export namespace Product {
     isPickup: boolean,
     photo: string,
     imageList: Array<image_pb.Image.AsObject>,
+    specList: Array<ProductSpec.AsObject>,
     labelxMap: Array<[string, number]>,
-    operator: string,
-    createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
-  }
-}
-
-export class ProductLabel extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getTargetList(): Array<string>;
-  setTargetList(value: Array<string>): void;
-  clearTargetList(): void;
-  addTarget(value: string, index?: number): void;
-
-  getOperator(): string;
-  setOperator(value: string): void;
-
-  getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreateAt(): boolean;
-  clearCreateAt(): void;
-
-  getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
-
-  getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
-
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductLabel.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductLabel): ProductLabel.AsObject;
-  static serializeBinaryToWriter(message: ProductLabel, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductLabel;
-  static deserializeBinaryFromReader(message: ProductLabel, reader: jspb.BinaryReader): ProductLabel;
-}
-
-export namespace ProductLabel {
-  export type AsObject = {
-    name: string,
-    targetList: Array<string>,
-    operator: string,
-    createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
-  }
-}
-
-export class ProductGroup extends jspb.Message {
-  getProductGroupId(): string;
-  setProductGroupId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getTargetList(): Array<string>;
-  setTargetList(value: Array<string>): void;
-  clearTargetList(): void;
-  addTarget(value: string, index?: number): void;
-
-  getOperator(): string;
-  setOperator(value: string): void;
-
-  getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreateAt(): boolean;
-  clearCreateAt(): void;
-
-  getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
-
-  getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
-
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductGroup.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductGroup): ProductGroup.AsObject;
-  static serializeBinaryToWriter(message: ProductGroup, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductGroup;
-  static deserializeBinaryFromReader(message: ProductGroup, reader: jspb.BinaryReader): ProductGroup;
-}
-
-export namespace ProductGroup {
-  export type AsObject = {
-    productGroupId: string,
-    name: string,
-    targetList: Array<string>,
-    operator: string,
-    createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
-  }
-}
-
-export class ProductLinker extends jspb.Message {
-  getProductLinkerId(): string;
-  setProductLinkerId(value: string): void;
-
-  getStatus(): string;
-  setStatus(value: string): void;
-
-  getProductGroupId(): string;
-  setProductGroupId(value: string): void;
-
-  getStoreId(): string;
-  setStoreId(value: string): void;
-
-  getReward(): number;
-  setReward(value: number): void;
-
-  getOperator(): string;
-  setOperator(value: string): void;
-
-  getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreateAt(): boolean;
-  clearCreateAt(): void;
-
-  getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
-
-  getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
-
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductLinker.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductLinker): ProductLinker.AsObject;
-  static serializeBinaryToWriter(message: ProductLinker, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductLinker;
-  static deserializeBinaryFromReader(message: ProductLinker, reader: jspb.BinaryReader): ProductLinker;
-}
-
-export namespace ProductLinker {
-  export type AsObject = {
-    productLinkerId: string,
-    status: string,
-    productGroupId: string,
-    storeId: string,
-    reward: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

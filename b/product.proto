@@ -22,48 +22,9 @@ message Product {
     bool is_pickup = 10;
     string photo = 11;
     repeated Image image = 12;
+    repeated ProductSpec spec = 13;
 
     map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message ProductLabel {
-    string name = 1;
-    repeated string target = 2;
-    
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message ProductGroup {
-    string product_group_id = 1;
-    string name = 3;
-    repeated string target = 4;
-    
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
-}
-
-message ProductLinker {
-    string product_linker_id = 1;
-    string status = 2;
-    string product_group_id = 3;
-    string store_id = 4;
-    double reward = 5;
-    
     string operator = 70;
     google.protobuf.Timestamp create_at = 71;
     google.protobuf.Timestamp update_at = 72;
