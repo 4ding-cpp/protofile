@@ -20,17 +20,49 @@ message Product {
     double weight = 8;
     bool is_preorder = 9;
     bool is_pickup = 10;
-    string photo = 11;
-    repeated Image image = 12;
-    repeated ProductSpec spec = 13;
+    repeated Spec specx = 11;
+    repeated Photo photox = 12;
+    repeated Image imagex = 13;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 14;
+    string operator = 15;
+    google.protobuf.Timestamp create_at = 16;
+    google.protobuf.Timestamp update_at = 17;
+    repeated string cols = 18;
+    repeated Condition condition = 19;
+    google.protobuf.Struct self = 20;
+}
+
+// sku 貨號
+// display 是否陳列
+// stock 進貨總量
+// sold 銷貨總量
+// itemx 規格陣列
+// photo 規格圖URL
+message Spec {
+    string sku = 1;
+    bool display = 2;
+    int32 stock = 3;
+    int32 sold = 4;
+    repeated google.protobuf.Value itemx = 5;
+    string photo = 6;
+}
+
+// h host
+// p path
+// n name
+// e extention
+// i 排序大至小
+// sku 規格圖
+// source 新增時 base64 encode
+message Photo {
+    string h = 1;
+    string p = 2;
+    string n = 3;
+    string e = 4;
+    int32 i = 5;
+    string sku = 6;
+    string source = 7;
 }
 
 message ProductSpec {
@@ -44,10 +76,10 @@ message ProductSpec {
     string photo = 8;
     Image image = 9;
 
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;
 }

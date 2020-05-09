@@ -38,18 +38,20 @@ export class Product extends jspb.Message {
   getIsPickup(): boolean;
   setIsPickup(value: boolean): void;
 
-  getPhoto(): string;
-  setPhoto(value: string): void;
+  getSpecxList(): Array<Spec>;
+  setSpecxList(value: Array<Spec>): void;
+  clearSpecxList(): void;
+  addSpecx(value?: Spec, index?: number): Spec;
 
-  getImageList(): Array<image_pb.Image>;
-  setImageList(value: Array<image_pb.Image>): void;
-  clearImageList(): void;
-  addImage(value?: image_pb.Image, index?: number): image_pb.Image;
+  getPhotoxList(): Array<Photo>;
+  setPhotoxList(value: Array<Photo>): void;
+  clearPhotoxList(): void;
+  addPhotox(value?: Photo, index?: number): Photo;
 
-  getSpecList(): Array<ProductSpec>;
-  setSpecList(value: Array<ProductSpec>): void;
-  clearSpecList(): void;
-  addSpec(value?: ProductSpec, index?: number): ProductSpec;
+  getImagexList(): Array<image_pb.Image>;
+  setImagexList(value: Array<image_pb.Image>): void;
+  clearImagexList(): void;
+  addImagex(value?: image_pb.Image, index?: number): image_pb.Image;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -102,9 +104,9 @@ export namespace Product {
     weight: number,
     isPreorder: boolean,
     isPickup: boolean,
-    photo: string,
-    imageList: Array<image_pb.Image.AsObject>,
-    specList: Array<ProductSpec.AsObject>,
+    specxList: Array<Spec.AsObject>,
+    photoxList: Array<Photo.AsObject>,
+    imagexList: Array<image_pb.Image.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -112,6 +114,88 @@ export namespace Product {
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class Spec extends jspb.Message {
+  getSku(): string;
+  setSku(value: string): void;
+
+  getDisplay(): boolean;
+  setDisplay(value: boolean): void;
+
+  getStock(): number;
+  setStock(value: number): void;
+
+  getSold(): number;
+  setSold(value: number): void;
+
+  getItemxList(): Array<google_protobuf_struct_pb.Value>;
+  setItemxList(value: Array<google_protobuf_struct_pb.Value>): void;
+  clearItemxList(): void;
+  addItemx(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
+
+  getPhoto(): string;
+  setPhoto(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Spec.AsObject;
+  static toObject(includeInstance: boolean, msg: Spec): Spec.AsObject;
+  static serializeBinaryToWriter(message: Spec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Spec;
+  static deserializeBinaryFromReader(message: Spec, reader: jspb.BinaryReader): Spec;
+}
+
+export namespace Spec {
+  export type AsObject = {
+    sku: string,
+    display: boolean,
+    stock: number,
+    sold: number,
+    itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
+    photo: string,
+  }
+}
+
+export class Photo extends jspb.Message {
+  getH(): string;
+  setH(value: string): void;
+
+  getP(): string;
+  setP(value: string): void;
+
+  getN(): string;
+  setN(value: string): void;
+
+  getE(): string;
+  setE(value: string): void;
+
+  getI(): number;
+  setI(value: number): void;
+
+  getSku(): string;
+  setSku(value: string): void;
+
+  getSource(): string;
+  setSource(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Photo.AsObject;
+  static toObject(includeInstance: boolean, msg: Photo): Photo.AsObject;
+  static serializeBinaryToWriter(message: Photo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Photo;
+  static deserializeBinaryFromReader(message: Photo, reader: jspb.BinaryReader): Photo;
+}
+
+export namespace Photo {
+  export type AsObject = {
+    h: string,
+    p: string,
+    n: string,
+    e: string,
+    i: number,
+    sku: string,
+    source: string,
   }
 }
 
