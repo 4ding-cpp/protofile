@@ -11,21 +11,21 @@ import "google/protobuf/timestamp.proto";
 
 message Car {
     string car_id = 1;
-    string store_id = 3;
-    string customer_id = 4;
-    string discount_id = 5;
-    int32 state = 6;
-    int32 count = 7;
-    double amount = 8;
-    repeated Commodity commodity = 9;
-    repeated Activity activity = 10;
+    string store_id = 2;
+    string customer_id = 3;
+    string discount_id = 4;
+    int32 state = 5;
+    int32 count = 6;
+    double amount = 7;
+    repeated Commodity commodity = 8;
+    repeated Activity activity = 9;
     
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;    
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;    
 }
 
 message Commodity {
@@ -33,15 +33,15 @@ message Commodity {
     string store_id = 2;
     string car_id = 3;
     string product_id = 4;
-    string product_spec_id = 5;
+    string sku = 5;
     int32 count = 6;
 
-    string activity_id = 9;
-    google.protobuf.Value name = 10;
-    double price = 11;
-    double reduce = 12;
-    double active = 13;
-    string photo = 14;
+    string activity_id = 7;
+    google.protobuf.Value name = 8;
+    double price = 9;
+    double reduce = 10;
+    double active = 11;
+    string photo = 12;
     
-    google.protobuf.Struct self = 75; 
+    google.protobuf.Struct self = 13; 
 }

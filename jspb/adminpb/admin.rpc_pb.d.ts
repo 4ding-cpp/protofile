@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
+import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';

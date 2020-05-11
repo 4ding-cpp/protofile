@@ -17,8 +17,8 @@ export class Stack extends jspb.Message {
   getProductId(): string;
   setProductId(value: string): void;
 
-  getSku(): string;
-  setSku(value: string): void;
+  getProductSpecId(): string;
+  setProductSpecId(value: string): void;
 
   getActivityId(): string;
   setActivityId(value: string): void;
@@ -89,7 +89,7 @@ export namespace Stack {
     storeId: string,
     orderId: string,
     productId: string,
-    sku: string,
+    productSpecId: string,
     activityId: string,
     discountId: string,
     salerId: string,

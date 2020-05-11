@@ -10,8 +10,9 @@ import "label.proto";
 import "car.proto";
 import "manager.proto";
 import "customer.proto";
-import "customer-link.proto";
-import "product-link.proto";
+import "customer-level.proto";
+import "product.proto";
+import "product-class.proto";
 import "activity.proto";
 import "order.proto";
 import "remind.proto";
@@ -54,28 +55,24 @@ service Store1RPC {
     rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
-    rpc FindCustomer(Query) returns (Response);
-    // rpc CreateCustomerLink(CustomerLink) returns (Response);
-    // rpc UpdateCustomerLink(CustomerLink) returns (Response);
-    // rpc FindCustomerLink(Query) returns (Response);
-    // rpc FindCustomerF(Query) returns (Response);
+    rpc LinkCustomer(CustomerLink) returns (Response);
+    rpc FindCustomerLinked(Query) returns (Response);
 
     rpc CreateCustomerLevel(CustomerLevel) returns (Response);
     rpc UpdateCustomerLevel(CustomerLevel) returns (Response);
+    rpc SetCustomerLevel(CustomerLevel) returns (Response);
     rpc FindCustomerLevel(Query) returns (Response);
 
-    rpc FindProductF(Query) returns (Response);
-    rpc FindProductSpec(Query) returns (Response);
-    rpc CreateProductLink(ProductLink) returns (Response);
-    rpc UpdateProductLink(ProductLink) returns (Response);
-    rpc FindProductLink(Query) returns (Response);
-
+    rpc FindProduct(Query) returns (Response);
+    rpc LinkProduct(ProductLink) returns (Response);
+    rpc FindProductLinked(Query) returns (Response);
+    rpc FindProductByClass(ProductClass) returns (Response);
+    
     rpc CreateProductClass(ProductClass) returns (Response);
     rpc UpdateProductClass(ProductClass) returns (Response);
     rpc FindProductClass(Query) returns (Response);
-    rpc CreateProductClassImage(Image) returns (Response);
-    rpc UpdateProductClassImage(Image) returns (Response);
-    rpc DeleteProductClassImage(Image) returns (Response);
+    rpc AddProductToClass(ProductClass) returns (Response);
+    rpc DelProductFromClass(ProductClass) returns (Response);
 
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);

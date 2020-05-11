@@ -27,9 +27,7 @@ service ShopRPC {
     // 商品類別
     rpc FindProductClass(Query) returns (Response);
     // 商品列表
-    rpc FindProductF(Query) returns (Response);
-    // 商品規格
-    rpc FindProductSpec(Query) returns (Response);
+    rpc FindProduct(Query) returns (Response);
     // 商品庫存
     rpc FindProductStack(Query) returns (Response);
     // 商品規格庫存

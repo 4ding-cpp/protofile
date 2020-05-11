@@ -106,8 +106,8 @@ export class Commodity extends jspb.Message {
   getProductId(): string;
   setProductId(value: string): void;
 
-  getSku(): string;
-  setSku(value: string): void;
+  getProductSpecId(): string;
+  setProductSpecId(value: string): void;
 
   getCount(): number;
   setCount(value: number): void;
@@ -151,7 +151,7 @@ export namespace Commodity {
     storeId: string,
     carId: string,
     productId: string,
-    sku: string,
+    productSpecId: string,
     count: number,
     activityId: string,
     name?: google_protobuf_struct_pb.Value.AsObject,

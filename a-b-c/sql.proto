@@ -19,8 +19,8 @@ message Response {
 }
 
 message DBMessage {
-    int64 insert_id = 2;
-    int64 affect_row = 3;
+    int64 insert_id = 1;
+    int64 affect_row = 2;
 }
 
 message PageLimit {
@@ -56,22 +56,23 @@ message Query {
     PageLimit page_limit = 1;
     repeated Sort sort = 2;
     repeated Condition condition = 3;
-    google.protobuf.Struct self = 4;
+    repeated string extra = 4;
+    google.protobuf.Struct self = 5;
 };
 
 message SignRecord {
-    int32 user_id = 2;
-    string account = 3;
-    string type = 4;
-    string os = 5;
-    string browser = 6;
-    int32 created = 7;
-    google.protobuf.Timestamp online_at = 8;
-    google.protobuf.Timestamp offline_at = 9;
+    int32 user_id = 1;
+    string account = 2;
+    string type = 3;
+    string os = 4;
+    string browser = 5;
+    int32 created = 6;
+    google.protobuf.Timestamp online_at = 7;
+    google.protobuf.Timestamp offline_at = 8;
 }
 
 message Result {
-    PageLimit page_limit = 2;
-    repeated Sort sort = 3;
-    google.protobuf.Value result = 4;
+    PageLimit page_limit = 1;
+    repeated Sort sort = 2;
+    google.protobuf.Value result = 3;
 }

@@ -10,6 +10,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
+import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
@@ -44,18 +45,18 @@ export class AdminRPCClient {
   }
 
   methodInfoPing = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_struct_pb.Value,
-    (request: sql_pb.Query) => {
+    google_protobuf_wrappers_pb.Int32Value,
+    (request: google_protobuf_wrappers_pb.Int32Value) => {
       return request.serializeBinary();
     },
-    google_protobuf_struct_pb.Value.deserializeBinary
+    google_protobuf_wrappers_pb.Int32Value.deserializeBinary
   );
 
   ping(
-    request: sql_pb.Query,
+    request: google_protobuf_wrappers_pb.Int32Value,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_struct_pb.Value) => void) {
+               response: google_protobuf_wrappers_pb.Int32Value) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.AdminRPC/Ping',

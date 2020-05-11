@@ -11,9 +11,11 @@ import "point.proto";
 import "manager.proto";
 import "linker.proto";
 import "customer.proto";
+import "customer-level.proto";
 import "product.proto";
+import "product-class.proto";
 import "label.proto";
-import "image.proto";
+// import "image.proto";
 import "store.proto";
 import "remind.proto";
 import "order.proto";
@@ -67,11 +69,14 @@ service BusinessRPC {
 
     rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
+    rpc UploadCustomer(CustomerBatch) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Customer) returns (Response);
     rpc SignCustomer(Customer) returns (Response);
-    rpc UploadCustomer(CustomerBatch) returns (Response);
+    rpc LinkCustomer(CustomerLink) returns (Response);
+    rpc SetCustomerLevel(CustomerLevel) returns (Response);
+    
 
     // 檢視圖庫
     rpc FindImage(Query) returns (Response);
@@ -80,17 +85,17 @@ service BusinessRPC {
     rpc UpdateProduct(Product) returns (Response);
     rpc FindProduct(Query) returns (Response);
     rpc RecordProduct(Product) returns (Response);
-    rpc CreateProductImage(Image) returns (Response);
-    rpc UpdateProductImage(Image) returns (Response);
-    rpc DeleteProductImage(Image) returns (Response);
+    rpc LinkProduct(ProductLink) returns (Response);
+    rpc AddProductToClass(ProductClass) returns (Response);
+    rpc DelProductFromClass(ProductClass) returns (Response);
 
-    rpc CreateProductSpec(ProductSpec) returns (Response);
-    rpc UpdateProductSpec(ProductSpec) returns (Response);
-    rpc FindProductSpec(Query) returns (Response);
-    rpc RecordProductSpec(ProductSpec) returns (Response);
-    rpc CreateProductSpecImage(Image) returns (Response);
-    rpc UpdateProductSpecImage(Image) returns (Response);
-    rpc DeleteProductSpecImage(Image) returns (Response);    
+//    rpc CreateProductSpec(ProductSpec) returns (Response);
+//    rpc UpdateProductSpec(ProductSpec) returns (Response);
+//    rpc FindProductSpec(Query) returns (Response);
+//    rpc RecordProductSpec(ProductSpec) returns (Response);
+//    rpc CreateProductSpecImage(Image) returns (Response);
+//    rpc UpdateProductSpecImage(Image) returns (Response);
+//    rpc DeleteProductSpecImage(Image) returns (Response);    
 
     rpc RegisterStore(Store) returns (Response);
     rpc OpenStore(Store) returns (Response);

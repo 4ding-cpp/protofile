@@ -18,7 +18,7 @@ message Customer {
     int32 sex = 7;
     string password = 8;
     string come_from = 9;
-    map<string, CustomerStoreInfo> store_info = 10;
+    CustomerLink link = 10;
     
     map<string, int32> labelx = 11;
     string operator = 12;
@@ -29,11 +29,12 @@ message Customer {
     google.protobuf.Struct self = 17;
 }
 
-message CustomerStoreInfo {
-    string level_id = 1;
-    string receive = 2;
+message CustomerLink {
+    string customer_id = 1;
+    string level_id = 2;
+    bool is_receive = 3;
+    google.protobuf.Struct self = 4;
 }
-
 
 message CustomerBatch {
     repeated Customer customer = 1;

@@ -13,7 +13,7 @@ message Stack {
     string store_id = 3;
     string order_id = 4;
     string product_id = 5;
-    string product_spec_id = 6;
+    string sku = 6;
     string activity_id = 7;
     string discount_id = 8;
     string saler_id = 9;

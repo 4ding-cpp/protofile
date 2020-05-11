@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "customer.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message CustomerLevel {
+    string level_id = 1;
+    string store_id = 2;
+    int32 status = 3;
+    string name = 4;
+    double pay_amount = 5;
+    int32 pay_times = 6;
+    bool is_auto = 7;
+    int32 priority = 8;
+    Customer customer  = 9;
+    
+    map<string, int32> labelx = 10;
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    repeated Condition condition = 15;
+    google.protobuf.Struct self = 16;
+}

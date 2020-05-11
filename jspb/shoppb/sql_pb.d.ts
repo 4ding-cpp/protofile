@@ -187,11 +187,6 @@ export class Query extends jspb.Message {
   clearConditionList(): void;
   addCondition(value?: Condition, index?: number): Condition;
 
-  getExtraList(): Array<string>;
-  setExtraList(value: Array<string>): void;
-  clearExtraList(): void;
-  addExtra(value: string, index?: number): void;
-
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
   setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
@@ -210,7 +205,6 @@ export namespace Query {
     pageLimit?: PageLimit.AsObject,
     sortList: Array<Sort.AsObject>,
     conditionList: Array<Condition.AsObject>,
-    extraList: Array<string>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
