@@ -24,7 +24,7 @@ message Product {
     bool is_linked = 11;
     repeated Spec specx = 12;
     repeated Photo photox = 13;
-    Product link = 15;
+    ProductLink link = 15;
 
     map<string, int32> labelx = 16;
     string operator = 17;

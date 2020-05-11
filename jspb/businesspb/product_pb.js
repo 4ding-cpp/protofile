@@ -186,7 +186,7 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     proto.ding4.Spec.toObject, includeInstance),
     photoxList: jspb.Message.toObjectList(msg.getPhotoxList(),
     proto.ding4.Photo.toObject, includeInstance),
-    link: (f = msg.getLink()) && proto.ding4.Product.toObject(includeInstance, f),
+    link: (f = msg.getLink()) && proto.ding4.ProductLink.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 17, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -287,8 +287,8 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.addPhotox(value);
       break;
     case 15:
-      var value = new proto.ding4.Product;
-      reader.readMessage(value,proto.ding4.Product.deserializeBinaryFromReader);
+      var value = new proto.ding4.ProductLink;
+      reader.readMessage(value,proto.ding4.ProductLink.deserializeBinaryFromReader);
       msg.setLink(value);
       break;
     case 16:
@@ -453,7 +453,7 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       15,
       f,
-      proto.ding4.Product.serializeBinaryToWriter
+      proto.ding4.ProductLink.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -803,17 +803,17 @@ proto.ding4.Product.prototype.clearPhotoxList = function() {
 
 
 /**
- * optional Product link = 15;
- * @return {?proto.ding4.Product}
+ * optional ProductLink link = 15;
+ * @return {?proto.ding4.ProductLink}
  */
 proto.ding4.Product.prototype.getLink = function() {
-  return /** @type{?proto.ding4.Product} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.Product, 15));
+  return /** @type{?proto.ding4.ProductLink} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.ProductLink, 15));
 };
 
 
 /**
- * @param {?proto.ding4.Product|undefined} value
+ * @param {?proto.ding4.ProductLink|undefined} value
  * @return {!proto.ding4.Product} returns this
 */
 proto.ding4.Product.prototype.setLink = function(value) {

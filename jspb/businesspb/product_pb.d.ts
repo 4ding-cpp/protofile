@@ -52,8 +52,8 @@ export class Product extends jspb.Message {
   clearPhotoxList(): void;
   addPhotox(value?: Photo, index?: number): Photo;
 
-  getLink(): Product | undefined;
-  setLink(value?: Product): void;
+  getLink(): ProductLink | undefined;
+  setLink(value?: ProductLink): void;
   hasLink(): boolean;
   clearLink(): void;
 
@@ -111,7 +111,7 @@ export namespace Product {
     isLinked: boolean,
     specxList: Array<Spec.AsObject>,
     photoxList: Array<Photo.AsObject>,
-    link?: Product.AsObject,
+    link?: ProductLink.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

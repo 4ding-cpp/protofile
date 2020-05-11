@@ -52,9 +52,8 @@ service Store1RPC {
     rpc FindDiscountItem(Query) returns (Response);
     rpc ExchangeDiscount(DiscountItem) returns (Response);
 
-    rpc ExistsCustomer(Customer) returns (Response);
-    rpc CreateCustomer(Customer) returns (Response);
-    rpc UpdateCustomer(Customer) returns (Response);
+    rpc SignUpCustomer(Customer) returns (Response);
+    rpc SignInCustomer(Customer) returns (Response);
     rpc LinkCustomer(CustomerLink) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
 

@@ -533,7 +533,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoExistsCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSignUpCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer_pb.Customer) => {
       return request.serializeBinary();
@@ -541,21 +541,21 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  existsCustomer(
+  signUpCustomer(
     request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/ExistsCustomer',
+        '/ding4.Store1RPC/SignUpCustomer',
       request,
       metadata || {},
-      this.methodInfoExistsCustomer,
+      this.methodInfoSignUpCustomer,
       callback);
   }
 
-  methodInfoCreateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSignInCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer_pb.Customer) => {
       return request.serializeBinary();
@@ -563,39 +563,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  createCustomer(
+  signInCustomer(
     request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/CreateCustomer',
+        '/ding4.Store1RPC/SignInCustomer',
       request,
       metadata || {},
-      this.methodInfoCreateCustomer,
-      callback);
-  }
-
-  methodInfoUpdateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer_pb.Customer) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateCustomer(
-    request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateCustomer',
-      request,
-      metadata || {},
-      this.methodInfoUpdateCustomer,
+      this.methodInfoSignInCustomer,
       callback);
   }
 
