@@ -42,10 +42,8 @@ export class Product extends jspb.Message {
   getIsLinked(): boolean;
   setIsLinked(value: boolean): void;
 
-  getSpecxList(): Array<Spec>;
-  setSpecxList(value: Array<Spec>): void;
-  clearSpecxList(): void;
-  addSpecx(value?: Spec, index?: number): Spec;
+  getSpecxMap(): jspb.Map<string, Spec>;
+  clearSpecxMap(): void;
 
   getPhotoxList(): Array<Photo>;
   setPhotoxList(value: Array<Photo>): void;
@@ -109,7 +107,7 @@ export namespace Product {
     isPreorder: boolean,
     isPickup: boolean,
     isLinked: boolean,
-    specxList: Array<Spec.AsObject>,
+    specxMap: Array<[string, Spec.AsObject]>,
     photoxList: Array<Photo.AsObject>,
     link?: ProductLink.AsObject,
     labelxMap: Array<[string, number]>,

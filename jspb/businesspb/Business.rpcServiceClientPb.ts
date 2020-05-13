@@ -1058,6 +1058,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoSignInCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signInCustomer(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SignInCustomer',
+      request,
+      metadata || {},
+      this.methodInfoSignInCustomer,
+      callback);
+  }
+
   methodInfoFindImage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {

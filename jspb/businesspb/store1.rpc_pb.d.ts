@@ -9,7 +9,7 @@ import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';
 import * as product$class_pb from './product-class_pb';
-import * as activity_pb from './activity_pb';
+import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
 import * as image_pb from './image_pb';

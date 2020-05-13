@@ -22,7 +22,7 @@ message Product {
     bool is_preorder = 9;
     bool is_pickup = 10;
     bool is_linked = 11;
-    repeated Spec specx = 12;
+    map<string, Spec> specx = 12;
     repeated Photo photox = 13;
     ProductLink link = 15;
 

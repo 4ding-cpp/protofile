@@ -1,7 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as activity_pb from './activity_pb';
+import * as activity$coupon_pb from './activity-coupon_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -15,8 +15,8 @@ export class Car extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
-  getDiscountId(): string;
-  setDiscountId(value: string): void;
+  getCouponId(): string;
+  setCouponId(value: string): void;
 
   getState(): number;
   setState(value: number): void;
@@ -32,10 +32,10 @@ export class Car extends jspb.Message {
   clearCommodityList(): void;
   addCommodity(value?: Commodity, index?: number): Commodity;
 
-  getActivityList(): Array<activity_pb.Activity>;
-  setActivityList(value: Array<activity_pb.Activity>): void;
+  getActivityList(): Array<activity$coupon_pb.Activity>;
+  setActivityList(value: Array<activity$coupon_pb.Activity>): void;
   clearActivityList(): void;
-  addActivity(value?: activity_pb.Activity, index?: number): activity_pb.Activity;
+  addActivity(value?: activity$coupon_pb.Activity, index?: number): activity$coupon_pb.Activity;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -78,12 +78,12 @@ export namespace Car {
     carId: string,
     storeId: string,
     customerId: string,
-    discountId: string,
+    couponId: string,
     state: number,
     count: number,
     amount: number,
     commodityList: Array<Commodity.AsObject>,
-    activityList: Array<activity_pb.Activity.AsObject>,
+    activityList: Array<activity$coupon_pb.Activity.AsObject>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

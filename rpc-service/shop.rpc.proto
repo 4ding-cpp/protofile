@@ -12,8 +12,6 @@ import "order.proto";
 service ShopRPC {
     // 登入先輸入 Email 或 Phone 檢查帳號是否存在
     rpc SignIn(Customer) returns (Response);
-    // 帳號存在的話再送剛剛驗證的 Email 或 Phone 及 Password
-    rpc SignPassword(Customer) returns (Response);
     // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password
     rpc SignUp(Customer) returns (Response);
 
@@ -33,16 +31,13 @@ service ShopRPC {
     // 商品規格庫存
     rpc FindSpecStack(Query) returns (Response);
 
-    // 取的購物車編號
-    rpc MyCar(Query) returns (Response);
-    // 移除購物車
-    rpc DeleteCar(Car) returns (Response);
-    // 計算購物車 (套用活動回傳結果)
+    // State => 1.選購 2.鎖定 3.取消 6.完成訂單
+    // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
-    // 增加商品至購物車
-    rpc AppendCommodity(Car) returns (Response);
-    // 移除購物車內的商品
-    rpc SubtractCommodity(Commodity) returns (Response);
+    // 檢查有無之前未完成的購物車
+    rpc UndoneCar(Query) returns (Response);
+    // 清空購物車
+    rpc DeleteCar(Car) returns (Response);
     // 購物車使用的折價券
     rpc AppendDiscount(Car) returns (Response);
     // 刪除購物車使用的折價券

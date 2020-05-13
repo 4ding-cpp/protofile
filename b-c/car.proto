@@ -5,7 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
-import "activity.proto";
+import "activity-coupon.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -13,7 +13,7 @@ message Car {
     string car_id = 1;
     string store_id = 2;
     string customer_id = 3;
-    string discount_id = 4;
+    string coupon_id = 4;
     int32 state = 5;
     int32 count = 6;
     double amount = 7;

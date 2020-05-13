@@ -138,7 +138,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Product.repeatedFields_ = [12,13,20,21];
+proto.ding4.Product.repeatedFields_ = [13,20,21];
 
 
 
@@ -182,8 +182,7 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     isLinked: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    specxList: jspb.Message.toObjectList(msg.getSpecxList(),
-    proto.ding4.Spec.toObject, includeInstance),
+    specxMap: (f = msg.getSpecxMap()) ? f.toObject(includeInstance, proto.ding4.Spec.toObject) : [],
     photoxList: jspb.Message.toObjectList(msg.getPhotoxList(),
     proto.ding4.Photo.toObject, includeInstance),
     link: (f = msg.getLink()) && proto.ding4.ProductLink.toObject(includeInstance, f),
@@ -277,9 +276,10 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsLinked(value);
       break;
     case 12:
-      var value = new proto.ding4.Spec;
-      reader.readMessage(value,proto.ding4.Spec.deserializeBinaryFromReader);
-      msg.addSpecx(value);
+      var value = msg.getSpecxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.ding4.Spec.deserializeBinaryFromReader, "", new proto.ding4.Spec());
+         });
       break;
     case 13:
       var value = new proto.ding4.Photo;
@@ -432,13 +432,9 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSpecxList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      12,
-      f,
-      proto.ding4.Spec.serializeBinaryToWriter
-    );
+  f = message.getSpecxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.ding4.Spec.serializeBinaryToWriter);
   }
   f = message.getPhotoxList();
   if (f.length > 0) {
@@ -727,41 +723,25 @@ proto.ding4.Product.prototype.setIsLinked = function(value) {
 
 
 /**
- * repeated Spec specx = 12;
- * @return {!Array<!proto.ding4.Spec>}
+ * map<string, Spec> specx = 12;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!proto.ding4.Spec>}
  */
-proto.ding4.Product.prototype.getSpecxList = function() {
-  return /** @type{!Array<!proto.ding4.Spec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.Spec, 12));
+proto.ding4.Product.prototype.getSpecxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.ding4.Spec>} */ (
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      proto.ding4.Spec));
 };
 
 
 /**
- * @param {!Array<!proto.ding4.Spec>} value
- * @return {!proto.ding4.Product} returns this
-*/
-proto.ding4.Product.prototype.setSpecxList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
-};
-
-
-/**
- * @param {!proto.ding4.Spec=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ding4.Spec}
- */
-proto.ding4.Product.prototype.addSpecx = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.ding4.Spec, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.clearSpecxList = function() {
-  return this.setSpecxList([]);
-};
+proto.ding4.Product.prototype.clearSpecxMap = function() {
+  this.getSpecxMap().clear();
+  return this;};
 
 
 /**

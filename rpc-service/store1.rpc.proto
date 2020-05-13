@@ -13,7 +13,7 @@ import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
 import "product-class.proto";
-import "activity.proto";
+import "activity-coupon.proto";
 import "order.proto";
 import "remind.proto";
 import "image.proto";
@@ -41,19 +41,17 @@ service Store1RPC {
     rpc CreateActivity(Activity) returns (Response);
     rpc UpdateActivity(Activity) returns (Response);
     rpc FindActivity(Query) returns (Response);
-    rpc AppendActivityProduct(ActivityProduct) returns (Response);
-    rpc SubstractActivityProduct(ActivityProduct) returns (Response);
-    rpc FindActivityProduct(ActivityProduct) returns (Response);
+    //rpc AppendActivityProduct(ActivityProduct) returns (Response);
+    //rpc SubstractActivityProduct(ActivityProduct) returns (Response);
+    //rpc FindActivityProduct(ActivityProduct) returns (Response);
 
-    rpc CreateDiscount(Discount) returns (Response);
-    rpc UpdateDiscount(Discount) returns (Response);
-    rpc FindDiscount(Query) returns (Response);
-    rpc DistributeDiscount(Distribute) returns (Response);
-    rpc FindDiscountItem(Query) returns (Response);
-    rpc ExchangeDiscount(DiscountItem) returns (Response);
+    rpc CreateCoupon(Coupon) returns (Response);
+    rpc DistributeCoupon(Coupon) returns (Response);
+    rpc UpdateCoupon(Coupon) returns (Response);
+    rpc ExchangeCoupon(Coupon) returns (Response);
+    rpc FindCoupon(Query) returns (Response);
+    rpc FindCouponUsed(Query) returns (Response);
 
-    rpc SignUpCustomer(Customer) returns (Response);
-    rpc SignInCustomer(Customer) returns (Response);
     rpc LinkCustomer(CustomerLink) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
 
@@ -82,8 +80,8 @@ service Store1RPC {
     rpc FindCar(Query) returns (Response);
     rpc AppendCommodity(Car) returns (Response);
     rpc SubtractCommodity(Commodity) returns (Response);
-    rpc AppendDiscount(Car) returns (Response);
-    rpc SubtractDiscount(Car) returns (Response);
+    rpc AppendCoupon(Car) returns (Response);
+    rpc SubtractCoupon(Car) returns (Response);
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);

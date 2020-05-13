@@ -15,7 +15,6 @@ import "customer-level.proto";
 import "product.proto";
 import "product-class.proto";
 import "label.proto";
-// import "image.proto";
 import "store.proto";
 import "remind.proto";
 import "order.proto";
@@ -76,6 +75,7 @@ service BusinessRPC {
     rpc SignCustomer(Customer) returns (Response);
     rpc LinkCustomer(CustomerLink) returns (Response);
     rpc SetCustomerLevel(CustomerLevel) returns (Response);
+    rpc SignInCustomer(Customer) returns (Response);
     
 
     // 檢視圖庫

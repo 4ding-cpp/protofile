@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var activity_pb = require('./activity_pb.js');
-goog.object.extend(proto, activity_pb);
+var activity$coupon_pb = require('./activity-coupon_pb.js');
+goog.object.extend(proto, activity$coupon_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -106,14 +106,14 @@ proto.ding4.Car.toObject = function(includeInstance, msg) {
     carId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     customerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    discountId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    couponId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     state: jspb.Message.getFieldWithDefault(msg, 5, 0),
     count: jspb.Message.getFieldWithDefault(msg, 6, 0),
     amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     commodityList: jspb.Message.toObjectList(msg.getCommodityList(),
     proto.ding4.Commodity.toObject, includeInstance),
     activityList: jspb.Message.toObjectList(msg.getActivityList(),
-    activity_pb.Activity.toObject, includeInstance),
+    activity$coupon_pb.Activity.toObject, includeInstance),
     operator: jspb.Message.getFieldWithDefault(msg, 10, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -171,7 +171,7 @@ proto.ding4.Car.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDiscountId(value);
+      msg.setCouponId(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -191,8 +191,8 @@ proto.ding4.Car.deserializeBinaryFromReader = function(msg, reader) {
       msg.addCommodity(value);
       break;
     case 9:
-      var value = new activity_pb.Activity;
-      reader.readMessage(value,activity_pb.Activity.deserializeBinaryFromReader);
+      var value = new activity$coupon_pb.Activity;
+      reader.readMessage(value,activity$coupon_pb.Activity.deserializeBinaryFromReader);
       msg.addActivity(value);
       break;
     case 10:
@@ -273,7 +273,7 @@ proto.ding4.Car.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDiscountId();
+  f = message.getCouponId();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -314,7 +314,7 @@ proto.ding4.Car.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       9,
       f,
-      activity_pb.Activity.serializeBinaryToWriter
+      activity$coupon_pb.Activity.serializeBinaryToWriter
     );
   }
   f = message.getOperator();
@@ -421,10 +421,10 @@ proto.ding4.Car.prototype.setCustomerId = function(value) {
 
 
 /**
- * optional string discount_id = 4;
+ * optional string coupon_id = 4;
  * @return {string}
  */
-proto.ding4.Car.prototype.getDiscountId = function() {
+proto.ding4.Car.prototype.getCouponId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -433,7 +433,7 @@ proto.ding4.Car.prototype.getDiscountId = function() {
  * @param {string} value
  * @return {!proto.ding4.Car} returns this
  */
-proto.ding4.Car.prototype.setDiscountId = function(value) {
+proto.ding4.Car.prototype.setCouponId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -536,7 +536,7 @@ proto.ding4.Car.prototype.clearCommodityList = function() {
  */
 proto.ding4.Car.prototype.getActivityList = function() {
   return /** @type{!Array<!proto.ding4.Activity>} */ (
-    jspb.Message.getRepeatedWrapperField(this, activity_pb.Activity, 9));
+    jspb.Message.getRepeatedWrapperField(this, activity$coupon_pb.Activity, 9));
 };
 
 
