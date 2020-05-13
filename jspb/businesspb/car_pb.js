@@ -109,7 +109,7 @@ proto.ding4.Car.toObject = function(includeInstance, msg) {
     couponId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     state: jspb.Message.getFieldWithDefault(msg, 5, 0),
     count: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    amount: jspb.Message.getFieldWithDefault(msg, 7, 0),
     commodityList: jspb.Message.toObjectList(msg.getCommodityList(),
     proto.ding4.Commodity.toObject, includeInstance),
     activityList: jspb.Message.toObjectList(msg.getActivityList(),
@@ -182,7 +182,7 @@ proto.ding4.Car.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCount(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
       break;
     case 8:
@@ -295,8 +295,8 @@ proto.ding4.Car.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getAmount();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       7,
       f
     );
@@ -475,11 +475,11 @@ proto.ding4.Car.prototype.setCount = function(value) {
 
 
 /**
- * optional double amount = 7;
+ * optional int32 amount = 7;
  * @return {number}
  */
 proto.ding4.Car.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -488,7 +488,7 @@ proto.ding4.Car.prototype.getAmount = function() {
  * @return {!proto.ding4.Car} returns this
  */
 proto.ding4.Car.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -812,9 +812,9 @@ proto.ding4.Commodity.toObject = function(includeInstance, msg) {
     count: jspb.Message.getFieldWithDefault(msg, 6, 0),
     activityId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    active: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    price: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    reduce: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    active: jspb.Message.getFieldWithDefault(msg, 11, 0),
     photo: jspb.Message.getFieldWithDefault(msg, 12, ""),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
@@ -887,15 +887,15 @@ proto.ding4.Commodity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setReduce(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setActive(value);
       break;
     case 12:
@@ -994,22 +994,22 @@ proto.ding4.Commodity.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPrice();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       9,
       f
     );
   }
   f = message.getReduce();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       10,
       f
     );
   }
   f = message.getActive();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       11,
       f
     );
@@ -1196,11 +1196,11 @@ proto.ding4.Commodity.prototype.hasName = function() {
 
 
 /**
- * optional double price = 9;
+ * optional int32 price = 9;
  * @return {number}
  */
 proto.ding4.Commodity.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
@@ -1209,16 +1209,16 @@ proto.ding4.Commodity.prototype.getPrice = function() {
  * @return {!proto.ding4.Commodity} returns this
  */
 proto.ding4.Commodity.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3FloatField(this, 9, value);
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional double reduce = 10;
+ * optional int32 reduce = 10;
  * @return {number}
  */
 proto.ding4.Commodity.prototype.getReduce = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -1227,16 +1227,16 @@ proto.ding4.Commodity.prototype.getReduce = function() {
  * @return {!proto.ding4.Commodity} returns this
  */
 proto.ding4.Commodity.prototype.setReduce = function(value) {
-  return jspb.Message.setProto3FloatField(this, 10, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional double active = 11;
+ * optional int32 active = 11;
  * @return {number}
  */
 proto.ding4.Commodity.prototype.getActive = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -1245,7 +1245,7 @@ proto.ding4.Commodity.prototype.getActive = function() {
  * @return {!proto.ding4.Commodity} returns this
  */
 proto.ding4.Commodity.prototype.setActive = function(value) {
-  return jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 

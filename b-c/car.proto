@@ -16,7 +16,7 @@ message Car {
     string coupon_id = 4;
     int32 state = 5;
     int32 count = 6;
-    double amount = 7;
+    int32 amount = 7;
     repeated Commodity commodity = 8;
     repeated Activity activity = 9;
     
@@ -38,9 +38,9 @@ message Commodity {
 
     string activity_id = 7;
     google.protobuf.Value name = 8;
-    double price = 9;
-    double reduce = 10;
-    double active = 11;
+    int32 price = 9;
+    int32 reduce = 10;
+    int32 active = 11;
     string photo = 12;
     
     google.protobuf.Struct self = 13; 

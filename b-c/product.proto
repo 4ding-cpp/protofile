@@ -15,9 +15,9 @@ message Product {
     int32 status = 2;
     string code = 3;
     google.protobuf.Value name = 4;
-    double cost = 5;
-    double price = 6;
-    double reduce = 7;
+    int32 cost = 5;
+    int32 price = 6;
+    int32 reduce = 7;
     double weight = 8;
     bool is_preorder = 9;
     bool is_pickup = 10;

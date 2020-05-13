@@ -175,9 +175,9 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     code: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    price: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    cost: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    reduce: jspb.Message.getFieldWithDefault(msg, 7, 0),
     weight: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
@@ -248,15 +248,15 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setCost(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setReduce(value);
       break;
     case 8:
@@ -384,22 +384,22 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getCost();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
   f = message.getPrice();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       6,
       f
     );
   }
   f = message.getReduce();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       7,
       f
     );
@@ -597,11 +597,11 @@ proto.ding4.Product.prototype.hasName = function() {
 
 
 /**
- * optional double cost = 5;
+ * optional int32 cost = 5;
  * @return {number}
  */
 proto.ding4.Product.prototype.getCost = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -610,16 +610,16 @@ proto.ding4.Product.prototype.getCost = function() {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.setCost = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional double price = 6;
+ * optional int32 price = 6;
  * @return {number}
  */
 proto.ding4.Product.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -628,16 +628,16 @@ proto.ding4.Product.prototype.getPrice = function() {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional double reduce = 7;
+ * optional int32 reduce = 7;
  * @return {number}
  */
 proto.ding4.Product.prototype.getReduce = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -646,7 +646,7 @@ proto.ding4.Product.prototype.getReduce = function() {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.setReduce = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
