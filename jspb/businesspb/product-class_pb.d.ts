@@ -26,10 +26,8 @@ export class ProductClass extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getPhoto(): product_pb.Photo | undefined;
-  setPhoto(value?: product_pb.Photo): void;
-  hasPhoto(): boolean;
-  clearPhoto(): void;
+  getPhoto(): string;
+  setPhoto(value: string): void;
 
   getProductList(): Array<product_pb.Product>;
   setProductList(value: Array<product_pb.Product>): void;
@@ -82,7 +80,7 @@ export namespace ProductClass {
     path: string,
     name?: google_protobuf_struct_pb.Value.AsObject,
     seo?: seo_pb.SEO.AsObject,
-    photo?: product_pb.Photo.AsObject,
+    photo: string,
     productList: Array<product_pb.Product.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

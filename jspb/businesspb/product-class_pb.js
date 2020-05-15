@@ -88,7 +88,7 @@ proto.ding4.ProductClass.toObject = function(includeInstance, msg) {
     path: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
-    photo: (f = msg.getPhoto()) && product_pb.Photo.toObject(includeInstance, f),
+    photo: jspb.Message.getFieldWithDefault(msg, 6, ""),
     productList: jspb.Message.toObjectList(msg.getProductList(),
     product_pb.Product.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -158,8 +158,7 @@ proto.ding4.ProductClass.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSeo(value);
       break;
     case 6:
-      var value = new product_pb.Photo;
-      reader.readMessage(value,product_pb.Photo.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setPhoto(value);
       break;
     case 7:
@@ -268,11 +267,10 @@ proto.ding4.ProductClass.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPhoto();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       6,
-      f,
-      product_pb.Photo.serializeBinaryToWriter
+      f
     );
   }
   f = message.getProductList();
@@ -465,39 +463,20 @@ proto.ding4.ProductClass.prototype.hasSeo = function() {
 
 
 /**
- * optional Photo photo = 6;
- * @return {?proto.ding4.Photo}
+ * optional string photo = 6;
+ * @return {string}
  */
 proto.ding4.ProductClass.prototype.getPhoto = function() {
-  return /** @type{?proto.ding4.Photo} */ (
-    jspb.Message.getWrapperField(this, product_pb.Photo, 6));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {?proto.ding4.Photo|undefined} value
+ * @param {string} value
  * @return {!proto.ding4.ProductClass} returns this
-*/
+ */
 proto.ding4.ProductClass.prototype.setPhoto = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.ProductClass} returns this
- */
-proto.ding4.ProductClass.prototype.clearPhoto = function() {
-  return this.setPhoto(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.ProductClass.prototype.hasPhoto = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

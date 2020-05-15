@@ -15,33 +15,31 @@ message Car {
     string customer_id = 3;
     string coupon_id = 4;
     int32 state = 5;
-    int32 count = 6;
-    int32 amount = 7;
-    repeated Commodity commodity = 8;
-    repeated Activity activity = 9;
+    repeated Commodity commodity = 6;
+    repeated Activity activity = 7;
+    bool is_free_shipping = 8;
+    int32 amount = 9;
+    int32 count = 10;
     
-    string operator = 10;
-    google.protobuf.Timestamp create_at = 11;
-    google.protobuf.Timestamp update_at = 12;
-    repeated string cols = 13;
-    repeated Condition condition = 14;
-    google.protobuf.Struct self = 15;    
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    repeated Condition condition = 15;
+    google.protobuf.Struct self = 16;    
 }
 
 message Commodity {
-    string commodity_id = 1;
-    string store_id = 2;
-    string car_id = 3;
-    string product_id = 4;
-    string sku = 5;
-    int32 count = 6;
-
-    string activity_id = 7;
-    google.protobuf.Value name = 8;
+    string normal = 1;
+    string additional = 2;
+    string giveaway = 3;
+    string sku = 4;
+    string photo = 5;
+    google.protobuf.Value name = 6;    
+    bool is_preorder = 7;
+    int32 count = 8;
     int32 price = 9;
     int32 reduce = 10;
     int32 active = 11;
-    string photo = 12;
-    
-    google.protobuf.Struct self = 13; 
+    int32 stock = 12;
 }

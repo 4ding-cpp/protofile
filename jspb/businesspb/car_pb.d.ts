@@ -21,12 +21,6 @@ export class Car extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
-  getCount(): number;
-  setCount(value: number): void;
-
-  getAmount(): number;
-  setAmount(value: number): void;
-
   getCommodityList(): Array<Commodity>;
   setCommodityList(value: Array<Commodity>): void;
   clearCommodityList(): void;
@@ -36,6 +30,15 @@ export class Car extends jspb.Message {
   setActivityList(value: Array<activity$coupon_pb.Activity>): void;
   clearActivityList(): void;
   addActivity(value?: activity$coupon_pb.Activity, index?: number): activity$coupon_pb.Activity;
+
+  getIsFreeShipping(): boolean;
+  setIsFreeShipping(value: boolean): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getCount(): number;
+  setCount(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -80,10 +83,11 @@ export namespace Car {
     customerId: string,
     couponId: string,
     state: number,
-    count: number,
-    amount: number,
     commodityList: Array<Commodity.AsObject>,
     activityList: Array<activity$coupon_pb.Activity.AsObject>,
+    isFreeShipping: boolean,
+    amount: number,
+    count: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -94,31 +98,31 @@ export namespace Car {
 }
 
 export class Commodity extends jspb.Message {
-  getCommodityId(): string;
-  setCommodityId(value: string): void;
+  getNormal(): string;
+  setNormal(value: string): void;
 
-  getStoreId(): string;
-  setStoreId(value: string): void;
+  getAdditional(): string;
+  setAdditional(value: string): void;
 
-  getCarId(): string;
-  setCarId(value: string): void;
-
-  getProductId(): string;
-  setProductId(value: string): void;
+  getGiveaway(): string;
+  setGiveaway(value: string): void;
 
   getSku(): string;
   setSku(value: string): void;
 
-  getCount(): number;
-  setCount(value: number): void;
-
-  getActivityId(): string;
-  setActivityId(value: string): void;
+  getPhoto(): string;
+  setPhoto(value: string): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
   clearName(): void;
+
+  getIsPreorder(): boolean;
+  setIsPreorder(value: boolean): void;
+
+  getCount(): number;
+  setCount(value: number): void;
 
   getPrice(): number;
   setPrice(value: number): void;
@@ -129,13 +133,8 @@ export class Commodity extends jspb.Message {
   getActive(): number;
   setActive(value: number): void;
 
-  getPhoto(): string;
-  setPhoto(value: string): void;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
+  getStock(): number;
+  setStock(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Commodity.AsObject;
@@ -147,19 +146,18 @@ export class Commodity extends jspb.Message {
 
 export namespace Commodity {
   export type AsObject = {
-    commodityId: string,
-    storeId: string,
-    carId: string,
-    productId: string,
+    normal: string,
+    additional: string,
+    giveaway: string,
     sku: string,
-    count: number,
-    activityId: string,
+    photo: string,
     name?: google_protobuf_struct_pb.Value.AsObject,
+    isPreorder: boolean,
+    count: number,
     price: number,
     reduce: number,
     active: number,
-    photo: string,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
+    stock: number,
   }
 }
 

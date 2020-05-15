@@ -50,7 +50,6 @@ service Store1RPC {
     rpc UpdateCoupon(Coupon) returns (Response);
     rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
-    rpc FindCouponUsed(Query) returns (Response);
 
     rpc LinkCustomer(CustomerLink) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
@@ -74,14 +73,9 @@ service Store1RPC {
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);
 
-    rpc CreateCar(Car) returns (Response);
-    rpc DeleteCar(Car) returns (Response);
     rpc CompleteCar(Car) returns (Response);
+    rpc DeleteCar(Car) returns (Response);
     rpc FindCar(Query) returns (Response);
-    rpc AppendCommodity(Car) returns (Response);
-    rpc SubtractCommodity(Commodity) returns (Response);
-    rpc AppendCoupon(Car) returns (Response);
-    rpc SubtractCoupon(Car) returns (Response);
 
     rpc CreateOrder(Order) returns (Response);
     rpc PaymentOrder(Order) returns (Response);

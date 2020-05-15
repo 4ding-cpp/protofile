@@ -2,7 +2,6 @@ import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
-import * as image_pb from './image_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -45,10 +44,10 @@ export class Product extends jspb.Message {
   getSpecxMap(): jspb.Map<string, Spec>;
   clearSpecxMap(): void;
 
-  getPhotoxList(): Array<Photo>;
-  setPhotoxList(value: Array<Photo>): void;
+  getPhotoxList(): Array<string>;
+  setPhotoxList(value: Array<string>): void;
   clearPhotoxList(): void;
-  addPhotox(value?: Photo, index?: number): Photo;
+  addPhotox(value: string, index?: number): void;
 
   getLink(): ProductLink | undefined;
   setLink(value?: ProductLink): void;
@@ -108,7 +107,7 @@ export namespace Product {
     isPickup: boolean,
     isLinked: boolean,
     specxMap: Array<[string, Spec.AsObject]>,
-    photoxList: Array<Photo.AsObject>,
+    photoxList: Array<string>,
     link?: ProductLink.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
@@ -157,48 +156,6 @@ export namespace Spec {
     sold: number,
     itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
     photo: string,
-  }
-}
-
-export class Photo extends jspb.Message {
-  getH(): string;
-  setH(value: string): void;
-
-  getP(): string;
-  setP(value: string): void;
-
-  getN(): string;
-  setN(value: string): void;
-
-  getE(): string;
-  setE(value: string): void;
-
-  getI(): number;
-  setI(value: number): void;
-
-  getSku(): string;
-  setSku(value: string): void;
-
-  getSource(): string;
-  setSource(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Photo.AsObject;
-  static toObject(includeInstance: boolean, msg: Photo): Photo.AsObject;
-  static serializeBinaryToWriter(message: Photo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Photo;
-  static deserializeBinaryFromReader(message: Photo, reader: jspb.BinaryReader): Photo;
-}
-
-export namespace Photo {
-  export type AsObject = {
-    h: string,
-    p: string,
-    n: string,
-    e: string,
-    i: number,
-    sku: string,
-    source: string,
   }
 }
 
@@ -254,64 +211,11 @@ export namespace ProductLink {
   }
 }
 
-export class ProductSpec extends jspb.Message {
-  getProductSpecId(): string;
-  setProductSpecId(value: string): void;
-
-  getProductId(): string;
-  setProductId(value: string): void;
-
-  getStatus(): number;
-  setStatus(value: number): void;
-
-  getSpec1(): google_protobuf_struct_pb.Value | undefined;
-  setSpec1(value?: google_protobuf_struct_pb.Value): void;
-  hasSpec1(): boolean;
-  clearSpec1(): void;
-
-  getSpec2(): google_protobuf_struct_pb.Value | undefined;
-  setSpec2(value?: google_protobuf_struct_pb.Value): void;
-  hasSpec2(): boolean;
-  clearSpec2(): void;
-
-  getSpec3(): google_protobuf_struct_pb.Value | undefined;
-  setSpec3(value?: google_protobuf_struct_pb.Value): void;
-  hasSpec3(): boolean;
-  clearSpec3(): void;
-
-  getSku(): string;
-  setSku(value: string): void;
-
-  getPhoto(): string;
-  setPhoto(value: string): void;
-
-  getImage(): image_pb.Image | undefined;
-  setImage(value?: image_pb.Image): void;
-  hasImage(): boolean;
-  clearImage(): void;
-
-  getOperator(): string;
-  setOperator(value: string): void;
-
-  getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreateAt(): boolean;
-  clearCreateAt(): void;
-
-  getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
-
-  getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
-
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
+export class ProductBatch extends jspb.Message {
+  getProductList(): Array<Product>;
+  setProductList(value: Array<Product>): void;
+  clearProductList(): void;
+  addProduct(value?: Product, index?: number): Product;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
   setSelf(value?: google_protobuf_struct_pb.Struct): void;
@@ -319,29 +223,16 @@ export class ProductSpec extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductSpec): ProductSpec.AsObject;
-  static serializeBinaryToWriter(message: ProductSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductSpec;
-  static deserializeBinaryFromReader(message: ProductSpec, reader: jspb.BinaryReader): ProductSpec;
+  toObject(includeInstance?: boolean): ProductBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductBatch): ProductBatch.AsObject;
+  static serializeBinaryToWriter(message: ProductBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductBatch;
+  static deserializeBinaryFromReader(message: ProductBatch, reader: jspb.BinaryReader): ProductBatch;
 }
 
-export namespace ProductSpec {
+export namespace ProductBatch {
   export type AsObject = {
-    productSpecId: string,
-    productId: string,
-    status: number,
-    spec1?: google_protobuf_struct_pb.Value.AsObject,
-    spec2?: google_protobuf_struct_pb.Value.AsObject,
-    spec3?: google_protobuf_struct_pb.Value.AsObject,
-    sku: string,
-    photo: string,
-    image?: image_pb.Image.AsObject,
-    operator: string,
-    createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
+    productList: Array<Product.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }

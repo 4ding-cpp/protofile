@@ -46,6 +46,9 @@ export class Activity extends jspb.Message {
   hasTarget(): boolean;
   clearTarget(): void;
 
+  getIsEnable(): boolean;
+  setIsEnable(value: boolean): void;
+
   getUsedMap(): jspb.Map<string, Used>;
   clearUsedMap(): void;
 
@@ -99,6 +102,7 @@ export namespace Activity {
     now?: Rule.AsObject,
     active?: Active.AsObject,
     target?: Target.AsObject,
+    isEnable: boolean,
     usedMap: Array<[string, Used.AsObject]>,
     labelxMap: Array<[string, number]>,
     operator: string,
@@ -153,8 +157,10 @@ export class Coupon extends jspb.Message {
   hasTarget(): boolean;
   clearTarget(): void;
 
-  getUsedMap(): jspb.Map<string, Used>;
-  clearUsedMap(): void;
+  getUsed(): google_protobuf_struct_pb.Value | undefined;
+  setUsed(value?: google_protobuf_struct_pb.Value): void;
+  hasUsed(): boolean;
+  clearUsed(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -207,7 +213,7 @@ export namespace Coupon {
     rule?: Rule.AsObject,
     active?: Active.AsObject,
     target?: Target.AsObject,
-    usedMap: Array<[string, Used.AsObject]>,
+    used?: google_protobuf_struct_pb.Value.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

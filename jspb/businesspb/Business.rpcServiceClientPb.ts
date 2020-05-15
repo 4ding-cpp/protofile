@@ -23,8 +23,7 @@ import * as label_pb from './label_pb';
 import * as store_pb from './store_pb';
 import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
-import * as stack_pb from './stack_pb';
-import * as supplier_pb from './supplier_pb';
+import * as purchase_pb from './purchase_pb';
 import * as setting_pb from './setting_pb';
 
 export class BusinessRPCClient {
@@ -1124,6 +1123,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoUploadProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product_pb.ProductBatch) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  uploadProduct(
+    request: product_pb.ProductBatch,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UploadProduct',
+      request,
+      metadata || {},
+      this.methodInfoUploadProduct,
+      callback);
+  }
+
   methodInfoUpdateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product_pb.Product) => {
@@ -1564,29 +1585,51 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoCreateStack = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: stack_pb.Stack) => {
+    (request: purchase_pb.Purchase) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createStack(
-    request: stack_pb.Stack,
+  createPurchase(
+    request: purchase_pb.Purchase,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/CreateStack',
+        '/ding4.BusinessRPC/CreatePurchase',
       request,
       metadata || {},
-      this.methodInfoCreateStack,
+      this.methodInfoCreatePurchase,
       callback);
   }
 
-  methodInfoFindStack = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: purchase_pb.Purchase) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deletePurchase(
+    request: purchase_pb.Purchase,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/DeletePurchase',
+      request,
+      metadata || {},
+      this.methodInfoDeletePurchase,
+      callback);
+  }
+
+  methodInfoFindPurchase = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1594,21 +1637,21 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findStack(
+  findPurchase(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/FindStack',
+        '/ding4.BusinessRPC/FindPurchase',
       request,
       metadata || {},
-      this.methodInfoFindStack,
+      this.methodInfoFindPurchase,
       callback);
   }
 
-  methodInfoFindProductStack = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindInventory = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1616,52 +1659,30 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findProductStack(
+  findInventory(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/FindProductStack',
+        '/ding4.BusinessRPC/FindInventory',
       request,
       metadata || {},
-      this.methodInfoFindProductStack,
-      callback);
-  }
-
-  methodInfoFindSpecStack = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findSpecStack(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindSpecStack',
-      request,
-      metadata || {},
-      this.methodInfoFindSpecStack,
+      this.methodInfoFindInventory,
       callback);
   }
 
   methodInfoCreateSupplier = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: supplier_pb.Supplier) => {
+    (request: purchase_pb.Supplier) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createSupplier(
-    request: supplier_pb.Supplier,
+    request: purchase_pb.Supplier,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1676,14 +1697,14 @@ export class BusinessRPCClient {
 
   methodInfoUpdateSupplier = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: supplier_pb.Supplier) => {
+    (request: purchase_pb.Supplier) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateSupplier(
-    request: supplier_pb.Supplier,
+    request: purchase_pb.Supplier,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1720,14 +1741,14 @@ export class BusinessRPCClient {
 
   methodInfoRecordSupplier = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: supplier_pb.Supplier) => {
+    (request: purchase_pb.Supplier) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordSupplier(
-    request: supplier_pb.Supplier,
+    request: purchase_pb.Supplier,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

@@ -18,8 +18,7 @@ import "label.proto";
 import "store.proto";
 import "remind.proto";
 import "order.proto";
-import "stack.proto";
-import "supplier.proto";
+import "purchase.proto";
 import "setting.proto";
 
 service BusinessRPC {
@@ -82,6 +81,7 @@ service BusinessRPC {
     rpc FindImage(Query) returns (Response);
 
     rpc CreateProduct(Product) returns (Response);
+    rpc UploadProduct(ProductBatch) returns (Response);
     rpc UpdateProduct(Product) returns (Response);
     rpc FindProduct(Query) returns (Response);
     rpc RecordProduct(Product) returns (Response);
@@ -114,10 +114,10 @@ service BusinessRPC {
     rpc FindOrder(Query) returns (Response);
     rpc RecordOrder(Order) returns (Response);
 
-    rpc CreateStack(Stack) returns (Response);
-    rpc FindStack(Query) returns (Response);
-    rpc FindProductStack(Query) returns (Response);
-    rpc FindSpecStack(Query) returns (Response);
+    rpc CreatePurchase(Purchase) returns (Response);
+    rpc DeletePurchase(Purchase) returns (Response);
+    rpc FindPurchase(Query) returns (Response);
+    rpc FindInventory(Query) returns (Response);
 
     rpc CreateSupplier(Supplier) returns (Response);
     rpc UpdateSupplier(Supplier) returns (Response);

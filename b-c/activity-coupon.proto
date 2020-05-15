@@ -18,15 +18,16 @@ message Activity {
     Rule now = 7;
     Active active = 8;
     Target target = 9;
-    map<string, Used> used = 10;
+    bool is_enable = 10;
+    map<string, Used> used = 11;
 
-    map<string, int32> labelx = 11;
-    string operator = 12;
-    google.protobuf.Timestamp create_at = 13;
-    google.protobuf.Timestamp update_at = 14;
-    repeated string cols = 15;
-    repeated Condition condition = 16;
-    google.protobuf.Struct self = 17;
+    map<string, int32> labelx = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }
 
 message Coupon {
@@ -40,7 +41,7 @@ message Coupon {
     Rule rule = 8;
     Active active = 9;
     Target target = 10;
-    map<string, Used> used = 11;
+    google.protobuf.Value used = 11;
 
     map<string, int32> labelx = 12;
     string operator = 13;

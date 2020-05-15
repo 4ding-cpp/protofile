@@ -7,6 +7,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 import "sql.proto";
 import "customer.proto";
 import "car.proto";
+import "activity-coupon.proto";
 import "order.proto";
 
 service ShopRPC {
@@ -31,6 +32,9 @@ service ShopRPC {
     // 商品規格庫存
     rpc FindSpecStack(Query) returns (Response);
 
+    // 兌換折價券
+    rpc ExchangeCoupon(Coupon) returns (Response);
+
     // State => 1.選購 2.鎖定 3.取消 6.完成訂單
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
@@ -38,10 +42,6 @@ service ShopRPC {
     rpc UndoneCar(Query) returns (Response);
     // 清空購物車
     rpc DeleteCar(Car) returns (Response);
-    // 購物車使用的折價券
-    rpc AppendDiscount(Car) returns (Response);
-    // 刪除購物車使用的折價券
-    rpc SubtractDiscount(Car) returns (Response);
 
     // 建立訂單
     rpc CreateOrder(Order) returns (Response);
