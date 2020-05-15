@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Inventory {
+    int64 id = 1;
+    string sku = 2;
+    string product_id = 3;
+    string order_id = 4;
+    string store_id = 5;
+    double cost = 6;
+    int32 stock = 7;
+    int32 sold = 8;
+    double profit = 9;
+
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    google.protobuf.Struct self = 13;
+}
+

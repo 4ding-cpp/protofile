@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "inventory.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Purchase {
+    string purchase_id = 1;
+    string supplier_id = 2;
+    repeated Inventory inventory = 3;
+
+    string operator = 4;
+    google.protobuf.Timestamp create_at = 5;
+    google.protobuf.Timestamp update_at = 6;
+    google.protobuf.Struct self = 7;  
+}
+
+message Supplier {
+    string supplier_id = 1;
+    string name = 2;
+    string phone = 3;
+    string remark = 4;
+
+    map<string, int32> labelx = 5;
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    repeated string cols = 9;
+    repeated Condition condition = 10;
+    google.protobuf.Struct self = 11;
+}
