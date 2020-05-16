@@ -30,103 +30,170 @@ service BusinessRPC {
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
 
+    // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);
+    // 取消未繳款訂單
     rpc CancelPoint(Point) returns (Response);
+    // 訂單已匯款
     rpc ConfirmPoint(Point) returns (Response);
+    // 帳單扣繳
     rpc ConfirmPointBill(PointBill) returns (Response);
+    // 儲值訂單列表
     rpc FindPoint(Query) returns (Response);
+    // 點數增減紀錄
     rpc FindPointFlow(Query) returns (Response);
+    // 帳單列表
     rpc FindPointBill(Query) returns (Response);
+    // 帳單明細
     rpc FindPointDetail(Query) returns (Response);
     
+    // 新增子帳號
     rpc CreateBusiness(Business) returns (Response);
+    // 更新子帳號
     rpc UpdateBusiness(Business) returns (Response);
+    // 子帳號列表
     rpc FindBusiness(Query) returns (Response);
+    // 子帳號修改紀錄
     rpc RecordBusiness(Business) returns (Response);
+    // 子帳號登入紀錄
     rpc SignBusiness(Business) returns (Response);
 
+    // 檢查信箱及電話是否存在
     rpc ExistsManager(Manager) returns (Response);
+    // 建立商店管理員
     rpc CreateManager(Manager) returns (Response);
+    // 更新商店管理員
     rpc UpdateManager(Manager) returns (Response);
+    // 商店管理員列表
     rpc FindManager(Query) returns (Response);
+    // 商店管理員修改紀錄
     rpc RecordManager(Manager) returns (Response);
+    // 商店管理員登入紀錄
     rpc SignManager(Manager) returns (Response);
 
+    // 新增標籤
     rpc CreateLabel(Label) returns (Response);
+    // 更新標籤
     rpc UpdateLabel(Label) returns (Response);
+    // 刪除標籤
     rpc DeleteLabel(Label) returns (Response);
+    // 替 XX 打上此標籤
     rpc AppendLabel(Label) returns (Response);
+    // 移除 XX 上的此標籤
     rpc SubtractLabel(Label) returns (Response);
+    // 標籤列表
     rpc FindLabel(Query) returns (Response);
+    // 標籤修改紀錄
     rpc RecordLabel(Label) returns (Response);
 
+    // 建立對外開放鏈結
     rpc CreateLinker(Linker) returns (Response);
+    // 更新對外開放鏈結
     rpc UpdateLinker(Linker) returns (Response);
+    // 鏈結列表
     rpc FindLinker(Query) returns (Response);    
+    // 鏈結修改紀錄
     rpc RecordLinker(Linker) returns (Response);
 
+    // 檢查信箱及電話是否存在
     rpc ExistsCustomer(Customer) returns (Response);
+    // 建立會員
     rpc CreateCustomer(Customer) returns (Response);
+    // 批次匯入
     rpc UploadCustomer(CustomerBatch) returns (Response);
+    // 更新會員
     rpc UpdateCustomer(Customer) returns (Response);
+    // 會員列表
     rpc FindCustomer(Query) returns (Response);
+    // 會員修改紀錄
     rpc RecordCustomer(Customer) returns (Response);
+    // 會員登入紀錄
     rpc SignCustomer(Customer) returns (Response);
+    // 連結會員至 XX 商店
     rpc LinkCustomer(CustomerLink) returns (Response);
+    // 設定會員等級
     rpc SetCustomerLevel(CustomerLevel) returns (Response);
+    // 會員登入紀錄
     rpc SignInCustomer(Customer) returns (Response);
     
 
     // 檢視圖庫
     rpc FindImage(Query) returns (Response);
 
+    // 新增商品
     rpc CreateProduct(Product) returns (Response);
+    // 批次匯入
     rpc UploadProduct(ProductBatch) returns (Response);
+    // 修改商品
     rpc UpdateProduct(Product) returns (Response);
+    // 商品列表
     rpc FindProduct(Query) returns (Response);
+    // 商品修改紀錄
     rpc RecordProduct(Product) returns (Response);
+    // 連結商品至 XX 商店
     rpc LinkProduct(ProductLink) returns (Response);
+    // 替商品分類
     rpc AddProductToClass(ProductClass) returns (Response);
+    // 移除商品的分類
     rpc DelProductFromClass(ProductClass) returns (Response);
 
-//    rpc CreateProductSpec(ProductSpec) returns (Response);
-//    rpc UpdateProductSpec(ProductSpec) returns (Response);
-//    rpc FindProductSpec(Query) returns (Response);
-//    rpc RecordProductSpec(ProductSpec) returns (Response);
-//    rpc CreateProductSpecImage(Image) returns (Response);
-//    rpc UpdateProductSpecImage(Image) returns (Response);
-//    rpc DeleteProductSpecImage(Image) returns (Response);    
-
+    // 註冊商店 (註冊須審核完成後預設為關閉)
     rpc RegisterStore(Store) returns (Response);
+    // 打開商店前台
     rpc OpenStore(Store) returns (Response);
+    // !!目前沒用到
     rpc CreateStore(Store) returns (Response);
+    //  更新商店
     rpc UpdateStore(Store) returns (Response);
+    // 商店列表
     rpc FindStore(Query) returns (Response);
+    // 商店修改紀錄
     rpc RecordStore(Store) returns (Response);
 
+    // 購物狀態提醒
     rpc CreateRemind(Remind) returns (Response);
+    // 更新購物狀態提醒
     rpc UpdateRemind(Remind) returns (Response);
+    // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
+    // 購物狀態提醒修改紀錄
     rpc RecordRemind(Remind) returns (Response);
 
+    // 新增訂單
     rpc CreateOrder(Order) returns (Response);
+    // 訂單付款
     rpc PaymentOrder(Order) returns (Response);
+    // 定單列表
     rpc FindOrder(Query) returns (Response);
+    // 訂單修改紀錄
     rpc RecordOrder(Order) returns (Response);
 
+    // 新增進貨單
     rpc CreatePurchase(Purchase) returns (Response);
+    // 刪除進貨單
     rpc DeletePurchase(Purchase) returns (Response);
+    // 進貨單列表
     rpc FindPurchase(Query) returns (Response);
+    // 庫存記錄列表
     rpc FindInventory(Query) returns (Response);
 
+    // 建立供應商資訊
     rpc CreateSupplier(Supplier) returns (Response);
+    // 更新供應商資訊
     rpc UpdateSupplier(Supplier) returns (Response);
+    // 供應商資訊列表
     rpc FindSupplier(Query) returns (Response);
+    // 供應商資訊修改紀錄
     rpc RecordSupplier(Supplier) returns (Response);
 
+    // 新增系統參數
     rpc CreateSetting(Setting) returns (Response);
+    // 修改系統參數
     rpc UpdateSetting(Setting) returns (Response);
+    // 移除系統參數
     rpc DeleteSetting(Setting) returns (Response);
+    // 系統參數列表
     rpc FindSetting(Query) returns (Response);
+    // 系統參數修改紀錄
     rpc RecordSetting(Setting) returns (Response);
 }

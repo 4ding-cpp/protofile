@@ -8,8 +8,8 @@ export class Customer extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
   getPhone(): string;
   setPhone(value: string): void;
@@ -32,8 +32,10 @@ export class Customer extends jspb.Message {
   getComeFrom(): string;
   setComeFrom(value: string): void;
 
-  getStoreInfoMap(): jspb.Map<string, CustomerStoreInfo>;
-  clearStoreInfoMap(): void;
+  getLink(): CustomerLink | undefined;
+  setLink(value?: CustomerLink): void;
+  hasLink(): boolean;
+  clearLink(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -77,7 +79,7 @@ export class Customer extends jspb.Message {
 export namespace Customer {
   export type AsObject = {
     customerId: string,
-    status: string,
+    status: number,
     phone: string,
     email: string,
     name: string,
@@ -85,7 +87,7 @@ export namespace Customer {
     sex: number,
     password: string,
     comeFrom: string,
-    storeInfoMap: Array<[string, CustomerStoreInfo.AsObject]>,
+    link?: CustomerLink.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -96,25 +98,61 @@ export namespace Customer {
   }
 }
 
-export class CustomerStoreInfo extends jspb.Message {
+export class CustomerLink extends jspb.Message {
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
+
   getLevelId(): string;
   setLevelId(value: string): void;
 
-  getReceive(): string;
-  setReceive(value: string): void;
+  getIsReceive(): boolean;
+  setIsReceive(value: boolean): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomerStoreInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomerStoreInfo): CustomerStoreInfo.AsObject;
-  static serializeBinaryToWriter(message: CustomerStoreInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomerStoreInfo;
-  static deserializeBinaryFromReader(message: CustomerStoreInfo, reader: jspb.BinaryReader): CustomerStoreInfo;
+  toObject(includeInstance?: boolean): CustomerLink.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomerLink): CustomerLink.AsObject;
+  static serializeBinaryToWriter(message: CustomerLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomerLink;
+  static deserializeBinaryFromReader(message: CustomerLink, reader: jspb.BinaryReader): CustomerLink;
 }
 
-export namespace CustomerStoreInfo {
+export namespace CustomerLink {
   export type AsObject = {
+    customerId: string,
     levelId: string,
-    receive: string,
+    isReceive: boolean,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class CustomerBatch extends jspb.Message {
+  getCustomerList(): Array<Customer>;
+  setCustomerList(value: Array<Customer>): void;
+  clearCustomerList(): void;
+  addCustomer(value?: Customer, index?: number): Customer;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomerBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomerBatch): CustomerBatch.AsObject;
+  static serializeBinaryToWriter(message: CustomerBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomerBatch;
+  static deserializeBinaryFromReader(message: CustomerBatch, reader: jspb.BinaryReader): CustomerBatch;
+}
+
+export namespace CustomerBatch {
+  export type AsObject = {
+    customerList: Array<Customer.AsObject>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

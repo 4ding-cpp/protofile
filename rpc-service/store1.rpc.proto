@@ -32,63 +32,78 @@ service Store1RPC {
     rpc ChangeWhitelist(Manager) returns (Response);
     rpc FindPermission(Query) returns (Response);
 
+    // 標籤增減刪修讀寫
     rpc CreateLabel(Label) returns (Response);
     rpc UpdateLabel(Label) returns (Response);
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
     rpc FindLabel(Query) returns (Response);
 
+    // 建立活動
     rpc CreateActivity(Activity) returns (Response);
     rpc UpdateActivity(Activity) returns (Response);
     rpc FindActivity(Query) returns (Response);
-    //rpc AppendActivityProduct(ActivityProduct) returns (Response);
-    //rpc SubstractActivityProduct(ActivityProduct) returns (Response);
-    //rpc FindActivityProduct(ActivityProduct) returns (Response);
 
+    // 建立折價券及配發及兌換
     rpc CreateCoupon(Coupon) returns (Response);
     rpc DistributeCoupon(Coupon) returns (Response);
     rpc UpdateCoupon(Coupon) returns (Response);
     rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
 
+    // 連結會員
     rpc LinkCustomer(CustomerLink) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
 
+    // 會員等級
     rpc CreateCustomerLevel(CustomerLevel) returns (Response);
     rpc UpdateCustomerLevel(CustomerLevel) returns (Response);
     rpc SetCustomerLevel(CustomerLevel) returns (Response);
     rpc FindCustomerLevel(Query) returns (Response);
 
+    // 連結商品
     rpc FindProduct(Query) returns (Response);
     rpc LinkProduct(ProductLink) returns (Response);
     rpc FindProductLinked(Query) returns (Response);
     rpc FindProductByClass(ProductClass) returns (Response);
     
+    // 建立商品類別
     rpc CreateProductClass(ProductClass) returns (Response);
     rpc UpdateProductClass(ProductClass) returns (Response);
     rpc FindProductClass(Query) returns (Response);
     rpc AddProductToClass(ProductClass) returns (Response);
     rpc DelProductFromClass(ProductClass) returns (Response);
 
+    // 
     rpc FindProductStack(Query) returns (Response);
     rpc FindSpecStack(Query) returns (Response);
 
+    // 檢視購物車(包含活動及折價券計算後回傳)
     rpc CompleteCar(Car) returns (Response);
+    // 清空購物車
     rpc DeleteCar(Car) returns (Response);
+    // 購物車列表
     rpc FindCar(Query) returns (Response);
 
+    // 新增訂單
     rpc CreateOrder(Order) returns (Response);
+    // 訂單付款
     rpc PaymentOrder(Order) returns (Response);
+    // 定單列表
     rpc FindOrder(Query) returns (Response);
     
+    // 修改購物狀態提醒
     rpc UpdateRemind(Remind) returns (Response);
+    // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
 
+    // 系統參數刪修讀寫
     rpc CreateSetting(Setting) returns (Response);
     rpc UpdateSetting(Setting) returns (Response);
     rpc DeleteSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
 
+    // 首頁布局刪修讀寫
     rpc CreateWebLayout(WebLayout) returns (Response);
     rpc UpdateWebLayout(WebLayout) returns (Response);
     rpc DeleteWebLayout(WebLayout) returns (Response);
@@ -97,27 +112,34 @@ service Store1RPC {
     rpc UpdateWebLayoutImage(Image) returns (Response);
     rpc DeleteWebLayoutImage(Image) returns (Response);
 
+    // 頁面刪修讀寫
     rpc CreateWebPage(WebPage) returns (Response);
     rpc UpdateWebPage(WebPage) returns (Response);
     rpc DeleteWebPage(WebPage) returns (Response);
     rpc FindWebPage(Query) returns (Response);
 
+    // 標籤及頁尾刪修讀寫
     rpc CreateWebItem(WebItem) returns (Response);
     rpc UpdateWebItem(WebItem) returns (Response);
     rpc DeleteWebItem(WebItem) returns (Response);
     rpc FindWebItem(Query) returns (Response);
 
+    // 更新主頁面相關資訊 logo favicon seo 相關
     rpc UpdateWebBase(WebBase) returns (Response);
+    // 列出主頁面資訊
     rpc FindWebBase(Query) returns (Response);
 
+    // 文檔樣本
     rpc CreateTemplate(Template) returns (Response);
     rpc UpdateTemplate(Template) returns (Response);
     rpc FindTemplate(Query) returns (Response);
 
+    // 發送電子報
     rpc CreateEDM(Message) returns (Response);
     rpc CancelEDM(Message) returns (Response);
     rpc FindEDM(Query) returns (Response);
 
+    // 發送簡訊
     rpc CreateSMS(Message) returns (Response);
     rpc CancelSMS(Message) returns (Response);
     rpc FindSMS(Query) returns (Response);
