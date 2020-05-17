@@ -6,7 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "seo.proto";
 import "sql.proto";
-import "0-submessage.proto";
+import "a-submessage.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 

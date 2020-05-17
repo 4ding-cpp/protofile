@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var 0$submessage_pb = require('./0-submessage_pb.js');
-goog.object.extend(proto, 0$submessage_pb);
+var a$submessage_pb = require('./a-submessage_pb.js');
+goog.object.extend(proto, a$submessage_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -108,10 +108,10 @@ proto.ding4.Activity.toObject = function(includeInstance, msg) {
     beginAt: (f = msg.getBeginAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endAt: (f = msg.getEndAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    rule: (f = msg.getRule()) && 0$submessage_pb.Rule.toObject(includeInstance, f),
-    now: (f = msg.getNow()) && 0$submessage_pb.Rule.toObject(includeInstance, f),
-    active: (f = msg.getActive()) && 0$submessage_pb.Active.toObject(includeInstance, f),
-    target: (f = msg.getTarget()) && 0$submessage_pb.ProductTarget.toObject(includeInstance, f),
+    rule: (f = msg.getRule()) && a$submessage_pb.Rule.toObject(includeInstance, f),
+    now: (f = msg.getNow()) && a$submessage_pb.Rule.toObject(includeInstance, f),
+    active: (f = msg.getActive()) && a$submessage_pb.Active.toObject(includeInstance, f),
+    target: (f = msg.getTarget()) && a$submessage_pb.ProductTarget.toObject(includeInstance, f),
     isEnable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     usedMap: (f = msg.getUsedMap()) ? f.toObject(includeInstance, proto.ding4.Used.toObject) : [],
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -182,23 +182,23 @@ proto.ding4.Activity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 6:
-      var value = new 0$submessage_pb.Rule;
-      reader.readMessage(value,0$submessage_pb.Rule.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Rule;
+      reader.readMessage(value,a$submessage_pb.Rule.deserializeBinaryFromReader);
       msg.setRule(value);
       break;
     case 7:
-      var value = new 0$submessage_pb.Rule;
-      reader.readMessage(value,0$submessage_pb.Rule.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Rule;
+      reader.readMessage(value,a$submessage_pb.Rule.deserializeBinaryFromReader);
       msg.setNow(value);
       break;
     case 8:
-      var value = new 0$submessage_pb.Active;
-      reader.readMessage(value,0$submessage_pb.Active.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Active;
+      reader.readMessage(value,a$submessage_pb.Active.deserializeBinaryFromReader);
       msg.setActive(value);
       break;
     case 9:
-      var value = new 0$submessage_pb.ProductTarget;
-      reader.readMessage(value,0$submessage_pb.ProductTarget.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.ProductTarget;
+      reader.readMessage(value,a$submessage_pb.ProductTarget.deserializeBinaryFromReader);
       msg.setTarget(value);
       break;
     case 10:
@@ -317,7 +317,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       6,
       f,
-      0$submessage_pb.Rule.serializeBinaryToWriter
+      a$submessage_pb.Rule.serializeBinaryToWriter
     );
   }
   f = message.getNow();
@@ -325,7 +325,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       7,
       f,
-      0$submessage_pb.Rule.serializeBinaryToWriter
+      a$submessage_pb.Rule.serializeBinaryToWriter
     );
   }
   f = message.getActive();
@@ -333,7 +333,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       8,
       f,
-      0$submessage_pb.Active.serializeBinaryToWriter
+      a$submessage_pb.Active.serializeBinaryToWriter
     );
   }
   f = message.getTarget();
@@ -341,7 +341,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       9,
       f,
-      0$submessage_pb.ProductTarget.serializeBinaryToWriter
+      a$submessage_pb.ProductTarget.serializeBinaryToWriter
     );
   }
   f = message.getIsEnable();
@@ -561,7 +561,7 @@ proto.ding4.Activity.prototype.hasName = function() {
  */
 proto.ding4.Activity.prototype.getRule = function() {
   return /** @type{?proto.ding4.Rule} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.Rule, 6));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 6));
 };
 
 
@@ -598,7 +598,7 @@ proto.ding4.Activity.prototype.hasRule = function() {
  */
 proto.ding4.Activity.prototype.getNow = function() {
   return /** @type{?proto.ding4.Rule} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.Rule, 7));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 7));
 };
 
 
@@ -635,7 +635,7 @@ proto.ding4.Activity.prototype.hasNow = function() {
  */
 proto.ding4.Activity.prototype.getActive = function() {
   return /** @type{?proto.ding4.Active} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.Active, 8));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Active, 8));
 };
 
 
@@ -672,7 +672,7 @@ proto.ding4.Activity.prototype.hasActive = function() {
  */
 proto.ding4.Activity.prototype.getTarget = function() {
   return /** @type{?proto.ding4.ProductTarget} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.ProductTarget, 9));
+    jspb.Message.getWrapperField(this, a$submessage_pb.ProductTarget, 9));
 };
 
 
@@ -1015,9 +1015,9 @@ proto.ding4.Coupon.toObject = function(includeInstance, msg) {
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     isAuto: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     code: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    rule: (f = msg.getRule()) && 0$submessage_pb.Rule.toObject(includeInstance, f),
-    active: (f = msg.getActive()) && 0$submessage_pb.Active.toObject(includeInstance, f),
-    target: (f = msg.getTarget()) && 0$submessage_pb.CustomerTarget.toObject(includeInstance, f),
+    rule: (f = msg.getRule()) && a$submessage_pb.Rule.toObject(includeInstance, f),
+    active: (f = msg.getActive()) && a$submessage_pb.Active.toObject(includeInstance, f),
+    target: (f = msg.getTarget()) && a$submessage_pb.CustomerTarget.toObject(includeInstance, f),
     used: (f = msg.getUsed()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 13, ""),
@@ -1095,18 +1095,18 @@ proto.ding4.Coupon.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCode(value);
       break;
     case 8:
-      var value = new 0$submessage_pb.Rule;
-      reader.readMessage(value,0$submessage_pb.Rule.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Rule;
+      reader.readMessage(value,a$submessage_pb.Rule.deserializeBinaryFromReader);
       msg.setRule(value);
       break;
     case 9:
-      var value = new 0$submessage_pb.Active;
-      reader.readMessage(value,0$submessage_pb.Active.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Active;
+      reader.readMessage(value,a$submessage_pb.Active.deserializeBinaryFromReader);
       msg.setActive(value);
       break;
     case 10:
-      var value = new 0$submessage_pb.CustomerTarget;
-      reader.readMessage(value,0$submessage_pb.CustomerTarget.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.CustomerTarget;
+      reader.readMessage(value,a$submessage_pb.CustomerTarget.deserializeBinaryFromReader);
       msg.setTarget(value);
       break;
     case 11:
@@ -1234,7 +1234,7 @@ proto.ding4.Coupon.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       8,
       f,
-      0$submessage_pb.Rule.serializeBinaryToWriter
+      a$submessage_pb.Rule.serializeBinaryToWriter
     );
   }
   f = message.getActive();
@@ -1242,7 +1242,7 @@ proto.ding4.Coupon.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       9,
       f,
-      0$submessage_pb.Active.serializeBinaryToWriter
+      a$submessage_pb.Active.serializeBinaryToWriter
     );
   }
   f = message.getTarget();
@@ -1250,7 +1250,7 @@ proto.ding4.Coupon.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       10,
       f,
-      0$submessage_pb.CustomerTarget.serializeBinaryToWriter
+      a$submessage_pb.CustomerTarget.serializeBinaryToWriter
     );
   }
   f = message.getUsed();
@@ -1503,7 +1503,7 @@ proto.ding4.Coupon.prototype.setCode = function(value) {
  */
 proto.ding4.Coupon.prototype.getRule = function() {
   return /** @type{?proto.ding4.Rule} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.Rule, 8));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 8));
 };
 
 
@@ -1540,7 +1540,7 @@ proto.ding4.Coupon.prototype.hasRule = function() {
  */
 proto.ding4.Coupon.prototype.getActive = function() {
   return /** @type{?proto.ding4.Active} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.Active, 9));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Active, 9));
 };
 
 
@@ -1577,7 +1577,7 @@ proto.ding4.Coupon.prototype.hasActive = function() {
  */
 proto.ding4.Coupon.prototype.getTarget = function() {
   return /** @type{?proto.ding4.CustomerTarget} */ (
-    jspb.Message.getWrapperField(this, 0$submessage_pb.CustomerTarget, 10));
+    jspb.Message.getWrapperField(this, a$submessage_pb.CustomerTarget, 10));
 };
 
 

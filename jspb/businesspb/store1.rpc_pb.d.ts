@@ -12,12 +12,9 @@ import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
-import * as image_pb from './image_pb';
 import * as setting_pb from './setting_pb';
-import * as web$layout_pb from './web-layout_pb';
-import * as web$page_pb from './web-page_pb';
-import * as web$item_pb from './web-item_pb';
-import * as web$base_pb from './web-base_pb';
+import * as webpage_pb from './webpage_pb';
+import * as website_pb from './website_pb';
 import * as template_pb from './template_pb';
 import * as message_pb from './message_pb';
 

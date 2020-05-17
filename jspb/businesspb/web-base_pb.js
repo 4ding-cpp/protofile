@@ -16,8 +16,6 @@ var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var image_pb = require('./image_pb.js');
-goog.object.extend(proto, image_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -89,8 +87,8 @@ proto.ding4.WebBase.toObject = function(includeInstance, msg) {
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     logoId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     faviconId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    logo: (f = msg.getLogo()) && image_pb.Image.toObject(includeInstance, f),
-    favicon: (f = msg.getFavicon()) && image_pb.Image.toObject(includeInstance, f),
+    logo: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    favicon: jspb.Message.getFieldWithDefault(msg, 8, ""),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -161,13 +159,11 @@ proto.ding4.WebBase.deserializeBinaryFromReader = function(msg, reader) {
       msg.setFaviconId(value);
       break;
     case 7:
-      var value = new image_pb.Image;
-      reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setLogo(value);
       break;
     case 8:
-      var value = new image_pb.Image;
-      reader.readMessage(value,image_pb.Image.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setFavicon(value);
       break;
     case 69:
@@ -277,19 +273,17 @@ proto.ding4.WebBase.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getLogo();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       7,
-      f,
-      image_pb.Image.serializeBinaryToWriter
+      f
     );
   }
   f = message.getFavicon();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       8,
-      f,
-      image_pb.Image.serializeBinaryToWriter
+      f
     );
   }
   f = message.getLabelxMap(true);
@@ -473,76 +467,38 @@ proto.ding4.WebBase.prototype.setFaviconId = function(value) {
 
 
 /**
- * optional Image logo = 7;
- * @return {?proto.ding4.Image}
+ * optional string logo = 7;
+ * @return {string}
  */
 proto.ding4.WebBase.prototype.getLogo = function() {
-  return /** @type{?proto.ding4.Image} */ (
-    jspb.Message.getWrapperField(this, image_pb.Image, 7));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {?proto.ding4.Image|undefined} value
+ * @param {string} value
  * @return {!proto.ding4.WebBase} returns this
-*/
+ */
 proto.ding4.WebBase.prototype.setLogo = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.WebBase} returns this
- */
-proto.ding4.WebBase.prototype.clearLogo = function() {
-  return this.setLogo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.WebBase.prototype.hasLogo = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional Image favicon = 8;
- * @return {?proto.ding4.Image}
+ * optional string favicon = 8;
+ * @return {string}
  */
 proto.ding4.WebBase.prototype.getFavicon = function() {
-  return /** @type{?proto.ding4.Image} */ (
-    jspb.Message.getWrapperField(this, image_pb.Image, 8));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /**
- * @param {?proto.ding4.Image|undefined} value
+ * @param {string} value
  * @return {!proto.ding4.WebBase} returns this
-*/
+ */
 proto.ding4.WebBase.prototype.setFavicon = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.WebBase} returns this
- */
-proto.ding4.WebBase.prototype.clearFavicon = function() {
-  return this.setFavicon(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.WebBase.prototype.hasFavicon = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

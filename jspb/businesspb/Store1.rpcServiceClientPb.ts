@@ -21,12 +21,9 @@ import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
-import * as image_pb from './image_pb';
 import * as setting_pb from './setting_pb';
-import * as web$layout_pb from './web-layout_pb';
-import * as web$page_pb from './web-page_pb';
-import * as web$item_pb from './web-item_pb';
-import * as web$base_pb from './web-base_pb';
+import * as webpage_pb from './webpage_pb';
+import * as website_pb from './website_pb';
 import * as template_pb from './template_pb';
 import * as message_pb from './message_pb';
 
@@ -1083,170 +1080,16 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateWebLayout = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$layout_pb.WebLayout) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createWebLayout(
-    request: web$layout_pb.WebLayout,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/CreateWebLayout',
-      request,
-      metadata || {},
-      this.methodInfoCreateWebLayout,
-      callback);
-  }
-
-  methodInfoUpdateWebLayout = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$layout_pb.WebLayout) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateWebLayout(
-    request: web$layout_pb.WebLayout,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateWebLayout',
-      request,
-      metadata || {},
-      this.methodInfoUpdateWebLayout,
-      callback);
-  }
-
-  methodInfoDeleteWebLayout = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$layout_pb.WebLayout) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteWebLayout(
-    request: web$layout_pb.WebLayout,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DeleteWebLayout',
-      request,
-      metadata || {},
-      this.methodInfoDeleteWebLayout,
-      callback);
-  }
-
-  methodInfoFindWebLayout = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findWebLayout(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindWebLayout',
-      request,
-      metadata || {},
-      this.methodInfoFindWebLayout,
-      callback);
-  }
-
-  methodInfoCreateWebLayoutImage = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: image_pb.Image) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createWebLayoutImage(
-    request: image_pb.Image,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/CreateWebLayoutImage',
-      request,
-      metadata || {},
-      this.methodInfoCreateWebLayoutImage,
-      callback);
-  }
-
-  methodInfoUpdateWebLayoutImage = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: image_pb.Image) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateWebLayoutImage(
-    request: image_pb.Image,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateWebLayoutImage',
-      request,
-      metadata || {},
-      this.methodInfoUpdateWebLayoutImage,
-      callback);
-  }
-
-  methodInfoDeleteWebLayoutImage = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: image_pb.Image) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteWebLayoutImage(
-    request: image_pb.Image,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DeleteWebLayoutImage',
-      request,
-      metadata || {},
-      this.methodInfoDeleteWebLayoutImage,
-      callback);
-  }
-
   methodInfoCreateWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: web$page_pb.WebPage) => {
+    (request: webpage_pb.WebPage) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createWebPage(
-    request: web$page_pb.WebPage,
+    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1261,14 +1104,14 @@ export class Store1RPCClient {
 
   methodInfoUpdateWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: web$page_pb.WebPage) => {
+    (request: webpage_pb.WebPage) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateWebPage(
-    request: web$page_pb.WebPage,
+    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1283,14 +1126,14 @@ export class Store1RPCClient {
 
   methodInfoDeleteWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: web$page_pb.WebPage) => {
+    (request: webpage_pb.WebPage) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   deleteWebPage(
-    request: web$page_pb.WebPage,
+    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1325,73 +1168,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateWebItem = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$item_pb.WebItem) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createWebItem(
-    request: web$item_pb.WebItem,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/CreateWebItem',
-      request,
-      metadata || {},
-      this.methodInfoCreateWebItem,
-      callback);
-  }
-
-  methodInfoUpdateWebItem = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$item_pb.WebItem) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateWebItem(
-    request: web$item_pb.WebItem,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateWebItem',
-      request,
-      metadata || {},
-      this.methodInfoUpdateWebItem,
-      callback);
-  }
-
-  methodInfoDeleteWebItem = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: web$item_pb.WebItem) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteWebItem(
-    request: web$item_pb.WebItem,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DeleteWebItem',
-      request,
-      metadata || {},
-      this.methodInfoDeleteWebItem,
-      callback);
-  }
-
-  methodInfoFindWebItem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1399,43 +1176,43 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findWebItem(
+  findWebsite(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindWebItem',
+        '/ding4.Store1RPC/FindWebsite',
       request,
       metadata || {},
-      this.methodInfoFindWebItem,
+      this.methodInfoFindWebsite,
       callback);
   }
 
-  methodInfoUpdateWebBase = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: web$base_pb.WebBase) => {
+    (request: website_pb.Website) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  updateWebBase(
-    request: web$base_pb.WebBase,
+  updateWebsite(
+    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/UpdateWebBase',
+        '/ding4.Store1RPC/UpdateWebsite',
       request,
       metadata || {},
-      this.methodInfoUpdateWebBase,
+      this.methodInfoUpdateWebsite,
       callback);
   }
 
-  methodInfoFindWebBase = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindMenu = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1443,17 +1220,127 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findWebBase(
+  findMenu(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindWebBase',
+        '/ding4.Store1RPC/FindMenu',
       request,
       metadata || {},
-      this.methodInfoFindWebBase,
+      this.methodInfoFindMenu,
+      callback);
+  }
+
+  methodInfoUpdateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: website_pb.Website) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateMenu(
+    request: website_pb.Website,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateMenu',
+      request,
+      metadata || {},
+      this.methodInfoUpdateMenu,
+      callback);
+  }
+
+  methodInfoFindFooter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findFooter(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindFooter',
+      request,
+      metadata || {},
+      this.methodInfoFindFooter,
+      callback);
+  }
+
+  methodInfoUpdateFooter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: website_pb.Website) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateFooter(
+    request: website_pb.Website,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateFooter',
+      request,
+      metadata || {},
+      this.methodInfoUpdateFooter,
+      callback);
+  }
+
+  methodInfoFindLayout = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findLayout(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindLayout',
+      request,
+      metadata || {},
+      this.methodInfoFindLayout,
+      callback);
+  }
+
+  methodInfoUpdateLayout = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: website_pb.Website) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateLayout(
+    request: website_pb.Website,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateLayout',
+      request,
+      metadata || {},
+      this.methodInfoUpdateLayout,
       callback);
   }
 

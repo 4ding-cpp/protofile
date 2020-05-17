@@ -35,11 +35,12 @@ message Commodity {
     string giveaway = 3;
     string sku = 4;
     string photo = 5;
-    google.protobuf.Value name = 6;    
-    bool is_preorder = 7;
-    int32 count = 8;
-    int32 price = 9;
-    int32 reduce = 10;
-    int32 active = 11;
-    int32 stock = 12;
+    google.protobuf.Value name = 6;
+    google.protobuf.Value itemx = 7;
+    bool is_preorder = 8;
+    int32 count = 9;
+    int32 price = 10;
+    int32 reduce = 11;
+    int32 active = 12;
+    int32 stock = 13;
 }

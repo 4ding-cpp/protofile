@@ -840,12 +840,13 @@ proto.ding4.Commodity.toObject = function(includeInstance, msg) {
     sku: jspb.Message.getFieldWithDefault(msg, 4, ""),
     photo: jspb.Message.getFieldWithDefault(msg, 5, ""),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    count: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    reduce: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    active: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    stock: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    itemx: (f = msg.getItemx()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    count: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    reduce: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    active: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    stock: jspb.Message.getFieldWithDefault(msg, 13, 0)
   };
 
   if (includeInstance) {
@@ -908,26 +909,31 @@ proto.ding4.Commodity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 7:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setItemx(value);
+      break;
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsPreorder(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCount(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setReduce(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setActive(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setStock(value);
       break;
@@ -1003,45 +1009,53 @@ proto.ding4.Commodity.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
+  f = message.getItemx();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
   f = message.getIsPreorder();
   if (f) {
     writer.writeBool(
-      7,
+      8,
       f
     );
   }
   f = message.getCount();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      9,
       f
     );
   }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
-      9,
+      10,
       f
     );
   }
   f = message.getReduce();
   if (f !== 0) {
     writer.writeInt32(
-      10,
+      11,
       f
     );
   }
   f = message.getActive();
   if (f !== 0) {
     writer.writeInt32(
-      11,
+      12,
       f
     );
   }
   f = message.getStock();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      13,
       f
     );
   }
@@ -1176,11 +1190,48 @@ proto.ding4.Commodity.prototype.hasName = function() {
 
 
 /**
- * optional bool is_preorder = 7;
+ * optional google.protobuf.Value itemx = 7;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.ding4.Commodity.prototype.getItemx = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.ding4.Commodity} returns this
+*/
+proto.ding4.Commodity.prototype.setItemx = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Commodity} returns this
+ */
+proto.ding4.Commodity.prototype.clearItemx = function() {
+  return this.setItemx(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Commodity.prototype.hasItemx = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool is_preorder = 8;
  * @return {boolean}
  */
 proto.ding4.Commodity.prototype.getIsPreorder = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -1189,33 +1240,15 @@ proto.ding4.Commodity.prototype.getIsPreorder = function() {
  * @return {!proto.ding4.Commodity} returns this
  */
 proto.ding4.Commodity.prototype.setIsPreorder = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional int32 count = 8;
+ * optional int32 count = 9;
  * @return {number}
  */
 proto.ding4.Commodity.prototype.getCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Commodity} returns this
- */
-proto.ding4.Commodity.prototype.setCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
-};
-
-
-/**
- * optional int32 price = 9;
- * @return {number}
- */
-proto.ding4.Commodity.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -1224,16 +1257,16 @@ proto.ding4.Commodity.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.Commodity} returns this
  */
-proto.ding4.Commodity.prototype.setPrice = function(value) {
+proto.ding4.Commodity.prototype.setCount = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional int32 reduce = 10;
+ * optional int32 price = 10;
  * @return {number}
  */
-proto.ding4.Commodity.prototype.getReduce = function() {
+proto.ding4.Commodity.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -1242,16 +1275,16 @@ proto.ding4.Commodity.prototype.getReduce = function() {
  * @param {number} value
  * @return {!proto.ding4.Commodity} returns this
  */
-proto.ding4.Commodity.prototype.setReduce = function(value) {
+proto.ding4.Commodity.prototype.setPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional int32 active = 11;
+ * optional int32 reduce = 11;
  * @return {number}
  */
-proto.ding4.Commodity.prototype.getActive = function() {
+proto.ding4.Commodity.prototype.getReduce = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -1260,16 +1293,16 @@ proto.ding4.Commodity.prototype.getActive = function() {
  * @param {number} value
  * @return {!proto.ding4.Commodity} returns this
  */
-proto.ding4.Commodity.prototype.setActive = function(value) {
+proto.ding4.Commodity.prototype.setReduce = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int32 stock = 12;
+ * optional int32 active = 12;
  * @return {number}
  */
-proto.ding4.Commodity.prototype.getStock = function() {
+proto.ding4.Commodity.prototype.getActive = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
@@ -1278,8 +1311,26 @@ proto.ding4.Commodity.prototype.getStock = function() {
  * @param {number} value
  * @return {!proto.ding4.Commodity} returns this
  */
-proto.ding4.Commodity.prototype.setStock = function(value) {
+proto.ding4.Commodity.prototype.setActive = function(value) {
   return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional int32 stock = 13;
+ * @return {number}
+ */
+proto.ding4.Commodity.prototype.getStock = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Commodity} returns this
+ */
+proto.ding4.Commodity.prototype.setStock = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 

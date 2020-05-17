@@ -1079,28 +1079,6 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoFindImage = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findImage(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindImage',
-      request,
-      metadata || {},
-      this.methodInfoFindImage,
-      callback);
-  }
-
   methodInfoCreateProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product_pb.Product) => {

@@ -4,7 +4,6 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
-import "webpage.proto";
 import "sql.proto";
 import "customer.proto";
 import "car.proto";

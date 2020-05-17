@@ -16,8 +16,8 @@ var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var 0$submessage_pb = require('./0-submessage_pb.js');
-goog.object.extend(proto, 0$submessage_pb);
+var a$submessage_pb = require('./a-submessage_pb.js');
+goog.object.extend(proto, a$submessage_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -89,11 +89,11 @@ proto.ding4.Website.toObject = function(includeInstance, msg) {
     favicon: jspb.Message.getFieldWithDefault(msg, 4, ""),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     menuList: jspb.Message.toObjectList(msg.getMenuList(),
-    0$submessage_pb.Layout.toObject, includeInstance),
+    a$submessage_pb.Layout.toObject, includeInstance),
     footerList: jspb.Message.toObjectList(msg.getFooterList(),
-    0$submessage_pb.Layout.toObject, includeInstance),
+    a$submessage_pb.Layout.toObject, includeInstance),
     layoutList: jspb.Message.toObjectList(msg.getLayoutList(),
-    0$submessage_pb.Layout.toObject, includeInstance),
+    a$submessage_pb.Layout.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -160,18 +160,18 @@ proto.ding4.Website.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSeo(value);
       break;
     case 6:
-      var value = new 0$submessage_pb.Layout;
-      reader.readMessage(value,0$submessage_pb.Layout.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Layout;
+      reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
       msg.addMenu(value);
       break;
     case 7:
-      var value = new 0$submessage_pb.Layout;
-      reader.readMessage(value,0$submessage_pb.Layout.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Layout;
+      reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
       msg.addFooter(value);
       break;
     case 8:
-      var value = new 0$submessage_pb.Layout;
-      reader.readMessage(value,0$submessage_pb.Layout.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Layout;
+      reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
       msg.addLayout(value);
       break;
     case 69:
@@ -278,7 +278,7 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       6,
       f,
-      0$submessage_pb.Layout.serializeBinaryToWriter
+      a$submessage_pb.Layout.serializeBinaryToWriter
     );
   }
   f = message.getFooterList();
@@ -286,7 +286,7 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       7,
       f,
-      0$submessage_pb.Layout.serializeBinaryToWriter
+      a$submessage_pb.Layout.serializeBinaryToWriter
     );
   }
   f = message.getLayoutList();
@@ -294,7 +294,7 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       8,
       f,
-      0$submessage_pb.Layout.serializeBinaryToWriter
+      a$submessage_pb.Layout.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -465,7 +465,7 @@ proto.ding4.Website.prototype.hasSeo = function() {
  */
 proto.ding4.Website.prototype.getMenuList = function() {
   return /** @type{!Array<!proto.ding4.Layout>} */ (
-    jspb.Message.getRepeatedWrapperField(this, 0$submessage_pb.Layout, 6));
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Layout, 6));
 };
 
 
@@ -503,7 +503,7 @@ proto.ding4.Website.prototype.clearMenuList = function() {
  */
 proto.ding4.Website.prototype.getFooterList = function() {
   return /** @type{!Array<!proto.ding4.Layout>} */ (
-    jspb.Message.getRepeatedWrapperField(this, 0$submessage_pb.Layout, 7));
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Layout, 7));
 };
 
 
@@ -541,7 +541,7 @@ proto.ding4.Website.prototype.clearFooterList = function() {
  */
 proto.ding4.Website.prototype.getLayoutList = function() {
   return /** @type{!Array<!proto.ding4.Layout>} */ (
-    jspb.Message.getRepeatedWrapperField(this, 0$submessage_pb.Layout, 8));
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Layout, 8));
 };
 
 

@@ -2,7 +2,6 @@ import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
-import * as image_pb from './image_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -27,15 +26,11 @@ export class WebBase extends jspb.Message {
   getFaviconId(): string;
   setFaviconId(value: string): void;
 
-  getLogo(): image_pb.Image | undefined;
-  setLogo(value?: image_pb.Image): void;
-  hasLogo(): boolean;
-  clearLogo(): void;
+  getLogo(): string;
+  setLogo(value: string): void;
 
-  getFavicon(): image_pb.Image | undefined;
-  setFavicon(value?: image_pb.Image): void;
-  hasFavicon(): boolean;
-  clearFavicon(): void;
+  getFavicon(): string;
+  setFavicon(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -84,8 +79,8 @@ export namespace WebBase {
     seo?: seo_pb.SEO.AsObject,
     logoId: string,
     faviconId: string,
-    logo?: image_pb.Image.AsObject,
-    favicon?: image_pb.Image.AsObject,
+    logo: string,
+    favicon: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

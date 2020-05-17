@@ -9,7 +9,6 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as webpage_pb from './webpage_pb';
 import * as sql_pb from './sql_pb';
 import * as customer_pb from './customer_pb';
 import * as car_pb from './car_pb';

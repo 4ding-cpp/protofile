@@ -1,7 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as 0$submessage_pb from './0-submessage_pb';
+import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -27,30 +27,30 @@ export class Activity extends jspb.Message {
   hasName(): boolean;
   clearName(): void;
 
-  getRule(): 0$submessage_pb.Rule | undefined;
-  setRule(value?: 0$submessage_pb.Rule): void;
+  getRule(): a$submessage_pb.Rule | undefined;
+  setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
   clearRule(): void;
 
-  getNow(): 0$submessage_pb.Rule | undefined;
-  setNow(value?: 0$submessage_pb.Rule): void;
+  getNow(): a$submessage_pb.Rule | undefined;
+  setNow(value?: a$submessage_pb.Rule): void;
   hasNow(): boolean;
   clearNow(): void;
 
-  getActive(): 0$submessage_pb.Active | undefined;
-  setActive(value?: 0$submessage_pb.Active): void;
+  getActive(): a$submessage_pb.Active | undefined;
+  setActive(value?: a$submessage_pb.Active): void;
   hasActive(): boolean;
   clearActive(): void;
 
-  getTarget(): 0$submessage_pb.ProductTarget | undefined;
-  setTarget(value?: 0$submessage_pb.ProductTarget): void;
+  getTarget(): a$submessage_pb.ProductTarget | undefined;
+  setTarget(value?: a$submessage_pb.ProductTarget): void;
   hasTarget(): boolean;
   clearTarget(): void;
 
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
 
-  getUsedMap(): jspb.Map<string, 0$submessage_pb.Used>;
+  getUsedMap(): jspb.Map<string, a$submessage_pb.Used>;
   clearUsedMap(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
@@ -99,12 +99,12 @@ export namespace Activity {
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     name?: google_protobuf_struct_pb.Value.AsObject,
-    rule?: 0$submessage_pb.Rule.AsObject,
-    now?: 0$submessage_pb.Rule.AsObject,
-    active?: 0$submessage_pb.Active.AsObject,
-    target?: 0$submessage_pb.ProductTarget.AsObject,
+    rule?: a$submessage_pb.Rule.AsObject,
+    now?: a$submessage_pb.Rule.AsObject,
+    active?: a$submessage_pb.Active.AsObject,
+    target?: a$submessage_pb.ProductTarget.AsObject,
     isEnable: boolean,
-    usedMap: Array<[string, 0$submessage_pb.Used.AsObject]>,
+    usedMap: Array<[string, a$submessage_pb.Used.AsObject]>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -143,18 +143,18 @@ export class Coupon extends jspb.Message {
   getCode(): string;
   setCode(value: string): void;
 
-  getRule(): 0$submessage_pb.Rule | undefined;
-  setRule(value?: 0$submessage_pb.Rule): void;
+  getRule(): a$submessage_pb.Rule | undefined;
+  setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
   clearRule(): void;
 
-  getActive(): 0$submessage_pb.Active | undefined;
-  setActive(value?: 0$submessage_pb.Active): void;
+  getActive(): a$submessage_pb.Active | undefined;
+  setActive(value?: a$submessage_pb.Active): void;
   hasActive(): boolean;
   clearActive(): void;
 
-  getTarget(): 0$submessage_pb.CustomerTarget | undefined;
-  setTarget(value?: 0$submessage_pb.CustomerTarget): void;
+  getTarget(): a$submessage_pb.CustomerTarget | undefined;
+  setTarget(value?: a$submessage_pb.CustomerTarget): void;
   hasTarget(): boolean;
   clearTarget(): void;
 
@@ -211,9 +211,9 @@ export namespace Coupon {
     name?: google_protobuf_struct_pb.Value.AsObject,
     isAuto: boolean,
     code: string,
-    rule?: 0$submessage_pb.Rule.AsObject,
-    active?: 0$submessage_pb.Active.AsObject,
-    target?: 0$submessage_pb.CustomerTarget.AsObject,
+    rule?: a$submessage_pb.Rule.AsObject,
+    active?: a$submessage_pb.Active.AsObject,
+    target?: a$submessage_pb.CustomerTarget.AsObject,
     used?: google_protobuf_struct_pb.Value.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,

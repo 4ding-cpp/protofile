@@ -2,7 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
-import * as 0$submessage_pb from './0-submessage_pb';
+import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -24,20 +24,20 @@ export class Website extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getMenuList(): Array<0$submessage_pb.Layout>;
-  setMenuList(value: Array<0$submessage_pb.Layout>): void;
+  getMenuList(): Array<a$submessage_pb.Layout>;
+  setMenuList(value: Array<a$submessage_pb.Layout>): void;
   clearMenuList(): void;
-  addMenu(value?: 0$submessage_pb.Layout, index?: number): 0$submessage_pb.Layout;
+  addMenu(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
-  getFooterList(): Array<0$submessage_pb.Layout>;
-  setFooterList(value: Array<0$submessage_pb.Layout>): void;
+  getFooterList(): Array<a$submessage_pb.Layout>;
+  setFooterList(value: Array<a$submessage_pb.Layout>): void;
   clearFooterList(): void;
-  addFooter(value?: 0$submessage_pb.Layout, index?: number): 0$submessage_pb.Layout;
+  addFooter(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
-  getLayoutList(): Array<0$submessage_pb.Layout>;
-  setLayoutList(value: Array<0$submessage_pb.Layout>): void;
+  getLayoutList(): Array<a$submessage_pb.Layout>;
+  setLayoutList(value: Array<a$submessage_pb.Layout>): void;
   clearLayoutList(): void;
-  addLayout(value?: 0$submessage_pb.Layout, index?: number): 0$submessage_pb.Layout;
+  addLayout(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -85,9 +85,9 @@ export namespace Website {
     logo: string,
     favicon: string,
     seo?: seo_pb.SEO.AsObject,
-    menuList: Array<0$submessage_pb.Layout.AsObject>,
-    footerList: Array<0$submessage_pb.Layout.AsObject>,
-    layoutList: Array<0$submessage_pb.Layout.AsObject>,
+    menuList: Array<a$submessage_pb.Layout.AsObject>,
+    footerList: Array<a$submessage_pb.Layout.AsObject>,
+    layoutList: Array<a$submessage_pb.Layout.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
