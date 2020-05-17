@@ -115,10 +115,6 @@ service BusinessRPC {
     rpc SetCustomerLevel(CustomerLevel) returns (Response);
     // 會員登入紀錄
     rpc SignInCustomer(Customer) returns (Response);
-    
-
-    // 檢視圖庫
-    rpc FindImage(Query) returns (Response);
 
     // 新增商品
     rpc CreateProduct(Product) returns (Response);

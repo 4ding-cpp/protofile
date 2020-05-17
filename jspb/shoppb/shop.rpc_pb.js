@@ -12,6 +12,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var webpage_pb = require('./webpage_pb.js');
+goog.object.extend(proto, webpage_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
 var customer_pb = require('./customer_pb.js');

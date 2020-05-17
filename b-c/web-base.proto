@@ -6,7 +6,6 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "seo.proto";
 import "sql.proto";
-import "image.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -17,8 +16,8 @@ message WebBase {
     SEO seo = 4;
     string logo_id = 5;
     string favicon_id = 6;
-    Image logo = 7;
-    Image favicon = 8;
+    string logo = 7;
+    string favicon = 8;
 
     map<string, int32> labelx = 69;
     string operator = 70;

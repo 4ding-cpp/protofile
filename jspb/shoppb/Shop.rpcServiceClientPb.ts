@@ -9,6 +9,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
+import * as webpage_pb from './webpage_pb';
 import * as sql_pb from './sql_pb';
 import * as customer_pb from './customer_pb';
 import * as car_pb from './car_pb';
@@ -78,7 +79,7 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoIndexBase = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoIndexWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -86,21 +87,21 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  indexBase(
+  indexWebsite(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/IndexBase',
+        '/ding4.ShopRPC/IndexWebsite',
       request,
       metadata || {},
-      this.methodInfoIndexBase,
+      this.methodInfoIndexWebsite,
       callback);
   }
 
-  methodInfoIndexItem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -108,39 +109,17 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  indexItem(
+  findWebPage(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/IndexItem',
+        '/ding4.ShopRPC/FindWebPage',
       request,
       metadata || {},
-      this.methodInfoIndexItem,
-      callback);
-  }
-
-  methodInfoIndexLayout = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  indexLayout(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/IndexLayout',
-      request,
-      metadata || {},
-      this.methodInfoIndexLayout,
+      this.methodInfoFindWebPage,
       callback);
   }
 
