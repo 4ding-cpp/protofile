@@ -18,11 +18,12 @@ message Product {
     int32 price = 6;
     int32 reduce = 7;
     double weight = 8;
-    bool is_preorder = 9;
-    bool is_pickup = 10;
-    bool is_linked = 11;
-    map<string, Spec> specx = 12;
-    repeated string photox = 13;
+    double volume = 9;
+    bool is_preorder = 10;
+    bool is_pickup = 11;
+    bool is_linked = 12;
+    map<string, Spec> specx = 13;
+    repeated string photox = 14;
     ProductLink link = 15;
 
     map<string, int32> labelx = 16;

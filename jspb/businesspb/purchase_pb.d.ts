@@ -59,6 +59,9 @@ export class Supplier extends jspb.Message {
   getSupplierId(): string;
   setSupplierId(value: string): void;
 
+  getStatus(): number;
+  setStatus(value: number): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -110,6 +113,7 @@ export class Supplier extends jspb.Message {
 export namespace Supplier {
   export type AsObject = {
     supplierId: string,
+    status: number,
     name: string,
     phone: string,
     remark: string,

@@ -772,50 +772,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoFindProductStack = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findProductStack(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindProductStack',
-      request,
-      metadata || {},
-      this.methodInfoFindProductStack,
-      callback);
-  }
-
-  methodInfoFindSpecStack = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findSpecStack(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindSpecStack',
-      request,
-      metadata || {},
-      this.methodInfoFindSpecStack,
-      callback);
-  }
-
   methodInfoCompleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: car_pb.Car) => {
@@ -923,6 +879,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoPaymentOrder,
+      callback);
+  }
+
+  methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CancelOrder',
+      request,
+      metadata || {},
+      this.methodInfoCancelOrder,
       callback);
   }
 

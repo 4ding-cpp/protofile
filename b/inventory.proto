@@ -13,10 +13,10 @@ message Inventory {
     string product_id = 3;
     string order_id = 4;
     string store_id = 5;
-    double cost = 6;
-    int32 stock = 7;
-    int32 sold = 8;
-    double profit = 9;
+    int32 stock = 6;
+    int32 sold = 7;
+    int32 cost = 8;
+    int32 profit = 9;
 
     string operator = 10;
     google.protobuf.Timestamp create_at = 11;

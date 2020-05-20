@@ -15,5 +15,6 @@ import * as store_pb from './store_pb';
 import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
 import * as purchase_pb from './purchase_pb';
+import * as seller_pb from './seller_pb';
 import * as setting_pb from './setting_pb';
 

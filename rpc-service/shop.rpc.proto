@@ -31,10 +31,9 @@ service ShopRPC {
     rpc ExchangeCoupon(Coupon) returns (Response);
 
     // State => 1.選購 2.鎖定 3.取消 6.完成訂單
+    // 若有之前未完成的會將內容合併
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
-    // 檢查有無之前未完成的購物車
-    rpc UndoneCar(Query) returns (Response);
     // 清空購物車
     rpc DeleteCar(Car) returns (Response);
 
@@ -42,6 +41,8 @@ service ShopRPC {
     rpc CreateOrder(Order) returns (Response);
     // 付款
     rpc PaymentOrder(Order) returns (Response);
+    // 取消訂單 state < 3 未付款前能取消
+    rpc CancelOrder(Order) returns (Response);
     // 消費紀錄
     rpc FindOrder(Query) returns (Response);
 }

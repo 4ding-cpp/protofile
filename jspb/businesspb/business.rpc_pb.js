@@ -42,5 +42,7 @@ var order_pb = require('./order_pb.js');
 goog.object.extend(proto, order_pb);
 var purchase_pb = require('./purchase_pb.js');
 goog.object.extend(proto, purchase_pb);
+var seller_pb = require('./seller_pb.js');
+goog.object.extend(proto, seller_pb);
 var setting_pb = require('./setting_pb.js');
 goog.object.extend(proto, setting_pb);

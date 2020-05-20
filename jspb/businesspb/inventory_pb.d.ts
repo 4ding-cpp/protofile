@@ -19,14 +19,14 @@ export class Inventory extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getCost(): number;
-  setCost(value: number): void;
-
   getStock(): number;
   setStock(value: number): void;
 
   getSold(): number;
   setSold(value: number): void;
+
+  getCost(): number;
+  setCost(value: number): void;
 
   getProfit(): number;
   setProfit(value: number): void;
@@ -64,9 +64,9 @@ export namespace Inventory {
     productId: string,
     orderId: string,
     storeId: string,
-    cost: number,
     stock: number,
     sold: number,
+    cost: number,
     profit: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

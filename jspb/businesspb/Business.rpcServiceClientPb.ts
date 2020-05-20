@@ -24,6 +24,7 @@ import * as store_pb from './store_pb';
 import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
 import * as purchase_pb from './purchase_pb';
+import * as seller_pb from './seller_pb';
 import * as setting_pb from './setting_pb';
 
 export class BusinessRPCClient {
@@ -1299,28 +1300,6 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoCreateStore = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: store_pb.Store) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createStore(
-    request: store_pb.Store,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/CreateStore',
-      request,
-      metadata || {},
-      this.methodInfoCreateStore,
-      callback);
-  }
-
   methodInfoUpdateStore = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: store_pb.Store) => {
@@ -1519,6 +1498,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CancelOrder',
+      request,
+      metadata || {},
+      this.methodInfoCancelOrder,
+      callback);
+  }
+
   methodInfoFindOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -1560,94 +1561,6 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordOrder,
-      callback);
-  }
-
-  methodInfoCreatePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: purchase_pb.Purchase) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createPurchase(
-    request: purchase_pb.Purchase,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/CreatePurchase',
-      request,
-      metadata || {},
-      this.methodInfoCreatePurchase,
-      callback);
-  }
-
-  methodInfoDeletePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: purchase_pb.Purchase) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deletePurchase(
-    request: purchase_pb.Purchase,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/DeletePurchase',
-      request,
-      metadata || {},
-      this.methodInfoDeletePurchase,
-      callback);
-  }
-
-  methodInfoFindPurchase = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findPurchase(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindPurchase',
-      request,
-      metadata || {},
-      this.methodInfoFindPurchase,
-      callback);
-  }
-
-  methodInfoFindInventory = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findInventory(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindInventory',
-      request,
-      metadata || {},
-      this.methodInfoFindInventory,
       callback);
   }
 
@@ -1736,6 +1649,182 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordSupplier,
+      callback);
+  }
+
+  methodInfoCreateSeller = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seller_pb.Seller) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createSeller(
+    request: seller_pb.Seller,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CreateSeller',
+      request,
+      metadata || {},
+      this.methodInfoCreateSeller,
+      callback);
+  }
+
+  methodInfoUpdateSeller = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seller_pb.Seller) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateSeller(
+    request: seller_pb.Seller,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateSeller',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSeller,
+      callback);
+  }
+
+  methodInfoFindSeller = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findSeller(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindSeller',
+      request,
+      metadata || {},
+      this.methodInfoFindSeller,
+      callback);
+  }
+
+  methodInfoRecordSeller = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seller_pb.Seller) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordSeller(
+    request: seller_pb.Seller,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordSeller',
+      request,
+      metadata || {},
+      this.methodInfoRecordSeller,
+      callback);
+  }
+
+  methodInfoCreatePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: purchase_pb.Purchase) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createPurchase(
+    request: purchase_pb.Purchase,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CreatePurchase',
+      request,
+      metadata || {},
+      this.methodInfoCreatePurchase,
+      callback);
+  }
+
+  methodInfoDeletePurchase = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: purchase_pb.Purchase) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deletePurchase(
+    request: purchase_pb.Purchase,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/DeletePurchase',
+      request,
+      metadata || {},
+      this.methodInfoDeletePurchase,
+      callback);
+  }
+
+  methodInfoFindPurchase = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPurchase(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindPurchase',
+      request,
+      metadata || {},
+      this.methodInfoFindPurchase,
+      callback);
+  }
+
+  methodInfoFindInventory = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findInventory(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindInventory',
+      request,
+      metadata || {},
+      this.methodInfoFindInventory,
       callback);
   }
 

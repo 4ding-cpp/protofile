@@ -114,7 +114,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Product.repeatedFields_ = [13,20,21];
+proto.ding4.Product.repeatedFields_ = [14,20,21];
 
 
 
@@ -155,11 +155,12 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     price: jspb.Message.getFieldWithDefault(msg, 6, 0),
     reduce: jspb.Message.getFieldWithDefault(msg, 7, 0),
     weight: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    isLinked: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    volume: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
+    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    isLinked: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     specxMap: (f = msg.getSpecxMap()) ? f.toObject(includeInstance, proto.ding4.Spec.toObject) : [],
-    photoxList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    photoxList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
     link: (f = msg.getLink()) && proto.ding4.ProductLink.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -239,24 +240,28 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.setWeight(value);
       break;
     case 9:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsPreorder(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setVolume(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsPickup(value);
+      msg.setIsPreorder(value);
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsLinked(value);
+      msg.setIsPickup(value);
       break;
     case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsLinked(value);
+      break;
+    case 13:
       var value = msg.getSpecxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.ding4.Spec.deserializeBinaryFromReader, "", new proto.ding4.Spec());
          });
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.addPhotox(value);
       break;
@@ -385,35 +390,42 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIsPreorder();
-  if (f) {
-    writer.writeBool(
+  f = message.getVolume();
+  if (f !== 0.0) {
+    writer.writeDouble(
       9,
       f
     );
   }
-  f = message.getIsPickup();
+  f = message.getIsPreorder();
   if (f) {
     writer.writeBool(
       10,
       f
     );
   }
-  f = message.getIsLinked();
+  f = message.getIsPickup();
   if (f) {
     writer.writeBool(
       11,
       f
     );
   }
+  f = message.getIsLinked();
+  if (f) {
+    writer.writeBool(
+      12,
+      f
+    );
+  }
   f = message.getSpecxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.ding4.Spec.serializeBinaryToWriter);
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.ding4.Spec.serializeBinaryToWriter);
   }
   f = message.getPhotoxList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      13,
+      14,
       f
     );
   }
@@ -642,28 +654,28 @@ proto.ding4.Product.prototype.setWeight = function(value) {
 
 
 /**
- * optional bool is_preorder = 9;
+ * optional double volume = 9;
+ * @return {number}
+ */
+proto.ding4.Product.prototype.getVolume = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Product} returns this
+ */
+proto.ding4.Product.prototype.setVolume = function(value) {
+  return jspb.Message.setProto3FloatField(this, 9, value);
+};
+
+
+/**
+ * optional bool is_preorder = 10;
  * @return {boolean}
  */
 proto.ding4.Product.prototype.getIsPreorder = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.ding4.Product} returns this
- */
-proto.ding4.Product.prototype.setIsPreorder = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
-};
-
-
-/**
- * optional bool is_pickup = 10;
- * @return {boolean}
- */
-proto.ding4.Product.prototype.getIsPickup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
@@ -672,16 +684,16 @@ proto.ding4.Product.prototype.getIsPickup = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setIsPickup = function(value) {
+proto.ding4.Product.prototype.setIsPreorder = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool is_linked = 11;
+ * optional bool is_pickup = 11;
  * @return {boolean}
  */
-proto.ding4.Product.prototype.getIsLinked = function() {
+proto.ding4.Product.prototype.getIsPickup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
@@ -690,20 +702,38 @@ proto.ding4.Product.prototype.getIsLinked = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Product} returns this
  */
-proto.ding4.Product.prototype.setIsLinked = function(value) {
+proto.ding4.Product.prototype.setIsPickup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * map<string, Spec> specx = 12;
+ * optional bool is_linked = 12;
+ * @return {boolean}
+ */
+proto.ding4.Product.prototype.getIsLinked = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.Product} returns this
+ */
+proto.ding4.Product.prototype.setIsLinked = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
+};
+
+
+/**
+ * map<string, Spec> specx = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!proto.ding4.Spec>}
  */
 proto.ding4.Product.prototype.getSpecxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!proto.ding4.Spec>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       proto.ding4.Spec));
 };
 
@@ -718,11 +748,11 @@ proto.ding4.Product.prototype.clearSpecxMap = function() {
 
 
 /**
- * repeated string photox = 13;
+ * repeated string photox = 14;
  * @return {!Array<string>}
  */
 proto.ding4.Product.prototype.getPhotoxList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
 };
 
 
@@ -731,7 +761,7 @@ proto.ding4.Product.prototype.getPhotoxList = function() {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.setPhotoxList = function(value) {
-  return jspb.Message.setField(this, 13, value || []);
+  return jspb.Message.setField(this, 14, value || []);
 };
 
 
@@ -741,7 +771,7 @@ proto.ding4.Product.prototype.setPhotoxList = function(value) {
  * @return {!proto.ding4.Product} returns this
  */
 proto.ding4.Product.prototype.addPhotox = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
 };
 
 

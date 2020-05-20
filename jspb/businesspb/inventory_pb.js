@@ -75,10 +75,10 @@ proto.ding4.Inventory.toObject = function(includeInstance, msg) {
     productId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     orderId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    stock: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    sold: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
+    stock: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    sold: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    cost: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    profit: jspb.Message.getFieldWithDefault(msg, 9, 0),
     operator: jspb.Message.getFieldWithDefault(msg, 10, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -140,19 +140,19 @@ proto.ding4.Inventory.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStoreId(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setCost(value);
-      break;
-    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setStock(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSold(value);
       break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCost(value);
+      break;
     case 9:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setProfit(value);
       break;
     case 10:
@@ -238,21 +238,21 @@ proto.ding4.Inventory.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCost();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getStock();
+  if (f !== 0) {
+    writer.writeInt32(
       6,
       f
     );
   }
-  f = message.getStock();
+  f = message.getSold();
   if (f !== 0) {
     writer.writeInt32(
       7,
       f
     );
   }
-  f = message.getSold();
+  f = message.getCost();
   if (f !== 0) {
     writer.writeInt32(
       8,
@@ -260,8 +260,8 @@ proto.ding4.Inventory.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getProfit();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       9,
       f
     );
@@ -391,29 +391,11 @@ proto.ding4.Inventory.prototype.setStoreId = function(value) {
 
 
 /**
- * optional double cost = 6;
- * @return {number}
- */
-proto.ding4.Inventory.prototype.getCost = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Inventory} returns this
- */
-proto.ding4.Inventory.prototype.setCost = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
-};
-
-
-/**
- * optional int32 stock = 7;
+ * optional int32 stock = 6;
  * @return {number}
  */
 proto.ding4.Inventory.prototype.getStock = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -422,16 +404,16 @@ proto.ding4.Inventory.prototype.getStock = function() {
  * @return {!proto.ding4.Inventory} returns this
  */
 proto.ding4.Inventory.prototype.setStock = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional int32 sold = 8;
+ * optional int32 sold = 7;
  * @return {number}
  */
 proto.ding4.Inventory.prototype.getSold = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -440,16 +422,34 @@ proto.ding4.Inventory.prototype.getSold = function() {
  * @return {!proto.ding4.Inventory} returns this
  */
 proto.ding4.Inventory.prototype.setSold = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 cost = 8;
+ * @return {number}
+ */
+proto.ding4.Inventory.prototype.getCost = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Inventory} returns this
+ */
+proto.ding4.Inventory.prototype.setCost = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional double profit = 9;
+ * optional int32 profit = 9;
  * @return {number}
  */
 proto.ding4.Inventory.prototype.getProfit = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
@@ -458,7 +458,7 @@ proto.ding4.Inventory.prototype.getProfit = function() {
  * @return {!proto.ding4.Inventory} returns this
  */
 proto.ding4.Inventory.prototype.setProfit = function(value) {
-  return jspb.Message.setProto3FloatField(this, 9, value);
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 

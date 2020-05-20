@@ -19,6 +19,7 @@ import "store.proto";
 import "remind.proto";
 import "order.proto";
 import "purchase.proto";
+import "seller.proto";
 import "setting.proto";
 
 service BusinessRPC {
@@ -137,8 +138,6 @@ service BusinessRPC {
     rpc RegisterStore(Store) returns (Response);
     // 打開商店前台
     rpc OpenStore(Store) returns (Response);
-    // !!目前沒用到
-    rpc CreateStore(Store) returns (Response);
     //  更新商店
     rpc UpdateStore(Store) returns (Response);
     // 商店列表
@@ -159,10 +158,31 @@ service BusinessRPC {
     rpc CreateOrder(Order) returns (Response);
     // 訂單付款
     rpc PaymentOrder(Order) returns (Response);
+    // 取消訂單
+    rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
     // 訂單修改紀錄
     rpc RecordOrder(Order) returns (Response);
+
+    // 建立供應商資訊
+    rpc CreateSupplier(Supplier) returns (Response);
+    // 更新供應商資訊
+    rpc UpdateSupplier(Supplier) returns (Response);
+    // 供應商列表
+    rpc FindSupplier(Query) returns (Response);
+    // 供應商修改紀錄
+    rpc RecordSupplier(Supplier) returns (Response);
+
+    // 建立銷售員
+    rpc CreateSeller(Seller) returns (Response);
+    // 更新銷售員資訊
+    rpc UpdateSeller(Seller) returns (Response);
+    // 銷售員列表
+    rpc FindSeller(Query) returns (Response);
+    // 銷售員修改紀錄
+    rpc RecordSeller(Seller) returns (Response);
+
 
     // 新增進貨單
     rpc CreatePurchase(Purchase) returns (Response);
@@ -172,15 +192,6 @@ service BusinessRPC {
     rpc FindPurchase(Query) returns (Response);
     // 庫存記錄列表
     rpc FindInventory(Query) returns (Response);
-
-    // 建立供應商資訊
-    rpc CreateSupplier(Supplier) returns (Response);
-    // 更新供應商資訊
-    rpc UpdateSupplier(Supplier) returns (Response);
-    // 供應商資訊列表
-    rpc FindSupplier(Query) returns (Response);
-    // 供應商資訊修改紀錄
-    rpc RecordSupplier(Supplier) returns (Response);
 
     // 新增系統參數
     rpc CreateSetting(Setting) returns (Response);

@@ -71,10 +71,6 @@ service Store1RPC {
     rpc AddProductToClass(ProductClass) returns (Response);
     rpc DelProductFromClass(ProductClass) returns (Response);
 
-    // 
-    rpc FindProductStack(Query) returns (Response);
-    rpc FindSpecStack(Query) returns (Response);
-
     // 檢視購物車(包含活動及折價券計算後回傳)
     rpc CompleteCar(Car) returns (Response);
     // 清空購物車
@@ -86,9 +82,11 @@ service Store1RPC {
     rpc CreateOrder(Order) returns (Response);
     // 訂單付款
     rpc PaymentOrder(Order) returns (Response);
+    // 取消訂單 state < 3 未付款前能取消
+    rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
-    
+
     // 修改購物狀態提醒
     rpc UpdateRemind(Remind) returns (Response);
     // 購物狀態提醒列表

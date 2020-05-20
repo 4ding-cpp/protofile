@@ -32,6 +32,9 @@ export class Product extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): void;
 
+  getVolume(): number;
+  setVolume(value: number): void;
+
   getIsPreorder(): boolean;
   setIsPreorder(value: boolean): void;
 
@@ -103,6 +106,7 @@ export namespace Product {
     price: number,
     reduce: number,
     weight: number,
+    volume: number,
     isPreorder: boolean,
     isPickup: boolean,
     isLinked: boolean,

@@ -11,29 +11,30 @@ import "google/protobuf/timestamp.proto";
 message Order {
     string order_id = 1; 
     string store_id = 2;
-    string customer_id = 3;
-    string car_id = 4;
-    string discount_id = 5;
-    int32 state = 6;
-    int32 come_from = 7;
-    int32 count = 8;
-    double amount = 9;
-    double freight = 10;
-    double order_charge = 11;
-    int32 payment_charge = 12;
-    int32 logistics_charge = 13;
-    string code = 14;
-    string re_order_id = 15;
-    Payment payment = 16;
-    Logistics logistics = 17;
+    string seller_id = 3;
+    string customer_id = 4;
+    string car_id = 5;
+    string discount_id = 6;
+    int32 state = 7;
+    int32 come_from = 8;
+    int32 count = 9;
+    double amount = 10;
+    double freight = 11;
+    double order_charge = 12;
+    int32 payment_charge = 13;
+    int32 logistics_charge = 14;
+    string code = 15;
+    string re_order_id = 16;
+    Payment payment = 17;
+    Logistics logistics = 18;
 
-    map<string, int32> labelx = 18;
-    string operator = 19;
-    google.protobuf.Timestamp create_at = 20;
-    google.protobuf.Timestamp update_at = 21;
-    repeated string cols = 22;
-    repeated Condition condition = 23;
-    google.protobuf.Struct self = 24;
+    map<string, int32> labelx = 19;
+    string operator = 20;
+    google.protobuf.Timestamp create_at = 21;
+    google.protobuf.Timestamp update_at = 22;
+    repeated string cols = 23;
+    repeated Condition condition = 24;
+    google.protobuf.Struct self = 25;
 }
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Payment {
