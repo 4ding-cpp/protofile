@@ -1,7 +1,5 @@
 import * as jspb from "google-protobuf"
 
-import * as sql_pb from './sql_pb';
-import * as template_pb from './template_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
@@ -9,44 +7,48 @@ export class Message extends jspb.Message {
   getMessageId(): string;
   setMessageId(value: string): void;
 
-  getStoreId(): string;
-  setStoreId(value: string): void;
+  getState(): number;
+  setState(value: number): void;
 
-  getTemplateId(): string;
-  setTemplateId(value: string): void;
+  getSuccess(): number;
+  setSuccess(value: number): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getFailure(): number;
+  setFailure(value: number): void;
 
-  getReceiver(): string;
-  setReceiver(value: string): void;
+  getCharge(): number;
+  setCharge(value: number): void;
+
+  getResponse(): google_protobuf_struct_pb.Value | undefined;
+  setResponse(value?: google_protobuf_struct_pb.Value): void;
+  hasResponse(): boolean;
+  clearResponse(): void;
 
   getSubject(): string;
   setSubject(value: string): void;
 
-  getParametersMap(): jspb.Map<string, string>;
-  clearParametersMap(): void;
+  getContent(): string;
+  setContent(value: string): void;
 
-  getState(): number;
-  setState(value: number): void;
+  getFromUser(): Message.User | undefined;
+  setFromUser(value?: Message.User): void;
+  hasFromUser(): boolean;
+  clearFromUser(): void;
 
-  getRunAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setRunAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasRunAt(): boolean;
-  clearRunAt(): void;
+  getToUserList(): Array<Message.User>;
+  setToUserList(value: Array<Message.User>): void;
+  clearToUserList(): void;
+  addToUser(value?: Message.User, index?: number): Message.User;
 
-  getFinishAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setFinishAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasFinishAt(): boolean;
-  clearFinishAt(): void;
+  getScheduledTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setScheduledTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasScheduledTime(): boolean;
+  clearScheduledTime(): void;
 
-  getTemplate(): template_pb.Template | undefined;
-  setTemplate(value?: template_pb.Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
-
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  getGa(): Message.GA | undefined;
+  setGa(value?: Message.GA): void;
+  hasGa(): boolean;
+  clearGa(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -66,11 +68,6 @@ export class Message extends jspb.Message {
   clearColsList(): void;
   addCols(value: string, index?: number): void;
 
-  getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
-  addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
-
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
   setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
@@ -87,51 +84,84 @@ export class Message extends jspb.Message {
 export namespace Message {
   export type AsObject = {
     messageId: string,
-    storeId: string,
-    templateId: string,
-    type: string,
-    receiver: string,
-    subject: string,
-    parametersMap: Array<[string, string]>,
     state: number,
-    runAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    template?: template_pb.Template.AsObject,
-    labelxMap: Array<[string, number]>,
+    success: number,
+    failure: number,
+    charge: number,
+    response?: google_protobuf_struct_pb.Value.AsObject,
+    subject: string,
+    content: string,
+    fromUser?: Message.User.AsObject,
+    toUserList: Array<Message.User.AsObject>,
+    scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ga?: Message.GA.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     colsList: Array<string>,
-    conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
-}
 
-export class SendMessage extends jspb.Message {
-  getBusinessId(): string;
-  setBusinessId(value: string): void;
+  export class User extends jspb.Message {
+    getName(): string;
+    setName(value: string): void;
 
-  getTemplateId(): string;
-  setTemplateId(value: string): void;
+    getSex(): string;
+    setSex(value: string): void;
 
-  getMessagesList(): Array<Message>;
-  setMessagesList(value: Array<Message>): void;
-  clearMessagesList(): void;
-  addMessages(value?: Message, index?: number): Message;
+    getEmail(): string;
+    setEmail(value: string): void;
 
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SendMessage.AsObject;
-  static toObject(includeInstance: boolean, msg: SendMessage): SendMessage.AsObject;
-  static serializeBinaryToWriter(message: SendMessage, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SendMessage;
-  static deserializeBinaryFromReader(message: SendMessage, reader: jspb.BinaryReader): SendMessage;
-}
+    getPhone(): string;
+    setPhone(value: string): void;
 
-export namespace SendMessage {
-  export type AsObject = {
-    businessId: string,
-    templateId: string,
-    messagesList: Array<Message.AsObject>,
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): User.AsObject;
+    static toObject(includeInstance: boolean, msg: User): User.AsObject;
+    static serializeBinaryToWriter(message: User, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): User;
+    static deserializeBinaryFromReader(message: User, reader: jspb.BinaryReader): User;
   }
+
+  export namespace User {
+    export type AsObject = {
+      name: string,
+      sex: string,
+      email: string,
+      phone: string,
+    }
+  }
+
+
+  export class GA extends jspb.Message {
+    getEnable(): string;
+    setEnable(value: string): void;
+
+    getEcommerceenable(): string;
+    setEcommerceenable(value: string): void;
+
+    getUtmcampaign(): string;
+    setUtmcampaign(value: string): void;
+
+    getUtmcontent(): string;
+    setUtmcontent(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GA.AsObject;
+    static toObject(includeInstance: boolean, msg: GA): GA.AsObject;
+    static serializeBinaryToWriter(message: GA, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GA;
+    static deserializeBinaryFromReader(message: GA, reader: jspb.BinaryReader): GA;
+  }
+
+  export namespace GA {
+    export type AsObject = {
+      enable: string,
+      ecommerceenable: string,
+      utmcampaign: string,
+      utmcontent: string,
+    }
+  }
+
 }
 

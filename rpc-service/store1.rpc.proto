@@ -19,8 +19,8 @@ import "remind.proto";
 import "setting.proto";
 import "webpage.proto";
 import "website.proto";
-import "template.proto";
-import "message.proto";
+// import "template.proto";
+// import "message.proto";
 
 service Store1RPC {
     rpc WhoAmI(Query) returns (Response);
@@ -115,18 +115,18 @@ service Store1RPC {
     rpc UpdateLayout(Website) returns (Response);
 
     // 文檔樣本
-    rpc CreateTemplate(Template) returns (Response);
-    rpc UpdateTemplate(Template) returns (Response);
-    rpc FindTemplate(Query) returns (Response);
+    //rpc CreateTemplate(Template) returns (Response);
+    //rpc UpdateTemplate(Template) returns (Response);
+    //rpc FindTemplate(Query) returns (Response);
 
     // 發送電子報
-    rpc CreateEDM(Message) returns (Response);
-    rpc CancelEDM(Message) returns (Response);
-    rpc FindEDM(Query) returns (Response);
+    //rpc CreateEDM(Message) returns (Response);
+    //rpc CancelEDM(Message) returns (Response);
+    //rpc FindEDM(Query) returns (Response);
 
     // 發送簡訊
-    rpc CreateSMS(Message) returns (Response);
-    rpc CancelSMS(Message) returns (Response);
-    rpc FindSMS(Query) returns (Response);
+    //rpc CreateSMS(Message) returns (Response);
+    //rpc CancelSMS(Message) returns (Response);
+    //rpc FindSMS(Query) returns (Response);
 }
 

@@ -42,7 +42,3 @@ var webpage_pb = require('./webpage_pb.js');
 goog.object.extend(proto, webpage_pb);
 var website_pb = require('./website_pb.js');
 goog.object.extend(proto, website_pb);
-var template_pb = require('./template_pb.js');
-goog.object.extend(proto, template_pb);
-var message_pb = require('./message_pb.js');
-goog.object.extend(proto, message_pb);

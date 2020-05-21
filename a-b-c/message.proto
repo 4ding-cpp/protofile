@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+// 訊息 EDM SMS Email
+message Message {
+    string message_id = 1;
+    // 1:預約發送 2.發送中 3.發送完成
+    int32 state = 2; 
+    // 寄件成功數量
+    int32 success = 3;
+    // 寄件失敗數量
+    int32 failure = 4;
+    // 本次寄送收費
+    double charge = 5;
+    // 外部廠商寄送回應
+    google.protobuf.Value response = 6;
+
+    // 主旨
+    string subject = 7;
+    // 內容
+    string content = 8;
+    // 收發訊息人員資訊
+    message User {
+        string name = 1;
+        string sex = 2;
+        string email = 3;
+        string phone = 4;
+    }
+    // email 寄件者
+    User from_user = 9;
+    // 要寄的人員列表
+    repeated User to_user = 10;
+    // 預定發送時間
+    google.protobuf.Timestamp scheduled_time = 11;
+
+    // newsleopard 能設定GTM
+    message GA {
+        string Enable = 1;
+        string EcommerceEnable = 2;
+        string UtmCampaign = 3;
+        string UtmContent = 4;
+    }
+    GA ga = 12;
+    
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    google.protobuf.Struct self = 17;  
+}

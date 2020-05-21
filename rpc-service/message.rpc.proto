@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "sql.proto";
+import "message.proto";
+
+service MessageRPC {
+    rpc SMS(Message) returns (Response);
+    rpc EDM(Message) returns (Response);
+    rpc Notice(Message) returns (Response);
+    rpc FindMessage(Query) returns (Response);
+}

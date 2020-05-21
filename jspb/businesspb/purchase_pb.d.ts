@@ -17,6 +17,11 @@ export class Purchase extends jspb.Message {
   clearInventoryList(): void;
   addInventory(value?: inventory_pb.Inventory, index?: number): inventory_pb.Inventory;
 
+  getPurchaseAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPurchaseAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasPurchaseAt(): boolean;
+  clearPurchaseAt(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -48,6 +53,7 @@ export namespace Purchase {
     purchaseId: string,
     supplierId: string,
     inventoryList: Array<inventory_pb.Inventory.AsObject>,
+    purchaseAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -62,11 +68,20 @@ export class Supplier extends jspb.Message {
   getStatus(): number;
   setStatus(value: number): void;
 
+  getIdentify(): string;
+  setIdentify(value: string): void;
+
   getName(): string;
   setName(value: string): void;
 
+  getContacter(): string;
+  setContacter(value: string): void;
+
   getPhone(): string;
   setPhone(value: string): void;
+
+  getAddress(): string;
+  setAddress(value: string): void;
 
   getRemark(): string;
   setRemark(value: string): void;
@@ -114,8 +129,11 @@ export namespace Supplier {
   export type AsObject = {
     supplierId: string,
     status: number,
+    identify: string,
     name: string,
+    contacter: string,
     phone: string,
+    address: string,
     remark: string,
     labelxMap: Array<[string, number]>,
     operator: string,
