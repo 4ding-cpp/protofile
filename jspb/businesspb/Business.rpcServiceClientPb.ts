@@ -9,6 +9,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
+import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as business_pb from './business_pb';
@@ -44,6 +45,28 @@ export class BusinessRPCClient {
     this.hostname_ = hostname;
     this.credentials_ = credentials;
     this.options_ = options;
+  }
+
+  methodInfoPing = new grpcWeb.AbstractClientBase.MethodInfo(
+    pingpong_pb.PingPong,
+    (request: pingpong_pb.PingPong) => {
+      return request.serializeBinary();
+    },
+    pingpong_pb.PingPong.deserializeBinary
+  );
+
+  ping(
+    request: pingpong_pb.PingPong,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: pingpong_pb.PingPong) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/Ping',
+      request,
+      metadata || {},
+      this.methodInfoPing,
+      callback);
   }
 
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(

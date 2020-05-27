@@ -75,3 +75,39 @@ export namespace Inventory {
   }
 }
 
+export class SkuInfo extends jspb.Message {
+  getSku(): string;
+  setSku(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getProductId(): string;
+  setProductId(value: string): void;
+
+  getStock(): number;
+  setStock(value: number): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SkuInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: SkuInfo): SkuInfo.AsObject;
+  static serializeBinaryToWriter(message: SkuInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SkuInfo;
+  static deserializeBinaryFromReader(message: SkuInfo, reader: jspb.BinaryReader): SkuInfo;
+}
+
+export namespace SkuInfo {
+  export type AsObject = {
+    sku: string,
+    name: string,
+    productId: string,
+    stock: number,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+

@@ -4,6 +4,7 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
+import "pingpong.proto";
 import "sql.proto";
 import "password.proto";
 import "label.proto";
@@ -23,6 +24,8 @@ import "website.proto";
 // import "message.proto";
 
 service Store1RPC {
+    rpc Ping(PingPong) returns (PingPong);
+
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Manager) returns (Response);

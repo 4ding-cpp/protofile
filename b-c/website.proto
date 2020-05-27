@@ -13,8 +13,8 @@ import "google/protobuf/timestamp.proto";
 message Website {
     string store_id = 1;
     int32 style = 2;
-    string logo = 3;
-    string favicon = 4;
+    Image logo = 3;
+    Image favicon = 4;
     SEO seo = 5;
     repeated Layout menu = 6;
     repeated Layout footer = 7;

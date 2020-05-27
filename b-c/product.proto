@@ -6,6 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "seo.proto";
 import "sql.proto";
+import "a-submessage.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -23,7 +24,7 @@ message Product {
     bool is_pickup = 11;
     bool is_linked = 12;
     map<string, Spec> specx = 13;
-    repeated string photox = 14;
+    repeated Image photox = 14;
     ProductLink link = 15;
 
     map<string, int32> labelx = 16;

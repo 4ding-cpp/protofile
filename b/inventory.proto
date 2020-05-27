@@ -24,3 +24,12 @@ message Inventory {
     google.protobuf.Struct self = 13;
 }
 
+message SkuInfo {
+    string sku = 1;
+    string name = 2;
+    string product_id = 3;
+    int32 stock = 4;
+
+    google.protobuf.Struct self = 5;
+}
+

@@ -8,23 +8,28 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
 
 // 訊息 EDM SMS Email
+// type => 1:STMP(自架) 2:every8d(簡訊) 3:newsleopard(電子報)
+// state => 1:預約寄送 2:發送中 3:發送完成 9:取消
 message Message {
     string message_id = 1;
     // 1:預約發送 2.發送中 3.發送完成
-    int32 state = 2; 
+    string business_id = 2;
+    string store_id = 3;
+    int32 type = 4;
+    int32 state = 5; 
+    // 寄件總量
+    int32 total = 6;
     // 寄件成功數量
-    int32 success = 3;
-    // 寄件失敗數量
-    int32 failure = 4;
+    int32 success = 7;
     // 本次寄送收費
-    double charge = 5;
+    double charge = 8;
     // 外部廠商寄送回應
-    google.protobuf.Value response = 6;
+    google.protobuf.Value response = 9;
 
     // 主旨
-    string subject = 7;
+    string subject = 10;
     // 內容
-    string content = 8;
+    string content = 11;
     // 收發訊息人員資訊
     message User {
         string name = 1;
@@ -33,11 +38,11 @@ message Message {
         string phone = 4;
     }
     // email 寄件者
-    User from_user = 9;
+    User from_user = 12;
     // 要寄的人員列表
-    repeated User to_user = 10;
+    repeated User to_user = 13;
     // 預定發送時間
-    google.protobuf.Timestamp scheduled_time = 11;
+    google.protobuf.Timestamp scheduled_time = 14;
 
     // newsleopard 能設定GTM
     message GA {
@@ -46,11 +51,13 @@ message Message {
         string UtmCampaign = 3;
         string UtmContent = 4;
     }
-    GA ga = 12;
+    GA ga = 15;
+    map<string, int32> opened = 16;
     
-    string operator = 13;
-    google.protobuf.Timestamp create_at = 14;
-    google.protobuf.Timestamp update_at = 15;
-    repeated string cols = 16;
-    google.protobuf.Struct self = 17;  
+    map<string, int32> labelx = 17;
+    string operator = 18;
+    google.protobuf.Timestamp create_at = 19;
+    google.protobuf.Timestamp update_at = 20;
+    repeated string cols = 21;
+    google.protobuf.Struct self = 22;  
 }

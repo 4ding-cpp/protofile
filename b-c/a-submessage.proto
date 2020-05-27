@@ -31,15 +31,15 @@ message Active {
 // birthday 會員生日月分 [6,7,8] 可多選
 // items 直接指定 customer_id 適用專屬折價券
 message CustomerTarget {
-    string level = 2;
-    repeated int32 birthday = 3;
-    repeated string items = 4;
+    string level = 1;
+    repeated int32 birthday = 2;
+    repeated string items = 3;
 }
 // class 商品類別class_id
 // items 直接指定 product_id 適用單品活動
 message ProductTarget {
     string class = 1;
-    repeated string items = 4;
+    repeated string items = 2;
 }
 
 // Activity 會員對活動使用量
@@ -53,9 +53,13 @@ message Used {
 message Image {
 	string src = 1;
 	string alt = 2;
-	string link = 3;
-	string page = 4;
-    ProductTarget target = 5;
+    string title = 3;
+	string link = 4;
+	string page = 5;
+    string sku = 6;
+    ProductTarget target = 7;
+    string type = 8;
+    bytes source = 9;
 }
 
 // Layout 客端首頁布局

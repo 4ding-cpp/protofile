@@ -9,8 +9,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
-import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
+import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
@@ -45,18 +44,18 @@ export class AdminRPCClient {
   }
 
   methodInfoPing = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_wrappers_pb.Int32Value,
-    (request: google_protobuf_wrappers_pb.Int32Value) => {
+    pingpong_pb.PingPong,
+    (request: pingpong_pb.PingPong) => {
       return request.serializeBinary();
     },
-    google_protobuf_wrappers_pb.Int32Value.deserializeBinary
+    pingpong_pb.PingPong.deserializeBinary
   );
 
   ping(
-    request: google_protobuf_wrappers_pb.Int32Value,
+    request: pingpong_pb.PingPong,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_wrappers_pb.Int32Value) => void) {
+               response: pingpong_pb.PingPong) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.AdminRPC/Ping',
@@ -64,25 +63,6 @@ export class AdminRPCClient {
       metadata || {},
       this.methodInfoPing,
       callback);
-  }
-
-  methodInfoTime = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_struct_pb.Value,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    google_protobuf_struct_pb.Value.deserializeBinary
-  );
-
-  time(
-    request: sql_pb.Query,
-    metadata?: grpcWeb.Metadata) {
-    return this.client_.serverStreaming(
-      this.hostname_ +
-        '/ding4.AdminRPC/Time',
-      request,
-      metadata || {},
-      this.methodInfoTime);
   }
 
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(

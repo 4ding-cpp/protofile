@@ -7,14 +7,23 @@ export class Message extends jspb.Message {
   getMessageId(): string;
   setMessageId(value: string): void;
 
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
+  getType(): number;
+  setType(value: number): void;
+
   getState(): number;
   setState(value: number): void;
 
+  getTotal(): number;
+  setTotal(value: number): void;
+
   getSuccess(): number;
   setSuccess(value: number): void;
-
-  getFailure(): number;
-  setFailure(value: number): void;
 
   getCharge(): number;
   setCharge(value: number): void;
@@ -50,6 +59,12 @@ export class Message extends jspb.Message {
   hasGa(): boolean;
   clearGa(): void;
 
+  getOpenedMap(): jspb.Map<string, number>;
+  clearOpenedMap(): void;
+
+  getLabelxMap(): jspb.Map<string, number>;
+  clearLabelxMap(): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -84,9 +99,12 @@ export class Message extends jspb.Message {
 export namespace Message {
   export type AsObject = {
     messageId: string,
+    businessId: string,
+    storeId: string,
+    type: number,
     state: number,
+    total: number,
     success: number,
-    failure: number,
     charge: number,
     response?: google_protobuf_struct_pb.Value.AsObject,
     subject: string,
@@ -95,6 +113,8 @@ export namespace Message {
     toUserList: Array<Message.User.AsObject>,
     scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     ga?: Message.GA.AsObject,
+    openedMap: Array<[string, number]>,
+    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

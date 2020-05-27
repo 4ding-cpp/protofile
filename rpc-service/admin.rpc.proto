@@ -4,8 +4,7 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
-import "google/protobuf/struct.proto";
-import "google/protobuf/wrappers.proto";
+import "pingpong.proto";
 import "sql.proto";
 import "password.proto";
 import "admin.proto";
@@ -21,8 +20,7 @@ import "setting.proto";
 import "external.proto";
 
 service AdminRPC {
-    rpc Ping(google.protobuf.Int32Value) returns (google.protobuf.Int32Value);
-    rpc Time(Query) returns (stream google.protobuf.Value);
+    rpc Ping(PingPong) returns (PingPong);
 
     // 自身資訊修改查詢
     rpc WhoAmI(Query) returns (Response);

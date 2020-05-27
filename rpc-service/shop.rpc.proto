@@ -4,6 +4,7 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
+import "pingpong.proto";
 import "sql.proto";
 import "customer.proto";
 import "car.proto";
@@ -12,6 +13,8 @@ import "order.proto";
 
 
 service ShopRPC {
+    rpc Ping(PingPong) returns (PingPong);
+
     // 登入先輸入 Email 或 Phone 檢查帳號是否存在
     rpc SignIn(Customer) returns (Response);
     // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password

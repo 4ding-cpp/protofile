@@ -8,8 +8,17 @@ export class External extends jspb.Message {
   getExternalId(): string;
   setExternalId(value: string): void;
 
-  getInfoMap(): jspb.Map<string, string>;
-  clearInfoMap(): void;
+  getIsEnable(): boolean;
+  setIsEnable(value: boolean): void;
+
+  getUnit(): number;
+  setUnit(value: number): void;
+
+  getCredit(): string;
+  setCredit(value: string): void;
+
+  getSecretMap(): jspb.Map<string, string>;
+  clearSecretMap(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -53,7 +62,10 @@ export class External extends jspb.Message {
 export namespace External {
   export type AsObject = {
     externalId: string,
-    infoMap: Array<[string, string]>,
+    isEnable: boolean,
+    unit: number,
+    credit: string,
+    secretMap: Array<[string, string]>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

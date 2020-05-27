@@ -16,6 +16,8 @@ var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var a$submessage_pb = require('./a-submessage_pb.js');
+goog.object.extend(proto, a$submessage_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -160,7 +162,8 @@ proto.ding4.Product.toObject = function(includeInstance, msg) {
     isPickup: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     isLinked: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     specxMap: (f = msg.getSpecxMap()) ? f.toObject(includeInstance, proto.ding4.Spec.toObject) : [],
-    photoxList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
+    photoxList: jspb.Message.toObjectList(msg.getPhotoxList(),
+    a$submessage_pb.Image.toObject, includeInstance),
     link: (f = msg.getLink()) && proto.ding4.ProductLink.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -262,7 +265,8 @@ proto.ding4.Product.deserializeBinaryFromReader = function(msg, reader) {
          });
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new a$submessage_pb.Image;
+      reader.readMessage(value,a$submessage_pb.Image.deserializeBinaryFromReader);
       msg.addPhotox(value);
       break;
     case 15:
@@ -424,9 +428,10 @@ proto.ding4.Product.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getPhotoxList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       14,
-      f
+      f,
+      a$submessage_pb.Image.serializeBinaryToWriter
     );
   }
   f = message.getLink();
@@ -748,30 +753,31 @@ proto.ding4.Product.prototype.clearSpecxMap = function() {
 
 
 /**
- * repeated string photox = 14;
- * @return {!Array<string>}
+ * repeated Image photox = 14;
+ * @return {!Array<!proto.ding4.Image>}
  */
 proto.ding4.Product.prototype.getPhotoxList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
+  return /** @type{!Array<!proto.ding4.Image>} */ (
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Image, 14));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.ding4.Image>} value
  * @return {!proto.ding4.Product} returns this
- */
+*/
 proto.ding4.Product.prototype.setPhotoxList = function(value) {
-  return jspb.Message.setField(this, 14, value || []);
+  return jspb.Message.setRepeatedWrapperField(this, 14, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.ding4.Image=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ding4.Product} returns this
+ * @return {!proto.ding4.Image}
  */
-proto.ding4.Product.prototype.addPhotox = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+proto.ding4.Product.prototype.addPhotox = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 14, opt_value, proto.ding4.Image, opt_index);
 };
 
 

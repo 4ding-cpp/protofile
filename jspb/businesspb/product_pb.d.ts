@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
+import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -47,10 +48,10 @@ export class Product extends jspb.Message {
   getSpecxMap(): jspb.Map<string, Spec>;
   clearSpecxMap(): void;
 
-  getPhotoxList(): Array<string>;
-  setPhotoxList(value: Array<string>): void;
+  getPhotoxList(): Array<a$submessage_pb.Image>;
+  setPhotoxList(value: Array<a$submessage_pb.Image>): void;
   clearPhotoxList(): void;
-  addPhotox(value: string, index?: number): void;
+  addPhotox(value?: a$submessage_pb.Image, index?: number): a$submessage_pb.Image;
 
   getLink(): ProductLink | undefined;
   setLink(value?: ProductLink): void;
@@ -111,7 +112,7 @@ export namespace Product {
     isPickup: boolean,
     isLinked: boolean,
     specxMap: Array<[string, Spec.AsObject]>,
-    photoxList: Array<string>,
+    photoxList: Array<a$submessage_pb.Image.AsObject>,
     link?: ProductLink.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message PingPong {
+    int32 Pong = 1;
+}
