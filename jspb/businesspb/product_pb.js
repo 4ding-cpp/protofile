@@ -1098,7 +1098,7 @@ proto.ding4.Spec.toObject = function(includeInstance, msg) {
     sold: jspb.Message.getFieldWithDefault(msg, 4, 0),
     itemxList: jspb.Message.toObjectList(msg.getItemxList(),
     google_protobuf_struct_pb.Value.toObject, includeInstance),
-    photo: jspb.Message.getFieldWithDefault(msg, 6, "")
+    photo: (f = msg.getPhoto()) && a$submessage_pb.Image.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1157,7 +1157,8 @@ proto.ding4.Spec.deserializeBinaryFromReader = function(msg, reader) {
       msg.addItemx(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new a$submessage_pb.Image;
+      reader.readMessage(value,a$submessage_pb.Image.deserializeBinaryFromReader);
       msg.setPhoto(value);
       break;
     default:
@@ -1226,10 +1227,11 @@ proto.ding4.Spec.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPhoto();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       6,
-      f
+      f,
+      a$submessage_pb.Image.serializeBinaryToWriter
     );
   }
 };
@@ -1346,20 +1348,39 @@ proto.ding4.Spec.prototype.clearItemxList = function() {
 
 
 /**
- * optional string photo = 6;
- * @return {string}
+ * optional Image photo = 6;
+ * @return {?proto.ding4.Image}
  */
 proto.ding4.Spec.prototype.getPhoto = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type{?proto.ding4.Image} */ (
+    jspb.Message.getWrapperField(this, a$submessage_pb.Image, 6));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.ding4.Image|undefined} value
+ * @return {!proto.ding4.Spec} returns this
+*/
+proto.ding4.Spec.prototype.setPhoto = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.ding4.Spec} returns this
  */
-proto.ding4.Spec.prototype.setPhoto = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.ding4.Spec.prototype.clearPhoto = function() {
+  return this.setPhoto(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Spec.prototype.hasPhoto = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

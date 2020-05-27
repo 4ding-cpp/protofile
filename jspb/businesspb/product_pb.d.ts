@@ -142,8 +142,10 @@ export class Spec extends jspb.Message {
   clearItemxList(): void;
   addItemx(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
 
-  getPhoto(): string;
-  setPhoto(value: string): void;
+  getPhoto(): a$submessage_pb.Image | undefined;
+  setPhoto(value?: a$submessage_pb.Image): void;
+  hasPhoto(): boolean;
+  clearPhoto(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Spec.AsObject;
@@ -160,7 +162,7 @@ export namespace Spec {
     stock: number,
     sold: number,
     itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
-    photo: string,
+    photo?: a$submessage_pb.Image.AsObject,
   }
 }
 

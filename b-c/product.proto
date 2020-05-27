@@ -48,7 +48,7 @@ message Spec {
     int32 stock = 3;
     int32 sold = 4;
     repeated google.protobuf.Value itemx = 5;
-    string photo = 6;
+    Image photo = 6;
 }
 
 // product_id 關聯商品ID

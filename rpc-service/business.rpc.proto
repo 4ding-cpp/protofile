@@ -24,7 +24,7 @@ import "seller.proto";
 import "setting.proto";
 
 service BusinessRPC {
-      rpc Ping(PingPong) returns (PingPong);
+    rpc Ping(PingPong) returns (PingPong);
 
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
@@ -126,6 +126,8 @@ service BusinessRPC {
     rpc UploadProduct(ProductBatch) returns (Response);
     // 修改商品
     rpc UpdateProduct(Product) returns (Response);
+    // 批次修改
+    rpc ModifyProduct(ProductBatch) returns (Response);
     // 商品列表
     rpc FindProduct(Query) returns (Response);
     // 商品修改紀錄
