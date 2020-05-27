@@ -9,6 +9,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
+import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
 import * as customer_pb from './customer_pb';
 import * as car_pb from './car_pb';
@@ -32,6 +33,28 @@ export class ShopRPCClient {
     this.hostname_ = hostname;
     this.credentials_ = credentials;
     this.options_ = options;
+  }
+
+  methodInfoPing = new grpcWeb.AbstractClientBase.MethodInfo(
+    pingpong_pb.PingPong,
+    (request: pingpong_pb.PingPong) => {
+      return request.serializeBinary();
+    },
+    pingpong_pb.PingPong.deserializeBinary
+  );
+
+  ping(
+    request: pingpong_pb.PingPong,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: pingpong_pb.PingPong) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/Ping',
+      request,
+      metadata || {},
+      this.methodInfoPing,
+      callback);
   }
 
   methodInfoSignIn = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -210,28 +233,6 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoUndoneCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  undoneCar(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/UndoneCar',
-      request,
-      metadata || {},
-      this.methodInfoUndoneCar,
-      callback);
-  }
-
   methodInfoDeleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: car_pb.Car) => {
@@ -295,6 +296,28 @@ export class ShopRPCClient {
       request,
       metadata || {},
       this.methodInfoPaymentOrder,
+      callback);
+  }
+
+  methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/CancelOrder',
+      request,
+      metadata || {},
+      this.methodInfoCancelOrder,
       callback);
   }
 

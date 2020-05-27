@@ -1,41 +1,30 @@
 import * as jspb from "google-protobuf"
 
-import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
-import * as a$submessage_pb from './a-submessage_pb';
-import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class ProductClass extends jspb.Message {
-  getClassId(): string;
-  setClassId(value: string): void;
+export class Seller extends jspb.Message {
+  getSellerId(): string;
+  setSellerId(value: string): void;
 
-  getActivityId(): string;
-  setActivityId(value: string): void;
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
-  getPath(): string;
-  setPath(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
 
-  getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
-  hasName(): boolean;
-  clearName(): void;
+  getPhone(): string;
+  setPhone(value: string): void;
 
-  getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): void;
-  hasSeo(): boolean;
-  clearSeo(): void;
+  getEmail(): string;
+  setEmail(value: string): void;
 
-  getPhoto(): a$submessage_pb.Image | undefined;
-  setPhoto(value?: a$submessage_pb.Image): void;
-  hasPhoto(): boolean;
-  clearPhoto(): void;
+  getName(): string;
+  setName(value: string): void;
 
-  getProductList(): Array<product_pb.Product>;
-  setProductList(value: Array<product_pb.Product>): void;
-  clearProductList(): void;
-  addProduct(value?: product_pb.Product, index?: number): product_pb.Product;
+  getPassword(): string;
+  setPassword(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -69,22 +58,22 @@ export class ProductClass extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductClass.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductClass): ProductClass.AsObject;
-  static serializeBinaryToWriter(message: ProductClass, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductClass;
-  static deserializeBinaryFromReader(message: ProductClass, reader: jspb.BinaryReader): ProductClass;
+  toObject(includeInstance?: boolean): Seller.AsObject;
+  static toObject(includeInstance: boolean, msg: Seller): Seller.AsObject;
+  static serializeBinaryToWriter(message: Seller, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Seller;
+  static deserializeBinaryFromReader(message: Seller, reader: jspb.BinaryReader): Seller;
 }
 
-export namespace ProductClass {
+export namespace Seller {
   export type AsObject = {
-    classId: string,
-    activityId: string,
-    path: string,
-    name?: google_protobuf_struct_pb.Value.AsObject,
-    seo?: seo_pb.SEO.AsObject,
-    photo?: a$submessage_pb.Image.AsObject,
-    productList: Array<product_pb.Product.AsObject>,
+    sellerId: string,
+    storeId: string,
+    status: number,
+    phone: string,
+    email: string,
+    name: string,
+    password: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

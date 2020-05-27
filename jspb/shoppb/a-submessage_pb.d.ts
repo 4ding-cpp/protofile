@@ -143,16 +143,30 @@ export class Image extends jspb.Message {
   getAlt(): string;
   setAlt(value: string): void;
 
+  getTitle(): string;
+  setTitle(value: string): void;
+
   getLink(): string;
   setLink(value: string): void;
 
   getPage(): string;
   setPage(value: string): void;
 
+  getSku(): string;
+  setSku(value: string): void;
+
   getTarget(): ProductTarget | undefined;
   setTarget(value?: ProductTarget): void;
   hasTarget(): boolean;
   clearTarget(): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getSource(): Uint8Array | string;
+  getSource_asU8(): Uint8Array;
+  getSource_asB64(): string;
+  setSource(value: Uint8Array | string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
@@ -166,9 +180,13 @@ export namespace Image {
   export type AsObject = {
     src: string,
     alt: string,
+    title: string,
     link: string,
     page: string,
+    sku: string,
     target?: ProductTarget.AsObject,
+    type: string,
+    source: Uint8Array | string,
   }
 }
 
