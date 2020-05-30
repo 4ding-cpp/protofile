@@ -59,7 +59,7 @@ message Image {
     string sku = 6;
     ProductTarget target = 7;
     string type = 8;
-    bytes source = 9;
+    string source = 9;
 }
 
 // Layout 客端首頁布局
