@@ -27,6 +27,8 @@ import * as order_pb from './order_pb';
 import * as purchase_pb from './purchase_pb';
 import * as seller_pb from './seller_pb';
 import * as setting_pb from './setting_pb';
+import * as external_pb from './external_pb';
+import * as message_pb from './message_pb';
 
 export class BusinessRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -1980,6 +1982,182 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordSetting,
+      callback);
+  }
+
+  methodInfoCreateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CreateExternal',
+      request,
+      metadata || {},
+      this.methodInfoCreateExternal,
+      callback);
+  }
+
+  methodInfoVerifyExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  verifyExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/VerifyExternal',
+      request,
+      metadata || {},
+      this.methodInfoVerifyExternal,
+      callback);
+  }
+
+  methodInfoUpdateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateExternal',
+      request,
+      metadata || {},
+      this.methodInfoUpdateExternal,
+      callback);
+  }
+
+  methodInfoFindExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findExternal(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindExternal',
+      request,
+      metadata || {},
+      this.methodInfoFindExternal,
+      callback);
+  }
+
+  methodInfoRecordExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RecordExternal',
+      request,
+      metadata || {},
+      this.methodInfoRecordExternal,
+      callback);
+  }
+
+  methodInfoSMS = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  sMS(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SMS',
+      request,
+      metadata || {},
+      this.methodInfoSMS,
+      callback);
+  }
+
+  methodInfoEDM = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  eDM(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/EDM',
+      request,
+      metadata || {},
+      this.methodInfoEDM,
+      callback);
+  }
+
+  methodInfoFindMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findMessage(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindMessage',
+      request,
+      metadata || {},
+      this.methodInfoFindMessage,
       callback);
   }
 

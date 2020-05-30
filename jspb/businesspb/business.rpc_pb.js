@@ -48,3 +48,7 @@ var seller_pb = require('./seller_pb.js');
 goog.object.extend(proto, seller_pb);
 var setting_pb = require('./setting_pb.js');
 goog.object.extend(proto, setting_pb);
+var external_pb = require('./external_pb.js');
+goog.object.extend(proto, external_pb);
+var message_pb = require('./message_pb.js');
+goog.object.extend(proto, message_pb);

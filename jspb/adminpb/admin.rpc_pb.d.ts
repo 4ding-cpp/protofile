@@ -14,4 +14,5 @@ import * as adv_pb from './adv_pb';
 import * as app_pb from './app_pb';
 import * as setting_pb from './setting_pb';
 import * as external_pb from './external_pb';
+import * as message_pb from './message_pb';
 

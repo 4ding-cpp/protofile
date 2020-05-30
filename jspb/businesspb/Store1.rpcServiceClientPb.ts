@@ -25,6 +25,7 @@ import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
+import * as message_pb from './message_pb';
 
 export class Store1RPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -1340,6 +1341,72 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateLayout,
+      callback);
+  }
+
+  methodInfoSMS = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  sMS(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/SMS',
+      request,
+      metadata || {},
+      this.methodInfoSMS,
+      callback);
+  }
+
+  methodInfoEDM = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  eDM(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/EDM',
+      request,
+      metadata || {},
+      this.methodInfoEDM,
+      callback);
+  }
+
+  methodInfoFindMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findMessage(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindMessage',
+      request,
+      metadata || {},
+      this.methodInfoFindMessage,
       callback);
   }
 

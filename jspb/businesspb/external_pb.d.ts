@@ -11,6 +11,9 @@ export class External extends jspb.Message {
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
 
+  getType(): number;
+  setType(value: number): void;
+
   getUnit(): number;
   setUnit(value: number): void;
 
@@ -63,6 +66,7 @@ export namespace External {
   export type AsObject = {
     externalId: string,
     isEnable: boolean,
+    type: number,
     unit: number,
     credit: string,
     secretMap: Array<[string, string]>,

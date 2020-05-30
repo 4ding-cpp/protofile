@@ -8,18 +8,20 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+// Type => 1.SMTP 2.every8d 3.newsleopard
 message External {
     string external_id = 1;
     bool is_enable = 2;
-    double unit = 3;
-    string credit= 4;
-    map<string, string> secret = 5;
+    int32 type = 3;
+    double unit = 4;
+    string credit= 5;
+    map<string, string> secret = 6;
     
-    map<string, int32> labelx = 6;
-    string operator = 7;
-    google.protobuf.Timestamp create_at = 8;
-    google.protobuf.Timestamp update_at = 9;
-    repeated string cols = 10;
-    repeated Condition condition = 11;
-    google.protobuf.Struct self = 12;
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13;
 }

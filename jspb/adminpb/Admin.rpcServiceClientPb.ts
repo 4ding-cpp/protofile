@@ -23,6 +23,7 @@ import * as adv_pb from './adv_pb';
 import * as app_pb from './app_pb';
 import * as setting_pb from './setting_pb';
 import * as external_pb from './external_pb';
+import * as message_pb from './message_pb';
 
 export class AdminRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -1935,6 +1936,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoVerifyExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  verifyExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/VerifyExternal',
+      request,
+      metadata || {},
+      this.methodInfoVerifyExternal,
+      callback);
+  }
+
   methodInfoUpdateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: external_pb.External) => {
@@ -1998,6 +2021,72 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordExternal,
+      callback);
+  }
+
+  methodInfoSMS = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  sMS(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/SMS',
+      request,
+      metadata || {},
+      this.methodInfoSMS,
+      callback);
+  }
+
+  methodInfoEDM = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: message_pb.Message) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  eDM(
+    request: message_pb.Message,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/EDM',
+      request,
+      metadata || {},
+      this.methodInfoEDM,
+      callback);
+  }
+
+  methodInfoFindMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findMessage(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindMessage',
+      request,
+      metadata || {},
+      this.methodInfoFindMessage,
       callback);
   }
 
