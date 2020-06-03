@@ -51,7 +51,6 @@ message Spec {
     Image photo = 6;
 }
 
-// product_id 關聯商品ID
 // class_id 商品類別ID
 // is_display 是否陳列
 // url 商品網址
@@ -59,14 +58,12 @@ message Spec {
 // seo SEO
 // block 說明區塊
 message ProductLink {
-    string product_id = 1;
     string class_id = 2;
     bool is_display = 3;
     string url = 4;
     int32 freight_add = 5;
     SEO seo = 6;
     repeated Block block = 7;
-    google.protobuf.Struct self = 8;
 }
 
 message ProductBatch {

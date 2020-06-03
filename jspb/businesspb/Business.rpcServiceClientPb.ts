@@ -1239,14 +1239,14 @@ export class BusinessRPCClient {
 
   methodInfoLinkProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: product_pb.ProductLink) => {
+    (request: product_pb.Product) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   linkProduct(
-    request: product_pb.ProductLink,
+    request: product_pb.Product,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1256,6 +1256,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoLinkProduct,
+      callback);
+  }
+
+  methodInfoLinkProductBatch = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product_pb.ProductBatch) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  linkProductBatch(
+    request: product_pb.ProductBatch,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/LinkProductBatch',
+      request,
+      metadata || {},
+      this.methodInfoLinkProductBatch,
       callback);
   }
 

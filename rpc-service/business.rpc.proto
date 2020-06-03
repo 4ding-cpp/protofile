@@ -135,7 +135,8 @@ service BusinessRPC {
     // 商品修改紀錄
     rpc RecordProduct(Product) returns (Response);
     // 連結商品至 XX 商店
-    rpc LinkProduct(ProductLink) returns (Response);
+    rpc LinkProduct(Product) returns (Response);
+    rpc LinkProductBatch(ProductBatch) returns (Response);
     // 替商品分類
     rpc AddProductToClass(ProductClass) returns (Response);
     // 移除商品的分類

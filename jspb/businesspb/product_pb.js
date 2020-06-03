@@ -1423,15 +1423,13 @@ proto.ding4.ProductLink.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ProductLink.toObject = function(includeInstance, msg) {
   var f, obj = {
-    productId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     classId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     url: jspb.Message.getFieldWithDefault(msg, 4, ""),
     freightAdd: jspb.Message.getFieldWithDefault(msg, 5, 0),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     blockList: jspb.Message.toObjectList(msg.getBlockList(),
-    seo_pb.Block.toObject, includeInstance),
-    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
+    seo_pb.Block.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1468,10 +1466,6 @@ proto.ding4.ProductLink.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProductId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setClassId(value);
@@ -1497,11 +1491,6 @@ proto.ding4.ProductLink.deserializeBinaryFromReader = function(msg, reader) {
       var value = new seo_pb.Block;
       reader.readMessage(value,seo_pb.Block.deserializeBinaryFromReader);
       msg.addBlock(value);
-      break;
-    case 8:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
-      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -1532,13 +1521,6 @@ proto.ding4.ProductLink.prototype.serializeBinary = function() {
  */
 proto.ding4.ProductLink.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProductId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getClassId();
   if (f.length > 0) {
     writer.writeString(
@@ -1583,32 +1565,6 @@ proto.ding4.ProductLink.serializeBinaryToWriter = function(message, writer) {
       seo_pb.Block.serializeBinaryToWriter
     );
   }
-  f = message.getSelf();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string product_id = 1;
- * @return {string}
- */
-proto.ding4.ProductLink.prototype.getProductId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.ProductLink} returns this
- */
-proto.ding4.ProductLink.prototype.setProductId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1756,43 +1712,6 @@ proto.ding4.ProductLink.prototype.addBlock = function(opt_value, opt_index) {
  */
 proto.ding4.ProductLink.prototype.clearBlockList = function() {
   return this.setBlockList([]);
-};
-
-
-/**
- * optional google.protobuf.Struct self = 8;
- * @return {?proto.google.protobuf.Struct}
- */
-proto.ding4.ProductLink.prototype.getSelf = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 8));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Struct|undefined} value
- * @return {!proto.ding4.ProductLink} returns this
-*/
-proto.ding4.ProductLink.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.ProductLink} returns this
- */
-proto.ding4.ProductLink.prototype.clearSelf = function() {
-  return this.setSelf(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.ProductLink.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 
