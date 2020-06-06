@@ -163,10 +163,8 @@ export class Image extends jspb.Message {
   getType(): string;
   setType(value: string): void;
 
-  getSource(): Uint8Array | string;
-  getSource_asU8(): Uint8Array;
-  getSource_asB64(): string;
-  setSource(value: Uint8Array | string): void;
+  getSource(): string;
+  setSource(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
@@ -186,7 +184,7 @@ export namespace Image {
     sku: string,
     target?: ProductTarget.AsObject,
     type: string,
-    source: Uint8Array | string,
+    source: string,
   }
 }
 

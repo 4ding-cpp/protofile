@@ -1041,14 +1041,14 @@ export class BusinessRPCClient {
 
   methodInfoLinkCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer_pb.CustomerLink) => {
+    (request: customer_pb.Customer) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   linkCustomer(
-    request: customer_pb.CustomerLink,
+    request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

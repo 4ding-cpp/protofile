@@ -862,10 +862,8 @@ proto.ding4.CustomerLink.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.CustomerLink.toObject = function(includeInstance, msg) {
   var f, obj = {
-    customerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     levelId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isReceive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
+    isReceive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -902,10 +900,6 @@ proto.ding4.CustomerLink.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCustomerId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setLevelId(value);
@@ -913,11 +907,6 @@ proto.ding4.CustomerLink.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsReceive(value);
-      break;
-    case 4:
-      var value = new google_protobuf_struct_pb.Struct;
-      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
-      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -948,13 +937,6 @@ proto.ding4.CustomerLink.prototype.serializeBinary = function() {
  */
 proto.ding4.CustomerLink.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCustomerId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getLevelId();
   if (f.length > 0) {
     writer.writeString(
@@ -969,32 +951,6 @@ proto.ding4.CustomerLink.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSelf();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string customer_id = 1;
- * @return {string}
- */
-proto.ding4.CustomerLink.prototype.getCustomerId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.CustomerLink} returns this
- */
-proto.ding4.CustomerLink.prototype.setCustomerId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1031,43 +987,6 @@ proto.ding4.CustomerLink.prototype.getIsReceive = function() {
  */
 proto.ding4.CustomerLink.prototype.setIsReceive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional google.protobuf.Struct self = 4;
- * @return {?proto.google.protobuf.Struct}
- */
-proto.ding4.CustomerLink.prototype.getSelf = function() {
-  return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Struct|undefined} value
- * @return {!proto.ding4.CustomerLink} returns this
-*/
-proto.ding4.CustomerLink.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.CustomerLink} returns this
- */
-proto.ding4.CustomerLink.prototype.clearSelf = function() {
-  return this.setSelf(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.CustomerLink.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 

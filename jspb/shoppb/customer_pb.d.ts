@@ -99,19 +99,11 @@ export namespace Customer {
 }
 
 export class CustomerLink extends jspb.Message {
-  getCustomerId(): string;
-  setCustomerId(value: string): void;
-
   getLevelId(): string;
   setLevelId(value: string): void;
 
   getIsReceive(): boolean;
   setIsReceive(value: boolean): void;
-
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerLink.AsObject;
@@ -123,10 +115,8 @@ export class CustomerLink extends jspb.Message {
 
 export namespace CustomerLink {
   export type AsObject = {
-    customerId: string,
     levelId: string,
     isReceive: boolean,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

@@ -30,10 +30,8 @@ message Customer {
 }
 
 message CustomerLink {
-    string customer_id = 1;
     string level_id = 2;
     bool is_receive = 3;
-    google.protobuf.Struct self = 4;
 }
 
 message CustomerBatch {

@@ -1227,7 +1227,7 @@ proto.ding4.Image.toObject = function(includeInstance, msg) {
     sku: jspb.Message.getFieldWithDefault(msg, 6, ""),
     target: (f = msg.getTarget()) && proto.ding4.ProductTarget.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    source: msg.getSource_asB64()
+    source: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1298,7 +1298,7 @@ proto.ding4.Image.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 9:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSource(value);
       break;
     default:
@@ -1387,9 +1387,9 @@ proto.ding4.Image.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSource_asU8();
+  f = message.getSource();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       9,
       f
     );
@@ -1561,44 +1561,20 @@ proto.ding4.Image.prototype.setType = function(value) {
 
 
 /**
- * optional bytes source = 9;
- * @return {!(string|Uint8Array)}
- */
-proto.ding4.Image.prototype.getSource = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * optional bytes source = 9;
- * This is a type-conversion wrapper around `getSource()`
+ * optional string source = 9;
  * @return {string}
  */
-proto.ding4.Image.prototype.getSource_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSource()));
+proto.ding4.Image.prototype.getSource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * optional bytes source = 9;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSource()`
- * @return {!Uint8Array}
- */
-proto.ding4.Image.prototype.getSource_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSource()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.ding4.Image} returns this
  */
 proto.ding4.Image.prototype.setSource = function(value) {
-  return jspb.Message.setProto3BytesField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

@@ -167,9 +167,6 @@ export namespace Spec {
 }
 
 export class ProductLink extends jspb.Message {
-  getProductId(): string;
-  setProductId(value: string): void;
-
   getClassId(): string;
   setClassId(value: string): void;
 
@@ -192,11 +189,6 @@ export class ProductLink extends jspb.Message {
   clearBlockList(): void;
   addBlock(value?: seo_pb.Block, index?: number): seo_pb.Block;
 
-  getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
-  hasSelf(): boolean;
-  clearSelf(): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductLink.AsObject;
   static toObject(includeInstance: boolean, msg: ProductLink): ProductLink.AsObject;
@@ -207,14 +199,12 @@ export class ProductLink extends jspb.Message {
 
 export namespace ProductLink {
   export type AsObject = {
-    productId: string,
     classId: string,
     isDisplay: boolean,
     url: string,
     freightAdd: number,
     seo?: seo_pb.SEO.AsObject,
     blockList: Array<seo_pb.Block.AsObject>,
-    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

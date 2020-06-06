@@ -92,9 +92,9 @@ proto.ding4.Business.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 9, 0),
     contacter: jspb.Message.getFieldWithDefault(msg, 10, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    phoneVerify: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    phoneVerify: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     email: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    emailVerify: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    emailVerify: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     location: jspb.Message.getFieldWithDefault(msg, 15, ""),
     mgrType: jspb.Message.getFieldWithDefault(msg, 16, 0),
     turnover: jspb.Message.getFieldWithDefault(msg, 17, 0),
@@ -192,7 +192,7 @@ proto.ding4.Business.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPhone(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setPhoneVerify(value);
       break;
     case 13:
@@ -200,7 +200,7 @@ proto.ding4.Business.deserializeBinaryFromReader = function(msg, reader) {
       msg.setEmail(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerify(value);
       break;
     case 15:
@@ -373,8 +373,8 @@ proto.ding4.Business.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPhoneVerify();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       12,
       f
     );
@@ -387,8 +387,8 @@ proto.ding4.Business.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getEmailVerify();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       14,
       f
     );
@@ -695,20 +695,20 @@ proto.ding4.Business.prototype.setPhone = function(value) {
 
 
 /**
- * optional string phone_verify = 12;
- * @return {string}
+ * optional bool phone_verify = 12;
+ * @return {boolean}
  */
 proto.ding4.Business.prototype.getPhoneVerify = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.ding4.Business} returns this
  */
 proto.ding4.Business.prototype.setPhoneVerify = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -731,20 +731,20 @@ proto.ding4.Business.prototype.setEmail = function(value) {
 
 
 /**
- * optional string email_verify = 14;
- * @return {string}
+ * optional bool email_verify = 14;
+ * @return {boolean}
  */
 proto.ding4.Business.prototype.getEmailVerify = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.ding4.Business} returns this
  */
 proto.ding4.Business.prototype.setEmailVerify = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 

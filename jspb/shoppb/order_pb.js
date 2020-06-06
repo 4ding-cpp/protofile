@@ -132,8 +132,8 @@ proto.ding4.Order.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 7, 0),
     comeFrom: jspb.Message.getFieldWithDefault(msg, 8, 0),
     count: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    freight: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    amount: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    freight: jspb.Message.getFieldWithDefault(msg, 11, 0),
     orderCharge: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
     paymentCharge: jspb.Message.getFieldWithDefault(msg, 13, 0),
     logisticsCharge: jspb.Message.getFieldWithDefault(msg, 14, 0),
@@ -222,11 +222,11 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCount(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setFreight(value);
       break;
     case 12:
@@ -386,15 +386,15 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getAmount();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       10,
       f
     );
   }
   f = message.getFreight();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f !== 0) {
+    writer.writeInt32(
       11,
       f
     );
@@ -666,11 +666,11 @@ proto.ding4.Order.prototype.setCount = function(value) {
 
 
 /**
- * optional double amount = 10;
+ * optional int32 amount = 10;
  * @return {number}
  */
 proto.ding4.Order.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -679,16 +679,16 @@ proto.ding4.Order.prototype.getAmount = function() {
  * @return {!proto.ding4.Order} returns this
  */
 proto.ding4.Order.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3FloatField(this, 10, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional double freight = 11;
+ * optional int32 freight = 11;
  * @return {number}
  */
 proto.ding4.Order.prototype.getFreight = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -697,7 +697,7 @@ proto.ding4.Order.prototype.getFreight = function() {
  * @return {!proto.ding4.Order} returns this
  */
 proto.ding4.Order.prototype.setFreight = function(value) {
-  return jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 

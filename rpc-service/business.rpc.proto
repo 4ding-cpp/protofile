@@ -116,7 +116,7 @@ service BusinessRPC {
     // 會員登入紀錄
     rpc SignCustomer(Customer) returns (Response);
     // 連結會員至 XX 商店
-    rpc LinkCustomer(CustomerLink) returns (Response);
+    rpc LinkCustomer(Customer) returns (Response);
     // 設定會員等級
     rpc SetCustomerLevel(CustomerLevel) returns (Response);
     // 會員登入紀錄

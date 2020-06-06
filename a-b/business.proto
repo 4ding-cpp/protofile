@@ -21,9 +21,9 @@ message Business {
     int32 type = 9;
     string contacter = 10;
     string phone = 11;
-    string phone_verify = 12;
+    bool phone_verify = 12;
     string email = 13;
-    string email_verify = 14;
+    bool email_verify = 14;
     string location = 15;
     int32 mgr_type = 16;
     int32 turnover = 17;

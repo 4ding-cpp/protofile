@@ -51,7 +51,7 @@ service Store1RPC {
     rpc FindCoupon(Query) returns (Response);
 
     // 連結會員
-    rpc LinkCustomer(CustomerLink) returns (Response);
+    rpc LinkCustomer(Customer) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
 
     // 會員等級
