@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
+import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -98,6 +99,9 @@ export namespace Car {
 }
 
 export class Commodity extends jspb.Message {
+  getIsNew(): boolean;
+  setIsNew(value: boolean): void;
+
   getNormal(): string;
   setNormal(value: string): void;
 
@@ -110,8 +114,10 @@ export class Commodity extends jspb.Message {
   getSku(): string;
   setSku(value: string): void;
 
-  getPhoto(): string;
-  setPhoto(value: string): void;
+  getPhoto(): a$submessage_pb.Image | undefined;
+  setPhoto(value?: a$submessage_pb.Image): void;
+  hasPhoto(): boolean;
+  clearPhoto(): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
@@ -151,11 +157,12 @@ export class Commodity extends jspb.Message {
 
 export namespace Commodity {
   export type AsObject = {
+    isNew: boolean,
     normal: string,
     additional: string,
     giveaway: string,
     sku: string,
-    photo: string,
+    photo?: a$submessage_pb.Image.AsObject,
     name?: google_protobuf_struct_pb.Value.AsObject,
     itemx?: google_protobuf_struct_pb.Value.AsObject,
     isPreorder: boolean,

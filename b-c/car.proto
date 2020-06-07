@@ -6,6 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
 import "activity-coupon.proto";
+import "a-submessage.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -30,17 +31,18 @@ message Car {
 }
 
 message Commodity {
-    string normal = 1;
-    string additional = 2;
-    string giveaway = 3;
-    string sku = 4;
-    string photo = 5;
-    google.protobuf.Value name = 6;
-    google.protobuf.Value itemx = 7;
-    bool is_preorder = 8;
-    int32 count = 9;
-    int32 price = 10;
-    int32 reduce = 11;
-    int32 active = 12;
-    int32 stock = 13;
+    bool is_new = 1;
+    string normal = 2;
+    string additional = 3;
+    string giveaway = 4;
+    string sku = 5;
+    Image photo = 6;
+    google.protobuf.Value name = 7;
+    google.protobuf.Value itemx = 8;
+    bool is_preorder = 9;
+    int32 count = 10;
+    int32 price = 11;
+    int32 reduce = 12;
+    int32 active = 13;
+    int32 stock = 14;
 }

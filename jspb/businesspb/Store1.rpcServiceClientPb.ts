@@ -178,6 +178,160 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoFindRecord = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findRecord(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindRecord',
+      request,
+      metadata || {},
+      this.methodInfoFindRecord,
+      callback);
+  }
+
+  methodInfoFindSign = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findSign(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindSign',
+      request,
+      metadata || {},
+      this.methodInfoFindSign,
+      callback);
+  }
+
+  methodInfoCreateManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: manager_pb.Manager) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createManager(
+    request: manager_pb.Manager,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateManager',
+      request,
+      metadata || {},
+      this.methodInfoCreateManager,
+      callback);
+  }
+
+  methodInfoUpdateManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: manager_pb.Manager) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateManager(
+    request: manager_pb.Manager,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateManager',
+      request,
+      metadata || {},
+      this.methodInfoUpdateManager,
+      callback);
+  }
+
+  methodInfoFindManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findManager(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindManager',
+      request,
+      metadata || {},
+      this.methodInfoFindManager,
+      callback);
+  }
+
+  methodInfoRecordManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: manager_pb.Manager) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  recordManager(
+    request: manager_pb.Manager,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/RecordManager',
+      request,
+      metadata || {},
+      this.methodInfoRecordManager,
+      callback);
+  }
+
+  methodInfoSignManager = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: manager_pb.Manager) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signManager(
+    request: manager_pb.Manager,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/SignManager',
+      request,
+      metadata || {},
+      this.methodInfoSignManager,
+      callback);
+  }
+
   methodInfoCreateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: label_pb.Label) => {
