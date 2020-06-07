@@ -13,123 +13,131 @@ message Order {
     string store_id = 2;
     string seller_id = 3;
     string customer_id = 4;
-    string car_id = 5;
-    string discount_id = 6;
-    int32 state = 7;
-    int32 come_from = 8;
-    int32 count = 9;
-    int32 amount = 10;
-    int32 freight = 11;
-    double order_charge = 12;
-    int32 payment_charge = 13;
-    int32 logistics_charge = 14;
-    string code = 15;
-    string re_order_id = 16;
-    Payment payment = 17;
-    Logistics logistics = 18;
+    string email = 5;
+    string car_id = 6;
+    string discount_id = 7;
+    int32 state = 8;
+    int32 come_from = 9;
+    int32 count = 10;
+    int32 amount = 11;
+    int32 freight = 12;
+    double order_charge = 13;
+    int32 payment_charge = 14;
+    int32 logistics_charge = 15;
+    string code = 16;
+    string re_order_id = 17;
+    Payment payment = 18;
+    Logistics logistics = 19;
 
-    map<string, int32> labelx = 19;
-    string operator = 20;
-    google.protobuf.Timestamp create_at = 21;
-    google.protobuf.Timestamp update_at = 22;
-    repeated string cols = 23;
-    repeated Condition condition = 24;
-    google.protobuf.Struct self = 25;
+    map<string, int32> labelx = 20;
+    string operator = 21;
+    google.protobuf.Timestamp create_at = 22;
+    google.protobuf.Timestamp update_at = 23;
+    repeated string cols = 24;
+    repeated Condition condition = 25;
+    google.protobuf.Struct self = 26;
 }
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Payment {
+    // 選擇網址
+    string Redirect = 1;
     // 交易狀態
-	string RtnCode = 1;     
+	string RtnCode = 2;     
     // 交易訊息 
-	string RtnMsg = 2;      
+	string RtnMsg = 3;      
     // 第三方金流編號
-	string TradeNo = 3;      
+	string TradeNo = 4;      
     // 交易金額
-	string TrandAmt = 4;    
+	string TrandAmt = 5;    
     // 付款方式 
-	string PaymentType = 5; 
+	string PaymentType = 6; 
     // 成立時間
-	string TradeDate = 6;    
+	string TradeDate = 7;    
     // 繳費到期日
-	string ExpireDate = 7;   
+	string ExpireDate = 8;   
 	// ATM 條碼
      // 繳費銀行代碼
-	string BankCode = 8;  
+	string BankCode = 9;  
      // 繳費虛擬帳號
-	string vAccount = 9;
+	string vAccount = 10;
     // 超商bon 列印條碼
-	string PaymentNo = 10; 
+	string PaymentNo = 11; 
     // 超商繳費條碼123
-	string Barcode1 = 11;  
-	string Barcode2 = 12;  
-	string Barcode3 = 13; 
+	string Barcode1 = 12;  
+	string Barcode2 = 13;  
+	string Barcode3 = 14; 
 }
 // 物流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Logistics {
+    // 等待編號
+    string RenderID = 1;
+    // 選擇網址
+    string Redirect = 2;
+
     // 物流狀態
-	string RtnCode = 1;       
+	string RtnCode = 3;       
     // 物流訊息    
-	string RtnMsg = 2;        
+	string RtnMsg = 4;        
     // 第三方物流編號
-	string AllPayLogisticsID = 3;  
+	string AllPayLogisticsID = 5;  
     // 物流類型
-	string LogisticsType = 4;  
+	string LogisticsType = 6;  
     // 物流子類型
-	string LogisticsSubType = 5;   
+	string LogisticsSubType = 7;   
     // 貨物遺失賠償依據
-	string GoodsAmount = 6;   
+	string GoodsAmount = 8;   
     // 剛新狀態時間
-	string UpdateStatusDate = 7;   
+	string UpdateStatusDate = 9;   
 	// 寄件者
-	string SenderName = 8;
-	string SenderPhone = 9; 
-	string SenderCellPhone = 10; 
-	string SenderZipCode = 11;
-	string SenderAddress = 12; 
+	string SenderName = 10;
+	string SenderPhone = 11; 
+	string SenderCellPhone = 12; 
+	string SenderZipCode = 13;
+	string SenderAddress = 14; 
 	// 收件者
     // 收件者名稱
-	string ReceiverName = 13;  
+	string ReceiverName = 15;  
     // 收件者電話
-	string ReceiverPhone = 14; 
-	string ReceiverCellPhone = 15; 
+	string ReceiverPhone = 16; 
+	string ReceiverCellPhone = 17; 
     // 收件者電子郵件
-	string ReceiverEmail = 16;
+	string ReceiverEmail = 18;
     // 收件者郵遞區號
-	string ReceiverZipCode = 17;
+	string ReceiverZipCode = 19;
     // 收件者地址
-	string ReceiverAddress = 18;
+	string ReceiverAddress = 20;
 	// 超商取貨資訊
     // 超商門市編號
-	string CVSStoreID = 19;
+	string CVSStoreID = 21;
     // 超商門市名稱
-	string CVSStoreName = 20;   
+	string CVSStoreName = 22;   
     // 超商門市地址
-	string CVSAddress = 21;  
+	string CVSAddress = 23;  
     // 超商門市電話
-	string CVSTelephone = 22;    
+	string CVSTelephone = 24;    
     // 超商門市位置 0:本島 1:離島
-	string CVSOutSide = 23;   
+	string CVSOutSide = 25;   
     // 寄貨編號
-	string CVSPaymentNo = 24;  
+	string CVSPaymentNo = 26;  
     // 驗證碼
-	string CVSValidationNo= 25;  
+	string CVSValidationNo= 27;  
     // 01:取件門市更新 02:退件門市更新
-	string StoreType = 26; 
+	string StoreType = 28; 
     // 選取門市無效 01-04
-	string Status = 27; 
+	string Status = 29; 
 	// 宅配資訊
     // 溫層 0001:常溫 0002:冷藏 0003:冷凍
-	string Temperature = 28; 
+	string Temperature = 30; 
     // 距離 00:同縣市 01:外縣市 02:離島    
-	string Distance = 29;    
+	string Distance = 31;    
       // 規格 0001:60cm 0002:90cm 0003:120cm 0004:150cm
-	string Specification = 30;         
+	string Specification = 32;         
     // 預定取件時段
-	string ScheduledPickupTime = 31;     
+	string ScheduledPickupTime = 33;     
     // 預定送達時段
-	string ScheduledDeliveryTime= 32;    
+	string ScheduledDeliveryTime= 34;    
     // 指定送達日
-	string ScheduledDeliveryDate= 33;   
+	string ScheduledDeliveryDate= 35;   
     // 託運單號 
-	string BookingNode = 34;            
+	string BookingNode = 36;            
 }

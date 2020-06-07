@@ -17,6 +17,9 @@ export class Order extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
+  getEmail(): string;
+  setEmail(value: string): void;
+
   getCarId(): string;
   setCarId(value: string): void;
 
@@ -108,6 +111,7 @@ export namespace Order {
     storeId: string,
     sellerId: string,
     customerId: string,
+    email: string,
     carId: string,
     discountId: string,
     state: number,
@@ -133,6 +137,9 @@ export namespace Order {
 }
 
 export class Payment extends jspb.Message {
+  getRedirect(): string;
+  setRedirect(value: string): void;
+
   getRtncode(): string;
   setRtncode(value: string): void;
 
@@ -182,6 +189,7 @@ export class Payment extends jspb.Message {
 
 export namespace Payment {
   export type AsObject = {
+    redirect: string,
     rtncode: string,
     rtnmsg: string,
     tradeno: string,
@@ -199,6 +207,12 @@ export namespace Payment {
 }
 
 export class Logistics extends jspb.Message {
+  getRenderid(): string;
+  setRenderid(value: string): void;
+
+  getRedirect(): string;
+  setRedirect(value: string): void;
+
   getRtncode(): string;
   setRtncode(value: string): void;
 
@@ -311,6 +325,8 @@ export class Logistics extends jspb.Message {
 
 export namespace Logistics {
   export type AsObject = {
+    renderid: string,
+    redirect: string,
     rtncode: string,
     rtnmsg: string,
     allpaylogisticsid: string,

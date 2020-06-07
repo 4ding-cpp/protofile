@@ -48,4 +48,8 @@ service ShopRPC {
     rpc CancelOrder(Order) returns (Response);
     // 消費紀錄
     rpc FindOrder(Query) returns (Response);
+    // 選擇超商門市
+    rpc ChooseCVSStore(Logistics) returns (Response);
+    // 取得超商門市資訊
+    rpc GetCVSStore(Logistics) returns (Response);
 }

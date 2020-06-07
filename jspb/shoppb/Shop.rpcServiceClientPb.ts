@@ -343,5 +343,49 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoChooseCVSStore = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Logistics) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  chooseCVSStore(
+    request: order_pb.Logistics,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/ChooseCVSStore',
+      request,
+      metadata || {},
+      this.methodInfoChooseCVSStore,
+      callback);
+  }
+
+  methodInfoGetCVSStore = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Logistics) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  getCVSStore(
+    request: order_pb.Logistics,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/GetCVSStore',
+      request,
+      metadata || {},
+      this.methodInfoGetCVSStore,
+      callback);
+  }
+
 }
 

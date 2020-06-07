@@ -172,6 +172,10 @@ service BusinessRPC {
     rpc FindOrder(Query) returns (Response);
     // 訂單修改紀錄
     rpc RecordOrder(Order) returns (Response);
+    // 選擇超商門市
+    rpc ChooseCVSStore(Logistics) returns (Response);
+    // 取得超商門市資訊
+    rpc GetCVSStore(Logistics) returns (Response);
 
     // 建立供應商資訊
     rpc CreateSupplier(Supplier) returns (Response);
