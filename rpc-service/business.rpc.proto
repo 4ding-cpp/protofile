@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "pingpong.proto";
+import "seo.proto";
 import "sql.proto";
 import "password.proto";
 import "business.proto";
@@ -222,6 +223,12 @@ service BusinessRPC {
     rpc UpdateExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);
     rpc RecordExternal(External) returns (Response);
+
+    // 模板相關操作
+    rpc CreateTemplate(Template) returns (Response);
+    rpc UpdateTemplate(Template) returns (Response);
+    rpc DeleteTemplate(Template) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
 
     // 訊息相關資訊
     rpc SMS(Message) returns (Response);

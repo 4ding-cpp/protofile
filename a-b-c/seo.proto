@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message SEO {
     google.protobuf.Value title = 1;
@@ -14,5 +15,20 @@ message SEO {
 
 message Block {
     google.protobuf.Value title = 1;
-    google.protobuf.Value content = 2;
+    string url = 2;
+    Template template = 3;
+}
+
+message Template {
+    string template_id = 1;
+    string store_id = 2;
+    string name = 3;
+    string content = 4;
+
+    map<string, int32> labelx = 5;
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    repeated string cols = 9;
+    google.protobuf.Struct self = 11;  
 }

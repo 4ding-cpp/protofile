@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as pingpong_pb from './pingpong_pb';
+import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as business_pb from './business_pb';
