@@ -14,8 +14,14 @@ export class Customer extends jspb.Message {
   getPhone(): string;
   setPhone(value: string): void;
 
+  getPhoneVerify(): boolean;
+  setPhoneVerify(value: boolean): void;
+
   getEmail(): string;
   setEmail(value: string): void;
+
+  getEmailVerify(): boolean;
+  setEmailVerify(value: boolean): void;
 
   getName(): string;
   setName(value: string): void;
@@ -81,7 +87,9 @@ export namespace Customer {
     customerId: string,
     status: number,
     phone: string,
+    phoneVerify: boolean,
     email: string,
+    emailVerify: boolean,
     name: string,
     birthday: string,
     sex: number,

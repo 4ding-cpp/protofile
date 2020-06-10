@@ -99,9 +99,6 @@ export namespace Car {
 }
 
 export class Commodity extends jspb.Message {
-  getIsNew(): boolean;
-  setIsNew(value: boolean): void;
-
   getNormal(): string;
   setNormal(value: string): void;
 
@@ -157,7 +154,6 @@ export class Commodity extends jspb.Message {
 
 export namespace Commodity {
   export type AsObject = {
-    isNew: boolean,
     normal: string,
     additional: string,
     giveaway: string,

@@ -12,26 +12,28 @@ message Customer {
     string customer_id = 1;
     int32 status = 2;
     string phone = 3;
-    string email = 4;
-    string name = 5;
-    string birthday = 6;
-    int32 sex = 7;
-    string password = 8;
-    string come_from = 9;
-    CustomerLink link = 10;
+    bool phone_verify = 4;
+    string email = 5;
+    bool email_verify = 6;
+    string name = 7;
+    string birthday = 8;
+    int32 sex = 9;
+    string password = 10;
+    string come_from = 11;
+    CustomerLink link = 12;
     
-    map<string, int32> labelx = 11;
-    string operator = 12;
-    google.protobuf.Timestamp create_at = 13;
-    google.protobuf.Timestamp update_at = 14;
-    repeated string cols = 15;
-    repeated Condition condition = 16;
-    google.protobuf.Struct self = 17;
+    map<string, int32> labelx = 13;
+    string operator = 14;
+    google.protobuf.Timestamp create_at = 15;
+    google.protobuf.Timestamp update_at = 16;
+    repeated string cols = 17;
+    repeated Condition condition = 18;
+    google.protobuf.Struct self = 19;
 }
 
 message CustomerLink {
-    string level_id = 2;
-    bool is_receive = 3;
+    string level_id = 1;
+    bool is_receive = 2;
 }
 
 message CustomerBatch {
