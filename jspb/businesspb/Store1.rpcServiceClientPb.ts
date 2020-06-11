@@ -618,6 +618,50 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoCreateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createCustomer(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateCustomer',
+      request,
+      metadata || {},
+      this.methodInfoCreateCustomer,
+      callback);
+  }
+
+  methodInfoUpdateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateCustomer(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateCustomer',
+      request,
+      metadata || {},
+      this.methodInfoUpdateCustomer,
+      callback);
+  }
+
   methodInfoLinkCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer_pb.Customer) => {
@@ -794,6 +838,50 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoFindProductUnlink = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findProductUnlink(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProductUnlink',
+      request,
+      metadata || {},
+      this.methodInfoFindProductUnlink,
+      callback);
+  }
+
+  methodInfoFindProductLinked = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findProductLinked(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProductLinked',
+      request,
+      metadata || {},
+      this.methodInfoFindProductLinked,
+      callback);
+  }
+
   methodInfoLinkProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product_pb.Product) => {
@@ -835,28 +923,6 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoLinkProductBatch,
-      callback);
-  }
-
-  methodInfoFindProductLinked = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findProductLinked(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindProductLinked',
-      request,
-      metadata || {},
-      this.methodInfoFindProductLinked,
       callback);
   }
 

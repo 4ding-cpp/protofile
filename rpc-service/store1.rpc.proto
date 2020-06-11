@@ -60,6 +60,8 @@ service Store1RPC {
     rpc FindCoupon(Query) returns (Response);
 
     // 連結會員
+    rpc CreateCustomer(Customer) returns (Response);
+    rpc UpdateCustomer(Customer) returns (Response);
     rpc LinkCustomer(Customer) returns (Response);
     rpc FindCustomerLinked(Query) returns (Response);
 
@@ -72,9 +74,10 @@ service Store1RPC {
 
     // 連結商品
     rpc FindProduct(Query) returns (Response);
+    rpc FindProductUnlink(Query) returns (Response);
+    rpc FindProductLinked(Query) returns (Response);
     rpc LinkProduct(Product) returns (Response);
     rpc LinkProductBatch(ProductBatch) returns (Response);
-    rpc FindProductLinked(Query) returns (Response);
     rpc FindProductByClass(ProductClass) returns (Response);
     
     // 建立商品類別
