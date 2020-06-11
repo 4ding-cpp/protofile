@@ -1,4 +1,7 @@
 ::businesspb
+
+del "jspb/businesspb" /S /Q
+
 protoc -I=a-b -I=a-b-c -I=b -I=b-c -I=rpc-service ^
  --js_out=import_style=commonjs,binary:./jspb/businesspb ^
  --grpc-web_out=import_style=typescript,mode=grpcweb:./jspb/businesspb ^

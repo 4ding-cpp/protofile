@@ -18,6 +18,12 @@ export class CustomerLevel extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  getLevel(): number;
+  setLevel(value: number): void;
+
+  getPayOnce(): number;
+  setPayOnce(value: number): void;
+
   getPayAmount(): number;
   setPayAmount(value: number): void;
 
@@ -30,10 +36,10 @@ export class CustomerLevel extends jspb.Message {
   getPriority(): number;
   setPriority(value: number): void;
 
-  getCustomer(): customer_pb.Customer | undefined;
-  setCustomer(value?: customer_pb.Customer): void;
-  hasCustomer(): boolean;
-  clearCustomer(): void;
+  getCustomerList(): Array<customer_pb.Customer>;
+  setCustomerList(value: Array<customer_pb.Customer>): void;
+  clearCustomerList(): void;
+  addCustomer(value?: customer_pb.Customer, index?: number): customer_pb.Customer;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -80,11 +86,13 @@ export namespace CustomerLevel {
     storeId: string,
     status: number,
     name: string,
+    level: number,
+    payOnce: number,
     payAmount: number,
     payTimes: number,
     isAuto: boolean,
     priority: number,
-    customer?: customer_pb.Customer.AsObject,
+    customerList: Array<customer_pb.Customer.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

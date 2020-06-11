@@ -39,14 +39,14 @@ export class Business extends jspb.Message {
   getPhone(): string;
   setPhone(value: string): void;
 
-  getPhoneVerify(): string;
-  setPhoneVerify(value: string): void;
+  getPhoneVerify(): boolean;
+  setPhoneVerify(value: boolean): void;
 
   getEmail(): string;
   setEmail(value: string): void;
 
-  getEmailVerify(): string;
-  setEmailVerify(value: string): void;
+  getEmailVerify(): boolean;
+  setEmailVerify(value: boolean): void;
 
   getLocation(): string;
   setLocation(value: string): void;
@@ -125,9 +125,9 @@ export namespace Business {
     type: number,
     contacter: string,
     phone: string,
-    phoneVerify: string,
+    phoneVerify: boolean,
     email: string,
-    emailVerify: string,
+    emailVerify: boolean,
     location: string,
     mgrType: number,
     turnover: number,

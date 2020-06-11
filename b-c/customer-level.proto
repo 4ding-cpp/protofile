@@ -14,17 +14,19 @@ message CustomerLevel {
     string store_id = 2;
     int32 status = 3;
     string name = 4;
-    double pay_amount = 5;
-    int32 pay_times = 6;
-    bool is_auto = 7;
-    int32 priority = 8;
-    Customer customer  = 9;
+    int32 level = 5;
+    double pay_once = 6;
+    double pay_amount = 7;
+    int32 pay_times = 8;
+    bool is_auto = 9;
+    int32 priority = 10;
+    repeated Customer customer  = 11;
     
-    map<string, int32> labelx = 10;
-    string operator = 11;
-    google.protobuf.Timestamp create_at = 12;
-    google.protobuf.Timestamp update_at = 13;
-    repeated string cols = 14;
-    repeated Condition condition = 15;
-    google.protobuf.Struct self = 16;
+    map<string, int32> labelx = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }

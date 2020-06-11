@@ -22,6 +22,7 @@ import "message.proto";
 
 service AdminRPC {
     rpc Ping(PingPong) returns (PingPong);
+    rpc Stream(PingPong) returns (stream PingPong);
 
     // 自身資訊修改查詢
     rpc WhoAmI(Query) returns (Response);

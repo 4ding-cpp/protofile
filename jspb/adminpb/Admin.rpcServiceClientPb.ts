@@ -36,7 +36,7 @@ export class AdminRPCClient {
                options?: null | { [index: string]: string; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
-    options['format'] = 'binary';
+    options['format'] = 'text';
 
     this.client_ = new grpcWeb.GrpcWebClientBase(options);
     this.hostname_ = hostname;
@@ -64,6 +64,25 @@ export class AdminRPCClient {
       metadata || {},
       this.methodInfoPing,
       callback);
+  }
+
+  methodInfoStream = new grpcWeb.AbstractClientBase.MethodInfo(
+    pingpong_pb.PingPong,
+    (request: pingpong_pb.PingPong) => {
+      return request.serializeBinary();
+    },
+    pingpong_pb.PingPong.deserializeBinary
+  );
+
+  stream(
+    request: pingpong_pb.PingPong,
+    metadata?: grpcWeb.Metadata) {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/ding4.AdminRPC/Stream',
+      request,
+      metadata || {},
+      this.methodInfoStream);
   }
 
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(

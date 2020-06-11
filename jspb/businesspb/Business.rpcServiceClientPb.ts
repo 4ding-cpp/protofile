@@ -1062,7 +1062,7 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoSetCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAddCustomerToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer$level_pb.CustomerLevel) => {
       return request.serializeBinary();
@@ -1070,17 +1070,39 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  setCustomerLevel(
+  addCustomerToLevel(
     request: customer$level_pb.CustomerLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/SetCustomerLevel',
+        '/ding4.BusinessRPC/AddCustomerToLevel',
       request,
       metadata || {},
-      this.methodInfoSetCustomerLevel,
+      this.methodInfoAddCustomerToLevel,
+      callback);
+  }
+
+  methodInfoDelCustomerFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer$level_pb.CustomerLevel) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  delCustomerFromLevel(
+    request: customer$level_pb.CustomerLevel,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/DelCustomerFromLevel',
+      request,
+      metadata || {},
+      this.methodInfoDelCustomerFromLevel,
       callback);
   }
 
