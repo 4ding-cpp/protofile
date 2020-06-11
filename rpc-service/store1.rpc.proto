@@ -79,6 +79,9 @@ service Store1RPC {
     rpc LinkProduct(Product) returns (Response);
     rpc LinkProductBatch(ProductBatch) returns (Response);
     rpc FindProductByClass(ProductClass) returns (Response);
+
+    // 拉取模板
+    rpc FindTemplate(Query) returns (Response);
     
     // 建立商品類別
     rpc CreateProductClass(ProductClass) returns (Response);
