@@ -23,12 +23,13 @@ message Template {
     string template_id = 1;
     string store_id = 2;
     string name = 3;
-    string content = 4;
+    bool body_only = 4;
+    string content = 5;
 
-    map<string, int32> labelx = 5;
-    string operator = 6;
-    google.protobuf.Timestamp create_at = 7;
-    google.protobuf.Timestamp update_at = 8;
-    repeated string cols = 9;
+    map<string, int32> labelx = 6;
+    string operator = 7;
+    google.protobuf.Timestamp create_at = 8;
+    google.protobuf.Timestamp update_at = 9;
+    repeated string cols = 10;
     google.protobuf.Struct self = 11;  
 }
