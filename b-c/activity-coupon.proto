@@ -12,23 +12,24 @@ import "google/protobuf/timestamp.proto";
 message Activity {
     string activity_id = 1;
     string store_id = 2;
-    google.protobuf.Timestamp begin_at = 3;
-    google.protobuf.Timestamp end_at = 4;
-    google.protobuf.Value name = 5;
-    Rule rule = 6;
-    Rule now = 7;
-    Active active = 8;
-    ProductTarget target = 9;
-    bool is_enable = 10;
-    map<string, Used> used = 11;
+    int32 type = 3;
+    google.protobuf.Timestamp begin_at = 4;
+    google.protobuf.Timestamp end_at = 5;
+    google.protobuf.Value name = 6;
+    Rule rule = 7;
+    Rule now = 8;
+    Active active = 9;
+    ProductTarget target = 10;
+    bool is_enable = 11;
+    map<string, Used> used = 12;
 
-    map<string, int32> labelx = 12;
-    string operator = 13;
-    google.protobuf.Timestamp create_at = 14;
-    google.protobuf.Timestamp update_at = 15;
-    repeated string cols = 16;
-    repeated Condition condition = 17;
-    google.protobuf.Struct self = 18;
+    map<string, int32> labelx = 13;
+    string operator = 14;
+    google.protobuf.Timestamp create_at = 15;
+    google.protobuf.Timestamp update_at = 16;
+    repeated string cols = 17;
+    repeated Condition condition = 18;
+    google.protobuf.Struct self = 19;
 }
 
 message Coupon {
