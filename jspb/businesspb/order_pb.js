@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var car_pb = require('./car_pb.js');
+goog.object.extend(proto, car_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -90,7 +92,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Order.repeatedFields_ = [24,25];
+proto.ding4.Order.repeatedFields_ = [17,24,25];
 
 
 
@@ -129,7 +131,7 @@ proto.ding4.Order.toObject = function(includeInstance, msg) {
     customerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     email: jspb.Message.getFieldWithDefault(msg, 5, ""),
     carId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    discountId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    couponId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     state: jspb.Message.getFieldWithDefault(msg, 8, 0),
     comeFrom: jspb.Message.getFieldWithDefault(msg, 9, 0),
     count: jspb.Message.getFieldWithDefault(msg, 10, 0),
@@ -138,8 +140,9 @@ proto.ding4.Order.toObject = function(includeInstance, msg) {
     orderCharge: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
     paymentCharge: jspb.Message.getFieldWithDefault(msg, 14, 0),
     logisticsCharge: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    code: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    reOrderId: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    reOrderId: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    commodityList: jspb.Message.toObjectList(msg.getCommodityList(),
+    car_pb.Commodity.toObject, includeInstance),
     payment: (f = msg.getPayment()) && proto.ding4.Payment.toObject(includeInstance, f),
     logistics: (f = msg.getLogistics()) && proto.ding4.Logistics.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -212,7 +215,7 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDiscountId(value);
+      msg.setCouponId(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
@@ -248,11 +251,12 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 16:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCode(value);
+      msg.setReOrderId(value);
       break;
     case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReOrderId(value);
+      var value = new car_pb.Commodity;
+      reader.readMessage(value,car_pb.Commodity.deserializeBinaryFromReader);
+      msg.addCommodity(value);
       break;
     case 18:
       var value = new proto.ding4.Payment;
@@ -369,7 +373,7 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDiscountId();
+  f = message.getCouponId();
   if (f.length > 0) {
     writer.writeString(
       7,
@@ -432,18 +436,19 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCode();
+  f = message.getReOrderId();
   if (f.length > 0) {
     writer.writeString(
       16,
       f
     );
   }
-  f = message.getReOrderId();
+  f = message.getCommodityList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedMessage(
       17,
-      f
+      f,
+      car_pb.Commodity.serializeBinaryToWriter
     );
   }
   f = message.getPayment();
@@ -624,10 +629,10 @@ proto.ding4.Order.prototype.setCarId = function(value) {
 
 
 /**
- * optional string discount_id = 7;
+ * optional string coupon_id = 7;
  * @return {string}
  */
-proto.ding4.Order.prototype.getDiscountId = function() {
+proto.ding4.Order.prototype.getCouponId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -636,7 +641,7 @@ proto.ding4.Order.prototype.getDiscountId = function() {
  * @param {string} value
  * @return {!proto.ding4.Order} returns this
  */
-proto.ding4.Order.prototype.setDiscountId = function(value) {
+proto.ding4.Order.prototype.setCouponId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
@@ -786,10 +791,10 @@ proto.ding4.Order.prototype.setLogisticsCharge = function(value) {
 
 
 /**
- * optional string code = 16;
+ * optional string re_order_id = 16;
  * @return {string}
  */
-proto.ding4.Order.prototype.getCode = function() {
+proto.ding4.Order.prototype.getReOrderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
@@ -798,26 +803,46 @@ proto.ding4.Order.prototype.getCode = function() {
  * @param {string} value
  * @return {!proto.ding4.Order} returns this
  */
-proto.ding4.Order.prototype.setCode = function(value) {
+proto.ding4.Order.prototype.setReOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
- * optional string re_order_id = 17;
- * @return {string}
+ * repeated Commodity commodity = 17;
+ * @return {!Array<!proto.ding4.Commodity>}
  */
-proto.ding4.Order.prototype.getReOrderId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+proto.ding4.Order.prototype.getCommodityList = function() {
+  return /** @type{!Array<!proto.ding4.Commodity>} */ (
+    jspb.Message.getRepeatedWrapperField(this, car_pb.Commodity, 17));
 };
 
 
 /**
- * @param {string} value
+ * @param {!Array<!proto.ding4.Commodity>} value
+ * @return {!proto.ding4.Order} returns this
+*/
+proto.ding4.Order.prototype.setCommodityList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Commodity=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Commodity}
+ */
+proto.ding4.Order.prototype.addCommodity = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 17, opt_value, proto.ding4.Commodity, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.ding4.Order} returns this
  */
-proto.ding4.Order.prototype.setReOrderId = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
+proto.ding4.Order.prototype.clearCommodityList = function() {
+  return this.setCommodityList([]);
 };
 
 

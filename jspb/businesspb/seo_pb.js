@@ -609,7 +609,7 @@ proto.ding4.Template.toObject = function(includeInstance, msg) {
     templateId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    bodyOnly: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    isHtml: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     content: jspb.Message.getFieldWithDefault(msg, 5, ""),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -667,7 +667,7 @@ proto.ding4.Template.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBodyOnly(value);
+      msg.setIsHtml(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -752,7 +752,7 @@ proto.ding4.Template.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBodyOnly();
+  f = message.getIsHtml();
   if (f) {
     writer.writeBool(
       4,
@@ -866,10 +866,10 @@ proto.ding4.Template.prototype.setName = function(value) {
 
 
 /**
- * optional bool body_only = 4;
+ * optional bool is_html = 4;
  * @return {boolean}
  */
-proto.ding4.Template.prototype.getBodyOnly = function() {
+proto.ding4.Template.prototype.getIsHtml = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -878,7 +878,7 @@ proto.ding4.Template.prototype.getBodyOnly = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Template} returns this
  */
-proto.ding4.Template.prototype.setBodyOnly = function(value) {
+proto.ding4.Template.prototype.setIsHtml = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 

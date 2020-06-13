@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
+import * as car_pb from './car_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -23,8 +24,8 @@ export class Order extends jspb.Message {
   getCarId(): string;
   setCarId(value: string): void;
 
-  getDiscountId(): string;
-  setDiscountId(value: string): void;
+  getCouponId(): string;
+  setCouponId(value: string): void;
 
   getState(): number;
   setState(value: number): void;
@@ -50,11 +51,13 @@ export class Order extends jspb.Message {
   getLogisticsCharge(): number;
   setLogisticsCharge(value: number): void;
 
-  getCode(): string;
-  setCode(value: string): void;
-
   getReOrderId(): string;
   setReOrderId(value: string): void;
+
+  getCommodityList(): Array<car_pb.Commodity>;
+  setCommodityList(value: Array<car_pb.Commodity>): void;
+  clearCommodityList(): void;
+  addCommodity(value?: car_pb.Commodity, index?: number): car_pb.Commodity;
 
   getPayment(): Payment | undefined;
   setPayment(value?: Payment): void;
@@ -113,7 +116,7 @@ export namespace Order {
     customerId: string,
     email: string,
     carId: string,
-    discountId: string,
+    couponId: string,
     state: number,
     comeFrom: number,
     count: number,
@@ -122,8 +125,8 @@ export namespace Order {
     orderCharge: number,
     paymentCharge: number,
     logisticsCharge: number,
-    code: string,
     reOrderId: string,
+    commodityList: Array<car_pb.Commodity.AsObject>,
     payment?: Payment.AsObject,
     logistics?: Logistics.AsObject,
     labelxMap: Array<[string, number]>,
