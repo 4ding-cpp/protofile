@@ -75,6 +75,9 @@ export class Template extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  getIsHtml(): boolean;
+  setIsHtml(value: boolean): void;
+
   getContent(): string;
   setContent(value: string): void;
 
@@ -117,6 +120,7 @@ export namespace Template {
     templateId: string,
     storeId: string,
     name: string,
+    isHtml: boolean,
     content: string,
     labelxMap: Array<[string, number]>,
     operator: string,
