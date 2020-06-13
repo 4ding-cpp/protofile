@@ -9,6 +9,12 @@ import "car.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+// State => 1.待處理 2.處理中 3.退貨待審核 4.退貨已審核 5.已完成 6.已結案
+// PaymentState => 1.未付款 2.已付款 3.待退款 4.退款中 5.已退款
+// LogisticsState => 10.待出貨 11.已出貨 12.已到達 13.已領取
+// LogisticsState => 20.待退貨 21.退貨中 22.已退貨
+// LogisticsState => 30.待換貨 31.換貨中 32.已收貨
+// ComeFrom => 1.前台 2.後台
 message Order {
     string order_id = 1; 
     string store_id = 2;
@@ -18,25 +24,28 @@ message Order {
     string car_id = 6;
     string coupon_id = 7;
     int32 state = 8;
-    int32 come_from = 9;
-    int32 count = 10;
-    int32 amount = 11;
-    int32 freight = 12;
-    double order_charge = 13;
-    int32 payment_charge = 14;
-    int32 logistics_charge = 15;
-    string re_order_id = 16;
-    repeated Commodity commodity = 17;
-    Payment payment = 18;
-    Logistics logistics = 19;
+    int32 payment_state = 9;
+    int32 logistics_state = 10;
+    google.protobuf.Timestamp receive_at = 11;
+    int32 come_from = 12;
+    int32 count = 13;
+    int32 amount = 14;
+    int32 freight = 15;
+    double order_charge = 16;
+    int32 payment_charge = 17;
+    int32 logistics_charge = 18;
+    string re_order_id = 19;
+    repeated Commodity commodity = 20;
+    Payment payment = 21;
+    Logistics logistics = 22;
 
-    map<string, int32> labelx = 20;
-    string operator = 21;
-    google.protobuf.Timestamp create_at = 22;
-    google.protobuf.Timestamp update_at = 23;
-    repeated string cols = 24;
-    repeated Condition condition = 25;
-    google.protobuf.Struct self = 26;
+    map<string, int32> labelx = 23;
+    string operator = 24;
+    google.protobuf.Timestamp create_at = 25;
+    google.protobuf.Timestamp update_at = 26;
+    repeated string cols = 27;
+    repeated Condition condition = 28;
+    google.protobuf.Struct self = 29;
 }
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Payment {

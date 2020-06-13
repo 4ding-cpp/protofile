@@ -30,6 +30,17 @@ export class Order extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
+  getPaymentState(): number;
+  setPaymentState(value: number): void;
+
+  getLogisticsState(): number;
+  setLogisticsState(value: number): void;
+
+  getReceiveAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReceiveAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasReceiveAt(): boolean;
+  clearReceiveAt(): void;
+
   getComeFrom(): number;
   setComeFrom(value: number): void;
 
@@ -118,6 +129,9 @@ export namespace Order {
     carId: string,
     couponId: string,
     state: number,
+    paymentState: number,
+    logisticsState: number,
+    receiveAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     comeFrom: number,
     count: number,
     amount: number,
