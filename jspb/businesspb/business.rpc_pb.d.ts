@@ -20,5 +20,6 @@ import * as purchase_pb from './purchase_pb';
 import * as seller_pb from './seller_pb';
 import * as setting_pb from './setting_pb';
 import * as external_pb from './external_pb';
+import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 

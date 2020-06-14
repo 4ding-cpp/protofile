@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Freeback {
+    string freeback_id = 1;
+    int32 type = 2;
+    string store_id = 3;
+    string customer_id = 4;
+    string order_id = 5;
+    string description = 6;
+    repeated Dialogue dialogue = 7;
+        
+    map<string, int32> labelx = 8;
+    string operator = 9;
+    google.protobuf.Timestamp create_at = 10;
+    google.protobuf.Timestamp update_at = 11;
+    repeated string cols = 12;
+    repeated Condition condition = 13;
+    google.protobuf.Struct self = 14;
+}
+
+message Dialogue {
+    string freeback_id = 1;
+    google.protobuf.Timestamp time_at = 2;
+    string message = 3;
+    string responder = 4;
+      google.protobuf.Struct self = 5;
+}

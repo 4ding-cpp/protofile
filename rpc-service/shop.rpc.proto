@@ -10,6 +10,7 @@ import "customer.proto";
 import "car.proto";
 import "activity-coupon.proto";
 import "order.proto";
+import "freeback.proto";
 
 
 service ShopRPC {
@@ -38,6 +39,8 @@ service ShopRPC {
     // State => 1.選購 2.鎖定 3.取消 6.完成訂單
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
+    // 鎖定購物車
+    rpc LockCar(Car) returns (Response);
     // 清空購物車
     rpc DeleteCar(Car) returns (Response);
 
@@ -53,4 +56,10 @@ service ShopRPC {
     rpc ChooseCVSStore(Logistics) returns (Response);
     // 取得超商門市資訊
     rpc GetCVSStore(Logistics) returns (Response);
+
+    // 回饋
+    rpc CreateFreeback(Freeback) returns (Response);
+    rpc ReadFreeback(Freeback) returns (Response);
+    rpc AppendFreeback(Dialogue) returns (Response);
+    rpc FindFreeback(Query) returns (Response);
 }

@@ -24,6 +24,7 @@ import "purchase.proto";
 import "seller.proto";
 import "setting.proto";
 import "external.proto";
+import "freeback.proto";
 import "message.proto";
 
 service BusinessRPC {
@@ -230,6 +231,12 @@ service BusinessRPC {
     rpc UpdateTemplate(Template) returns (Response);
     rpc DeleteTemplate(Template) returns (Response);
     rpc FindTemplate(Query) returns (Response);
+
+    // 回饋相關操作
+    rpc CreateFreeback(Freeback) returns (Response);
+    rpc ReadFreeback(Freeback) returns (Response);
+    rpc AppendFreeback(Dialogue) returns (Response);
+    rpc FindFreeback(Query) returns (Response);
 
     // 訊息相關資訊
     rpc SMS(Message) returns (Response);

@@ -25,6 +25,7 @@ import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
+import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 
 export class Store1RPCClient {
@@ -1102,6 +1103,28 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoLockCar = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: car_pb.Car) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  lockCar(
+    request: car_pb.Car,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/LockCar',
+      request,
+      metadata || {},
+      this.methodInfoLockCar,
+      callback);
+  }
+
   methodInfoDeleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: car_pb.Car) => {
@@ -1671,6 +1694,94 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateLayout,
+      callback);
+  }
+
+  methodInfoCreateFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: freeback_pb.Freeback) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createFreeback(
+    request: freeback_pb.Freeback,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateFreeback',
+      request,
+      metadata || {},
+      this.methodInfoCreateFreeback,
+      callback);
+  }
+
+  methodInfoReadFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: freeback_pb.Freeback) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  readFreeback(
+    request: freeback_pb.Freeback,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ReadFreeback',
+      request,
+      metadata || {},
+      this.methodInfoReadFreeback,
+      callback);
+  }
+
+  methodInfoAppendFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: freeback_pb.Dialogue) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  appendFreeback(
+    request: freeback_pb.Dialogue,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/AppendFreeback',
+      request,
+      metadata || {},
+      this.methodInfoAppendFreeback,
+      callback);
+  }
+
+  methodInfoFindFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findFreeback(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindFreeback',
+      request,
+      metadata || {},
+      this.methodInfoFindFreeback,
       callback);
   }
 

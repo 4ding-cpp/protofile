@@ -10,6 +10,7 @@ import "a-submessage.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+// State => 1.選購 2.鎖定 3.過期 4.取消 6.已生成訂單
 message Car {
     string car_id = 1;
     string store_id = 2;

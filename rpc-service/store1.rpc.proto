@@ -20,7 +20,8 @@ import "remind.proto";
 import "setting.proto";
 import "webpage.proto";
 import "website.proto";
- import "message.proto";
+import "freeback.proto";
+import "message.proto";
 
 service Store1RPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -92,6 +93,8 @@ service Store1RPC {
 
     // 檢視購物車(包含活動及折價券計算後回傳)
     rpc CompleteCar(Car) returns (Response);
+    // 鎖定購物車
+    rpc LockCar(Car) returns (Response);
     // 清空購物車
     rpc DeleteCar(Car) returns (Response);
     // 購物車列表
@@ -136,6 +139,12 @@ service Store1RPC {
     rpc UpdateFooter(Website) returns (Response);
     rpc FindLayout(Query) returns (Response);
     rpc UpdateLayout(Website) returns (Response);
+
+    // 回饋
+    rpc CreateFreeback(Freeback) returns (Response);
+    rpc ReadFreeback(Freeback) returns (Response);
+    rpc AppendFreeback(Dialogue) returns (Response);
+    rpc FindFreeback(Query) returns (Response);
 
     // 訊息相關資訊
     rpc SMS(Message) returns (Response);

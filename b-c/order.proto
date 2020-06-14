@@ -9,7 +9,7 @@ import "car.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-// State => 1.待處理 2.處理中 3.退貨待審核 4.退貨已審核 5.已完成 6.已結案
+// State => 1.鎖定庫存 2.待處理 3.處理中 4.退貨待審核 5.退貨已審核 6.已完成 7.已結案
 // PaymentState => 1.未付款 2.已付款 3.待退款 4.退款中 5.已退款
 // LogisticsState => 10.待出貨 11.已出貨 12.已到達 13.已領取
 // LogisticsState => 20.待退貨 21.退貨中 22.已退貨
