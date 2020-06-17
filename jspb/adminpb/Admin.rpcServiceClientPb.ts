@@ -1933,51 +1933,51 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoCreateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.External) => {
+    (request: external_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createExternal(
-    request: external_pb.External,
+  findService(
+    request: external_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/CreateExternal',
+        '/ding4.AdminRPC/FindService',
       request,
       metadata || {},
-      this.methodInfoCreateExternal,
+      this.methodInfoFindService,
       callback);
   }
 
-  methodInfoVerifyExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.External) => {
+    (request: external_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  verifyExternal(
-    request: external_pb.External,
+  updateService(
+    request: external_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/VerifyExternal',
+        '/ding4.AdminRPC/UpdateService',
       request,
       metadata || {},
-      this.methodInfoVerifyExternal,
+      this.methodInfoUpdateService,
       callback);
   }
 
-  methodInfoUpdateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoEnableExternal = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: external_pb.External) => {
       return request.serializeBinary();
@@ -1985,17 +1985,61 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  updateExternal(
+  enableExternal(
     request: external_pb.External,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/UpdateExternal',
+        '/ding4.AdminRPC/EnableExternal',
       request,
       metadata || {},
-      this.methodInfoUpdateExternal,
+      this.methodInfoEnableExternal,
+      callback);
+  }
+
+  methodInfoStoreExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  storeExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/StoreExternal',
+      request,
+      metadata || {},
+      this.methodInfoStoreExternal,
+      callback);
+  }
+
+  methodInfoDeleteExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/DeleteExternal',
+      request,
+      metadata || {},
+      this.methodInfoDeleteExternal,
       callback);
   }
 

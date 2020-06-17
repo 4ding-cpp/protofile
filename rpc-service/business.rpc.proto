@@ -165,10 +165,10 @@ service BusinessRPC {
     // 購物狀態提醒修改紀錄
     rpc RecordRemind(Remind) returns (Response);
 
-    // 新增訂單
+    // 新增訂單(包含繳費單及物流單)
     rpc CreateOrder(Order) returns (Response);
-    // 訂單付款
-    rpc PaymentOrder(Order) returns (Response);
+    // 訂單出貨(出貨給物流公司)
+    rpc ShippingOrder(OrderBatch) returns (Response);
     // 取消訂單
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
@@ -220,9 +220,11 @@ service BusinessRPC {
     rpc RecordSetting(Setting) returns (Response);
 
     // 外部串接資訊
-    rpc CreateExternal(External) returns (Response);
-    rpc VerifyExternal(External) returns (Response);
-    rpc UpdateExternal(External) returns (Response);
+    rpc FindService(Service) returns (Response);
+    rpc UpdateService(Service) returns (Response);
+    rpc EnableExternal(External) returns (Response);
+    rpc StoreExternal(External) returns (Response);
+    rpc DeleteExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);
     rpc RecordExternal(External) returns (Response);
 

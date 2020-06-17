@@ -16,6 +16,7 @@ import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
+import * as external_pb from './external_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 

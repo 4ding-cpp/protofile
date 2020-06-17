@@ -141,9 +141,11 @@ service AdminRPC {
     rpc RecordSetting(Setting) returns (Response);
 
     // 外部串接資訊
-    rpc CreateExternal(External) returns (Response);
-    rpc VerifyExternal(External) returns (Response);
-    rpc UpdateExternal(External) returns (Response);
+    rpc FindService(Service) returns (Response);
+    rpc UpdateService(Service) returns (Response);
+    rpc EnableExternal(External) returns (Response);
+    rpc StoreExternal(External) returns (Response);
+    rpc DeleteExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);
     rpc RecordExternal(External) returns (Response);
 

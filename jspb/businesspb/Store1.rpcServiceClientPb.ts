@@ -25,6 +25,7 @@ import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
+import * as external_pb from './external_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 
@@ -1191,28 +1192,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoPaymentOrder = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: order_pb.Order) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  paymentOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/PaymentOrder',
-      request,
-      metadata || {},
-      this.methodInfoPaymentOrder,
-      callback);
-  }
-
   methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: order_pb.Order) => {
@@ -1342,6 +1321,50 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindRemind,
+      callback);
+  }
+
+  methodInfoStoreExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: external_pb.External) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  storeExternal(
+    request: external_pb.External,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/StoreExternal',
+      request,
+      metadata || {},
+      this.methodInfoStoreExternal,
+      callback);
+  }
+
+  methodInfoFindExternal = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findExternal(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindExternal',
+      request,
+      metadata || {},
+      this.methodInfoFindExternal,
       callback);
   }
 

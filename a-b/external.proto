@@ -8,20 +8,82 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-// Type => 1.SMTP 2.every8d 3.newsleopard
+// External 外部服務相關資訊
+// service
+// 11:綠界 12.藍新
+// 21:every8d
+// 31:電子豹
+// serviceType
+// 1.金流 2.物流 3.簡訊 4.電子報
+// serviceItem
+// 100.信用卡 103.信用卡(3期) 106.信用卡(6期) 112.信用卡(12期) 124.信用卡(24期)
+// 101.ATM 102.WebATM 104.超商代碼 105.超商條碼
+// 21X.7-11
+// 22X.全家
+// 23X.萊爾富
+// 311.黑貓(已付清)
+// 321.大嘴鳥(已付清)
+// 911.一般簡訊
+// 921.電子報
+// Unit 單位價格 / 100 => 10=0.1, 100=1
 message External {
     string external_id = 1;
-    bool is_enable = 2;
-    int32 type = 3;
-    double unit = 4;
-    string credit= 5;
-    map<string, string> secret = 6;
+    string business_id = 2;
+    int32 service = 3;
+    int32 service_type = 4;
+    int32 service_item = 5;
+    bool is_enable = 6;
+    map<string, bool> store_enable = 7;
     
-    map<string, int32> labelx = 7;
-    string operator = 8;
-    google.protobuf.Timestamp create_at = 9;
-    google.protobuf.Timestamp update_at = 10;
-    repeated string cols = 11;
-    repeated Condition condition = 12;
-    google.protobuf.Struct self = 13;
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;
+}
+
+// 11:綠界 12.藍新 21:every8d 31:電子豹
+message Service {
+    string business_id = 1;
+    Secret secret = 2;
+    int32 code = 3;
+    string name = 4;
+    repeated ServiceType items = 5;
+
+    google.protobuf.Struct self = 6;
+}
+
+// 1.金流 2.物流 3.簡訊 4.電子報 9.串接secret
+message ServiceType {
+    int32 code = 1;
+    string name = 2;
+    repeated ServiceItem items = 3;
+}
+
+// 100.信用卡 103.信用卡(3期) 106.信用卡(6期) 112.信用卡(12期) 124.信用卡(24期)
+// 101.ATM 102.WebATM 104.超商代碼 105.超商條碼
+// 21X.7-11 22X.全家 23X.萊爾富
+// 311.黑貓(已付清) 
+// 321.大嘴鳥(已付清)
+message ServiceItem {
+    bool is_enable = 1;
+    int32 code = 2;
+    string name = 3;
+    string type = 4;
+    string sub = 5;
+}
+
+message Secret {
+    bool is_default = 1; // 是否使用系同提供
+    bool is_verify = 2; // 自訂的secret是否有效
+
+    string merchant_id = 3;         // 綠界會員編號
+    string all_in_one_hash_key = 4; // 綠界加密金鑰
+    string all_in_one_hash_iv = 5;  // 綠界加密起始
+
+    string username = 6;    // every8d帳號
+    string password = 7;    // every8d密碼
+
+    string token = 8;   // 電子豹憑證
 }

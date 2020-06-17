@@ -20,6 +20,7 @@ import "remind.proto";
 import "setting.proto";
 import "webpage.proto";
 import "website.proto";
+import "external.proto";
 import "freeback.proto";
 import "message.proto";
 
@@ -102,8 +103,6 @@ service Store1RPC {
 
     // 新增訂單
     rpc CreateOrder(Order) returns (Response);
-    // 訂單付款
-    rpc PaymentOrder(Order) returns (Response);
     // 取消訂單 state < 3 未付款前能取消
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
@@ -117,6 +116,10 @@ service Store1RPC {
     rpc UpdateRemind(Remind) returns (Response);
     // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
+
+    // 外部服務開關
+    rpc StoreExternal(External) returns (Response);
+    rpc FindExternal(Query) returns (Response);
 
     // 系統參數刪修讀寫
     rpc CreateSetting(Setting) returns (Response);

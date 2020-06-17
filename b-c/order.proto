@@ -24,29 +24,38 @@ message Order {
     string car_id = 6;
     string coupon_id = 7;
     int32 state = 8;
-    int32 payment_state = 9;
-    int32 logistics_state = 10;
-    google.protobuf.Timestamp receive_at = 11;
-    int32 come_from = 12;
-    int32 count = 13;
-    int32 amount = 14;
-    int32 freight = 15;
-    double order_charge = 16;
-    int32 payment_charge = 17;
-    int32 logistics_charge = 18;
-    string re_order_id = 19;
-    repeated Commodity commodity = 20;
-    Payment payment = 21;
-    Logistics logistics = 22;
+    int32 payment_type = 9;
+    int32 payment_state = 10;
+    int32 logistics_type = 11;
+    int32 logistics_state = 12;
+    google.protobuf.Timestamp receive_at = 13;
+    int32 come_from = 14;
+    int32 count = 15;
+    int32 amount = 16;
+    int32 freight = 17;
+    double order_charge = 18;
+    int32 payment_charge = 19;
+    int32 logistics_charge = 20;
+    string re_order_id = 21;
+    repeated Commodity commodity = 22;
+    Payment payment = 23;
+    Logistics logistics = 24;
 
-    map<string, int32> labelx = 23;
-    string operator = 24;
-    google.protobuf.Timestamp create_at = 25;
-    google.protobuf.Timestamp update_at = 26;
-    repeated string cols = 27;
-    repeated Condition condition = 28;
-    google.protobuf.Struct self = 29;
+    map<string, int32> labelx = 25;
+    string operator = 26;
+    google.protobuf.Timestamp create_at = 27;
+    google.protobuf.Timestamp update_at = 28;
+    repeated string cols = 29;
+    repeated Condition condition = 30;
+    google.protobuf.Struct self = 31;
 }
+
+
+message OrderBatch {
+    repeated Order order = 1;
+    google.protobuf.Struct self = 2;
+}
+
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Payment {
     // 選擇網址
