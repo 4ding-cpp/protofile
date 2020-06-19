@@ -29,29 +29,30 @@ import "google/protobuf/timestamp.proto";
 message External {
     string external_id = 1;
     string business_id = 2;
-    int32 service = 3;
-    int32 service_type = 4;
-    int32 service_item = 5;
-    bool is_enable = 6;
-    map<string, bool> store_enable = 7;
+    string store_id = 3;
+    int32 service = 4;
+    int32 service_type = 5;
+    int32 service_item = 6;
+    bool is_enable = 7;
     
-    string operator = 10;
-    google.protobuf.Timestamp create_at = 11;
-    google.protobuf.Timestamp update_at = 12;
-    repeated string cols = 13;
-    repeated Condition condition = 14;
-    google.protobuf.Struct self = 15;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13;
 }
 
 // 11:綠界 12.藍新 21:every8d 31:電子豹
 message Service {
     string business_id = 1;
-    Secret secret = 2;
-    int32 code = 3;
-    string name = 4;
-    repeated ServiceType items = 5;
+    string store_id = 2;
+    Secret secret = 3;
+    int32 code = 4;
+    string name = 5;
+    repeated ServiceType items = 6;
 
-    google.protobuf.Struct self = 6;
+    google.protobuf.Struct self = 7;
 }
 
 // 1.金流 2.物流 3.簡訊 4.電子報 9.串接secret
@@ -75,15 +76,12 @@ message ServiceItem {
 }
 
 message Secret {
-    bool is_default = 1; // 是否使用系同提供
-    bool is_verify = 2; // 自訂的secret是否有效
+    string merchant_id = 1;         // 綠界會員編號
+    string all_in_one_hash_key = 2; // 綠界加密金鑰
+    string all_in_one_hash_iv = 3;  // 綠界加密起始
 
-    string merchant_id = 3;         // 綠界會員編號
-    string all_in_one_hash_key = 4; // 綠界加密金鑰
-    string all_in_one_hash_iv = 5;  // 綠界加密起始
+    string username = 4;    // every8d帳號
+    string password = 5;    // every8d密碼
 
-    string username = 6;    // every8d帳號
-    string password = 7;    // every8d密碼
-
-    string token = 8;   // 電子豹憑證
+    string token = 6;   // 電子豹憑證
 }

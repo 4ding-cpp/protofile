@@ -144,7 +144,6 @@ service AdminRPC {
     rpc FindService(Service) returns (Response);
     rpc UpdateService(Service) returns (Response);
     rpc EnableExternal(External) returns (Response);
-    rpc StoreExternal(External) returns (Response);
     rpc DeleteExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);
     rpc RecordExternal(External) returns (Response);

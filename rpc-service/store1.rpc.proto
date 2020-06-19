@@ -117,9 +117,13 @@ service Store1RPC {
     // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
 
-    // 外部服務開關
-    rpc StoreExternal(External) returns (Response);
+    // 外部串接資訊
+    rpc FindService(Service) returns (Response);
+    rpc UpdateService(Service) returns (Response);
+    rpc EnableExternal(External) returns (Response);
+    rpc DeleteExternal(External) returns (Response);
     rpc FindExternal(Query) returns (Response);
+    rpc RecordExternal(External) returns (Response);
 
     // 系統參數刪修讀寫
     rpc CreateSetting(Setting) returns (Response);
@@ -136,8 +140,8 @@ service Store1RPC {
     // 客端布局
     rpc FindWebsite(Query) returns (Response);
     rpc UpdateWebsite(Website) returns (Response);
-    rpc FindMenu(Query) returns (Response);
-    rpc UpdateMenu(Website) returns (Response);
+    rpc FindNav(Query) returns (Response);
+    rpc UpdateNav(Website) returns (Response);
     rpc FindFooter(Query) returns (Response);
     rpc UpdateFooter(Website) returns (Response);
     rpc FindLayout(Query) returns (Response);

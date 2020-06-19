@@ -16,7 +16,7 @@ message Website {
     Image logo = 3;
     Image favicon = 4;
     SEO seo = 5;
-    repeated Layout menu = 6;
+    repeated Layout nav = 6;
     repeated Layout footer = 7;
     repeated Layout layout = 8;
 

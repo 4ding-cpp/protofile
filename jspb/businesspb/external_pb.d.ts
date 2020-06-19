@@ -11,6 +11,9 @@ export class External extends jspb.Message {
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
   getService(): number;
   setService(value: number): void;
 
@@ -22,9 +25,6 @@ export class External extends jspb.Message {
 
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
-
-  getStoreEnableMap(): jspb.Map<string, boolean>;
-  clearStoreEnableMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -66,11 +66,11 @@ export namespace External {
   export type AsObject = {
     externalId: string,
     businessId: string,
+    storeId: string,
     service: number,
     serviceType: number,
     serviceItem: number,
     isEnable: boolean,
-    storeEnableMap: Array<[string, boolean]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -83,6 +83,9 @@ export namespace External {
 export class Service extends jspb.Message {
   getBusinessId(): string;
   setBusinessId(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
 
   getSecret(): Secret | undefined;
   setSecret(value?: Secret): void;
@@ -116,6 +119,7 @@ export class Service extends jspb.Message {
 export namespace Service {
   export type AsObject = {
     businessId: string,
+    storeId: string,
     secret?: Secret.AsObject,
     code: number,
     name: string,
@@ -187,12 +191,6 @@ export namespace ServiceItem {
 }
 
 export class Secret extends jspb.Message {
-  getIsDefault(): boolean;
-  setIsDefault(value: boolean): void;
-
-  getIsVerify(): boolean;
-  setIsVerify(value: boolean): void;
-
   getMerchantId(): string;
   setMerchantId(value: string): void;
 
@@ -221,8 +219,6 @@ export class Secret extends jspb.Message {
 
 export namespace Secret {
   export type AsObject = {
-    isDefault: boolean,
-    isVerify: boolean,
     merchantId: string,
     allInOneHashKey: string,
     allInOneHashIv: string,

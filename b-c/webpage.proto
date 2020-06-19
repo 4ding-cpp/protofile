@@ -13,16 +13,17 @@ message WebPage {
     string page_id = 1;
     string store_id = 2;
     string name = 3;
-    string link = 4;
-    string content = 5;
-    SEO seo = 6;
-    bool is_error_handle = 7;
+    string url = 4;
+    SEO seo = 5;
+    string content = 6;
+    string index_page = 7;
+    bool is_error_handle = 8;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 9;
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;
 }
