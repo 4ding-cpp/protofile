@@ -194,11 +194,17 @@ export class Secret extends jspb.Message {
   getMerchantId(): string;
   setMerchantId(value: string): void;
 
-  getAllInOneHashKey(): string;
-  setAllInOneHashKey(value: string): void;
+  getPaymentHashKey(): string;
+  setPaymentHashKey(value: string): void;
 
-  getAllInOneHashIv(): string;
-  setAllInOneHashIv(value: string): void;
+  getPaymentHashIv(): string;
+  setPaymentHashIv(value: string): void;
+
+  getLogisticsHashKey(): string;
+  setLogisticsHashKey(value: string): void;
+
+  getLogisticsHashIv(): string;
+  setLogisticsHashIv(value: string): void;
 
   getUsername(): string;
   setUsername(value: string): void;
@@ -220,8 +226,10 @@ export class Secret extends jspb.Message {
 export namespace Secret {
   export type AsObject = {
     merchantId: string,
-    allInOneHashKey: string,
-    allInOneHashIv: string,
+    paymentHashKey: string,
+    paymentHashIv: string,
+    logisticsHashKey: string,
+    logisticsHashIv: string,
     username: string,
     password: string,
     token: string,

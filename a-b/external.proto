@@ -76,12 +76,15 @@ message ServiceItem {
 }
 
 message Secret {
-    string merchant_id = 1;         // 綠界會員編號
-    string all_in_one_hash_key = 2; // 綠界加密金鑰
-    string all_in_one_hash_iv = 3;  // 綠界加密起始
-
-    string username = 4;    // every8d帳號
-    string password = 5;    // every8d密碼
-
-    string token = 6;   // 電子豹憑證
+    // 綠界
+    string merchant_id = 1;
+    string payment_hash_key = 2;
+	string payment_hash_iv = 3;
+	string logistics_hash_key = 4;
+	string logistics_hash_iv = 5;
+    // every8d
+    string username = 6;
+    string password = 7; 
+    // newsleopard
+    string token = 8;
 }

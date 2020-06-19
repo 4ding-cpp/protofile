@@ -2,7 +2,10 @@ syntax = "proto3";
 
 package ding4;
 
+
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "seo.proto";
 
 // amount 達成條件金額
 // count 達成條件數量
@@ -70,9 +73,9 @@ message Layout {
     string title = 2;
     string link = 3;
     string page = 4;
-    string content = 5;
-    int32 quantity = 6;
-    int32 second = 7;
-    repeated Image image = 8;
-    ProductTarget target = 9;
+    int32 quantity = 5;
+    int32 second = 6;
+    repeated Image image = 7;
+    ProductTarget target = 8;
+    Template template = 9;
 }

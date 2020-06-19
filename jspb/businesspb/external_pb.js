@@ -1615,11 +1615,13 @@ proto.ding4.Secret.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.Secret.toObject = function(includeInstance, msg) {
   var f, obj = {
     merchantId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    allInOneHashKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    allInOneHashIv: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 6, "")
+    paymentHashKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    paymentHashIv: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    logisticsHashKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    logisticsHashIv: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    token: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1662,21 +1664,29 @@ proto.ding4.Secret.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAllInOneHashKey(value);
+      msg.setPaymentHashKey(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAllInOneHashIv(value);
+      msg.setPaymentHashIv(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setLogisticsHashKey(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
+      msg.setLogisticsHashIv(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
       break;
@@ -1716,38 +1726,52 @@ proto.ding4.Secret.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAllInOneHashKey();
+  f = message.getPaymentHashKey();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getAllInOneHashIv();
+  f = message.getPaymentHashIv();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getUsername();
+  f = message.getLogisticsHashKey();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPassword();
+  f = message.getLogisticsHashIv();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getToken();
+  f = message.getUsername();
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getPassword();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -1773,10 +1797,10 @@ proto.ding4.Secret.prototype.setMerchantId = function(value) {
 
 
 /**
- * optional string all_in_one_hash_key = 2;
+ * optional string payment_hash_key = 2;
  * @return {string}
  */
-proto.ding4.Secret.prototype.getAllInOneHashKey = function() {
+proto.ding4.Secret.prototype.getPaymentHashKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1785,16 +1809,16 @@ proto.ding4.Secret.prototype.getAllInOneHashKey = function() {
  * @param {string} value
  * @return {!proto.ding4.Secret} returns this
  */
-proto.ding4.Secret.prototype.setAllInOneHashKey = function(value) {
+proto.ding4.Secret.prototype.setPaymentHashKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string all_in_one_hash_iv = 3;
+ * optional string payment_hash_iv = 3;
  * @return {string}
  */
-proto.ding4.Secret.prototype.getAllInOneHashIv = function() {
+proto.ding4.Secret.prototype.getPaymentHashIv = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1803,16 +1827,16 @@ proto.ding4.Secret.prototype.getAllInOneHashIv = function() {
  * @param {string} value
  * @return {!proto.ding4.Secret} returns this
  */
-proto.ding4.Secret.prototype.setAllInOneHashIv = function(value) {
+proto.ding4.Secret.prototype.setPaymentHashIv = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string username = 4;
+ * optional string logistics_hash_key = 4;
  * @return {string}
  */
-proto.ding4.Secret.prototype.getUsername = function() {
+proto.ding4.Secret.prototype.getLogisticsHashKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1821,16 +1845,16 @@ proto.ding4.Secret.prototype.getUsername = function() {
  * @param {string} value
  * @return {!proto.ding4.Secret} returns this
  */
-proto.ding4.Secret.prototype.setUsername = function(value) {
+proto.ding4.Secret.prototype.setLogisticsHashKey = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string password = 5;
+ * optional string logistics_hash_iv = 5;
  * @return {string}
  */
-proto.ding4.Secret.prototype.getPassword = function() {
+proto.ding4.Secret.prototype.getLogisticsHashIv = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1839,16 +1863,16 @@ proto.ding4.Secret.prototype.getPassword = function() {
  * @param {string} value
  * @return {!proto.ding4.Secret} returns this
  */
-proto.ding4.Secret.prototype.setPassword = function(value) {
+proto.ding4.Secret.prototype.setLogisticsHashIv = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string token = 6;
+ * optional string username = 6;
  * @return {string}
  */
-proto.ding4.Secret.prototype.getToken = function() {
+proto.ding4.Secret.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1857,8 +1881,44 @@ proto.ding4.Secret.prototype.getToken = function() {
  * @param {string} value
  * @return {!proto.ding4.Secret} returns this
  */
-proto.ding4.Secret.prototype.setToken = function(value) {
+proto.ding4.Secret.prototype.setUsername = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string password = 7;
+ * @return {string}
+ */
+proto.ding4.Secret.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Secret} returns this
+ */
+proto.ding4.Secret.prototype.setPassword = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string token = 8;
+ * @return {string}
+ */
+proto.ding4.Secret.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Secret} returns this
+ */
+proto.ding4.Secret.prototype.setToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
