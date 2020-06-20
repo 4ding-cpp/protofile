@@ -120,6 +120,8 @@ service Store1RPC {
     // 外部串接資訊
     rpc FindService(Service) returns (Response);
     rpc UpdateService(Service) returns (Response);
+    rpc UpdateSecret(ServiceSecret) returns (Response);
+    rpc FindSecret(Query) returns (Response);
     rpc CreateExternal(External) returns (Response);
     rpc EnableExternal(External) returns (Response);
     rpc DeleteExternal(External) returns (Response);

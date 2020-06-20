@@ -75,16 +75,25 @@ message ServiceItem {
     string sub = 5;
 }
 
+
+message ServiceSecret {
+    string secret_id = 1;
+    int32 service = 2;
+    Secret secret = 3;
+    
+    google.protobuf.Struct self = 7;
+}
+
 message Secret {
     // 綠界
-    string merchant_id = 1;
-    string payment_hash_key = 2;
-	string payment_hash_iv = 3;
-	string logistics_hash_key = 4;
-	string logistics_hash_iv = 5;
+    string merchant_id = 2;
+    string payment_hash_key = 3;
+	string payment_hash_iv = 4;
+	string logistics_hash_key = 5;
+	string logistics_hash_iv = 6;
     // every8d
-    string username = 6;
-    string password = 7; 
+    string username = 7;
+    string password = 8; 
     // newsleopard
-    string token = 8;
+    string token = 9;
 }

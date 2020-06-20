@@ -190,6 +190,40 @@ export namespace ServiceItem {
   }
 }
 
+export class ServiceSecret extends jspb.Message {
+  getSecretId(): string;
+  setSecretId(value: string): void;
+
+  getService(): number;
+  setService(value: number): void;
+
+  getSecret(): Secret | undefined;
+  setSecret(value?: Secret): void;
+  hasSecret(): boolean;
+  clearSecret(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServiceSecret.AsObject;
+  static toObject(includeInstance: boolean, msg: ServiceSecret): ServiceSecret.AsObject;
+  static serializeBinaryToWriter(message: ServiceSecret, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServiceSecret;
+  static deserializeBinaryFromReader(message: ServiceSecret, reader: jspb.BinaryReader): ServiceSecret;
+}
+
+export namespace ServiceSecret {
+  export type AsObject = {
+    secretId: string,
+    service: number,
+    secret?: Secret.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
 export class Secret extends jspb.Message {
   getMerchantId(): string;
   setMerchantId(value: string): void;
