@@ -18,9 +18,9 @@ import "google/protobuf/timestamp.proto";
 // serviceItem
 // 100.信用卡 103.信用卡(3期) 106.信用卡(6期) 112.信用卡(12期) 124.信用卡(24期)
 // 101.ATM 102.WebATM 104.超商代碼 105.超商條碼
-// 21X.7-11
-// 22X.全家
-// 23X.萊爾富
+// 211.7-11(B2C) 212.7-11(B2C 代收) 213.7-11(C2C) 214.7-11(C2C 代收)
+// 221.全家(B2C) 222.全家(B2C 代收) 223.全家(C2C) 224.全家(C2C 代收)
+// 231.萊爾富(B2C) 232.萊爾富(B2C 代收) 233.萊爾富(C2C) 234.萊爾富(C2C 代收)
 // 311.黑貓(已付清)
 // 321.大嘴鳥(已付清)
 // 911.一般簡訊
@@ -80,7 +80,7 @@ message ServiceSecret {
     string secret_id = 1;
     int32 service = 2;
     Secret secret = 3;
-    
+
     google.protobuf.Struct self = 7;
 }
 
