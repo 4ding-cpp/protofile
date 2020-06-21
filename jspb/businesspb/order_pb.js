@@ -155,9 +155,9 @@ proto.ding4.Order.toObject = function(includeInstance, msg) {
     carId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     couponId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     state: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    paymentType: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    paymentType: jspb.Message.getFieldWithDefault(msg, 9, ""),
     paymentState: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    logisticsType: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    logisticsType: jspb.Message.getFieldWithDefault(msg, 11, ""),
     logisticsState: jspb.Message.getFieldWithDefault(msg, 12, 0),
     receiveAt: (f = msg.getReceiveAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     comeFrom: jspb.Message.getFieldWithDefault(msg, 14, 0),
@@ -249,7 +249,7 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       msg.setState(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPaymentType(value);
       break;
     case 10:
@@ -257,7 +257,7 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPaymentState(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setLogisticsType(value);
       break;
     case 12:
@@ -436,8 +436,8 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPaymentType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       9,
       f
     );
@@ -450,8 +450,8 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getLogisticsType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       11,
       f
     );
@@ -749,20 +749,20 @@ proto.ding4.Order.prototype.setState = function(value) {
 
 
 /**
- * optional int32 payment_type = 9;
- * @return {number}
+ * optional string payment_type = 9;
+ * @return {string}
  */
 proto.ding4.Order.prototype.getPaymentType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Order} returns this
  */
 proto.ding4.Order.prototype.setPaymentType = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -785,20 +785,20 @@ proto.ding4.Order.prototype.setPaymentState = function(value) {
 
 
 /**
- * optional int32 logistics_type = 11;
- * @return {number}
+ * optional string logistics_type = 11;
+ * @return {string}
  */
 proto.ding4.Order.prototype.getLogisticsType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Order} returns this
  */
 proto.ding4.Order.prototype.setLogisticsType = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -1595,7 +1595,8 @@ proto.ding4.Payment.toObject = function(includeInstance, msg) {
     paymentno: jspb.Message.getFieldWithDefault(msg, 11, ""),
     barcode1: jspb.Message.getFieldWithDefault(msg, 12, ""),
     barcode2: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    barcode3: jspb.Message.getFieldWithDefault(msg, 14, "")
+    barcode3: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1687,6 +1688,11 @@ proto.ding4.Payment.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setBarcode3(value);
+      break;
+    case 15:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -1813,6 +1819,14 @@ proto.ding4.Payment.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       14,
       f
+    );
+  }
+  f = message.getSelf();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
   }
 };
@@ -2070,6 +2084,43 @@ proto.ding4.Payment.prototype.setBarcode3 = function(value) {
 };
 
 
+/**
+ * optional google.protobuf.Struct self = 15;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ding4.Payment.prototype.getSelf = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ding4.Payment} returns this
+*/
+proto.ding4.Payment.prototype.setSelf = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Payment} returns this
+ */
+proto.ding4.Payment.prototype.clearSelf = function() {
+  return this.setSelf(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Payment.prototype.hasSelf = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
 
 
 
@@ -2137,7 +2188,8 @@ proto.ding4.Logistics.toObject = function(includeInstance, msg) {
     scheduledpickuptime: jspb.Message.getFieldWithDefault(msg, 33, ""),
     scheduleddeliverytime: jspb.Message.getFieldWithDefault(msg, 34, ""),
     scheduleddeliverydate: jspb.Message.getFieldWithDefault(msg, 35, ""),
-    bookingnode: jspb.Message.getFieldWithDefault(msg, 36, "")
+    bookingnode: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2317,6 +2369,11 @@ proto.ding4.Logistics.deserializeBinaryFromReader = function(msg, reader) {
     case 36:
       var value = /** @type {string} */ (reader.readString());
       msg.setBookingnode(value);
+      break;
+    case 37:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -2597,6 +2654,14 @@ proto.ding4.Logistics.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       36,
       f
+    );
+  }
+  f = message.getSelf();
+  if (f != null) {
+    writer.writeMessage(
+      37,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
   }
 };
@@ -3247,6 +3312,43 @@ proto.ding4.Logistics.prototype.getBookingnode = function() {
  */
 proto.ding4.Logistics.prototype.setBookingnode = function(value) {
   return jspb.Message.setProto3StringField(this, 36, value);
+};
+
+
+/**
+ * optional google.protobuf.Struct self = 37;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ding4.Logistics.prototype.getSelf = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 37));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ding4.Logistics} returns this
+*/
+proto.ding4.Logistics.prototype.setSelf = function(value) {
+  return jspb.Message.setWrapperField(this, 37, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Logistics} returns this
+ */
+proto.ding4.Logistics.prototype.clearSelf = function() {
+  return this.setSelf(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Logistics.prototype.hasSelf = function() {
+  return jspb.Message.getField(this, 37) != null;
 };
 
 

@@ -24,9 +24,9 @@ message Order {
     string car_id = 6;
     string coupon_id = 7;
     int32 state = 8;
-    int32 payment_type = 9;
+    string payment_type = 9;
     int32 payment_state = 10;
-    int32 logistics_type = 11;
+    string logistics_type = 11;
     int32 logistics_state = 12;
     google.protobuf.Timestamp receive_at = 13;
     int32 come_from = 14;
@@ -85,6 +85,8 @@ message Payment {
 	string Barcode1 = 12;  
 	string Barcode2 = 13;  
 	string Barcode3 = 14; 
+
+    google.protobuf.Struct self = 15;
 }
 // 物流相關 採用第三方參數固為大頭鋒命名而非 _命名
 message Logistics {
@@ -158,5 +160,7 @@ message Logistics {
     // 指定送達日
 	string ScheduledDeliveryDate= 35;   
     // 託運單號 
-	string BookingNode = 36;            
+	string BookingNode = 36;       
+
+    google.protobuf.Struct self = 37;     
 }

@@ -30,14 +30,14 @@ export class Order extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
-  getPaymentType(): number;
-  setPaymentType(value: number): void;
+  getPaymentType(): string;
+  setPaymentType(value: string): void;
 
   getPaymentState(): number;
   setPaymentState(value: number): void;
 
-  getLogisticsType(): number;
-  setLogisticsType(value: number): void;
+  getLogisticsType(): string;
+  setLogisticsType(value: string): void;
 
   getLogisticsState(): number;
   setLogisticsState(value: number): void;
@@ -135,9 +135,9 @@ export namespace Order {
     carId: string,
     couponId: string,
     state: number,
-    paymentType: number,
+    paymentType: string,
     paymentState: number,
-    logisticsType: number,
+    logisticsType: string,
     logisticsState: number,
     receiveAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     comeFrom: number,
@@ -230,6 +230,11 @@ export class Payment extends jspb.Message {
   getBarcode3(): string;
   setBarcode3(value: string): void;
 
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Payment.AsObject;
   static toObject(includeInstance: boolean, msg: Payment): Payment.AsObject;
@@ -254,6 +259,7 @@ export namespace Payment {
     barcode1: string,
     barcode2: string,
     barcode3: string,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
@@ -366,6 +372,11 @@ export class Logistics extends jspb.Message {
   getBookingnode(): string;
   setBookingnode(value: string): void;
 
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Logistics.AsObject;
   static toObject(includeInstance: boolean, msg: Logistics): Logistics.AsObject;
@@ -412,6 +423,7 @@ export namespace Logistics {
     scheduleddeliverytime: string,
     scheduleddeliverydate: string,
     bookingnode: string,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

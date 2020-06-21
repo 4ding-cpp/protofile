@@ -14,6 +14,11 @@ export class External extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
+
   getService(): number;
   setService(value: number): void;
 
@@ -25,6 +30,9 @@ export class External extends jspb.Message {
 
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
+
+  getExpireDay(): number;
+  setExpireDay(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -67,10 +75,12 @@ export namespace External {
     externalId: string,
     businessId: string,
     storeId: string,
+    name?: google_protobuf_struct_pb.Value.AsObject,
     service: number,
     serviceType: number,
     serviceItem: number,
     isEnable: boolean,
+    expireDay: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
