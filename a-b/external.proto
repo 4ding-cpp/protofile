@@ -35,13 +35,14 @@ message External {
     int32 service_item = 7;
     bool is_enable = 8;
     int32 expire_day = 9;
+    string remark = 10;
     
-    string operator = 10;
-    google.protobuf.Timestamp create_at = 11;
-    google.protobuf.Timestamp update_at = 12;
-    repeated string cols = 13;
-    repeated Condition condition = 14;
-    google.protobuf.Struct self = 15;
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    repeated Condition condition = 15;
+    google.protobuf.Struct self = 16;
 }
 
 // 10.自訂 11:綠界 12.藍新 21:every8d 31:電子豹

@@ -34,6 +34,9 @@ export class External extends jspb.Message {
   getExpireDay(): number;
   setExpireDay(value: number): void;
 
+  getRemark(): string;
+  setRemark(value: string): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -81,6 +84,7 @@ export namespace External {
     serviceItem: number,
     isEnable: boolean,
     expireDay: number,
+    remark: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
