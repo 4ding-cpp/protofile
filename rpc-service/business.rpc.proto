@@ -240,4 +240,9 @@ service BusinessRPC {
     rpc SMS(Message) returns (Response);
     rpc EDM(Message) returns (Response);
     rpc FindMessage(Query) returns (Response);
+
+    // 物流相關
+    rpc CreateLogistics(Order) returns (Response);
+    rpc ReturnLogistics(Order) returns (Response);
+    rpc SearchLogisticsOrder(Order) returns (Response);
 }

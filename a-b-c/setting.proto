@@ -11,15 +11,51 @@ import "google/protobuf/timestamp.proto";
 message Setting {
     string setting_id = 1;
     string store_id = 2;
-    string type = 3;
-    string item = 4;
-    string content = 5;
+    int32 type = 3;
+    google.protobuf.Value conf = 4;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;    
+    map<string, int32> labelx = 5;
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    repeated string cols = 9;
+    repeated Condition condition = 10;
+    google.protobuf.Struct self = 11;
+}
+// 多語言及貨幣設定
+message ConfigMulti {
+    google.protobuf.Value language = 1;
+    google.protobuf.Value currency = 2;
+}
+// 購物設定
+message ConfigShop {
+    int32 limit_count = 1;
+    string shop_notes = 2;
+    string order_notes = 3;
+
+    string sender_name = 4;
+    string sender_phone = 5;
+    string sender_cell_phone = 6;
+    string sender_zip_code = 7;
+    string sender_address = 8;
+    string sender_remark = 9;
+
+    int32 allow_cancel_order = 10;
+    int32 allow_return_order = 11;
+}
+// 網站設定
+message ConfigWebsite {
+    string name = 1;
+    string slogan = 2;
+    string copyright = 3;
+    string service_terms = 4;
+
+    string organization = 5;
+    string phone = 6;
+    string email = 7;
+    string address = 8;
+
+    string facebook = 9;
+    string line_at = 10;
+    string instagram = 11;
 }
