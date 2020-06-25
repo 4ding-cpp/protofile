@@ -23,6 +23,7 @@ import "website.proto";
 import "external.proto";
 import "freeback.proto";
 import "message.proto";
+import "domain.proto";
 
 service Store1RPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -101,9 +102,11 @@ service Store1RPC {
     // 購物車列表
     rpc FindCar(Query) returns (Response);
 
-    // 新增訂單
+    // 新增訂單(包含繳費單及物流單)
     rpc CreateOrder(Order) returns (Response);
-    // 取消訂單 state < 3 未付款前能取消
+    // 修改訂單狀態 3.處理中
+    rpc ProcessOrder(OrderBatch) returns (Response);
+    // 取消訂單
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
@@ -160,5 +163,10 @@ service Store1RPC {
     rpc SMS(Message) returns (Response);
     rpc EDM(Message) returns (Response);
     rpc FindMessage(Query) returns (Response);
+
+    // 網域相關
+    rpc CreateDomain(Domain) returns (Response);
+    rpc DeleteDomain(Domain) returns (Response);
+    rpc FindDomain(Query) returns (Response);
 }
 

@@ -18,7 +18,7 @@ import "google/protobuf/timestamp.proto";
 message Order {
     string order_id = 1; 
     string store_id = 2;
-    string seller_id = 3;
+    string sales_id = 3;
     string customer_id = 4;
     string email = 5;
     string car_id = 6;

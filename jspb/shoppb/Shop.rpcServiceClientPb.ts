@@ -322,28 +322,6 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoPaymentOrder = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: order_pb.Order) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  paymentOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/PaymentOrder',
-      request,
-      metadata || {},
-      this.methodInfoPaymentOrder,
-      callback);
-  }
-
   methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: order_pb.Order) => {

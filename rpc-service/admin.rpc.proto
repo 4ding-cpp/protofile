@@ -9,7 +9,7 @@ import "sql.proto";
 import "password.proto";
 import "admin.proto";
 import "business.proto";
-import "host-map.proto";
+import "domain.proto";
 import "label.proto";
 import "info.proto";
 import "announcement.proto";
@@ -50,11 +50,11 @@ service AdminRPC {
     rpc SignBusiness(Business) returns (Response);
 
     // 設定業主網域相關
-    rpc CreateHostMap(HostMap) returns (Response);
-    rpc DeleteHostMap(HostMap) returns (Response);
-    rpc FindHostMap(Query) returns (Response);
-    rpc RecordHostMap(HostMap) returns (Response);
-    rpc FlushHostMap(Query) returns (Response);
+    rpc CreateDomain(Domain) returns (Response);
+    rpc DeleteDomain(Domain) returns (Response);
+    rpc FindDomain(Query) returns (Response);
+    rpc RecordDomain(Domain) returns (Response);
+    rpc FlushDomain(Query) returns (Response);
 
     // 標籤相關
     rpc CreateLabel(Label) returns (Response);

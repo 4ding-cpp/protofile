@@ -26,6 +26,7 @@ import "setting.proto";
 import "external.proto";
 import "freeback.proto";
 import "message.proto";
+import "domain.proto";
 
 service BusinessRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -167,8 +168,8 @@ service BusinessRPC {
 
     // 新增訂單(包含繳費單及物流單)
     rpc CreateOrder(Order) returns (Response);
-    // 訂單出貨(出貨給物流公司)
-    rpc ShippingOrder(OrderBatch) returns (Response);
+    // 修改訂單狀態 3.處理中
+    rpc ProcessOrder(OrderBatch) returns (Response);
     // 取消訂單
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
@@ -245,4 +246,9 @@ service BusinessRPC {
     rpc CreateLogistics(Order) returns (Response);
     rpc ReturnLogistics(Order) returns (Response);
     rpc SearchLogisticsOrder(Order) returns (Response);
+
+    // 網域相關
+    rpc CreateDomain(Domain) returns (Response);
+    rpc DeleteDomain(Domain) returns (Response);
+    rpc FindDomain(Query) returns (Response);
 }
