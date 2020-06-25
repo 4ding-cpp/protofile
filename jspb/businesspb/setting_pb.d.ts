@@ -100,64 +100,6 @@ export namespace ConfigMulti {
   }
 }
 
-export class ConfigShop extends jspb.Message {
-  getLimitCount(): number;
-  setLimitCount(value: number): void;
-
-  getShopNotes(): string;
-  setShopNotes(value: string): void;
-
-  getOrderNotes(): string;
-  setOrderNotes(value: string): void;
-
-  getSenderName(): string;
-  setSenderName(value: string): void;
-
-  getSenderPhone(): string;
-  setSenderPhone(value: string): void;
-
-  getSenderCellPhone(): string;
-  setSenderCellPhone(value: string): void;
-
-  getSenderZipCode(): string;
-  setSenderZipCode(value: string): void;
-
-  getSenderAddress(): string;
-  setSenderAddress(value: string): void;
-
-  getSenderRemark(): string;
-  setSenderRemark(value: string): void;
-
-  getAllowCancelOrder(): number;
-  setAllowCancelOrder(value: number): void;
-
-  getAllowReturnOrder(): number;
-  setAllowReturnOrder(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigShop.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigShop): ConfigShop.AsObject;
-  static serializeBinaryToWriter(message: ConfigShop, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigShop;
-  static deserializeBinaryFromReader(message: ConfigShop, reader: jspb.BinaryReader): ConfigShop;
-}
-
-export namespace ConfigShop {
-  export type AsObject = {
-    limitCount: number,
-    shopNotes: string,
-    orderNotes: string,
-    senderName: string,
-    senderPhone: string,
-    senderCellPhone: string,
-    senderZipCode: string,
-    senderAddress: string,
-    senderRemark: string,
-    allowCancelOrder: number,
-    allowReturnOrder: number,
-  }
-}
-
 export class ConfigWebsite extends jspb.Message {
   getName(): string;
   setName(value: string): void;
@@ -213,6 +155,64 @@ export namespace ConfigWebsite {
     facebook: string,
     lineAt: string,
     instagram: string,
+  }
+}
+
+export class ConfigShop extends jspb.Message {
+  getLimitCount(): number;
+  setLimitCount(value: number): void;
+
+  getShopNotes(): string;
+  setShopNotes(value: string): void;
+
+  getOrderNotes(): string;
+  setOrderNotes(value: string): void;
+
+  getSenderName(): string;
+  setSenderName(value: string): void;
+
+  getSenderPhone(): string;
+  setSenderPhone(value: string): void;
+
+  getSenderCellPhone(): string;
+  setSenderCellPhone(value: string): void;
+
+  getSenderZipCode(): string;
+  setSenderZipCode(value: string): void;
+
+  getSenderAddress(): string;
+  setSenderAddress(value: string): void;
+
+  getSenderRemark(): string;
+  setSenderRemark(value: string): void;
+
+  getAllowCancelOrder(): number;
+  setAllowCancelOrder(value: number): void;
+
+  getAllowReturnOrder(): number;
+  setAllowReturnOrder(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfigShop.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfigShop): ConfigShop.AsObject;
+  static serializeBinaryToWriter(message: ConfigShop, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfigShop;
+  static deserializeBinaryFromReader(message: ConfigShop, reader: jspb.BinaryReader): ConfigShop;
+}
+
+export namespace ConfigShop {
+  export type AsObject = {
+    limitCount: number,
+    shopNotes: string,
+    orderNotes: string,
+    senderName: string,
+    senderPhone: string,
+    senderCellPhone: string,
+    senderZipCode: string,
+    senderAddress: string,
+    senderRemark: string,
+    allowCancelOrder: number,
+    allowReturnOrder: number,
   }
 }
 

@@ -12,8 +12,8 @@ export class Order extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getSellerId(): string;
-  setSellerId(value: string): void;
+  getSalesId(): string;
+  setSalesId(value: string): void;
 
   getCustomerId(): string;
   setCustomerId(value: string): void;
@@ -129,7 +129,7 @@ export namespace Order {
   export type AsObject = {
     orderId: string,
     storeId: string,
-    sellerId: string,
+    salesId: string,
     customerId: string,
     email: string,
     carId: string,

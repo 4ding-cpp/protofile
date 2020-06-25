@@ -149,7 +149,7 @@ proto.ding4.Order.toObject = function(includeInstance, msg) {
   var f, obj = {
     orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sellerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    salesId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     customerId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     email: jspb.Message.getFieldWithDefault(msg, 5, ""),
     carId: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -226,7 +226,7 @@ proto.ding4.Order.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSellerId(value);
+      msg.setSalesId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -393,7 +393,7 @@ proto.ding4.Order.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSellerId();
+  f = message.getSalesId();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -641,10 +641,10 @@ proto.ding4.Order.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string seller_id = 3;
+ * optional string sales_id = 3;
  * @return {string}
  */
-proto.ding4.Order.prototype.getSellerId = function() {
+proto.ding4.Order.prototype.getSalesId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -653,7 +653,7 @@ proto.ding4.Order.prototype.getSellerId = function() {
  * @param {string} value
  * @return {!proto.ding4.Order} returns this
  */
-proto.ding4.Order.prototype.setSellerId = function(value) {
+proto.ding4.Order.prototype.setSalesId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

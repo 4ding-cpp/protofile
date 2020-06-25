@@ -28,6 +28,7 @@ import * as website_pb from './website_pb';
 import * as external_pb from './external_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
+import * as domain_pb from './domain_pb';
 
 export class Store1RPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -1192,6 +1193,28 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoProcessOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.OrderBatch) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  processOrder(
+    request: order_pb.OrderBatch,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ProcessOrder',
+      request,
+      metadata || {},
+      this.methodInfoProcessOrder,
+      callback);
+  }
+
   methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: order_pb.Order) => {
@@ -2025,6 +2048,72 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindMessage,
+      callback);
+  }
+
+  methodInfoCreateDomain = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: domain_pb.Domain) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createDomain(
+    request: domain_pb.Domain,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateDomain',
+      request,
+      metadata || {},
+      this.methodInfoCreateDomain,
+      callback);
+  }
+
+  methodInfoDeleteDomain = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: domain_pb.Domain) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteDomain(
+    request: domain_pb.Domain,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteDomain',
+      request,
+      metadata || {},
+      this.methodInfoDeleteDomain,
+      callback);
+  }
+
+  methodInfoFindDomain = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findDomain(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindDomain',
+      request,
+      metadata || {},
+      this.methodInfoFindDomain,
       callback);
   }
 

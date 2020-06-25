@@ -21,12 +21,12 @@ import "store.proto";
 import "remind.proto";
 import "order.proto";
 import "purchase.proto";
-import "seller.proto";
 import "setting.proto";
 import "external.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
+import "sales.proto";
 
 service BusinessRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -190,16 +190,6 @@ service BusinessRPC {
     // 供應商修改紀錄
     rpc RecordSupplier(Supplier) returns (Response);
 
-    // 建立銷售員
-    rpc CreateSeller(Seller) returns (Response);
-    // 更新銷售員資訊
-    rpc UpdateSeller(Seller) returns (Response);
-    // 銷售員列表
-    rpc FindSeller(Query) returns (Response);
-    // 銷售員修改紀錄
-    rpc RecordSeller(Seller) returns (Response);
-
-
     // 新增進貨單
     rpc CreatePurchase(Purchase) returns (Response);
     // 刪除進貨單
@@ -251,4 +241,10 @@ service BusinessRPC {
     rpc CreateDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
+
+    // 銷售員
+    rpc CreateSales(Sales) returns (Response);
+    rpc UpdateSales(Sales) returns (Response);
+    rpc FindSales(Query) returns (Response);
+    rpc RecordSales(Sales) returns (Response);
 }

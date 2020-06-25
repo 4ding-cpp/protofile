@@ -50,3 +50,5 @@ var freeback_pb = require('./freeback_pb.js');
 goog.object.extend(proto, freeback_pb);
 var message_pb = require('./message_pb.js');
 goog.object.extend(proto, message_pb);
+var domain_pb = require('./domain_pb.js');
+goog.object.extend(proto, domain_pb);
