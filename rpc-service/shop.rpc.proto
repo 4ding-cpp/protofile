@@ -12,7 +12,6 @@ import "activity-coupon.proto";
 import "order.proto";
 import "freeback.proto";
 
-
 service ShopRPC {
     rpc Ping(PingPong) returns (PingPong);
 
@@ -60,4 +59,7 @@ service ShopRPC {
     rpc ReadFreeback(Freeback) returns (Response);
     rpc AppendFreeback(Dialogue) returns (Response);
     rpc FindFreeback(Query) returns (Response);
+
+    // 金物流方式
+    rpc FindExternal(Query) returns (Response);
 }

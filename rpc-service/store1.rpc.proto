@@ -21,6 +21,7 @@ import "setting.proto";
 import "webpage.proto";
 import "website.proto";
 import "external.proto";
+import "secret.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";

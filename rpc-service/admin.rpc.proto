@@ -18,6 +18,7 @@ import "adv.proto";
 import "app.proto";
 import "setting.proto";
 import "external.proto";
+import "secret.proto";
 import "message.proto";
 
 service AdminRPC {

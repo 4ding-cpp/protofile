@@ -26,6 +26,7 @@ import * as setting_pb from './setting_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
 import * as external_pb from './external_pb';
+import * as secret_pb from './secret_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
@@ -1349,14 +1350,14 @@ export class Store1RPCClient {
 
   methodInfoFindService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.Service) => {
+    (request: secret_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   findService(
-    request: external_pb.Service,
+    request: secret_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1371,14 +1372,14 @@ export class Store1RPCClient {
 
   methodInfoUpdateService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.Service) => {
+    (request: secret_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateService(
-    request: external_pb.Service,
+    request: secret_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1393,14 +1394,14 @@ export class Store1RPCClient {
 
   methodInfoUpdateSecret = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.ServiceSecret) => {
+    (request: secret_pb.ServiceSecret) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateSecret(
-    request: external_pb.ServiceSecret,
+    request: secret_pb.ServiceSecret,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
