@@ -6,6 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
 import "car.proto";
+import "customer.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -20,7 +21,7 @@ message Order {
     string store_id = 2;
     string sales_id = 3;
     string customer_id = 4;
-    string email = 5;
+    Customer customer = 5;
     string car_id = 6;
     string coupon_id = 7;
     int32 state = 8;
@@ -37,17 +38,18 @@ message Order {
     int32 payment_charge = 19;
     int32 logistics_charge = 20;
     string re_order_id = 21;
-    repeated Commodity commodity = 22;
-    Payment payment = 23;
-    Logistics logistics = 24;
+    string remark = 22;
+    repeated Commodity commodity = 23;
+    Payment payment = 24;
+    Logistics logistics = 25;
 
-    map<string, int32> labelx = 25;
-    string operator = 26;
-    google.protobuf.Timestamp create_at = 27;
-    google.protobuf.Timestamp update_at = 28;
-    repeated string cols = 29;
-    repeated Condition condition = 30;
-    google.protobuf.Struct self = 31;
+    map<string, int32> labelx = 26;
+    string operator = 27;
+    google.protobuf.Timestamp create_at = 28;
+    google.protobuf.Timestamp update_at = 29;
+    repeated string cols = 30;
+    repeated Condition condition = 31;
+    google.protobuf.Struct self = 32;
 }
 
 
