@@ -13,15 +13,17 @@ message Remind {
     string item = 2;
     string description = 3;
     bool is_email = 4;
-    string email_template = 5;
-    bool is_letter = 6;
-    string letter_template = 7;
+    bool default_email = 5;
+    string email_template = 6;
+    bool is_letter = 7;
+    bool default_letter = 8;
+    string letter_template = 9;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75; 
+    map<string, int32> labelx = 10;
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    repeated Condition condition = 15;
+    google.protobuf.Struct self = 16; 
 }

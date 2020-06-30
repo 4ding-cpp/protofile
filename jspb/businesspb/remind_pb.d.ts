@@ -17,11 +17,17 @@ export class Remind extends jspb.Message {
   getIsEmail(): boolean;
   setIsEmail(value: boolean): void;
 
+  getDefaultEmail(): boolean;
+  setDefaultEmail(value: boolean): void;
+
   getEmailTemplate(): string;
   setEmailTemplate(value: string): void;
 
   getIsLetter(): boolean;
   setIsLetter(value: boolean): void;
+
+  getDefaultLetter(): boolean;
+  setDefaultLetter(value: boolean): void;
 
   getLetterTemplate(): string;
   setLetterTemplate(value: string): void;
@@ -71,8 +77,10 @@ export namespace Remind {
     item: string,
     description: string,
     isEmail: boolean,
+    defaultEmail: boolean,
     emailTemplate: string,
     isLetter: boolean,
+    defaultLetter: boolean,
     letterTemplate: string,
     labelxMap: Array<[string, number]>,
     operator: string,
