@@ -9,20 +9,59 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 // Setting Setting
-// Type 1.語言及貨幣 2.網站設定 3.購物設定
+// Type => language {"tw":"繁體中文"}
+// Type => currency {"NTD":1,"USD":0.32}
+// Type => website {
+//	"name":         "第一家店",
+//	"slogan":       "貨出的去錢進得來",
+//	"copyright":    "禿頭保有相關權利",
+//	"organization": "禿頭協會",
+//	"phone":        "0987654321",
+//	"email":        "abc@4ding.site",
+//	"address":      "台中市南屯區忠勇路71號",
+//	"facebook":     "abc123",
+//	"lineAt":       "abc123",
+//	"instagram":    "abc123",
+// }
+// Type => shop {
+//	"limit_count":       "5",
+//	"shop_notes":        "<p>購物須知 請詳閱</p>",
+//	"order_notes":       "<p>付款須知 請詳閱</p>",
+//	"sender_name":       "禿頭協會",
+//	"sender_phone":      "04-26304240",
+//	"sender_cell_phone": "0987654321",
+//	"sender_zip_code":   "43443",
+//	"sender_remark":     "本站不允許客戶自行退貨請聯繫客服",
+// }
+// Type => google_analytics {"token":"..."}
+// Type => google_tag_manager {"token":"..."}
+// Type => facebook_sign {"app_no":"...","app_secret":"..."}
+// Type => facebook_pixel {"token":"..."}
+// Type => line_sign {"channel_id":"...","channel_secret":"..."}
+// Type => ecpay {
+//    "merchant_id":"...",
+//    "payment_hash_key":"...",
+//    "payment_hash_iv":"...",
+//    "logistics_hash_key":"...",
+//    "logistics_hash_iv":"..."
+// }
+// Type => newebpay {"merchant_id":"...","hash_key":"...","hash_iv":"..."}
+// Type => every8d {"username":"09...","password":"..."}
+// Type => newsleopard {"token":"..."}
 message Setting {
     string setting_id = 1;
     string store_id = 2;
-    int32 type = 3;
-    google.protobuf.Value conf = 4;
+    string type = 3;
+    bool is_enable = 4;
+    google.protobuf.Value conf = 5;
     
-    map<string, int32> labelx = 5;
-    string operator = 6;
-    google.protobuf.Timestamp create_at = 7;
-    google.protobuf.Timestamp update_at = 8;
-    repeated string cols = 9;
-    repeated Condition condition = 10;
-    google.protobuf.Struct self = 11;
+    map<string, int32> labelx = 6;
+    string operator = 7;
+    google.protobuf.Timestamp create_at = 8;
+    google.protobuf.Timestamp update_at = 9;
+    repeated string cols = 10;
+    repeated Condition condition = 11;
+    google.protobuf.Struct self = 12;
 }
 
 // 多語言及貨幣設定
