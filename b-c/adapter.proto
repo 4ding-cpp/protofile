@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+
+// Type => 1:金流 2:物流
+// PaymentType => 1.信用卡 2.ATM 3.超商代碼 4.超商條碼 6.取貨付款 9.自訂
+// PaymentType => 1XX 信用卡分期 103:分三期 112:分12期
+// LogisticsType => 1.店到店 2.大宗物流 3.一般宅配 4.低溫宅配 5.自營門市 9.自訂
+message Adapter {
+    string adapter_id = 1;
+    string store_id = 2;
+    int32 type = 3;
+    string service = 4;
+    bool is_enable = 5;
+    google.protobuf.Value name = 6;
+    int32 payment_type = 7;
+    double payment_add_amount = 8;
+    double payment_add_percent = 9;
+    int32 expire_day = 10;
+    int32 logistics_type = 11;
+    int32 logistics_fee = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
+}
