@@ -18,6 +18,7 @@ import "activity-coupon.proto";
 import "order.proto";
 import "remind.proto";
 import "setting.proto";
+import "adapter.proto";
 import "webpage.proto";
 import "website.proto";
 import "external.proto";
@@ -138,6 +139,12 @@ service Store1RPC {
     rpc DeleteSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
 
+    // 金物流街口開放
+    rpc CreateAdapter(Adapter) returns (Response);
+    rpc UpdateAdapter(Adapter) returns (Response);
+    rpc DeleteAdapter(Adapter) returns (Response);
+    rpc FindAdapter(Query) returns (Response);
+
     // 頁面刪修讀寫
     rpc CreateWebPage(WebPage) returns (Response);
     rpc UpdateWebPage(WebPage) returns (Response);
@@ -169,5 +176,7 @@ service Store1RPC {
     rpc CreateDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
+
+    
 }
 

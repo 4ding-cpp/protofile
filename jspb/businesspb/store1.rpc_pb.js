@@ -40,6 +40,8 @@ var remind_pb = require('./remind_pb.js');
 goog.object.extend(proto, remind_pb);
 var setting_pb = require('./setting_pb.js');
 goog.object.extend(proto, setting_pb);
+var adapter_pb = require('./adapter_pb.js');
+goog.object.extend(proto, adapter_pb);
 var webpage_pb = require('./webpage_pb.js');
 goog.object.extend(proto, webpage_pb);
 var website_pb = require('./website_pb.js');

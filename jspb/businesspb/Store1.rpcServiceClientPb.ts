@@ -23,6 +23,7 @@ import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
+import * as adapter_pb from './adapter_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
 import * as external_pb from './external_pb';
@@ -1631,6 +1632,94 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindSetting,
+      callback);
+  }
+
+  methodInfoCreateAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adapter_pb.Adapter) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createAdapter(
+    request: adapter_pb.Adapter,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateAdapter',
+      request,
+      metadata || {},
+      this.methodInfoCreateAdapter,
+      callback);
+  }
+
+  methodInfoUpdateAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adapter_pb.Adapter) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateAdapter(
+    request: adapter_pb.Adapter,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateAdapter',
+      request,
+      metadata || {},
+      this.methodInfoUpdateAdapter,
+      callback);
+  }
+
+  methodInfoDeleteAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adapter_pb.Adapter) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteAdapter(
+    request: adapter_pb.Adapter,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteAdapter',
+      request,
+      metadata || {},
+      this.methodInfoDeleteAdapter,
+      callback);
+  }
+
+  methodInfoFindAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findAdapter(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindAdapter',
+      request,
+      metadata || {},
+      this.methodInfoFindAdapter,
       callback);
   }
 

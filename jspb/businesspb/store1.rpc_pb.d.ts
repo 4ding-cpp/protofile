@@ -14,6 +14,7 @@ import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
+import * as adapter_pb from './adapter_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
 import * as external_pb from './external_pb';
