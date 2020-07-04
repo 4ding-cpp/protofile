@@ -25,7 +25,7 @@ message Adapter {
     double payment_add_percent = 9;
     int32 expire_day = 10;
     int32 logistics_type = 11;
-    string logistics_sub_type = 12;
+    int32 logistics_sub_type = 12;
     int32 logistics_fee = 13;
     string remark = 14;
     string redirect = 15;
