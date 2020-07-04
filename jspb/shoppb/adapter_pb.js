@@ -90,7 +90,7 @@ proto.ding4.Adapter.toObject = function(includeInstance, msg) {
     paymentAddPercent: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
     expireDay: jspb.Message.getFieldWithDefault(msg, 10, 0),
     logisticsType: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    logisticsSubType: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    logisticsSubType: jspb.Message.getFieldWithDefault(msg, 12, 0),
     logisticsFee: jspb.Message.getFieldWithDefault(msg, 13, 0),
     remark: jspb.Message.getFieldWithDefault(msg, 14, ""),
     redirect: jspb.Message.getFieldWithDefault(msg, 15, ""),
@@ -183,7 +183,7 @@ proto.ding4.Adapter.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogisticsType(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setLogisticsSubType(value);
       break;
     case 13:
@@ -334,8 +334,8 @@ proto.ding4.Adapter.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getLogisticsSubType();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       12,
       f
     );
@@ -628,20 +628,20 @@ proto.ding4.Adapter.prototype.setLogisticsType = function(value) {
 
 
 /**
- * optional string logistics_sub_type = 12;
- * @return {string}
+ * optional int32 logistics_sub_type = 12;
+ * @return {number}
  */
 proto.ding4.Adapter.prototype.getLogisticsSubType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Adapter} returns this
  */
 proto.ding4.Adapter.prototype.setLogisticsSubType = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 

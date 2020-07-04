@@ -40,8 +40,8 @@ export class Adapter extends jspb.Message {
   getLogisticsType(): number;
   setLogisticsType(value: number): void;
 
-  getLogisticsSubType(): string;
-  setLogisticsSubType(value: string): void;
+  getLogisticsSubType(): number;
+  setLogisticsSubType(value: number): void;
 
   getLogisticsFee(): number;
   setLogisticsFee(value: number): void;
@@ -101,7 +101,7 @@ export namespace Adapter {
     paymentAddPercent: number,
     expireDay: number,
     logisticsType: number,
-    logisticsSubType: string,
+    logisticsSubType: number,
     logisticsFee: number,
     remark: string,
     redirect: string,
