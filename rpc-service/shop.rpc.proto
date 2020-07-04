@@ -9,6 +9,7 @@ import "sql.proto";
 import "customer.proto";
 import "car.proto";
 import "activity-coupon.proto";
+import "adapter.proto";
 import "order.proto";
 import "freeback.proto";
 
@@ -43,16 +44,22 @@ service ShopRPC {
     // 清空購物車
     rpc DeleteCar(Car) returns (Response);
 
+    // 查看付款方式
+    rpc FindPayment(Query) returns (Response);
+    // 查看物流方式
+    rpc FindLogistics(Query) returns (Response);
+    // 選擇超商門市
+    rpc ChooseCVSStore(Adapter) returns (Response);
+    // 取得超商門市資訊
+    rpc GetCVSStore(Logistics) returns (Response);
+
     // 建立訂單
     rpc CreateOrder(Order) returns (Response);
     // 取消訂單 state < 3 未付款前能取消
     rpc CancelOrder(Order) returns (Response);
     // 消費紀錄
     rpc FindOrder(Query) returns (Response);
-    // 選擇超商門市
-    rpc ChooseCVSStore(Logistics) returns (Response);
-    // 取得超商門市資訊
-    rpc GetCVSStore(Logistics) returns (Response);
+    
 
     // 回饋
     rpc CreateFreeback(Freeback) returns (Response);

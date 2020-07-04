@@ -75,12 +75,10 @@ message ConfigWebsite {
     string slogan = 2;
     string copyright = 3;
     string service_terms = 4;
-
     string organization = 5;
     string phone = 6;
     string email = 7;
     string address = 8;
-
     string facebook = 9;
     string line_at = 10;
     string instagram = 11;
@@ -90,14 +88,12 @@ message ConfigShop {
     int32 limit_count = 1;
     string shop_notes = 2;
     string order_notes = 3;
-
     string sender_name = 4;
     string sender_phone = 5;
     string sender_cell_phone = 6;
     string sender_zip_code = 7;
     string sender_address = 8;
     string sender_remark = 9;
-
     int32 allow_cancel_order = 10;
     int32 allow_return_order = 11;
 }

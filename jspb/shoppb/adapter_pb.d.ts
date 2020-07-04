@@ -40,8 +40,17 @@ export class Adapter extends jspb.Message {
   getLogisticsType(): number;
   setLogisticsType(value: number): void;
 
+  getLogisticsSubType(): string;
+  setLogisticsSubType(value: string): void;
+
   getLogisticsFee(): number;
   setLogisticsFee(value: number): void;
+
+  getRemark(): string;
+  setRemark(value: string): void;
+
+  getRedirect(): string;
+  setRedirect(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -92,7 +101,10 @@ export namespace Adapter {
     paymentAddPercent: number,
     expireDay: number,
     logisticsType: number,
+    logisticsSubType: string,
     logisticsFee: number,
+    remark: string,
+    redirect: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
