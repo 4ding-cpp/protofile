@@ -4,38 +4,18 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class External extends jspb.Message {
-  getExternalId(): string;
-  setExternalId(value: string): void;
+export class Domain extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getState(): number;
+  setState(value: number): void;
 
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
   getStoreId(): string;
   setStoreId(value: string): void;
-
-  getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
-  hasName(): boolean;
-  clearName(): void;
-
-  getService(): number;
-  setService(value: number): void;
-
-  getServiceType(): number;
-  setServiceType(value: number): void;
-
-  getServiceItem(): number;
-  setServiceItem(value: number): void;
-
-  getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
-
-  getExpireDay(): number;
-  setExpireDay(value: number): void;
-
-  getRemark(): string;
-  setRemark(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -66,25 +46,19 @@ export class External extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): External.AsObject;
-  static toObject(includeInstance: boolean, msg: External): External.AsObject;
-  static serializeBinaryToWriter(message: External, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): External;
-  static deserializeBinaryFromReader(message: External, reader: jspb.BinaryReader): External;
+  toObject(includeInstance?: boolean): Domain.AsObject;
+  static toObject(includeInstance: boolean, msg: Domain): Domain.AsObject;
+  static serializeBinaryToWriter(message: Domain, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Domain;
+  static deserializeBinaryFromReader(message: Domain, reader: jspb.BinaryReader): Domain;
 }
 
-export namespace External {
+export namespace Domain {
   export type AsObject = {
-    externalId: string,
+    name: string,
+    state: number,
     businessId: string,
     storeId: string,
-    name?: google_protobuf_struct_pb.Value.AsObject,
-    service: number,
-    serviceType: number,
-    serviceItem: number,
-    isEnable: boolean,
-    expireDay: number,
-    remark: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

@@ -22,6 +22,8 @@ var password_pb = require('./password_pb.js');
 goog.object.extend(proto, password_pb);
 var business_pb = require('./business_pb.js');
 goog.object.extend(proto, business_pb);
+var business$sub_pb = require('./business-sub_pb.js');
+goog.object.extend(proto, business$sub_pb);
 var point_pb = require('./point_pb.js');
 goog.object.extend(proto, point_pb);
 var manager_pb = require('./manager_pb.js');

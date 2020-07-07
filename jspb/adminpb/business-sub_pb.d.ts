@@ -1,18 +1,50 @@
 import * as jspb from "google-protobuf"
 
+import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class HostMap extends jspb.Message {
-  getHost(): string;
-  setHost(value: string): void;
+export class BusinessSub extends jspb.Message {
+  getSubId(): string;
+  setSubId(value: string): void;
 
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
-  getStoreId(): string;
-  setStoreId(value: string): void;
+  getStatus(): number;
+  setStatus(value: number): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
+
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  getIsLive(): boolean;
+  setIsLive(value: boolean): void;
+
+  getPhoneVerify(): boolean;
+  setPhoneVerify(value: boolean): void;
+
+  getEmailVerify(): boolean;
+  setEmailVerify(value: boolean): void;
+
+  getPermissionList(): Array<permission_pb.Option>;
+  setPermissionList(value: Array<permission_pb.Option>): void;
+  clearPermissionList(): void;
+  addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
+
+  getWhiteList(): Array<string>;
+  setWhiteList(value: Array<string>): void;
+  clearWhiteList(): void;
+  addWhite(value: string, index?: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -46,18 +78,27 @@ export class HostMap extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HostMap.AsObject;
-  static toObject(includeInstance: boolean, msg: HostMap): HostMap.AsObject;
-  static serializeBinaryToWriter(message: HostMap, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HostMap;
-  static deserializeBinaryFromReader(message: HostMap, reader: jspb.BinaryReader): HostMap;
+  toObject(includeInstance?: boolean): BusinessSub.AsObject;
+  static toObject(includeInstance: boolean, msg: BusinessSub): BusinessSub.AsObject;
+  static serializeBinaryToWriter(message: BusinessSub, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BusinessSub;
+  static deserializeBinaryFromReader(message: BusinessSub, reader: jspb.BinaryReader): BusinessSub;
 }
 
-export namespace HostMap {
+export namespace BusinessSub {
   export type AsObject = {
-    host: string,
+    subId: string,
     businessId: string,
-    storeId: string,
+    status: number,
+    name: string,
+    email: string,
+    phone: string,
+    password: string,
+    isLive: boolean,
+    phoneVerify: boolean,
+    emailVerify: boolean,
+    permissionList: Array<permission_pb.Option.AsObject>,
+    whiteList: Array<string>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

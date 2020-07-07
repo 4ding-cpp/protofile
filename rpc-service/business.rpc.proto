@@ -9,6 +9,7 @@ import "seo.proto";
 import "sql.proto";
 import "password.proto";
 import "business.proto";
+import "business-sub.proto";
 import "point.proto";
 import "manager.proto";
 import "linker.proto";
@@ -57,15 +58,15 @@ service BusinessRPC {
     rpc FindPointDetail(Query) returns (Response);
     
     // 新增子帳號
-    rpc CreateBusiness(Business) returns (Response);
+    rpc CreateBusinessSub(BusinessSub) returns (Response);
     // 更新子帳號
-    rpc UpdateBusiness(Business) returns (Response);
+    rpc UpdateBusinessSub(BusinessSub) returns (Response);
     // 子帳號列表
-    rpc FindBusiness(Query) returns (Response);
+    rpc FindBusinessSub(Query) returns (Response);
     // 子帳號修改紀錄
-    rpc RecordBusiness(Business) returns (Response);
+    rpc RecordBusinessSub(BusinessSub) returns (Response);
     // 子帳號登入紀錄
-    rpc SignBusiness(Business) returns (Response);
+    rpc SignBusinessSub(BusinessSub) returns (Response);
 
     // 檢查信箱及電話是否存在
     rpc ExistsManager(Manager) returns (Response);

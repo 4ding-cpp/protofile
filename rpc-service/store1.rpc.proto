@@ -39,11 +39,11 @@ service Store1RPC {
     rpc FindSign(Query) returns (Response);
 
     // 子帳號相關
-    rpc CreateManager(Manager) returns (Response);
-    rpc UpdateManager(Manager) returns (Response);
-    rpc FindManager(Query) returns (Response);
-    rpc RecordManager(Manager) returns (Response);
-    rpc SignManager(Manager) returns (Response);
+    rpc CreateManagerSub(ManagerSub) returns (Response);
+    rpc UpdateManagerSub(ManagerSub) returns (Response);
+    rpc FindManagerSub(Query) returns (Response);
+    rpc RecordManagerSub(ManagerSub) returns (Response);
+    rpc SignManagerSub(ManagerSub) returns (Response);
 
     // 標籤增減刪修讀寫
     rpc CreateLabel(Label) returns (Response);
@@ -67,8 +67,7 @@ service Store1RPC {
     // 連結會員
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
-    rpc LinkCustomer(Customer) returns (Response);
-    rpc FindCustomerLinked(Query) returns (Response);
+    rpc FindCustomer(Query) returns (Response);
 
     // 會員等級
     rpc CreateCustomerLevel(CustomerLevel) returns (Response);

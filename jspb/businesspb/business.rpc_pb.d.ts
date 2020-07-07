@@ -5,6 +5,7 @@ import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as business_pb from './business_pb';
+import * as business$sub_pb from './business-sub_pb';
 import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
 import * as linker_pb from './linker_pb';

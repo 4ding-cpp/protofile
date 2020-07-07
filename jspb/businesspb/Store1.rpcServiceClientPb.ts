@@ -227,51 +227,51 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateManager = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: manager_pb.ManagerSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createManager(
-    request: manager_pb.Manager,
+  createManagerSub(
+    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/CreateManager',
+        '/ding4.Store1RPC/CreateManagerSub',
       request,
       metadata || {},
-      this.methodInfoCreateManager,
+      this.methodInfoCreateManagerSub,
       callback);
   }
 
-  methodInfoUpdateManager = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: manager_pb.ManagerSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  updateManager(
-    request: manager_pb.Manager,
+  updateManagerSub(
+    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/UpdateManager',
+        '/ding4.Store1RPC/UpdateManagerSub',
       request,
       metadata || {},
-      this.methodInfoUpdateManager,
+      this.methodInfoUpdateManagerSub,
       callback);
   }
 
-  methodInfoFindManager = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -279,61 +279,61 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findManager(
+  findManagerSub(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindManager',
+        '/ding4.Store1RPC/FindManagerSub',
       request,
       metadata || {},
-      this.methodInfoFindManager,
+      this.methodInfoFindManagerSub,
       callback);
   }
 
-  methodInfoRecordManager = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecordManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: manager_pb.ManagerSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  recordManager(
-    request: manager_pb.Manager,
+  recordManagerSub(
+    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/RecordManager',
+        '/ding4.Store1RPC/RecordManagerSub',
       request,
       metadata || {},
-      this.methodInfoRecordManager,
+      this.methodInfoRecordManagerSub,
       callback);
   }
 
-  methodInfoSignManager = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSignManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: manager_pb.ManagerSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  signManager(
-    request: manager_pb.Manager,
+  signManagerSub(
+    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/SignManager',
+        '/ding4.Store1RPC/SignManagerSub',
       request,
       metadata || {},
-      this.methodInfoSignManager,
+      this.methodInfoSignManagerSub,
       callback);
   }
 
@@ -667,29 +667,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoLinkCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer_pb.Customer) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  linkCustomer(
-    request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/LinkCustomer',
-      request,
-      metadata || {},
-      this.methodInfoLinkCustomer,
-      callback);
-  }
-
-  methodInfoFindCustomerLinked = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -697,17 +675,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findCustomerLinked(
+  findCustomer(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindCustomerLinked',
+        '/ding4.Store1RPC/FindCustomer',
       request,
       metadata || {},
-      this.methodInfoFindCustomerLinked,
+      this.methodInfoFindCustomer,
       callback);
   }
 

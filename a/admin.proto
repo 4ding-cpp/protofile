@@ -11,14 +11,14 @@ import "google/protobuf/timestamp.proto";
 
 message Admin {
     string admin_id = 1;
-    int32 status = 2;
-    string phone = 3;
-    string email = 4;
+    bool is_super = 2;
+    string title = 3;
+    int32 status = 4;
     string name = 5;
-    string title = 6;
-    bool is_live = 7;
+    string email = 6;
+    string phone = 7;
     string password = 8;
-    bool is_super = 9;
+    bool is_live = 9;
     repeated Option permission = 10;
     repeated string white = 11;
 

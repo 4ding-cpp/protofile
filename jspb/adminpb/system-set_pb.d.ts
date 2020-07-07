@@ -4,38 +4,21 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class External extends jspb.Message {
-  getExternalId(): string;
-  setExternalId(value: string): void;
+export class SystemSet extends jspb.Message {
+  getSetId(): string;
+  setSetId(value: string): void;
 
-  getBusinessId(): string;
-  setBusinessId(value: string): void;
+  getType(): string;
+  setType(value: string): void;
 
-  getStoreId(): string;
-  setStoreId(value: string): void;
+  getName(): string;
+  setName(value: string): void;
 
-  getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
-  hasName(): boolean;
-  clearName(): void;
+  getConf(): string;
+  setConf(value: string): void;
 
-  getService(): number;
-  setService(value: number): void;
-
-  getServiceType(): number;
-  setServiceType(value: number): void;
-
-  getServiceItem(): number;
-  setServiceItem(value: number): void;
-
-  getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
-
-  getExpireDay(): number;
-  setExpireDay(value: number): void;
-
-  getRemark(): string;
-  setRemark(value: string): void;
+  getLabelxMap(): jspb.Map<string, number>;
+  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -66,25 +49,20 @@ export class External extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): External.AsObject;
-  static toObject(includeInstance: boolean, msg: External): External.AsObject;
-  static serializeBinaryToWriter(message: External, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): External;
-  static deserializeBinaryFromReader(message: External, reader: jspb.BinaryReader): External;
+  toObject(includeInstance?: boolean): SystemSet.AsObject;
+  static toObject(includeInstance: boolean, msg: SystemSet): SystemSet.AsObject;
+  static serializeBinaryToWriter(message: SystemSet, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SystemSet;
+  static deserializeBinaryFromReader(message: SystemSet, reader: jspb.BinaryReader): SystemSet;
 }
 
-export namespace External {
+export namespace SystemSet {
   export type AsObject = {
-    externalId: string,
-    businessId: string,
-    storeId: string,
-    name?: google_protobuf_struct_pb.Value.AsObject,
-    service: number,
-    serviceType: number,
-    serviceItem: number,
-    isEnable: boolean,
-    expireDay: number,
-    remark: string,
+    setId: string,
+    type: string,
+    name: string,
+    conf: string,
+    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

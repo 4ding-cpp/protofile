@@ -14,15 +14,16 @@ import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
 import * as business_pb from './business_pb';
-import * as host$map_pb from './host-map_pb';
+import * as domain_pb from './domain_pb';
 import * as label_pb from './label_pb';
 import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
 import * as adv_pb from './adv_pb';
 import * as app_pb from './app_pb';
-import * as setting_pb from './setting_pb';
+import * as system$set_pb from './system-set_pb';
 import * as external_pb from './external_pb';
+import * as secret_pb from './secret_pb';
 import * as message_pb from './message_pb';
 
 export class AdminRPCClient {
@@ -481,51 +482,51 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoCreateHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: host$map_pb.HostMap) => {
+    (request: domain_pb.Domain) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createHostMap(
-    request: host$map_pb.HostMap,
+  createDomain(
+    request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/CreateHostMap',
+        '/ding4.AdminRPC/CreateDomain',
       request,
       metadata || {},
-      this.methodInfoCreateHostMap,
+      this.methodInfoCreateDomain,
       callback);
   }
 
-  methodInfoDeleteHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: host$map_pb.HostMap) => {
+    (request: domain_pb.Domain) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  deleteHostMap(
-    request: host$map_pb.HostMap,
+  deleteDomain(
+    request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/DeleteHostMap',
+        '/ding4.AdminRPC/DeleteDomain',
       request,
       metadata || {},
-      this.methodInfoDeleteHostMap,
+      this.methodInfoDeleteDomain,
       callback);
   }
 
-  methodInfoFindHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -533,43 +534,43 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findHostMap(
+  findDomain(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FindHostMap',
+        '/ding4.AdminRPC/FindDomain',
       request,
       metadata || {},
-      this.methodInfoFindHostMap,
+      this.methodInfoFindDomain,
       callback);
   }
 
-  methodInfoRecordHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecordDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: host$map_pb.HostMap) => {
+    (request: domain_pb.Domain) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  recordHostMap(
-    request: host$map_pb.HostMap,
+  recordDomain(
+    request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/RecordHostMap',
+        '/ding4.AdminRPC/RecordDomain',
       request,
       metadata || {},
-      this.methodInfoRecordHostMap,
+      this.methodInfoRecordDomain,
       callback);
   }
 
-  methodInfoFlushHostMap = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFlushDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -577,17 +578,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  flushHostMap(
+  flushDomain(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FlushHostMap',
+        '/ding4.AdminRPC/FlushDomain',
       request,
       metadata || {},
-      this.methodInfoFlushHostMap,
+      this.methodInfoFlushDomain,
       callback);
   }
 
@@ -1845,51 +1846,51 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoCreateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateSystemSet = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: setting_pb.Setting) => {
+    (request: system$set_pb.SystemSet) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createSetting(
-    request: setting_pb.Setting,
+  createSystemSet(
+    request: system$set_pb.SystemSet,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/CreateSetting',
+        '/ding4.AdminRPC/CreateSystemSet',
       request,
       metadata || {},
-      this.methodInfoCreateSetting,
+      this.methodInfoCreateSystemSet,
       callback);
   }
 
-  methodInfoUpdateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateSystemSet = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: setting_pb.Setting) => {
+    (request: system$set_pb.SystemSet) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  updateSetting(
-    request: setting_pb.Setting,
+  updateSystemSet(
+    request: system$set_pb.SystemSet,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/UpdateSetting',
+        '/ding4.AdminRPC/UpdateSystemSet',
       request,
       metadata || {},
-      this.methodInfoUpdateSetting,
+      this.methodInfoUpdateSystemSet,
       callback);
   }
 
-  methodInfoFindSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindSystemSet = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1897,52 +1898,52 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findSetting(
+  findSystemSet(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FindSetting',
+        '/ding4.AdminRPC/FindSystemSet',
       request,
       metadata || {},
-      this.methodInfoFindSetting,
+      this.methodInfoFindSystemSet,
       callback);
   }
 
-  methodInfoRecordSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecordSystemSet = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: setting_pb.Setting) => {
+    (request: system$set_pb.SystemSet) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  recordSetting(
-    request: setting_pb.Setting,
+  recordSystemSet(
+    request: system$set_pb.SystemSet,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/RecordSetting',
+        '/ding4.AdminRPC/RecordSystemSet',
       request,
       metadata || {},
-      this.methodInfoRecordSetting,
+      this.methodInfoRecordSystemSet,
       callback);
   }
 
   methodInfoFindService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.Service) => {
+    (request: secret_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   findService(
-    request: external_pb.Service,
+    request: secret_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1957,14 +1958,14 @@ export class AdminRPCClient {
 
   methodInfoUpdateService = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: external_pb.Service) => {
+    (request: secret_pb.Service) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateService(
-    request: external_pb.Service,
+    request: secret_pb.Service,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

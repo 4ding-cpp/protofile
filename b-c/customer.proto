@@ -10,25 +10,31 @@ import "google/protobuf/timestamp.proto";
 
 message Customer {
     string customer_id = 1;
-    int32 status = 2;
-    string phone = 3;
-    bool phone_verify = 4;
-    string email = 5;
-    bool email_verify = 6;
-    string name = 7;
-    string birthday = 8;
-    int32 sex = 9;
-    string password = 10;
-    string come_from = 11;
-    CustomerLink link = 12;
+    string business_id = 2;
+    string store_id = 3;
+
+    int32 status = 4;
+    string name = 5;
+    string email = 6;
+    string phone = 7;
+    string password = 8;
+    bool phone_verify = 9;
+    bool email_verify = 10;
     
-    map<string, int32> labelx = 13;
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19;
+    string birthday = 11;
+    int32 sex = 12;
+    string zip_code = 13;
+    string address = 14;
+    string level_id = 15;
+    bool is_receive = 16;
+    
+    map<string, int32> labelx = 17;
+    string operator = 18;
+    google.protobuf.Timestamp create_at = 19;
+    google.protobuf.Timestamp update_at = 20;
+    repeated string cols = 21;
+    repeated Condition condition = 22;
+    google.protobuf.Struct self = 23;
 }
 
 message CustomerLink {

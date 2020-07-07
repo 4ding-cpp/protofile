@@ -14,6 +14,7 @@ import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as business_pb from './business_pb';
+import * as business$sub_pb from './business-sub_pb';
 import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
 import * as linker_pb from './linker_pb';
@@ -404,51 +405,51 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoCreateBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.Business) => {
+    (request: business$sub_pb.BusinessSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createBusiness(
-    request: business_pb.Business,
+  createBusinessSub(
+    request: business$sub_pb.BusinessSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/CreateBusiness',
+        '/ding4.BusinessRPC/CreateBusinessSub',
       request,
       metadata || {},
-      this.methodInfoCreateBusiness,
+      this.methodInfoCreateBusinessSub,
       callback);
   }
 
-  methodInfoUpdateBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.Business) => {
+    (request: business$sub_pb.BusinessSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  updateBusiness(
-    request: business_pb.Business,
+  updateBusinessSub(
+    request: business$sub_pb.BusinessSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/UpdateBusiness',
+        '/ding4.BusinessRPC/UpdateBusinessSub',
       request,
       metadata || {},
-      this.methodInfoUpdateBusiness,
+      this.methodInfoUpdateBusinessSub,
       callback);
   }
 
-  methodInfoFindBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -456,61 +457,61 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findBusiness(
+  findBusinessSub(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/FindBusiness',
+        '/ding4.BusinessRPC/FindBusinessSub',
       request,
       metadata || {},
-      this.methodInfoFindBusiness,
+      this.methodInfoFindBusinessSub,
       callback);
   }
 
-  methodInfoRecordBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecordBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.Business) => {
+    (request: business$sub_pb.BusinessSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  recordBusiness(
-    request: business_pb.Business,
+  recordBusinessSub(
+    request: business$sub_pb.BusinessSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/RecordBusiness',
+        '/ding4.BusinessRPC/RecordBusinessSub',
       request,
       metadata || {},
-      this.methodInfoRecordBusiness,
+      this.methodInfoRecordBusinessSub,
       callback);
   }
 
-  methodInfoSignBusiness = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSignBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business_pb.Business) => {
+    (request: business$sub_pb.BusinessSub) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  signBusiness(
-    request: business_pb.Business,
+  signBusinessSub(
+    request: business$sub_pb.BusinessSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/SignBusiness',
+        '/ding4.BusinessRPC/SignBusinessSub',
       request,
       metadata || {},
-      this.methodInfoSignBusiness,
+      this.methodInfoSignBusinessSub,
       callback);
   }
 

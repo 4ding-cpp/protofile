@@ -16,7 +16,7 @@ import "announcement.proto";
 import "point.proto";
 import "adv.proto";
 import "app.proto";
-import "setting.proto";
+import "system-set.proto";
 import "external.proto";
 import "secret.proto";
 import "message.proto";
@@ -134,12 +134,10 @@ service AdminRPC {
     rpc FindApp(Query) returns (Response);
     rpc RecordApp(App) returns (Response);
 
-    // 系統設定 SettingID 需自定義 Item 為項目名稱 Content 項目內容
-    // 例: {"setting_id":"app_price","item":"開通費用","content":"5000"}
-    rpc CreateSetting(Setting) returns (Response);
-    rpc UpdateSetting(Setting) returns (Response);
-    rpc FindSetting(Query) returns (Response);
-    rpc RecordSetting(Setting) returns (Response);
+    rpc CreateSystemSet(SystemSet) returns (Response);
+    rpc UpdateSystemSet(SystemSet) returns (Response);
+    rpc FindSystemSet(Query) returns (Response);
+    rpc RecordSystemSet(SystemSet) returns (Response);
 
     // 外部串接資訊
     rpc FindService(Service) returns (Response);

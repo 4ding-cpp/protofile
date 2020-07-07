@@ -5,15 +5,12 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-export class Admin extends jspb.Message {
-  getAdminId(): string;
-  setAdminId(value: string): void;
+export class BusinessSub extends jspb.Message {
+  getSubId(): string;
+  setSubId(value: string): void;
 
-  getIsSuper(): boolean;
-  setIsSuper(value: boolean): void;
-
-  getTitle(): string;
-  setTitle(value: string): void;
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
 
   getStatus(): number;
   setStatus(value: number): void;
@@ -32,6 +29,12 @@ export class Admin extends jspb.Message {
 
   getIsLive(): boolean;
   setIsLive(value: boolean): void;
+
+  getPhoneVerify(): boolean;
+  setPhoneVerify(value: boolean): void;
+
+  getEmailVerify(): boolean;
+  setEmailVerify(value: boolean): void;
 
   getPermissionList(): Array<permission_pb.Option>;
   setPermissionList(value: Array<permission_pb.Option>): void;
@@ -75,24 +78,25 @@ export class Admin extends jspb.Message {
   clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Admin.AsObject;
-  static toObject(includeInstance: boolean, msg: Admin): Admin.AsObject;
-  static serializeBinaryToWriter(message: Admin, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Admin;
-  static deserializeBinaryFromReader(message: Admin, reader: jspb.BinaryReader): Admin;
+  toObject(includeInstance?: boolean): BusinessSub.AsObject;
+  static toObject(includeInstance: boolean, msg: BusinessSub): BusinessSub.AsObject;
+  static serializeBinaryToWriter(message: BusinessSub, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BusinessSub;
+  static deserializeBinaryFromReader(message: BusinessSub, reader: jspb.BinaryReader): BusinessSub;
 }
 
-export namespace Admin {
+export namespace BusinessSub {
   export type AsObject = {
-    adminId: string,
-    isSuper: boolean,
-    title: string,
+    subId: string,
+    businessId: string,
     status: number,
     name: string,
     email: string,
     phone: string,
     password: string,
     isLive: boolean,
+    phoneVerify: boolean,
+    emailVerify: boolean,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
     labelxMap: Array<[string, number]>,
