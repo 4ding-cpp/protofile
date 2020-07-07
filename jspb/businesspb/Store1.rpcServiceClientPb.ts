@@ -15,6 +15,7 @@ import * as password_pb from './password_pb';
 import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';
 import * as manager_pb from './manager_pb';
+import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';
@@ -620,6 +621,72 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindCoupon,
+      callback);
+  }
+
+  methodInfoCreateSales = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sales_pb.Sales) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createSales(
+    request: sales_pb.Sales,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateSales',
+      request,
+      metadata || {},
+      this.methodInfoCreateSales,
+      callback);
+  }
+
+  methodInfoUpdateSales = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sales_pb.Sales) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateSales(
+    request: sales_pb.Sales,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateSales',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSales,
+      callback);
+  }
+
+  methodInfoFindSales = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findSales(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindSales',
+      request,
+      metadata || {},
+      this.methodInfoFindSales,
       callback);
   }
 

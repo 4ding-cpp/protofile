@@ -24,6 +24,8 @@ var car_pb = require('./car_pb.js');
 goog.object.extend(proto, car_pb);
 var manager_pb = require('./manager_pb.js');
 goog.object.extend(proto, manager_pb);
+var sales_pb = require('./sales_pb.js');
+goog.object.extend(proto, sales_pb);
 var customer_pb = require('./customer_pb.js');
 goog.object.extend(proto, customer_pb);
 var customer$level_pb = require('./customer-level_pb.js');

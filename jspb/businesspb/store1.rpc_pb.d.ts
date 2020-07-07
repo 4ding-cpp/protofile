@@ -6,6 +6,7 @@ import * as password_pb from './password_pb';
 import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';
 import * as manager_pb from './manager_pb';
+import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';

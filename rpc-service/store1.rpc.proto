@@ -10,6 +10,7 @@ import "password.proto";
 import "label.proto";
 import "car.proto";
 import "manager.proto";
+import "sales.proto";
 import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
@@ -64,7 +65,12 @@ service Store1RPC {
     rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
 
-    // 連結會員
+    // 銷售員
+    rpc CreateSales(Sales) returns (Response);
+    rpc UpdateSales(Sales) returns (Response);
+    rpc FindSales(Query) returns (Response);
+
+    // 會員
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
