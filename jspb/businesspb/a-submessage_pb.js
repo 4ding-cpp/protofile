@@ -362,8 +362,8 @@ proto.ding4.Active.toObject = function(includeInstance, msg) {
   var f, obj = {
     freeShipping: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     isRepeat: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    discount: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    reduce: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    discount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    reduce: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     giveaway: jspb.Message.getFieldWithDefault(msg, 5, ""),
     giveawaySku: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -411,11 +411,11 @@ proto.ding4.Active.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsRepeat(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setDiscount(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setReduce(value);
       break;
     case 5:
@@ -470,15 +470,15 @@ proto.ding4.Active.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getDiscount();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeDouble(
       3,
       f
     );
   }
   f = message.getReduce();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeDouble(
       4,
       f
     );
@@ -537,11 +537,11 @@ proto.ding4.Active.prototype.setIsRepeat = function(value) {
 
 
 /**
- * optional int32 discount = 3;
+ * optional double discount = 3;
  * @return {number}
  */
 proto.ding4.Active.prototype.getDiscount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
@@ -550,16 +550,16 @@ proto.ding4.Active.prototype.getDiscount = function() {
  * @return {!proto.ding4.Active} returns this
  */
 proto.ding4.Active.prototype.setDiscount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
 /**
- * optional int32 reduce = 4;
+ * optional double reduce = 4;
  * @return {number}
  */
 proto.ding4.Active.prototype.getReduce = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
@@ -568,7 +568,7 @@ proto.ding4.Active.prototype.getReduce = function() {
  * @return {!proto.ding4.Active} returns this
  */
 proto.ding4.Active.prototype.setReduce = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -1225,7 +1225,7 @@ proto.ding4.Image.toObject = function(includeInstance, msg) {
     alt: jspb.Message.getFieldWithDefault(msg, 2, ""),
     title: jspb.Message.getFieldWithDefault(msg, 3, ""),
     link: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    page: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isBlank: jspb.Message.getFieldWithDefault(msg, 5, 0),
     sku: jspb.Message.getFieldWithDefault(msg, 6, ""),
     target: (f = msg.getTarget()) && proto.ding4.ProductTarget.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -1283,8 +1283,8 @@ proto.ding4.Image.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLink(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIsBlank(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -1360,9 +1360,9 @@ proto.ding4.Image.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPage();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsBlank();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
@@ -1472,20 +1472,20 @@ proto.ding4.Image.prototype.setLink = function(value) {
 
 
 /**
- * optional string page = 5;
- * @return {string}
+ * optional int32 is_blank = 5;
+ * @return {number}
  */
-proto.ding4.Image.prototype.getPage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.ding4.Image.prototype.getIsBlank = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Image} returns this
  */
-proto.ding4.Image.prototype.setPage = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.ding4.Image.prototype.setIsBlank = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

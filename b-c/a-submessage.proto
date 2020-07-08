@@ -24,8 +24,8 @@ message Rule {
 message Active {
     bool free_shipping = 1;
     bool is_repeat = 2;
-    int32 discount = 3;
-    int32 reduce = 4;
+    double discount = 3;
+    double reduce = 4;
     string giveaway = 5;
     string giveaway_sku = 6;
 }
@@ -53,12 +53,13 @@ message Used {
 }
 
 // Image 給Layuot用可填入alt
+// is_blank = 2 => 另開分頁
 message Image {
 	string src = 1;
 	string alt = 2;
     string title = 3;
 	string link = 4;
-	string page = 5;
+	int32 is_blank = 5;
     string sku = 6;
     ProductTarget target = 7;
     string type = 8;

@@ -151,8 +151,8 @@ export class Image extends jspb.Message {
   getLink(): string;
   setLink(value: string): void;
 
-  getPage(): string;
-  setPage(value: string): void;
+  getIsBlank(): number;
+  setIsBlank(value: number): void;
 
   getSku(): string;
   setSku(value: string): void;
@@ -182,7 +182,7 @@ export namespace Image {
     alt: string,
     title: string,
     link: string,
-    page: string,
+    isBlank: number,
     sku: string,
     target?: ProductTarget.AsObject,
     type: string,

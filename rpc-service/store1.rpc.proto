@@ -56,12 +56,14 @@ service Store1RPC {
     // 建立活動
     rpc CreateActivity(Activity) returns (Response);
     rpc UpdateActivity(Activity) returns (Response);
+    rpc CancelActivity(Activity) returns (Response);
     rpc FindActivity(Query) returns (Response);
 
     // 建立折價券及配發及兌換
     rpc CreateCoupon(Coupon) returns (Response);
     rpc DistributeCoupon(Coupon) returns (Response);
     rpc UpdateCoupon(Coupon) returns (Response);
+    rpc CancelCoupon(Coupon) returns (Response);
     rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
 
