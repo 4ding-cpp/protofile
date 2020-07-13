@@ -50,8 +50,6 @@ service ShopRPC {
     rpc FindLogistics(Query) returns (Response);
     // 選擇超商門市
     rpc ChooseCVSStore(Adapter) returns (Response);
-    // 取得超商門市資訊
-    rpc GetCVSStore(Logistics) returns (Response);
 
     // 建立訂單
     rpc CreateOrder(Order) returns (Response);

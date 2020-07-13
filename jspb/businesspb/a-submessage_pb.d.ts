@@ -200,8 +200,8 @@ export class Layout extends jspb.Message {
   getLink(): string;
   setLink(value: string): void;
 
-  getPage(): string;
-  setPage(value: string): void;
+  getIsBlank(): boolean;
+  setIsBlank(value: boolean): void;
 
   getQuantity(): number;
   setQuantity(value: number): void;
@@ -237,7 +237,7 @@ export namespace Layout {
     type: number,
     title: string,
     link: string,
-    page: string,
+    isBlank: boolean,
     quantity: number,
     second: number,
     imageList: Array<Image.AsObject>,

@@ -119,10 +119,7 @@ service Store1RPC {
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
-    // 選擇超商門市
-    rpc ChooseCVSStore(Logistics) returns (Response);
-    // 取得超商門市資訊
-    rpc GetCVSStore(Logistics) returns (Response);
+
 
     // 修改購物狀態提醒
     rpc UpdateRemind(Remind) returns (Response);

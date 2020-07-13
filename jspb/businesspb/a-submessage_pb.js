@@ -1622,7 +1622,7 @@ proto.ding4.Layout.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
     link: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    page: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     quantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
     second: jspb.Message.getFieldWithDefault(msg, 6, 0),
     imageList: jspb.Message.toObjectList(msg.getImageList(),
@@ -1678,8 +1678,8 @@ proto.ding4.Layout.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLink(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPage(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsBlank(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -1754,9 +1754,9 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPage();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsBlank();
+  if (f) {
+    writer.writeBool(
       4,
       f
     );
@@ -1857,20 +1857,20 @@ proto.ding4.Layout.prototype.setLink = function(value) {
 
 
 /**
- * optional string page = 4;
- * @return {string}
+ * optional bool is_blank = 4;
+ * @return {boolean}
  */
-proto.ding4.Layout.prototype.getPage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.ding4.Layout.prototype.getIsBlank = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.ding4.Layout} returns this
  */
-proto.ding4.Layout.prototype.setPage = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.ding4.Layout.prototype.setIsBlank = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
