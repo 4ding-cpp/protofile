@@ -34,14 +34,14 @@ message Active {
 // birthday 會員生日月分 [6,7,8] 可多選
 // items 直接指定 customer_id 適用專屬折價券
 message CustomerTarget {
-    string level = 1;
+    repeated string level = 1;
     repeated int32 birthday = 2;
     repeated string items = 3;
 }
 // class 商品類別class_id
 // items 直接指定 product_id 適用單品活動
 message ProductTarget {
-    string class = 1;
+    repeated string class = 1;
     repeated string items = 2;
 }
 
@@ -73,10 +73,11 @@ message Layout {
     int32 type = 1;
     string title = 2;
     string link = 3;
-    bool is_blank = 4;
-    int32 quantity = 5;
-    int32 second = 6;
-    repeated Image image = 7;
-    ProductTarget target = 8;
-    Template template = 9;
+    string page = 4;
+    bool is_blank = 5;
+    int32 quantity = 6;
+    int32 second = 7;
+    repeated Image image = 8;
+    ProductTarget target = 9;
+    Template template = 10;
 }

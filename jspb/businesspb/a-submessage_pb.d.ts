@@ -63,8 +63,10 @@ export namespace Active {
 }
 
 export class CustomerTarget extends jspb.Message {
-  getLevel(): string;
-  setLevel(value: string): void;
+  getLevelList(): Array<string>;
+  setLevelList(value: Array<string>): void;
+  clearLevelList(): void;
+  addLevel(value: string, index?: number): void;
 
   getBirthdayList(): Array<number>;
   setBirthdayList(value: Array<number>): void;
@@ -86,15 +88,17 @@ export class CustomerTarget extends jspb.Message {
 
 export namespace CustomerTarget {
   export type AsObject = {
-    level: string,
+    levelList: Array<string>,
     birthdayList: Array<number>,
     itemsList: Array<string>,
   }
 }
 
 export class ProductTarget extends jspb.Message {
-  getClass(): string;
-  setClass(value: string): void;
+  getClassList(): Array<string>;
+  setClassList(value: Array<string>): void;
+  clearClassList(): void;
+  addClass(value: string, index?: number): void;
 
   getItemsList(): Array<string>;
   setItemsList(value: Array<string>): void;
@@ -111,7 +115,7 @@ export class ProductTarget extends jspb.Message {
 
 export namespace ProductTarget {
   export type AsObject = {
-    pb_class: string,
+    classList: Array<string>,
     itemsList: Array<string>,
   }
 }
@@ -200,6 +204,9 @@ export class Layout extends jspb.Message {
   getLink(): string;
   setLink(value: string): void;
 
+  getPage(): string;
+  setPage(value: string): void;
+
   getIsBlank(): boolean;
   setIsBlank(value: boolean): void;
 
@@ -237,6 +244,7 @@ export namespace Layout {
     type: number,
     title: string,
     link: string,
+    page: string,
     isBlank: boolean,
     quantity: number,
     second: number,

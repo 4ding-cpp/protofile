@@ -614,7 +614,7 @@ proto.ding4.Active.prototype.setGiveawaySku = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.CustomerTarget.repeatedFields_ = [2,3];
+proto.ding4.CustomerTarget.repeatedFields_ = [1,2,3];
 
 
 
@@ -647,7 +647,7 @@ proto.ding4.CustomerTarget.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.CustomerTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
-    level: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    levelList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     birthdayList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     itemsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
@@ -688,7 +688,7 @@ proto.ding4.CustomerTarget.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLevel(value);
+      msg.addLevel(value);
       break;
     case 2:
       var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
@@ -727,9 +727,9 @@ proto.ding4.CustomerTarget.prototype.serializeBinary = function() {
  */
 proto.ding4.CustomerTarget.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLevel();
+  f = message.getLevelList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       1,
       f
     );
@@ -752,20 +752,39 @@ proto.ding4.CustomerTarget.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string level = 1;
- * @return {string}
+ * repeated string level = 1;
+ * @return {!Array<string>}
  */
-proto.ding4.CustomerTarget.prototype.getLevel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.ding4.CustomerTarget.prototype.getLevelList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ding4.CustomerTarget} returns this
+ */
+proto.ding4.CustomerTarget.prototype.setLevelList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.ding4.CustomerTarget} returns this
  */
-proto.ding4.CustomerTarget.prototype.setLevel = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.ding4.CustomerTarget.prototype.addLevel = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.CustomerTarget} returns this
+ */
+proto.ding4.CustomerTarget.prototype.clearLevelList = function() {
+  return this.setLevelList([]);
 };
 
 
@@ -849,7 +868,7 @@ proto.ding4.CustomerTarget.prototype.clearItemsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.ProductTarget.repeatedFields_ = [2];
+proto.ding4.ProductTarget.repeatedFields_ = [1,2];
 
 
 
@@ -882,7 +901,7 @@ proto.ding4.ProductTarget.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ProductTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pb_class: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    classList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     itemsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
@@ -922,7 +941,7 @@ proto.ding4.ProductTarget.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClass(value);
+      msg.addClass(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -957,9 +976,9 @@ proto.ding4.ProductTarget.prototype.serializeBinary = function() {
  */
 proto.ding4.ProductTarget.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getClass();
+  f = message.getClassList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       1,
       f
     );
@@ -975,20 +994,39 @@ proto.ding4.ProductTarget.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string class = 1;
- * @return {string}
+ * repeated string class = 1;
+ * @return {!Array<string>}
  */
-proto.ding4.ProductTarget.prototype.getClass = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.ding4.ProductTarget.prototype.getClassList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ding4.ProductTarget} returns this
+ */
+proto.ding4.ProductTarget.prototype.setClassList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.ding4.ProductTarget} returns this
  */
-proto.ding4.ProductTarget.prototype.setClass = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.ding4.ProductTarget.prototype.addClass = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.ProductTarget} returns this
+ */
+proto.ding4.ProductTarget.prototype.clearClassList = function() {
+  return this.setClassList([]);
 };
 
 
@@ -1586,7 +1624,7 @@ proto.ding4.Image.prototype.setSource = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Layout.repeatedFields_ = [7];
+proto.ding4.Layout.repeatedFields_ = [8];
 
 
 
@@ -1622,9 +1660,10 @@ proto.ding4.Layout.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
     link: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    quantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    second: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    page: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    quantity: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    second: jspb.Message.getFieldWithDefault(msg, 7, 0),
     imageList: jspb.Message.toObjectList(msg.getImageList(),
     proto.ding4.Image.toObject, includeInstance),
     target: (f = msg.getTarget()) && proto.ding4.ProductTarget.toObject(includeInstance, f),
@@ -1678,28 +1717,32 @@ proto.ding4.Layout.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLink(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPage(value);
+      break;
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsBlank(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setQuantity(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSecond(value);
       break;
-    case 7:
+    case 8:
       var value = new proto.ding4.Image;
       reader.readMessage(value,proto.ding4.Image.deserializeBinaryFromReader);
       msg.addImage(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.ding4.ProductTarget;
       reader.readMessage(value,proto.ding4.ProductTarget.deserializeBinaryFromReader);
       msg.setTarget(value);
       break;
-    case 9:
+    case 10:
       var value = new seo_pb.Template;
       reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
       msg.setTemplate(value);
@@ -1754,31 +1797,38 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getPage();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getIsBlank();
   if (f) {
     writer.writeBool(
-      4,
+      5,
       f
     );
   }
   f = message.getQuantity();
   if (f !== 0) {
     writer.writeInt32(
-      5,
+      6,
       f
     );
   }
   f = message.getSecond();
   if (f !== 0) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getImageList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.ding4.Image.serializeBinaryToWriter
     );
@@ -1786,7 +1836,7 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
   f = message.getTarget();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto.ding4.ProductTarget.serializeBinaryToWriter
     );
@@ -1794,7 +1844,7 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
   f = message.getTemplate();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       seo_pb.Template.serializeBinaryToWriter
     );
@@ -1857,11 +1907,29 @@ proto.ding4.Layout.prototype.setLink = function(value) {
 
 
 /**
- * optional bool is_blank = 4;
+ * optional string page = 4;
+ * @return {string}
+ */
+proto.ding4.Layout.prototype.getPage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Layout} returns this
+ */
+proto.ding4.Layout.prototype.setPage = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_blank = 5;
  * @return {boolean}
  */
 proto.ding4.Layout.prototype.getIsBlank = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -1870,33 +1938,15 @@ proto.ding4.Layout.prototype.getIsBlank = function() {
  * @return {!proto.ding4.Layout} returns this
  */
 proto.ding4.Layout.prototype.setIsBlank = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
 /**
- * optional int32 quantity = 5;
+ * optional int32 quantity = 6;
  * @return {number}
  */
 proto.ding4.Layout.prototype.getQuantity = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.Layout} returns this
- */
-proto.ding4.Layout.prototype.setQuantity = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional int32 second = 6;
- * @return {number}
- */
-proto.ding4.Layout.prototype.getSecond = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -1905,18 +1955,36 @@ proto.ding4.Layout.prototype.getSecond = function() {
  * @param {number} value
  * @return {!proto.ding4.Layout} returns this
  */
-proto.ding4.Layout.prototype.setSecond = function(value) {
+proto.ding4.Layout.prototype.setQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * repeated Image image = 7;
+ * optional int32 second = 7;
+ * @return {number}
+ */
+proto.ding4.Layout.prototype.getSecond = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Layout} returns this
+ */
+proto.ding4.Layout.prototype.setSecond = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * repeated Image image = 8;
  * @return {!Array<!proto.ding4.Image>}
  */
 proto.ding4.Layout.prototype.getImageList = function() {
   return /** @type{!Array<!proto.ding4.Image>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.Image, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.Image, 8));
 };
 
 
@@ -1925,7 +1993,7 @@ proto.ding4.Layout.prototype.getImageList = function() {
  * @return {!proto.ding4.Layout} returns this
 */
 proto.ding4.Layout.prototype.setImageList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -1935,7 +2003,7 @@ proto.ding4.Layout.prototype.setImageList = function(value) {
  * @return {!proto.ding4.Image}
  */
 proto.ding4.Layout.prototype.addImage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.ding4.Image, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.Image, opt_index);
 };
 
 
@@ -1949,12 +2017,12 @@ proto.ding4.Layout.prototype.clearImageList = function() {
 
 
 /**
- * optional ProductTarget target = 8;
+ * optional ProductTarget target = 9;
  * @return {?proto.ding4.ProductTarget}
  */
 proto.ding4.Layout.prototype.getTarget = function() {
   return /** @type{?proto.ding4.ProductTarget} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ProductTarget, 8));
+    jspb.Message.getWrapperField(this, proto.ding4.ProductTarget, 9));
 };
 
 
@@ -1963,7 +2031,7 @@ proto.ding4.Layout.prototype.getTarget = function() {
  * @return {!proto.ding4.Layout} returns this
 */
 proto.ding4.Layout.prototype.setTarget = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -1981,17 +2049,17 @@ proto.ding4.Layout.prototype.clearTarget = function() {
  * @return {boolean}
  */
 proto.ding4.Layout.prototype.hasTarget = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional Template template = 9;
+ * optional Template template = 10;
  * @return {?proto.ding4.Template}
  */
 proto.ding4.Layout.prototype.getTemplate = function() {
   return /** @type{?proto.ding4.Template} */ (
-    jspb.Message.getWrapperField(this, seo_pb.Template, 9));
+    jspb.Message.getWrapperField(this, seo_pb.Template, 10));
 };
 
 
@@ -2000,7 +2068,7 @@ proto.ding4.Layout.prototype.getTemplate = function() {
  * @return {!proto.ding4.Layout} returns this
 */
 proto.ding4.Layout.prototype.setTemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -2018,7 +2086,7 @@ proto.ding4.Layout.prototype.clearTemplate = function() {
  * @return {boolean}
  */
 proto.ding4.Layout.prototype.hasTemplate = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
