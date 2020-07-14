@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
+goog.object.extend(proto, google_protobuf_struct_pb);
 goog.exportSymbol('proto.ding4.Active', null, global);
 goog.exportSymbol('proto.ding4.CustomerTarget', null, global);
 goog.exportSymbol('proto.ding4.Image', null, global);
@@ -1658,7 +1660,7 @@ proto.ding4.Layout.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.Layout.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    title: (f = msg.getTitle()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     link: jspb.Message.getFieldWithDefault(msg, 3, ""),
     page: jspb.Message.getFieldWithDefault(msg, 4, ""),
     isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
@@ -1709,7 +1711,8 @@ proto.ding4.Layout.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setTitle(value);
       break;
     case 3:
@@ -1784,10 +1787,11 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTitle();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getLink();
@@ -1871,20 +1875,39 @@ proto.ding4.Layout.prototype.setType = function(value) {
 
 
 /**
- * optional string title = 2;
- * @return {string}
+ * optional google.protobuf.Value title = 2;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.Layout.prototype.getTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.ding4.Layout} returns this
+*/
+proto.ding4.Layout.prototype.setTitle = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.ding4.Layout} returns this
  */
-proto.ding4.Layout.prototype.setTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.ding4.Layout.prototype.clearTitle = function() {
+  return this.setTitle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Layout.prototype.hasTitle = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

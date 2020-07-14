@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
+import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 export class Rule extends jspb.Message {
   getAmount(): number;
@@ -198,8 +199,10 @@ export class Layout extends jspb.Message {
   getType(): number;
   setType(value: number): void;
 
-  getTitle(): string;
-  setTitle(value: string): void;
+  getTitle(): google_protobuf_struct_pb.Value | undefined;
+  setTitle(value?: google_protobuf_struct_pb.Value): void;
+  hasTitle(): boolean;
+  clearTitle(): void;
 
   getLink(): string;
   setLink(value: string): void;
@@ -242,7 +245,7 @@ export class Layout extends jspb.Message {
 export namespace Layout {
   export type AsObject = {
     type: number,
-    title: string,
+    title?: google_protobuf_struct_pb.Value.AsObject,
     link: string,
     page: string,
     isBlank: boolean,
