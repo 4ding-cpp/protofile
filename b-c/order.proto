@@ -6,7 +6,6 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
 import "car.proto";
-import "customer.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -21,44 +20,72 @@ message Order {
     string store_id = 2;
     string sales_id = 3;
     string customer_id = 4;
-    Customer customer = 5;
+    bool is_customer = 5;
     string car_id = 6;
     string coupon_id = 7;
-    int32 state = 8;
-
-    string payment_adapter = 9;
-    string payment_service = 10;
-    int32 payment_type = 11;
-    int32 payment_state = 12;
+    int32 count = 8;
+    int32 freight = 9;
+    int32 amount = 10;
+    double order_charge = 11;
+    double sales_charge = 12;
     int32 payment_charge = 13;
+    int32 logistics_charge = 14;
 
-    string logistics_adapter = 14;
-    string logistics_service = 15;
-    int32 logistics_type = 16;
-    int32 logistics_sub_type = 17;
-    int32 logistics_state = 18;
-    int32 logistics_charge = 19;
+    int32 state = 15;
+    int32 payment_state = 16;
+    int32 logistics_state = 17;
 
-    int32 come_from = 20;
-    int32 count = 21;
-    int32 amount = 22;
-    int32 freight = 23;
-    double order_charge = 24;
+    string payment_adapter = 18;
+    string payment_service = 19;
+    int32 payment_type = 20;
+    
+    string logistics_adapter = 21;
+    string logistics_service = 22;
+    int32 logistics_type = 23;
+    int32 logistics_sub_type = 24;
 
-    Payment payment = 25;
-    Logistics logistics = 26;
-    string remark = 27;
-    repeated Commodity commodity = 28;
+    string remark = 25;
+    repeated Commodity commodity = 26;
+    OrderOther other = 27;
 
-    map<string, int32> labelx = 29;
-    string operator = 30;
-    google.protobuf.Timestamp create_at = 31;
-    google.protobuf.Timestamp update_at = 32;
-    repeated string cols = 33;
-    repeated Condition condition = 34;
-    google.protobuf.Struct self = 35;
+    map<string, int32> labelx = 28;
+    string operator = 29;
+    google.protobuf.Timestamp create_at = 30;
+    google.protobuf.Timestamp update_at = 31;
+    repeated string cols = 32;
+    repeated Condition condition = 33;
+    google.protobuf.Struct self = 34;
 }
 
+message ContactInfo {
+    string name = 1;
+    string phone = 2;
+    string email = 3;
+    string zip_code = 4;
+    string address = 5;
+    string cvs_code = 6;
+    string cvs_type = 7;
+    string cvs_name = 8;
+    string cvs_address = 9;
+}
+
+message OrderOther {
+    string payment_no = 1;
+    string pay_ip = 2;
+    string pay_at = 3;
+    int32 expire_day = 4;
+    // ATM 付款資運
+    string bank_code = 5;
+    string bank_account = 6;
+    // CVS 付款資訊
+    string cvs_no = 7;
+    
+    string logistics_no = 8;
+
+    ContactInfo sender = 9;
+    ContactInfo buyer = 10;
+    ContactInfo receiver = 11;
+}
 
 message OrderBatch {
     repeated Order order = 1;

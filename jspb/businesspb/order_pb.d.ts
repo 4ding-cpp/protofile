@@ -2,7 +2,6 @@ import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as car_pb from './car_pb';
-import * as customer_pb from './customer_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -19,10 +18,8 @@ export class Order extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
-  getCustomer(): customer_pb.Customer | undefined;
-  setCustomer(value?: customer_pb.Customer): void;
-  hasCustomer(): boolean;
-  clearCustomer(): void;
+  getIsCustomer(): boolean;
+  setIsCustomer(value: boolean): void;
 
   getCarId(): string;
   setCarId(value: string): void;
@@ -30,8 +27,35 @@ export class Order extends jspb.Message {
   getCouponId(): string;
   setCouponId(value: string): void;
 
+  getCount(): number;
+  setCount(value: number): void;
+
+  getFreight(): number;
+  setFreight(value: number): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getOrderCharge(): number;
+  setOrderCharge(value: number): void;
+
+  getSalesCharge(): number;
+  setSalesCharge(value: number): void;
+
+  getPaymentCharge(): number;
+  setPaymentCharge(value: number): void;
+
+  getLogisticsCharge(): number;
+  setLogisticsCharge(value: number): void;
+
   getState(): number;
   setState(value: number): void;
+
+  getPaymentState(): number;
+  setPaymentState(value: number): void;
+
+  getLogisticsState(): number;
+  setLogisticsState(value: number): void;
 
   getPaymentAdapter(): string;
   setPaymentAdapter(value: string): void;
@@ -41,12 +65,6 @@ export class Order extends jspb.Message {
 
   getPaymentType(): number;
   setPaymentType(value: number): void;
-
-  getPaymentState(): number;
-  setPaymentState(value: number): void;
-
-  getPaymentCharge(): number;
-  setPaymentCharge(value: number): void;
 
   getLogisticsAdapter(): string;
   setLogisticsAdapter(value: string): void;
@@ -60,37 +78,6 @@ export class Order extends jspb.Message {
   getLogisticsSubType(): number;
   setLogisticsSubType(value: number): void;
 
-  getLogisticsState(): number;
-  setLogisticsState(value: number): void;
-
-  getLogisticsCharge(): number;
-  setLogisticsCharge(value: number): void;
-
-  getComeFrom(): number;
-  setComeFrom(value: number): void;
-
-  getCount(): number;
-  setCount(value: number): void;
-
-  getAmount(): number;
-  setAmount(value: number): void;
-
-  getFreight(): number;
-  setFreight(value: number): void;
-
-  getOrderCharge(): number;
-  setOrderCharge(value: number): void;
-
-  getPayment(): Payment | undefined;
-  setPayment(value?: Payment): void;
-  hasPayment(): boolean;
-  clearPayment(): void;
-
-  getLogistics(): Logistics | undefined;
-  setLogistics(value?: Logistics): void;
-  hasLogistics(): boolean;
-  clearLogistics(): void;
-
   getRemark(): string;
   setRemark(value: string): void;
 
@@ -98,6 +85,11 @@ export class Order extends jspb.Message {
   setCommodityList(value: Array<car_pb.Commodity>): void;
   clearCommodityList(): void;
   addCommodity(value?: car_pb.Commodity, index?: number): car_pb.Commodity;
+
+  getOther(): OrderOther | undefined;
+  setOther(value?: OrderOther): void;
+  hasOther(): boolean;
+  clearOther(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -144,30 +136,29 @@ export namespace Order {
     storeId: string,
     salesId: string,
     customerId: string,
-    customer?: customer_pb.Customer.AsObject,
+    isCustomer: boolean,
     carId: string,
     couponId: string,
+    count: number,
+    freight: number,
+    amount: number,
+    orderCharge: number,
+    salesCharge: number,
+    paymentCharge: number,
+    logisticsCharge: number,
     state: number,
+    paymentState: number,
+    logisticsState: number,
     paymentAdapter: string,
     paymentService: string,
     paymentType: number,
-    paymentState: number,
-    paymentCharge: number,
     logisticsAdapter: string,
     logisticsService: string,
     logisticsType: number,
     logisticsSubType: number,
-    logisticsState: number,
-    logisticsCharge: number,
-    comeFrom: number,
-    count: number,
-    amount: number,
-    freight: number,
-    orderCharge: number,
-    payment?: Payment.AsObject,
-    logistics?: Logistics.AsObject,
     remark: string,
     commodityList: Array<car_pb.Commodity.AsObject>,
+    other?: OrderOther.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -175,6 +166,120 @@ export namespace Order {
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class ContactInfo extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getZipCode(): string;
+  setZipCode(value: string): void;
+
+  getAddress(): string;
+  setAddress(value: string): void;
+
+  getCvsCode(): string;
+  setCvsCode(value: string): void;
+
+  getCvsType(): string;
+  setCvsType(value: string): void;
+
+  getCvsName(): string;
+  setCvsName(value: string): void;
+
+  getCvsAddress(): string;
+  setCvsAddress(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContactInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ContactInfo): ContactInfo.AsObject;
+  static serializeBinaryToWriter(message: ContactInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContactInfo;
+  static deserializeBinaryFromReader(message: ContactInfo, reader: jspb.BinaryReader): ContactInfo;
+}
+
+export namespace ContactInfo {
+  export type AsObject = {
+    name: string,
+    phone: string,
+    email: string,
+    zipCode: string,
+    address: string,
+    cvsCode: string,
+    cvsType: string,
+    cvsName: string,
+    cvsAddress: string,
+  }
+}
+
+export class OrderOther extends jspb.Message {
+  getPaymentNo(): string;
+  setPaymentNo(value: string): void;
+
+  getPayIp(): string;
+  setPayIp(value: string): void;
+
+  getPayAt(): string;
+  setPayAt(value: string): void;
+
+  getExpireDay(): number;
+  setExpireDay(value: number): void;
+
+  getBankCode(): string;
+  setBankCode(value: string): void;
+
+  getBankAccount(): string;
+  setBankAccount(value: string): void;
+
+  getCvsNo(): string;
+  setCvsNo(value: string): void;
+
+  getLogisticsNo(): string;
+  setLogisticsNo(value: string): void;
+
+  getSender(): ContactInfo | undefined;
+  setSender(value?: ContactInfo): void;
+  hasSender(): boolean;
+  clearSender(): void;
+
+  getBuyer(): ContactInfo | undefined;
+  setBuyer(value?: ContactInfo): void;
+  hasBuyer(): boolean;
+  clearBuyer(): void;
+
+  getReceiver(): ContactInfo | undefined;
+  setReceiver(value?: ContactInfo): void;
+  hasReceiver(): boolean;
+  clearReceiver(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrderOther.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderOther): OrderOther.AsObject;
+  static serializeBinaryToWriter(message: OrderOther, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderOther;
+  static deserializeBinaryFromReader(message: OrderOther, reader: jspb.BinaryReader): OrderOther;
+}
+
+export namespace OrderOther {
+  export type AsObject = {
+    paymentNo: string,
+    payIp: string,
+    payAt: string,
+    expireDay: number,
+    bankCode: string,
+    bankAccount: string,
+    cvsNo: string,
+    logisticsNo: string,
+    sender?: ContactInfo.AsObject,
+    buyer?: ContactInfo.AsObject,
+    receiver?: ContactInfo.AsObject,
   }
 }
 

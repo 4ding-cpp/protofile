@@ -13,10 +13,10 @@ message WebPage {
     string page_id = 1;
     string store_id = 2;
     string name = 3;
-    string url = 4;
+    string urn = 4;
     SEO seo = 5;
     string content = 6;
-    string index_page = 7;
+    string default_language = 7;
     bool is_error_handle = 8;
     
     map<string, int32> labelx = 9;
