@@ -64,15 +64,11 @@ export namespace Active {
 }
 
 export class CustomerTarget extends jspb.Message {
-  getLevelList(): Array<string>;
-  setLevelList(value: Array<string>): void;
-  clearLevelList(): void;
-  addLevel(value: string, index?: number): void;
+  getLevel(): string;
+  setLevel(value: string): void;
 
-  getBirthdayList(): Array<number>;
-  setBirthdayList(value: Array<number>): void;
-  clearBirthdayList(): void;
-  addBirthday(value: number, index?: number): void;
+  getBirthday(): number;
+  setBirthday(value: number): void;
 
   getItemsList(): Array<string>;
   setItemsList(value: Array<string>): void;
@@ -89,8 +85,8 @@ export class CustomerTarget extends jspb.Message {
 
 export namespace CustomerTarget {
   export type AsObject = {
-    levelList: Array<string>,
-    birthdayList: Array<number>,
+    level: string,
+    birthday: number,
     itemsList: Array<string>,
   }
 }

@@ -616,7 +616,7 @@ proto.ding4.Active.prototype.setGiveawaySku = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.CustomerTarget.repeatedFields_ = [1,2,3];
+proto.ding4.CustomerTarget.repeatedFields_ = [3];
 
 
 
@@ -649,8 +649,8 @@ proto.ding4.CustomerTarget.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.CustomerTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
-    levelList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    birthdayList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    level: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    birthday: jspb.Message.getFieldWithDefault(msg, 2, 0),
     itemsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
@@ -690,11 +690,11 @@ proto.ding4.CustomerTarget.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addLevel(value);
+      msg.setLevel(value);
       break;
     case 2:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setBirthdayList(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBirthday(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -729,16 +729,16 @@ proto.ding4.CustomerTarget.prototype.serializeBinary = function() {
  */
 proto.ding4.CustomerTarget.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLevelList();
+  f = message.getLevel();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getBirthdayList();
-  if (f.length > 0) {
-    writer.writePackedInt32(
+  f = message.getBirthday();
+  if (f !== 0) {
+    writer.writeInt32(
       2,
       f
     );
@@ -754,76 +754,38 @@ proto.ding4.CustomerTarget.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * repeated string level = 1;
- * @return {!Array<string>}
+ * optional string level = 1;
+ * @return {string}
  */
-proto.ding4.CustomerTarget.prototype.getLevelList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.ding4.CustomerTarget} returns this
- */
-proto.ding4.CustomerTarget.prototype.setLevelList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+proto.ding4.CustomerTarget.prototype.getLevel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.ding4.CustomerTarget} returns this
  */
-proto.ding4.CustomerTarget.prototype.addLevel = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+proto.ding4.CustomerTarget.prototype.setLevel = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.ding4.CustomerTarget} returns this
+ * optional int32 birthday = 2;
+ * @return {number}
  */
-proto.ding4.CustomerTarget.prototype.clearLevelList = function() {
-  return this.setLevelList([]);
-};
-
-
-/**
- * repeated int32 birthday = 2;
- * @return {!Array<number>}
- */
-proto.ding4.CustomerTarget.prototype.getBirthdayList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.ding4.CustomerTarget} returns this
- */
-proto.ding4.CustomerTarget.prototype.setBirthdayList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+proto.ding4.CustomerTarget.prototype.getBirthday = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @param {number=} opt_index
  * @return {!proto.ding4.CustomerTarget} returns this
  */
-proto.ding4.CustomerTarget.prototype.addBirthday = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ding4.CustomerTarget} returns this
- */
-proto.ding4.CustomerTarget.prototype.clearBirthdayList = function() {
-  return this.setBirthdayList([]);
+proto.ding4.CustomerTarget.prototype.setBirthday = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

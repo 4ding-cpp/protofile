@@ -1,5 +1,6 @@
 import * as jspb from "google-protobuf"
 
+import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
 import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
@@ -29,6 +30,19 @@ export class Activity extends jspb.Message {
   setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
   clearName(): void;
+
+  getUrn(): string;
+  setUrn(value: string): void;
+
+  getSeo(): seo_pb.SEO | undefined;
+  setSeo(value?: seo_pb.SEO): void;
+  hasSeo(): boolean;
+  clearSeo(): void;
+
+  getPhoto(): a$submessage_pb.Image | undefined;
+  setPhoto(value?: a$submessage_pb.Image): void;
+  hasPhoto(): boolean;
+  clearPhoto(): void;
 
   getRule(): a$submessage_pb.Rule | undefined;
   setRule(value?: a$submessage_pb.Rule): void;
@@ -103,6 +117,9 @@ export namespace Activity {
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     name?: google_protobuf_struct_pb.Value.AsObject,
+    urn: string,
+    seo?: seo_pb.SEO.AsObject,
+    photo?: a$submessage_pb.Image.AsObject,
     rule?: a$submessage_pb.Rule.AsObject,
     now?: a$submessage_pb.Rule.AsObject,
     active?: a$submessage_pb.Active.AsObject,

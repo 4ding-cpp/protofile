@@ -35,8 +35,8 @@ message Active {
 // birthday 會員生日月分 [6,7,8] 可多選
 // items 直接指定 customer_id 適用專屬折價券
 message CustomerTarget {
-    repeated string level = 1;
-    repeated int32 birthday = 2;
+    string level = 1;
+    int32 birthday = 2;
     repeated string items = 3;
 }
 // class 商品類別class_id
