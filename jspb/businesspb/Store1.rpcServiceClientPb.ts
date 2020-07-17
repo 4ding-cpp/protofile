@@ -27,8 +27,6 @@ import * as setting_pb from './setting_pb';
 import * as adapter_pb from './adapter_pb';
 import * as webpage_pb from './webpage_pb';
 import * as website_pb from './website_pb';
-import * as external_pb from './external_pb';
-import * as secret_pb from './secret_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
@@ -1394,204 +1392,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoFindService = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: secret_pb.Service) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findService(
-    request: secret_pb.Service,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindService',
-      request,
-      metadata || {},
-      this.methodInfoFindService,
-      callback);
-  }
-
-  methodInfoUpdateService = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: secret_pb.Service) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateService(
-    request: secret_pb.Service,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateService',
-      request,
-      metadata || {},
-      this.methodInfoUpdateService,
-      callback);
-  }
-
-  methodInfoUpdateSecret = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: secret_pb.ServiceSecret) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateSecret(
-    request: secret_pb.ServiceSecret,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateSecret',
-      request,
-      metadata || {},
-      this.methodInfoUpdateSecret,
-      callback);
-  }
-
-  methodInfoFindSecret = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findSecret(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindSecret',
-      request,
-      metadata || {},
-      this.methodInfoFindSecret,
-      callback);
-  }
-
-  methodInfoCreateExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: external_pb.External) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createExternal(
-    request: external_pb.External,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/CreateExternal',
-      request,
-      metadata || {},
-      this.methodInfoCreateExternal,
-      callback);
-  }
-
-  methodInfoEnableExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: external_pb.External) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  enableExternal(
-    request: external_pb.External,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/EnableExternal',
-      request,
-      metadata || {},
-      this.methodInfoEnableExternal,
-      callback);
-  }
-
-  methodInfoDeleteExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: external_pb.External) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteExternal(
-    request: external_pb.External,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DeleteExternal',
-      request,
-      metadata || {},
-      this.methodInfoDeleteExternal,
-      callback);
-  }
-
-  methodInfoFindExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findExternal(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindExternal',
-      request,
-      metadata || {},
-      this.methodInfoFindExternal,
-      callback);
-  }
-
-  methodInfoRecordExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: external_pb.External) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  recordExternal(
-    request: external_pb.External,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/RecordExternal',
-      request,
-      metadata || {},
-      this.methodInfoRecordExternal,
-      callback);
-  }
-
   methodInfoCreateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: setting_pb.Setting) => {
@@ -2029,6 +1829,50 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoUpdateLayout,
+      callback);
+  }
+
+  methodInfoFindMenu = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findMenu(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindMenu',
+      request,
+      metadata || {},
+      this.methodInfoFindMenu,
+      callback);
+  }
+
+  methodInfoUpdateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: website_pb.Website) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateMenu(
+    request: website_pb.Website,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateMenu',
+      request,
+      metadata || {},
+      this.methodInfoUpdateMenu,
       callback);
   }
 

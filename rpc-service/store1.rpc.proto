@@ -22,8 +22,6 @@ import "setting.proto";
 import "adapter.proto";
 import "webpage.proto";
 import "website.proto";
-import "external.proto";
-import "secret.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
@@ -126,17 +124,6 @@ service Store1RPC {
     // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
 
-    // 外部串接資訊
-    rpc FindService(Service) returns (Response);
-    rpc UpdateService(Service) returns (Response);
-    rpc UpdateSecret(ServiceSecret) returns (Response);
-    rpc FindSecret(Query) returns (Response);
-    rpc CreateExternal(External) returns (Response);
-    rpc EnableExternal(External) returns (Response);
-    rpc DeleteExternal(External) returns (Response);
-    rpc FindExternal(Query) returns (Response);
-    rpc RecordExternal(External) returns (Response);
-
     // 系統參數刪修讀寫
     rpc CreateSetting(Setting) returns (Response);
     rpc UpdateSetting(Setting) returns (Response);
@@ -164,6 +151,8 @@ service Store1RPC {
     rpc UpdateFooter(Website) returns (Response);
     rpc FindLayout(Query) returns (Response);
     rpc UpdateLayout(Website) returns (Response);
+    rpc FindMenu(Query) returns (Response);
+    rpc UpdateMenu(Website) returns (Response);
 
     // 回饋
     rpc CreateFreeback(Freeback) returns (Response);
