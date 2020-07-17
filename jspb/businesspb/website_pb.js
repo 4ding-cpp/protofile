@@ -50,7 +50,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Website.repeatedFields_ = [6,7,8,73,74];
+proto.ding4.Website.repeatedFields_ = [6,7,8,9,73,74];
 
 
 
@@ -93,6 +93,8 @@ proto.ding4.Website.toObject = function(includeInstance, msg) {
     footerList: jspb.Message.toObjectList(msg.getFooterList(),
     a$submessage_pb.Layout.toObject, includeInstance),
     layoutList: jspb.Message.toObjectList(msg.getLayoutList(),
+    a$submessage_pb.Layout.toObject, includeInstance),
+    menuList: jspb.Message.toObjectList(msg.getMenuList(),
     a$submessage_pb.Layout.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
@@ -175,6 +177,11 @@ proto.ding4.Website.deserializeBinaryFromReader = function(msg, reader) {
       var value = new a$submessage_pb.Layout;
       reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
       msg.addLayout(value);
+      break;
+    case 9:
+      var value = new a$submessage_pb.Layout;
+      reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
+      msg.addMenu(value);
       break;
     case 69:
       var value = msg.getLabelxMap();
@@ -297,6 +304,14 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       8,
+      f,
+      a$submessage_pb.Layout.serializeBinaryToWriter
+    );
+  }
+  f = message.getMenuList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
       f,
       a$submessage_pb.Layout.serializeBinaryToWriter
     );
@@ -612,6 +627,44 @@ proto.ding4.Website.prototype.addLayout = function(opt_value, opt_index) {
  */
 proto.ding4.Website.prototype.clearLayoutList = function() {
   return this.setLayoutList([]);
+};
+
+
+/**
+ * repeated Layout menu = 9;
+ * @return {!Array<!proto.ding4.Layout>}
+ */
+proto.ding4.Website.prototype.getMenuList = function() {
+  return /** @type{!Array<!proto.ding4.Layout>} */ (
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Layout, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Layout>} value
+ * @return {!proto.ding4.Website} returns this
+*/
+proto.ding4.Website.prototype.setMenuList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Layout=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Layout}
+ */
+proto.ding4.Website.prototype.addMenu = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.Layout, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.Website} returns this
+ */
+proto.ding4.Website.prototype.clearMenuList = function() {
+  return this.setMenuList([]);
 };
 
 

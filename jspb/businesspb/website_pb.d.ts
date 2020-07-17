@@ -43,6 +43,11 @@ export class Website extends jspb.Message {
   clearLayoutList(): void;
   addLayout(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
+  getMenuList(): Array<a$submessage_pb.Layout>;
+  setMenuList(value: Array<a$submessage_pb.Layout>): void;
+  clearMenuList(): void;
+  addMenu(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -92,6 +97,7 @@ export namespace Website {
     navList: Array<a$submessage_pb.Layout.AsObject>,
     footerList: Array<a$submessage_pb.Layout.AsObject>,
     layoutList: Array<a$submessage_pb.Layout.AsObject>,
+    menuList: Array<a$submessage_pb.Layout.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

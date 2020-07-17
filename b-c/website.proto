@@ -19,6 +19,7 @@ message Website {
     repeated Layout nav = 6;
     repeated Layout footer = 7;
     repeated Layout layout = 8;
+    repeated Layout menu = 9;
 
     map<string, int32> labelx = 69;
     string operator = 70;
