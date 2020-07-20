@@ -70,6 +70,9 @@ export class CustomerTarget extends jspb.Message {
   getBirthday(): number;
   setBirthday(value: number): void;
 
+  getRegister(): number;
+  setRegister(value: number): void;
+
   getItemsList(): Array<string>;
   setItemsList(value: Array<string>): void;
   clearItemsList(): void;
@@ -87,6 +90,7 @@ export namespace CustomerTarget {
   export type AsObject = {
     level: string,
     birthday: number,
+    register: number,
     itemsList: Array<string>,
   }
 }

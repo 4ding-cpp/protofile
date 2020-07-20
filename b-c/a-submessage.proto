@@ -37,7 +37,8 @@ message Active {
 message CustomerTarget {
     string level = 1;
     int32 birthday = 2;
-    repeated string items = 3;
+    int32 register = 3;
+    repeated string items = 4;
 }
 // class 商品類別class_id
 // items 直接指定 product_id 適用單品活動

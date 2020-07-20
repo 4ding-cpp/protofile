@@ -616,7 +616,7 @@ proto.ding4.Active.prototype.setGiveawaySku = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.CustomerTarget.repeatedFields_ = [3];
+proto.ding4.CustomerTarget.repeatedFields_ = [4];
 
 
 
@@ -651,7 +651,8 @@ proto.ding4.CustomerTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
     level: jspb.Message.getFieldWithDefault(msg, 1, ""),
     birthday: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    itemsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    register: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    itemsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -697,6 +698,10 @@ proto.ding4.CustomerTarget.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBirthday(value);
       break;
     case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRegister(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.addItems(value);
       break;
@@ -743,10 +748,17 @@ proto.ding4.CustomerTarget.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getRegister();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      3,
+      4,
       f
     );
   }
@@ -790,11 +802,29 @@ proto.ding4.CustomerTarget.prototype.setBirthday = function(value) {
 
 
 /**
- * repeated string items = 3;
+ * optional int32 register = 3;
+ * @return {number}
+ */
+proto.ding4.CustomerTarget.prototype.getRegister = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.CustomerTarget} returns this
+ */
+proto.ding4.CustomerTarget.prototype.setRegister = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * repeated string items = 4;
  * @return {!Array<string>}
  */
 proto.ding4.CustomerTarget.prototype.getItemsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
@@ -803,7 +833,7 @@ proto.ding4.CustomerTarget.prototype.getItemsList = function() {
  * @return {!proto.ding4.CustomerTarget} returns this
  */
 proto.ding4.CustomerTarget.prototype.setItemsList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
@@ -813,7 +843,7 @@ proto.ding4.CustomerTarget.prototype.setItemsList = function(value) {
  * @return {!proto.ding4.CustomerTarget} returns this
  */
 proto.ding4.CustomerTarget.prototype.addItems = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 

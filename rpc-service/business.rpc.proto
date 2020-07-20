@@ -178,7 +178,6 @@ service BusinessRPC {
     // 訂單修改紀錄
     rpc RecordOrder(Order) returns (Response);
 
-
     // 建立供應商資訊
     rpc CreateSupplier(Supplier) returns (Response);
     // 更新供應商資訊
