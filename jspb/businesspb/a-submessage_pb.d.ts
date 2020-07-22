@@ -121,28 +121,6 @@ export namespace ProductTarget {
   }
 }
 
-export class Used extends jspb.Message {
-  getActivity(): number;
-  setActivity(value: number): void;
-
-  getCoupon(): number;
-  setCoupon(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Used.AsObject;
-  static toObject(includeInstance: boolean, msg: Used): Used.AsObject;
-  static serializeBinaryToWriter(message: Used, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Used;
-  static deserializeBinaryFromReader(message: Used, reader: jspb.BinaryReader): Used;
-}
-
-export namespace Used {
-  export type AsObject = {
-    activity: number,
-    coupon: number,
-  }
-}
-
 export class Image extends jspb.Message {
   getSrc(): string;
   setSrc(value: string): void;
@@ -224,6 +202,11 @@ export class Layout extends jspb.Message {
   clearImageList(): void;
   addImage(value?: Image, index?: number): Image;
 
+  getLayoutList(): Array<Layout>;
+  setLayoutList(value: Array<Layout>): void;
+  clearLayoutList(): void;
+  addLayout(value?: Layout, index?: number): Layout;
+
   getTarget(): ProductTarget | undefined;
   setTarget(value?: ProductTarget): void;
   hasTarget(): boolean;
@@ -252,6 +235,7 @@ export namespace Layout {
     quantity: number,
     second: number,
     imageList: Array<Image.AsObject>,
+    layoutList: Array<Layout.AsObject>,
     target?: ProductTarget.AsObject,
     template?: seo_pb.Template.AsObject,
   }

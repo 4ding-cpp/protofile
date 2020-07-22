@@ -17,8 +17,6 @@ import "point.proto";
 import "adv.proto";
 import "app.proto";
 import "system-set.proto";
-import "external.proto";
-import "secret.proto";
 import "message.proto";
 
 service AdminRPC {
@@ -138,14 +136,6 @@ service AdminRPC {
     rpc UpdateSystemSet(SystemSet) returns (Response);
     rpc FindSystemSet(Query) returns (Response);
     rpc RecordSystemSet(SystemSet) returns (Response);
-
-    // 外部串接資訊
-    rpc FindService(Service) returns (Response);
-    rpc UpdateService(Service) returns (Response);
-    rpc EnableExternal(External) returns (Response);
-    rpc DeleteExternal(External) returns (Response);
-    rpc FindExternal(Query) returns (Response);
-    rpc RecordExternal(External) returns (Response);
 
     // 訊息相關資訊
     rpc SMS(Message) returns (Response);

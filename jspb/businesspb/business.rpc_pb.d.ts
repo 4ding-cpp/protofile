@@ -19,7 +19,6 @@ import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
 import * as purchase_pb from './purchase_pb';
 import * as setting_pb from './setting_pb';
-import * as external_pb from './external_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';

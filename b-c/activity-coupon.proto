@@ -10,6 +10,9 @@ import "a-submessage.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
+// Used => map[CustomerID]使用此活動結帳次數
+// use_by_customer 使用該活動的人數
+// use_by_order = 使用該活動的人次
 message Activity {
     string activity_id = 1;
     string store_id = 2;
@@ -25,17 +28,21 @@ message Activity {
     Active active = 12;
     ProductTarget target = 13;
     bool is_enable = 14;
-    map<string, Used> used = 15;
-
-    map<string, int32> labelx = 16;
-    string operator = 17;
-    google.protobuf.Timestamp create_at = 18;
-    google.protobuf.Timestamp update_at = 19;
-    repeated string cols = 20;
-    repeated Condition condition = 21;
-    google.protobuf.Struct self = 22;
+    map<string, int32> used = 15;
+    int32 use_by_customer = 16;
+    int32 use_by_order = 17;
+    
+    map<string, int32> labelx = 18;
+    string operator = 19;
+    google.protobuf.Timestamp create_at = 20;
+    google.protobuf.Timestamp update_at = 21;
+    repeated string cols = 22;
+    repeated Condition condition = 23;
+    google.protobuf.Struct self = 24;
 }
 
+// Used => map[CustomerID]已使用
+// is_use > 0 會員的額外欄位 看自己是否已使用
 message Coupon {
     string coupon_id = 1;
     string store_id = 2;
@@ -47,13 +54,14 @@ message Coupon {
     Rule rule = 8;
     Active active = 9;
     CustomerTarget target = 10;
-    google.protobuf.Value used = 11;
+    map<string, int32> used = 11;
+    int32 is_use = 12;
 
-    map<string, int32> labelx = 12;
-    string operator = 13;
-    google.protobuf.Timestamp create_at = 14;
-    google.protobuf.Timestamp update_at = 15;
-    repeated string cols = 16;
-    repeated Condition condition = 17;
-    google.protobuf.Struct self = 18;
+    map<string, int32> labelx = 13;
+    string operator = 14;
+    google.protobuf.Timestamp create_at = 15;
+    google.protobuf.Timestamp update_at = 16;
+    repeated string cols = 17;
+    repeated Condition condition = 18;
+    google.protobuf.Struct self = 19;
 }

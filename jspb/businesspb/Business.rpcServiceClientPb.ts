@@ -28,7 +28,6 @@ import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
 import * as purchase_pb from './purchase_pb';
 import * as setting_pb from './setting_pb';
-import * as external_pb from './external_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
@@ -1945,72 +1944,6 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoFindExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findExternal(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindExternal',
-      request,
-      metadata || {},
-      this.methodInfoFindExternal,
-      callback);
-  }
-
-  methodInfoRecordExternal = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: external_pb.External) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  recordExternal(
-    request: external_pb.External,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/RecordExternal',
-      request,
-      metadata || {},
-      this.methodInfoRecordExternal,
-      callback);
-  }
-
-  methodInfoFindSecret = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findSecret(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindSecret',
-      request,
-      metadata || {},
-      this.methodInfoFindSecret,
-      callback);
-  }
-
   methodInfoCreateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: seo_pb.Template) => {
@@ -2255,14 +2188,14 @@ export class BusinessRPCClient {
 
   methodInfoCreateLogistics = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: order_pb.Order) => {
+    (request: order_pb.OrderBatch) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createLogistics(
-    request: order_pb.Order,
+    request: order_pb.OrderBatch,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

@@ -67,8 +67,14 @@ export class Activity extends jspb.Message {
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
 
-  getUsedMap(): jspb.Map<string, a$submessage_pb.Used>;
+  getUsedMap(): jspb.Map<string, number>;
   clearUsedMap(): void;
+
+  getUseByCustomer(): number;
+  setUseByCustomer(value: number): void;
+
+  getUseByOrder(): number;
+  setUseByOrder(value: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -125,7 +131,9 @@ export namespace Activity {
     active?: a$submessage_pb.Active.AsObject,
     target?: a$submessage_pb.ProductTarget.AsObject,
     isEnable: boolean,
-    usedMap: Array<[string, a$submessage_pb.Used.AsObject]>,
+    usedMap: Array<[string, number]>,
+    useByCustomer: number,
+    useByOrder: number,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -179,10 +187,11 @@ export class Coupon extends jspb.Message {
   hasTarget(): boolean;
   clearTarget(): void;
 
-  getUsed(): google_protobuf_struct_pb.Value | undefined;
-  setUsed(value?: google_protobuf_struct_pb.Value): void;
-  hasUsed(): boolean;
-  clearUsed(): void;
+  getUsedMap(): jspb.Map<string, number>;
+  clearUsedMap(): void;
+
+  getIsUse(): number;
+  setIsUse(value: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -235,7 +244,8 @@ export namespace Coupon {
     rule?: a$submessage_pb.Rule.AsObject,
     active?: a$submessage_pb.Active.AsObject,
     target?: a$submessage_pb.CustomerTarget.AsObject,
-    used?: google_protobuf_struct_pb.Value.AsObject,
+    usedMap: Array<[string, number]>,
+    isUse: number,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

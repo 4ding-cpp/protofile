@@ -47,13 +47,6 @@ message ProductTarget {
     repeated string items = 2;
 }
 
-// Activity 會員對活動使用量
-// Coupon 折價券使用狀態
-message Used {
-    int32 Activity = 1;
-    int32 Coupon = 2;
-}
-
 // Image 給Layuot用可填入alt
 // is_blank = 2 => 另開分頁
 message Image {
@@ -80,6 +73,7 @@ message Layout {
     int32 quantity = 6;
     int32 second = 7;
     repeated Image image = 8;
-    ProductTarget target = 9;
-    Template template = 10;
+    repeated Layout layout = 9;
+    ProductTarget target = 10;
+    Template template = 11;
 }

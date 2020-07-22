@@ -23,7 +23,6 @@ import "remind.proto";
 import "order.proto";
 import "purchase.proto";
 import "setting.proto";
-import "external.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
@@ -207,11 +206,6 @@ service BusinessRPC {
     // 系統參數修改紀錄
     rpc RecordSetting(Setting) returns (Response);
 
-    // 外部串接資訊
-    rpc FindExternal(Query) returns (Response);
-    rpc RecordExternal(External) returns (Response);
-    rpc FindSecret(Query) returns (Response);
-
     // 模板相關操作
     rpc CreateTemplate(Template) returns (Response);
     rpc UpdateTemplate(Template) returns (Response);
@@ -230,7 +224,7 @@ service BusinessRPC {
     rpc FindMessage(Query) returns (Response);
 
     // 物流相關
-    rpc CreateLogistics(Order) returns (Response);
+    rpc CreateLogistics(OrderBatch) returns (Response);
     rpc ReturnLogistics(Order) returns (Response);
     rpc SearchLogisticsOrder(Order) returns (Response);
 
