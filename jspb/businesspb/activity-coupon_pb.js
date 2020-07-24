@@ -118,7 +118,7 @@ proto.ding4.Activity.toObject = function(includeInstance, msg) {
     now: (f = msg.getNow()) && a$submessage_pb.Rule.toObject(includeInstance, f),
     active: (f = msg.getActive()) && a$submessage_pb.Active.toObject(includeInstance, f),
     target: (f = msg.getTarget()) && a$submessage_pb.ProductTarget.toObject(includeInstance, f),
-    isEnable: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    reached: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     usedMap: (f = msg.getUsedMap()) ? f.toObject(includeInstance, undefined) : [],
     useByCustomer: jspb.Message.getFieldWithDefault(msg, 16, 0),
     useByOrder: jspb.Message.getFieldWithDefault(msg, 17, 0),
@@ -229,7 +229,7 @@ proto.ding4.Activity.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsEnable(value);
+      msg.setReached(value);
       break;
     case 15:
       var value = msg.getUsedMap();
@@ -408,7 +408,7 @@ proto.ding4.Activity.serializeBinaryToWriter = function(message, writer) {
       a$submessage_pb.ProductTarget.serializeBinaryToWriter
     );
   }
-  f = message.getIsEnable();
+  f = message.getReached();
   if (f) {
     writer.writeBool(
       14,
@@ -892,10 +892,10 @@ proto.ding4.Activity.prototype.hasTarget = function() {
 
 
 /**
- * optional bool is_enable = 14;
+ * optional bool reached = 14;
  * @return {boolean}
  */
-proto.ding4.Activity.prototype.getIsEnable = function() {
+proto.ding4.Activity.prototype.getReached = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -904,7 +904,7 @@ proto.ding4.Activity.prototype.getIsEnable = function() {
  * @param {boolean} value
  * @return {!proto.ding4.Activity} returns this
  */
-proto.ding4.Activity.prototype.setIsEnable = function(value) {
+proto.ding4.Activity.prototype.setReached = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 

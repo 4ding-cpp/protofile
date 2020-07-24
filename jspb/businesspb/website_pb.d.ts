@@ -18,6 +18,11 @@ export class Website extends jspb.Message {
   hasLogo(): boolean;
   clearLogo(): void;
 
+  getStyleColor(): a$submessage_pb.StyleColor | undefined;
+  setStyleColor(value?: a$submessage_pb.StyleColor): void;
+  hasStyleColor(): boolean;
+  clearStyleColor(): void;
+
   getFavicon(): a$submessage_pb.Image | undefined;
   setFavicon(value?: a$submessage_pb.Image): void;
   hasFavicon(): boolean;
@@ -92,6 +97,7 @@ export namespace Website {
     storeId: string,
     style: number,
     logo?: a$submessage_pb.Image.AsObject,
+    styleColor?: a$submessage_pb.StyleColor.AsObject,
     favicon?: a$submessage_pb.Image.AsObject,
     seo?: seo_pb.SEO.AsObject,
     navList: Array<a$submessage_pb.Layout.AsObject>,

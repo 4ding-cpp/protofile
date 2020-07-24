@@ -14,18 +14,19 @@ message Website {
     string store_id = 1;
     int32 style = 2;
     Image logo = 3;
-    Image favicon = 4;
-    SEO seo = 5;
-    repeated Layout nav = 6;
-    repeated Layout footer = 7;
-    repeated Layout layout = 8;
-    repeated Layout menu = 9;
+    StyleColor style_color = 4;
+    Image favicon = 5;
+    SEO seo = 6;
+    repeated Layout nav = 7;
+    repeated Layout footer = 8;
+    repeated Layout layout = 9;
+    repeated Layout menu = 10;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 11;
+    string operator = 12;
+    google.protobuf.Timestamp create_at = 13;
+    google.protobuf.Timestamp update_at = 14;
+    repeated string cols = 15;
+    repeated Condition condition = 16;
+    google.protobuf.Struct self = 17;
 }

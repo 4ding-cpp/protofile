@@ -7,6 +7,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 import "pingpong.proto";
 import "sql.proto";
 import "customer.proto";
+import "product.proto";
 import "car.proto";
 import "activity-coupon.proto";
 import "adapter.proto";
@@ -30,6 +31,8 @@ service ShopRPC {
     rpc FindProductClass(Query) returns (Response);
     // 商品列表
     rpc FindProduct(Query) returns (Response);
+    // 商品細項
+    rpc BrowseProduct(Product) returns (Response);
 
     // 兌換折價券
     rpc ExchangeCoupon(Coupon) returns (Response);

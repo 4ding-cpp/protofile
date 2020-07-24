@@ -5,7 +5,6 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
-import "car.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -20,41 +19,60 @@ message Order {
     string store_id = 2;
     string sales_id = 3;
     string customer_id = 4;
-    bool is_customer = 5;
-    string car_id = 6;
-    string coupon_id = 7;
-    int32 count = 8;
-    int32 freight = 9;
-    int32 amount = 10;
-    double order_charge = 11;
-    double sales_charge = 12;
-    int32 payment_charge = 13;
-    int32 logistics_charge = 14;
+    string email = 5;
+    string phone = 6;
+    bool is_customer = 7;
+    string car_id = 8;
+    string coupon_id = 9;
+    int32 count = 10;
+    int32 freight = 11;
+    int32 amount = 12;
+    double order_charge = 13;
+    double sales_charge = 14;
+    int32 payment_charge = 15;
+    int32 logistics_charge = 16;
 
-    int32 state = 15;
-    int32 payment_state = 16;
-    int32 logistics_state = 17;
+    int32 state = 17;
+    int32 payment_state = 18;
+    int32 logistics_state = 19;
 
-    string payment_adapter = 18;
-    string payment_service = 19;
-    int32 payment_type = 20;
+    string payment_adapter = 20;
+    string payment_service = 21;
+    int32 payment_type = 22;
     
-    string logistics_adapter = 21;
-    string logistics_service = 22;
-    int32 logistics_type = 23;
-    int32 logistics_sub_type = 24;
+    string logistics_adapter = 23;
+    string logistics_service = 24;
+    int32 logistics_type = 25;
+    int32 logistics_sub_type = 26;
 
-    string remark = 25;
-    repeated Commodity commodity = 26;
-    OrderOther other = 27;
+    string pickup_at = 27;
+    string close_at = 28;
+    string pay_at = 29;
+    string pay_ip = 30;
+    string city = 31;
+    string device = 32;
+    string remark = 33;
+    OrderOther other = 34;
+    repeated OrderCommomdity commodity = 35;
 
-    map<string, int32> labelx = 28;
-    string operator = 29;
-    google.protobuf.Timestamp create_at = 30;
-    google.protobuf.Timestamp update_at = 31;
-    repeated string cols = 32;
-    repeated Condition condition = 33;
-    google.protobuf.Struct self = 34;
+    map<string, int32> labelx = 36;
+    string operator = 37;
+    google.protobuf.Timestamp create_at = 38;
+    google.protobuf.Timestamp update_at = 39;
+    repeated string cols = 40;
+    repeated Condition condition = 41;
+    google.protobuf.Struct self = 42;
+}
+
+message OrderCommomdity {
+    string order_id = 1;
+    string store_id = 2;
+    string product_id = 3;
+    string sku = 4;
+    string photo_src = 5;
+    string name = 6;
+    int32 amount = 7;
+    int32 price = 8;
 }
 
 message ContactInfo {

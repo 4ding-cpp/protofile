@@ -64,8 +64,8 @@ export class Activity extends jspb.Message {
   hasTarget(): boolean;
   clearTarget(): void;
 
-  getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
+  getReached(): boolean;
+  setReached(value: boolean): void;
 
   getUsedMap(): jspb.Map<string, number>;
   clearUsedMap(): void;
@@ -130,7 +130,7 @@ export namespace Activity {
     now?: a$submessage_pb.Rule.AsObject,
     active?: a$submessage_pb.Active.AsObject,
     target?: a$submessage_pb.ProductTarget.AsObject,
-    isEnable: boolean,
+    reached: boolean,
     usedMap: Array<[string, number]>,
     useByCustomer: number,
     useByOrder: number,

@@ -1,7 +1,6 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as car_pb from './car_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -17,6 +16,12 @@ export class Order extends jspb.Message {
 
   getCustomerId(): string;
   setCustomerId(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
 
   getIsCustomer(): boolean;
   setIsCustomer(value: boolean): void;
@@ -78,18 +83,36 @@ export class Order extends jspb.Message {
   getLogisticsSubType(): number;
   setLogisticsSubType(value: number): void;
 
+  getPickupAt(): string;
+  setPickupAt(value: string): void;
+
+  getCloseAt(): string;
+  setCloseAt(value: string): void;
+
+  getPayAt(): string;
+  setPayAt(value: string): void;
+
+  getPayIp(): string;
+  setPayIp(value: string): void;
+
+  getCity(): string;
+  setCity(value: string): void;
+
+  getDevice(): string;
+  setDevice(value: string): void;
+
   getRemark(): string;
   setRemark(value: string): void;
-
-  getCommodityList(): Array<car_pb.Commodity>;
-  setCommodityList(value: Array<car_pb.Commodity>): void;
-  clearCommodityList(): void;
-  addCommodity(value?: car_pb.Commodity, index?: number): car_pb.Commodity;
 
   getOther(): OrderOther | undefined;
   setOther(value?: OrderOther): void;
   hasOther(): boolean;
   clearOther(): void;
+
+  getCommodityList(): Array<OrderCommomdity>;
+  setCommodityList(value: Array<OrderCommomdity>): void;
+  clearCommodityList(): void;
+  addCommodity(value?: OrderCommomdity, index?: number): OrderCommomdity;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -136,6 +159,8 @@ export namespace Order {
     storeId: string,
     salesId: string,
     customerId: string,
+    email: string,
+    phone: string,
     isCustomer: boolean,
     carId: string,
     couponId: string,
@@ -156,9 +181,15 @@ export namespace Order {
     logisticsService: string,
     logisticsType: number,
     logisticsSubType: number,
+    pickupAt: string,
+    closeAt: string,
+    payAt: string,
+    payIp: string,
+    city: string,
+    device: string,
     remark: string,
-    commodityList: Array<car_pb.Commodity.AsObject>,
     other?: OrderOther.AsObject,
+    commodityList: Array<OrderCommomdity.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -166,6 +197,52 @@ export namespace Order {
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class OrderCommomdity extends jspb.Message {
+  getOrderId(): string;
+  setOrderId(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
+  getProductId(): string;
+  setProductId(value: string): void;
+
+  getSku(): string;
+  setSku(value: string): void;
+
+  getPhotoSrc(): string;
+  setPhotoSrc(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getPrice(): number;
+  setPrice(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrderCommomdity.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderCommomdity): OrderCommomdity.AsObject;
+  static serializeBinaryToWriter(message: OrderCommomdity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderCommomdity;
+  static deserializeBinaryFromReader(message: OrderCommomdity, reader: jspb.BinaryReader): OrderCommomdity;
+}
+
+export namespace OrderCommomdity {
+  export type AsObject = {
+    orderId: string,
+    storeId: string,
+    productId: string,
+    sku: string,
+    photoSrc: string,
+    name: string,
+    amount: number,
+    price: number,
   }
 }
 

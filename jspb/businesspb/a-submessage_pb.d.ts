@@ -241,3 +241,132 @@ export namespace Layout {
   }
 }
 
+export class StyleColor extends jspb.Message {
+  getBackground(): string;
+  setBackground(value: string): void;
+
+  getLogoStyle(): StyleColor.LogoStyle | undefined;
+  setLogoStyle(value?: StyleColor.LogoStyle): void;
+  hasLogoStyle(): boolean;
+  clearLogoStyle(): void;
+
+  getHeaderStyle(): StyleColor.HeaderStyle | undefined;
+  setHeaderStyle(value?: StyleColor.HeaderStyle): void;
+  hasHeaderStyle(): boolean;
+  clearHeaderStyle(): void;
+
+  getFooterStyle(): StyleColor.FooterStyle | undefined;
+  setFooterStyle(value?: StyleColor.FooterStyle): void;
+  hasFooterStyle(): boolean;
+  clearFooterStyle(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StyleColor.AsObject;
+  static toObject(includeInstance: boolean, msg: StyleColor): StyleColor.AsObject;
+  static serializeBinaryToWriter(message: StyleColor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StyleColor;
+  static deserializeBinaryFromReader(message: StyleColor, reader: jspb.BinaryReader): StyleColor;
+}
+
+export namespace StyleColor {
+  export type AsObject = {
+    background: string,
+    logoStyle?: StyleColor.LogoStyle.AsObject,
+    headerStyle?: StyleColor.HeaderStyle.AsObject,
+    footerStyle?: StyleColor.FooterStyle.AsObject,
+  }
+
+  export class LogoStyle extends jspb.Message {
+    getHight(): string;
+    setHight(value: string): void;
+
+    getWidth(): string;
+    setWidth(value: string): void;
+
+    getPaddingTop(): string;
+    setPaddingTop(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LogoStyle.AsObject;
+    static toObject(includeInstance: boolean, msg: LogoStyle): LogoStyle.AsObject;
+    static serializeBinaryToWriter(message: LogoStyle, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LogoStyle;
+    static deserializeBinaryFromReader(message: LogoStyle, reader: jspb.BinaryReader): LogoStyle;
+  }
+
+  export namespace LogoStyle {
+    export type AsObject = {
+      hight: string,
+      width: string,
+      paddingTop: string,
+    }
+  }
+
+
+  export class HeaderStyle extends jspb.Message {
+    getColor(): string;
+    setColor(value: string): void;
+
+    getBackground(): string;
+    setBackground(value: string): void;
+
+    getToolColor(): string;
+    setToolColor(value: string): void;
+
+    getToolBackground(): string;
+    setToolBackground(value: string): void;
+
+    getMobile(): string;
+    setMobile(value: string): void;
+
+    getMobileBackground(): string;
+    setMobileBackground(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): HeaderStyle.AsObject;
+    static toObject(includeInstance: boolean, msg: HeaderStyle): HeaderStyle.AsObject;
+    static serializeBinaryToWriter(message: HeaderStyle, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): HeaderStyle;
+    static deserializeBinaryFromReader(message: HeaderStyle, reader: jspb.BinaryReader): HeaderStyle;
+  }
+
+  export namespace HeaderStyle {
+    export type AsObject = {
+      color: string,
+      background: string,
+      toolColor: string,
+      toolBackground: string,
+      mobile: string,
+      mobileBackground: string,
+    }
+  }
+
+
+  export class FooterStyle extends jspb.Message {
+    getLabel(): string;
+    setLabel(value: string): void;
+
+    getColor(): string;
+    setColor(value: string): void;
+
+    getBackground(): string;
+    setBackground(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FooterStyle.AsObject;
+    static toObject(includeInstance: boolean, msg: FooterStyle): FooterStyle.AsObject;
+    static serializeBinaryToWriter(message: FooterStyle, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FooterStyle;
+    static deserializeBinaryFromReader(message: FooterStyle, reader: jspb.BinaryReader): FooterStyle;
+  }
+
+  export namespace FooterStyle {
+    export type AsObject = {
+      label: string,
+      color: string,
+      background: string,
+    }
+  }
+
+}
+

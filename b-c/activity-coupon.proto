@@ -27,7 +27,7 @@ message Activity {
     Rule now = 11;
     Active active = 12;
     ProductTarget target = 13;
-    bool is_enable = 14;
+    bool reached = 14;
     map<string, int32> used = 15;
     int32 use_by_customer = 16;
     int32 use_by_order = 17;

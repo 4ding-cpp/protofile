@@ -77,3 +77,28 @@ message Layout {
     ProductTarget target = 10;
     Template template = 11;
 }
+
+message StyleColor {
+    message LogoStyle {
+        string hight = 1;
+        string width = 2;
+        string padding_top = 3;
+    }
+    message HeaderStyle {
+        string color = 1;
+        string background = 2;
+        string tool_color = 3;
+        string tool_background = 4;
+        string mobile = 5;
+        string mobile_background = 6;
+    }
+    message FooterStyle {
+        string label = 1;
+        string color = 2;
+        string background = 3;
+    }
+    string background = 1;
+    LogoStyle logo_style = 2;
+    HeaderStyle header_style = 3;
+    FooterStyle footer_style = 4;
+}
