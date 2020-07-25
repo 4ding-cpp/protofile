@@ -2252,7 +2252,8 @@ proto.ding4.StyleColor.LogoStyle.toObject = function(includeInstance, msg) {
   var f, obj = {
     height: jspb.Message.getFieldWithDefault(msg, 1, ""),
     width: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    paddingTop: jspb.Message.getFieldWithDefault(msg, 3, "")
+    paddingTop: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    navTop: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2301,6 +2302,10 @@ proto.ding4.StyleColor.LogoStyle.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {string} */ (reader.readString());
       msg.setPaddingTop(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNavTop(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2348,6 +2353,13 @@ proto.ding4.StyleColor.LogoStyle.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getNavTop();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -2405,6 +2417,24 @@ proto.ding4.StyleColor.LogoStyle.prototype.getPaddingTop = function() {
  */
 proto.ding4.StyleColor.LogoStyle.prototype.setPaddingTop = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string nav_top = 4;
+ * @return {string}
+ */
+proto.ding4.StyleColor.LogoStyle.prototype.getNavTop = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.StyleColor.LogoStyle} returns this
+ */
+proto.ding4.StyleColor.LogoStyle.prototype.setNavTop = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

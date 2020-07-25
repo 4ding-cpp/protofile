@@ -286,6 +286,9 @@ export namespace StyleColor {
     getPaddingTop(): string;
     setPaddingTop(value: string): void;
 
+    getNavTop(): string;
+    setNavTop(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LogoStyle.AsObject;
     static toObject(includeInstance: boolean, msg: LogoStyle): LogoStyle.AsObject;
@@ -299,6 +302,7 @@ export namespace StyleColor {
       height: string,
       width: string,
       paddingTop: string,
+      navTop: string,
     }
   }
 

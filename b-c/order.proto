@@ -19,49 +19,50 @@ message Order {
     string store_id = 2;
     string sales_id = 3;
     string customer_id = 4;
-    string email = 5;
-    string phone = 6;
-    bool is_customer = 7;
-    string car_id = 8;
-    string coupon_id = 9;
-    int32 count = 10;
-    int32 freight = 11;
-    int32 amount = 12;
-    double order_charge = 13;
-    double sales_charge = 14;
-    int32 payment_charge = 15;
-    int32 logistics_charge = 16;
+    string name = 5;
+    string email = 6;
+    string phone = 7;
+    bool is_customer = 8;
+    string car_id = 9;
+    string coupon_id = 10;
+    int32 count = 11;
+    int32 freight = 12;
+    int32 amount = 13;
+    double order_charge = 14;
+    double sales_charge = 15;
+    int32 payment_charge = 16;
+    int32 logistics_charge = 17;
 
-    int32 state = 17;
-    int32 payment_state = 18;
-    int32 logistics_state = 19;
+    int32 state = 18;
+    int32 payment_state = 19;
+    int32 logistics_state = 20;
 
-    string payment_adapter = 20;
-    string payment_service = 21;
-    int32 payment_type = 22;
+    string payment_adapter = 21;
+    string payment_service = 22;
+    int32 payment_type = 23;
     
-    string logistics_adapter = 23;
-    string logistics_service = 24;
-    int32 logistics_type = 25;
-    int32 logistics_sub_type = 26;
+    string logistics_adapter = 24;
+    string logistics_service = 25;
+    int32 logistics_type = 26;
+    int32 logistics_sub_type = 27;
 
-    string pickup_at = 27;
-    string close_at = 28;
-    string pay_at = 29;
-    string pay_ip = 30;
-    string city = 31;
-    string device = 32;
-    string remark = 33;
-    OrderOther other = 34;
-    repeated OrderCommomdity commodity = 35;
+    string pickup_at = 28;
+    string close_at = 29;
+    string pay_at = 30;
+    string pay_ip = 31;
+    string city = 32;
+    string device = 33;
+    string remark = 34;
+    OrderOther other = 35;
+    repeated OrderCommomdity commodity = 36;
 
-    map<string, int32> labelx = 36;
-    string operator = 37;
-    google.protobuf.Timestamp create_at = 38;
-    google.protobuf.Timestamp update_at = 39;
-    repeated string cols = 40;
-    repeated Condition condition = 41;
-    google.protobuf.Struct self = 42;
+    map<string, int32> labelx = 37;
+    string operator = 38;
+    google.protobuf.Timestamp create_at = 39;
+    google.protobuf.Timestamp update_at = 40;
+    repeated string cols = 41;
+    repeated Condition condition = 42;
+    google.protobuf.Struct self = 43;
 }
 
 message OrderCommomdity {
@@ -101,8 +102,7 @@ message OrderOther {
     string logistics_no = 8;
 
     ContactInfo sender = 9;
-    ContactInfo buyer = 10;
-    ContactInfo receiver = 11;
+    ContactInfo receiver = 10;
 }
 
 message OrderBatch {
