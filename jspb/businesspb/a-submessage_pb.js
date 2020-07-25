@@ -2250,7 +2250,7 @@ proto.ding4.StyleColor.LogoStyle.prototype.toObject = function(opt_includeInstan
  */
 proto.ding4.StyleColor.LogoStyle.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hight: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    height: jspb.Message.getFieldWithDefault(msg, 1, ""),
     width: jspb.Message.getFieldWithDefault(msg, 2, ""),
     paddingTop: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -2291,7 +2291,7 @@ proto.ding4.StyleColor.LogoStyle.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHight(value);
+      msg.setHeight(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2330,7 +2330,7 @@ proto.ding4.StyleColor.LogoStyle.prototype.serializeBinary = function() {
  */
 proto.ding4.StyleColor.LogoStyle.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHight();
+  f = message.getHeight();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -2355,10 +2355,10 @@ proto.ding4.StyleColor.LogoStyle.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string hight = 1;
+ * optional string height = 1;
  * @return {string}
  */
-proto.ding4.StyleColor.LogoStyle.prototype.getHight = function() {
+proto.ding4.StyleColor.LogoStyle.prototype.getHeight = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2367,7 +2367,7 @@ proto.ding4.StyleColor.LogoStyle.prototype.getHight = function() {
  * @param {string} value
  * @return {!proto.ding4.StyleColor.LogoStyle} returns this
  */
-proto.ding4.StyleColor.LogoStyle.prototype.setHight = function(value) {
+proto.ding4.StyleColor.LogoStyle.prototype.setHeight = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

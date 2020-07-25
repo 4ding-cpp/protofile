@@ -80,7 +80,7 @@ message Layout {
 
 message StyleColor {
     message LogoStyle {
-        string hight = 1;
+        string height = 1;
         string width = 2;
         string padding_top = 3;
     }
