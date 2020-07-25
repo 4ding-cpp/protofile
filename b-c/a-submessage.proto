@@ -83,6 +83,7 @@ message StyleColor {
         string height = 1;
         string width = 2;
         string padding_top = 3;
+        string nav_top = 4;
     }
     message HeaderStyle {
         string color = 1;
