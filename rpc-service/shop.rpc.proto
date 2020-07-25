@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "pingpong.proto";
+import "password.proto";
 import "sql.proto";
 import "customer.proto";
 import "product.proto";
@@ -21,6 +22,10 @@ service ShopRPC {
     rpc SignIn(Customer) returns (Response);
     // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password
     rpc SignUp(Customer) returns (Response);
+    rpc WhoAmI(Query) returns (Response);
+    rpc ChangePassword(Password) returns (Response);
+    rpc ChangeInfo(Customer) returns (Response);
+    rpc FindSign(Query) returns (Response);
 
     // 初始畫面 LOGO MENU FOOTER 首頁布局
     rpc IndexWebsite(Query) returns (Response);
