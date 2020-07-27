@@ -1282,7 +1282,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoProcessOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoStateOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: order_pb.OrderBatch) => {
       return request.serializeBinary();
@@ -1290,17 +1290,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  processOrder(
+  stateOrder(
     request: order_pb.OrderBatch,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/ProcessOrder',
+        '/ding4.Store1RPC/StateOrder',
       request,
       metadata || {},
-      this.methodInfoProcessOrder,
+      this.methodInfoStateOrder,
       callback);
   }
 
@@ -1345,6 +1345,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindOrder,
+      callback);
+  }
+
+  methodInfoDetailOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  detailOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DetailOrder',
+      request,
+      metadata || {},
+      this.methodInfoDetailOrder,
       callback);
   }
 

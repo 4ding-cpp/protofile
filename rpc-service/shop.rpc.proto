@@ -63,10 +63,12 @@ service ShopRPC {
 
     // 建立訂單
     rpc CreateOrder(Order) returns (Response);
+    rpc CompleteOrder(Order) returns (Response);
     // 取消訂單 state < 3 未付款前能取消
     rpc CancelOrder(Order) returns (Response);
     // 消費紀錄
     rpc FindOrder(Query) returns (Response);
+    rpc DetailOrder(Order) returns (Response);
     
 
     // 回饋

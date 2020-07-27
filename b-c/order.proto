@@ -8,12 +8,13 @@ import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
-// State => 1.鎖定庫存 2.待處理 3.處理中 4.退貨待審核 5.退貨已審核 6.已完成 7.已結案
-// PaymentState => 1.未付款 2.已付款 3.待退款 4.退款中 5.已退款
-// LogisticsState => 10.待出貨 11.已出貨 12.已到達 13.已領取
-// LogisticsState => 20.待退貨 21.退貨中 22.已退貨
-// LogisticsState => 30.待換貨 31.換貨中 32.已收貨
-// ComeFrom => 1.前台 2.後台
+// State => 1.待處理 2.已確認 3.退貨待審核 4.退貨已審核 5.已取消 6.已完成
+// PaymentState => 1.未付款 2.付款失敗 3.已逾時 6.已付款 7.待退款 8.已退款
+// LogisticsState 正常 => 1.待出貨 				3.出貨中 	4.已出貨 	5.已到店 	6.已取貨
+// LogisticsState 換貨 => 11.待收貨 12.已收貨	13.出貨中	14.已出貨	15.已到店  	16.已取貨
+// LogisticsState 逾時 => 21.待收貨 22.已收貨 -> 3...
+// LogisticsState 退貨 => 31.待收貨 32.已收貨
+// ReturnStatus 退換貨標記 => 1.申請退貨成功 2.申請退貨失敗 3.申請換貨成功 4.申請換貨失敗
 message Order {
     string order_id = 1; 
     string store_id = 2;
@@ -45,24 +46,26 @@ message Order {
     string logistics_service = 25;
     int32 logistics_type = 26;
     int32 logistics_sub_type = 27;
+    bool in_timeout = 28;
+    int32 return_staus = 29;
 
-    string pickup_at = 28;
-    string close_at = 29;
-    string pay_at = 30;
-    string pay_ip = 31;
-    string city = 32;
-    string device = 33;
-    string remark = 34;
-    OrderOther other = 35;
-    repeated OrderCommomdity commodity = 36;
+    string pickup_at = 30;
+    string close_at = 31;
+    string pay_at = 32;
+    string pay_ip = 33;
+    string city = 34;
+    string device = 35;
+    string remark = 36;
+    OrderOther other = 37;
+    repeated OrderCommomdity commodity = 38;
 
-    map<string, int32> labelx = 37;
-    string operator = 38;
-    google.protobuf.Timestamp create_at = 39;
-    google.protobuf.Timestamp update_at = 40;
-    repeated string cols = 41;
-    repeated Condition condition = 42;
-    google.protobuf.Struct self = 43;
+    map<string, int32> labelx = 39;
+    string operator = 40;
+    google.protobuf.Timestamp create_at = 41;
+    google.protobuf.Timestamp update_at = 42;
+    repeated string cols = 43;
+    repeated Condition condition = 44;
+    google.protobuf.Struct self = 45;
 }
 
 message OrderCommomdity {
@@ -106,8 +109,11 @@ message OrderOther {
 }
 
 message OrderBatch {
-    repeated Order order = 1;
-    google.protobuf.Struct self = 2;
+    int32 state = 1;
+    int32 payment_state = 2;
+    int32 logistics_state = 3;
+    repeated Order order = 4;
+    google.protobuf.Struct self = 5;
 }
 
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名

@@ -112,11 +112,12 @@ service Store1RPC {
     // 新增訂單(包含繳費單及物流單)
     rpc CreateOrder(Order) returns (Response);
     // 修改訂單狀態 3.處理中
-    rpc ProcessOrder(OrderBatch) returns (Response);
+    rpc StateOrder(OrderBatch) returns (Response);
     // 取消訂單
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
+    rpc DetailOrder(Order) returns (Response);
 
 
     // 修改購物狀態提醒
