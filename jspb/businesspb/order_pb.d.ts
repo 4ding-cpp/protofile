@@ -86,11 +86,8 @@ export class Order extends jspb.Message {
   getLogisticsSubType(): number;
   setLogisticsSubType(value: number): void;
 
-  getInTimeout(): boolean;
-  setInTimeout(value: boolean): void;
-
-  getReturnStaus(): number;
-  setReturnStaus(value: number): void;
+  getIsTimeout(): boolean;
+  setIsTimeout(value: boolean): void;
 
   getPickupAt(): string;
   setPickupAt(value: string): void;
@@ -191,8 +188,7 @@ export namespace Order {
     logisticsService: string,
     logisticsType: number,
     logisticsSubType: number,
-    inTimeout: boolean,
-    returnStaus: number,
+    isTimeout: boolean,
     pickupAt: string,
     closeAt: string,
     payAt: string,
