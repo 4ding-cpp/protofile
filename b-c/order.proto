@@ -70,12 +70,13 @@ message Order {
 message OrderCommomdity {
     string order_id = 1;
     string store_id = 2;
-    string product_id = 3;
-    string sku = 4;
-    string photo_src = 5;
-    string name = 6;
-    int32 amount = 7;
-    int32 price = 8;
+    string activity_id = 3;
+    string product_id = 4;
+    string sku = 5;
+    string photo_src = 6;
+    string name = 7;
+    int32 amount = 8;
+    int32 price = 9;
 }
 
 message ContactInfo {

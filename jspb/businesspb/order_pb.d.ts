@@ -215,6 +215,9 @@ export class OrderCommomdity extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getActivityId(): string;
+  setActivityId(value: string): void;
+
   getProductId(): string;
   setProductId(value: string): void;
 
@@ -245,6 +248,7 @@ export namespace OrderCommomdity {
   export type AsObject = {
     orderId: string,
     storeId: string,
+    activityId: string,
     productId: string,
     sku: string,
     photoSrc: string,

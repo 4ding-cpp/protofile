@@ -1785,12 +1785,13 @@ proto.ding4.OrderCommomdity.toObject = function(includeInstance, msg) {
   var f, obj = {
     orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    productId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sku: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    photoSrc: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    activityId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    sku: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    photoSrc: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    amount: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -1837,25 +1838,29 @@ proto.ding4.OrderCommomdity.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProductId(value);
+      msg.setActivityId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSku(value);
+      msg.setProductId(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPhotoSrc(value);
+      msg.setSku(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setPhotoSrc(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
@@ -1902,45 +1907,52 @@ proto.ding4.OrderCommomdity.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getProductId();
+  f = message.getActivityId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getSku();
+  f = message.getProductId();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPhotoSrc();
+  f = message.getSku();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getName();
+  f = message.getPhotoSrc();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = message.getAmount();
   if (f !== 0) {
     writer.writeInt32(
-      7,
+      8,
       f
     );
   }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      9,
       f
     );
   }
@@ -1984,10 +1996,10 @@ proto.ding4.OrderCommomdity.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string product_id = 3;
+ * optional string activity_id = 3;
  * @return {string}
  */
-proto.ding4.OrderCommomdity.prototype.getProductId = function() {
+proto.ding4.OrderCommomdity.prototype.getActivityId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1996,16 +2008,16 @@ proto.ding4.OrderCommomdity.prototype.getProductId = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderCommomdity} returns this
  */
-proto.ding4.OrderCommomdity.prototype.setProductId = function(value) {
+proto.ding4.OrderCommomdity.prototype.setActivityId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string sku = 4;
+ * optional string product_id = 4;
  * @return {string}
  */
-proto.ding4.OrderCommomdity.prototype.getSku = function() {
+proto.ding4.OrderCommomdity.prototype.getProductId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2014,16 +2026,16 @@ proto.ding4.OrderCommomdity.prototype.getSku = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderCommomdity} returns this
  */
-proto.ding4.OrderCommomdity.prototype.setSku = function(value) {
+proto.ding4.OrderCommomdity.prototype.setProductId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string photo_src = 5;
+ * optional string sku = 5;
  * @return {string}
  */
-proto.ding4.OrderCommomdity.prototype.getPhotoSrc = function() {
+proto.ding4.OrderCommomdity.prototype.getSku = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -2032,16 +2044,16 @@ proto.ding4.OrderCommomdity.prototype.getPhotoSrc = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderCommomdity} returns this
  */
-proto.ding4.OrderCommomdity.prototype.setPhotoSrc = function(value) {
+proto.ding4.OrderCommomdity.prototype.setSku = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string name = 6;
+ * optional string photo_src = 6;
  * @return {string}
  */
-proto.ding4.OrderCommomdity.prototype.getName = function() {
+proto.ding4.OrderCommomdity.prototype.getPhotoSrc = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -2050,34 +2062,34 @@ proto.ding4.OrderCommomdity.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderCommomdity} returns this
  */
-proto.ding4.OrderCommomdity.prototype.setName = function(value) {
+proto.ding4.OrderCommomdity.prototype.setPhotoSrc = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 amount = 7;
+ * optional string name = 7;
+ * @return {string}
+ */
+proto.ding4.OrderCommomdity.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderCommomdity} returns this
+ */
+proto.ding4.OrderCommomdity.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional int32 amount = 8;
  * @return {number}
  */
 proto.ding4.OrderCommomdity.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderCommomdity} returns this
- */
-proto.ding4.OrderCommomdity.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
-};
-
-
-/**
- * optional int32 price = 8;
- * @return {number}
- */
-proto.ding4.OrderCommomdity.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -2086,8 +2098,26 @@ proto.ding4.OrderCommomdity.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.OrderCommomdity} returns this
  */
-proto.ding4.OrderCommomdity.prototype.setPrice = function(value) {
+proto.ding4.OrderCommomdity.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional int32 price = 9;
+ * @return {number}
+ */
+proto.ding4.OrderCommomdity.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderCommomdity} returns this
+ */
+proto.ding4.OrderCommomdity.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
