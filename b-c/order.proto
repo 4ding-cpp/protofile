@@ -9,7 +9,7 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 // Order 訂單
-// State => 1.待處理 2.已確認 3.換貨待審核 4.換貨已審核 5.退貨待審核 6.退貨已審核 7.已完成 8.已退貨 9.已取消
+// State => 1.待處理 2.已確認 3.換貨待審核 4.換貨已審核 5.已取消 6.已完成 7.退貨待審核 8.退貨已審核 9.已退貨
 // PaymentState => 1.未付款 2.付款失敗 3.已逾時 6.已付款 7.待退款 8.已退款
 // LogisticsState 正常 => 1.待出貨 				3.出貨中 	4.已出貨 	5.已到店 	6.已取貨
 // LogisticsState 換貨 => 11.待收貨 12.已收貨	13.出貨中	14.已出貨	15.已到店  	16.已取貨
