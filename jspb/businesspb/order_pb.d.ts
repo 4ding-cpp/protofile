@@ -333,6 +333,9 @@ export class OrderOther extends jspb.Message {
   getLogisticsNo(): string;
   setLogisticsNo(value: string): void;
 
+  getReturnNo(): string;
+  setReturnNo(value: string): void;
+
   getSender(): ContactInfo | undefined;
   setSender(value?: ContactInfo): void;
   hasSender(): boolean;
@@ -361,6 +364,7 @@ export namespace OrderOther {
     bankAccount: string,
     cvsNo: string,
     logisticsNo: string,
+    returnNo: string,
     sender?: ContactInfo.AsObject,
     receiver?: ContactInfo.AsObject,
   }

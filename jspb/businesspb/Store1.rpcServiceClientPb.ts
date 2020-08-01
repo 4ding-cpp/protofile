@@ -30,6 +30,7 @@ import * as website_pb from './website_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
+import * as store$dashboard_pb from './store-dashboard_pb';
 
 export class Store1RPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -223,6 +224,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindSign,
+      callback);
+  }
+
+  methodInfoBrowseDashboard = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: store$dashboard_pb.StoreDashboard) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  browseDashboard(
+    request: store$dashboard_pb.StoreDashboard,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/BrowseDashboard',
+      request,
+      metadata || {},
+      this.methodInfoBrowseDashboard,
       callback);
   }
 
