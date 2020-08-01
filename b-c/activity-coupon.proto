@@ -56,12 +56,14 @@ message Coupon {
     CustomerTarget target = 10;
     map<string, int32> used = 11;
     int32 is_use = 12;
+    string order_id = 13;
+    string order_at = 14;
 
-    map<string, int32> labelx = 13;
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19;
+    map<string, int32> labelx = 15;
+    string operator = 16;
+    google.protobuf.Timestamp create_at = 17;
+    google.protobuf.Timestamp update_at = 18;
+    repeated string cols = 19;
+    repeated Condition condition = 20;
+    google.protobuf.Struct self = 21;
 }

@@ -25,6 +25,7 @@ import "website.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
+import "store-dashboard.proto";
 
 service Store1RPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -36,6 +37,8 @@ service Store1RPC {
     rpc FindPermission(Query) returns (Response);
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
+
+    rpc BrowseDashboard(StoreDashboard) returns (Response);
 
     // 子帳號相關
     rpc CreateManagerSub(ManagerSub) returns (Response);

@@ -103,9 +103,10 @@ message OrderOther {
     string cvs_no = 7;
     
     string logistics_no = 8;
+    string return_no = 9;
 
-    ContactInfo sender = 9;
-    ContactInfo receiver = 10;
+    ContactInfo sender = 10;
+    ContactInfo receiver = 11;
 }
 
 message OrderBatch {

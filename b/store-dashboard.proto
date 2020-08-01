@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+// import "google/protobuf/struct.proto";
+
+message StoreDashboard {
+    string date = 1;
+    string browse = 2;
+    string times = 3;
+    string customer = 4;
+    string orders = 5;
+    string sales = 6;
+
+    repeated ProductDashboard browse_rank = 7;
+    repeated ProductDashboard orders_rank = 8;
+}
+
+message ProductDashboard {
+    string product_id = 1;
+    string name = 2;
+    int32 browse = 3;
+    int32 browse_week = 4;
+    int32 orders = 5;
+    int32 orders_week = 6;
+    int32 sales = 7;
+    int32 salas_week = 8;
+}

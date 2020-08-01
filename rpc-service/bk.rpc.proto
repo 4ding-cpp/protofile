@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
+
+import "pingpong.proto";
+import "sql.proto";
+import "message.proto";
+import "car.proto";
+import "purchase.proto";
+import "order.proto";
+
+service BkRPC {
+    rpc Ping(PingPong) returns (PingPong);
+
+    // 跟信件發送訊息有關的
+    rpc SMS(Message) returns (Response);
+    rpc EDM(Message) returns (Response);
+    rpc FindMessage(Query) returns (Response);
+
+    // 跟庫存有關的直接放背景跑
+    // 高效率監控庫存
+    rpc ChangeByPurchase(Purchase) returns (Response);
+    rpc ChangeByCar(Car) returns (Response);
+    rpc ChangeByOrder(Order) returns (Response);
+    rpc ReadByCar(Car) returns (Car);
+}
