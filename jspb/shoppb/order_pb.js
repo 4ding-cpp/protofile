@@ -2531,6 +2531,7 @@ proto.ding4.OrderOther.toObject = function(includeInstance, msg) {
     bankAccount: jspb.Message.getFieldWithDefault(msg, 6, ""),
     cvsNo: jspb.Message.getFieldWithDefault(msg, 7, ""),
     logisticsNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    returnNo: jspb.Message.getFieldWithDefault(msg, 9, ""),
     sender: (f = msg.getSender()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
     receiver: (f = msg.getReceiver()) && proto.ding4.ContactInfo.toObject(includeInstance, f)
   };
@@ -2602,11 +2603,15 @@ proto.ding4.OrderOther.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogisticsNo(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReturnNo(value);
+      break;
+    case 10:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setSender(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setReceiver(value);
@@ -2696,10 +2701,17 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getReturnNo();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getSender();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -2707,7 +2719,7 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
   f = message.getReceiver();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -2860,12 +2872,30 @@ proto.ding4.OrderOther.prototype.setLogisticsNo = function(value) {
 
 
 /**
- * optional ContactInfo sender = 9;
+ * optional string return_no = 9;
+ * @return {string}
+ */
+proto.ding4.OrderOther.prototype.getReturnNo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setReturnNo = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional ContactInfo sender = 10;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getSender = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 9));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 10));
 };
 
 
@@ -2874,7 +2904,7 @@ proto.ding4.OrderOther.prototype.getSender = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setSender = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -2892,17 +2922,17 @@ proto.ding4.OrderOther.prototype.clearSender = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasSender = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional ContactInfo receiver = 10;
+ * optional ContactInfo receiver = 11;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getReceiver = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 10));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 11));
 };
 
 
@@ -2911,7 +2941,7 @@ proto.ding4.OrderOther.prototype.getReceiver = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setReceiver = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -2929,7 +2959,7 @@ proto.ding4.OrderOther.prototype.clearReceiver = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasReceiver = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

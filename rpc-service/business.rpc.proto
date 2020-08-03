@@ -38,6 +38,7 @@ service BusinessRPC {
     rpc FindPermission(Query) returns (Response);
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
+    rpc FindAnnouncement(Query) returns (Response);
 
     // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);

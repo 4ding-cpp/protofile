@@ -37,6 +37,7 @@ service Store1RPC {
     rpc FindPermission(Query) returns (Response);
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
+    rpc FindAnnouncement(Query) returns (Response);
 
     rpc BrowseDashboard(StoreDashboard) returns (Response);
 
