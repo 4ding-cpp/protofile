@@ -57,9 +57,10 @@ message Condition {
 message Query {
     PageLimit page_limit = 1;
     repeated Sort sort = 2;
-    repeated Condition condition = 3;
-    repeated string extra = 4;
-    google.protobuf.Struct self = 5;
+    repeated Condition inner = 3;
+    repeated Condition condition = 4;
+    repeated string extra = 5;
+    google.protobuf.Struct self = 6;
 };
 
 message SignRecord {
