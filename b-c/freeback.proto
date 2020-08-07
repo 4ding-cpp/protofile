@@ -28,8 +28,8 @@ message Freeback {
 
 message Dialogue {
     string freeback_id = 1;
-    google.protobuf.Timestamp time_at = 2;
+    string time_at = 2;
     string message = 3;
     string responder = 4;
-      google.protobuf.Struct self = 5;
+    google.protobuf.Struct self = 5;
 }
