@@ -15,26 +15,27 @@ message Customer {
 
     int32 status = 4;
     string name = 5;
-    string email = 6;
-    string phone = 7;
-    string password = 8;
-    bool phone_verify = 9;
-    bool email_verify = 10;
+    string fb_accesstoken = 6;
+    string email = 7;
+    string phone = 8;
+    string password = 9;
+    bool phone_verify = 10;
+    bool email_verify = 11;
     
-    string birthday = 11;
-    int32 sex = 12;
-    string zip_code = 13;
-    string address = 14;
-    string level_id = 15;
-    bool is_receive = 16;
+    string birthday = 12;
+    int32 sex = 13;
+    string zip_code = 14;
+    string address = 15;
+    string level_id = 16;
+    bool is_receive = 17;
     
-    map<string, int32> labelx = 17;
-    string operator = 18;
-    google.protobuf.Timestamp create_at = 19;
-    google.protobuf.Timestamp update_at = 20;
-    repeated string cols = 21;
-    repeated Condition condition = 22;
-    google.protobuf.Struct self = 23;
+    map<string, int32> labelx = 18;
+    string operator = 19;
+    google.protobuf.Timestamp create_at = 20;
+    google.protobuf.Timestamp update_at = 21;
+    repeated string cols = 22;
+    repeated Condition condition = 23;
+    google.protobuf.Struct self = 24;
 }
 
 message CustomerLink {
