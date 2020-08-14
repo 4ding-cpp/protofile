@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
+import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -47,6 +48,11 @@ export class ProductShell extends jspb.Message {
 
   getReduce(): number;
   setReduce(value: number): void;
+
+  getProduct(): product_pb.Product | undefined;
+  setProduct(value?: product_pb.Product): void;
+  hasProduct(): boolean;
+  clearProduct(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -101,6 +107,7 @@ export namespace ProductShell {
     cost: number,
     price: number,
     reduce: number,
+    product?: product_pb.Product.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
