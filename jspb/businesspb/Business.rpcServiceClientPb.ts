@@ -1262,6 +1262,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoQuickProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    product_pb.Product,
+    (request: product_pb.Product) => {
+      return request.serializeBinary();
+    },
+    product_pb.Product.deserializeBinary
+  );
+
+  quickProduct(
+    request: product_pb.Product,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: product_pb.Product) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/QuickProduct',
+      request,
+      metadata || {},
+      this.methodInfoQuickProduct,
+      callback);
+  }
+
   methodInfoRecordProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product_pb.Product) => {

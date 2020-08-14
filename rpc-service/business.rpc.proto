@@ -137,6 +137,8 @@ service BusinessRPC {
     rpc ModifyProduct(ProductBatch) returns (Response);
     // 商品列表
     rpc FindProduct(Query) returns (Response);
+    // 快速取得一個商品
+    rpc QuickProduct(Product) returns (Product);
     // 商品修改紀錄
     rpc RecordProduct(Product) returns (Response);
     // 連結商品至 XX 商店

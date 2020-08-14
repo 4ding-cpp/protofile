@@ -21,6 +21,9 @@ export class Product extends jspb.Message {
   hasName(): boolean;
   clearName(): void;
 
+  getUrn(): string;
+  setUrn(value: string): void;
+
   getCost(): number;
   setCost(value: number): void;
 
@@ -103,6 +106,7 @@ export namespace Product {
     status: number,
     code: string,
     name?: google_protobuf_struct_pb.Value.AsObject,
+    urn: string,
     cost: number,
     price: number,
     reduce: number,

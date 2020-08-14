@@ -19,6 +19,7 @@ import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';
+import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
@@ -1082,6 +1083,72 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductByClass,
+      callback);
+  }
+
+  methodInfoUpdateProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product$shell_pb.ProductShell) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateProductShell(
+    request: product$shell_pb.ProductShell,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateProductShell',
+      request,
+      metadata || {},
+      this.methodInfoUpdateProductShell,
+      callback);
+  }
+
+  methodInfoDeleteProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product$shell_pb.ProductShell) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteProductShell(
+    request: product$shell_pb.ProductShell,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteProductShell',
+      request,
+      metadata || {},
+      this.methodInfoDeleteProductShell,
+      callback);
+  }
+
+  methodInfoFindProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findProductShell(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProductShell',
+      request,
+      metadata || {},
+      this.methodInfoFindProductShell,
       callback);
   }
 

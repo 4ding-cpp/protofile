@@ -25,4 +25,7 @@ service BkRPC {
     rpc ChangeByCar(Car) returns (Response);
     rpc ChangeByOrder(Order) returns (Response);
     rpc ReadByCar(Car) returns (Car);
+
+    // 更新商店商品列表
+    rpc UpgradeProduct(Query) returns (Response);
 }

@@ -14,6 +14,7 @@ import "sales.proto";
 import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
+import "product-shell.proto";
 import "product-class.proto";
 import "activity-coupon.proto";
 import "order.proto";
@@ -93,6 +94,9 @@ service Store1RPC {
     rpc LinkProduct(Product) returns (Response);
     rpc LinkProductBatch(ProductBatch) returns (Response);
     rpc FindProductByClass(ProductClass) returns (Response);
+    rpc UpdateProductShell(ProductShell) returns (Response);
+    rpc DeleteProductShell(ProductShell) returns (Response);
+    rpc FindProductShell(Query) returns (Response);
 
     // 拉取模板
     rpc FindTemplate(Query) returns (Response);
