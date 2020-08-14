@@ -89,17 +89,14 @@ service Store1RPC {
 
     // 連結商品
     rpc FindProduct(Query) returns (Response);
-    rpc FindProductUnlink(Query) returns (Response);
-    rpc FindProductLinked(Query) returns (Response);
-    rpc LinkProduct(Product) returns (Response);
-    rpc LinkProductBatch(ProductBatch) returns (Response);
-    rpc FindProductByClass(ProductClass) returns (Response);
+    // 拉取模板
+    rpc FindTemplate(Query) returns (Response);
+    
     rpc UpdateProductShell(ProductShell) returns (Response);
     rpc DeleteProductShell(ProductShell) returns (Response);
     rpc FindProductShell(Query) returns (Response);
 
-    // 拉取模板
-    rpc FindTemplate(Query) returns (Response);
+    
     
     // 建立商品類別
     rpc CreateProductClass(ProductClass) returns (Response);

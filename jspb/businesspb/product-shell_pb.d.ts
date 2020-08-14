@@ -32,6 +32,9 @@ export class ProductShell extends jspb.Message {
   clearBlockList(): void;
   addBlock(value?: seo_pb.Block, index?: number): seo_pb.Block;
 
+  getCatchBlockTemplate(): boolean;
+  setCatchBlockTemplate(value: boolean): void;
+
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
@@ -99,6 +102,7 @@ export namespace ProductShell {
     isDisplay: boolean,
     seo?: seo_pb.SEO.AsObject,
     blockList: Array<seo_pb.Block.AsObject>,
+    catchBlockTemplate: boolean,
     name?: google_protobuf_struct_pb.Value.AsObject,
     urn: string,
     price: number,

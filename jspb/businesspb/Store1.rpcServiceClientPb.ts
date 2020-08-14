@@ -976,7 +976,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoFindProductUnlink = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -984,105 +984,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findProductUnlink(
+  findTemplate(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindProductUnlink',
+        '/ding4.Store1RPC/FindTemplate',
       request,
       metadata || {},
-      this.methodInfoFindProductUnlink,
-      callback);
-  }
-
-  methodInfoFindProductLinked = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findProductLinked(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindProductLinked',
-      request,
-      metadata || {},
-      this.methodInfoFindProductLinked,
-      callback);
-  }
-
-  methodInfoLinkProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: product_pb.Product) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  linkProduct(
-    request: product_pb.Product,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/LinkProduct',
-      request,
-      metadata || {},
-      this.methodInfoLinkProduct,
-      callback);
-  }
-
-  methodInfoLinkProductBatch = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: product_pb.ProductBatch) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  linkProductBatch(
-    request: product_pb.ProductBatch,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/LinkProductBatch',
-      request,
-      metadata || {},
-      this.methodInfoLinkProductBatch,
-      callback);
-  }
-
-  methodInfoFindProductByClass = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: product$class_pb.ProductClass) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findProductByClass(
-    request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindProductByClass',
-      request,
-      metadata || {},
-      this.methodInfoFindProductByClass,
+      this.methodInfoFindTemplate,
       callback);
   }
 
@@ -1149,28 +1061,6 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductShell,
-      callback);
-  }
-
-  methodInfoFindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findTemplate(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindTemplate',
-      request,
-      metadata || {},
-      this.methodInfoFindTemplate,
       callback);
   }
 

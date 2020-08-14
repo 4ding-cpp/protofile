@@ -19,9 +19,10 @@ message ProductShell {
     bool is_display = 5;
     SEO seo = 6;
     repeated Block block = 7;
+    bool catch_block_template = 8;
     // rewrite
-    google.protobuf.Value name = 8;
-    string urn = 9;
+    google.protobuf.Value name = 9;
+    string urn = 10;
     int32 price = 11;
     int32 reduce = 12;
     Product product = 13;

@@ -91,8 +91,9 @@ proto.ding4.ProductShell.toObject = function(includeInstance, msg) {
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     blockList: jspb.Message.toObjectList(msg.getBlockList(),
     seo_pb.Block.toObject, includeInstance),
+    catchBlockTemplate: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    urn: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    urn: jspb.Message.getFieldWithDefault(msg, 10, ""),
     price: jspb.Message.getFieldWithDefault(msg, 11, 0),
     reduce: jspb.Message.getFieldWithDefault(msg, 12, 0),
     product: (f = msg.getProduct()) && product_pb.Product.toObject(includeInstance, f),
@@ -171,11 +172,15 @@ proto.ding4.ProductShell.deserializeBinaryFromReader = function(msg, reader) {
       msg.addBlock(value);
       break;
     case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCatchBlockTemplate(value);
+      break;
+    case 9:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setName(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrn(value);
       break;
@@ -306,10 +311,17 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
       seo_pb.Block.serializeBinaryToWriter
     );
   }
+  f = message.getCatchBlockTemplate();
+  if (f) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
   f = message.getName();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
@@ -317,7 +329,7 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
   f = message.getUrn();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
@@ -562,12 +574,30 @@ proto.ding4.ProductShell.prototype.clearBlockList = function() {
 
 
 /**
- * optional google.protobuf.Value name = 8;
+ * optional bool catch_block_template = 8;
+ * @return {boolean}
+ */
+proto.ding4.ProductShell.prototype.getCatchBlockTemplate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.ProductShell} returns this
+ */
+proto.ding4.ProductShell.prototype.setCatchBlockTemplate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional google.protobuf.Value name = 9;
  * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductShell.prototype.getName = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
 };
 
 
@@ -576,7 +606,7 @@ proto.ding4.ProductShell.prototype.getName = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setName = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -594,16 +624,16 @@ proto.ding4.ProductShell.prototype.clearName = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasName = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string urn = 9;
+ * optional string urn = 10;
  * @return {string}
  */
 proto.ding4.ProductShell.prototype.getUrn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -612,7 +642,7 @@ proto.ding4.ProductShell.prototype.getUrn = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setUrn = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
