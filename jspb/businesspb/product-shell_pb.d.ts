@@ -40,9 +40,6 @@ export class ProductShell extends jspb.Message {
   getUrn(): string;
   setUrn(value: string): void;
 
-  getCost(): number;
-  setCost(value: number): void;
-
   getPrice(): number;
   setPrice(value: number): void;
 
@@ -104,7 +101,6 @@ export namespace ProductShell {
     blockList: Array<seo_pb.Block.AsObject>,
     name?: google_protobuf_struct_pb.Value.AsObject,
     urn: string,
-    cost: number,
     price: number,
     reduce: number,
     product?: product_pb.Product.AsObject,

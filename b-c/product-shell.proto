@@ -22,7 +22,6 @@ message ProductShell {
     // rewrite
     google.protobuf.Value name = 8;
     string urn = 9;
-    int32 cost = 10;
     int32 price = 11;
     int32 reduce = 12;
     Product product = 13;

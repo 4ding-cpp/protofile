@@ -93,7 +93,6 @@ proto.ding4.ProductShell.toObject = function(includeInstance, msg) {
     seo_pb.Block.toObject, includeInstance),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     urn: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    cost: jspb.Message.getFieldWithDefault(msg, 10, 0),
     price: jspb.Message.getFieldWithDefault(msg, 11, 0),
     reduce: jspb.Message.getFieldWithDefault(msg, 12, 0),
     product: (f = msg.getProduct()) && product_pb.Product.toObject(includeInstance, f),
@@ -179,10 +178,6 @@ proto.ding4.ProductShell.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrn(value);
-      break;
-    case 10:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setCost(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
@@ -323,13 +318,6 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
-      f
-    );
-  }
-  f = message.getCost();
-  if (f !== 0) {
-    writer.writeInt32(
-      10,
       f
     );
   }
@@ -625,24 +613,6 @@ proto.ding4.ProductShell.prototype.getUrn = function() {
  */
 proto.ding4.ProductShell.prototype.setUrn = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional int32 cost = 10;
- * @return {number}
- */
-proto.ding4.ProductShell.prototype.getCost = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.ProductShell} returns this
- */
-proto.ding4.ProductShell.prototype.setCost = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
