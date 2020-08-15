@@ -8,7 +8,7 @@ import "pingpong.proto";
 import "password.proto";
 import "sql.proto";
 import "customer.proto";
-import "product.proto";
+import "product-shell.proto";
 import "car.proto";
 import "activity-coupon.proto";
 import "adapter.proto";
@@ -36,10 +36,9 @@ service ShopRPC {
     // 商品類別
     rpc FindProductClass(Query) returns (Response);
     // 商品列表
-    rpc FindProduct(Query) returns (Response);
+    rpc FindProductShell(Query) returns (Response);
     // 商品細項
-    rpc BrowseProduct(Product) returns (Response);
-
+    rpc BrowseProductShell(ProductShell) returns (ProductShell);
     // 兌換折價券
     rpc ExchangeCoupon(Coupon) returns (Response);
 

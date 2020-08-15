@@ -18,7 +18,6 @@ import * as manager_pb from './manager_pb';
 import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
-import * as product_pb from './product_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
@@ -1061,6 +1060,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductShell,
+      callback);
+  }
+
+  methodInfoQuickProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    product$shell_pb.ProductShell,
+    (request: product$shell_pb.ProductShell) => {
+      return request.serializeBinary();
+    },
+    product$shell_pb.ProductShell.deserializeBinary
+  );
+
+  quickProductShell(
+    request: product$shell_pb.ProductShell,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: product$shell_pb.ProductShell) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/QuickProductShell',
+      request,
+      metadata || {},
+      this.methodInfoQuickProductShell,
       callback);
   }
 

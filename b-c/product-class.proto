@@ -7,7 +7,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 import "seo.proto";
 import "sql.proto";
 import "a-submessage.proto";
-import "product.proto";
+import "product-shell.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -20,7 +20,7 @@ message ProductClass {
     string urn = 5;
     SEO seo = 6;
     Image photo = 7;
-    repeated Product product = 8;
+    repeated ProductShell product_shell = 8;
 
     map<string, int32> labelx = 9;
     string operator = 10;

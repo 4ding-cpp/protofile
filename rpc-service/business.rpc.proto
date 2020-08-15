@@ -16,7 +16,6 @@ import "linker.proto";
 import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
-import "product-class.proto";
 import "label.proto";
 import "store.proto";
 import "remind.proto";
@@ -141,10 +140,6 @@ service BusinessRPC {
     rpc QuickProduct(Product) returns (Product);
     // 商品修改紀錄
     rpc RecordProduct(Product) returns (Response);
-    // 替商品分類
-    rpc AddProductToClass(ProductClass) returns (Response);
-    // 移除商品的分類
-    rpc DelProductFromClass(ProductClass) returns (Response);
 
     // 註冊商店 (註冊須審核完成後預設為關閉)
     rpc RegisterStore(Store) returns (Response);

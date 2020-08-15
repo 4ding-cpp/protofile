@@ -12,7 +12,6 @@ import * as linker_pb from './linker_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';
-import * as product$class_pb from './product-class_pb';
 import * as label_pb from './label_pb';
 import * as store_pb from './store_pb';
 import * as remind_pb from './remind_pb';

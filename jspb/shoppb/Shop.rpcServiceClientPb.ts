@@ -13,7 +13,7 @@ import * as pingpong_pb from './pingpong_pb';
 import * as password_pb from './password_pb';
 import * as sql_pb from './sql_pb';
 import * as customer_pb from './customer_pb';
-import * as product_pb from './product_pb';
+import * as product$shell_pb from './product-shell_pb';
 import * as car_pb from './car_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
 import * as adapter_pb from './adapter_pb';
@@ -281,7 +281,7 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoFindProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -289,39 +289,39 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findProduct(
+  findProductShell(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/FindProduct',
+        '/ding4.ShopRPC/FindProductShell',
       request,
       metadata || {},
-      this.methodInfoFindProduct,
+      this.methodInfoFindProductShell,
       callback);
   }
 
-  methodInfoBrowseProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: product_pb.Product) => {
+  methodInfoBrowseProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    product$shell_pb.ProductShell,
+    (request: product$shell_pb.ProductShell) => {
       return request.serializeBinary();
     },
-    sql_pb.Response.deserializeBinary
+    product$shell_pb.ProductShell.deserializeBinary
   );
 
-  browseProduct(
-    request: product_pb.Product,
+  browseProductShell(
+    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
+               response: product$shell_pb.ProductShell) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/BrowseProduct',
+        '/ding4.ShopRPC/BrowseProductShell',
       request,
       metadata || {},
-      this.methodInfoBrowseProduct,
+      this.methodInfoBrowseProductShell,
       callback);
   }
 
