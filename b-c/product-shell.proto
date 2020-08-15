@@ -17,21 +17,22 @@ message ProductShell {
     string product_id = 3;
     string class_id = 4;
     bool is_display = 5;
-    SEO seo = 6;
-    repeated Block block = 7;
-    bool catch_block_template = 8;
+    int32 type = 6;
+    SEO seo = 7;
+    repeated Block block = 8;
+    int32 reduce = 9;
+    bool is_preorder = 10;
     // rewrite
-    google.protobuf.Value name = 9;
-    string urn = 10;
-    int32 price = 11;
-    int32 reduce = 12;
-    Product product = 13;
+    google.protobuf.Value name = 11;
+    string urn = 12;
+    int32 price = 13;
+    Product product = 14;
 
-    map<string, int32> labelx = 14;
-    string operator = 15;
-    google.protobuf.Timestamp create_at = 16;
-    google.protobuf.Timestamp update_at = 17;
-    repeated string cols = 18;
-    repeated Condition condition = 19;
-    google.protobuf.Struct self = 20;
+    map<string, int32> labelx = 15;
+    string operator = 16;
+    google.protobuf.Timestamp create_at = 17;
+    google.protobuf.Timestamp update_at = 18;
+    repeated string cols = 19;
+    repeated Condition condition = 20;
+    google.protobuf.Struct self = 21;
 }

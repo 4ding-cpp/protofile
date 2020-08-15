@@ -10,6 +10,7 @@ import "message.proto";
 import "car.proto";
 import "purchase.proto";
 import "order.proto";
+import "product.proto";
 
 service BkRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -27,5 +28,6 @@ service BkRPC {
     rpc ReadByCar(Car) returns (Car);
 
     // 更新商店商品列表
-    rpc UpgradeProduct(Query) returns (Response);
+    rpc LoadProduct(ProductBatch) returns (Response);
+    rpc GetProduct(Product) returns (Product);
 }

@@ -29,9 +29,6 @@ export class Product extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): void;
 
-  getReduce(): number;
-  setReduce(value: number): void;
-
   getWeight(): number;
   setWeight(value: number): void;
 
@@ -40,9 +37,6 @@ export class Product extends jspb.Message {
 
   getIsPickup(): boolean;
   setIsPickup(value: boolean): void;
-
-  getIsPreorder(): boolean;
-  setIsPreorder(value: boolean): void;
 
   getSpecxList(): Array<ProductSpec>;
   setSpecxList(value: Array<ProductSpec>): void;
@@ -102,11 +96,9 @@ export namespace Product {
     urn: string,
     cost: number,
     price: number,
-    reduce: number,
     weight: number,
     volume: number,
     isPickup: boolean,
-    isPreorder: boolean,
     specxList: Array<ProductSpec.AsObject>,
     photoxList: Array<a$submessage_pb.Image.AsObject>,
     labelxMap: Array<[string, number]>,
@@ -126,9 +118,6 @@ export class ProductSpec extends jspb.Message {
   getProductId(): string;
   setProductId(value: string): void;
 
-  getIsSell(): boolean;
-  setIsSell(value: boolean): void;
-
   getStock(): number;
   setStock(value: number): void;
 
@@ -144,6 +133,9 @@ export class ProductSpec extends jspb.Message {
   setPhoto(value?: a$submessage_pb.Image): void;
   hasPhoto(): boolean;
   clearPhoto(): void;
+
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -185,11 +177,11 @@ export namespace ProductSpec {
   export type AsObject = {
     sku: string,
     productId: string,
-    isSell: boolean,
     stock: number,
     sold: number,
     itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
     photo?: a$submessage_pb.Image.AsObject,
+    deleted: boolean,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

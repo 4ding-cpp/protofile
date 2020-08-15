@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "seo.proto";
+import "product.proto";
+import "a-submessage.proto";
+import "google/protobuf/struct.proto";
+
+message ProductGoods {
+    int32 shell_id = 1;
+    string product_id = 5;
+    string class_id = 2;
+    SEO seo = 3;
+    repeated Block block = 4;
+    google.protobuf.Value name = 6;
+    string urn = 7;
+    int32 price = 8;
+    int32 reduce = 9;
+    double weight = 10;
+    double volume = 11;
+    bool is_pickup = 12;
+    bool is_preorder = 13;
+    repeated ProductSpec specx = 14;
+    repeated Image photox = 15;
+}
