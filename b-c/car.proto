@@ -24,7 +24,7 @@ message Car {
     repeated ProductGoods goods = 9;
     bool is_free_shipping = 10;
     int32 amount = 11;
-    int32 count = 12;
+    int32 price = 12;
     
     string operator = 13;
     google.protobuf.Timestamp create_at = 14;
@@ -36,7 +36,7 @@ message Car {
 
 message Buy {
     string sku = 1;
-    int32 count = 2;
+    int32 amount = 2;
 }
 
 message Commodity {

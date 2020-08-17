@@ -26,9 +26,9 @@ message Order {
     bool is_customer = 8;
     string car_id = 9;
     string coupon_id = 10;
-    int32 count = 11;
+    int32 amount = 11;
     int32 freight = 12;
-    int32 amount = 13;
+    int32 price = 13;
     double order_charge = 14;
     double sales_charge = 15;
     int32 payment_charge = 16;
