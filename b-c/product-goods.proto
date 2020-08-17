@@ -5,24 +5,27 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "seo.proto";
-import "product.proto";
 import "a-submessage.proto";
+import "product.proto";
 import "google/protobuf/struct.proto";
 
 message ProductGoods {
     int32 shell_id = 1;
-    string product_id = 5;
-    string class_id = 2;
-    SEO seo = 3;
-    repeated Block block = 4;
-    google.protobuf.Value name = 6;
-    string urn = 7;
-    int32 price = 8;
-    int32 reduce = 9;
-    double weight = 10;
-    double volume = 11;
-    bool is_pickup = 12;
-    bool is_preorder = 13;
-    repeated ProductSpec specx = 14;
-    repeated Image photox = 15;
+    string product_id = 2;
+    string class_id = 3;
+    int32 type = 4;
+    SEO seo = 5;
+    repeated Block block = 6;
+    google.protobuf.Value name = 7;
+    string urn = 8;
+    string sku = 9;
+    int32 price = 10;
+    int32 reduce = 11;
+    double weight = 12;
+    double volume = 13;
+    bool is_pickup = 14;
+    bool is_preorder = 15;
+    int32 stock = 16;
+    repeated ProductSpec specx = 17;
+    repeated Image photox = 18;
 }

@@ -7,6 +7,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 import "sql.proto";
 import "activity-coupon.proto";
 import "a-submessage.proto";
+import "product-goods.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -17,18 +18,25 @@ message Car {
     string customer_id = 3;
     string coupon_id = 4;
     int32 state = 5;
-    repeated Commodity commodity = 6;
-    repeated Activity activity = 7;
-    bool is_free_shipping = 8;
-    int32 amount = 9;
-    int32 count = 10;
+    map<int32, Buy> buy = 6;
+    repeated Commodity commodity = 7;
+    repeated Activity activity = 8;
+    repeated ProductGoods goods = 9;
+    bool is_free_shipping = 10;
+    int32 amount = 11;
+    int32 count = 12;
     
-    string operator = 11;
-    google.protobuf.Timestamp create_at = 12;
-    google.protobuf.Timestamp update_at = 13;
-    repeated string cols = 14;
-    repeated Condition condition = 15;
-    google.protobuf.Struct self = 16;    
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
+}
+
+message Buy {
+    string sku = 1;
+    int32 count = 2;
 }
 
 message Commodity {
@@ -45,4 +53,5 @@ message Commodity {
     int32 reduce = 11;
     int32 active = 12;
     int32 stock = 13;
+    int32 shell_id = 14;
 }
