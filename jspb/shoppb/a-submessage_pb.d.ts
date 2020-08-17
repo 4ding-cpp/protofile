@@ -101,10 +101,10 @@ export class ProductTarget extends jspb.Message {
   clearClassList(): void;
   addClass(value: string, index?: number): void;
 
-  getItemsList(): Array<string>;
-  setItemsList(value: Array<string>): void;
+  getItemsList(): Array<number>;
+  setItemsList(value: Array<number>): void;
   clearItemsList(): void;
-  addItems(value: string, index?: number): void;
+  addItems(value: number, index?: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductTarget.AsObject;
@@ -117,7 +117,7 @@ export class ProductTarget extends jspb.Message {
 export namespace ProductTarget {
   export type AsObject = {
     classList: Array<string>,
-    itemsList: Array<string>,
+    itemsList: Array<number>,
   }
 }
 

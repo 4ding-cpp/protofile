@@ -1004,8 +1004,8 @@ proto.ding4.ProductTarget.deserializeBinaryFromReader = function(msg, reader) {
       msg.addClass(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addItems(value);
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+      msg.setItemsList(value);
       break;
     default:
       reader.skipField();
@@ -1045,7 +1045,7 @@ proto.ding4.ProductTarget.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getItemsList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writePackedInt32(
       2,
       f
     );
@@ -1091,16 +1091,16 @@ proto.ding4.ProductTarget.prototype.clearClassList = function() {
 
 
 /**
- * repeated string items = 2;
- * @return {!Array<string>}
+ * repeated int32 items = 2;
+ * @return {!Array<number>}
  */
 proto.ding4.ProductTarget.prototype.getItemsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<number>} value
  * @return {!proto.ding4.ProductTarget} returns this
  */
 proto.ding4.ProductTarget.prototype.setItemsList = function(value) {
@@ -1109,7 +1109,7 @@ proto.ding4.ProductTarget.prototype.setItemsList = function(value) {
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.ding4.ProductTarget} returns this
  */

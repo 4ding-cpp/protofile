@@ -44,7 +44,7 @@ message CustomerTarget {
 // items 直接指定 product_id 適用單品活動
 message ProductTarget {
     repeated string class = 1;
-    repeated string items = 2;
+    repeated int32 items = 2;
 }
 
 // Image 給Layuot用可填入alt
