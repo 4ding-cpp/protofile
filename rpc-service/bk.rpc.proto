@@ -30,4 +30,5 @@ service BkRPC {
     // 更新商店商品列表
     rpc LoadProduct(ProductBatch) returns (Response);
     rpc GetProduct(Product) returns (Product);
+    rpc SkuProduct(ProductSpec) returns (Product);
 }

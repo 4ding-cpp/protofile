@@ -30,8 +30,6 @@ var customer_pb = require('./customer_pb.js');
 goog.object.extend(proto, customer_pb);
 var customer$level_pb = require('./customer-level_pb.js');
 goog.object.extend(proto, customer$level_pb);
-var product_pb = require('./product_pb.js');
-goog.object.extend(proto, product_pb);
 var product$shell_pb = require('./product-shell_pb.js');
 goog.object.extend(proto, product$shell_pb);
 var product$class_pb = require('./product-class_pb.js');

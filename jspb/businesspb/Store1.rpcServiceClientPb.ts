@@ -18,7 +18,6 @@ import * as manager_pb from './manager_pb';
 import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
-import * as product_pb from './product_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
@@ -1061,28 +1060,6 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindProductShell,
-      callback);
-  }
-
-  methodInfoFindProductShellSku = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: product_pb.ProductSpec) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findProductShellSku(
-    request: product_pb.ProductSpec,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/FindProductShellSku',
-      request,
-      metadata || {},
-      this.methodInfoFindProductShellSku,
       callback);
   }
 

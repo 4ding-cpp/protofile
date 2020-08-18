@@ -33,6 +33,8 @@ service ShopRPC {
     rpc IndexWebsite(Query) returns (Response);
     // 自訂頁面內容
     rpc FindWebPage(Query) returns (Response);
+    // 一些店家資訊及功能開關
+    rpc AppConf(Query) returns (Response);
 
     // 商品類別
     rpc FindProductClass(Query) returns (Response);
