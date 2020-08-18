@@ -13,6 +13,7 @@ import "manager.proto";
 import "sales.proto";
 import "customer.proto";
 import "customer-level.proto";
+import "product.proto";
 import "product-shell.proto";
 import "product-class.proto";
 import "activity-coupon.proto";
@@ -94,6 +95,7 @@ service Store1RPC {
     rpc UpdateProductShell(ProductShell) returns (Response);
     rpc DeleteProductShell(ProductShell) returns (Response);
     rpc FindProductShell(Query) returns (Response);
+    rpc FindProductShellSku(ProductSpec) returns (Response);
     rpc QuickProductShell(ProductShell) returns (ProductShell);
     
     // 建立商品類別

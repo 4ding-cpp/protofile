@@ -9,6 +9,7 @@ import * as manager_pb from './manager_pb';
 import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
+import * as product_pb from './product_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
