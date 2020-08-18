@@ -8,7 +8,7 @@ import * as business_pb from './business_pb';
 import * as business$sub_pb from './business-sub_pb';
 import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
-import * as linker_pb from './linker_pb';
+import * as b2b_pb from './b2b_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';

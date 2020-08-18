@@ -17,7 +17,7 @@ import * as business_pb from './business_pb';
 import * as business$sub_pb from './business-sub_pb';
 import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
-import * as linker_pb from './linker_pb';
+import * as b2b_pb from './b2b_pb';
 import * as customer_pb from './customer_pb';
 import * as customer$level_pb from './customer-level_pb';
 import * as product_pb from './product_pb';
@@ -821,94 +821,6 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoCreateLinker = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: linker_pb.Linker) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createLinker(
-    request: linker_pb.Linker,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/CreateLinker',
-      request,
-      metadata || {},
-      this.methodInfoCreateLinker,
-      callback);
-  }
-
-  methodInfoUpdateLinker = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: linker_pb.Linker) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateLinker(
-    request: linker_pb.Linker,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/UpdateLinker',
-      request,
-      metadata || {},
-      this.methodInfoUpdateLinker,
-      callback);
-  }
-
-  methodInfoFindLinker = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findLinker(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindLinker',
-      request,
-      metadata || {},
-      this.methodInfoFindLinker,
-      callback);
-  }
-
-  methodInfoRecordLinker = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: linker_pb.Linker) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  recordLinker(
-    request: linker_pb.Linker,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/RecordLinker',
-      request,
-      metadata || {},
-      this.methodInfoRecordLinker,
-      callback);
-  }
-
   methodInfoExistsCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer_pb.Customer) => {
@@ -1412,6 +1324,116 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordStore,
+      callback);
+  }
+
+  methodInfoExposeB2B = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: b2b_pb.B2B) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  exposeB2B(
+    request: b2b_pb.B2B,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ExposeB2B',
+      request,
+      metadata || {},
+      this.methodInfoExposeB2B,
+      callback);
+  }
+
+  methodInfoRequestB2B = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: b2b_pb.B2B) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  requestB2B(
+    request: b2b_pb.B2B,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/RequestB2B',
+      request,
+      metadata || {},
+      this.methodInfoRequestB2B,
+      callback);
+  }
+
+  methodInfoUpdateB2BExport = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: b2b_pb.B2B) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateB2BExport(
+    request: b2b_pb.B2B,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateB2BExport',
+      request,
+      metadata || {},
+      this.methodInfoUpdateB2BExport,
+      callback);
+  }
+
+  methodInfoUpdateB2BImport = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: b2b_pb.B2B) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateB2BImport(
+    request: b2b_pb.B2B,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateB2BImport',
+      request,
+      metadata || {},
+      this.methodInfoUpdateB2BImport,
+      callback);
+  }
+
+  methodInfoFindB2B = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findB2B(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindB2B',
+      request,
+      metadata || {},
+      this.methodInfoFindB2B,
       callback);
   }
 

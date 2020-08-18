@@ -12,7 +12,7 @@ import "business.proto";
 import "business-sub.proto";
 import "point.proto";
 import "manager.proto";
-import "linker.proto";
+import "b2b.proto";
 import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
@@ -95,15 +95,6 @@ service BusinessRPC {
     // 標籤修改紀錄
     rpc RecordLabel(Label) returns (Response);
 
-    // 建立對外開放鏈結
-    rpc CreateLinker(Linker) returns (Response);
-    // 更新對外開放鏈結
-    rpc UpdateLinker(Linker) returns (Response);
-    // 鏈結列表
-    rpc FindLinker(Query) returns (Response);    
-    // 鏈結修改紀錄
-    rpc RecordLinker(Linker) returns (Response);
-
     // 檢查信箱及電話是否存在
     rpc ExistsCustomer(Customer) returns (Response);
     // 建立會員
@@ -151,6 +142,13 @@ service BusinessRPC {
     rpc FindStore(Query) returns (Response);
     // 商店修改紀錄
     rpc RecordStore(Store) returns (Response);
+
+    // B2B 相關
+    rpc ExposeB2B(B2B) returns (Response);
+    rpc RequestB2B(B2B) returns (Response);
+    rpc UpdateB2BExport(B2B) returns (Response);
+    rpc UpdateB2BImport(B2B) returns (Response);
+    rpc FindB2B(Query) returns (Response);
 
     // 購物狀態提醒
     rpc CreateRemind(Remind) returns (Response);
