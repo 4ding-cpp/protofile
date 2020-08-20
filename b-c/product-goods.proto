@@ -19,13 +19,14 @@ message ProductGoods {
     google.protobuf.Value name = 7;
     string urn = 8;
     string sku = 9;
+    string photo_src = 10;
     int32 original = 11;
-    int32 price = 10;
-    double weight = 12;
-    double volume = 13;
-    bool is_pickup = 14;
-    bool is_preorder = 15;
-    int32 stock = 16;
-    repeated ProductSpec specx = 17;
-    repeated Image photox = 18;
+    int32 price = 12;
+    double weight = 13;
+    double volume = 14;
+    bool is_pickup = 15;
+    bool is_preorder = 16;
+    int32 stock = 17;
+    repeated ProductSpec specx = 18;
+    repeated Image photox = 19;
 }
