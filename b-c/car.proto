@@ -18,7 +18,7 @@ message Car {
     string customer_id = 3;
     string coupon_id = 4;
     int32 state = 5;
-    map<int32, Buy> buy = 6;
+    repeated Buy buy = 6;
     repeated Commodity commodity = 7;
     repeated Activity activity = 8;
     repeated ProductGoods goods = 9;
@@ -35,8 +35,9 @@ message Car {
 }
 
 message Buy {
-    string sku = 1;
-    int32 amount = 2;
+    int32 shell_id = 1;
+    string sku = 2;
+    int32 amount = 3;
 }
 
 message Commodity {
