@@ -27,7 +27,7 @@ message Active {
     bool is_repeat = 2;
     double discount = 3;
     double reduce = 4;
-    string giveaway = 5;
+    int32 giveaway = 5;
     string giveaway_sku = 6;
 }
 
