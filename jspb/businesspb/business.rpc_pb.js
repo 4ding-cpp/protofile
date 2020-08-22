@@ -56,3 +56,5 @@ var domain_pb = require('./domain_pb.js');
 goog.object.extend(proto, domain_pb);
 var sales_pb = require('./sales_pb.js');
 goog.object.extend(proto, sales_pb);
+var report_pb = require('./report_pb.js');
+goog.object.extend(proto, report_pb);

@@ -26,6 +26,7 @@ import "freeback.proto";
 import "message.proto";
 import "domain.proto";
 import "sales.proto";
+import "report.proto";
 
 service BusinessRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -232,4 +233,7 @@ service BusinessRPC {
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
     rpc RecordSales(Sales) returns (Response);
+
+    // 報表
+    rpc ReportPayment(PaymentRp) returns (PaymentRp);
 }

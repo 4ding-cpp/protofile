@@ -22,4 +22,5 @@ import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
 import * as sales_pb from './sales_pb';
+import * as report_pb from './report_pb';
 

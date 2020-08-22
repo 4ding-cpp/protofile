@@ -31,6 +31,7 @@ import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
 import * as sales_pb from './sales_pb';
+import * as report_pb from './report_pb';
 
 export class BusinessRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -2402,6 +2403,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordSales,
+      callback);
+  }
+
+  methodInfoReportPayment = new grpcWeb.AbstractClientBase.MethodInfo(
+    report_pb.PaymentRp,
+    (request: report_pb.PaymentRp) => {
+      return request.serializeBinary();
+    },
+    report_pb.PaymentRp.deserializeBinary
+  );
+
+  reportPayment(
+    request: report_pb.PaymentRp,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: report_pb.PaymentRp) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ReportPayment',
+      request,
+      metadata || {},
+      this.methodInfoReportPayment,
       callback);
   }
 
