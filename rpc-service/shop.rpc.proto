@@ -14,6 +14,7 @@ import "activity-coupon.proto";
 import "adapter.proto";
 import "order.proto";
 import "freeback.proto";
+import "google/protobuf/struct.proto";
 
 
 service ShopRPC {
@@ -41,7 +42,7 @@ service ShopRPC {
     // 商品列表
     rpc FindProductGoods(Query) returns (Response);
     // 商品細項
-    rpc BrowseProductGoods(ProductGoods) returns (ProductGoods);
+    rpc BrowseProductGoods(ProductGoods) returns (Response);
     // 兌換折價券
     rpc ExchangeCoupon(Coupon) returns (Response);
 
