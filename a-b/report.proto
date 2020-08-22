@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "google/protobuf/struct.proto";
+
+
+message QueryRp {
+    string eq = 1; // 等於
+	string ne = 2; // 不等於
+	string lt = 3; // 小於
+	string lte = 4; // 小於等於
+	string gt = 5; // 大於
+	string gte = 6; // 大於等於
+	repeated string in = 7; // in
+}
+
+message PaymentRp {
+    message Query {
+        QueryRp create_at = 1;
+        QueryRp close_at = 2;
+        QueryRp state = 3;
+        QueryRp store_id = 4;
+        QueryRp payment_service = 5;
+        QueryRp payment_type = 6;
+        QueryRp logistics_service = 7;
+        QueryRp logistics_type = 8;    
+    }
+    message Data {
+        string create_at = 1;
+        string pickup_at = 2;
+        string close_at = 3;
+        int32 price = 4;
+        string payment_service = 5;
+        int32 payment_type = 6;
+        string logistics_service = 7;
+        int32 logistics_type = 8;
+        string device = 9;
+        double percentage = 10;    
+    }
+    Query query = 1;
+    repeated Data data = 2;
+    PageLimit page_limit = 3;
+    google.protobuf.Struct self = 4;
+}
