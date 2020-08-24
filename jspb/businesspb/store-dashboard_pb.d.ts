@@ -19,6 +19,9 @@ export class StoreDashboard extends jspb.Message {
   getSales(): string;
   setSales(value: string): void;
 
+  getProfit(): string;
+  setProfit(value: string): void;
+
   getBrowseRankList(): Array<ProductDashboard>;
   setBrowseRankList(value: Array<ProductDashboard>): void;
   clearBrowseRankList(): void;
@@ -45,6 +48,7 @@ export namespace StoreDashboard {
     customer: string,
     orders: string,
     sales: string,
+    profit: string,
     browseRankList: Array<ProductDashboard.AsObject>,
     ordersRankList: Array<ProductDashboard.AsObject>,
   }

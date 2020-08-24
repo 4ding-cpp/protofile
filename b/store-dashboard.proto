@@ -13,9 +13,10 @@ message StoreDashboard {
     string customer = 4;
     string orders = 5;
     string sales = 6;
+    string profit = 7;
 
-    repeated ProductDashboard browse_rank = 7;
-    repeated ProductDashboard orders_rank = 8;
+    repeated ProductDashboard browse_rank = 8;
+    repeated ProductDashboard orders_rank = 9;
 }
 
 message ProductDashboard {

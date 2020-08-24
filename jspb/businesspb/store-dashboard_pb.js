@@ -62,7 +62,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.StoreDashboard.repeatedFields_ = [7,8];
+proto.ding4.StoreDashboard.repeatedFields_ = [8,9];
 
 
 
@@ -101,6 +101,7 @@ proto.ding4.StoreDashboard.toObject = function(includeInstance, msg) {
     customer: jspb.Message.getFieldWithDefault(msg, 4, ""),
     orders: jspb.Message.getFieldWithDefault(msg, 5, ""),
     sales: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    profit: jspb.Message.getFieldWithDefault(msg, 7, ""),
     browseRankList: jspb.Message.toObjectList(msg.getBrowseRankList(),
     proto.ding4.ProductDashboard.toObject, includeInstance),
     ordersRankList: jspb.Message.toObjectList(msg.getOrdersRankList(),
@@ -166,11 +167,15 @@ proto.ding4.StoreDashboard.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSales(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfit(value);
+      break;
+    case 8:
       var value = new proto.ding4.ProductDashboard;
       reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
       msg.addBrowseRank(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.ding4.ProductDashboard;
       reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
       msg.addOrdersRank(value);
@@ -246,10 +251,17 @@ proto.ding4.StoreDashboard.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getProfit();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = message.getBrowseRankList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.ding4.ProductDashboard.serializeBinaryToWriter
     );
@@ -257,7 +269,7 @@ proto.ding4.StoreDashboard.serializeBinaryToWriter = function(message, writer) {
   f = message.getOrdersRankList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.ding4.ProductDashboard.serializeBinaryToWriter
     );
@@ -374,12 +386,30 @@ proto.ding4.StoreDashboard.prototype.setSales = function(value) {
 
 
 /**
- * repeated ProductDashboard browse_rank = 7;
+ * optional string profit = 7;
+ * @return {string}
+ */
+proto.ding4.StoreDashboard.prototype.getProfit = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.StoreDashboard} returns this
+ */
+proto.ding4.StoreDashboard.prototype.setProfit = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated ProductDashboard browse_rank = 8;
  * @return {!Array<!proto.ding4.ProductDashboard>}
  */
 proto.ding4.StoreDashboard.prototype.getBrowseRankList = function() {
   return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 8));
 };
 
 
@@ -388,7 +418,7 @@ proto.ding4.StoreDashboard.prototype.getBrowseRankList = function() {
  * @return {!proto.ding4.StoreDashboard} returns this
 */
 proto.ding4.StoreDashboard.prototype.setBrowseRankList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -398,7 +428,7 @@ proto.ding4.StoreDashboard.prototype.setBrowseRankList = function(value) {
  * @return {!proto.ding4.ProductDashboard}
  */
 proto.ding4.StoreDashboard.prototype.addBrowseRank = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.ding4.ProductDashboard, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.ProductDashboard, opt_index);
 };
 
 
@@ -412,12 +442,12 @@ proto.ding4.StoreDashboard.prototype.clearBrowseRankList = function() {
 
 
 /**
- * repeated ProductDashboard orders_rank = 8;
+ * repeated ProductDashboard orders_rank = 9;
  * @return {!Array<!proto.ding4.ProductDashboard>}
  */
 proto.ding4.StoreDashboard.prototype.getOrdersRankList = function() {
   return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 9));
 };
 
 
@@ -426,7 +456,7 @@ proto.ding4.StoreDashboard.prototype.getOrdersRankList = function() {
  * @return {!proto.ding4.StoreDashboard} returns this
 */
 proto.ding4.StoreDashboard.prototype.setOrdersRankList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -436,7 +466,7 @@ proto.ding4.StoreDashboard.prototype.setOrdersRankList = function(value) {
  * @return {!proto.ding4.ProductDashboard}
  */
 proto.ding4.StoreDashboard.prototype.addOrdersRank = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.ProductDashboard, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.ProductDashboard, opt_index);
 };
 
 

@@ -4,6 +4,22 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "google/protobuf/struct.proto";
+
 message AppConf {
-    string A = 1;
+    google.protobuf.Struct currency = 1;
+    google.protobuf.Struct language = 2;
+    google.protobuf.Struct website = 3;
+    google.protobuf.Struct shop = 4;
+    ExternalApp google_tag_manager = 5;
+    ExternalApp facebook_pixel = 6;
+    ExternalApp facebook_sign = 7;
+    ExternalApp line_sign = 8;
 }
+
+message ExternalApp {
+    bool is_enable = 1;
+    string app_id = 2;
+    string app_secret = 3;
+}
+
