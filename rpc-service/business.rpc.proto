@@ -236,4 +236,6 @@ service BusinessRPC {
 
     // 報表
     rpc ReportPayment(PaymentRp) returns (PaymentRp);
+    rpc ReportCustomer(CustomerRp) returns (CustomerRp);
+    rpc ReportProduct(ProductRp) returns (ProductRp);
 }

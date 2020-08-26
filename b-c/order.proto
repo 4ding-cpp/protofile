@@ -29,54 +29,57 @@ message Order {
     int32 amount = 11;
     int32 freight = 12;
     int32 price = 13;
+
     double order_charge = 14;
-    double sales_charge = 15;
-    int32 payment_charge = 16;
-    int32 logistics_charge = 17;
+    double business_charge = 15;
+    double sales_charge = 16;
+    int32 payment_charge = 17;
+    int32 logistics_charge = 18;
 
-    int32 state = 18;
-    int32 payment_state = 19;
-    int32 logistics_state = 20;
+    int32 state = 19;
+    int32 payment_state = 20;
+    int32 logistics_state = 21;
 
-    string payment_adapter = 21;
-    string payment_service = 22;
-    int32 payment_type = 23;
+    string payment_adapter = 22;
+    string payment_service = 23;
+    int32 payment_type = 24;
     
-    string logistics_adapter = 24;
-    string logistics_service = 25;
-    int32 logistics_type = 26;
-    int32 logistics_sub_type = 27;
-    bool is_timeout = 28;
+    string logistics_adapter = 25;
+    string logistics_service = 26;
+    int32 logistics_type = 27;
+    int32 logistics_sub_type = 28;
+    bool is_timeout = 29;
 
-    string pickup_at = 29;
-    string close_at = 30;
-    string pay_at = 31;
-    string pay_ip = 32;
-    string city = 33;
-    string device = 34;
-    string remark = 35;
-    OrderOther other = 36;
-    repeated OrderCommomdity commodity = 37;
+    string pickup_at = 30;
+    string close_at = 31;
+    string pay_at = 32;
+    string pay_ip = 33;
+    string city = 34;
+    string device = 35;
+    string remark = 36;
+    OrderOther other = 37;
+    repeated OrderGoods goods = 38;
 
-    map<string, int32> labelx = 38;
-    string operator = 39;
-    google.protobuf.Timestamp create_at = 40;
-    google.protobuf.Timestamp update_at = 41;
-    repeated string cols = 42;
-    repeated Condition condition = 43;
-    google.protobuf.Struct self = 44;
+    map<string, int32> labelx = 39;
+    string operator = 40;
+    google.protobuf.Timestamp create_at = 41;
+    google.protobuf.Timestamp update_at = 42;
+    repeated string cols = 43;
+    repeated Condition condition = 44;
+    google.protobuf.Struct self = 45;
 }
 
-message OrderCommomdity {
+message OrderGoods {
     string order_id = 1;
     string store_id = 2;
-    string activity_id = 3;
-    string product_id = 4;
-    string sku = 5;
-    string photo_src = 6;
-    string name = 7;
-    int32 amount = 8;
-    int32 price = 9;
+    string sales_id = 3;
+    string activity_id = 4;
+    string product_id = 5;
+    string sku = 6;
+    string photo_src = 7;
+    string name = 8;
+    int32 amount = 9;
+    int32 price = 10;
 }
 
 message ContactInfo {

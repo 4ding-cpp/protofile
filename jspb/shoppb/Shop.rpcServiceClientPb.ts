@@ -347,7 +347,7 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoAddProductLove = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAddProductFavorite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product$goods_pb.ProductGoods) => {
       return request.serializeBinary();
@@ -355,21 +355,21 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  addProductLove(
+  addProductFavorite(
     request: product$goods_pb.ProductGoods,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/AddProductLove',
+        '/ding4.ShopRPC/AddProductFavorite',
       request,
       metadata || {},
-      this.methodInfoAddProductLove,
+      this.methodInfoAddProductFavorite,
       callback);
   }
 
-  methodInfoDelProductLove = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDelProductFavorite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product$goods_pb.ProductGoods) => {
       return request.serializeBinary();
@@ -377,21 +377,21 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  delProductLove(
+  delProductFavorite(
     request: product$goods_pb.ProductGoods,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/DelProductLove',
+        '/ding4.ShopRPC/DelProductFavorite',
       request,
       metadata || {},
-      this.methodInfoDelProductLove,
+      this.methodInfoDelProductFavorite,
       callback);
   }
 
-  methodInfoFindMyLove = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindFavorite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -399,17 +399,17 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findMyLove(
+  findFavorite(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/FindMyLove',
+        '/ding4.ShopRPC/FindFavorite',
       request,
       metadata || {},
-      this.methodInfoFindMyLove,
+      this.methodInfoFindFavorite,
       callback);
   }
 
@@ -432,28 +432,6 @@ export class ShopRPCClient {
       request,
       metadata || {},
       this.methodInfoExchangeCoupon,
-      callback);
-  }
-
-  methodInfoFindCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findCar(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/FindCar',
-      request,
-      metadata || {},
-      this.methodInfoFindCar,
       callback);
   }
 
@@ -498,50 +476,6 @@ export class ShopRPCClient {
       request,
       metadata || {},
       this.methodInfoCompleteCar,
-      callback);
-  }
-
-  methodInfoLockCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: car_pb.Car) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  lockCar(
-    request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/LockCar',
-      request,
-      metadata || {},
-      this.methodInfoLockCar,
-      callback);
-  }
-
-  methodInfoDeleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: car_pb.Car) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteCar(
-    request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.ShopRPC/DeleteCar',
-      request,
-      metadata || {},
-      this.methodInfoDeleteCar,
       callback);
   }
 

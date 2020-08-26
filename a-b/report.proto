@@ -41,8 +41,72 @@ message PaymentRp {
         string device = 9;
         double percentage = 10;    
     }
-    Query query = 1;
-    repeated Data data = 2;
-    PageLimit page_limit = 3;
-    google.protobuf.Struct self = 4;
+    message Analysis {
+        int32 total = 1;
+        map<string, int32> create_at_date = 2;
+        map<string, int32> create_at_hour = 3;
+        map<string, int32> close_at_date = 4;
+        map<string, int32> payment_type = 5;
+        map<string, int32> logistics_type = 6;
+        map<string, int32> city = 7;
+        map<string, int32> device = 8;
+    }
+    bool get_analysis = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    Analysis as = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
+}
+
+
+message CustomerRp {
+    message Query {
+        QueryRp name = 1;
+        QueryRp email = 2;
+        QueryRp phone = 3;
+        QueryRp amount = 4;
+        QueryRp price = 5;
+    } 
+    message Data {
+        string name = 1;
+        string email = 2;
+        string phone = 3;
+        int32 amount = 4;
+        double amount_percent = 5;
+        int32 price = 6;
+        double price_percent = 7;
+    }
+    string group = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
+}
+
+message ProductRp {
+    message Query {
+        QueryRp create_at = 1;
+        QueryRp close_at = 2;
+        QueryRp business_id = 3;
+        QueryRp store_id = 4;
+        QueryRp product_id = 5;
+        QueryRp sku = 6;
+        QueryRp amount = 7;
+        QueryRp price = 8;
+    } 
+    message Data {
+        string name = 1;
+        string email = 2;
+        string phone = 3;
+        int32 amount = 4;
+        double amount_percent = 5;
+        int32 price = 6;
+        double price_percent = 7;
+    }
+    string group = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
 }

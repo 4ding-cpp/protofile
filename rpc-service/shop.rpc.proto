@@ -42,23 +42,16 @@ service ShopRPC {
     rpc FindProductGoods(Query) returns (Response);
     // 商品細項
     rpc BrowseProductGoods(ProductGoods) returns (Response);
-    rpc AddProductLove(ProductGoods) returns (Response);
-    rpc DelProductLove(ProductGoods) returns (Response);
-    rpc FindMyLove(Query) returns (Response);
+    rpc AddProductFavorite(ProductGoods) returns (Response);
+    rpc DelProductFavorite(ProductGoods) returns (Response);
+    rpc FindFavorite(Query) returns (Response);
     // 兌換折價券
     rpc ExchangeCoupon(Coupon) returns (Response);
 
-    // 取得購物車
-    rpc FindCar(Query) returns (Response);
     // 可用優惠券列表
     rpc FindCoupon(Query) returns (Response);
-    // State => 1.選購 2.鎖定 3.取消 6.完成訂單
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
-    // 鎖定購物車
-    rpc LockCar(Car) returns (Response);
-    // 清空購物車
-    rpc DeleteCar(Car) returns (Response);
 
     // 查看付款方式
     rpc FindPayment(Query) returns (Response);

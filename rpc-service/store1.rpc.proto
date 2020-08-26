@@ -105,9 +105,7 @@ service Store1RPC {
 
     // 檢視購物車(包含活動及折價券計算後回傳)
     rpc CompleteCar(Car) returns (Response);
-    // 鎖定購物車
-    rpc LockCar(Car) returns (Response);
-    // 清空購物車
+    // 軟刪除購物車
     rpc DeleteCar(Car) returns (Response);
     // 購物車列表
     rpc FindCar(Query) returns (Response);

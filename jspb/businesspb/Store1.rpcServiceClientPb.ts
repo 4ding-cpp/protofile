@@ -1217,28 +1217,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoLockCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: car_pb.Car) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  lockCar(
-    request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/LockCar',
-      request,
-      metadata || {},
-      this.methodInfoLockCar,
-      callback);
-  }
-
   methodInfoDeleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: car_pb.Car) => {
