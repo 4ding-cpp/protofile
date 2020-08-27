@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
+import "product.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -29,4 +30,8 @@ message B2B {
 message B2BTarget {
     repeated string in = 1;
     repeated string omit = 2;
+}
+
+message B2BProduct {
+    repeated Product product = 1;
 }

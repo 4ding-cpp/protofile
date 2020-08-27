@@ -11,6 +11,7 @@ import "car.proto";
 import "purchase.proto";
 import "order.proto";
 import "product.proto";
+import "b2b.proto";
 
 service BkRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -31,4 +32,6 @@ service BkRPC {
     rpc LoadProduct(ProductBatch) returns (Response);
     rpc GetProduct(Product) returns (Product);
     rpc SkuProduct(ProductSpec) returns (Product);
+
+    rpc ExportProduct(B2BProduct) returns (B2BProduct);
 }

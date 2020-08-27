@@ -46,7 +46,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Store.repeatedFields_ = [73,74];
+proto.ding4.Store.repeatedFields_ = [29,30];
 
 
 
@@ -80,6 +80,7 @@ proto.ding4.Store.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.Store.toObject = function(includeInstance, msg) {
   var f, obj = {
     storeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     model: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -103,10 +104,10 @@ proto.ding4.Store.toObject = function(includeInstance, msg) {
     lineId: jspb.Message.getFieldWithDefault(msg, 23, ""),
     lineAt: jspb.Message.getFieldWithDefault(msg, 24, ""),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
-    operator: jspb.Message.getFieldWithDefault(msg, 70, ""),
+    operator: jspb.Message.getFieldWithDefault(msg, 26, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    colsList: (f = jspb.Message.getRepeatedField(msg, 73)) == null ? undefined : f,
+    colsList: (f = jspb.Message.getRepeatedField(msg, 29)) == null ? undefined : f,
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
     sql_pb.Condition.toObject, includeInstance),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
@@ -149,6 +150,10 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setStoreId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBusinessId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -238,36 +243,36 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setLineAt(value);
       break;
-    case 69:
+    case 25:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
          });
       break;
-    case 70:
+    case 26:
       var value = /** @type {string} */ (reader.readString());
       msg.setOperator(value);
       break;
-    case 71:
+    case 27:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateAt(value);
       break;
-    case 72:
+    case 28:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateAt(value);
       break;
-    case 73:
+    case 29:
       var value = /** @type {string} */ (reader.readString());
       msg.addCols(value);
       break;
-    case 74:
+    case 30:
       var value = new sql_pb.Condition;
       reader.readMessage(value,sql_pb.Condition.deserializeBinaryFromReader);
       msg.addCondition(value);
       break;
-    case 75:
+    case 31:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -305,6 +310,13 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getBusinessId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -464,19 +476,19 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getLabelxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(69, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+    f.serializeBinary(25, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
     writer.writeString(
-      70,
+      26,
       f
     );
   }
   f = message.getCreateAt();
   if (f != null) {
     writer.writeMessage(
-      71,
+      27,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -484,7 +496,7 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdateAt();
   if (f != null) {
     writer.writeMessage(
-      72,
+      28,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -492,14 +504,14 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
   f = message.getColsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      73,
+      29,
       f
     );
   }
   f = message.getConditionList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      74,
+      30,
       f,
       sql_pb.Condition.serializeBinaryToWriter
     );
@@ -507,7 +519,7 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      75,
+      31,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -530,6 +542,24 @@ proto.ding4.Store.prototype.getStoreId = function() {
  */
 proto.ding4.Store.prototype.setStoreId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string business_id = 2;
+ * @return {string}
+ */
+proto.ding4.Store.prototype.getBusinessId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Store} returns this
+ */
+proto.ding4.Store.prototype.setBusinessId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -930,14 +960,14 @@ proto.ding4.Store.prototype.setLineAt = function(value) {
 
 
 /**
- * map<string, int32> labelx = 69;
+ * map<string, int32> labelx = 25;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.ding4.Store.prototype.getLabelxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 69, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 25, opt_noLazyCreate,
       null));
 };
 
@@ -952,11 +982,11 @@ proto.ding4.Store.prototype.clearLabelxMap = function() {
 
 
 /**
- * optional string operator = 70;
+ * optional string operator = 26;
  * @return {string}
  */
 proto.ding4.Store.prototype.getOperator = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 70, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
 };
 
 
@@ -965,17 +995,17 @@ proto.ding4.Store.prototype.getOperator = function() {
  * @return {!proto.ding4.Store} returns this
  */
 proto.ding4.Store.prototype.setOperator = function(value) {
-  return jspb.Message.setProto3StringField(this, 70, value);
+  return jspb.Message.setProto3StringField(this, 26, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_at = 71;
+ * optional google.protobuf.Timestamp create_at = 27;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.Store.prototype.getCreateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 71));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 27));
 };
 
 
@@ -984,7 +1014,7 @@ proto.ding4.Store.prototype.getCreateAt = function() {
  * @return {!proto.ding4.Store} returns this
 */
 proto.ding4.Store.prototype.setCreateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 71, value);
+  return jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -1002,17 +1032,17 @@ proto.ding4.Store.prototype.clearCreateAt = function() {
  * @return {boolean}
  */
 proto.ding4.Store.prototype.hasCreateAt = function() {
-  return jspb.Message.getField(this, 71) != null;
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_at = 72;
+ * optional google.protobuf.Timestamp update_at = 28;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.Store.prototype.getUpdateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 72));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 28));
 };
 
 
@@ -1021,7 +1051,7 @@ proto.ding4.Store.prototype.getUpdateAt = function() {
  * @return {!proto.ding4.Store} returns this
 */
 proto.ding4.Store.prototype.setUpdateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 72, value);
+  return jspb.Message.setWrapperField(this, 28, value);
 };
 
 
@@ -1039,16 +1069,16 @@ proto.ding4.Store.prototype.clearUpdateAt = function() {
  * @return {boolean}
  */
 proto.ding4.Store.prototype.hasUpdateAt = function() {
-  return jspb.Message.getField(this, 72) != null;
+  return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * repeated string cols = 73;
+ * repeated string cols = 29;
  * @return {!Array<string>}
  */
 proto.ding4.Store.prototype.getColsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 73));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 29));
 };
 
 
@@ -1057,7 +1087,7 @@ proto.ding4.Store.prototype.getColsList = function() {
  * @return {!proto.ding4.Store} returns this
  */
 proto.ding4.Store.prototype.setColsList = function(value) {
-  return jspb.Message.setField(this, 73, value || []);
+  return jspb.Message.setField(this, 29, value || []);
 };
 
 
@@ -1067,7 +1097,7 @@ proto.ding4.Store.prototype.setColsList = function(value) {
  * @return {!proto.ding4.Store} returns this
  */
 proto.ding4.Store.prototype.addCols = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 73, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 29, value, opt_index);
 };
 
 
@@ -1081,12 +1111,12 @@ proto.ding4.Store.prototype.clearColsList = function() {
 
 
 /**
- * repeated Condition condition = 74;
+ * repeated Condition condition = 30;
  * @return {!Array<!proto.ding4.Condition>}
  */
 proto.ding4.Store.prototype.getConditionList = function() {
   return /** @type{!Array<!proto.ding4.Condition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 74));
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 30));
 };
 
 
@@ -1095,7 +1125,7 @@ proto.ding4.Store.prototype.getConditionList = function() {
  * @return {!proto.ding4.Store} returns this
 */
 proto.ding4.Store.prototype.setConditionList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 74, value);
+  return jspb.Message.setRepeatedWrapperField(this, 30, value);
 };
 
 
@@ -1105,7 +1135,7 @@ proto.ding4.Store.prototype.setConditionList = function(value) {
  * @return {!proto.ding4.Condition}
  */
 proto.ding4.Store.prototype.addCondition = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 74, opt_value, proto.ding4.Condition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 30, opt_value, proto.ding4.Condition, opt_index);
 };
 
 
@@ -1119,12 +1149,12 @@ proto.ding4.Store.prototype.clearConditionList = function() {
 
 
 /**
- * optional google.protobuf.Struct self = 75;
+ * optional google.protobuf.Struct self = 31;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.Store.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 75));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 31));
 };
 
 
@@ -1133,7 +1163,7 @@ proto.ding4.Store.prototype.getSelf = function() {
  * @return {!proto.ding4.Store} returns this
 */
 proto.ding4.Store.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 75, value);
+  return jspb.Message.setWrapperField(this, 31, value);
 };
 
 
@@ -1151,7 +1181,7 @@ proto.ding4.Store.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.Store.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 75) != null;
+  return jspb.Message.getField(this, 31) != null;
 };
 
 

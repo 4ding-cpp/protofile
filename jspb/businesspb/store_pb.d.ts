@@ -8,6 +8,9 @@ export class Store extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
+
   getModel(): number;
   setModel(value: number): void;
 
@@ -116,6 +119,7 @@ export class Store extends jspb.Message {
 export namespace Store {
   export type AsObject = {
     storeId: string,
+    businessId: string,
     model: number,
     type: number,
     name: string,

@@ -10,6 +10,7 @@ import "google/protobuf/timestamp.proto";
 
 message Store {
     string store_id = 1;
+    string business_id = 2; // 要賣誰的商品 b2b
     int32 model = 3;
     int32 type = 4;
     string name = 5;
@@ -33,11 +34,11 @@ message Store {
     string line_id = 23;
     string line_at = 24;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 25;
+    string operator = 26;
+    google.protobuf.Timestamp create_at = 27;
+    google.protobuf.Timestamp update_at = 28;
+    repeated string cols = 29;
+    repeated Condition condition = 30;
+    google.protobuf.Struct self = 31;
 }

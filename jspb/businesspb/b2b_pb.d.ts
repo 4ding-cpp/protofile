@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
+import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -109,6 +110,26 @@ export namespace B2BTarget {
   export type AsObject = {
     inList: Array<string>,
     omitList: Array<string>,
+  }
+}
+
+export class B2BProduct extends jspb.Message {
+  getProductList(): Array<product_pb.Product>;
+  setProductList(value: Array<product_pb.Product>): void;
+  clearProductList(): void;
+  addProduct(value?: product_pb.Product, index?: number): product_pb.Product;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): B2BProduct.AsObject;
+  static toObject(includeInstance: boolean, msg: B2BProduct): B2BProduct.AsObject;
+  static serializeBinaryToWriter(message: B2BProduct, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): B2BProduct;
+  static deserializeBinaryFromReader(message: B2BProduct, reader: jspb.BinaryReader): B2BProduct;
+}
+
+export namespace B2BProduct {
+  export type AsObject = {
+    productList: Array<product_pb.Product.AsObject>,
   }
 }
 
