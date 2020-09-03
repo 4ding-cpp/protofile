@@ -108,15 +108,9 @@ service BusinessRPC {
     rpc FindCustomer(Query) returns (Response);
     // 會員修改紀錄
     rpc RecordCustomer(Customer) returns (Response);
-    // 會員登入紀錄
-    rpc SignCustomer(Customer) returns (Response);
-    // 連結會員至 XX 商店
-    rpc LinkCustomer(Customer) returns (Response);
     // 設定會員等級
     rpc AddCustomerToLevel(CustomerLevel) returns (Response);
     rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
-    // 會員登入紀錄
-    rpc SignInCustomer(Customer) returns (Response);
 
     // 新增商品
     rpc CreateProduct(Product) returns (Response);
