@@ -19,7 +19,7 @@ import "freeback.proto";
 service ShopRPC {
     rpc Ping(PingPong) returns (PingPong);
 
-    rpc Guest(Customer) returns (Response);
+    // rpc Guest(Customer) returns (Response);
     // 登入先輸入 Email 或 Phone 檢查帳號是否存在
     rpc SignIn(Customer) returns (Response);
     // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password

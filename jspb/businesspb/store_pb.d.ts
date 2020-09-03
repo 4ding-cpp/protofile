@@ -20,62 +20,14 @@ export class Store extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getHost(): string;
-  setHost(value: string): void;
+  getUrn(): string;
+  setUrn(value: string): void;
 
   getIdentify(): string;
   setIdentify(value: string): void;
 
-  getProductBusinessId(): string;
-  setProductBusinessId(value: string): void;
-
-  getProductLabelId(): string;
-  setProductLabelId(value: string): void;
-
-  getProductStatus(): string;
-  setProductStatus(value: string): void;
-
-  getCustomerBusinessId(): string;
-  setCustomerBusinessId(value: string): void;
-
-  getCustomerLabelId(): string;
-  setCustomerLabelId(value: string): void;
-
-  getCustomerStatus(): string;
-  setCustomerStatus(value: string): void;
-
   getIsOpen(): boolean;
   setIsOpen(value: boolean): void;
-
-  getPhone(): string;
-  setPhone(value: string): void;
-
-  getAddressCode(): string;
-  setAddressCode(value: string): void;
-
-  getAddressCity(): string;
-  setAddressCity(value: string): void;
-
-  getAddressTownship(): string;
-  setAddressTownship(value: string): void;
-
-  getAddressDetail(): string;
-  setAddressDetail(value: string): void;
-
-  getFacebook(): string;
-  setFacebook(value: string): void;
-
-  getFacebookMessage(): string;
-  setFacebookMessage(value: string): void;
-
-  getInstagramId(): string;
-  setInstagramId(value: string): void;
-
-  getLineId(): string;
-  setLineId(value: string): void;
-
-  getLineAt(): string;
-  setLineAt(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -123,25 +75,9 @@ export namespace Store {
     model: number,
     type: number,
     name: string,
-    host: string,
+    urn: string,
     identify: string,
-    productBusinessId: string,
-    productLabelId: string,
-    productStatus: string,
-    customerBusinessId: string,
-    customerLabelId: string,
-    customerStatus: string,
     isOpen: boolean,
-    phone: string,
-    addressCode: string,
-    addressCity: string,
-    addressTownship: string,
-    addressDetail: string,
-    facebook: string,
-    facebookMessage: string,
-    instagramId: string,
-    lineId: string,
-    lineAt: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
