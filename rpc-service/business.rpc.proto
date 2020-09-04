@@ -69,9 +69,9 @@ service BusinessRPC {
     rpc SignBusinessSub(BusinessSub) returns (Response);
 
     // 檢查信箱及電話是否存在
-    rpc ExistsManager(Manager) returns (Response);
+    // rpc ExistsManager(Manager) returns (Response);
     // 建立商店管理員
-    rpc CreateManager(Manager) returns (Response);
+    // rpc CreateManager(Manager) returns (Response);
     // 更新商店管理員
     rpc UpdateManager(Manager) returns (Response);
     // 商店管理員列表

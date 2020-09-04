@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
+import * as manager_pb from './manager_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -23,11 +24,13 @@ export class Store extends jspb.Message {
   getUrn(): string;
   setUrn(value: string): void;
 
-  getIdentify(): string;
-  setIdentify(value: string): void;
-
   getIsOpen(): boolean;
   setIsOpen(value: boolean): void;
+
+  getManager(): manager_pb.Manager | undefined;
+  setManager(value?: manager_pb.Manager): void;
+  hasManager(): boolean;
+  clearManager(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -76,8 +79,8 @@ export namespace Store {
     type: number,
     name: string,
     urn: string,
-    identify: string,
     isOpen: boolean,
+    manager?: manager_pb.Manager.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

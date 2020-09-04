@@ -536,50 +536,6 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoExistsManager = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: manager_pb.Manager) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  existsManager(
-    request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/ExistsManager',
-      request,
-      metadata || {},
-      this.methodInfoExistsManager,
-      callback);
-  }
-
-  methodInfoCreateManager = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: manager_pb.Manager) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createManager(
-    request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/CreateManager',
-      request,
-      metadata || {},
-      this.methodInfoCreateManager,
-      callback);
-  }
-
   methodInfoUpdateManager = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: manager_pb.Manager) => {

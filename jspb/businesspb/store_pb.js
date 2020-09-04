@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
+var manager_pb = require('./manager_pb.js');
+goog.object.extend(proto, manager_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -85,8 +87,8 @@ proto.ding4.Store.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     urn: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    identify: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    isOpen: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    isOpen: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    manager: (f = msg.getManager()) && manager_pb.Manager.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 10, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -156,12 +158,13 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
       msg.setUrn(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIdentify(value);
-      break;
-    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsOpen(value);
+      break;
+    case 8:
+      var value = new manager_pb.Manager;
+      reader.readMessage(value,manager_pb.Manager.deserializeBinaryFromReader);
+      msg.setManager(value);
       break;
     case 9:
       var value = msg.getLabelxMap();
@@ -268,18 +271,19 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIdentify();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsOpen();
+  if (f) {
+    writer.writeBool(
       7,
       f
     );
   }
-  f = message.getIsOpen();
-  if (f) {
-    writer.writeBool(
+  f = message.getManager();
+  if (f != null) {
+    writer.writeMessage(
       8,
-      f
+      f,
+      manager_pb.Manager.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -444,29 +448,11 @@ proto.ding4.Store.prototype.setUrn = function(value) {
 
 
 /**
- * optional string identify = 7;
- * @return {string}
- */
-proto.ding4.Store.prototype.getIdentify = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.Store} returns this
- */
-proto.ding4.Store.prototype.setIdentify = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional bool is_open = 8;
+ * optional bool is_open = 7;
  * @return {boolean}
  */
 proto.ding4.Store.prototype.getIsOpen = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -475,7 +461,44 @@ proto.ding4.Store.prototype.getIsOpen = function() {
  * @return {!proto.ding4.Store} returns this
  */
 proto.ding4.Store.prototype.setIsOpen = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional Manager manager = 8;
+ * @return {?proto.ding4.Manager}
+ */
+proto.ding4.Store.prototype.getManager = function() {
+  return /** @type{?proto.ding4.Manager} */ (
+    jspb.Message.getWrapperField(this, manager_pb.Manager, 8));
+};
+
+
+/**
+ * @param {?proto.ding4.Manager|undefined} value
+ * @return {!proto.ding4.Store} returns this
+*/
+proto.ding4.Store.prototype.setManager = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Store} returns this
+ */
+proto.ding4.Store.prototype.clearManager = function() {
+  return this.setManager(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Store.prototype.hasManager = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

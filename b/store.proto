@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
+import "manager.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -15,8 +16,8 @@ message Store {
     int32 type = 4;
     string name = 5;
     string urn = 6;
-    string identify = 7;
-    bool is_open = 8;
+    bool is_open = 7;
+    Manager manager = 8;
     
     map<string, int32> labelx = 9;
     string operator = 10;
