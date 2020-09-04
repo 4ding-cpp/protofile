@@ -910,6 +910,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoSignCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signCustomer(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/SignCustomer',
+      request,
+      metadata || {},
+      this.methodInfoSignCustomer,
+      callback);
+  }
+
   methodInfoAddCustomerToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: customer$level_pb.CustomerLevel) => {

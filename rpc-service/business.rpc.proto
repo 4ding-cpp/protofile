@@ -102,13 +102,10 @@ service BusinessRPC {
     rpc CreateCustomer(Customer) returns (Response);
     // 批次匯入
     rpc UploadCustomer(CustomerBatch) returns (Response);
-    // 更新會員
     rpc UpdateCustomer(Customer) returns (Response);
-    // 會員列表
     rpc FindCustomer(Query) returns (Response);
-    // 會員修改紀錄
     rpc RecordCustomer(Customer) returns (Response);
-    // 設定會員等級
+    rpc SignCustomer(Customer) returns (Response);
     rpc AddCustomerToLevel(CustomerLevel) returns (Response);
     rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
 
