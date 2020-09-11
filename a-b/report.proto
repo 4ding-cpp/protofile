@@ -62,22 +62,33 @@ message PaymentRp {
 
 message CustomerRp {
     message Query {
-        QueryRp name = 1;
-        QueryRp email = 2;
-        QueryRp phone = 3;
-        QueryRp amount = 4;
-        QueryRp price = 5;
+        string business_id = 1;
+        string store_id = 2;
+        string customer_id = 3;
+        QueryRp create_at = 4;
+        QueryRp close_at = 5;
+        QueryRp state = 6;
+        QueryRp email = 7;
+        QueryRp phone = 8;
+        QueryRp count = 9;
+        QueryRp amount = 10;
+        QueryRp price = 11;
     } 
     message Data {
-        string name = 1;
-        string email = 2;
-        string phone = 3;
-        int32 amount = 4;
-        double amount_percent = 5;
-        int32 price = 6;
-        double price_percent = 7;
+        string customer_id = 1;
+        string name = 2;
+        string email = 3;
+        string phone = 4;
+        int32 count = 5;
+        double count_percent = 6;
+        int32 amount = 7;
+        double amount_percent = 8;
+        int32 price = 9;
+        double price_percent = 10;
+        string level_id = 11;
+        map<string, int32> labelx = 12;
     }
-    string group = 1;
+    repeated string group = 1;
     Query query = 2;
     repeated Data data = 3;
     PageLimit page_limit = 4;
@@ -86,25 +97,30 @@ message CustomerRp {
 
 message ProductRp {
     message Query {
-        QueryRp create_at = 1;
-        QueryRp close_at = 2;
-        QueryRp business_id = 3;
-        QueryRp store_id = 4;
-        QueryRp product_id = 5;
-        QueryRp sku = 6;
-        QueryRp amount = 7;
-        QueryRp price = 8;
+        bool closed = 1;
+        string business_id = 2;
+        string store_id = 3;
+        string product_id = 4;
+        QueryRp create_at = 5;
+        QueryRp close_at = 6;
+        QueryRp sku = 7;
+        QueryRp count = 8;
+        QueryRp amount = 9;
+        QueryRp price = 10;
     } 
     message Data {
-        string name = 1;
-        string email = 2;
-        string phone = 3;
-        int32 amount = 4;
-        double amount_percent = 5;
-        int32 price = 6;
-        double price_percent = 7;
+        string product_id = 1;
+        string photo_src = 2;
+        string name = 3;
+        string sku = 4;
+        int32 count = 5;
+        double count_percent = 6;
+        int32 amount = 7;
+        double amount_percent = 8;
+        int32 price = 9;
+        double price_percent = 10;
     }
-    string group = 1;
+    repeated string group = 1;
     Query query = 2;
     repeated Data data = 3;
     PageLimit page_limit = 4;

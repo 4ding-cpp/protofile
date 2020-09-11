@@ -261,8 +261,10 @@ export namespace PaymentRp {
 }
 
 export class CustomerRp extends jspb.Message {
-  getGroup(): string;
-  setGroup(value: string): void;
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getQuery(): CustomerRp.Query | undefined;
   setQuery(value?: CustomerRp.Query): void;
@@ -294,7 +296,7 @@ export class CustomerRp extends jspb.Message {
 
 export namespace CustomerRp {
   export type AsObject = {
-    group: string,
+    groupList: Array<string>,
     query?: CustomerRp.Query.AsObject,
     dataList: Array<CustomerRp.Data.AsObject>,
     pageLimit?: sql_pb.PageLimit.AsObject,
@@ -302,10 +304,29 @@ export namespace CustomerRp {
   }
 
   export class Query extends jspb.Message {
-    getName(): QueryRp | undefined;
-    setName(value?: QueryRp): void;
-    hasName(): boolean;
-    clearName(): void;
+    getBusinessId(): string;
+    setBusinessId(value: string): void;
+
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getCustomerId(): string;
+    setCustomerId(value: string): void;
+
+    getCreateAt(): QueryRp | undefined;
+    setCreateAt(value?: QueryRp): void;
+    hasCreateAt(): boolean;
+    clearCreateAt(): void;
+
+    getCloseAt(): QueryRp | undefined;
+    setCloseAt(value?: QueryRp): void;
+    hasCloseAt(): boolean;
+    clearCloseAt(): void;
+
+    getState(): QueryRp | undefined;
+    setState(value?: QueryRp): void;
+    hasState(): boolean;
+    clearState(): void;
 
     getEmail(): QueryRp | undefined;
     setEmail(value?: QueryRp): void;
@@ -316,6 +337,11 @@ export namespace CustomerRp {
     setPhone(value?: QueryRp): void;
     hasPhone(): boolean;
     clearPhone(): void;
+
+    getCount(): QueryRp | undefined;
+    setCount(value?: QueryRp): void;
+    hasCount(): boolean;
+    clearCount(): void;
 
     getAmount(): QueryRp | undefined;
     setAmount(value?: QueryRp): void;
@@ -337,9 +363,15 @@ export namespace CustomerRp {
 
   export namespace Query {
     export type AsObject = {
-      name?: QueryRp.AsObject,
+      businessId: string,
+      storeId: string,
+      customerId: string,
+      createAt?: QueryRp.AsObject,
+      closeAt?: QueryRp.AsObject,
+      state?: QueryRp.AsObject,
       email?: QueryRp.AsObject,
       phone?: QueryRp.AsObject,
+      count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
     }
@@ -347,6 +379,9 @@ export namespace CustomerRp {
 
 
   export class Data extends jspb.Message {
+    getCustomerId(): string;
+    setCustomerId(value: string): void;
+
     getName(): string;
     setName(value: string): void;
 
@@ -355,6 +390,12 @@ export namespace CustomerRp {
 
     getPhone(): string;
     setPhone(value: string): void;
+
+    getCount(): number;
+    setCount(value: number): void;
+
+    getCountPercent(): number;
+    setCountPercent(value: number): void;
 
     getAmount(): number;
     setAmount(value: number): void;
@@ -368,6 +409,12 @@ export namespace CustomerRp {
     getPricePercent(): number;
     setPricePercent(value: number): void;
 
+    getLevelId(): string;
+    setLevelId(value: string): void;
+
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -378,21 +425,28 @@ export namespace CustomerRp {
 
   export namespace Data {
     export type AsObject = {
+      customerId: string,
       name: string,
       email: string,
       phone: string,
+      count: number,
+      countPercent: number,
       amount: number,
       amountPercent: number,
       price: number,
       pricePercent: number,
+      levelId: string,
+      labelxMap: Array<[string, number]>,
     }
   }
 
 }
 
 export class ProductRp extends jspb.Message {
-  getGroup(): string;
-  setGroup(value: string): void;
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getQuery(): ProductRp.Query | undefined;
   setQuery(value?: ProductRp.Query): void;
@@ -424,7 +478,7 @@ export class ProductRp extends jspb.Message {
 
 export namespace ProductRp {
   export type AsObject = {
-    group: string,
+    groupList: Array<string>,
     query?: ProductRp.Query.AsObject,
     dataList: Array<ProductRp.Data.AsObject>,
     pageLimit?: sql_pb.PageLimit.AsObject,
@@ -432,6 +486,18 @@ export namespace ProductRp {
   }
 
   export class Query extends jspb.Message {
+    getClosed(): boolean;
+    setClosed(value: boolean): void;
+
+    getBusinessId(): string;
+    setBusinessId(value: string): void;
+
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getProductId(): string;
+    setProductId(value: string): void;
+
     getCreateAt(): QueryRp | undefined;
     setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
@@ -442,25 +508,15 @@ export namespace ProductRp {
     hasCloseAt(): boolean;
     clearCloseAt(): void;
 
-    getBusinessId(): QueryRp | undefined;
-    setBusinessId(value?: QueryRp): void;
-    hasBusinessId(): boolean;
-    clearBusinessId(): void;
-
-    getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): void;
-    hasStoreId(): boolean;
-    clearStoreId(): void;
-
-    getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): void;
-    hasProductId(): boolean;
-    clearProductId(): void;
-
     getSku(): QueryRp | undefined;
     setSku(value?: QueryRp): void;
     hasSku(): boolean;
     clearSku(): void;
+
+    getCount(): QueryRp | undefined;
+    setCount(value?: QueryRp): void;
+    hasCount(): boolean;
+    clearCount(): void;
 
     getAmount(): QueryRp | undefined;
     setAmount(value?: QueryRp): void;
@@ -482,12 +538,14 @@ export namespace ProductRp {
 
   export namespace Query {
     export type AsObject = {
+      closed: boolean,
+      businessId: string,
+      storeId: string,
+      productId: string,
       createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
-      businessId?: QueryRp.AsObject,
-      storeId?: QueryRp.AsObject,
-      productId?: QueryRp.AsObject,
       sku?: QueryRp.AsObject,
+      count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
     }
@@ -495,14 +553,23 @@ export namespace ProductRp {
 
 
   export class Data extends jspb.Message {
+    getProductId(): string;
+    setProductId(value: string): void;
+
+    getPhotoSrc(): string;
+    setPhotoSrc(value: string): void;
+
     getName(): string;
     setName(value: string): void;
 
-    getEmail(): string;
-    setEmail(value: string): void;
+    getSku(): string;
+    setSku(value: string): void;
 
-    getPhone(): string;
-    setPhone(value: string): void;
+    getCount(): number;
+    setCount(value: number): void;
+
+    getCountPercent(): number;
+    setCountPercent(value: number): void;
 
     getAmount(): number;
     setAmount(value: number): void;
@@ -526,9 +593,12 @@ export namespace ProductRp {
 
   export namespace Data {
     export type AsObject = {
+      productId: string,
+      photoSrc: string,
       name: string,
-      email: string,
-      phone: string,
+      sku: string,
+      count: number,
+      countPercent: number,
       amount: number,
       amountPercent: number,
       price: number,
