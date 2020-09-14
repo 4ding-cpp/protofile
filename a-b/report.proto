@@ -52,11 +52,12 @@ message PaymentRp {
         map<string, int32> device = 8;
     }
     bool get_analysis = 1;
-    Query query = 2;
-    repeated Data data = 3;
-    Analysis as = 4;
-    PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    Analysis as = 5;
+    PageLimit page_limit = 6;
+    google.protobuf.Struct self = 7;
 }
 
 
@@ -89,10 +90,11 @@ message CustomerRp {
         map<string, int32> labelx = 12;
     }
     repeated string group = 1;
-    Query query = 2;
-    repeated Data data = 3;
-    PageLimit page_limit = 4;
-    google.protobuf.Struct self = 5;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
 }
 
 message ProductRp {
@@ -121,8 +123,9 @@ message ProductRp {
         double price_percent = 10;
     }
     repeated string group = 1;
-    Query query = 2;
-    repeated Data data = 3;
-    PageLimit page_limit = 4;
-    google.protobuf.Struct self = 5;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
 }

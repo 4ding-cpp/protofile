@@ -600,7 +600,7 @@ proto.ding4.QueryRp.prototype.clearInList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.PaymentRp.repeatedFields_ = [3];
+proto.ding4.PaymentRp.repeatedFields_ = [2,4];
 
 
 
@@ -634,6 +634,8 @@ proto.ding4.PaymentRp.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.PaymentRp.toObject = function(includeInstance, msg) {
   var f, obj = {
     getAnalysis: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    sortList: jspb.Message.toObjectList(msg.getSortList(),
+    sql_pb.Sort.toObject, includeInstance),
     query: (f = msg.getQuery()) && proto.ding4.PaymentRp.Query.toObject(includeInstance, f),
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     proto.ding4.PaymentRp.Data.toObject, includeInstance),
@@ -681,26 +683,31 @@ proto.ding4.PaymentRp.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGetAnalysis(value);
       break;
     case 2:
+      var value = new sql_pb.Sort;
+      reader.readMessage(value,sql_pb.Sort.deserializeBinaryFromReader);
+      msg.addSort(value);
+      break;
+    case 3:
       var value = new proto.ding4.PaymentRp.Query;
       reader.readMessage(value,proto.ding4.PaymentRp.Query.deserializeBinaryFromReader);
       msg.setQuery(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.ding4.PaymentRp.Data;
       reader.readMessage(value,proto.ding4.PaymentRp.Data.deserializeBinaryFromReader);
       msg.addData(value);
       break;
-    case 4:
+    case 5:
       var value = new proto.ding4.PaymentRp.Analysis;
       reader.readMessage(value,proto.ding4.PaymentRp.Analysis.deserializeBinaryFromReader);
       msg.setAs(value);
       break;
-    case 5:
+    case 6:
       var value = new sql_pb.PageLimit;
       reader.readMessage(value,sql_pb.PageLimit.deserializeBinaryFromReader);
       msg.setPageLimit(value);
       break;
-    case 6:
+    case 7:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -741,10 +748,18 @@ proto.ding4.PaymentRp.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSortList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      sql_pb.Sort.serializeBinaryToWriter
+    );
+  }
   f = message.getQuery();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       proto.ding4.PaymentRp.Query.serializeBinaryToWriter
     );
@@ -752,7 +767,7 @@ proto.ding4.PaymentRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getDataList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.ding4.PaymentRp.Data.serializeBinaryToWriter
     );
@@ -760,7 +775,7 @@ proto.ding4.PaymentRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getAs();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.ding4.PaymentRp.Analysis.serializeBinaryToWriter
     );
@@ -768,7 +783,7 @@ proto.ding4.PaymentRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getPageLimit();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       sql_pb.PageLimit.serializeBinaryToWriter
     );
@@ -776,7 +791,7 @@ proto.ding4.PaymentRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -2072,12 +2087,50 @@ proto.ding4.PaymentRp.prototype.setGetAnalysis = function(value) {
 
 
 /**
- * optional Query query = 2;
+ * repeated Sort sort = 2;
+ * @return {!Array<!proto.ding4.Sort>}
+ */
+proto.ding4.PaymentRp.prototype.getSortList = function() {
+  return /** @type{!Array<!proto.ding4.Sort>} */ (
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Sort, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Sort>} value
+ * @return {!proto.ding4.PaymentRp} returns this
+*/
+proto.ding4.PaymentRp.prototype.setSortList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Sort=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Sort}
+ */
+proto.ding4.PaymentRp.prototype.addSort = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ding4.Sort, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.PaymentRp} returns this
+ */
+proto.ding4.PaymentRp.prototype.clearSortList = function() {
+  return this.setSortList([]);
+};
+
+
+/**
+ * optional Query query = 3;
  * @return {?proto.ding4.PaymentRp.Query}
  */
 proto.ding4.PaymentRp.prototype.getQuery = function() {
   return /** @type{?proto.ding4.PaymentRp.Query} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.PaymentRp.Query, 2));
+    jspb.Message.getWrapperField(this, proto.ding4.PaymentRp.Query, 3));
 };
 
 
@@ -2086,7 +2139,7 @@ proto.ding4.PaymentRp.prototype.getQuery = function() {
  * @return {!proto.ding4.PaymentRp} returns this
 */
 proto.ding4.PaymentRp.prototype.setQuery = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2104,17 +2157,17 @@ proto.ding4.PaymentRp.prototype.clearQuery = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.prototype.hasQuery = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated Data data = 3;
+ * repeated Data data = 4;
  * @return {!Array<!proto.ding4.PaymentRp.Data>}
  */
 proto.ding4.PaymentRp.prototype.getDataList = function() {
   return /** @type{!Array<!proto.ding4.PaymentRp.Data>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.PaymentRp.Data, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.PaymentRp.Data, 4));
 };
 
 
@@ -2123,7 +2176,7 @@ proto.ding4.PaymentRp.prototype.getDataList = function() {
  * @return {!proto.ding4.PaymentRp} returns this
 */
 proto.ding4.PaymentRp.prototype.setDataList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -2133,7 +2186,7 @@ proto.ding4.PaymentRp.prototype.setDataList = function(value) {
  * @return {!proto.ding4.PaymentRp.Data}
  */
 proto.ding4.PaymentRp.prototype.addData = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ding4.PaymentRp.Data, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ding4.PaymentRp.Data, opt_index);
 };
 
 
@@ -2147,12 +2200,12 @@ proto.ding4.PaymentRp.prototype.clearDataList = function() {
 
 
 /**
- * optional Analysis as = 4;
+ * optional Analysis as = 5;
  * @return {?proto.ding4.PaymentRp.Analysis}
  */
 proto.ding4.PaymentRp.prototype.getAs = function() {
   return /** @type{?proto.ding4.PaymentRp.Analysis} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.PaymentRp.Analysis, 4));
+    jspb.Message.getWrapperField(this, proto.ding4.PaymentRp.Analysis, 5));
 };
 
 
@@ -2161,7 +2214,7 @@ proto.ding4.PaymentRp.prototype.getAs = function() {
  * @return {!proto.ding4.PaymentRp} returns this
 */
 proto.ding4.PaymentRp.prototype.setAs = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -2179,17 +2232,17 @@ proto.ding4.PaymentRp.prototype.clearAs = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.prototype.hasAs = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional PageLimit page_limit = 5;
+ * optional PageLimit page_limit = 6;
  * @return {?proto.ding4.PageLimit}
  */
 proto.ding4.PaymentRp.prototype.getPageLimit = function() {
   return /** @type{?proto.ding4.PageLimit} */ (
-    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 5));
+    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 6));
 };
 
 
@@ -2198,7 +2251,7 @@ proto.ding4.PaymentRp.prototype.getPageLimit = function() {
  * @return {!proto.ding4.PaymentRp} returns this
 */
 proto.ding4.PaymentRp.prototype.setPageLimit = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2216,17 +2269,17 @@ proto.ding4.PaymentRp.prototype.clearPageLimit = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.prototype.hasPageLimit = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional google.protobuf.Struct self = 6;
+ * optional google.protobuf.Struct self = 7;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.PaymentRp.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 7));
 };
 
 
@@ -2235,7 +2288,7 @@ proto.ding4.PaymentRp.prototype.getSelf = function() {
  * @return {!proto.ding4.PaymentRp} returns this
 */
 proto.ding4.PaymentRp.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -2253,7 +2306,7 @@ proto.ding4.PaymentRp.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -2263,7 +2316,7 @@ proto.ding4.PaymentRp.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.CustomerRp.repeatedFields_ = [1,3];
+proto.ding4.CustomerRp.repeatedFields_ = [1,2,4];
 
 
 
@@ -2297,6 +2350,8 @@ proto.ding4.CustomerRp.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.CustomerRp.toObject = function(includeInstance, msg) {
   var f, obj = {
     groupList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    sortList: jspb.Message.toObjectList(msg.getSortList(),
+    sql_pb.Sort.toObject, includeInstance),
     query: (f = msg.getQuery()) && proto.ding4.CustomerRp.Query.toObject(includeInstance, f),
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     proto.ding4.CustomerRp.Data.toObject, includeInstance),
@@ -2343,21 +2398,26 @@ proto.ding4.CustomerRp.deserializeBinaryFromReader = function(msg, reader) {
       msg.addGroup(value);
       break;
     case 2:
+      var value = new sql_pb.Sort;
+      reader.readMessage(value,sql_pb.Sort.deserializeBinaryFromReader);
+      msg.addSort(value);
+      break;
+    case 3:
       var value = new proto.ding4.CustomerRp.Query;
       reader.readMessage(value,proto.ding4.CustomerRp.Query.deserializeBinaryFromReader);
       msg.setQuery(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.ding4.CustomerRp.Data;
       reader.readMessage(value,proto.ding4.CustomerRp.Data.deserializeBinaryFromReader);
       msg.addData(value);
       break;
-    case 4:
+    case 5:
       var value = new sql_pb.PageLimit;
       reader.readMessage(value,sql_pb.PageLimit.deserializeBinaryFromReader);
       msg.setPageLimit(value);
       break;
-    case 5:
+    case 6:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -2398,10 +2458,18 @@ proto.ding4.CustomerRp.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSortList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      sql_pb.Sort.serializeBinaryToWriter
+    );
+  }
   f = message.getQuery();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       proto.ding4.CustomerRp.Query.serializeBinaryToWriter
     );
@@ -2409,7 +2477,7 @@ proto.ding4.CustomerRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getDataList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.ding4.CustomerRp.Data.serializeBinaryToWriter
     );
@@ -2417,7 +2485,7 @@ proto.ding4.CustomerRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getPageLimit();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       sql_pb.PageLimit.serializeBinaryToWriter
     );
@@ -2425,7 +2493,7 @@ proto.ding4.CustomerRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -3532,12 +3600,50 @@ proto.ding4.CustomerRp.prototype.clearGroupList = function() {
 
 
 /**
- * optional Query query = 2;
+ * repeated Sort sort = 2;
+ * @return {!Array<!proto.ding4.Sort>}
+ */
+proto.ding4.CustomerRp.prototype.getSortList = function() {
+  return /** @type{!Array<!proto.ding4.Sort>} */ (
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Sort, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Sort>} value
+ * @return {!proto.ding4.CustomerRp} returns this
+*/
+proto.ding4.CustomerRp.prototype.setSortList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Sort=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Sort}
+ */
+proto.ding4.CustomerRp.prototype.addSort = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ding4.Sort, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.CustomerRp} returns this
+ */
+proto.ding4.CustomerRp.prototype.clearSortList = function() {
+  return this.setSortList([]);
+};
+
+
+/**
+ * optional Query query = 3;
  * @return {?proto.ding4.CustomerRp.Query}
  */
 proto.ding4.CustomerRp.prototype.getQuery = function() {
   return /** @type{?proto.ding4.CustomerRp.Query} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.CustomerRp.Query, 2));
+    jspb.Message.getWrapperField(this, proto.ding4.CustomerRp.Query, 3));
 };
 
 
@@ -3546,7 +3652,7 @@ proto.ding4.CustomerRp.prototype.getQuery = function() {
  * @return {!proto.ding4.CustomerRp} returns this
 */
 proto.ding4.CustomerRp.prototype.setQuery = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -3564,17 +3670,17 @@ proto.ding4.CustomerRp.prototype.clearQuery = function() {
  * @return {boolean}
  */
 proto.ding4.CustomerRp.prototype.hasQuery = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated Data data = 3;
+ * repeated Data data = 4;
  * @return {!Array<!proto.ding4.CustomerRp.Data>}
  */
 proto.ding4.CustomerRp.prototype.getDataList = function() {
   return /** @type{!Array<!proto.ding4.CustomerRp.Data>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.CustomerRp.Data, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.CustomerRp.Data, 4));
 };
 
 
@@ -3583,7 +3689,7 @@ proto.ding4.CustomerRp.prototype.getDataList = function() {
  * @return {!proto.ding4.CustomerRp} returns this
 */
 proto.ding4.CustomerRp.prototype.setDataList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -3593,7 +3699,7 @@ proto.ding4.CustomerRp.prototype.setDataList = function(value) {
  * @return {!proto.ding4.CustomerRp.Data}
  */
 proto.ding4.CustomerRp.prototype.addData = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ding4.CustomerRp.Data, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ding4.CustomerRp.Data, opt_index);
 };
 
 
@@ -3607,12 +3713,12 @@ proto.ding4.CustomerRp.prototype.clearDataList = function() {
 
 
 /**
- * optional PageLimit page_limit = 4;
+ * optional PageLimit page_limit = 5;
  * @return {?proto.ding4.PageLimit}
  */
 proto.ding4.CustomerRp.prototype.getPageLimit = function() {
   return /** @type{?proto.ding4.PageLimit} */ (
-    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 4));
+    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 5));
 };
 
 
@@ -3621,7 +3727,7 @@ proto.ding4.CustomerRp.prototype.getPageLimit = function() {
  * @return {!proto.ding4.CustomerRp} returns this
 */
 proto.ding4.CustomerRp.prototype.setPageLimit = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -3639,17 +3745,17 @@ proto.ding4.CustomerRp.prototype.clearPageLimit = function() {
  * @return {boolean}
  */
 proto.ding4.CustomerRp.prototype.hasPageLimit = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional google.protobuf.Struct self = 5;
+ * optional google.protobuf.Struct self = 6;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.CustomerRp.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 6));
 };
 
 
@@ -3658,7 +3764,7 @@ proto.ding4.CustomerRp.prototype.getSelf = function() {
  * @return {!proto.ding4.CustomerRp} returns this
 */
 proto.ding4.CustomerRp.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -3676,7 +3782,7 @@ proto.ding4.CustomerRp.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.CustomerRp.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -3686,7 +3792,7 @@ proto.ding4.CustomerRp.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.ProductRp.repeatedFields_ = [1,3];
+proto.ding4.ProductRp.repeatedFields_ = [1,2,4];
 
 
 
@@ -3720,6 +3826,8 @@ proto.ding4.ProductRp.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.ProductRp.toObject = function(includeInstance, msg) {
   var f, obj = {
     groupList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    sortList: jspb.Message.toObjectList(msg.getSortList(),
+    sql_pb.Sort.toObject, includeInstance),
     query: (f = msg.getQuery()) && proto.ding4.ProductRp.Query.toObject(includeInstance, f),
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     proto.ding4.ProductRp.Data.toObject, includeInstance),
@@ -3766,21 +3874,26 @@ proto.ding4.ProductRp.deserializeBinaryFromReader = function(msg, reader) {
       msg.addGroup(value);
       break;
     case 2:
+      var value = new sql_pb.Sort;
+      reader.readMessage(value,sql_pb.Sort.deserializeBinaryFromReader);
+      msg.addSort(value);
+      break;
+    case 3:
       var value = new proto.ding4.ProductRp.Query;
       reader.readMessage(value,proto.ding4.ProductRp.Query.deserializeBinaryFromReader);
       msg.setQuery(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.ding4.ProductRp.Data;
       reader.readMessage(value,proto.ding4.ProductRp.Data.deserializeBinaryFromReader);
       msg.addData(value);
       break;
-    case 4:
+    case 5:
       var value = new sql_pb.PageLimit;
       reader.readMessage(value,sql_pb.PageLimit.deserializeBinaryFromReader);
       msg.setPageLimit(value);
       break;
-    case 5:
+    case 6:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -3821,10 +3934,18 @@ proto.ding4.ProductRp.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSortList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      sql_pb.Sort.serializeBinaryToWriter
+    );
+  }
   f = message.getQuery();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       proto.ding4.ProductRp.Query.serializeBinaryToWriter
     );
@@ -3832,7 +3953,7 @@ proto.ding4.ProductRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getDataList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.ding4.ProductRp.Data.serializeBinaryToWriter
     );
@@ -3840,7 +3961,7 @@ proto.ding4.ProductRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getPageLimit();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       sql_pb.PageLimit.serializeBinaryToWriter
     );
@@ -3848,7 +3969,7 @@ proto.ding4.ProductRp.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -4820,12 +4941,50 @@ proto.ding4.ProductRp.prototype.clearGroupList = function() {
 
 
 /**
- * optional Query query = 2;
+ * repeated Sort sort = 2;
+ * @return {!Array<!proto.ding4.Sort>}
+ */
+proto.ding4.ProductRp.prototype.getSortList = function() {
+  return /** @type{!Array<!proto.ding4.Sort>} */ (
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Sort, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Sort>} value
+ * @return {!proto.ding4.ProductRp} returns this
+*/
+proto.ding4.ProductRp.prototype.setSortList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Sort=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Sort}
+ */
+proto.ding4.ProductRp.prototype.addSort = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ding4.Sort, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.ProductRp} returns this
+ */
+proto.ding4.ProductRp.prototype.clearSortList = function() {
+  return this.setSortList([]);
+};
+
+
+/**
+ * optional Query query = 3;
  * @return {?proto.ding4.ProductRp.Query}
  */
 proto.ding4.ProductRp.prototype.getQuery = function() {
   return /** @type{?proto.ding4.ProductRp.Query} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ProductRp.Query, 2));
+    jspb.Message.getWrapperField(this, proto.ding4.ProductRp.Query, 3));
 };
 
 
@@ -4834,7 +4993,7 @@ proto.ding4.ProductRp.prototype.getQuery = function() {
  * @return {!proto.ding4.ProductRp} returns this
 */
 proto.ding4.ProductRp.prototype.setQuery = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -4852,17 +5011,17 @@ proto.ding4.ProductRp.prototype.clearQuery = function() {
  * @return {boolean}
  */
 proto.ding4.ProductRp.prototype.hasQuery = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated Data data = 3;
+ * repeated Data data = 4;
  * @return {!Array<!proto.ding4.ProductRp.Data>}
  */
 proto.ding4.ProductRp.prototype.getDataList = function() {
   return /** @type{!Array<!proto.ding4.ProductRp.Data>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductRp.Data, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductRp.Data, 4));
 };
 
 
@@ -4871,7 +5030,7 @@ proto.ding4.ProductRp.prototype.getDataList = function() {
  * @return {!proto.ding4.ProductRp} returns this
 */
 proto.ding4.ProductRp.prototype.setDataList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -4881,7 +5040,7 @@ proto.ding4.ProductRp.prototype.setDataList = function(value) {
  * @return {!proto.ding4.ProductRp.Data}
  */
 proto.ding4.ProductRp.prototype.addData = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ding4.ProductRp.Data, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ding4.ProductRp.Data, opt_index);
 };
 
 
@@ -4895,12 +5054,12 @@ proto.ding4.ProductRp.prototype.clearDataList = function() {
 
 
 /**
- * optional PageLimit page_limit = 4;
+ * optional PageLimit page_limit = 5;
  * @return {?proto.ding4.PageLimit}
  */
 proto.ding4.ProductRp.prototype.getPageLimit = function() {
   return /** @type{?proto.ding4.PageLimit} */ (
-    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 4));
+    jspb.Message.getWrapperField(this, sql_pb.PageLimit, 5));
 };
 
 
@@ -4909,7 +5068,7 @@ proto.ding4.ProductRp.prototype.getPageLimit = function() {
  * @return {!proto.ding4.ProductRp} returns this
 */
 proto.ding4.ProductRp.prototype.setPageLimit = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -4927,17 +5086,17 @@ proto.ding4.ProductRp.prototype.clearPageLimit = function() {
  * @return {boolean}
  */
 proto.ding4.ProductRp.prototype.hasPageLimit = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional google.protobuf.Struct self = 5;
+ * optional google.protobuf.Struct self = 6;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.ProductRp.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 6));
 };
 
 
@@ -4946,7 +5105,7 @@ proto.ding4.ProductRp.prototype.getSelf = function() {
  * @return {!proto.ding4.ProductRp} returns this
 */
 proto.ding4.ProductRp.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -4964,7 +5123,7 @@ proto.ding4.ProductRp.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.ProductRp.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

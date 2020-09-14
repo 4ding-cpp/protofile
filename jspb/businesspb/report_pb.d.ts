@@ -51,6 +51,11 @@ export class PaymentRp extends jspb.Message {
   getGetAnalysis(): boolean;
   setGetAnalysis(value: boolean): void;
 
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
   getQuery(): PaymentRp.Query | undefined;
   setQuery(value?: PaymentRp.Query): void;
   hasQuery(): boolean;
@@ -87,6 +92,7 @@ export class PaymentRp extends jspb.Message {
 export namespace PaymentRp {
   export type AsObject = {
     getAnalysis: boolean,
+    sortList: Array<sql_pb.Sort.AsObject>,
     query?: PaymentRp.Query.AsObject,
     dataList: Array<PaymentRp.Data.AsObject>,
     as?: PaymentRp.Analysis.AsObject,
@@ -266,6 +272,11 @@ export class CustomerRp extends jspb.Message {
   clearGroupList(): void;
   addGroup(value: string, index?: number): void;
 
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
   getQuery(): CustomerRp.Query | undefined;
   setQuery(value?: CustomerRp.Query): void;
   hasQuery(): boolean;
@@ -297,6 +308,7 @@ export class CustomerRp extends jspb.Message {
 export namespace CustomerRp {
   export type AsObject = {
     groupList: Array<string>,
+    sortList: Array<sql_pb.Sort.AsObject>,
     query?: CustomerRp.Query.AsObject,
     dataList: Array<CustomerRp.Data.AsObject>,
     pageLimit?: sql_pb.PageLimit.AsObject,
@@ -448,6 +460,11 @@ export class ProductRp extends jspb.Message {
   clearGroupList(): void;
   addGroup(value: string, index?: number): void;
 
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
   getQuery(): ProductRp.Query | undefined;
   setQuery(value?: ProductRp.Query): void;
   hasQuery(): boolean;
@@ -479,6 +496,7 @@ export class ProductRp extends jspb.Message {
 export namespace ProductRp {
   export type AsObject = {
     groupList: Array<string>,
+    sortList: Array<sql_pb.Sort.AsObject>,
     query?: ProductRp.Query.AsObject,
     dataList: Array<ProductRp.Data.AsObject>,
     pageLimit?: sql_pb.PageLimit.AsObject,
