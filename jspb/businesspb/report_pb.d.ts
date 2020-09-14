@@ -47,6 +47,32 @@ export namespace QueryRp {
   }
 }
 
+export class ReportTotal extends jspb.Message {
+  getCount(): number;
+  setCount(value: number): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getPrice(): number;
+  setPrice(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportTotal.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportTotal): ReportTotal.AsObject;
+  static serializeBinaryToWriter(message: ReportTotal, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportTotal;
+  static deserializeBinaryFromReader(message: ReportTotal, reader: jspb.BinaryReader): ReportTotal;
+}
+
+export namespace ReportTotal {
+  export type AsObject = {
+    count: number,
+    amount: number,
+    price: number,
+  }
+}
+
 export class PaymentRp extends jspb.Message {
   getGetAnalysis(): boolean;
   setGetAnalysis(value: boolean): void;
@@ -176,8 +202,10 @@ export namespace PaymentRp {
     getPrice(): number;
     setPrice(value: number): void;
 
-    getPaymentService(): string;
-    setPaymentService(value: string): void;
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
 
     getPaymentType(): number;
     setPaymentType(value: number): void;
@@ -208,7 +236,7 @@ export namespace PaymentRp {
       pickupAt: string,
       closeAt: string,
       price: number,
-      paymentService: string,
+      total?: ReportTotal.AsObject,
       paymentType: number,
       logisticsService: string,
       logisticsType: number,
@@ -406,20 +434,16 @@ export namespace CustomerRp {
     getCount(): number;
     setCount(value: number): void;
 
-    getCountPercent(): number;
-    setCountPercent(value: number): void;
-
     getAmount(): number;
     setAmount(value: number): void;
-
-    getAmountPercent(): number;
-    setAmountPercent(value: number): void;
 
     getPrice(): number;
     setPrice(value: number): void;
 
-    getPricePercent(): number;
-    setPricePercent(value: number): void;
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
 
     getLevelId(): string;
     setLevelId(value: string): void;
@@ -442,11 +466,9 @@ export namespace CustomerRp {
       email: string,
       phone: string,
       count: number,
-      countPercent: number,
       amount: number,
-      amountPercent: number,
       price: number,
-      pricePercent: number,
+      total?: ReportTotal.AsObject,
       levelId: string,
       labelxMap: Array<[string, number]>,
     }
@@ -586,20 +608,16 @@ export namespace ProductRp {
     getCount(): number;
     setCount(value: number): void;
 
-    getCountPercent(): number;
-    setCountPercent(value: number): void;
-
     getAmount(): number;
     setAmount(value: number): void;
-
-    getAmountPercent(): number;
-    setAmountPercent(value: number): void;
 
     getPrice(): number;
     setPrice(value: number): void;
 
-    getPricePercent(): number;
-    setPricePercent(value: number): void;
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -616,11 +634,9 @@ export namespace ProductRp {
       name: string,
       sku: string,
       count: number,
-      countPercent: number,
       amount: number,
-      amountPercent: number,
       price: number,
-      pricePercent: number,
+      total?: ReportTotal.AsObject,
     }
   }
 

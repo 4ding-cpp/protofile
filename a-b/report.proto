@@ -18,6 +18,12 @@ message QueryRp {
 	repeated string in = 7; // in
 }
 
+message ReportTotal {
+    double count = 1;
+    double amount = 2;
+    double price = 3;
+}
+
 message PaymentRp {
     message Query {
         QueryRp create_at = 1;
@@ -34,7 +40,7 @@ message PaymentRp {
         string pickup_at = 2;
         string close_at = 3;
         int32 price = 4;
-        string payment_service = 5;
+        ReportTotal total = 5;
         int32 payment_type = 6;
         string logistics_service = 7;
         int32 logistics_type = 8;
@@ -81,13 +87,11 @@ message CustomerRp {
         string email = 3;
         string phone = 4;
         int32 count = 5;
-        double count_percent = 6;
-        int32 amount = 7;
-        double amount_percent = 8;
-        int32 price = 9;
-        double price_percent = 10;
-        string level_id = 11;
-        map<string, int32> labelx = 12;
+        int32 amount = 6;
+        int32 price = 7;
+        ReportTotal total = 8;
+        string level_id = 9;
+        map<string, int32> labelx = 10;
     }
     repeated string group = 1;
     repeated Sort sort = 2;
@@ -116,11 +120,9 @@ message ProductRp {
         string name = 3;
         string sku = 4;
         int32 count = 5;
-        double count_percent = 6;
-        int32 amount = 7;
-        double amount_percent = 8;
-        int32 price = 9;
-        double price_percent = 10;
+        int32 amount = 6;
+        int32 price = 7;
+        ReportTotal total = 8;
     }
     repeated string group = 1;
     repeated Sort sort = 2;
