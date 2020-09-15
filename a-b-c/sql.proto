@@ -57,8 +57,9 @@ message Query {
     repeated Sort sort = 2;
     repeated Condition inner = 3;
     repeated Condition condition = 4;
-    repeated string extra = 5;
-    google.protobuf.Struct self = 6;
+    string alias = 5;
+    repeated string extra = 6;
+    google.protobuf.Struct self = 7;
 };
 
 message SignRecord {
