@@ -30,22 +30,25 @@ message PaymentRp {
         QueryRp close_at = 2;
         QueryRp state = 3;
         QueryRp store_id = 4;
-        QueryRp payment_service = 5;
-        QueryRp payment_type = 6;
-        QueryRp logistics_service = 7;
-        QueryRp logistics_type = 8;    
+        QueryRp order_id = 5;
+        QueryRp payment_service = 6;
+        QueryRp payment_type = 7;
+        QueryRp logistics_service = 8;
+        QueryRp logistics_type = 9;    
     }
     message Data {
-        string create_at = 1;
-        string pickup_at = 2;
-        string close_at = 3;
-        int32 price = 4;
-        ReportTotal total = 5;
-        int32 payment_type = 6;
-        string logistics_service = 7;
-        int32 logistics_type = 8;
-        string device = 9;
-        double percentage = 10;    
+        string order_id = 1;
+        string create_at = 2;
+        string pickup_at = 3;
+        string close_at = 4;
+        int32 price = 5;
+        ReportTotal total = 6;
+        string payment_service = 7;
+        int32 payment_type = 8;
+        string logistics_service = 9;
+        int32 logistics_type = 10;
+        string device = 11;
+        double percentage = 12;    
     }
     message Analysis {
         int32 total = 1;

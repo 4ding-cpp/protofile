@@ -147,6 +147,11 @@ export namespace PaymentRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
+    getOrderId(): QueryRp | undefined;
+    setOrderId(value?: QueryRp): void;
+    hasOrderId(): boolean;
+    clearOrderId(): void;
+
     getPaymentService(): QueryRp | undefined;
     setPaymentService(value?: QueryRp): void;
     hasPaymentService(): boolean;
@@ -181,6 +186,7 @@ export namespace PaymentRp {
       closeAt?: QueryRp.AsObject,
       state?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
+      orderId?: QueryRp.AsObject,
       paymentService?: QueryRp.AsObject,
       paymentType?: QueryRp.AsObject,
       logisticsService?: QueryRp.AsObject,
@@ -190,6 +196,9 @@ export namespace PaymentRp {
 
 
   export class Data extends jspb.Message {
+    getOrderId(): string;
+    setOrderId(value: string): void;
+
     getCreateAt(): string;
     setCreateAt(value: string): void;
 
@@ -206,6 +215,9 @@ export namespace PaymentRp {
     setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
     clearTotal(): void;
+
+    getPaymentService(): string;
+    setPaymentService(value: string): void;
 
     getPaymentType(): number;
     setPaymentType(value: number): void;
@@ -232,11 +244,13 @@ export namespace PaymentRp {
 
   export namespace Data {
     export type AsObject = {
+      orderId: string,
       createAt: string,
       pickupAt: string,
       closeAt: string,
       price: number,
       total?: ReportTotal.AsObject,
+      paymentService: string,
       paymentType: number,
       logisticsService: string,
       logisticsType: number,

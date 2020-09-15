@@ -1047,6 +1047,7 @@ proto.ding4.PaymentRp.Query.toObject = function(includeInstance, msg) {
     closeAt: (f = msg.getCloseAt()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     state: (f = msg.getState()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     storeId: (f = msg.getStoreId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    orderId: (f = msg.getOrderId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     paymentService: (f = msg.getPaymentService()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     paymentType: (f = msg.getPaymentType()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     logisticsService: (f = msg.getLogisticsService()) && proto.ding4.QueryRp.toObject(includeInstance, f),
@@ -1110,19 +1111,24 @@ proto.ding4.PaymentRp.Query.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setPaymentService(value);
+      msg.setOrderId(value);
       break;
     case 6:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setPaymentType(value);
+      msg.setPaymentService(value);
       break;
     case 7:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setLogisticsService(value);
+      msg.setPaymentType(value);
       break;
     case 8:
+      var value = new proto.ding4.QueryRp;
+      reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
+      msg.setLogisticsService(value);
+      break;
+    case 9:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
       msg.setLogisticsType(value);
@@ -1188,7 +1194,7 @@ proto.ding4.PaymentRp.Query.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getPaymentService();
+  f = message.getOrderId();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -1196,7 +1202,7 @@ proto.ding4.PaymentRp.Query.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getPaymentType();
+  f = message.getPaymentService();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -1204,7 +1210,7 @@ proto.ding4.PaymentRp.Query.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getLogisticsService();
+  f = message.getPaymentType();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -1212,10 +1218,18 @@ proto.ding4.PaymentRp.Query.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getLogisticsType();
+  f = message.getLogisticsService();
   if (f != null) {
     writer.writeMessage(
       8,
+      f,
+      proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogisticsType();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
@@ -1372,10 +1386,10 @@ proto.ding4.PaymentRp.Query.prototype.hasStoreId = function() {
 
 
 /**
- * optional QueryRp payment_service = 5;
+ * optional QueryRp order_id = 5;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.PaymentRp.Query.prototype.getPaymentService = function() {
+proto.ding4.PaymentRp.Query.prototype.getOrderId = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
 };
@@ -1385,8 +1399,45 @@ proto.ding4.PaymentRp.Query.prototype.getPaymentService = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.PaymentRp.Query} returns this
 */
-proto.ding4.PaymentRp.Query.prototype.setPaymentService = function(value) {
+proto.ding4.PaymentRp.Query.prototype.setOrderId = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.PaymentRp.Query} returns this
+ */
+proto.ding4.PaymentRp.Query.prototype.clearOrderId = function() {
+  return this.setOrderId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.PaymentRp.Query.prototype.hasOrderId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional QueryRp payment_service = 6;
+ * @return {?proto.ding4.QueryRp}
+ */
+proto.ding4.PaymentRp.Query.prototype.getPaymentService = function() {
+  return /** @type{?proto.ding4.QueryRp} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 6));
+};
+
+
+/**
+ * @param {?proto.ding4.QueryRp|undefined} value
+ * @return {!proto.ding4.PaymentRp.Query} returns this
+*/
+proto.ding4.PaymentRp.Query.prototype.setPaymentService = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1404,17 +1455,17 @@ proto.ding4.PaymentRp.Query.prototype.clearPaymentService = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.Query.prototype.hasPaymentService = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional QueryRp payment_type = 6;
+ * optional QueryRp payment_type = 7;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.PaymentRp.Query.prototype.getPaymentType = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 6));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 7));
 };
 
 
@@ -1423,7 +1474,7 @@ proto.ding4.PaymentRp.Query.prototype.getPaymentType = function() {
  * @return {!proto.ding4.PaymentRp.Query} returns this
 */
 proto.ding4.PaymentRp.Query.prototype.setPaymentType = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1441,17 +1492,17 @@ proto.ding4.PaymentRp.Query.prototype.clearPaymentType = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.Query.prototype.hasPaymentType = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional QueryRp logistics_service = 7;
+ * optional QueryRp logistics_service = 8;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.PaymentRp.Query.prototype.getLogisticsService = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 7));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 8));
 };
 
 
@@ -1460,7 +1511,7 @@ proto.ding4.PaymentRp.Query.prototype.getLogisticsService = function() {
  * @return {!proto.ding4.PaymentRp.Query} returns this
 */
 proto.ding4.PaymentRp.Query.prototype.setLogisticsService = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -1478,17 +1529,17 @@ proto.ding4.PaymentRp.Query.prototype.clearLogisticsService = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.Query.prototype.hasLogisticsService = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional QueryRp logistics_type = 8;
+ * optional QueryRp logistics_type = 9;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.PaymentRp.Query.prototype.getLogisticsType = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 8));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 9));
 };
 
 
@@ -1497,7 +1548,7 @@ proto.ding4.PaymentRp.Query.prototype.getLogisticsType = function() {
  * @return {!proto.ding4.PaymentRp.Query} returns this
 */
 proto.ding4.PaymentRp.Query.prototype.setLogisticsType = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -1515,7 +1566,7 @@ proto.ding4.PaymentRp.Query.prototype.clearLogisticsType = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.Query.prototype.hasLogisticsType = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -1551,16 +1602,18 @@ proto.ding4.PaymentRp.Data.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.PaymentRp.Data.toObject = function(includeInstance, msg) {
   var f, obj = {
-    createAt: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pickupAt: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    closeAt: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    createAt: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    pickupAt: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    closeAt: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
-    paymentType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    logisticsService: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    logisticsType: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    device: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    percentage: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0)
+    paymentService: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    paymentType: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    logisticsService: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    logisticsType: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    device: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    percentage: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0)
   };
 
   if (includeInstance) {
@@ -1599,42 +1652,50 @@ proto.ding4.PaymentRp.Data.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCreateAt(value);
+      msg.setOrderId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPickupAt(value);
+      msg.setCreateAt(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCloseAt(value);
+      msg.setPickupAt(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCloseAt(value);
+      break;
+    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.ding4.ReportTotal;
       reader.readMessage(value,proto.ding4.ReportTotal.deserializeBinaryFromReader);
       msg.setTotal(value);
       break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPaymentType(value);
-      break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLogisticsService(value);
+      msg.setPaymentService(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setLogisticsType(value);
+      msg.setPaymentType(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDevice(value);
+      msg.setLogisticsService(value);
       break;
     case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setLogisticsType(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDevice(value);
+      break;
+    case 12:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setPercentage(value);
       break;
@@ -1667,74 +1728,88 @@ proto.ding4.PaymentRp.Data.prototype.serializeBinary = function() {
  */
 proto.ding4.PaymentRp.Data.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCreateAt();
+  f = message.getOrderId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPickupAt();
+  f = message.getCreateAt();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getCloseAt();
+  f = message.getPickupAt();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getCloseAt();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
-      4,
+      5,
       f
     );
   }
   f = message.getTotal();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.ding4.ReportTotal.serializeBinaryToWriter
     );
   }
-  f = message.getPaymentType();
-  if (f !== 0) {
-    writer.writeInt32(
-      6,
-      f
-    );
-  }
-  f = message.getLogisticsService();
+  f = message.getPaymentService();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getLogisticsType();
+  f = message.getPaymentType();
   if (f !== 0) {
     writer.writeInt32(
       8,
       f
     );
   }
-  f = message.getDevice();
+  f = message.getLogisticsService();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
+  f = message.getLogisticsType();
+  if (f !== 0) {
+    writer.writeInt32(
+      10,
+      f
+    );
+  }
+  f = message.getDevice();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
   f = message.getPercentage();
   if (f !== 0.0) {
     writer.writeDouble(
-      10,
+      12,
       f
     );
   }
@@ -1742,10 +1817,10 @@ proto.ding4.PaymentRp.Data.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string create_at = 1;
+ * optional string order_id = 1;
  * @return {string}
  */
-proto.ding4.PaymentRp.Data.prototype.getCreateAt = function() {
+proto.ding4.PaymentRp.Data.prototype.getOrderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1754,16 +1829,16 @@ proto.ding4.PaymentRp.Data.prototype.getCreateAt = function() {
  * @param {string} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setCreateAt = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string pickup_at = 2;
+ * optional string create_at = 2;
  * @return {string}
  */
-proto.ding4.PaymentRp.Data.prototype.getPickupAt = function() {
+proto.ding4.PaymentRp.Data.prototype.getCreateAt = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1772,16 +1847,16 @@ proto.ding4.PaymentRp.Data.prototype.getPickupAt = function() {
  * @param {string} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setPickupAt = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setCreateAt = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string close_at = 3;
+ * optional string pickup_at = 3;
  * @return {string}
  */
-proto.ding4.PaymentRp.Data.prototype.getCloseAt = function() {
+proto.ding4.PaymentRp.Data.prototype.getPickupAt = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1790,17 +1865,35 @@ proto.ding4.PaymentRp.Data.prototype.getCloseAt = function() {
  * @param {string} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setCloseAt = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setPickupAt = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 price = 4;
+ * optional string close_at = 4;
+ * @return {string}
+ */
+proto.ding4.PaymentRp.Data.prototype.getCloseAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PaymentRp.Data} returns this
+ */
+proto.ding4.PaymentRp.Data.prototype.setCloseAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int32 price = 5;
  * @return {number}
  */
 proto.ding4.PaymentRp.Data.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -1809,17 +1902,17 @@ proto.ding4.PaymentRp.Data.prototype.getPrice = function() {
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
 proto.ding4.PaymentRp.Data.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional ReportTotal total = 5;
+ * optional ReportTotal total = 6;
  * @return {?proto.ding4.ReportTotal}
  */
 proto.ding4.PaymentRp.Data.prototype.getTotal = function() {
   return /** @type{?proto.ding4.ReportTotal} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 5));
+    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 6));
 };
 
 
@@ -1828,7 +1921,7 @@ proto.ding4.PaymentRp.Data.prototype.getTotal = function() {
  * @return {!proto.ding4.PaymentRp.Data} returns this
 */
 proto.ding4.PaymentRp.Data.prototype.setTotal = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1846,33 +1939,15 @@ proto.ding4.PaymentRp.Data.prototype.clearTotal = function() {
  * @return {boolean}
  */
 proto.ding4.PaymentRp.Data.prototype.hasTotal = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 payment_type = 6;
- * @return {number}
- */
-proto.ding4.PaymentRp.Data.prototype.getPaymentType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.PaymentRp.Data} returns this
- */
-proto.ding4.PaymentRp.Data.prototype.setPaymentType = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional string logistics_service = 7;
+ * optional string payment_service = 7;
  * @return {string}
  */
-proto.ding4.PaymentRp.Data.prototype.getLogisticsService = function() {
+proto.ding4.PaymentRp.Data.prototype.getPaymentService = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1881,16 +1956,16 @@ proto.ding4.PaymentRp.Data.prototype.getLogisticsService = function() {
  * @param {string} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setLogisticsService = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setPaymentService = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional int32 logistics_type = 8;
+ * optional int32 payment_type = 8;
  * @return {number}
  */
-proto.ding4.PaymentRp.Data.prototype.getLogisticsType = function() {
+proto.ding4.PaymentRp.Data.prototype.getPaymentType = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -1899,16 +1974,16 @@ proto.ding4.PaymentRp.Data.prototype.getLogisticsType = function() {
  * @param {number} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setLogisticsType = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setPaymentType = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional string device = 9;
+ * optional string logistics_service = 9;
  * @return {string}
  */
-proto.ding4.PaymentRp.Data.prototype.getDevice = function() {
+proto.ding4.PaymentRp.Data.prototype.getLogisticsService = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -1917,17 +1992,53 @@ proto.ding4.PaymentRp.Data.prototype.getDevice = function() {
  * @param {string} value
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
-proto.ding4.PaymentRp.Data.prototype.setDevice = function(value) {
+proto.ding4.PaymentRp.Data.prototype.setLogisticsService = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional double percentage = 10;
+ * optional int32 logistics_type = 10;
+ * @return {number}
+ */
+proto.ding4.PaymentRp.Data.prototype.getLogisticsType = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.PaymentRp.Data} returns this
+ */
+proto.ding4.PaymentRp.Data.prototype.setLogisticsType = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional string device = 11;
+ * @return {string}
+ */
+proto.ding4.PaymentRp.Data.prototype.getDevice = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PaymentRp.Data} returns this
+ */
+proto.ding4.PaymentRp.Data.prototype.setDevice = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional double percentage = 12;
  * @return {number}
  */
 proto.ding4.PaymentRp.Data.prototype.getPercentage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
 
@@ -1936,7 +2047,7 @@ proto.ding4.PaymentRp.Data.prototype.getPercentage = function() {
  * @return {!proto.ding4.PaymentRp.Data} returns this
  */
 proto.ding4.PaymentRp.Data.prototype.setPercentage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 10, value);
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
