@@ -393,6 +393,17 @@ export namespace CustomerRp {
     hasPrice(): boolean;
     clearPrice(): void;
 
+    getStatus(): QueryRp | undefined;
+    setStatus(value?: QueryRp): void;
+    hasStatus(): boolean;
+    clearStatus(): void;
+
+    getLevelId(): string;
+    setLevelId(value: string): void;
+
+    getLabelId(): string;
+    setLabelId(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -414,6 +425,9 @@ export namespace CustomerRp {
       count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
+      status?: QueryRp.AsObject,
+      levelId: string,
+      labelId: string,
     }
   }
 
@@ -445,11 +459,17 @@ export namespace CustomerRp {
     hasTotal(): boolean;
     clearTotal(): void;
 
+    getStatus(): number;
+    setStatus(value: number): void;
+
     getLevelId(): string;
     setLevelId(value: string): void;
 
     getLabelxMap(): jspb.Map<string, number>;
     clearLabelxMap(): void;
+
+    getRegisterAt(): string;
+    setRegisterAt(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -469,8 +489,10 @@ export namespace CustomerRp {
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
+      status: number,
       levelId: string,
       labelxMap: Array<[string, number]>,
+      registerAt: string,
     }
   }
 
@@ -568,6 +590,14 @@ export namespace ProductRp {
     hasPrice(): boolean;
     clearPrice(): void;
 
+    getStatus(): QueryRp | undefined;
+    setStatus(value?: QueryRp): void;
+    hasStatus(): boolean;
+    clearStatus(): void;
+
+    getLabelId(): string;
+    setLabelId(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -588,6 +618,8 @@ export namespace ProductRp {
       count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
+      status?: QueryRp.AsObject,
+      labelId: string,
     }
   }
 
@@ -619,6 +651,12 @@ export namespace ProductRp {
     hasTotal(): boolean;
     clearTotal(): void;
 
+    getStatus(): number;
+    setStatus(value: number): void;
+
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -637,6 +675,8 @@ export namespace ProductRp {
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
+      status: number,
+      labelxMap: Array<[string, number]>,
     }
   }
 

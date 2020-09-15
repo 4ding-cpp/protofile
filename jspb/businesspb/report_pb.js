@@ -2776,7 +2776,10 @@ proto.ding4.CustomerRp.Query.toObject = function(includeInstance, msg) {
     phone: (f = msg.getPhone()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     amount: (f = msg.getAmount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f)
+    price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    levelId: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    labelId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -2864,6 +2867,19 @@ proto.ding4.CustomerRp.Query.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
       msg.setPrice(value);
+      break;
+    case 12:
+      var value = new proto.ding4.QueryRp;
+      reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLevelId(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabelId(value);
       break;
     default:
       reader.skipField();
@@ -2977,6 +2993,28 @@ proto.ding4.CustomerRp.Query.serializeBinaryToWriter = function(message, writer)
       11,
       f,
       proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLevelId();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getLabelId();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
     );
   }
 };
@@ -3332,6 +3370,79 @@ proto.ding4.CustomerRp.Query.prototype.hasPrice = function() {
 };
 
 
+/**
+ * optional QueryRp status = 12;
+ * @return {?proto.ding4.QueryRp}
+ */
+proto.ding4.CustomerRp.Query.prototype.getStatus = function() {
+  return /** @type{?proto.ding4.QueryRp} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 12));
+};
+
+
+/**
+ * @param {?proto.ding4.QueryRp|undefined} value
+ * @return {!proto.ding4.CustomerRp.Query} returns this
+*/
+proto.ding4.CustomerRp.Query.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.CustomerRp.Query} returns this
+ */
+proto.ding4.CustomerRp.Query.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.CustomerRp.Query.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional string level_id = 13;
+ * @return {string}
+ */
+proto.ding4.CustomerRp.Query.prototype.getLevelId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.CustomerRp.Query} returns this
+ */
+proto.ding4.CustomerRp.Query.prototype.setLevelId = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string label_id = 14;
+ * @return {string}
+ */
+proto.ding4.CustomerRp.Query.prototype.getLabelId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.CustomerRp.Query} returns this
+ */
+proto.ding4.CustomerRp.Query.prototype.setLabelId = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
 
 
 
@@ -3372,8 +3483,10 @@ proto.ding4.CustomerRp.Data.toObject = function(includeInstance, msg) {
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     price: jspb.Message.getFieldWithDefault(msg, 7, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
-    levelId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : []
+    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    levelId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
+    registerAt: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -3444,14 +3557,22 @@ proto.ding4.CustomerRp.Data.deserializeBinaryFromReader = function(msg, reader) 
       msg.setTotal(value);
       break;
     case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setStatus(value);
+      break;
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setLevelId(value);
       break;
-    case 10:
+    case 11:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
          });
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegisterAt(value);
       break;
     default:
       reader.skipField();
@@ -3539,16 +3660,30 @@ proto.ding4.CustomerRp.Data.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.ReportTotal.serializeBinaryToWriter
     );
   }
+  f = message.getStatus();
+  if (f !== 0) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
   f = message.getLevelId();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
   f = message.getLabelxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+  }
+  f = message.getRegisterAt();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
   }
 };
 
@@ -3717,11 +3852,29 @@ proto.ding4.CustomerRp.Data.prototype.hasTotal = function() {
 
 
 /**
- * optional string level_id = 9;
+ * optional int32 status = 9;
+ * @return {number}
+ */
+proto.ding4.CustomerRp.Data.prototype.getStatus = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.CustomerRp.Data} returns this
+ */
+proto.ding4.CustomerRp.Data.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional string level_id = 10;
  * @return {string}
  */
 proto.ding4.CustomerRp.Data.prototype.getLevelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -3730,19 +3883,19 @@ proto.ding4.CustomerRp.Data.prototype.getLevelId = function() {
  * @return {!proto.ding4.CustomerRp.Data} returns this
  */
 proto.ding4.CustomerRp.Data.prototype.setLevelId = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * map<string, int32> labelx = 10;
+ * map<string, int32> labelx = 11;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.ding4.CustomerRp.Data.prototype.getLabelxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
       null));
 };
 
@@ -3754,6 +3907,24 @@ proto.ding4.CustomerRp.Data.prototype.getLabelxMap = function(opt_noLazyCreate) 
 proto.ding4.CustomerRp.Data.prototype.clearLabelxMap = function() {
   this.getLabelxMap().clear();
   return this;};
+
+
+/**
+ * optional string register_at = 12;
+ * @return {string}
+ */
+proto.ding4.CustomerRp.Data.prototype.getRegisterAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.CustomerRp.Data} returns this
+ */
+proto.ding4.CustomerRp.Data.prototype.setRegisterAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
 
 
 /**
@@ -4212,7 +4383,9 @@ proto.ding4.ProductRp.Query.toObject = function(includeInstance, msg) {
     sku: (f = msg.getSku()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     amount: (f = msg.getAmount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f)
+    price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    labelId: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -4294,6 +4467,15 @@ proto.ding4.ProductRp.Query.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
       msg.setPrice(value);
+      break;
+    case 11:
+      var value = new proto.ding4.QueryRp;
+      reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabelId(value);
       break;
     default:
       reader.skipField();
@@ -4398,6 +4580,21 @@ proto.ding4.ProductRp.Query.serializeBinaryToWriter = function(message, writer) 
       10,
       f,
       proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLabelId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
     );
   }
 };
@@ -4697,6 +4894,61 @@ proto.ding4.ProductRp.Query.prototype.hasPrice = function() {
 };
 
 
+/**
+ * optional QueryRp status = 11;
+ * @return {?proto.ding4.QueryRp}
+ */
+proto.ding4.ProductRp.Query.prototype.getStatus = function() {
+  return /** @type{?proto.ding4.QueryRp} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 11));
+};
+
+
+/**
+ * @param {?proto.ding4.QueryRp|undefined} value
+ * @return {!proto.ding4.ProductRp.Query} returns this
+*/
+proto.ding4.ProductRp.Query.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.ProductRp.Query} returns this
+ */
+proto.ding4.ProductRp.Query.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.ProductRp.Query.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string label_id = 12;
+ * @return {string}
+ */
+proto.ding4.ProductRp.Query.prototype.getLabelId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.ProductRp.Query} returns this
+ */
+proto.ding4.ProductRp.Query.prototype.setLabelId = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
 
 
 
@@ -4736,7 +4988,9 @@ proto.ding4.ProductRp.Data.toObject = function(includeInstance, msg) {
     count: jspb.Message.getFieldWithDefault(msg, 5, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     price: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
+    total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4805,6 +5059,16 @@ proto.ding4.ProductRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.ReportTotal;
       reader.readMessage(value,proto.ding4.ReportTotal.deserializeBinaryFromReader);
       msg.setTotal(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setStatus(value);
+      break;
+    case 10:
+      var value = msg.getLabelxMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     default:
       reader.skipField();
@@ -4891,6 +5155,17 @@ proto.ding4.ProductRp.Data.serializeBinaryToWriter = function(message, writer) {
       f,
       proto.ding4.ReportTotal.serializeBinaryToWriter
     );
+  }
+  f = message.getStatus();
+  if (f !== 0) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
 };
 
@@ -5056,6 +5331,46 @@ proto.ding4.ProductRp.Data.prototype.clearTotal = function() {
 proto.ding4.ProductRp.Data.prototype.hasTotal = function() {
   return jspb.Message.getField(this, 8) != null;
 };
+
+
+/**
+ * optional int32 status = 9;
+ * @return {number}
+ */
+proto.ding4.ProductRp.Data.prototype.getStatus = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.ProductRp.Data} returns this
+ */
+proto.ding4.ProductRp.Data.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * map<string, int32> labelx = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ding4.ProductRp.Data.prototype.getLabelxMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ding4.ProductRp.Data} returns this
+ */
+proto.ding4.ProductRp.Data.prototype.clearLabelxMap = function() {
+  this.getLabelxMap().clear();
+  return this;};
 
 
 /**

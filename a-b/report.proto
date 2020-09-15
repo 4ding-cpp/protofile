@@ -80,6 +80,9 @@ message CustomerRp {
         QueryRp count = 9;
         QueryRp amount = 10;
         QueryRp price = 11;
+        QueryRp status = 12;
+        string level_id = 13;
+        string label_id = 14;
     } 
     message Data {
         string customer_id = 1;
@@ -90,8 +93,10 @@ message CustomerRp {
         int32 amount = 6;
         int32 price = 7;
         ReportTotal total = 8;
-        string level_id = 9;
-        map<string, int32> labelx = 10;
+        int32 status = 9;
+        string level_id = 10;
+        map<string, int32> labelx = 11;
+        string register_at = 12;
     }
     repeated string group = 1;
     repeated Sort sort = 2;
@@ -113,6 +118,8 @@ message ProductRp {
         QueryRp count = 8;
         QueryRp amount = 9;
         QueryRp price = 10;
+        QueryRp status = 11;
+        string label_id = 12;
     } 
     message Data {
         string product_id = 1;
@@ -123,6 +130,8 @@ message ProductRp {
         int32 amount = 6;
         int32 price = 7;
         ReportTotal total = 8;
+        int32 status = 9;
+        map<string, int32> labelx = 10;
     }
     repeated string group = 1;
     repeated Sort sort = 2;
