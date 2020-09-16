@@ -997,6 +997,28 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoDisplayProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product$shell_pb.ProductShell) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  displayProductShell(
+    request: product$shell_pb.ProductShell,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DisplayProductShell',
+      request,
+      metadata || {},
+      this.methodInfoDisplayProductShell,
+      callback);
+  }
+
   methodInfoUpdateProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product$shell_pb.ProductShell) => {

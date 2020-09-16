@@ -90,7 +90,7 @@ service Store1RPC {
     rpc FindProduct(Query) returns (Response);
     // 拉取模板
     rpc FindTemplate(Query) returns (Response);
-    
+    rpc DisplayProductShell(ProductShell) returns (Response);
     rpc UpdateProductShell(ProductShell) returns (Response);
     rpc DeleteProductShell(ProductShell) returns (Response);
     rpc FindProductShell(Query) returns (Response);
