@@ -116,8 +116,12 @@ message OrderBatch {
     int32 state = 1;
     int32 payment_state = 2;
     int32 logistics_state = 3;
-    repeated Order order = 4;
-    google.protobuf.Struct self = 5;
+    string temperature = 4;
+    string specification = 5;
+    string pickup_time = 6;
+
+    repeated Order order = 7;
+    google.protobuf.Struct self = 8;
 }
 
 // 金流相關 採用第三方參數固為大頭鋒命名而非 _命名
