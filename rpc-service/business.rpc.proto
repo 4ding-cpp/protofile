@@ -229,4 +229,6 @@ service BusinessRPC {
     rpc ReportPayment(PaymentRp) returns (PaymentRp);
     rpc ReportCustomer(CustomerRp) returns (CustomerRp);
     rpc ReportProduct(ProductRp) returns (ProductRp);
+    rpc ReportFavorite(FavoriteRp) returns (FavoriteRp);
+    rpc ReportCar(CarRp) returns (CarRp);
 }

@@ -25,17 +25,6 @@ message ReportTotal {
 }
 
 message PaymentRp {
-    message Query {
-        QueryRp create_at = 1;
-        QueryRp close_at = 2;
-        QueryRp state = 3;
-        QueryRp store_id = 4;
-        QueryRp order_id = 5;
-        QueryRp payment_service = 6;
-        QueryRp payment_type = 7;
-        QueryRp logistics_service = 8;
-        QueryRp logistics_type = 9;    
-    }
     message Data {
         string order_id = 1;
         string create_at = 2;
@@ -49,6 +38,17 @@ message PaymentRp {
         int32 logistics_type = 10;
         string device = 11;
         double percentage = 12;    
+    }
+    message Query {
+        QueryRp create_at = 1;
+        QueryRp close_at = 2;
+        QueryRp state = 3;
+        QueryRp store_id = 4;
+        QueryRp order_id = 5;
+        QueryRp payment_service = 6;
+        QueryRp payment_type = 7;
+        QueryRp logistics_service = 8;
+        QueryRp logistics_type = 9;    
     }
     message Analysis {
         int32 total = 1;
@@ -71,6 +71,20 @@ message PaymentRp {
 
 
 message CustomerRp {
+    message Data {
+        string customer_id = 1;
+        string name = 2;
+        string email = 3;
+        string phone = 4;
+        int32 count = 5;
+        int32 amount = 6;
+        int32 price = 7;
+        ReportTotal total = 8;
+        int32 status = 9;
+        string level_id = 10;
+        map<string, int32> labelx = 11;
+        string register_at = 12;
+    }
     message Query {
         string business_id = 1;
         string store_id = 2;
@@ -87,20 +101,7 @@ message CustomerRp {
         string level_id = 13;
         string label_id = 14;
     } 
-    message Data {
-        string customer_id = 1;
-        string name = 2;
-        string email = 3;
-        string phone = 4;
-        int32 count = 5;
-        int32 amount = 6;
-        int32 price = 7;
-        ReportTotal total = 8;
-        int32 status = 9;
-        string level_id = 10;
-        map<string, int32> labelx = 11;
-        string register_at = 12;
-    }
+    // group [ email phone customer_id store_id ]
     repeated string group = 1;
     repeated Sort sort = 2;
     Query query = 3;
@@ -110,6 +111,18 @@ message CustomerRp {
 }
 
 message ProductRp {
+    message Data {
+        string product_id = 1;
+        string photo_src = 2;
+        string name = 3;
+        string sku = 4;
+        int32 count = 5;
+        int32 amount = 6;
+        int32 price = 7;
+        ReportTotal total = 8;
+        int32 status = 9;
+        map<string, int32> labelx = 10;
+    }
     message Query {
         bool closed = 1;
         string business_id = 2;
@@ -123,19 +136,56 @@ message ProductRp {
         QueryRp price = 10;
         QueryRp status = 11;
         string label_id = 12;
-    } 
+    }
+    // group [ product_id store_id sku ]
+    repeated string group = 1;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
+}
+
+message FavoriteRp {
     message Data {
-        string product_id = 1;
-        string photo_src = 2;
-        string name = 3;
-        string sku = 4;
+        string store_id = 1;
+        string product_id = 2;
+        string photo_src = 3;
+        string shell_id = 4;
+        int32 count = 5;
+    }
+    message Query {
+        string store_id = 1;
+        string product_id = 3;
+        string shell_id = 4;
+        QueryRp count = 5;
+    }
+    // group [ product_id store_id shell_id ]
+    repeated string group = 1;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
+}
+
+message CarRp {
+    message Data {
+        string store_id = 1;
+        string product_id = 2;
+        string sku = 3;
+        string photo_src = 4;
         int32 count = 5;
         int32 amount = 6;
-        int32 price = 7;
-        ReportTotal total = 8;
-        int32 status = 9;
-        map<string, int32> labelx = 10;
     }
+    message Query {
+        string store_id = 1;
+        string product_id = 2;
+        string sku = 3;
+        QueryRp count = 4;
+        QueryRp amount = 5;
+    }
+    // group [ product_id store_id sku ]
     repeated string group = 1;
     repeated Sort sort = 2;
     Query query = 3;

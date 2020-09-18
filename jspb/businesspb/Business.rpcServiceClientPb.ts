@@ -2384,5 +2384,49 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoReportFavorite = new grpcWeb.AbstractClientBase.MethodInfo(
+    report_pb.FavoriteRp,
+    (request: report_pb.FavoriteRp) => {
+      return request.serializeBinary();
+    },
+    report_pb.FavoriteRp.deserializeBinary
+  );
+
+  reportFavorite(
+    request: report_pb.FavoriteRp,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: report_pb.FavoriteRp) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ReportFavorite',
+      request,
+      metadata || {},
+      this.methodInfoReportFavorite,
+      callback);
+  }
+
+  methodInfoReportCar = new grpcWeb.AbstractClientBase.MethodInfo(
+    report_pb.CarRp,
+    (request: report_pb.CarRp) => {
+      return request.serializeBinary();
+    },
+    report_pb.CarRp.deserializeBinary
+  );
+
+  reportCar(
+    request: report_pb.CarRp,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: report_pb.CarRp) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ReportCar',
+      request,
+      metadata || {},
+      this.methodInfoReportCar,
+      callback);
+  }
+
 }
 

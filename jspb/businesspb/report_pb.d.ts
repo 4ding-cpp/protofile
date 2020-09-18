@@ -126,6 +126,71 @@ export namespace PaymentRp {
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 
+  export class Data extends jspb.Message {
+    getOrderId(): string;
+    setOrderId(value: string): void;
+
+    getCreateAt(): string;
+    setCreateAt(value: string): void;
+
+    getPickupAt(): string;
+    setPickupAt(value: string): void;
+
+    getCloseAt(): string;
+    setCloseAt(value: string): void;
+
+    getPrice(): number;
+    setPrice(value: number): void;
+
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
+    getPaymentService(): string;
+    setPaymentService(value: string): void;
+
+    getPaymentType(): number;
+    setPaymentType(value: number): void;
+
+    getLogisticsService(): string;
+    setLogisticsService(value: string): void;
+
+    getLogisticsType(): number;
+    setLogisticsType(value: number): void;
+
+    getDevice(): string;
+    setDevice(value: string): void;
+
+    getPercentage(): number;
+    setPercentage(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      orderId: string,
+      createAt: string,
+      pickupAt: string,
+      closeAt: string,
+      price: number,
+      total?: ReportTotal.AsObject,
+      paymentService: string,
+      paymentType: number,
+      logisticsService: string,
+      logisticsType: number,
+      device: string,
+      percentage: number,
+    }
+  }
+
+
   export class Query extends jspb.Message {
     getCreateAt(): QueryRp | undefined;
     setCreateAt(value?: QueryRp): void;
@@ -191,71 +256,6 @@ export namespace PaymentRp {
       paymentType?: QueryRp.AsObject,
       logisticsService?: QueryRp.AsObject,
       logisticsType?: QueryRp.AsObject,
-    }
-  }
-
-
-  export class Data extends jspb.Message {
-    getOrderId(): string;
-    setOrderId(value: string): void;
-
-    getCreateAt(): string;
-    setCreateAt(value: string): void;
-
-    getPickupAt(): string;
-    setPickupAt(value: string): void;
-
-    getCloseAt(): string;
-    setCloseAt(value: string): void;
-
-    getPrice(): number;
-    setPrice(value: number): void;
-
-    getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): void;
-    hasTotal(): boolean;
-    clearTotal(): void;
-
-    getPaymentService(): string;
-    setPaymentService(value: string): void;
-
-    getPaymentType(): number;
-    setPaymentType(value: number): void;
-
-    getLogisticsService(): string;
-    setLogisticsService(value: string): void;
-
-    getLogisticsType(): number;
-    setLogisticsType(value: number): void;
-
-    getDevice(): string;
-    setDevice(value: string): void;
-
-    getPercentage(): number;
-    setPercentage(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Data.AsObject;
-    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
-    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Data;
-    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
-  }
-
-  export namespace Data {
-    export type AsObject = {
-      orderId: string,
-      createAt: string,
-      pickupAt: string,
-      closeAt: string,
-      price: number,
-      total?: ReportTotal.AsObject,
-      paymentService: string,
-      paymentType: number,
-      logisticsService: string,
-      logisticsType: number,
-      device: string,
-      percentage: number,
     }
   }
 
@@ -357,6 +357,71 @@ export namespace CustomerRp {
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 
+  export class Data extends jspb.Message {
+    getCustomerId(): string;
+    setCustomerId(value: string): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getEmail(): string;
+    setEmail(value: string): void;
+
+    getPhone(): string;
+    setPhone(value: string): void;
+
+    getCount(): number;
+    setCount(value: number): void;
+
+    getAmount(): number;
+    setAmount(value: number): void;
+
+    getPrice(): number;
+    setPrice(value: number): void;
+
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
+    getStatus(): number;
+    setStatus(value: number): void;
+
+    getLevelId(): string;
+    setLevelId(value: string): void;
+
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
+
+    getRegisterAt(): string;
+    setRegisterAt(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      customerId: string,
+      name: string,
+      email: string,
+      phone: string,
+      count: number,
+      amount: number,
+      price: number,
+      total?: ReportTotal.AsObject,
+      status: number,
+      levelId: string,
+      labelxMap: Array<[string, number]>,
+      registerAt: string,
+    }
+  }
+
+
   export class Query extends jspb.Message {
     getBusinessId(): string;
     setBusinessId(value: string): void;
@@ -445,71 +510,6 @@ export namespace CustomerRp {
     }
   }
 
-
-  export class Data extends jspb.Message {
-    getCustomerId(): string;
-    setCustomerId(value: string): void;
-
-    getName(): string;
-    setName(value: string): void;
-
-    getEmail(): string;
-    setEmail(value: string): void;
-
-    getPhone(): string;
-    setPhone(value: string): void;
-
-    getCount(): number;
-    setCount(value: number): void;
-
-    getAmount(): number;
-    setAmount(value: number): void;
-
-    getPrice(): number;
-    setPrice(value: number): void;
-
-    getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): void;
-    hasTotal(): boolean;
-    clearTotal(): void;
-
-    getStatus(): number;
-    setStatus(value: number): void;
-
-    getLevelId(): string;
-    setLevelId(value: string): void;
-
-    getLabelxMap(): jspb.Map<string, number>;
-    clearLabelxMap(): void;
-
-    getRegisterAt(): string;
-    setRegisterAt(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Data.AsObject;
-    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
-    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Data;
-    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
-  }
-
-  export namespace Data {
-    export type AsObject = {
-      customerId: string,
-      name: string,
-      email: string,
-      phone: string,
-      count: number,
-      amount: number,
-      price: number,
-      total?: ReportTotal.AsObject,
-      status: number,
-      levelId: string,
-      labelxMap: Array<[string, number]>,
-      registerAt: string,
-    }
-  }
-
 }
 
 export class ProductRp extends jspb.Message {
@@ -560,6 +560,63 @@ export namespace ProductRp {
     pageLimit?: sql_pb.PageLimit.AsObject,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
+
+  export class Data extends jspb.Message {
+    getProductId(): string;
+    setProductId(value: string): void;
+
+    getPhotoSrc(): string;
+    setPhotoSrc(value: string): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getSku(): string;
+    setSku(value: string): void;
+
+    getCount(): number;
+    setCount(value: number): void;
+
+    getAmount(): number;
+    setAmount(value: number): void;
+
+    getPrice(): number;
+    setPrice(value: number): void;
+
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
+    getStatus(): number;
+    setStatus(value: number): void;
+
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      productId: string,
+      photoSrc: string,
+      name: string,
+      sku: string,
+      count: number,
+      amount: number,
+      price: number,
+      total?: ReportTotal.AsObject,
+      status: number,
+      labelxMap: Array<[string, number]>,
+    }
+  }
+
 
   export class Query extends jspb.Message {
     getClosed(): boolean;
@@ -637,39 +694,72 @@ export namespace ProductRp {
     }
   }
 
+}
+
+export class FavoriteRp extends jspb.Message {
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
+
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
+  getQuery(): FavoriteRp.Query | undefined;
+  setQuery(value?: FavoriteRp.Query): void;
+  hasQuery(): boolean;
+  clearQuery(): void;
+
+  getDataList(): Array<FavoriteRp.Data>;
+  setDataList(value: Array<FavoriteRp.Data>): void;
+  clearDataList(): void;
+  addData(value?: FavoriteRp.Data, index?: number): FavoriteRp.Data;
+
+  getPageLimit(): sql_pb.PageLimit | undefined;
+  setPageLimit(value?: sql_pb.PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FavoriteRp.AsObject;
+  static toObject(includeInstance: boolean, msg: FavoriteRp): FavoriteRp.AsObject;
+  static serializeBinaryToWriter(message: FavoriteRp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FavoriteRp;
+  static deserializeBinaryFromReader(message: FavoriteRp, reader: jspb.BinaryReader): FavoriteRp;
+}
+
+export namespace FavoriteRp {
+  export type AsObject = {
+    groupList: Array<string>,
+    sortList: Array<sql_pb.Sort.AsObject>,
+    query?: FavoriteRp.Query.AsObject,
+    dataList: Array<FavoriteRp.Data.AsObject>,
+    pageLimit?: sql_pb.PageLimit.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
 
   export class Data extends jspb.Message {
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
     getProductId(): string;
     setProductId(value: string): void;
 
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
 
-    getName(): string;
-    setName(value: string): void;
-
-    getSku(): string;
-    setSku(value: string): void;
+    getShellId(): string;
+    setShellId(value: string): void;
 
     getCount(): number;
     setCount(value: number): void;
-
-    getAmount(): number;
-    setAmount(value: number): void;
-
-    getPrice(): number;
-    setPrice(value: number): void;
-
-    getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): void;
-    hasTotal(): boolean;
-    clearTotal(): void;
-
-    getStatus(): number;
-    setStatus(value: number): void;
-
-    getLabelxMap(): jspb.Map<string, number>;
-    clearLabelxMap(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -681,16 +771,172 @@ export namespace ProductRp {
 
   export namespace Data {
     export type AsObject = {
+      storeId: string,
       productId: string,
       photoSrc: string,
-      name: string,
+      shellId: string,
+      count: number,
+    }
+  }
+
+
+  export class Query extends jspb.Message {
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getProductId(): string;
+    setProductId(value: string): void;
+
+    getShellId(): string;
+    setShellId(value: string): void;
+
+    getCount(): QueryRp | undefined;
+    setCount(value?: QueryRp): void;
+    hasCount(): boolean;
+    clearCount(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Query.AsObject;
+    static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+    static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Query;
+    static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  }
+
+  export namespace Query {
+    export type AsObject = {
+      storeId: string,
+      productId: string,
+      shellId: string,
+      count?: QueryRp.AsObject,
+    }
+  }
+
+}
+
+export class CarRp extends jspb.Message {
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
+
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
+  getQuery(): CarRp.Query | undefined;
+  setQuery(value?: CarRp.Query): void;
+  hasQuery(): boolean;
+  clearQuery(): void;
+
+  getDataList(): Array<CarRp.Data>;
+  setDataList(value: Array<CarRp.Data>): void;
+  clearDataList(): void;
+  addData(value?: CarRp.Data, index?: number): CarRp.Data;
+
+  getPageLimit(): sql_pb.PageLimit | undefined;
+  setPageLimit(value?: sql_pb.PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CarRp.AsObject;
+  static toObject(includeInstance: boolean, msg: CarRp): CarRp.AsObject;
+  static serializeBinaryToWriter(message: CarRp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CarRp;
+  static deserializeBinaryFromReader(message: CarRp, reader: jspb.BinaryReader): CarRp;
+}
+
+export namespace CarRp {
+  export type AsObject = {
+    groupList: Array<string>,
+    sortList: Array<sql_pb.Sort.AsObject>,
+    query?: CarRp.Query.AsObject,
+    dataList: Array<CarRp.Data.AsObject>,
+    pageLimit?: sql_pb.PageLimit.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export class Data extends jspb.Message {
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getProductId(): string;
+    setProductId(value: string): void;
+
+    getSku(): string;
+    setSku(value: string): void;
+
+    getPhotoSrc(): string;
+    setPhotoSrc(value: string): void;
+
+    getCount(): number;
+    setCount(value: number): void;
+
+    getAmount(): number;
+    setAmount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      storeId: string,
+      productId: string,
       sku: string,
+      photoSrc: string,
       count: number,
       amount: number,
-      price: number,
-      total?: ReportTotal.AsObject,
-      status: number,
-      labelxMap: Array<[string, number]>,
+    }
+  }
+
+
+  export class Query extends jspb.Message {
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getProductId(): string;
+    setProductId(value: string): void;
+
+    getSku(): string;
+    setSku(value: string): void;
+
+    getCount(): QueryRp | undefined;
+    setCount(value?: QueryRp): void;
+    hasCount(): boolean;
+    clearCount(): void;
+
+    getAmount(): QueryRp | undefined;
+    setAmount(value?: QueryRp): void;
+    hasAmount(): boolean;
+    clearAmount(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Query.AsObject;
+    static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+    static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Query;
+    static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  }
+
+  export namespace Query {
+    export type AsObject = {
+      storeId: string,
+      productId: string,
+      sku: string,
+      count?: QueryRp.AsObject,
+      amount?: QueryRp.AsObject,
     }
   }
 
