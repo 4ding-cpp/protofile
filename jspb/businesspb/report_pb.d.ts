@@ -217,6 +217,16 @@ export namespace PaymentRp {
     hasOrderId(): boolean;
     clearOrderId(): void;
 
+    getCustomerId(): QueryRp | undefined;
+    setCustomerId(value?: QueryRp): void;
+    hasCustomerId(): boolean;
+    clearCustomerId(): void;
+
+    getProductId(): QueryRp | undefined;
+    setProductId(value?: QueryRp): void;
+    hasProductId(): boolean;
+    clearProductId(): void;
+
     getPaymentService(): QueryRp | undefined;
     setPaymentService(value?: QueryRp): void;
     hasPaymentService(): boolean;
@@ -252,6 +262,8 @@ export namespace PaymentRp {
       state?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
+      customerId?: QueryRp.AsObject,
+      productId?: QueryRp.AsObject,
       paymentService?: QueryRp.AsObject,
       paymentType?: QueryRp.AsObject,
       logisticsService?: QueryRp.AsObject,
@@ -423,15 +435,6 @@ export namespace CustomerRp {
 
 
   export class Query extends jspb.Message {
-    getBusinessId(): string;
-    setBusinessId(value: string): void;
-
-    getStoreId(): string;
-    setStoreId(value: string): void;
-
-    getCustomerId(): string;
-    setCustomerId(value: string): void;
-
     getCreateAt(): QueryRp | undefined;
     setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
@@ -446,6 +449,26 @@ export namespace CustomerRp {
     setState(value?: QueryRp): void;
     hasState(): boolean;
     clearState(): void;
+
+    getBusinessId(): QueryRp | undefined;
+    setBusinessId(value?: QueryRp): void;
+    hasBusinessId(): boolean;
+    clearBusinessId(): void;
+
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
+
+    getOrderId(): QueryRp | undefined;
+    setOrderId(value?: QueryRp): void;
+    hasOrderId(): boolean;
+    clearOrderId(): void;
+
+    getCustomerId(): QueryRp | undefined;
+    setCustomerId(value?: QueryRp): void;
+    hasCustomerId(): boolean;
+    clearCustomerId(): void;
 
     getEmail(): QueryRp | undefined;
     setEmail(value?: QueryRp): void;
@@ -477,8 +500,10 @@ export namespace CustomerRp {
     hasStatus(): boolean;
     clearStatus(): void;
 
-    getLevelId(): string;
-    setLevelId(value: string): void;
+    getLevelId(): QueryRp | undefined;
+    setLevelId(value?: QueryRp): void;
+    hasLevelId(): boolean;
+    clearLevelId(): void;
 
     getLabelId(): string;
     setLabelId(value: string): void;
@@ -493,19 +518,20 @@ export namespace CustomerRp {
 
   export namespace Query {
     export type AsObject = {
-      businessId: string,
-      storeId: string,
-      customerId: string,
       createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
       state?: QueryRp.AsObject,
+      businessId?: QueryRp.AsObject,
+      storeId?: QueryRp.AsObject,
+      orderId?: QueryRp.AsObject,
+      customerId?: QueryRp.AsObject,
       email?: QueryRp.AsObject,
       phone?: QueryRp.AsObject,
       count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
       status?: QueryRp.AsObject,
-      levelId: string,
+      levelId?: QueryRp.AsObject,
       labelId: string,
     }
   }
@@ -619,18 +645,6 @@ export namespace ProductRp {
 
 
   export class Query extends jspb.Message {
-    getClosed(): boolean;
-    setClosed(value: boolean): void;
-
-    getBusinessId(): string;
-    setBusinessId(value: string): void;
-
-    getStoreId(): string;
-    setStoreId(value: string): void;
-
-    getProductId(): string;
-    setProductId(value: string): void;
-
     getCreateAt(): QueryRp | undefined;
     setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
@@ -640,6 +654,36 @@ export namespace ProductRp {
     setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
     clearCloseAt(): void;
+
+    getClosed(): QueryRp | undefined;
+    setClosed(value?: QueryRp): void;
+    hasClosed(): boolean;
+    clearClosed(): void;
+
+    getBusinessId(): QueryRp | undefined;
+    setBusinessId(value?: QueryRp): void;
+    hasBusinessId(): boolean;
+    clearBusinessId(): void;
+
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
+
+    getOrderId(): QueryRp | undefined;
+    setOrderId(value?: QueryRp): void;
+    hasOrderId(): boolean;
+    clearOrderId(): void;
+
+    getCustomerId(): QueryRp | undefined;
+    setCustomerId(value?: QueryRp): void;
+    hasCustomerId(): boolean;
+    clearCustomerId(): void;
+
+    getProductId(): QueryRp | undefined;
+    setProductId(value?: QueryRp): void;
+    hasProductId(): boolean;
+    clearProductId(): void;
 
     getSku(): QueryRp | undefined;
     setSku(value?: QueryRp): void;
@@ -679,12 +723,14 @@ export namespace ProductRp {
 
   export namespace Query {
     export type AsObject = {
-      closed: boolean,
-      businessId: string,
-      storeId: string,
-      productId: string,
       createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
+      closed?: QueryRp.AsObject,
+      businessId?: QueryRp.AsObject,
+      storeId?: QueryRp.AsObject,
+      orderId?: QueryRp.AsObject,
+      customerId?: QueryRp.AsObject,
+      productId?: QueryRp.AsObject,
       sku?: QueryRp.AsObject,
       count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
@@ -781,14 +827,25 @@ export namespace FavoriteRp {
 
 
   export class Query extends jspb.Message {
-    getStoreId(): string;
-    setStoreId(value: string): void;
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
 
-    getProductId(): string;
-    setProductId(value: string): void;
+    getProductId(): QueryRp | undefined;
+    setProductId(value?: QueryRp): void;
+    hasProductId(): boolean;
+    clearProductId(): void;
 
-    getShellId(): string;
-    setShellId(value: string): void;
+    getShellId(): QueryRp | undefined;
+    setShellId(value?: QueryRp): void;
+    hasShellId(): boolean;
+    clearShellId(): void;
+
+    getCustomerId(): QueryRp | undefined;
+    setCustomerId(value?: QueryRp): void;
+    hasCustomerId(): boolean;
+    clearCustomerId(): void;
 
     getCount(): QueryRp | undefined;
     setCount(value?: QueryRp): void;
@@ -805,9 +862,10 @@ export namespace FavoriteRp {
 
   export namespace Query {
     export type AsObject = {
-      storeId: string,
-      productId: string,
-      shellId: string,
+      storeId?: QueryRp.AsObject,
+      productId?: QueryRp.AsObject,
+      shellId?: QueryRp.AsObject,
+      customerId?: QueryRp.AsObject,
       count?: QueryRp.AsObject,
     }
   }
@@ -903,24 +961,15 @@ export namespace CarRp {
 
 
   export class Query extends jspb.Message {
-    getStoreId(): string;
-    setStoreId(value: string): void;
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
 
-    getProductId(): string;
-    setProductId(value: string): void;
-
-    getSku(): string;
-    setSku(value: string): void;
-
-    getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): void;
-    hasCount(): boolean;
-    clearCount(): void;
-
-    getAmount(): QueryRp | undefined;
-    setAmount(value?: QueryRp): void;
-    hasAmount(): boolean;
-    clearAmount(): void;
+    getCustomerId(): QueryRp | undefined;
+    setCustomerId(value?: QueryRp): void;
+    hasCustomerId(): boolean;
+    clearCustomerId(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -932,11 +981,8 @@ export namespace CarRp {
 
   export namespace Query {
     export type AsObject = {
-      storeId: string,
-      productId: string,
-      sku: string,
-      count?: QueryRp.AsObject,
-      amount?: QueryRp.AsObject,
+      storeId?: QueryRp.AsObject,
+      customerId?: QueryRp.AsObject,
     }
   }
 
