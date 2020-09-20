@@ -302,6 +302,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoFindProductGoodsOfActivity = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: activity$coupon_pb.Activity) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findProductGoodsOfActivity(
+    request: activity$coupon_pb.Activity,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/FindProductGoodsOfActivity',
+      request,
+      metadata || {},
+      this.methodInfoFindProductGoodsOfActivity,
+      callback);
+  }
+
   methodInfoBrowseProductGoods = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: product$goods_pb.ProductGoods) => {

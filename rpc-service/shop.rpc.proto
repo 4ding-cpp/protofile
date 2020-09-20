@@ -38,6 +38,7 @@ service ShopRPC {
     rpc FindProductClass(Query) returns (Response);
     // 商品列表
     rpc FindProductGoods(Query) returns (Response);
+    rpc FindProductGoodsOfActivity(Activity) returns (Response);
     // 商品細項
     rpc BrowseProductGoods(ProductGoods) returns (Response);
     rpc AddProductFavorite(ProductGoods) returns (Response);

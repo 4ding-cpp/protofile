@@ -47,6 +47,11 @@ message ProductTarget {
     repeated int32 items = 2;
 }
 
+message ActivityTarget{
+    string activity_id = 1;
+    string urn = 2;
+}
+
 // Image 給Layuot用可填入alt
 // is_blank = 2 => 另開分頁
 message Image {
@@ -75,7 +80,8 @@ message Layout {
     repeated Image image = 8;
     repeated Layout layout = 9;
     ProductTarget target = 10;
-    Template template = 11;
+    ActivityTarget activity = 11;
+    Template template = 12;
 }
 
 message StyleColor {
