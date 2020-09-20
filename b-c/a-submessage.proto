@@ -48,8 +48,8 @@ message ProductTarget {
 }
 
 message ActivityTarget{
-    string activity_id = 1;
-    string urn = 2;
+    string urn = 1;
+    google.protobuf.Value name = 2;
 }
 
 // Image 給Layuot用可填入alt
