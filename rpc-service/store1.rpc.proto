@@ -42,6 +42,7 @@ service Store1RPC {
     rpc BrowseDashboard(StoreDashboard) returns (Response);
 
     // 子帳號相關
+    rpc ExistsManagerSub(ManagerSub) returns (Response);
     rpc CreateManagerSub(ManagerSub) returns (Response);
     rpc UpdateManagerSub(ManagerSub) returns (Response);
     rpc FindManagerSub(Query) returns (Response);
@@ -70,11 +71,13 @@ service Store1RPC {
     rpc FindCoupon(Query) returns (Response);
 
     // 銷售員
+    rpc ExistsSales(Sales) returns (Response);
     rpc CreateSales(Sales) returns (Response);
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
 
     // 會員
+    rpc ExistsCustomer(Customer) returns (Response);
     rpc CreateCustomer(Customer) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);

@@ -426,6 +426,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoExistsBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: business$sub_pb.BusinessSub) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  existsBusinessSub(
+    request: business$sub_pb.BusinessSub,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ExistsBusinessSub',
+      request,
+      metadata || {},
+      this.methodInfoExistsBusinessSub,
+      callback);
+  }
+
   methodInfoCreateBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: business$sub_pb.BusinessSub) => {
@@ -973,6 +995,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoDelCustomerFromLevel,
+      callback);
+  }
+
+  methodInfoExistsSpec = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product_pb.ProductSpec) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  existsSpec(
+    request: product_pb.ProductSpec,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ExistsSpec',
+      request,
+      metadata || {},
+      this.methodInfoExistsSpec,
       callback);
   }
 
@@ -2227,6 +2271,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoFindDomain,
+      callback);
+  }
+
+  methodInfoExistsSales = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sales_pb.Sales) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  existsSales(
+    request: sales_pb.Sales,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ExistsSales',
+      request,
+      metadata || {},
+      this.methodInfoExistsSales,
       callback);
   }
 
