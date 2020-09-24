@@ -13,11 +13,14 @@ export class Message extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getState(): number;
+  setState(value: number): void;
+
   getType(): number;
   setType(value: number): void;
 
-  getState(): number;
-  setState(value: number): void;
+  getService(): string;
+  setService(value: string): void;
 
   getTotal(): number;
   setTotal(value: number): void;
@@ -101,8 +104,9 @@ export namespace Message {
     messageId: string,
     businessId: string,
     storeId: string,
-    type: number,
     state: number,
+    type: number,
+    service: string,
     total: number,
     success: number,
     charge: number,

@@ -1305,9 +1305,7 @@ proto.ding4.Condition.Operand = {
   IN: 5,
   LIKE: 6,
   LABEL: 7,
-  UNLABEL: 8,
-  LEVEL: 9,
-  CLASS: 10
+  UNLABEL: 8
 };
 
 /**
@@ -1407,7 +1405,7 @@ proto.ding4.Condition.prototype.setO = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Query.repeatedFields_ = [2,3,4];
+proto.ding4.Query.repeatedFields_ = [2,3,4,6];
 
 
 
@@ -1443,9 +1441,12 @@ proto.ding4.Query.toObject = function(includeInstance, msg) {
     pageLimit: (f = msg.getPageLimit()) && proto.ding4.PageLimit.toObject(includeInstance, f),
     sortList: jspb.Message.toObjectList(msg.getSortList(),
     proto.ding4.Sort.toObject, includeInstance),
+    innerList: jspb.Message.toObjectList(msg.getInnerList(),
+    proto.ding4.Condition.toObject, includeInstance),
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
     proto.ding4.Condition.toObject, includeInstance),
-    extraList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    alias: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    extraList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
@@ -1496,13 +1497,22 @@ proto.ding4.Query.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = new proto.ding4.Condition;
       reader.readMessage(value,proto.ding4.Condition.deserializeBinaryFromReader);
-      msg.addCondition(value);
+      msg.addInner(value);
       break;
     case 4:
+      var value = new proto.ding4.Condition;
+      reader.readMessage(value,proto.ding4.Condition.deserializeBinaryFromReader);
+      msg.addCondition(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAlias(value);
+      break;
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.addExtra(value);
       break;
-    case 5:
+    case 7:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -1552,7 +1562,7 @@ proto.ding4.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.Sort.serializeBinaryToWriter
     );
   }
-  f = message.getConditionList();
+  f = message.getInnerList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
@@ -1560,17 +1570,32 @@ proto.ding4.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.Condition.serializeBinaryToWriter
     );
   }
+  f = message.getConditionList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.ding4.Condition.serializeBinaryToWriter
+    );
+  }
+  f = message.getAlias();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getExtraList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      4,
+      6,
       f
     );
   }
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      5,
+      7,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -1654,10 +1679,10 @@ proto.ding4.Query.prototype.clearSortList = function() {
 
 
 /**
- * repeated Condition condition = 3;
+ * repeated Condition inner = 3;
  * @return {!Array<!proto.ding4.Condition>}
  */
-proto.ding4.Query.prototype.getConditionList = function() {
+proto.ding4.Query.prototype.getInnerList = function() {
   return /** @type{!Array<!proto.ding4.Condition>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ding4.Condition, 3));
 };
@@ -1667,7 +1692,7 @@ proto.ding4.Query.prototype.getConditionList = function() {
  * @param {!Array<!proto.ding4.Condition>} value
  * @return {!proto.ding4.Query} returns this
 */
-proto.ding4.Query.prototype.setConditionList = function(value) {
+proto.ding4.Query.prototype.setInnerList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -1677,8 +1702,46 @@ proto.ding4.Query.prototype.setConditionList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.Condition}
  */
-proto.ding4.Query.prototype.addCondition = function(opt_value, opt_index) {
+proto.ding4.Query.prototype.addInner = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ding4.Condition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.Query} returns this
+ */
+proto.ding4.Query.prototype.clearInnerList = function() {
+  return this.setInnerList([]);
+};
+
+
+/**
+ * repeated Condition condition = 4;
+ * @return {!Array<!proto.ding4.Condition>}
+ */
+proto.ding4.Query.prototype.getConditionList = function() {
+  return /** @type{!Array<!proto.ding4.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.Condition, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Condition>} value
+ * @return {!proto.ding4.Query} returns this
+*/
+proto.ding4.Query.prototype.setConditionList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Condition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Condition}
+ */
+proto.ding4.Query.prototype.addCondition = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ding4.Condition, opt_index);
 };
 
 
@@ -1692,11 +1755,29 @@ proto.ding4.Query.prototype.clearConditionList = function() {
 
 
 /**
- * repeated string extra = 4;
+ * optional string alias = 5;
+ * @return {string}
+ */
+proto.ding4.Query.prototype.getAlias = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Query} returns this
+ */
+proto.ding4.Query.prototype.setAlias = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated string extra = 6;
  * @return {!Array<string>}
  */
 proto.ding4.Query.prototype.getExtraList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
@@ -1705,7 +1786,7 @@ proto.ding4.Query.prototype.getExtraList = function() {
  * @return {!proto.ding4.Query} returns this
  */
 proto.ding4.Query.prototype.setExtraList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
@@ -1715,7 +1796,7 @@ proto.ding4.Query.prototype.setExtraList = function(value) {
  * @return {!proto.ding4.Query} returns this
  */
 proto.ding4.Query.prototype.addExtra = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
@@ -1729,12 +1810,12 @@ proto.ding4.Query.prototype.clearExtraList = function() {
 
 
 /**
- * optional google.protobuf.Struct self = 5;
+ * optional google.protobuf.Struct self = 7;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.Query.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 7));
 };
 
 
@@ -1743,7 +1824,7 @@ proto.ding4.Query.prototype.getSelf = function() {
  * @return {!proto.ding4.Query} returns this
 */
 proto.ding4.Query.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1761,7 +1842,7 @@ proto.ding4.Query.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.Query.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
