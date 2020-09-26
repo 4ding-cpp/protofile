@@ -59,14 +59,15 @@ message Order {
     string remark = 36;
     OrderOther other = 37;
     repeated OrderGoods goods = 38;
+    repeated OrderActivity activity = 39;
 
-    map<string, int32> labelx = 39;
-    string operator = 40;
-    google.protobuf.Timestamp create_at = 41;
-    google.protobuf.Timestamp update_at = 42;
-    repeated string cols = 43;
-    repeated Condition condition = 44;
-    google.protobuf.Struct self = 45;
+    map<string, int32> labelx = 40;
+    string operator = 41;
+    google.protobuf.Timestamp create_at = 42;
+    google.protobuf.Timestamp update_at = 43;
+    repeated string cols = 44;
+    repeated Condition condition = 45;
+    google.protobuf.Struct self = 46;
 }
 
 message OrderGoods {
@@ -81,6 +82,16 @@ message OrderGoods {
     int32 amount = 9;
     int32 price = 10;
     int32 discount = 11;
+}
+
+message OrderActivity {
+    string order_id = 1;
+    string store_id = 2;
+    string activity_id = 3;
+    string name = 4;
+    int32 giveaway = 5;
+    int32 amount = 6;
+    int32 discount = 7;
 }
 
 message ContactInfo {

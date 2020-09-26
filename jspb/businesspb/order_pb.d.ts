@@ -123,6 +123,11 @@ export class Order extends jspb.Message {
   clearGoodsList(): void;
   addGoods(value?: OrderGoods, index?: number): OrderGoods;
 
+  getActivityList(): Array<OrderActivity>;
+  setActivityList(value: Array<OrderActivity>): void;
+  clearActivityList(): void;
+  addActivity(value?: OrderActivity, index?: number): OrderActivity;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -202,6 +207,7 @@ export namespace Order {
     remark: string,
     other?: OrderOther.AsObject,
     goodsList: Array<OrderGoods.AsObject>,
+    activityList: Array<OrderActivity.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -266,6 +272,48 @@ export namespace OrderGoods {
     name: string,
     amount: number,
     price: number,
+    discount: number,
+  }
+}
+
+export class OrderActivity extends jspb.Message {
+  getOrderId(): string;
+  setOrderId(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
+  getActivityId(): string;
+  setActivityId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getGiveaway(): number;
+  setGiveaway(value: number): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getDiscount(): number;
+  setDiscount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrderActivity.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderActivity): OrderActivity.AsObject;
+  static serializeBinaryToWriter(message: OrderActivity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderActivity;
+  static deserializeBinaryFromReader(message: OrderActivity, reader: jspb.BinaryReader): OrderActivity;
+}
+
+export namespace OrderActivity {
+  export type AsObject = {
+    orderId: string,
+    storeId: string,
+    activityId: string,
+    name: string,
+    giveaway: number,
+    amount: number,
     discount: number,
   }
 }
