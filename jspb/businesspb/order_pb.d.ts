@@ -243,6 +243,9 @@ export class OrderGoods extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): void;
 
+  getDiscount(): number;
+  setDiscount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderGoods.AsObject;
   static toObject(includeInstance: boolean, msg: OrderGoods): OrderGoods.AsObject;
@@ -263,6 +266,7 @@ export namespace OrderGoods {
     name: string,
     amount: number,
     price: number,
+    discount: number,
   }
 }
 

@@ -80,6 +80,7 @@ message OrderGoods {
     string name = 8;
     int32 amount = 9;
     int32 price = 10;
+    int32 discount = 11;
 }
 
 message ContactInfo {

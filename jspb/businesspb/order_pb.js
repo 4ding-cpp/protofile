@@ -1822,7 +1822,8 @@ proto.ding4.OrderGoods.toObject = function(includeInstance, msg) {
     photoSrc: jspb.Message.getFieldWithDefault(msg, 7, ""),
     name: jspb.Message.getFieldWithDefault(msg, 8, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    price: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    discount: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -1898,6 +1899,10 @@ proto.ding4.OrderGoods.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDiscount(value);
       break;
     default:
       reader.skipField();
@@ -1995,6 +2000,13 @@ proto.ding4.OrderGoods.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       10,
+      f
+    );
+  }
+  f = message.getDiscount();
+  if (f !== 0) {
+    writer.writeInt32(
+      11,
       f
     );
   }
@@ -2178,6 +2190,24 @@ proto.ding4.OrderGoods.prototype.getPrice = function() {
  */
 proto.ding4.OrderGoods.prototype.setPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional int32 discount = 11;
+ * @return {number}
+ */
+proto.ding4.OrderGoods.prototype.getDiscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setDiscount = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
