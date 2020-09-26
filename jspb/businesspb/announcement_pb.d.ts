@@ -13,8 +13,8 @@ export class Announcement extends jspb.Message {
   hasEnableAt(): boolean;
   clearEnableAt(): void;
 
-  getArea(): string;
-  setArea(value: string): void;
+  getArea(): number;
+  setArea(value: number): void;
 
   getType(): number;
   setType(value: number): void;
@@ -68,7 +68,7 @@ export namespace Announcement {
   export type AsObject = {
     announcementId: string,
     enableAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    area: string,
+    area: number,
     type: number,
     title: string,
     content: string,

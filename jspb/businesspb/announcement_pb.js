@@ -81,7 +81,7 @@ proto.ding4.Announcement.toObject = function(includeInstance, msg) {
   var f, obj = {
     announcementId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     enableAt: (f = msg.getEnableAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    area: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    area: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     title: jspb.Message.getFieldWithDefault(msg, 5, ""),
     content: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -139,7 +139,7 @@ proto.ding4.Announcement.deserializeBinaryFromReader = function(msg, reader) {
       msg.setEnableAt(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setArea(value);
       break;
     case 4:
@@ -233,8 +233,8 @@ proto.ding4.Announcement.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getArea();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       3,
       f
     );
@@ -369,20 +369,20 @@ proto.ding4.Announcement.prototype.hasEnableAt = function() {
 
 
 /**
- * optional string area = 3;
- * @return {string}
+ * optional int32 area = 3;
+ * @return {number}
  */
 proto.ding4.Announcement.prototype.getArea = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Announcement} returns this
  */
 proto.ding4.Announcement.prototype.setArea = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

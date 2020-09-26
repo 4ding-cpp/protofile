@@ -11,7 +11,7 @@ import "google/protobuf/timestamp.proto";
 message Announcement {
     string announcement_id = 1;
     google.protobuf.Timestamp enable_at = 2;
-    string area = 3;
+    int32 area = 3;
     int32 type = 4;
     string title = 5;
     string content = 6;
