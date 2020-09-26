@@ -41,9 +41,6 @@ export class Active extends jspb.Message {
   getGiveaway(): number;
   setGiveaway(value: number): void;
 
-  getGiveawaySku(): string;
-  setGiveawaySku(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Active.AsObject;
   static toObject(includeInstance: boolean, msg: Active): Active.AsObject;
@@ -59,7 +56,6 @@ export namespace Active {
     discount: number,
     reduce: number,
     giveaway: number,
-    giveawaySku: string,
   }
 }
 

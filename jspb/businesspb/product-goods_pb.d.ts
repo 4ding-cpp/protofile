@@ -3,7 +3,6 @@ import * as jspb from "google-protobuf"
 import * as seo_pb from './seo_pb';
 import * as a$submessage_pb from './a-submessage_pb';
 import * as product_pb from './product_pb';
-import * as activity$coupon_pb from './activity-coupon_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 export class ProductGoods extends jspb.Message {
@@ -74,10 +73,10 @@ export class ProductGoods extends jspb.Message {
   clearPhotoxList(): void;
   addPhotox(value?: a$submessage_pb.Image, index?: number): a$submessage_pb.Image;
 
-  getActivityList(): Array<activity$coupon_pb.Activity>;
-  setActivityList(value: Array<activity$coupon_pb.Activity>): void;
+  getActivityList(): Array<ActivityGoods>;
+  setActivityList(value: Array<ActivityGoods>): void;
   clearActivityList(): void;
-  addActivity(value?: activity$coupon_pb.Activity, index?: number): activity$coupon_pb.Activity;
+  addActivity(value?: ActivityGoods, index?: number): ActivityGoods;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductGoods.AsObject;
@@ -108,7 +107,59 @@ export namespace ProductGoods {
     stock: number,
     specxList: Array<product_pb.ProductSpec.AsObject>,
     photoxList: Array<a$submessage_pb.Image.AsObject>,
-    activityList: Array<activity$coupon_pb.Activity.AsObject>,
+    activityList: Array<ActivityGoods.AsObject>,
+  }
+}
+
+export class ActivityGoods extends jspb.Message {
+  getActivityId(): string;
+  setActivityId(value: string): void;
+
+  getSku(): string;
+  setSku(value: string): void;
+
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
+
+  getReached(): boolean;
+  setReached(value: boolean): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getDiscount(): number;
+  setDiscount(value: number): void;
+
+  getRule(): a$submessage_pb.Rule | undefined;
+  setRule(value?: a$submessage_pb.Rule): void;
+  hasRule(): boolean;
+  clearRule(): void;
+
+  getNow(): a$submessage_pb.Rule | undefined;
+  setNow(value?: a$submessage_pb.Rule): void;
+  hasNow(): boolean;
+  clearNow(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActivityGoods.AsObject;
+  static toObject(includeInstance: boolean, msg: ActivityGoods): ActivityGoods.AsObject;
+  static serializeBinaryToWriter(message: ActivityGoods, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActivityGoods;
+  static deserializeBinaryFromReader(message: ActivityGoods, reader: jspb.BinaryReader): ActivityGoods;
+}
+
+export namespace ActivityGoods {
+  export type AsObject = {
+    activityId: string,
+    sku: string,
+    name?: google_protobuf_struct_pb.Value.AsObject,
+    reached: boolean,
+    amount: number,
+    discount: number,
+    rule?: a$submessage_pb.Rule.AsObject,
+    now?: a$submessage_pb.Rule.AsObject,
   }
 }
 

@@ -28,7 +28,6 @@ message Active {
     double discount = 3;
     double reduce = 4;
     int32 giveaway = 5;
-    string giveaway_sku = 6;
 }
 
 // level 會員等級level_id

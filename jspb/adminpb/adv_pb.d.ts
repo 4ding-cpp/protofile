@@ -26,8 +26,8 @@ export class Adv extends jspb.Message {
   getLocation(): string;
   setLocation(value: string): void;
 
-  getContact(): string;
-  setContact(value: string): void;
+  getContact(): number;
+  setContact(value: number): void;
 
   getTitle(): string;
   setTitle(value: string): void;
@@ -97,7 +97,7 @@ export namespace Adv {
     phone: string,
     email: string,
     location: string,
-    contact: string,
+    contact: number,
     title: string,
     mgrType: number,
     turnover: number,

@@ -1,8 +1,6 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as activity$coupon_pb from './activity-coupon_pb';
-import * as a$submessage_pb from './a-submessage_pb';
 import * as product$goods_pb from './product-goods_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
@@ -28,15 +26,10 @@ export class Car extends jspb.Message {
   clearBuyList(): void;
   addBuy(value?: Buy, index?: number): Buy;
 
-  getCommodityList(): Array<Commodity>;
-  setCommodityList(value: Array<Commodity>): void;
-  clearCommodityList(): void;
-  addCommodity(value?: Commodity, index?: number): Commodity;
-
-  getActivityList(): Array<activity$coupon_pb.Activity>;
-  setActivityList(value: Array<activity$coupon_pb.Activity>): void;
+  getActivityList(): Array<product$goods_pb.ActivityGoods>;
+  setActivityList(value: Array<product$goods_pb.ActivityGoods>): void;
   clearActivityList(): void;
-  addActivity(value?: activity$coupon_pb.Activity, index?: number): activity$coupon_pb.Activity;
+  addActivity(value?: product$goods_pb.ActivityGoods, index?: number): product$goods_pb.ActivityGoods;
 
   getGoodsList(): Array<product$goods_pb.ProductGoods>;
   setGoodsList(value: Array<product$goods_pb.ProductGoods>): void;
@@ -51,6 +44,9 @@ export class Car extends jspb.Message {
 
   getPrice(): number;
   setPrice(value: number): void;
+
+  getDiscount(): number;
+  setDiscount(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -96,12 +92,12 @@ export namespace Car {
     couponId: string,
     state: number,
     buyList: Array<Buy.AsObject>,
-    commodityList: Array<Commodity.AsObject>,
-    activityList: Array<activity$coupon_pb.Activity.AsObject>,
+    activityList: Array<product$goods_pb.ActivityGoods.AsObject>,
     goodsList: Array<product$goods_pb.ProductGoods.AsObject>,
     isFreeShipping: boolean,
     amount: number,
     price: number,
+    discount: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -134,82 +130,6 @@ export namespace Buy {
     shellId: number,
     sku: string,
     amount: number,
-  }
-}
-
-export class Commodity extends jspb.Message {
-  getNormal(): string;
-  setNormal(value: string): void;
-
-  getAdditional(): string;
-  setAdditional(value: string): void;
-
-  getGiveaway(): string;
-  setGiveaway(value: string): void;
-
-  getSku(): string;
-  setSku(value: string): void;
-
-  getPhoto(): a$submessage_pb.Image | undefined;
-  setPhoto(value?: a$submessage_pb.Image): void;
-  hasPhoto(): boolean;
-  clearPhoto(): void;
-
-  getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
-  hasName(): boolean;
-  clearName(): void;
-
-  getItemx(): google_protobuf_struct_pb.Value | undefined;
-  setItemx(value?: google_protobuf_struct_pb.Value): void;
-  hasItemx(): boolean;
-  clearItemx(): void;
-
-  getIsPreorder(): boolean;
-  setIsPreorder(value: boolean): void;
-
-  getCount(): number;
-  setCount(value: number): void;
-
-  getPrice(): number;
-  setPrice(value: number): void;
-
-  getReduce(): number;
-  setReduce(value: number): void;
-
-  getActive(): number;
-  setActive(value: number): void;
-
-  getStock(): number;
-  setStock(value: number): void;
-
-  getShellId(): number;
-  setShellId(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Commodity.AsObject;
-  static toObject(includeInstance: boolean, msg: Commodity): Commodity.AsObject;
-  static serializeBinaryToWriter(message: Commodity, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Commodity;
-  static deserializeBinaryFromReader(message: Commodity, reader: jspb.BinaryReader): Commodity;
-}
-
-export namespace Commodity {
-  export type AsObject = {
-    normal: string,
-    additional: string,
-    giveaway: string,
-    sku: string,
-    photo?: a$submessage_pb.Image.AsObject,
-    name?: google_protobuf_struct_pb.Value.AsObject,
-    itemx?: google_protobuf_struct_pb.Value.AsObject,
-    isPreorder: boolean,
-    count: number,
-    price: number,
-    reduce: number,
-    active: number,
-    stock: number,
-    shellId: number,
   }
 }
 

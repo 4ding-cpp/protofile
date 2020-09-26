@@ -5,8 +5,6 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
-import "activity-coupon.proto";
-import "a-submessage.proto";
 import "product-goods.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
@@ -19,40 +17,23 @@ message Car {
     string coupon_id = 4;
     int32 state = 5;
     repeated Buy buy = 6;
-    repeated Commodity commodity = 7;
-    repeated Activity activity = 8;
+    repeated ActivityGoods activity = 8;
     repeated ProductGoods goods = 9;
     bool is_free_shipping = 10;
     int32 amount = 11;
     int32 price = 12;
+    int32 discount = 13;
     
-    string operator = 13;
-    google.protobuf.Timestamp create_at = 14;
-    google.protobuf.Timestamp update_at = 15;
-    repeated string cols = 16;
-    repeated Condition condition = 17;
-    google.protobuf.Struct self = 18;
+    string operator = 14;
+    google.protobuf.Timestamp create_at = 15;
+    google.protobuf.Timestamp update_at = 16;
+    repeated string cols = 17;
+    repeated Condition condition = 18;
+    google.protobuf.Struct self = 19;
 }
 
 message Buy {
     int32 shell_id = 1;
     string sku = 2;
     int32 amount = 3;
-}
-
-message Commodity {
-    string normal = 1;
-    string additional = 2;
-    string giveaway = 3;
-    string sku = 4;
-    Image photo = 5;
-    google.protobuf.Value name = 6;
-    google.protobuf.Value itemx = 7;
-    bool is_preorder = 8;
-    int32 count = 9;
-    int32 price = 10;
-    int32 reduce = 11;
-    int32 active = 12;
-    int32 stock = 13;
-    int32 shell_id = 14;
 }
