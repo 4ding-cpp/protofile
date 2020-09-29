@@ -1,63 +1,64 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Freeback extends jspb.Message {
   getFreebackId(): string;
-  setFreebackId(value: string): void;
+  setFreebackId(value: string): Freeback;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Freeback;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Freeback;
 
   getCustomerId(): string;
-  setCustomerId(value: string): void;
+  setCustomerId(value: string): Freeback;
 
   getOrderId(): string;
-  setOrderId(value: string): void;
+  setOrderId(value: string): Freeback;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Freeback;
 
   getDialogueList(): Array<Dialogue>;
-  setDialogueList(value: Array<Dialogue>): void;
-  clearDialogueList(): void;
+  setDialogueList(value: Array<Dialogue>): Freeback;
+  clearDialogueList(): Freeback;
   addDialogue(value?: Dialogue, index?: number): Dialogue;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): Freeback;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Freeback;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Freeback;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Freeback;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Freeback;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Freeback;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Freeback;
+  clearColsList(): Freeback;
+  addCols(value: string, index?: number): Freeback;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Freeback;
+  clearConditionList(): Freeback;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Freeback;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Freeback;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Freeback.AsObject;
@@ -88,21 +89,21 @@ export namespace Freeback {
 
 export class Dialogue extends jspb.Message {
   getFreebackId(): string;
-  setFreebackId(value: string): void;
+  setFreebackId(value: string): Dialogue;
 
   getTimeAt(): string;
-  setTimeAt(value: string): void;
+  setTimeAt(value: string): Dialogue;
 
   getMessage(): string;
-  setMessage(value: string): void;
+  setMessage(value: string): Dialogue;
 
   getResponder(): string;
-  setResponder(value: string): void;
+  setResponder(value: string): Dialogue;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Dialogue;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Dialogue;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dialogue.AsObject;

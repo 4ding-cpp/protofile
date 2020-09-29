@@ -1,51 +1,52 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Label extends jspb.Message {
   getLabelId(): string;
-  setLabelId(value: string): void;
+  setLabelId(value: string): Label;
 
   getType(): string;
-  setType(value: string): void;
+  setType(value: string): Label;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Label;
 
   getItemList(): Array<string>;
-  setItemList(value: Array<string>): void;
-  clearItemList(): void;
-  addItem(value: string, index?: number): void;
+  setItemList(value: Array<string>): Label;
+  clearItemList(): Label;
+  addItem(value: string, index?: number): Label;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Label;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Label;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Label;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Label;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Label;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Label;
+  clearColsList(): Label;
+  addCols(value: string, index?: number): Label;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Label;
+  clearConditionList(): Label;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Label;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Label;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Label.AsObject;

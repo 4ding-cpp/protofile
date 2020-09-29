@@ -1,82 +1,83 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class App extends jspb.Message {
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): App;
 
   getAdvId(): string;
-  setAdvId(value: string): void;
+  setAdvId(value: string): App;
 
   getState(): number;
-  setState(value: number): void;
+  setState(value: number): App;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): App;
 
   getContacter(): string;
-  setContacter(value: string): void;
+  setContacter(value: string): App;
 
   getPhone(): string;
-  setPhone(value: string): void;
+  setPhone(value: string): App;
 
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): App;
 
   getLocation(): string;
-  setLocation(value: string): void;
+  setLocation(value: string): App;
 
   getMgrType(): number;
-  setMgrType(value: number): void;
+  setMgrType(value: number): App;
 
   getTurnover(): number;
-  setTurnover(value: number): void;
+  setTurnover(value: number): App;
 
   getCompany(): string;
-  setCompany(value: string): void;
+  setCompany(value: string): App;
 
   getIdentify(): string;
-  setIdentify(value: string): void;
+  setIdentify(value: string): App;
 
   getBankCode(): string;
-  setBankCode(value: string): void;
+  setBankCode(value: string): App;
 
   getLastCode(): string;
-  setLastCode(value: string): void;
+  setLastCode(value: string): App;
 
   getPrice(): number;
-  setPrice(value: number): void;
+  setPrice(value: number): App;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): App;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): App;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): App;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): App;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): App;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): App;
+  clearColsList(): App;
+  addCols(value: string, index?: number): App;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): App;
+  clearConditionList(): App;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): App;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): App;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;

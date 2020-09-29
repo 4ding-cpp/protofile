@@ -1,40 +1,41 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Response extends jspb.Message {
   getCode(): number;
-  setCode(value: number): void;
+  setCode(value: number): Response;
 
   getMessage(): string;
-  setMessage(value: string): void;
+  setMessage(value: string): Response;
 
   getInsertId(): string;
-  setInsertId(value: string): void;
+  setInsertId(value: string): Response;
 
   getAffectRow(): number;
-  setAffectRow(value: number): void;
+  setAffectRow(value: number): Response;
 
   getPagelimit(): PageLimit | undefined;
-  setPagelimit(value?: PageLimit): void;
+  setPagelimit(value?: PageLimit): Response;
   hasPagelimit(): boolean;
-  clearPagelimit(): void;
+  clearPagelimit(): Response;
 
   getSortList(): Array<Sort>;
-  setSortList(value: Array<Sort>): void;
-  clearSortList(): void;
+  setSortList(value: Array<Sort>): Response;
+  clearSortList(): Response;
   addSort(value?: Sort, index?: number): Sort;
 
   getConditionList(): Array<Condition>;
-  setConditionList(value: Array<Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<Condition>): Response;
+  clearConditionList(): Response;
   addCondition(value?: Condition, index?: number): Condition;
 
   getResult(): google_protobuf_struct_pb.Value | undefined;
-  setResult(value?: google_protobuf_struct_pb.Value): void;
+  setResult(value?: google_protobuf_struct_pb.Value): Response;
   hasResult(): boolean;
-  clearResult(): void;
+  clearResult(): Response;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Response.AsObject;
@@ -59,10 +60,10 @@ export namespace Response {
 
 export class DBMessage extends jspb.Message {
   getInsertId(): number;
-  setInsertId(value: number): void;
+  setInsertId(value: number): DBMessage;
 
   getAffectRow(): number;
-  setAffectRow(value: number): void;
+  setAffectRow(value: number): DBMessage;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DBMessage.AsObject;
@@ -81,13 +82,13 @@ export namespace DBMessage {
 
 export class PageLimit extends jspb.Message {
   getLength(): number;
-  setLength(value: number): void;
+  setLength(value: number): PageLimit;
 
   getPageIndex(): number;
-  setPageIndex(value: number): void;
+  setPageIndex(value: number): PageLimit;
 
   getPageSize(): number;
-  setPageSize(value: number): void;
+  setPageSize(value: number): PageLimit;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PageLimit.AsObject;
@@ -107,10 +108,10 @@ export namespace PageLimit {
 
 export class Sort extends jspb.Message {
   getDesc(): boolean;
-  setDesc(value: boolean): void;
+  setDesc(value: boolean): Sort;
 
   getF(): string;
-  setF(value: string): void;
+  setF(value: string): Sort;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sort.AsObject;
@@ -129,18 +130,18 @@ export namespace Sort {
 
 export class Condition extends jspb.Message {
   getF(): string;
-  setF(value: string): void;
+  setF(value: string): Condition;
 
   getV(): string;
-  setV(value: string): void;
+  setV(value: string): Condition;
 
   getSList(): Array<string>;
-  setSList(value: Array<string>): void;
-  clearSList(): void;
-  addS(value: string, index?: number): void;
+  setSList(value: Array<string>): Condition;
+  clearSList(): Condition;
+  addS(value: string, index?: number): Condition;
 
   getO(): Condition.Operand;
-  setO(value: Condition.Operand): void;
+  setO(value: Condition.Operand): Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Condition.AsObject;
@@ -173,37 +174,37 @@ export namespace Condition {
 
 export class Query extends jspb.Message {
   getPageLimit(): PageLimit | undefined;
-  setPageLimit(value?: PageLimit): void;
+  setPageLimit(value?: PageLimit): Query;
   hasPageLimit(): boolean;
-  clearPageLimit(): void;
+  clearPageLimit(): Query;
 
   getSortList(): Array<Sort>;
-  setSortList(value: Array<Sort>): void;
-  clearSortList(): void;
+  setSortList(value: Array<Sort>): Query;
+  clearSortList(): Query;
   addSort(value?: Sort, index?: number): Sort;
 
   getInnerList(): Array<Condition>;
-  setInnerList(value: Array<Condition>): void;
-  clearInnerList(): void;
+  setInnerList(value: Array<Condition>): Query;
+  clearInnerList(): Query;
   addInner(value?: Condition, index?: number): Condition;
 
   getConditionList(): Array<Condition>;
-  setConditionList(value: Array<Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<Condition>): Query;
+  clearConditionList(): Query;
   addCondition(value?: Condition, index?: number): Condition;
 
   getAlias(): string;
-  setAlias(value: string): void;
+  setAlias(value: string): Query;
 
   getExtraList(): Array<string>;
-  setExtraList(value: Array<string>): void;
-  clearExtraList(): void;
-  addExtra(value: string, index?: number): void;
+  setExtraList(value: Array<string>): Query;
+  clearExtraList(): Query;
+  addExtra(value: string, index?: number): Query;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Query;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Query;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Query.AsObject;
@@ -227,32 +228,32 @@ export namespace Query {
 
 export class SignRecord extends jspb.Message {
   getUserId(): number;
-  setUserId(value: number): void;
+  setUserId(value: number): SignRecord;
 
   getAccount(): string;
-  setAccount(value: string): void;
+  setAccount(value: string): SignRecord;
 
   getType(): string;
-  setType(value: string): void;
+  setType(value: string): SignRecord;
 
   getOs(): string;
-  setOs(value: string): void;
+  setOs(value: string): SignRecord;
 
   getBrowser(): string;
-  setBrowser(value: string): void;
+  setBrowser(value: string): SignRecord;
 
   getCreated(): number;
-  setCreated(value: number): void;
+  setCreated(value: number): SignRecord;
 
   getOnlineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): SignRecord;
   hasOnlineAt(): boolean;
-  clearOnlineAt(): void;
+  clearOnlineAt(): SignRecord;
 
   getOfflineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOfflineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setOfflineAt(value?: google_protobuf_timestamp_pb.Timestamp): SignRecord;
   hasOfflineAt(): boolean;
-  clearOfflineAt(): void;
+  clearOfflineAt(): SignRecord;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SignRecord.AsObject;
@@ -277,19 +278,19 @@ export namespace SignRecord {
 
 export class Result extends jspb.Message {
   getPageLimit(): PageLimit | undefined;
-  setPageLimit(value?: PageLimit): void;
+  setPageLimit(value?: PageLimit): Result;
   hasPageLimit(): boolean;
-  clearPageLimit(): void;
+  clearPageLimit(): Result;
 
   getSortList(): Array<Sort>;
-  setSortList(value: Array<Sort>): void;
-  clearSortList(): void;
+  setSortList(value: Array<Sort>): Result;
+  clearSortList(): Result;
   addSort(value?: Sort, index?: number): Sort;
 
   getResult(): google_protobuf_struct_pb.Value | undefined;
-  setResult(value?: google_protobuf_struct_pb.Value): void;
+  setResult(value?: google_protobuf_struct_pb.Value): Result;
   hasResult(): boolean;
-  clearResult(): void;
+  clearResult(): Result;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Result.AsObject;

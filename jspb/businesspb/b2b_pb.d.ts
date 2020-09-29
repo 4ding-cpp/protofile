@@ -1,64 +1,65 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class B2B extends jspb.Message {
   getB2bId(): number;
-  setB2bId(value: number): void;
+  setB2bId(value: number): B2B;
 
   getExportId(): string;
-  setExportId(value: string): void;
+  setExportId(value: string): B2B;
 
   getImportId(): string;
-  setImportId(value: string): void;
+  setImportId(value: string): B2B;
 
   getSecret(): string;
-  setSecret(value: string): void;
+  setSecret(value: string): B2B;
 
   getExportState(): number;
-  setExportState(value: number): void;
+  setExportState(value: number): B2B;
 
   getImportState(): number;
-  setImportState(value: number): void;
+  setImportState(value: number): B2B;
 
   getTarget(): B2BTarget | undefined;
-  setTarget(value?: B2BTarget): void;
+  setTarget(value?: B2BTarget): B2B;
   hasTarget(): boolean;
-  clearTarget(): void;
+  clearTarget(): B2B;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): B2B;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): B2B;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): B2B;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): B2B;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): B2B;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): B2B;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): B2B;
+  clearColsList(): B2B;
+  addCols(value: string, index?: number): B2B;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): B2B;
+  clearConditionList(): B2B;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): B2B;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): B2B;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): B2B.AsObject;
@@ -89,14 +90,14 @@ export namespace B2B {
 
 export class B2BTarget extends jspb.Message {
   getInList(): Array<string>;
-  setInList(value: Array<string>): void;
-  clearInList(): void;
-  addIn(value: string, index?: number): void;
+  setInList(value: Array<string>): B2BTarget;
+  clearInList(): B2BTarget;
+  addIn(value: string, index?: number): B2BTarget;
 
   getOmitList(): Array<string>;
-  setOmitList(value: Array<string>): void;
-  clearOmitList(): void;
-  addOmit(value: string, index?: number): void;
+  setOmitList(value: Array<string>): B2BTarget;
+  clearOmitList(): B2BTarget;
+  addOmit(value: string, index?: number): B2BTarget;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): B2BTarget.AsObject;
@@ -115,8 +116,8 @@ export namespace B2BTarget {
 
 export class B2BProduct extends jspb.Message {
   getProductList(): Array<product_pb.Product>;
-  setProductList(value: Array<product_pb.Product>): void;
-  clearProductList(): void;
+  setProductList(value: Array<product_pb.Product>): B2BProduct;
+  clearProductList(): B2BProduct;
   addProduct(value?: product_pb.Product, index?: number): product_pb.Product;
 
   serializeBinary(): Uint8Array;

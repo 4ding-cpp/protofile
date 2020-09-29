@@ -1,8 +1,10 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
+
+
 
 export class PingPong extends jspb.Message {
   getPong(): number;
-  setPong(value: number): void;
+  setPong(value: number): PingPong;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PingPong.AsObject;

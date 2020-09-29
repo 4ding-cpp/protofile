@@ -1,84 +1,85 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Adapter extends jspb.Message {
   getAdapterId(): string;
-  setAdapterId(value: string): void;
+  setAdapterId(value: string): Adapter;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Adapter;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Adapter;
 
   getService(): string;
-  setService(value: string): void;
+  setService(value: string): Adapter;
 
   getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
+  setIsEnable(value: boolean): Adapter;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
+  setName(value?: google_protobuf_struct_pb.Value): Adapter;
   hasName(): boolean;
-  clearName(): void;
+  clearName(): Adapter;
 
   getPaymentType(): number;
-  setPaymentType(value: number): void;
+  setPaymentType(value: number): Adapter;
 
   getPaymentAddAmount(): number;
-  setPaymentAddAmount(value: number): void;
+  setPaymentAddAmount(value: number): Adapter;
 
   getPaymentAddPercent(): number;
-  setPaymentAddPercent(value: number): void;
+  setPaymentAddPercent(value: number): Adapter;
 
   getExpireDay(): number;
-  setExpireDay(value: number): void;
+  setExpireDay(value: number): Adapter;
 
   getLogisticsType(): number;
-  setLogisticsType(value: number): void;
+  setLogisticsType(value: number): Adapter;
 
   getLogisticsSubType(): number;
-  setLogisticsSubType(value: number): void;
+  setLogisticsSubType(value: number): Adapter;
 
   getLogisticsFee(): number;
-  setLogisticsFee(value: number): void;
+  setLogisticsFee(value: number): Adapter;
 
   getRemark(): string;
-  setRemark(value: string): void;
+  setRemark(value: string): Adapter;
 
   getRedirect(): string;
-  setRedirect(value: string): void;
+  setRedirect(value: string): Adapter;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Adapter;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Adapter;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Adapter;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Adapter;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Adapter;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Adapter;
+  clearColsList(): Adapter;
+  addCols(value: string, index?: number): Adapter;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Adapter;
+  clearConditionList(): Adapter;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Adapter;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Adapter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Adapter.AsObject;

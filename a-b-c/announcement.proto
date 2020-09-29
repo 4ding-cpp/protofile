@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
+import "seo.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -14,13 +15,13 @@ message Announcement {
     int32 area = 3;
     int32 type = 4;
     string title = 5;
-    string content = 6;
+    Template template = 6;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13;
 }

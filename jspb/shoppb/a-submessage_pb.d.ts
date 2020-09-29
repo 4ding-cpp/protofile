@@ -1,14 +1,15 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as seo_pb from './seo_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
+
 export class Rule extends jspb.Message {
   getAmount(): number;
-  setAmount(value: number): void;
+  setAmount(value: number): Rule;
 
   getPrice(): number;
-  setPrice(value: number): void;
+  setPrice(value: number): Rule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rule.AsObject;
@@ -27,19 +28,19 @@ export namespace Rule {
 
 export class Active extends jspb.Message {
   getFreeShipping(): boolean;
-  setFreeShipping(value: boolean): void;
+  setFreeShipping(value: boolean): Active;
 
   getIsRepeat(): boolean;
-  setIsRepeat(value: boolean): void;
+  setIsRepeat(value: boolean): Active;
 
   getDiscount(): number;
-  setDiscount(value: number): void;
+  setDiscount(value: number): Active;
 
   getReduce(): number;
-  setReduce(value: number): void;
+  setReduce(value: number): Active;
 
   getGiveaway(): number;
-  setGiveaway(value: number): void;
+  setGiveaway(value: number): Active;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Active.AsObject;
@@ -61,18 +62,18 @@ export namespace Active {
 
 export class CustomerTarget extends jspb.Message {
   getLevel(): string;
-  setLevel(value: string): void;
+  setLevel(value: string): CustomerTarget;
 
   getBirthday(): number;
-  setBirthday(value: number): void;
+  setBirthday(value: number): CustomerTarget;
 
   getRegister(): number;
-  setRegister(value: number): void;
+  setRegister(value: number): CustomerTarget;
 
   getItemsList(): Array<string>;
-  setItemsList(value: Array<string>): void;
-  clearItemsList(): void;
-  addItems(value: string, index?: number): void;
+  setItemsList(value: Array<string>): CustomerTarget;
+  clearItemsList(): CustomerTarget;
+  addItems(value: string, index?: number): CustomerTarget;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerTarget.AsObject;
@@ -93,14 +94,14 @@ export namespace CustomerTarget {
 
 export class ProductTarget extends jspb.Message {
   getClassList(): Array<string>;
-  setClassList(value: Array<string>): void;
-  clearClassList(): void;
-  addClass(value: string, index?: number): void;
+  setClassList(value: Array<string>): ProductTarget;
+  clearClassList(): ProductTarget;
+  addClass(value: string, index?: number): ProductTarget;
 
   getItemsList(): Array<number>;
-  setItemsList(value: Array<number>): void;
-  clearItemsList(): void;
-  addItems(value: number, index?: number): void;
+  setItemsList(value: Array<number>): ProductTarget;
+  clearItemsList(): ProductTarget;
+  addItems(value: number, index?: number): ProductTarget;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductTarget.AsObject;
@@ -119,12 +120,12 @@ export namespace ProductTarget {
 
 export class ActivityTarget extends jspb.Message {
   getUrn(): string;
-  setUrn(value: string): void;
+  setUrn(value: string): ActivityTarget;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
+  setName(value?: google_protobuf_struct_pb.Value): ActivityTarget;
   hasName(): boolean;
-  clearName(): void;
+  clearName(): ActivityTarget;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ActivityTarget.AsObject;
@@ -143,33 +144,33 @@ export namespace ActivityTarget {
 
 export class Image extends jspb.Message {
   getSrc(): string;
-  setSrc(value: string): void;
+  setSrc(value: string): Image;
 
   getAlt(): string;
-  setAlt(value: string): void;
+  setAlt(value: string): Image;
 
   getTitle(): string;
-  setTitle(value: string): void;
+  setTitle(value: string): Image;
 
   getLink(): string;
-  setLink(value: string): void;
+  setLink(value: string): Image;
 
   getIsBlank(): number;
-  setIsBlank(value: number): void;
+  setIsBlank(value: number): Image;
 
   getSku(): string;
-  setSku(value: string): void;
+  setSku(value: string): Image;
 
   getTarget(): ProductTarget | undefined;
-  setTarget(value?: ProductTarget): void;
+  setTarget(value?: ProductTarget): Image;
   hasTarget(): boolean;
-  clearTarget(): void;
+  clearTarget(): Image;
 
   getType(): string;
-  setType(value: string): void;
+  setType(value: string): Image;
 
   getSource(): string;
-  setSource(value: string): void;
+  setSource(value: string): Image;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
@@ -195,52 +196,52 @@ export namespace Image {
 
 export class Layout extends jspb.Message {
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Layout;
 
   getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): void;
+  setTitle(value?: google_protobuf_struct_pb.Value): Layout;
   hasTitle(): boolean;
-  clearTitle(): void;
+  clearTitle(): Layout;
 
   getLink(): string;
-  setLink(value: string): void;
+  setLink(value: string): Layout;
 
   getPage(): string;
-  setPage(value: string): void;
+  setPage(value: string): Layout;
 
   getIsBlank(): boolean;
-  setIsBlank(value: boolean): void;
+  setIsBlank(value: boolean): Layout;
 
   getQuantity(): number;
-  setQuantity(value: number): void;
+  setQuantity(value: number): Layout;
 
   getSecond(): number;
-  setSecond(value: number): void;
+  setSecond(value: number): Layout;
 
   getImageList(): Array<Image>;
-  setImageList(value: Array<Image>): void;
-  clearImageList(): void;
+  setImageList(value: Array<Image>): Layout;
+  clearImageList(): Layout;
   addImage(value?: Image, index?: number): Image;
 
   getLayoutList(): Array<Layout>;
-  setLayoutList(value: Array<Layout>): void;
-  clearLayoutList(): void;
+  setLayoutList(value: Array<Layout>): Layout;
+  clearLayoutList(): Layout;
   addLayout(value?: Layout, index?: number): Layout;
 
   getTarget(): ProductTarget | undefined;
-  setTarget(value?: ProductTarget): void;
+  setTarget(value?: ProductTarget): Layout;
   hasTarget(): boolean;
-  clearTarget(): void;
+  clearTarget(): Layout;
 
   getActivity(): ActivityTarget | undefined;
-  setActivity(value?: ActivityTarget): void;
+  setActivity(value?: ActivityTarget): Layout;
   hasActivity(): boolean;
-  clearActivity(): void;
+  clearActivity(): Layout;
 
   getTemplate(): seo_pb.Template | undefined;
-  setTemplate(value?: seo_pb.Template): void;
+  setTemplate(value?: seo_pb.Template): Layout;
   hasTemplate(): boolean;
-  clearTemplate(): void;
+  clearTemplate(): Layout;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Layout.AsObject;
@@ -269,22 +270,22 @@ export namespace Layout {
 
 export class StyleColor extends jspb.Message {
   getBackground(): string;
-  setBackground(value: string): void;
+  setBackground(value: string): StyleColor;
 
   getLogoStyle(): StyleColor.LogoStyle | undefined;
-  setLogoStyle(value?: StyleColor.LogoStyle): void;
+  setLogoStyle(value?: StyleColor.LogoStyle): StyleColor;
   hasLogoStyle(): boolean;
-  clearLogoStyle(): void;
+  clearLogoStyle(): StyleColor;
 
   getHeaderStyle(): StyleColor.HeaderStyle | undefined;
-  setHeaderStyle(value?: StyleColor.HeaderStyle): void;
+  setHeaderStyle(value?: StyleColor.HeaderStyle): StyleColor;
   hasHeaderStyle(): boolean;
-  clearHeaderStyle(): void;
+  clearHeaderStyle(): StyleColor;
 
   getFooterStyle(): StyleColor.FooterStyle | undefined;
-  setFooterStyle(value?: StyleColor.FooterStyle): void;
+  setFooterStyle(value?: StyleColor.FooterStyle): StyleColor;
   hasFooterStyle(): boolean;
-  clearFooterStyle(): void;
+  clearFooterStyle(): StyleColor;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StyleColor.AsObject;
@@ -304,16 +305,16 @@ export namespace StyleColor {
 
   export class LogoStyle extends jspb.Message {
     getHeight(): string;
-    setHeight(value: string): void;
+    setHeight(value: string): LogoStyle;
 
     getWidth(): string;
-    setWidth(value: string): void;
+    setWidth(value: string): LogoStyle;
 
     getPaddingTop(): string;
-    setPaddingTop(value: string): void;
+    setPaddingTop(value: string): LogoStyle;
 
     getNavTop(): string;
-    setNavTop(value: string): void;
+    setNavTop(value: string): LogoStyle;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LogoStyle.AsObject;
@@ -335,22 +336,22 @@ export namespace StyleColor {
 
   export class HeaderStyle extends jspb.Message {
     getColor(): string;
-    setColor(value: string): void;
+    setColor(value: string): HeaderStyle;
 
     getBackground(): string;
-    setBackground(value: string): void;
+    setBackground(value: string): HeaderStyle;
 
     getToolColor(): string;
-    setToolColor(value: string): void;
+    setToolColor(value: string): HeaderStyle;
 
     getToolBackground(): string;
-    setToolBackground(value: string): void;
+    setToolBackground(value: string): HeaderStyle;
 
     getMobile(): string;
-    setMobile(value: string): void;
+    setMobile(value: string): HeaderStyle;
 
     getMobileBackground(): string;
-    setMobileBackground(value: string): void;
+    setMobileBackground(value: string): HeaderStyle;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): HeaderStyle.AsObject;
@@ -374,13 +375,13 @@ export namespace StyleColor {
 
   export class FooterStyle extends jspb.Message {
     getLabel(): string;
-    setLabel(value: string): void;
+    setLabel(value: string): FooterStyle;
 
     getColor(): string;
-    setColor(value: string): void;
+    setColor(value: string): FooterStyle;
 
     getBackground(): string;
-    setBackground(value: string): void;
+    setBackground(value: string): FooterStyle;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FooterStyle.AsObject;

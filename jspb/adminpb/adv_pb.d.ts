@@ -1,84 +1,85 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Adv extends jspb.Message {
   getAdvId(): string;
-  setAdvId(value: string): void;
+  setAdvId(value: string): Adv;
 
   getState(): number;
-  setState(value: number): void;
+  setState(value: number): Adv;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Adv;
 
   getContacter(): string;
-  setContacter(value: string): void;
+  setContacter(value: string): Adv;
 
   getPhone(): string;
-  setPhone(value: string): void;
+  setPhone(value: string): Adv;
 
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): Adv;
 
   getLocation(): string;
-  setLocation(value: string): void;
+  setLocation(value: string): Adv;
 
   getContact(): number;
-  setContact(value: number): void;
+  setContact(value: number): Adv;
 
   getTitle(): string;
-  setTitle(value: string): void;
+  setTitle(value: string): Adv;
 
   getMgrType(): number;
-  setMgrType(value: number): void;
+  setMgrType(value: number): Adv;
 
   getTurnover(): number;
-  setTurnover(value: number): void;
+  setTurnover(value: number): Adv;
 
   getCompany(): string;
-  setCompany(value: string): void;
+  setCompany(value: string): Adv;
 
   getIdentify(): string;
-  setIdentify(value: string): void;
+  setIdentify(value: string): Adv;
 
   getMotive(): number;
-  setMotive(value: number): void;
+  setMotive(value: number): Adv;
 
   getOther(): google_protobuf_struct_pb.Value | undefined;
-  setOther(value?: google_protobuf_struct_pb.Value): void;
+  setOther(value?: google_protobuf_struct_pb.Value): Adv;
   hasOther(): boolean;
-  clearOther(): void;
+  clearOther(): Adv;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Adv;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Adv;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Adv;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Adv;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Adv;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Adv;
+  clearColsList(): Adv;
+  addCols(value: string, index?: number): Adv;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Adv;
+  clearConditionList(): Adv;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Adv;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Adv;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Adv.AsObject;
@@ -116,51 +117,51 @@ export namespace Adv {
 
 export class AdvItem extends jspb.Message {
   getId(): number;
-  setId(value: number): void;
+  setId(value: number): AdvItem;
 
   getAdvId(): string;
-  setAdvId(value: string): void;
+  setAdvId(value: string): AdvItem;
 
   getPhoneAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setPhoneAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setPhoneAt(value?: google_protobuf_timestamp_pb.Timestamp): AdvItem;
   hasPhoneAt(): boolean;
-  clearPhoneAt(): void;
+  clearPhoneAt(): AdvItem;
 
   getViewAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setViewAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setViewAt(value?: google_protobuf_timestamp_pb.Timestamp): AdvItem;
   hasViewAt(): boolean;
-  clearViewAt(): void;
+  clearViewAt(): AdvItem;
 
   getRemark(): string;
-  setRemark(value: string): void;
+  setRemark(value: string): AdvItem;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): AdvItem;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): AdvItem;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): AdvItem;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): AdvItem;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): AdvItem;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): AdvItem;
+  clearColsList(): AdvItem;
+  addCols(value: string, index?: number): AdvItem;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): AdvItem;
+  clearConditionList(): AdvItem;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): AdvItem;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): AdvItem;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AdvItem.AsObject;

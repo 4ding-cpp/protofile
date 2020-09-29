@@ -1,9 +1,11 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
+
+
 
 export class Permission extends jspb.Message {
   getOptionList(): Array<Option>;
-  setOptionList(value: Array<Option>): void;
-  clearOptionList(): void;
+  setOptionList(value: Array<Option>): Permission;
+  clearOptionList(): Permission;
   addOption(value?: Option, index?: number): Option;
 
   serializeBinary(): Uint8Array;
@@ -22,10 +24,10 @@ export namespace Permission {
 
 export class Option extends jspb.Message {
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Option;
 
   getOpen(): boolean;
-  setOpen(value: boolean): void;
+  setOpen(value: boolean): Option;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Option.AsObject;

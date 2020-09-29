@@ -1,60 +1,64 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
+import * as seo_pb from './seo_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Announcement extends jspb.Message {
   getAnnouncementId(): string;
-  setAnnouncementId(value: string): void;
+  setAnnouncementId(value: string): Announcement;
 
   getEnableAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEnableAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setEnableAt(value?: google_protobuf_timestamp_pb.Timestamp): Announcement;
   hasEnableAt(): boolean;
-  clearEnableAt(): void;
+  clearEnableAt(): Announcement;
 
   getArea(): number;
-  setArea(value: number): void;
+  setArea(value: number): Announcement;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Announcement;
 
   getTitle(): string;
-  setTitle(value: string): void;
+  setTitle(value: string): Announcement;
 
-  getContent(): string;
-  setContent(value: string): void;
+  getTemplate(): seo_pb.Template | undefined;
+  setTemplate(value?: seo_pb.Template): Announcement;
+  hasTemplate(): boolean;
+  clearTemplate(): Announcement;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): Announcement;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Announcement;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Announcement;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Announcement;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Announcement;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Announcement;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Announcement;
+  clearColsList(): Announcement;
+  addCols(value: string, index?: number): Announcement;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Announcement;
+  clearConditionList(): Announcement;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Announcement;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Announcement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Announcement.AsObject;
@@ -71,7 +75,7 @@ export namespace Announcement {
     area: number,
     type: number,
     title: string,
-    content: string,
+    template?: seo_pb.Template.AsObject,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

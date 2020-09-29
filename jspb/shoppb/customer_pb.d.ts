@@ -1,91 +1,92 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Customer extends jspb.Message {
   getCustomerId(): string;
-  setCustomerId(value: string): void;
+  setCustomerId(value: string): Customer;
 
   getBusinessId(): string;
-  setBusinessId(value: string): void;
+  setBusinessId(value: string): Customer;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Customer;
 
   getStatus(): number;
-  setStatus(value: number): void;
+  setStatus(value: number): Customer;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Customer;
 
   getFbAccesstoken(): string;
-  setFbAccesstoken(value: string): void;
+  setFbAccesstoken(value: string): Customer;
 
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): Customer;
 
   getPhone(): string;
-  setPhone(value: string): void;
+  setPhone(value: string): Customer;
 
   getPassword(): string;
-  setPassword(value: string): void;
+  setPassword(value: string): Customer;
 
   getPhoneVerify(): boolean;
-  setPhoneVerify(value: boolean): void;
+  setPhoneVerify(value: boolean): Customer;
 
   getEmailVerify(): boolean;
-  setEmailVerify(value: boolean): void;
+  setEmailVerify(value: boolean): Customer;
 
   getBirthday(): string;
-  setBirthday(value: string): void;
+  setBirthday(value: string): Customer;
 
   getSex(): number;
-  setSex(value: number): void;
+  setSex(value: number): Customer;
 
   getZipCode(): string;
-  setZipCode(value: string): void;
+  setZipCode(value: string): Customer;
 
   getAddress(): string;
-  setAddress(value: string): void;
+  setAddress(value: string): Customer;
 
   getLevelId(): string;
-  setLevelId(value: string): void;
+  setLevelId(value: string): Customer;
 
   getIsReceive(): boolean;
-  setIsReceive(value: boolean): void;
+  setIsReceive(value: boolean): Customer;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): Customer;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Customer;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Customer;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Customer;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Customer;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Customer;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Customer;
+  clearColsList(): Customer;
+  addCols(value: string, index?: number): Customer;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Customer;
+  clearConditionList(): Customer;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Customer;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Customer;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Customer.AsObject;
@@ -126,10 +127,10 @@ export namespace Customer {
 
 export class CustomerLink extends jspb.Message {
   getLevelId(): string;
-  setLevelId(value: string): void;
+  setLevelId(value: string): CustomerLink;
 
   getIsReceive(): boolean;
-  setIsReceive(value: boolean): void;
+  setIsReceive(value: boolean): CustomerLink;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerLink.AsObject;
@@ -148,14 +149,14 @@ export namespace CustomerLink {
 
 export class CustomerBatch extends jspb.Message {
   getCustomerList(): Array<Customer>;
-  setCustomerList(value: Array<Customer>): void;
-  clearCustomerList(): void;
+  setCustomerList(value: Array<Customer>): CustomerBatch;
+  clearCustomerList(): CustomerBatch;
   addCustomer(value?: Customer, index?: number): Customer;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): CustomerBatch;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): CustomerBatch;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerBatch.AsObject;
