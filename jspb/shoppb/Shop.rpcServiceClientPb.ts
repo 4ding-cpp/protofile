@@ -18,9 +18,9 @@ import * as adapter_pb from './adapter_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as product$goods_pb from './product-goods_pb';
-import * as car_pb from './car_pb';
-import * as freeback_pb from './freeback_pb';
 import * as order_pb from './order_pb';
+import * as freeback_pb from './freeback_pb';
+import * as car_pb from './car_pb';
 import * as customer_pb from './customer_pb';
 
 
