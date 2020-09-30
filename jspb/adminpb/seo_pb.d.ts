@@ -1,24 +1,23 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class SEO extends jspb.Message {
   getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): SEO;
+  setTitle(value?: google_protobuf_struct_pb.Value): void;
   hasTitle(): boolean;
-  clearTitle(): SEO;
+  clearTitle(): void;
 
   getKeywords(): google_protobuf_struct_pb.Value | undefined;
-  setKeywords(value?: google_protobuf_struct_pb.Value): SEO;
+  setKeywords(value?: google_protobuf_struct_pb.Value): void;
   hasKeywords(): boolean;
-  clearKeywords(): SEO;
+  clearKeywords(): void;
 
   getDescription(): google_protobuf_struct_pb.Value | undefined;
-  setDescription(value?: google_protobuf_struct_pb.Value): SEO;
+  setDescription(value?: google_protobuf_struct_pb.Value): void;
   hasDescription(): boolean;
-  clearDescription(): SEO;
+  clearDescription(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEO.AsObject;
@@ -38,17 +37,17 @@ export namespace SEO {
 
 export class Block extends jspb.Message {
   getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): Block;
+  setTitle(value?: google_protobuf_struct_pb.Value): void;
   hasTitle(): boolean;
-  clearTitle(): Block;
+  clearTitle(): void;
 
   getUrl(): string;
-  setUrl(value: string): Block;
+  setUrl(value: string): void;
 
   getTemplate(): Template | undefined;
-  setTemplate(value?: Template): Block;
+  setTemplate(value?: Template): void;
   hasTemplate(): boolean;
-  clearTemplate(): Block;
+  clearTemplate(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Block.AsObject;
@@ -68,45 +67,45 @@ export namespace Block {
 
 export class Template extends jspb.Message {
   getTemplateId(): string;
-  setTemplateId(value: string): Template;
+  setTemplateId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Template;
+  setStoreId(value: string): void;
 
   getName(): string;
-  setName(value: string): Template;
+  setName(value: string): void;
 
   getIsHtml(): boolean;
-  setIsHtml(value: boolean): Template;
+  setIsHtml(value: boolean): void;
 
   getContent(): string;
-  setContent(value: string): Template;
+  setContent(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Template;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Template;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Template;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Template;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Template;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Template;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Template;
-  clearColsList(): Template;
-  addCols(value: string, index?: number): Template;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Template;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Template;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Template.AsObject;

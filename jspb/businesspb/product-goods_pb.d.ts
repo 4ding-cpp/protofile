@@ -1,82 +1,81 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as a$submessage_pb from './a-submessage_pb';
 import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
-
 export class ProductGoods extends jspb.Message {
   getShellId(): number;
-  setShellId(value: number): ProductGoods;
+  setShellId(value: number): void;
 
   getProductId(): string;
-  setProductId(value: string): ProductGoods;
+  setProductId(value: string): void;
 
   getClassId(): string;
-  setClassId(value: string): ProductGoods;
+  setClassId(value: string): void;
 
   getType(): number;
-  setType(value: number): ProductGoods;
+  setType(value: number): void;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): ProductGoods;
+  setSeo(value?: seo_pb.SEO): void;
   hasSeo(): boolean;
-  clearSeo(): ProductGoods;
+  clearSeo(): void;
 
   getBlockList(): Array<seo_pb.Block>;
-  setBlockList(value: Array<seo_pb.Block>): ProductGoods;
-  clearBlockList(): ProductGoods;
+  setBlockList(value: Array<seo_pb.Block>): void;
+  clearBlockList(): void;
   addBlock(value?: seo_pb.Block, index?: number): seo_pb.Block;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): ProductGoods;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): ProductGoods;
+  clearName(): void;
 
   getUrn(): string;
-  setUrn(value: string): ProductGoods;
+  setUrn(value: string): void;
 
   getSku(): string;
-  setSku(value: string): ProductGoods;
+  setSku(value: string): void;
 
   getPhotoSrc(): string;
-  setPhotoSrc(value: string): ProductGoods;
+  setPhotoSrc(value: string): void;
 
   getOriginal(): number;
-  setOriginal(value: number): ProductGoods;
+  setOriginal(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): ProductGoods;
+  setPrice(value: number): void;
 
   getWeight(): number;
-  setWeight(value: number): ProductGoods;
+  setWeight(value: number): void;
 
   getVolume(): number;
-  setVolume(value: number): ProductGoods;
+  setVolume(value: number): void;
 
   getIsPickup(): boolean;
-  setIsPickup(value: boolean): ProductGoods;
+  setIsPickup(value: boolean): void;
 
   getIsPreorder(): boolean;
-  setIsPreorder(value: boolean): ProductGoods;
+  setIsPreorder(value: boolean): void;
 
   getStock(): number;
-  setStock(value: number): ProductGoods;
+  setStock(value: number): void;
 
   getSpecxList(): Array<product_pb.ProductSpec>;
-  setSpecxList(value: Array<product_pb.ProductSpec>): ProductGoods;
-  clearSpecxList(): ProductGoods;
+  setSpecxList(value: Array<product_pb.ProductSpec>): void;
+  clearSpecxList(): void;
   addSpecx(value?: product_pb.ProductSpec, index?: number): product_pb.ProductSpec;
 
   getPhotoxList(): Array<a$submessage_pb.Image>;
-  setPhotoxList(value: Array<a$submessage_pb.Image>): ProductGoods;
-  clearPhotoxList(): ProductGoods;
+  setPhotoxList(value: Array<a$submessage_pb.Image>): void;
+  clearPhotoxList(): void;
   addPhotox(value?: a$submessage_pb.Image, index?: number): a$submessage_pb.Image;
 
   getActivityList(): Array<ActivityGoods>;
-  setActivityList(value: Array<ActivityGoods>): ProductGoods;
-  clearActivityList(): ProductGoods;
+  setActivityList(value: Array<ActivityGoods>): void;
+  clearActivityList(): void;
   addActivity(value?: ActivityGoods, index?: number): ActivityGoods;
 
   serializeBinary(): Uint8Array;
@@ -114,34 +113,34 @@ export namespace ProductGoods {
 
 export class ActivityGoods extends jspb.Message {
   getActivityId(): string;
-  setActivityId(value: string): ActivityGoods;
+  setActivityId(value: string): void;
 
   getSku(): string;
-  setSku(value: string): ActivityGoods;
+  setSku(value: string): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): ActivityGoods;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): ActivityGoods;
+  clearName(): void;
 
   getReached(): boolean;
-  setReached(value: boolean): ActivityGoods;
+  setReached(value: boolean): void;
 
   getAmount(): number;
-  setAmount(value: number): ActivityGoods;
+  setAmount(value: number): void;
 
   getDiscount(): number;
-  setDiscount(value: number): ActivityGoods;
+  setDiscount(value: number): void;
 
   getRule(): a$submessage_pb.Rule | undefined;
-  setRule(value?: a$submessage_pb.Rule): ActivityGoods;
+  setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
-  clearRule(): ActivityGoods;
+  clearRule(): void;
 
   getNow(): a$submessage_pb.Rule | undefined;
-  setNow(value?: a$submessage_pb.Rule): ActivityGoods;
+  setNow(value?: a$submessage_pb.Rule): void;
   hasNow(): boolean;
-  clearNow(): ActivityGoods;
+  clearNow(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ActivityGoods.AsObject;

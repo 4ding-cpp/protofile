@@ -1,32 +1,31 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
-
 export class QueryRp extends jspb.Message {
   getEq(): string;
-  setEq(value: string): QueryRp;
+  setEq(value: string): void;
 
   getNe(): string;
-  setNe(value: string): QueryRp;
+  setNe(value: string): void;
 
   getLt(): string;
-  setLt(value: string): QueryRp;
+  setLt(value: string): void;
 
   getLte(): string;
-  setLte(value: string): QueryRp;
+  setLte(value: string): void;
 
   getGt(): string;
-  setGt(value: string): QueryRp;
+  setGt(value: string): void;
 
   getGte(): string;
-  setGte(value: string): QueryRp;
+  setGte(value: string): void;
 
   getInList(): Array<string>;
-  setInList(value: Array<string>): QueryRp;
-  clearInList(): QueryRp;
-  addIn(value: string, index?: number): QueryRp;
+  setInList(value: Array<string>): void;
+  clearInList(): void;
+  addIn(value: string, index?: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryRp.AsObject;
@@ -50,13 +49,13 @@ export namespace QueryRp {
 
 export class ReportTotal extends jspb.Message {
   getCount(): number;
-  setCount(value: number): ReportTotal;
+  setCount(value: number): void;
 
   getAmount(): number;
-  setAmount(value: number): ReportTotal;
+  setAmount(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): ReportTotal;
+  setPrice(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportTotal.AsObject;
@@ -76,37 +75,37 @@ export namespace ReportTotal {
 
 export class PaymentRp extends jspb.Message {
   getGetAnalysis(): boolean;
-  setGetAnalysis(value: boolean): PaymentRp;
+  setGetAnalysis(value: boolean): void;
 
   getSortList(): Array<sql_pb.Sort>;
-  setSortList(value: Array<sql_pb.Sort>): PaymentRp;
-  clearSortList(): PaymentRp;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
   addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
   getQuery(): PaymentRp.Query | undefined;
-  setQuery(value?: PaymentRp.Query): PaymentRp;
+  setQuery(value?: PaymentRp.Query): void;
   hasQuery(): boolean;
-  clearQuery(): PaymentRp;
+  clearQuery(): void;
 
   getDataList(): Array<PaymentRp.Data>;
-  setDataList(value: Array<PaymentRp.Data>): PaymentRp;
-  clearDataList(): PaymentRp;
+  setDataList(value: Array<PaymentRp.Data>): void;
+  clearDataList(): void;
   addData(value?: PaymentRp.Data, index?: number): PaymentRp.Data;
 
   getAs(): PaymentRp.Analysis | undefined;
-  setAs(value?: PaymentRp.Analysis): PaymentRp;
+  setAs(value?: PaymentRp.Analysis): void;
   hasAs(): boolean;
-  clearAs(): PaymentRp;
+  clearAs(): void;
 
   getPageLimit(): sql_pb.PageLimit | undefined;
-  setPageLimit(value?: sql_pb.PageLimit): PaymentRp;
+  setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
-  clearPageLimit(): PaymentRp;
+  clearPageLimit(): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): PaymentRp;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): PaymentRp;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaymentRp.AsObject;
@@ -129,42 +128,42 @@ export namespace PaymentRp {
 
   export class Data extends jspb.Message {
     getOrderId(): string;
-    setOrderId(value: string): Data;
+    setOrderId(value: string): void;
 
     getCreateAt(): string;
-    setCreateAt(value: string): Data;
+    setCreateAt(value: string): void;
 
     getPickupAt(): string;
-    setPickupAt(value: string): Data;
+    setPickupAt(value: string): void;
 
     getCloseAt(): string;
-    setCloseAt(value: string): Data;
+    setCloseAt(value: string): void;
 
     getPrice(): number;
-    setPrice(value: number): Data;
+    setPrice(value: number): void;
 
     getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): Data;
+    setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
-    clearTotal(): Data;
+    clearTotal(): void;
 
     getPaymentService(): string;
-    setPaymentService(value: string): Data;
+    setPaymentService(value: string): void;
 
     getPaymentType(): number;
-    setPaymentType(value: number): Data;
+    setPaymentType(value: number): void;
 
     getLogisticsService(): string;
-    setLogisticsService(value: string): Data;
+    setLogisticsService(value: string): void;
 
     getLogisticsType(): number;
-    setLogisticsType(value: number): Data;
+    setLogisticsType(value: number): void;
 
     getDevice(): string;
-    setDevice(value: string): Data;
+    setDevice(value: string): void;
 
     getPercentage(): number;
-    setPercentage(value: number): Data;
+    setPercentage(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -194,59 +193,59 @@ export namespace PaymentRp {
 
   export class Query extends jspb.Message {
     getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): Query;
+    setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
-    clearCreateAt(): Query;
+    clearCreateAt(): void;
 
     getCloseAt(): QueryRp | undefined;
-    setCloseAt(value?: QueryRp): Query;
+    setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
-    clearCloseAt(): Query;
+    clearCloseAt(): void;
 
     getState(): QueryRp | undefined;
-    setState(value?: QueryRp): Query;
+    setState(value?: QueryRp): void;
     hasState(): boolean;
-    clearState(): Query;
+    clearState(): void;
 
     getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): Query;
+    setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
-    clearStoreId(): Query;
+    clearStoreId(): void;
 
     getOrderId(): QueryRp | undefined;
-    setOrderId(value?: QueryRp): Query;
+    setOrderId(value?: QueryRp): void;
     hasOrderId(): boolean;
-    clearOrderId(): Query;
+    clearOrderId(): void;
 
     getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): Query;
+    setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
-    clearCustomerId(): Query;
+    clearCustomerId(): void;
 
     getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): Query;
+    setProductId(value?: QueryRp): void;
     hasProductId(): boolean;
-    clearProductId(): Query;
+    clearProductId(): void;
 
     getPaymentService(): QueryRp | undefined;
-    setPaymentService(value?: QueryRp): Query;
+    setPaymentService(value?: QueryRp): void;
     hasPaymentService(): boolean;
-    clearPaymentService(): Query;
+    clearPaymentService(): void;
 
     getPaymentType(): QueryRp | undefined;
-    setPaymentType(value?: QueryRp): Query;
+    setPaymentType(value?: QueryRp): void;
     hasPaymentType(): boolean;
-    clearPaymentType(): Query;
+    clearPaymentType(): void;
 
     getLogisticsService(): QueryRp | undefined;
-    setLogisticsService(value?: QueryRp): Query;
+    setLogisticsService(value?: QueryRp): void;
     hasLogisticsService(): boolean;
-    clearLogisticsService(): Query;
+    clearLogisticsService(): void;
 
     getLogisticsType(): QueryRp | undefined;
-    setLogisticsType(value?: QueryRp): Query;
+    setLogisticsType(value?: QueryRp): void;
     hasLogisticsType(): boolean;
-    clearLogisticsType(): Query;
+    clearLogisticsType(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -275,28 +274,28 @@ export namespace PaymentRp {
 
   export class Analysis extends jspb.Message {
     getTotal(): number;
-    setTotal(value: number): Analysis;
+    setTotal(value: number): void;
 
     getCreateAtDateMap(): jspb.Map<string, number>;
-    clearCreateAtDateMap(): Analysis;
+    clearCreateAtDateMap(): void;
 
     getCreateAtHourMap(): jspb.Map<string, number>;
-    clearCreateAtHourMap(): Analysis;
+    clearCreateAtHourMap(): void;
 
     getCloseAtDateMap(): jspb.Map<string, number>;
-    clearCloseAtDateMap(): Analysis;
+    clearCloseAtDateMap(): void;
 
     getPaymentTypeMap(): jspb.Map<string, number>;
-    clearPaymentTypeMap(): Analysis;
+    clearPaymentTypeMap(): void;
 
     getLogisticsTypeMap(): jspb.Map<string, number>;
-    clearLogisticsTypeMap(): Analysis;
+    clearLogisticsTypeMap(): void;
 
     getCityMap(): jspb.Map<string, number>;
-    clearCityMap(): Analysis;
+    clearCityMap(): void;
 
     getDeviceMap(): jspb.Map<string, number>;
-    clearDeviceMap(): Analysis;
+    clearDeviceMap(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Analysis.AsObject;
@@ -323,34 +322,34 @@ export namespace PaymentRp {
 
 export class CustomerRp extends jspb.Message {
   getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): CustomerRp;
-  clearGroupList(): CustomerRp;
-  addGroup(value: string, index?: number): CustomerRp;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getSortList(): Array<sql_pb.Sort>;
-  setSortList(value: Array<sql_pb.Sort>): CustomerRp;
-  clearSortList(): CustomerRp;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
   addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
   getQuery(): CustomerRp.Query | undefined;
-  setQuery(value?: CustomerRp.Query): CustomerRp;
+  setQuery(value?: CustomerRp.Query): void;
   hasQuery(): boolean;
-  clearQuery(): CustomerRp;
+  clearQuery(): void;
 
   getDataList(): Array<CustomerRp.Data>;
-  setDataList(value: Array<CustomerRp.Data>): CustomerRp;
-  clearDataList(): CustomerRp;
+  setDataList(value: Array<CustomerRp.Data>): void;
+  clearDataList(): void;
   addData(value?: CustomerRp.Data, index?: number): CustomerRp.Data;
 
   getPageLimit(): sql_pb.PageLimit | undefined;
-  setPageLimit(value?: sql_pb.PageLimit): CustomerRp;
+  setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
-  clearPageLimit(): CustomerRp;
+  clearPageLimit(): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): CustomerRp;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): CustomerRp;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomerRp.AsObject;
@@ -372,42 +371,42 @@ export namespace CustomerRp {
 
   export class Data extends jspb.Message {
     getCustomerId(): string;
-    setCustomerId(value: string): Data;
+    setCustomerId(value: string): void;
 
     getName(): string;
-    setName(value: string): Data;
+    setName(value: string): void;
 
     getEmail(): string;
-    setEmail(value: string): Data;
+    setEmail(value: string): void;
 
     getPhone(): string;
-    setPhone(value: string): Data;
+    setPhone(value: string): void;
 
     getCount(): number;
-    setCount(value: number): Data;
+    setCount(value: number): void;
 
     getAmount(): number;
-    setAmount(value: number): Data;
+    setAmount(value: number): void;
 
     getPrice(): number;
-    setPrice(value: number): Data;
+    setPrice(value: number): void;
 
     getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): Data;
+    setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
-    clearTotal(): Data;
+    clearTotal(): void;
 
     getStatus(): number;
-    setStatus(value: number): Data;
+    setStatus(value: number): void;
 
     getLevelId(): string;
-    setLevelId(value: string): Data;
+    setLevelId(value: string): void;
 
     getLabelxMap(): jspb.Map<string, number>;
-    clearLabelxMap(): Data;
+    clearLabelxMap(): void;
 
     getRegisterAt(): string;
-    setRegisterAt(value: string): Data;
+    setRegisterAt(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -437,77 +436,77 @@ export namespace CustomerRp {
 
   export class Query extends jspb.Message {
     getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): Query;
+    setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
-    clearCreateAt(): Query;
+    clearCreateAt(): void;
 
     getCloseAt(): QueryRp | undefined;
-    setCloseAt(value?: QueryRp): Query;
+    setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
-    clearCloseAt(): Query;
+    clearCloseAt(): void;
 
     getState(): QueryRp | undefined;
-    setState(value?: QueryRp): Query;
+    setState(value?: QueryRp): void;
     hasState(): boolean;
-    clearState(): Query;
+    clearState(): void;
 
     getBusinessId(): QueryRp | undefined;
-    setBusinessId(value?: QueryRp): Query;
+    setBusinessId(value?: QueryRp): void;
     hasBusinessId(): boolean;
-    clearBusinessId(): Query;
+    clearBusinessId(): void;
 
     getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): Query;
+    setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
-    clearStoreId(): Query;
+    clearStoreId(): void;
 
     getOrderId(): QueryRp | undefined;
-    setOrderId(value?: QueryRp): Query;
+    setOrderId(value?: QueryRp): void;
     hasOrderId(): boolean;
-    clearOrderId(): Query;
+    clearOrderId(): void;
 
     getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): Query;
+    setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
-    clearCustomerId(): Query;
+    clearCustomerId(): void;
 
     getEmail(): QueryRp | undefined;
-    setEmail(value?: QueryRp): Query;
+    setEmail(value?: QueryRp): void;
     hasEmail(): boolean;
-    clearEmail(): Query;
+    clearEmail(): void;
 
     getPhone(): QueryRp | undefined;
-    setPhone(value?: QueryRp): Query;
+    setPhone(value?: QueryRp): void;
     hasPhone(): boolean;
-    clearPhone(): Query;
+    clearPhone(): void;
 
     getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): Query;
+    setCount(value?: QueryRp): void;
     hasCount(): boolean;
-    clearCount(): Query;
+    clearCount(): void;
 
     getAmount(): QueryRp | undefined;
-    setAmount(value?: QueryRp): Query;
+    setAmount(value?: QueryRp): void;
     hasAmount(): boolean;
-    clearAmount(): Query;
+    clearAmount(): void;
 
     getPrice(): QueryRp | undefined;
-    setPrice(value?: QueryRp): Query;
+    setPrice(value?: QueryRp): void;
     hasPrice(): boolean;
-    clearPrice(): Query;
+    clearPrice(): void;
 
     getStatus(): QueryRp | undefined;
-    setStatus(value?: QueryRp): Query;
+    setStatus(value?: QueryRp): void;
     hasStatus(): boolean;
-    clearStatus(): Query;
+    clearStatus(): void;
 
     getLevelId(): QueryRp | undefined;
-    setLevelId(value?: QueryRp): Query;
+    setLevelId(value?: QueryRp): void;
     hasLevelId(): boolean;
-    clearLevelId(): Query;
+    clearLevelId(): void;
 
     getLabelId(): string;
-    setLabelId(value: string): Query;
+    setLabelId(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -541,34 +540,34 @@ export namespace CustomerRp {
 
 export class ProductRp extends jspb.Message {
   getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): ProductRp;
-  clearGroupList(): ProductRp;
-  addGroup(value: string, index?: number): ProductRp;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getSortList(): Array<sql_pb.Sort>;
-  setSortList(value: Array<sql_pb.Sort>): ProductRp;
-  clearSortList(): ProductRp;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
   addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
   getQuery(): ProductRp.Query | undefined;
-  setQuery(value?: ProductRp.Query): ProductRp;
+  setQuery(value?: ProductRp.Query): void;
   hasQuery(): boolean;
-  clearQuery(): ProductRp;
+  clearQuery(): void;
 
   getDataList(): Array<ProductRp.Data>;
-  setDataList(value: Array<ProductRp.Data>): ProductRp;
-  clearDataList(): ProductRp;
+  setDataList(value: Array<ProductRp.Data>): void;
+  clearDataList(): void;
   addData(value?: ProductRp.Data, index?: number): ProductRp.Data;
 
   getPageLimit(): sql_pb.PageLimit | undefined;
-  setPageLimit(value?: sql_pb.PageLimit): ProductRp;
+  setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
-  clearPageLimit(): ProductRp;
+  clearPageLimit(): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): ProductRp;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): ProductRp;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductRp.AsObject;
@@ -590,36 +589,36 @@ export namespace ProductRp {
 
   export class Data extends jspb.Message {
     getProductId(): string;
-    setProductId(value: string): Data;
+    setProductId(value: string): void;
 
     getPhotoSrc(): string;
-    setPhotoSrc(value: string): Data;
+    setPhotoSrc(value: string): void;
 
     getName(): string;
-    setName(value: string): Data;
+    setName(value: string): void;
 
     getSku(): string;
-    setSku(value: string): Data;
+    setSku(value: string): void;
 
     getCount(): number;
-    setCount(value: number): Data;
+    setCount(value: number): void;
 
     getAmount(): number;
-    setAmount(value: number): Data;
+    setAmount(value: number): void;
 
     getPrice(): number;
-    setPrice(value: number): Data;
+    setPrice(value: number): void;
 
     getTotal(): ReportTotal | undefined;
-    setTotal(value?: ReportTotal): Data;
+    setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
-    clearTotal(): Data;
+    clearTotal(): void;
 
     getStatus(): number;
-    setStatus(value: number): Data;
+    setStatus(value: number): void;
 
     getLabelxMap(): jspb.Map<string, number>;
-    clearLabelxMap(): Data;
+    clearLabelxMap(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -647,72 +646,72 @@ export namespace ProductRp {
 
   export class Query extends jspb.Message {
     getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): Query;
+    setCreateAt(value?: QueryRp): void;
     hasCreateAt(): boolean;
-    clearCreateAt(): Query;
+    clearCreateAt(): void;
 
     getCloseAt(): QueryRp | undefined;
-    setCloseAt(value?: QueryRp): Query;
+    setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
-    clearCloseAt(): Query;
+    clearCloseAt(): void;
 
     getClosed(): QueryRp | undefined;
-    setClosed(value?: QueryRp): Query;
+    setClosed(value?: QueryRp): void;
     hasClosed(): boolean;
-    clearClosed(): Query;
+    clearClosed(): void;
 
     getBusinessId(): QueryRp | undefined;
-    setBusinessId(value?: QueryRp): Query;
+    setBusinessId(value?: QueryRp): void;
     hasBusinessId(): boolean;
-    clearBusinessId(): Query;
+    clearBusinessId(): void;
 
     getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): Query;
+    setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
-    clearStoreId(): Query;
+    clearStoreId(): void;
 
     getOrderId(): QueryRp | undefined;
-    setOrderId(value?: QueryRp): Query;
+    setOrderId(value?: QueryRp): void;
     hasOrderId(): boolean;
-    clearOrderId(): Query;
+    clearOrderId(): void;
 
     getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): Query;
+    setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
-    clearCustomerId(): Query;
+    clearCustomerId(): void;
 
     getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): Query;
+    setProductId(value?: QueryRp): void;
     hasProductId(): boolean;
-    clearProductId(): Query;
+    clearProductId(): void;
 
     getSku(): QueryRp | undefined;
-    setSku(value?: QueryRp): Query;
+    setSku(value?: QueryRp): void;
     hasSku(): boolean;
-    clearSku(): Query;
+    clearSku(): void;
 
     getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): Query;
+    setCount(value?: QueryRp): void;
     hasCount(): boolean;
-    clearCount(): Query;
+    clearCount(): void;
 
     getAmount(): QueryRp | undefined;
-    setAmount(value?: QueryRp): Query;
+    setAmount(value?: QueryRp): void;
     hasAmount(): boolean;
-    clearAmount(): Query;
+    clearAmount(): void;
 
     getPrice(): QueryRp | undefined;
-    setPrice(value?: QueryRp): Query;
+    setPrice(value?: QueryRp): void;
     hasPrice(): boolean;
-    clearPrice(): Query;
+    clearPrice(): void;
 
     getStatus(): QueryRp | undefined;
-    setStatus(value?: QueryRp): Query;
+    setStatus(value?: QueryRp): void;
     hasStatus(): boolean;
-    clearStatus(): Query;
+    clearStatus(): void;
 
     getLabelId(): string;
-    setLabelId(value: string): Query;
+    setLabelId(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -745,34 +744,34 @@ export namespace ProductRp {
 
 export class FavoriteRp extends jspb.Message {
   getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): FavoriteRp;
-  clearGroupList(): FavoriteRp;
-  addGroup(value: string, index?: number): FavoriteRp;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getSortList(): Array<sql_pb.Sort>;
-  setSortList(value: Array<sql_pb.Sort>): FavoriteRp;
-  clearSortList(): FavoriteRp;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
   addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
   getQuery(): FavoriteRp.Query | undefined;
-  setQuery(value?: FavoriteRp.Query): FavoriteRp;
+  setQuery(value?: FavoriteRp.Query): void;
   hasQuery(): boolean;
-  clearQuery(): FavoriteRp;
+  clearQuery(): void;
 
   getDataList(): Array<FavoriteRp.Data>;
-  setDataList(value: Array<FavoriteRp.Data>): FavoriteRp;
-  clearDataList(): FavoriteRp;
+  setDataList(value: Array<FavoriteRp.Data>): void;
+  clearDataList(): void;
   addData(value?: FavoriteRp.Data, index?: number): FavoriteRp.Data;
 
   getPageLimit(): sql_pb.PageLimit | undefined;
-  setPageLimit(value?: sql_pb.PageLimit): FavoriteRp;
+  setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
-  clearPageLimit(): FavoriteRp;
+  clearPageLimit(): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): FavoriteRp;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): FavoriteRp;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FavoriteRp.AsObject;
@@ -794,19 +793,19 @@ export namespace FavoriteRp {
 
   export class Data extends jspb.Message {
     getStoreId(): string;
-    setStoreId(value: string): Data;
+    setStoreId(value: string): void;
 
     getProductId(): string;
-    setProductId(value: string): Data;
+    setProductId(value: string): void;
 
     getPhotoSrc(): string;
-    setPhotoSrc(value: string): Data;
+    setPhotoSrc(value: string): void;
 
     getShellId(): string;
-    setShellId(value: string): Data;
+    setShellId(value: string): void;
 
     getCount(): number;
-    setCount(value: number): Data;
+    setCount(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -829,29 +828,29 @@ export namespace FavoriteRp {
 
   export class Query extends jspb.Message {
     getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): Query;
+    setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
-    clearStoreId(): Query;
+    clearStoreId(): void;
 
     getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): Query;
+    setProductId(value?: QueryRp): void;
     hasProductId(): boolean;
-    clearProductId(): Query;
+    clearProductId(): void;
 
     getShellId(): QueryRp | undefined;
-    setShellId(value?: QueryRp): Query;
+    setShellId(value?: QueryRp): void;
     hasShellId(): boolean;
-    clearShellId(): Query;
+    clearShellId(): void;
 
     getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): Query;
+    setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
-    clearCustomerId(): Query;
+    clearCustomerId(): void;
 
     getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): Query;
+    setCount(value?: QueryRp): void;
     hasCount(): boolean;
-    clearCount(): Query;
+    clearCount(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -875,34 +874,34 @@ export namespace FavoriteRp {
 
 export class CarRp extends jspb.Message {
   getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): CarRp;
-  clearGroupList(): CarRp;
-  addGroup(value: string, index?: number): CarRp;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getSortList(): Array<sql_pb.Sort>;
-  setSortList(value: Array<sql_pb.Sort>): CarRp;
-  clearSortList(): CarRp;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
   addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
   getQuery(): CarRp.Query | undefined;
-  setQuery(value?: CarRp.Query): CarRp;
+  setQuery(value?: CarRp.Query): void;
   hasQuery(): boolean;
-  clearQuery(): CarRp;
+  clearQuery(): void;
 
   getDataList(): Array<CarRp.Data>;
-  setDataList(value: Array<CarRp.Data>): CarRp;
-  clearDataList(): CarRp;
+  setDataList(value: Array<CarRp.Data>): void;
+  clearDataList(): void;
   addData(value?: CarRp.Data, index?: number): CarRp.Data;
 
   getPageLimit(): sql_pb.PageLimit | undefined;
-  setPageLimit(value?: sql_pb.PageLimit): CarRp;
+  setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
-  clearPageLimit(): CarRp;
+  clearPageLimit(): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): CarRp;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): CarRp;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CarRp.AsObject;
@@ -924,22 +923,22 @@ export namespace CarRp {
 
   export class Data extends jspb.Message {
     getStoreId(): string;
-    setStoreId(value: string): Data;
+    setStoreId(value: string): void;
 
     getProductId(): string;
-    setProductId(value: string): Data;
+    setProductId(value: string): void;
 
     getSku(): string;
-    setSku(value: string): Data;
+    setSku(value: string): void;
 
     getPhotoSrc(): string;
-    setPhotoSrc(value: string): Data;
+    setPhotoSrc(value: string): void;
 
     getCount(): number;
-    setCount(value: number): Data;
+    setCount(value: number): void;
 
     getAmount(): number;
-    setAmount(value: number): Data;
+    setAmount(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -963,14 +962,14 @@ export namespace CarRp {
 
   export class Query extends jspb.Message {
     getStoreId(): QueryRp | undefined;
-    setStoreId(value?: QueryRp): Query;
+    setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
-    clearStoreId(): Query;
+    clearStoreId(): void;
 
     getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): Query;
+    setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
-    clearCustomerId(): Query;
+    clearCustomerId(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;

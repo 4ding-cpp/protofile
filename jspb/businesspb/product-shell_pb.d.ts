@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
@@ -6,88 +6,87 @@ import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class ProductShell extends jspb.Message {
   getShellId(): number;
-  setShellId(value: number): ProductShell;
+  setShellId(value: number): void;
 
   getStoreId(): string;
-  setStoreId(value: string): ProductShell;
+  setStoreId(value: string): void;
 
   getProductId(): string;
-  setProductId(value: string): ProductShell;
+  setProductId(value: string): void;
 
   getClassId(): string;
-  setClassId(value: string): ProductShell;
+  setClassId(value: string): void;
 
   getIsDisplay(): boolean;
-  setIsDisplay(value: boolean): ProductShell;
+  setIsDisplay(value: boolean): void;
 
   getType(): number;
-  setType(value: number): ProductShell;
+  setType(value: number): void;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): ProductShell;
+  setSeo(value?: seo_pb.SEO): void;
   hasSeo(): boolean;
-  clearSeo(): ProductShell;
+  clearSeo(): void;
 
   getBlockList(): Array<seo_pb.Block>;
-  setBlockList(value: Array<seo_pb.Block>): ProductShell;
-  clearBlockList(): ProductShell;
+  setBlockList(value: Array<seo_pb.Block>): void;
+  clearBlockList(): void;
   addBlock(value?: seo_pb.Block, index?: number): seo_pb.Block;
 
   getReduce(): number;
-  setReduce(value: number): ProductShell;
+  setReduce(value: number): void;
 
   getIsPreorder(): boolean;
-  setIsPreorder(value: boolean): ProductShell;
+  setIsPreorder(value: boolean): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): ProductShell;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): ProductShell;
+  clearName(): void;
 
   getUrn(): string;
-  setUrn(value: string): ProductShell;
+  setUrn(value: string): void;
 
   getPrice(): number;
-  setPrice(value: number): ProductShell;
+  setPrice(value: number): void;
 
   getProduct(): product_pb.Product | undefined;
-  setProduct(value?: product_pb.Product): ProductShell;
+  setProduct(value?: product_pb.Product): void;
   hasProduct(): boolean;
-  clearProduct(): ProductShell;
+  clearProduct(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): ProductShell;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): ProductShell;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductShell;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): ProductShell;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductShell;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): ProductShell;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): ProductShell;
-  clearColsList(): ProductShell;
-  addCols(value: string, index?: number): ProductShell;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): ProductShell;
-  clearConditionList(): ProductShell;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): ProductShell;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): ProductShell;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductShell.AsObject;

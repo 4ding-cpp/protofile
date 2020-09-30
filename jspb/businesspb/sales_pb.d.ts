@@ -1,68 +1,67 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Sales extends jspb.Message {
   getSalesId(): string;
-  setSalesId(value: string): Sales;
+  setSalesId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): Sales;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Sales;
+  setStoreId(value: string): void;
 
   getStatus(): number;
-  setStatus(value: number): Sales;
+  setStatus(value: number): void;
 
   getName(): string;
-  setName(value: string): Sales;
+  setName(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): Sales;
+  setEmail(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): Sales;
+  setPhone(value: string): void;
 
   getUrn(): string;
-  setUrn(value: string): Sales;
+  setUrn(value: string): void;
 
   getPassword(): string;
-  setPassword(value: string): Sales;
+  setPassword(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Sales;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Sales;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Sales;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Sales;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Sales;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Sales;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Sales;
-  clearColsList(): Sales;
-  addCols(value: string, index?: number): Sales;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Sales;
-  clearConditionList(): Sales;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Sales;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Sales;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sales.AsObject;

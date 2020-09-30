@@ -1,37 +1,35 @@
-import * as jspb from 'google-protobuf'
-
-
+import * as jspb from "google-protobuf"
 
 export class StoreDashboard extends jspb.Message {
   getDate(): string;
-  setDate(value: string): StoreDashboard;
+  setDate(value: string): void;
 
   getBrowse(): string;
-  setBrowse(value: string): StoreDashboard;
+  setBrowse(value: string): void;
 
   getTimes(): string;
-  setTimes(value: string): StoreDashboard;
+  setTimes(value: string): void;
 
   getCustomer(): string;
-  setCustomer(value: string): StoreDashboard;
+  setCustomer(value: string): void;
 
   getOrders(): string;
-  setOrders(value: string): StoreDashboard;
+  setOrders(value: string): void;
 
   getSales(): string;
-  setSales(value: string): StoreDashboard;
+  setSales(value: string): void;
 
   getProfit(): string;
-  setProfit(value: string): StoreDashboard;
+  setProfit(value: string): void;
 
   getBrowseRankList(): Array<ProductDashboard>;
-  setBrowseRankList(value: Array<ProductDashboard>): StoreDashboard;
-  clearBrowseRankList(): StoreDashboard;
+  setBrowseRankList(value: Array<ProductDashboard>): void;
+  clearBrowseRankList(): void;
   addBrowseRank(value?: ProductDashboard, index?: number): ProductDashboard;
 
   getOrdersRankList(): Array<ProductDashboard>;
-  setOrdersRankList(value: Array<ProductDashboard>): StoreDashboard;
-  clearOrdersRankList(): StoreDashboard;
+  setOrdersRankList(value: Array<ProductDashboard>): void;
+  clearOrdersRankList(): void;
   addOrdersRank(value?: ProductDashboard, index?: number): ProductDashboard;
 
   serializeBinary(): Uint8Array;
@@ -58,28 +56,28 @@ export namespace StoreDashboard {
 
 export class ProductDashboard extends jspb.Message {
   getProductId(): string;
-  setProductId(value: string): ProductDashboard;
+  setProductId(value: string): void;
 
   getName(): string;
-  setName(value: string): ProductDashboard;
+  setName(value: string): void;
 
   getBrowse(): number;
-  setBrowse(value: number): ProductDashboard;
+  setBrowse(value: number): void;
 
   getBrowseWeek(): number;
-  setBrowseWeek(value: number): ProductDashboard;
+  setBrowseWeek(value: number): void;
 
   getOrders(): number;
-  setOrders(value: number): ProductDashboard;
+  setOrders(value: number): void;
 
   getOrdersWeek(): number;
-  setOrdersWeek(value: number): ProductDashboard;
+  setOrdersWeek(value: number): void;
 
   getSales(): number;
-  setSales(value: number): ProductDashboard;
+  setSales(value: number): void;
 
   getSalasWeek(): number;
-  setSalasWeek(value: number): ProductDashboard;
+  setSalasWeek(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductDashboard.AsObject;

@@ -1,79 +1,78 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Admin extends jspb.Message {
   getAdminId(): string;
-  setAdminId(value: string): Admin;
+  setAdminId(value: string): void;
 
   getIsSuper(): boolean;
-  setIsSuper(value: boolean): Admin;
+  setIsSuper(value: boolean): void;
 
   getTitle(): string;
-  setTitle(value: string): Admin;
+  setTitle(value: string): void;
 
   getStatus(): number;
-  setStatus(value: number): Admin;
+  setStatus(value: number): void;
 
   getName(): string;
-  setName(value: string): Admin;
+  setName(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): Admin;
+  setEmail(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): Admin;
+  setPhone(value: string): void;
 
   getPassword(): string;
-  setPassword(value: string): Admin;
+  setPassword(value: string): void;
 
   getIsLive(): boolean;
-  setIsLive(value: boolean): Admin;
+  setIsLive(value: boolean): void;
 
   getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): Admin;
-  clearPermissionList(): Admin;
+  setPermissionList(value: Array<permission_pb.Option>): void;
+  clearPermissionList(): void;
   addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
 
   getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): Admin;
-  clearWhiteList(): Admin;
-  addWhite(value: string, index?: number): Admin;
+  setWhiteList(value: Array<string>): void;
+  clearWhiteList(): void;
+  addWhite(value: string, index?: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Admin;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Admin;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Admin;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Admin;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Admin;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Admin;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Admin;
-  clearColsList(): Admin;
-  addCols(value: string, index?: number): Admin;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Admin;
-  clearConditionList(): Admin;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Admin;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Admin;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Admin.AsObject;

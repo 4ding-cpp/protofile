@@ -1,28 +1,27 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
-
 export class Log extends jspb.Message {
   getId(): number;
-  setId(value: number): Log;
+  setId(value: number): void;
 
   getLogAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLogAt(value?: google_protobuf_timestamp_pb.Timestamp): Log;
+  setLogAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasLogAt(): boolean;
-  clearLogAt(): Log;
+  clearLogAt(): void;
 
   getOperator(): string;
-  setOperator(value: string): Log;
+  setOperator(value: string): void;
 
   getTargetId(): string;
-  setTargetId(value: string): Log;
+  setTargetId(value: string): void;
 
   getDifferent(): google_protobuf_struct_pb.Struct | undefined;
-  setDifferent(value?: google_protobuf_struct_pb.Struct): Log;
+  setDifferent(value?: google_protobuf_struct_pb.Struct): void;
   hasDifferent(): boolean;
-  clearDifferent(): Log;
+  clearDifferent(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Log.AsObject;

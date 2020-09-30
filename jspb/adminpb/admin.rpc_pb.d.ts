@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
@@ -14,5 +14,4 @@ import * as adv_pb from './adv_pb';
 import * as app_pb from './app_pb';
 import * as system$set_pb from './system-set_pb';
 import * as message_pb from './message_pb';
-
 

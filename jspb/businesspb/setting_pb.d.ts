@@ -1,58 +1,57 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Setting extends jspb.Message {
   getSettingId(): string;
-  setSettingId(value: string): Setting;
+  setSettingId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Setting;
+  setStoreId(value: string): void;
 
   getType(): string;
-  setType(value: string): Setting;
+  setType(value: string): void;
 
   getIsEnable(): boolean;
-  setIsEnable(value: boolean): Setting;
+  setIsEnable(value: boolean): void;
 
   getConf(): google_protobuf_struct_pb.Value | undefined;
-  setConf(value?: google_protobuf_struct_pb.Value): Setting;
+  setConf(value?: google_protobuf_struct_pb.Value): void;
   hasConf(): boolean;
-  clearConf(): Setting;
+  clearConf(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Setting;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Setting;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Setting;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Setting;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Setting;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Setting;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Setting;
-  clearColsList(): Setting;
-  addCols(value: string, index?: number): Setting;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Setting;
-  clearConditionList(): Setting;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Setting;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Setting;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Setting.AsObject;
@@ -81,14 +80,14 @@ export namespace Setting {
 
 export class ConfigMulti extends jspb.Message {
   getLanguage(): google_protobuf_struct_pb.Value | undefined;
-  setLanguage(value?: google_protobuf_struct_pb.Value): ConfigMulti;
+  setLanguage(value?: google_protobuf_struct_pb.Value): void;
   hasLanguage(): boolean;
-  clearLanguage(): ConfigMulti;
+  clearLanguage(): void;
 
   getCurrency(): google_protobuf_struct_pb.Value | undefined;
-  setCurrency(value?: google_protobuf_struct_pb.Value): ConfigMulti;
+  setCurrency(value?: google_protobuf_struct_pb.Value): void;
   hasCurrency(): boolean;
-  clearCurrency(): ConfigMulti;
+  clearCurrency(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMulti.AsObject;
@@ -107,37 +106,37 @@ export namespace ConfigMulti {
 
 export class ConfigWebsite extends jspb.Message {
   getName(): string;
-  setName(value: string): ConfigWebsite;
+  setName(value: string): void;
 
   getSlogan(): string;
-  setSlogan(value: string): ConfigWebsite;
+  setSlogan(value: string): void;
 
   getCopyright(): string;
-  setCopyright(value: string): ConfigWebsite;
+  setCopyright(value: string): void;
 
   getServiceTerms(): string;
-  setServiceTerms(value: string): ConfigWebsite;
+  setServiceTerms(value: string): void;
 
   getOrganization(): string;
-  setOrganization(value: string): ConfigWebsite;
+  setOrganization(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): ConfigWebsite;
+  setPhone(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): ConfigWebsite;
+  setEmail(value: string): void;
 
   getAddress(): string;
-  setAddress(value: string): ConfigWebsite;
+  setAddress(value: string): void;
 
   getFacebook(): string;
-  setFacebook(value: string): ConfigWebsite;
+  setFacebook(value: string): void;
 
   getLineAt(): string;
-  setLineAt(value: string): ConfigWebsite;
+  setLineAt(value: string): void;
 
   getInstagram(): string;
-  setInstagram(value: string): ConfigWebsite;
+  setInstagram(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigWebsite.AsObject;
@@ -165,37 +164,37 @@ export namespace ConfigWebsite {
 
 export class ConfigShop extends jspb.Message {
   getLimitCount(): number;
-  setLimitCount(value: number): ConfigShop;
+  setLimitCount(value: number): void;
 
   getShopNotes(): string;
-  setShopNotes(value: string): ConfigShop;
+  setShopNotes(value: string): void;
 
   getOrderNotes(): string;
-  setOrderNotes(value: string): ConfigShop;
+  setOrderNotes(value: string): void;
 
   getSenderName(): string;
-  setSenderName(value: string): ConfigShop;
+  setSenderName(value: string): void;
 
   getSenderPhone(): string;
-  setSenderPhone(value: string): ConfigShop;
+  setSenderPhone(value: string): void;
 
   getSenderCellPhone(): string;
-  setSenderCellPhone(value: string): ConfigShop;
+  setSenderCellPhone(value: string): void;
 
   getSenderZipCode(): string;
-  setSenderZipCode(value: string): ConfigShop;
+  setSenderZipCode(value: string): void;
 
   getSenderAddress(): string;
-  setSenderAddress(value: string): ConfigShop;
+  setSenderAddress(value: string): void;
 
   getSenderRemark(): string;
-  setSenderRemark(value: string): ConfigShop;
+  setSenderRemark(value: string): void;
 
   getAllowCancelOrder(): number;
-  setAllowCancelOrder(value: number): ConfigShop;
+  setAllowCancelOrder(value: number): void;
 
   getAllowReturnOrder(): number;
-  setAllowReturnOrder(value: number): ConfigShop;
+  setAllowReturnOrder(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigShop.AsObject;
