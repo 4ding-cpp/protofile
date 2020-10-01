@@ -1041,7 +1041,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoFindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindCansetAdditional = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1049,17 +1049,39 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findTemplate(
+  findCansetAdditional(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindTemplate',
+        '/ding4.Store1RPC/FindCansetAdditional',
       request,
       metadata || {},
-      this.methodInfoFindTemplate,
+      this.methodInfoFindCansetAdditional,
+      callback);
+  }
+
+  methodInfoFindCansetGiveaway = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findCansetGiveaway(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCansetGiveaway',
+      request,
+      metadata || {},
+      this.methodInfoFindCansetGiveaway,
       callback);
   }
 
@@ -1082,6 +1104,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoDisplayProductShell,
+      callback);
+  }
+
+  methodInfoCreateProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: product$shell_pb.ProductShell) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createProductShell(
+    request: product$shell_pb.ProductShell,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateProductShell',
+      request,
+      metadata || {},
+      this.methodInfoCreateProductShell,
       callback);
   }
 

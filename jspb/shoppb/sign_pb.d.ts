@@ -1,39 +1,38 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Sign extends jspb.Message {
   getId(): number;
-  setId(value: number): Sign;
+  setId(value: number): void;
 
   getType(): string;
-  setType(value: string): Sign;
+  setType(value: string): void;
 
   getUserId(): string;
-  setUserId(value: string): Sign;
+  setUserId(value: string): void;
 
   getOnlineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): Sign;
+  setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasOnlineAt(): boolean;
-  clearOnlineAt(): Sign;
+  clearOnlineAt(): void;
 
   getOfflineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOfflineAt(value?: google_protobuf_timestamp_pb.Timestamp): Sign;
+  setOfflineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasOfflineAt(): boolean;
-  clearOfflineAt(): Sign;
+  clearOfflineAt(): void;
 
   getAddress(): string;
-  setAddress(value: string): Sign;
+  setAddress(value: string): void;
 
   getUseragent(): string;
-  setUseragent(value: string): Sign;
+  setUseragent(value: string): void;
 
   getCountry(): string;
-  setCountry(value: string): Sign;
+  setCountry(value: string): void;
 
   getToken(): string;
-  setToken(value: string): Sign;
+  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sign.AsObject;

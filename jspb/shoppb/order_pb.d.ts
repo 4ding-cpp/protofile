@@ -1,164 +1,163 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Order extends jspb.Message {
   getOrderId(): string;
-  setOrderId(value: string): Order;
+  setOrderId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Order;
+  setStoreId(value: string): void;
 
   getSalesId(): string;
-  setSalesId(value: string): Order;
+  setSalesId(value: string): void;
 
   getCustomerId(): string;
-  setCustomerId(value: string): Order;
+  setCustomerId(value: string): void;
 
   getName(): string;
-  setName(value: string): Order;
+  setName(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): Order;
+  setEmail(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): Order;
+  setPhone(value: string): void;
 
   getIsCustomer(): boolean;
-  setIsCustomer(value: boolean): Order;
+  setIsCustomer(value: boolean): void;
 
   getCarId(): string;
-  setCarId(value: string): Order;
+  setCarId(value: string): void;
 
   getCouponId(): string;
-  setCouponId(value: string): Order;
+  setCouponId(value: string): void;
 
   getAmount(): number;
-  setAmount(value: number): Order;
+  setAmount(value: number): void;
 
   getFreight(): number;
-  setFreight(value: number): Order;
+  setFreight(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): Order;
+  setPrice(value: number): void;
 
   getOrderCharge(): number;
-  setOrderCharge(value: number): Order;
+  setOrderCharge(value: number): void;
 
   getBusinessCharge(): number;
-  setBusinessCharge(value: number): Order;
+  setBusinessCharge(value: number): void;
 
   getSalesCharge(): number;
-  setSalesCharge(value: number): Order;
+  setSalesCharge(value: number): void;
 
   getPaymentCharge(): number;
-  setPaymentCharge(value: number): Order;
+  setPaymentCharge(value: number): void;
 
   getLogisticsCharge(): number;
-  setLogisticsCharge(value: number): Order;
+  setLogisticsCharge(value: number): void;
 
   getState(): number;
-  setState(value: number): Order;
+  setState(value: number): void;
 
   getPaymentState(): number;
-  setPaymentState(value: number): Order;
+  setPaymentState(value: number): void;
 
   getLogisticsState(): number;
-  setLogisticsState(value: number): Order;
+  setLogisticsState(value: number): void;
 
   getPaymentAdapter(): string;
-  setPaymentAdapter(value: string): Order;
+  setPaymentAdapter(value: string): void;
 
   getPaymentService(): string;
-  setPaymentService(value: string): Order;
+  setPaymentService(value: string): void;
 
   getPaymentType(): number;
-  setPaymentType(value: number): Order;
+  setPaymentType(value: number): void;
 
   getLogisticsAdapter(): string;
-  setLogisticsAdapter(value: string): Order;
+  setLogisticsAdapter(value: string): void;
 
   getLogisticsService(): string;
-  setLogisticsService(value: string): Order;
+  setLogisticsService(value: string): void;
 
   getLogisticsType(): number;
-  setLogisticsType(value: number): Order;
+  setLogisticsType(value: number): void;
 
   getLogisticsSubType(): number;
-  setLogisticsSubType(value: number): Order;
+  setLogisticsSubType(value: number): void;
 
   getIsTimeout(): boolean;
-  setIsTimeout(value: boolean): Order;
+  setIsTimeout(value: boolean): void;
 
   getPickupAt(): string;
-  setPickupAt(value: string): Order;
+  setPickupAt(value: string): void;
 
   getCloseAt(): string;
-  setCloseAt(value: string): Order;
+  setCloseAt(value: string): void;
 
   getPayAt(): string;
-  setPayAt(value: string): Order;
+  setPayAt(value: string): void;
 
   getPayIp(): string;
-  setPayIp(value: string): Order;
+  setPayIp(value: string): void;
 
   getCity(): string;
-  setCity(value: string): Order;
+  setCity(value: string): void;
 
   getDevice(): string;
-  setDevice(value: string): Order;
+  setDevice(value: string): void;
 
   getRemark(): string;
-  setRemark(value: string): Order;
+  setRemark(value: string): void;
 
   getOther(): OrderOther | undefined;
-  setOther(value?: OrderOther): Order;
+  setOther(value?: OrderOther): void;
   hasOther(): boolean;
-  clearOther(): Order;
+  clearOther(): void;
 
   getGoodsList(): Array<OrderGoods>;
-  setGoodsList(value: Array<OrderGoods>): Order;
-  clearGoodsList(): Order;
+  setGoodsList(value: Array<OrderGoods>): void;
+  clearGoodsList(): void;
   addGoods(value?: OrderGoods, index?: number): OrderGoods;
 
   getActivityList(): Array<OrderActivity>;
-  setActivityList(value: Array<OrderActivity>): Order;
-  clearActivityList(): Order;
+  setActivityList(value: Array<OrderActivity>): void;
+  clearActivityList(): void;
   addActivity(value?: OrderActivity, index?: number): OrderActivity;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Order;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Order;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Order;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Order;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Order;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Order;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Order;
-  clearColsList(): Order;
-  addCols(value: string, index?: number): Order;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Order;
-  clearConditionList(): Order;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Order;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Order;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Order.AsObject;
@@ -221,37 +220,37 @@ export namespace Order {
 
 export class OrderGoods extends jspb.Message {
   getOrderId(): string;
-  setOrderId(value: string): OrderGoods;
+  setOrderId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): OrderGoods;
+  setStoreId(value: string): void;
 
   getSalesId(): string;
-  setSalesId(value: string): OrderGoods;
+  setSalesId(value: string): void;
 
   getActivityId(): string;
-  setActivityId(value: string): OrderGoods;
+  setActivityId(value: string): void;
 
   getProductId(): string;
-  setProductId(value: string): OrderGoods;
+  setProductId(value: string): void;
 
   getSku(): string;
-  setSku(value: string): OrderGoods;
+  setSku(value: string): void;
 
   getPhotoSrc(): string;
-  setPhotoSrc(value: string): OrderGoods;
+  setPhotoSrc(value: string): void;
 
   getName(): string;
-  setName(value: string): OrderGoods;
+  setName(value: string): void;
 
   getAmount(): number;
-  setAmount(value: number): OrderGoods;
+  setAmount(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): OrderGoods;
+  setPrice(value: number): void;
 
   getDiscount(): number;
-  setDiscount(value: number): OrderGoods;
+  setDiscount(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderGoods.AsObject;
@@ -279,25 +278,25 @@ export namespace OrderGoods {
 
 export class OrderActivity extends jspb.Message {
   getOrderId(): string;
-  setOrderId(value: string): OrderActivity;
+  setOrderId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): OrderActivity;
+  setStoreId(value: string): void;
 
   getActivityId(): string;
-  setActivityId(value: string): OrderActivity;
+  setActivityId(value: string): void;
 
   getName(): string;
-  setName(value: string): OrderActivity;
+  setName(value: string): void;
 
   getGiveaway(): number;
-  setGiveaway(value: number): OrderActivity;
+  setGiveaway(value: number): void;
 
   getAmount(): number;
-  setAmount(value: number): OrderActivity;
+  setAmount(value: number): void;
 
   getDiscount(): number;
-  setDiscount(value: number): OrderActivity;
+  setDiscount(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderActivity.AsObject;
@@ -321,31 +320,31 @@ export namespace OrderActivity {
 
 export class ContactInfo extends jspb.Message {
   getName(): string;
-  setName(value: string): ContactInfo;
+  setName(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): ContactInfo;
+  setPhone(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): ContactInfo;
+  setEmail(value: string): void;
 
   getZipCode(): string;
-  setZipCode(value: string): ContactInfo;
+  setZipCode(value: string): void;
 
   getAddress(): string;
-  setAddress(value: string): ContactInfo;
+  setAddress(value: string): void;
 
   getCvsCode(): string;
-  setCvsCode(value: string): ContactInfo;
+  setCvsCode(value: string): void;
 
   getCvsType(): string;
-  setCvsType(value: string): ContactInfo;
+  setCvsType(value: string): void;
 
   getCvsName(): string;
-  setCvsName(value: string): ContactInfo;
+  setCvsName(value: string): void;
 
   getCvsAddress(): string;
-  setCvsAddress(value: string): ContactInfo;
+  setCvsAddress(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactInfo.AsObject;
@@ -371,41 +370,41 @@ export namespace ContactInfo {
 
 export class OrderOther extends jspb.Message {
   getPaymentNo(): string;
-  setPaymentNo(value: string): OrderOther;
+  setPaymentNo(value: string): void;
 
   getPayIp(): string;
-  setPayIp(value: string): OrderOther;
+  setPayIp(value: string): void;
 
   getPayAt(): string;
-  setPayAt(value: string): OrderOther;
+  setPayAt(value: string): void;
 
   getExpireDay(): number;
-  setExpireDay(value: number): OrderOther;
+  setExpireDay(value: number): void;
 
   getBankCode(): string;
-  setBankCode(value: string): OrderOther;
+  setBankCode(value: string): void;
 
   getBankAccount(): string;
-  setBankAccount(value: string): OrderOther;
+  setBankAccount(value: string): void;
 
   getCvsNo(): string;
-  setCvsNo(value: string): OrderOther;
+  setCvsNo(value: string): void;
 
   getLogisticsNo(): string;
-  setLogisticsNo(value: string): OrderOther;
+  setLogisticsNo(value: string): void;
 
   getReturnNo(): string;
-  setReturnNo(value: string): OrderOther;
+  setReturnNo(value: string): void;
 
   getSender(): ContactInfo | undefined;
-  setSender(value?: ContactInfo): OrderOther;
+  setSender(value?: ContactInfo): void;
   hasSender(): boolean;
-  clearSender(): OrderOther;
+  clearSender(): void;
 
   getReceiver(): ContactInfo | undefined;
-  setReceiver(value?: ContactInfo): OrderOther;
+  setReceiver(value?: ContactInfo): void;
   hasReceiver(): boolean;
-  clearReceiver(): OrderOther;
+  clearReceiver(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderOther.AsObject;
@@ -433,32 +432,32 @@ export namespace OrderOther {
 
 export class OrderBatch extends jspb.Message {
   getState(): number;
-  setState(value: number): OrderBatch;
+  setState(value: number): void;
 
   getPaymentState(): number;
-  setPaymentState(value: number): OrderBatch;
+  setPaymentState(value: number): void;
 
   getLogisticsState(): number;
-  setLogisticsState(value: number): OrderBatch;
+  setLogisticsState(value: number): void;
 
   getTemperature(): string;
-  setTemperature(value: string): OrderBatch;
+  setTemperature(value: string): void;
 
   getSpecification(): string;
-  setSpecification(value: string): OrderBatch;
+  setSpecification(value: string): void;
 
   getPickupTime(): string;
-  setPickupTime(value: string): OrderBatch;
+  setPickupTime(value: string): void;
 
   getOrderList(): Array<Order>;
-  setOrderList(value: Array<Order>): OrderBatch;
-  clearOrderList(): OrderBatch;
+  setOrderList(value: Array<Order>): void;
+  clearOrderList(): void;
   addOrder(value?: Order, index?: number): Order;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): OrderBatch;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): OrderBatch;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderBatch.AsObject;
@@ -483,51 +482,51 @@ export namespace OrderBatch {
 
 export class Payment extends jspb.Message {
   getRedirect(): string;
-  setRedirect(value: string): Payment;
+  setRedirect(value: string): void;
 
   getRtncode(): string;
-  setRtncode(value: string): Payment;
+  setRtncode(value: string): void;
 
   getRtnmsg(): string;
-  setRtnmsg(value: string): Payment;
+  setRtnmsg(value: string): void;
 
   getTradeno(): string;
-  setTradeno(value: string): Payment;
+  setTradeno(value: string): void;
 
   getTrandamt(): string;
-  setTrandamt(value: string): Payment;
+  setTrandamt(value: string): void;
 
   getPaymenttype(): string;
-  setPaymenttype(value: string): Payment;
+  setPaymenttype(value: string): void;
 
   getTradedate(): string;
-  setTradedate(value: string): Payment;
+  setTradedate(value: string): void;
 
   getExpiredate(): string;
-  setExpiredate(value: string): Payment;
+  setExpiredate(value: string): void;
 
   getBankcode(): string;
-  setBankcode(value: string): Payment;
+  setBankcode(value: string): void;
 
   getVaccount(): string;
-  setVaccount(value: string): Payment;
+  setVaccount(value: string): void;
 
   getPaymentno(): string;
-  setPaymentno(value: string): Payment;
+  setPaymentno(value: string): void;
 
   getBarcode1(): string;
-  setBarcode1(value: string): Payment;
+  setBarcode1(value: string): void;
 
   getBarcode2(): string;
-  setBarcode2(value: string): Payment;
+  setBarcode2(value: string): void;
 
   getBarcode3(): string;
-  setBarcode3(value: string): Payment;
+  setBarcode3(value: string): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Payment;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Payment;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Payment.AsObject;
@@ -559,117 +558,117 @@ export namespace Payment {
 
 export class Logistics extends jspb.Message {
   getRenderid(): string;
-  setRenderid(value: string): Logistics;
+  setRenderid(value: string): void;
 
   getRedirect(): string;
-  setRedirect(value: string): Logistics;
+  setRedirect(value: string): void;
 
   getRtncode(): string;
-  setRtncode(value: string): Logistics;
+  setRtncode(value: string): void;
 
   getRtnmsg(): string;
-  setRtnmsg(value: string): Logistics;
+  setRtnmsg(value: string): void;
 
   getAllpaylogisticsid(): string;
-  setAllpaylogisticsid(value: string): Logistics;
+  setAllpaylogisticsid(value: string): void;
 
   getLogisticstype(): string;
-  setLogisticstype(value: string): Logistics;
+  setLogisticstype(value: string): void;
 
   getLogisticssubtype(): string;
-  setLogisticssubtype(value: string): Logistics;
+  setLogisticssubtype(value: string): void;
 
   getGoodsamount(): string;
-  setGoodsamount(value: string): Logistics;
+  setGoodsamount(value: string): void;
 
   getUpdatestatusdate(): string;
-  setUpdatestatusdate(value: string): Logistics;
+  setUpdatestatusdate(value: string): void;
 
   getSendername(): string;
-  setSendername(value: string): Logistics;
+  setSendername(value: string): void;
 
   getSenderphone(): string;
-  setSenderphone(value: string): Logistics;
+  setSenderphone(value: string): void;
 
   getSendercellphone(): string;
-  setSendercellphone(value: string): Logistics;
+  setSendercellphone(value: string): void;
 
   getSenderzipcode(): string;
-  setSenderzipcode(value: string): Logistics;
+  setSenderzipcode(value: string): void;
 
   getSenderaddress(): string;
-  setSenderaddress(value: string): Logistics;
+  setSenderaddress(value: string): void;
 
   getReceivername(): string;
-  setReceivername(value: string): Logistics;
+  setReceivername(value: string): void;
 
   getReceiverphone(): string;
-  setReceiverphone(value: string): Logistics;
+  setReceiverphone(value: string): void;
 
   getReceivercellphone(): string;
-  setReceivercellphone(value: string): Logistics;
+  setReceivercellphone(value: string): void;
 
   getReceiveremail(): string;
-  setReceiveremail(value: string): Logistics;
+  setReceiveremail(value: string): void;
 
   getReceiverzipcode(): string;
-  setReceiverzipcode(value: string): Logistics;
+  setReceiverzipcode(value: string): void;
 
   getReceiveraddress(): string;
-  setReceiveraddress(value: string): Logistics;
+  setReceiveraddress(value: string): void;
 
   getCvsstoreid(): string;
-  setCvsstoreid(value: string): Logistics;
+  setCvsstoreid(value: string): void;
 
   getCvsstorename(): string;
-  setCvsstorename(value: string): Logistics;
+  setCvsstorename(value: string): void;
 
   getCvsaddress(): string;
-  setCvsaddress(value: string): Logistics;
+  setCvsaddress(value: string): void;
 
   getCvstelephone(): string;
-  setCvstelephone(value: string): Logistics;
+  setCvstelephone(value: string): void;
 
   getCvsoutside(): string;
-  setCvsoutside(value: string): Logistics;
+  setCvsoutside(value: string): void;
 
   getCvspaymentno(): string;
-  setCvspaymentno(value: string): Logistics;
+  setCvspaymentno(value: string): void;
 
   getCvsvalidationno(): string;
-  setCvsvalidationno(value: string): Logistics;
+  setCvsvalidationno(value: string): void;
 
   getStoretype(): string;
-  setStoretype(value: string): Logistics;
+  setStoretype(value: string): void;
 
   getStatus(): string;
-  setStatus(value: string): Logistics;
+  setStatus(value: string): void;
 
   getTemperature(): string;
-  setTemperature(value: string): Logistics;
+  setTemperature(value: string): void;
 
   getDistance(): string;
-  setDistance(value: string): Logistics;
+  setDistance(value: string): void;
 
   getSpecification(): string;
-  setSpecification(value: string): Logistics;
+  setSpecification(value: string): void;
 
   getScheduledpickuptime(): string;
-  setScheduledpickuptime(value: string): Logistics;
+  setScheduledpickuptime(value: string): void;
 
   getScheduleddeliverytime(): string;
-  setScheduleddeliverytime(value: string): Logistics;
+  setScheduleddeliverytime(value: string): void;
 
   getScheduleddeliverydate(): string;
-  setScheduleddeliverydate(value: string): Logistics;
+  setScheduleddeliverydate(value: string): void;
 
   getBookingnode(): string;
-  setBookingnode(value: string): Logistics;
+  setBookingnode(value: string): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Logistics;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Logistics;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Logistics.AsObject;
