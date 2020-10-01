@@ -52,11 +52,9 @@ service ShopRPC {
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
 
-    // 查看付款方式
+    rpc FindAdapter(Query) returns (Response);
     rpc FindPayment(Query) returns (Response);
-    // 查看物流方式
     rpc FindLogistics(Query) returns (Response);
-    // 選擇超商門市
     rpc ChooseCVSStore(Adapter) returns (Response);
 
     // 建立訂單
