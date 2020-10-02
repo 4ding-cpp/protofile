@@ -22,6 +22,7 @@ service ShopRPC {
     // 帳號不存在的話就用這個建立帳號輸入 Email 及 Password
     rpc SignUp(Customer) returns (Response);
     rpc SignFb(Customer) returns (Response);
+    rpc SignOut(Customer) returns (Response);
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Customer) returns (Response);

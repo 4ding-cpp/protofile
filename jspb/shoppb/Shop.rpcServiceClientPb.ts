@@ -104,6 +104,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoSignOut = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: customer_pb.Customer) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  signOut(
+    request: customer_pb.Customer,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/SignOut',
+      request,
+      metadata || {},
+      this.methodInfoSignOut,
+      callback);
+  }
+
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
