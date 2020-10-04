@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+message Upgrade {
+    int64 id = 1;
+}
