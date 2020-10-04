@@ -39,6 +39,9 @@ service BusinessRPC {
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
+    
+    // 查詢任何異動紀錄
+    rpc FindLog(LogQuery) returns (Response);
 
     // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);
@@ -109,7 +112,6 @@ service BusinessRPC {
     rpc SignCustomer(Customer) returns (Response);
     rpc AddCustomerToLevel(CustomerLevel) returns (Response);
     rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
-
 
     rpc ExistsSpec(ProductSpec) returns (Response);
     // 新增商品

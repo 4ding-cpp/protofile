@@ -14,3 +14,4 @@ message Log {
     string target_id = 4;
     google.protobuf.Struct different = 5;
 }
+

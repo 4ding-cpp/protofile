@@ -250,6 +250,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoFindLog = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.LogQuery) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findLog(
+    request: sql_pb.LogQuery,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindLog',
+      request,
+      metadata || {},
+      this.methodInfoFindLog,
+      callback);
+  }
+
   methodInfoCreatePoint = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: point_pb.Point) => {

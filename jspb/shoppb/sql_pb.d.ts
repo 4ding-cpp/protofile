@@ -1,7 +1,6 @@
 import * as jspb from "google-protobuf"
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
-import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Response extends jspb.Message {
   getCode(): number;
@@ -226,53 +225,45 @@ export namespace Query {
   }
 }
 
-export class SignRecord extends jspb.Message {
-  getUserId(): number;
-  setUserId(value: number): void;
+export class LogQuery extends jspb.Message {
+  getPageLimit(): PageLimit | undefined;
+  setPageLimit(value?: PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
 
-  getAccount(): string;
-  setAccount(value: string): void;
+  getOrigin(): string;
+  setOrigin(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getTargetId(): string;
+  setTargetId(value: string): void;
 
-  getOs(): string;
-  setOs(value: string): void;
+  getStartAt(): string;
+  setStartAt(value: string): void;
 
-  getBrowser(): string;
-  setBrowser(value: string): void;
+  getEndAt(): string;
+  setEndAt(value: string): void;
 
-  getCreated(): number;
-  setCreated(value: number): void;
-
-  getOnlineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOnlineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasOnlineAt(): boolean;
-  clearOnlineAt(): void;
-
-  getOfflineAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setOfflineAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasOfflineAt(): boolean;
-  clearOfflineAt(): void;
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SignRecord.AsObject;
-  static toObject(includeInstance: boolean, msg: SignRecord): SignRecord.AsObject;
-  static serializeBinaryToWriter(message: SignRecord, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SignRecord;
-  static deserializeBinaryFromReader(message: SignRecord, reader: jspb.BinaryReader): SignRecord;
+  toObject(includeInstance?: boolean): LogQuery.AsObject;
+  static toObject(includeInstance: boolean, msg: LogQuery): LogQuery.AsObject;
+  static serializeBinaryToWriter(message: LogQuery, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LogQuery;
+  static deserializeBinaryFromReader(message: LogQuery, reader: jspb.BinaryReader): LogQuery;
 }
 
-export namespace SignRecord {
+export namespace LogQuery {
   export type AsObject = {
-    userId: number,
-    account: string,
-    type: string,
-    os: string,
-    browser: string,
-    created: number,
-    onlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    offlineAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pageLimit?: PageLimit.AsObject,
+    origin: string,
+    targetId: string,
+    startAt: string,
+    endAt: string,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

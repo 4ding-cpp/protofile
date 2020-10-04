@@ -13,6 +13,7 @@ import "activity-coupon.proto";
 import "adapter.proto";
 import "order.proto";
 import "freeback.proto";
+import "upgrade.proto";
 
 
 service ShopRPC {
@@ -73,4 +74,8 @@ service ShopRPC {
     rpc ReadFreeback(Freeback) returns (Response);
     rpc AppendFreeback(Dialogue) returns (Response);
     rpc FindFreeback(Query) returns (Response);
+    
+
+    // 更新
+    rpc UpgradeIndexedDB(Upgrade) returns (Response);
 }

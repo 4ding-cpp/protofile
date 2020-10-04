@@ -5,7 +5,6 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "google/protobuf/struct.proto";
-import "google/protobuf/timestamp.proto";
 
 message Response {
     uint32 code = 1;
@@ -63,15 +62,13 @@ message Query {
     google.protobuf.Struct self = 7;
 };
 
-message SignRecord {
-    int32 user_id = 1;
-    string account = 2;
-    string type = 3;
-    string os = 4;
-    string browser = 5;
-    int32 created = 6;
-    google.protobuf.Timestamp online_at = 7;
-    google.protobuf.Timestamp offline_at = 8;
+message LogQuery {
+    PageLimit page_limit = 1;
+    string origin = 2;
+    string target_id = 3;
+    string start_at = 4;
+    string end_at = 5;
+    google.protobuf.Struct self = 6;
 }
 
 message Result {

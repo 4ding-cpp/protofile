@@ -18,6 +18,7 @@ import * as activity$coupon_pb from './activity-coupon_pb';
 import * as adapter_pb from './adapter_pb';
 import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
+import * as upgrade_pb from './upgrade_pb';
 
 export class ShopRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -783,6 +784,28 @@ export class ShopRPCClient {
       request,
       metadata || {},
       this.methodInfoFindFreeback,
+      callback);
+  }
+
+  methodInfoUpgradeIndexedDB = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: upgrade_pb.Upgrade) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeIndexedDB(
+    request: upgrade_pb.Upgrade,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UpgradeIndexedDB',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeIndexedDB,
       callback);
   }
 
