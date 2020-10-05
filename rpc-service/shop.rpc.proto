@@ -13,7 +13,7 @@ import "activity-coupon.proto";
 import "adapter.proto";
 import "order.proto";
 import "freeback.proto";
-import "upgrade.proto";
+import "log.proto";
 
 
 service ShopRPC {
@@ -46,10 +46,10 @@ service ShopRPC {
     rpc AddProductFavorite(ProductGoods) returns (Response);
     rpc DelProductFavorite(ProductGoods) returns (Response);
     rpc FindFavorite(Query) returns (Response);
-    // 兌換折價券
-    rpc ExchangeCoupon(Coupon) returns (Response);
 
-    // 可用優惠券列表
+
+    rpc FindLevel(Query) returns (Response);
+    rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);

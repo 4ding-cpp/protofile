@@ -18,7 +18,7 @@ import * as activity$coupon_pb from './activity-coupon_pb';
 import * as adapter_pb from './adapter_pb';
 import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
-import * as upgrade_pb from './upgrade_pb';
+import * as log_pb from './log_pb';
 
 export class ShopRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -435,6 +435,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoFindLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findLevel(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/FindLevel',
+      request,
+      metadata || {},
+      this.methodInfoFindLevel,
+      callback);
+  }
+
   methodInfoExchangeCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: activity$coupon_pb.Coupon) => {
@@ -789,14 +811,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeIndexedDB = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: upgrade_pb.Upgrade) => {
+    (request: log_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeIndexedDB(
-    request: upgrade_pb.Upgrade,
+    request: log_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

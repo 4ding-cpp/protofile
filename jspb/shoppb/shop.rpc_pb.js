@@ -30,5 +30,5 @@ var order_pb = require('./order_pb.js');
 goog.object.extend(proto, order_pb);
 var freeback_pb = require('./freeback_pb.js');
 goog.object.extend(proto, freeback_pb);
-var upgrade_pb = require('./upgrade_pb.js');
-goog.object.extend(proto, upgrade_pb);
+var log_pb = require('./log_pb.js');
+goog.object.extend(proto, log_pb);

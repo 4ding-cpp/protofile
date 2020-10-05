@@ -15,3 +15,7 @@ message Log {
     google.protobuf.Struct different = 5;
 }
 
+message Upgrade {
+    double id = 1;
+    google.protobuf.Value result = 2;
+}

@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
+import * as address_pb from './address_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -38,17 +39,19 @@ export class Customer extends jspb.Message {
   getEmailVerify(): boolean;
   setEmailVerify(value: boolean): void;
 
+  getAddress(): address_pb.Address | undefined;
+  setAddress(value?: address_pb.Address): void;
+  hasAddress(): boolean;
+  clearAddress(): void;
+
+  getRecaptcha(): string;
+  setRecaptcha(value: string): void;
+
   getBirthday(): string;
   setBirthday(value: string): void;
 
   getSex(): number;
   setSex(value: number): void;
-
-  getZipCode(): string;
-  setZipCode(value: string): void;
-
-  getAddress(): string;
-  setAddress(value: string): void;
 
   getLevelId(): string;
   setLevelId(value: string): void;
@@ -108,10 +111,10 @@ export namespace Customer {
     password: string,
     phoneVerify: boolean,
     emailVerify: boolean,
+    address?: address_pb.Address.AsObject,
+    recaptcha: string,
     birthday: string,
     sex: number,
-    zipCode: string,
-    address: string,
     levelId: string,
     isReceive: boolean,
     labelxMap: Array<[string, number]>,

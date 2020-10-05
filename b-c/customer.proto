@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
+import "address.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -13,29 +14,30 @@ message Customer {
     string business_id = 2;
     string store_id = 3;
 
-    int32 status = 5;
-    string name = 6;
-    string fb_accesstoken = 7;
-    string email = 8;
-    string phone = 9;
-    string password = 10;
-    bool phone_verify = 11;
-    bool email_verify = 12;
+    int32 status = 4;
+    string name = 5;
+    string fb_accesstoken = 6;
+    string email = 7;
+    string phone = 8;
+    string password = 9;
+    bool phone_verify = 10;
+    bool email_verify = 11;
+    Address address = 12;
+    string recaptcha = 13;
+
     
-    string birthday = 13;
-    int32 sex = 14;
-    string zip_code = 15;
-    string address = 16;
-    string level_id = 17;
-    bool is_receive = 18;
+    string birthday = 14;
+    int32 sex = 15;
+    string level_id = 16;
+    bool is_receive = 17;
     
-    map<string, int32> labelx = 19;
-    string operator = 20;
-    google.protobuf.Timestamp create_at = 21;
-    google.protobuf.Timestamp update_at = 22;
-    repeated string cols = 23;
-    repeated Condition condition = 24;
-    google.protobuf.Struct self = 25;
+    map<string, int32> labelx = 18;
+    string operator = 19;
+    google.protobuf.Timestamp create_at = 20;
+    google.protobuf.Timestamp update_at = 21;
+    repeated string cols = 22;
+    repeated Condition condition = 23;
+    google.protobuf.Struct self = 24;
 }
 
 message CustomerLink {
