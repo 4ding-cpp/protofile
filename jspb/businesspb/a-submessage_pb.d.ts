@@ -267,6 +267,60 @@ export namespace Layout {
   }
 }
 
+export class Nav extends jspb.Message {
+  getType(): number;
+  setType(value: number): void;
+
+  getGroup(): google_protobuf_struct_pb.Value | undefined;
+  setGroup(value?: google_protobuf_struct_pb.Value): void;
+  hasGroup(): boolean;
+  clearGroup(): void;
+
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
+
+  getActivity(): string;
+  setActivity(value: string): void;
+
+  getClass(): string;
+  setClass(value: string): void;
+
+  getLink(): string;
+  setLink(value: string): void;
+
+  getPage(): string;
+  setPage(value: string): void;
+
+  getIsBlank(): boolean;
+  setIsBlank(value: boolean): void;
+
+  getAllProduct(): boolean;
+  setAllProduct(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Nav.AsObject;
+  static toObject(includeInstance: boolean, msg: Nav): Nav.AsObject;
+  static serializeBinaryToWriter(message: Nav, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Nav;
+  static deserializeBinaryFromReader(message: Nav, reader: jspb.BinaryReader): Nav;
+}
+
+export namespace Nav {
+  export type AsObject = {
+    type: number,
+    group?: google_protobuf_struct_pb.Value.AsObject,
+    name?: google_protobuf_struct_pb.Value.AsObject,
+    activity: string,
+    pb_class: string,
+    link: string,
+    page: string,
+    isBlank: boolean,
+    allProduct: boolean,
+  }
+}
+
 export class StyleColor extends jspb.Message {
   getBackground(): string;
   setBackground(value: string): void;

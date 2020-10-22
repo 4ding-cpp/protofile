@@ -328,23 +328,15 @@ export class ContactInfo extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  getZipCode(): string;
-  setZipCode(value: string): void;
+  getCvs(): ContactInfo.CVS | undefined;
+  setCvs(value?: ContactInfo.CVS): void;
+  hasCvs(): boolean;
+  clearCvs(): void;
 
-  getAddress(): string;
-  setAddress(value: string): void;
-
-  getCvsCode(): string;
-  setCvsCode(value: string): void;
-
-  getCvsType(): string;
-  setCvsType(value: string): void;
-
-  getCvsName(): string;
-  setCvsName(value: string): void;
-
-  getCvsAddress(): string;
-  setCvsAddress(value: string): void;
+  getAddress(): ContactInfo.Address | undefined;
+  setAddress(value?: ContactInfo.Address): void;
+  hasAddress(): boolean;
+  clearAddress(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContactInfo.AsObject;
@@ -359,13 +351,75 @@ export namespace ContactInfo {
     name: string,
     phone: string,
     email: string,
-    zipCode: string,
-    address: string,
-    cvsCode: string,
-    cvsType: string,
-    cvsName: string,
-    cvsAddress: string,
+    cvs?: ContactInfo.CVS.AsObject,
+    address?: ContactInfo.Address.AsObject,
   }
+
+  export class CVS extends jspb.Message {
+    getCode(): string;
+    setCode(value: string): void;
+
+    getType(): string;
+    setType(value: string): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getAddress(): string;
+    setAddress(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CVS.AsObject;
+    static toObject(includeInstance: boolean, msg: CVS): CVS.AsObject;
+    static serializeBinaryToWriter(message: CVS, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CVS;
+    static deserializeBinaryFromReader(message: CVS, reader: jspb.BinaryReader): CVS;
+  }
+
+  export namespace CVS {
+    export type AsObject = {
+      code: string,
+      type: string,
+      name: string,
+      address: string,
+    }
+  }
+
+
+  export class Address extends jspb.Message {
+    getZipcode(): string;
+    setZipcode(value: string): void;
+
+    getCountry(): string;
+    setCountry(value: string): void;
+
+    getCity(): string;
+    setCity(value: string): void;
+
+    getTownship(): string;
+    setTownship(value: string): void;
+
+    getDetail(): string;
+    setDetail(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Address.AsObject;
+    static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
+    static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Address;
+    static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
+  }
+
+  export namespace Address {
+    export type AsObject = {
+      zipcode: string,
+      country: string,
+      city: string,
+      township: string,
+      detail: string,
+    }
+  }
+
 }
 
 export class OrderOther extends jspb.Message {

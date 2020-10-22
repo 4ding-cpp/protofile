@@ -33,10 +33,15 @@ export class Website extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getNavList(): Array<a$submessage_pb.Layout>;
-  setNavList(value: Array<a$submessage_pb.Layout>): void;
+  getNavList(): Array<a$submessage_pb.Nav>;
+  setNavList(value: Array<a$submessage_pb.Nav>): void;
   clearNavList(): void;
-  addNav(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
+  addNav(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
+
+  getMenuList(): Array<a$submessage_pb.Nav>;
+  setMenuList(value: Array<a$submessage_pb.Nav>): void;
+  clearMenuList(): void;
+  addMenu(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
   getFooterList(): Array<a$submessage_pb.Layout>;
   setFooterList(value: Array<a$submessage_pb.Layout>): void;
@@ -47,11 +52,6 @@ export class Website extends jspb.Message {
   setLayoutList(value: Array<a$submessage_pb.Layout>): void;
   clearLayoutList(): void;
   addLayout(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
-
-  getMenuList(): Array<a$submessage_pb.Layout>;
-  setMenuList(value: Array<a$submessage_pb.Layout>): void;
-  clearMenuList(): void;
-  addMenu(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -100,10 +100,10 @@ export namespace Website {
     styleColor?: a$submessage_pb.StyleColor.AsObject,
     favicon?: a$submessage_pb.Image.AsObject,
     seo?: seo_pb.SEO.AsObject,
-    navList: Array<a$submessage_pb.Layout.AsObject>,
+    navList: Array<a$submessage_pb.Nav.AsObject>,
+    menuList: Array<a$submessage_pb.Nav.AsObject>,
     footerList: Array<a$submessage_pb.Layout.AsObject>,
     layoutList: Array<a$submessage_pb.Layout.AsObject>,
-    menuList: Array<a$submessage_pb.Layout.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

@@ -134,9 +134,6 @@ export class ProductSpec extends jspb.Message {
   hasPhoto(): boolean;
   clearPhoto(): void;
 
-  getDeleted(): boolean;
-  setDeleted(value: boolean): void;
-
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -181,7 +178,6 @@ export namespace ProductSpec {
     sold: number,
     itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
     photo?: a$submessage_pb.Image.AsObject,
-    deleted: boolean,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

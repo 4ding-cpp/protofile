@@ -45,14 +45,13 @@ message ProductSpec {
     int32 sold = 4;
     repeated google.protobuf.Value itemx = 5;
     Image photo = 6;
-    bool deleted = 7;
 
-    string operator = 8;
-    google.protobuf.Timestamp create_at = 9;
-    google.protobuf.Timestamp update_at = 10;
-    repeated string cols = 11;
-    repeated Condition condition = 12;
-    google.protobuf.Struct self = 13;
+    string operator = 7;
+    google.protobuf.Timestamp create_at = 8;
+    google.protobuf.Timestamp update_at = 9;
+    repeated string cols = 10;
+    repeated Condition condition = 11;
+    google.protobuf.Struct self = 12;
 }
 
 message ProductBatch {

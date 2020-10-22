@@ -66,8 +66,8 @@ message Image {
 }
 
 // Layout 客端首頁布局
-// Type 1:橫幅廣告 2:商品輪播 3:商品列表 4:左圖右文 5:左文右圖
-// Type 6:圖片輪播 7:圖片列表 8:自訂內容
+// Type 1:橫幅廣告 2:商品列表 3:左圖右文 4:左文右圖 5:圖片列表
+// Type 6:自訂內容
 message Layout {
     int32 type = 1;
     google.protobuf.Value title = 2;
@@ -81,6 +81,19 @@ message Layout {
     ProductTarget target = 10;
     ActivityTarget activity = 11;
     Template template = 12;
+}
+
+// Type 1:nav 2:menu
+message Nav {
+    int32 type = 1;
+    google.protobuf.Value group = 2;
+    google.protobuf.Value name = 3;
+    string activity = 4;
+    string class = 5;
+    string link = 6;
+    string page = 7;
+    bool is_blank = 8;
+    bool all_product = 9;
 }
 
 message StyleColor {
