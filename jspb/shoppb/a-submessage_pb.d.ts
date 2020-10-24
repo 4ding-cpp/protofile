@@ -247,27 +247,22 @@ export class Nav extends jspb.Message {
   getType(): number;
   setType(value: number): void;
 
-  getGroup(): google_protobuf_struct_pb.Value | undefined;
-  setGroup(value?: google_protobuf_struct_pb.Value): void;
-  hasGroup(): boolean;
-  clearGroup(): void;
+  getTitle(): google_protobuf_struct_pb.Value | undefined;
+  setTitle(value?: google_protobuf_struct_pb.Value): void;
+  hasTitle(): boolean;
+  clearTitle(): void;
 
-  getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
-  hasName(): boolean;
-  clearName(): void;
+  getActivityId(): string;
+  setActivityId(value: string): void;
 
-  getActivity(): string;
-  setActivity(value: string): void;
+  getClassId(): string;
+  setClassId(value: string): void;
 
-  getClass(): string;
-  setClass(value: string): void;
+  getPageId(): string;
+  setPageId(value: string): void;
 
   getLink(): string;
   setLink(value: string): void;
-
-  getPage(): string;
-  setPage(value: string): void;
 
   getIsBlank(): boolean;
   setIsBlank(value: boolean): void;
@@ -291,12 +286,11 @@ export class Nav extends jspb.Message {
 export namespace Nav {
   export type AsObject = {
     type: number,
-    group?: google_protobuf_struct_pb.Value.AsObject,
-    name?: google_protobuf_struct_pb.Value.AsObject,
-    activity: string,
-    pb_class: string,
+    title?: google_protobuf_struct_pb.Value.AsObject,
+    activityId: string,
+    classId: string,
+    pageId: string,
     link: string,
-    page: string,
     isBlank: boolean,
     customized: string,
     navsList: Array<Nav.AsObject>,
