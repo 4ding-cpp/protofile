@@ -88,8 +88,7 @@ message Nav {
     string link = 6;
     string page = 7;
     bool is_blank = 8;
-    bool all_product = 9;
-    bool contact_us = 10;
+    string customized = 9;
     repeated Nav navs = 11;
 }
 

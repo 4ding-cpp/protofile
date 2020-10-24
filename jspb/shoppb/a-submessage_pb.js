@@ -2161,8 +2161,7 @@ proto.ding4.Nav.toObject = function(includeInstance, msg) {
     link: jspb.Message.getFieldWithDefault(msg, 6, ""),
     page: jspb.Message.getFieldWithDefault(msg, 7, ""),
     isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    allProduct: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    contactUs: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    customized: jspb.Message.getFieldWithDefault(msg, 9, ""),
     navsList: jspb.Message.toObjectList(msg.getNavsList(),
     proto.ding4.Nav.toObject, includeInstance)
   };
@@ -2236,12 +2235,8 @@ proto.ding4.Nav.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsBlank(value);
       break;
     case 9:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAllProduct(value);
-      break;
-    case 10:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setContactUs(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomized(value);
       break;
     case 11:
       var value = new proto.ding4.Nav;
@@ -2335,17 +2330,10 @@ proto.ding4.Nav.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAllProduct();
-  if (f) {
-    writer.writeBool(
+  f = message.getCustomized();
+  if (f.length > 0) {
+    writer.writeString(
       9,
-      f
-    );
-  }
-  f = message.getContactUs();
-  if (f) {
-    writer.writeBool(
-      10,
       f
     );
   }
@@ -2543,38 +2531,20 @@ proto.ding4.Nav.prototype.setIsBlank = function(value) {
 
 
 /**
- * optional bool all_product = 9;
- * @return {boolean}
+ * optional string customized = 9;
+ * @return {string}
  */
-proto.ding4.Nav.prototype.getAllProduct = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+proto.ding4.Nav.prototype.getCustomized = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.ding4.Nav} returns this
  */
-proto.ding4.Nav.prototype.setAllProduct = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
-};
-
-
-/**
- * optional bool contact_us = 10;
- * @return {boolean}
- */
-proto.ding4.Nav.prototype.getContactUs = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.ding4.Nav} returns this
- */
-proto.ding4.Nav.prototype.setContactUs = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
+proto.ding4.Nav.prototype.setCustomized = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

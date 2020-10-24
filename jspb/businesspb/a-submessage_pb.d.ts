@@ -272,11 +272,8 @@ export class Nav extends jspb.Message {
   getIsBlank(): boolean;
   setIsBlank(value: boolean): void;
 
-  getAllProduct(): boolean;
-  setAllProduct(value: boolean): void;
-
-  getContactUs(): boolean;
-  setContactUs(value: boolean): void;
+  getCustomized(): string;
+  setCustomized(value: string): void;
 
   getNavsList(): Array<Nav>;
   setNavsList(value: Array<Nav>): void;
@@ -301,8 +298,7 @@ export namespace Nav {
     link: string,
     page: string,
     isBlank: boolean,
-    allProduct: boolean,
-    contactUs: boolean,
+    customized: string,
     navsList: Array<Nav.AsObject>,
   }
 }
