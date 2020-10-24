@@ -43,10 +43,10 @@ export class Website extends jspb.Message {
   clearMenuList(): void;
   addMenu(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
-  getFooterList(): Array<a$submessage_pb.Layout>;
-  setFooterList(value: Array<a$submessage_pb.Layout>): void;
+  getFooterList(): Array<a$submessage_pb.Nav>;
+  setFooterList(value: Array<a$submessage_pb.Nav>): void;
   clearFooterList(): void;
-  addFooter(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
+  addFooter(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
   getLayoutList(): Array<a$submessage_pb.Layout>;
   setLayoutList(value: Array<a$submessage_pb.Layout>): void;
@@ -102,7 +102,7 @@ export namespace Website {
     seo?: seo_pb.SEO.AsObject,
     navList: Array<a$submessage_pb.Nav.AsObject>,
     menuList: Array<a$submessage_pb.Nav.AsObject>,
-    footerList: Array<a$submessage_pb.Layout.AsObject>,
+    footerList: Array<a$submessage_pb.Nav.AsObject>,
     layoutList: Array<a$submessage_pb.Layout.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

@@ -71,19 +71,14 @@ message Image {
 message Layout {
     int32 type = 1;
     google.protobuf.Value title = 2;
-    string link = 3;
-    string page = 4;
-    bool is_blank = 5;
-    int32 quantity = 6;
-    int32 second = 7;
-    repeated Image image = 8;
-    repeated Layout layout = 9;
-    ProductTarget target = 10;
-    ActivityTarget activity = 11;
-    Template template = 12;
+    int32 quantity = 3;
+    int32 second = 4;
+    repeated Image image = 5;
+    repeated int32 items = 6;
+    Template template = 7;
 }
 
-// Type 1:nav 2:menu
+// Type 1:nav 2:menu 3:footer
 message Nav {
     int32 type = 1;
     google.protobuf.Value group = 2;
@@ -94,6 +89,8 @@ message Nav {
     string page = 7;
     bool is_blank = 8;
     bool all_product = 9;
+    bool contact_us = 10;
+    repeated Nav navs = 11;
 }
 
 message StyleColor {

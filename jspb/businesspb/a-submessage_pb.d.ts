@@ -202,15 +202,6 @@ export class Layout extends jspb.Message {
   hasTitle(): boolean;
   clearTitle(): void;
 
-  getLink(): string;
-  setLink(value: string): void;
-
-  getPage(): string;
-  setPage(value: string): void;
-
-  getIsBlank(): boolean;
-  setIsBlank(value: boolean): void;
-
   getQuantity(): number;
   setQuantity(value: number): void;
 
@@ -222,20 +213,10 @@ export class Layout extends jspb.Message {
   clearImageList(): void;
   addImage(value?: Image, index?: number): Image;
 
-  getLayoutList(): Array<Layout>;
-  setLayoutList(value: Array<Layout>): void;
-  clearLayoutList(): void;
-  addLayout(value?: Layout, index?: number): Layout;
-
-  getTarget(): ProductTarget | undefined;
-  setTarget(value?: ProductTarget): void;
-  hasTarget(): boolean;
-  clearTarget(): void;
-
-  getActivity(): ActivityTarget | undefined;
-  setActivity(value?: ActivityTarget): void;
-  hasActivity(): boolean;
-  clearActivity(): void;
+  getItemsList(): Array<number>;
+  setItemsList(value: Array<number>): void;
+  clearItemsList(): void;
+  addItems(value: number, index?: number): void;
 
   getTemplate(): seo_pb.Template | undefined;
   setTemplate(value?: seo_pb.Template): void;
@@ -254,15 +235,10 @@ export namespace Layout {
   export type AsObject = {
     type: number,
     title?: google_protobuf_struct_pb.Value.AsObject,
-    link: string,
-    page: string,
-    isBlank: boolean,
     quantity: number,
     second: number,
     imageList: Array<Image.AsObject>,
-    layoutList: Array<Layout.AsObject>,
-    target?: ProductTarget.AsObject,
-    activity?: ActivityTarget.AsObject,
+    itemsList: Array<number>,
     template?: seo_pb.Template.AsObject,
   }
 }
@@ -299,6 +275,14 @@ export class Nav extends jspb.Message {
   getAllProduct(): boolean;
   setAllProduct(value: boolean): void;
 
+  getContactUs(): boolean;
+  setContactUs(value: boolean): void;
+
+  getNavsList(): Array<Nav>;
+  setNavsList(value: Array<Nav>): void;
+  clearNavsList(): void;
+  addNavs(value?: Nav, index?: number): Nav;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Nav.AsObject;
   static toObject(includeInstance: boolean, msg: Nav): Nav.AsObject;
@@ -318,6 +302,8 @@ export namespace Nav {
     page: string,
     isBlank: boolean,
     allProduct: boolean,
+    contactUs: boolean,
+    navsList: Array<Nav.AsObject>,
   }
 }
 

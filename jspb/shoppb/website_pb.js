@@ -94,7 +94,7 @@ proto.ding4.Website.toObject = function(includeInstance, msg) {
     menuList: jspb.Message.toObjectList(msg.getMenuList(),
     a$submessage_pb.Nav.toObject, includeInstance),
     footerList: jspb.Message.toObjectList(msg.getFooterList(),
-    a$submessage_pb.Layout.toObject, includeInstance),
+    a$submessage_pb.Nav.toObject, includeInstance),
     layoutList: jspb.Message.toObjectList(msg.getLayoutList(),
     a$submessage_pb.Layout.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -180,8 +180,8 @@ proto.ding4.Website.deserializeBinaryFromReader = function(msg, reader) {
       msg.addMenu(value);
       break;
     case 9:
-      var value = new a$submessage_pb.Layout;
-      reader.readMessage(value,a$submessage_pb.Layout.deserializeBinaryFromReader);
+      var value = new a$submessage_pb.Nav;
+      reader.readMessage(value,a$submessage_pb.Nav.deserializeBinaryFromReader);
       msg.addFooter(value);
       break;
     case 10:
@@ -319,7 +319,7 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       9,
       f,
-      a$submessage_pb.Layout.serializeBinaryToWriter
+      a$submessage_pb.Nav.serializeBinaryToWriter
     );
   }
   f = message.getLayoutList();
@@ -644,17 +644,17 @@ proto.ding4.Website.prototype.clearMenuList = function() {
 
 
 /**
- * repeated Layout footer = 9;
- * @return {!Array<!proto.ding4.Layout>}
+ * repeated Nav footer = 9;
+ * @return {!Array<!proto.ding4.Nav>}
  */
 proto.ding4.Website.prototype.getFooterList = function() {
-  return /** @type{!Array<!proto.ding4.Layout>} */ (
-    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Layout, 9));
+  return /** @type{!Array<!proto.ding4.Nav>} */ (
+    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Nav, 9));
 };
 
 
 /**
- * @param {!Array<!proto.ding4.Layout>} value
+ * @param {!Array<!proto.ding4.Nav>} value
  * @return {!proto.ding4.Website} returns this
 */
 proto.ding4.Website.prototype.setFooterList = function(value) {
@@ -663,12 +663,12 @@ proto.ding4.Website.prototype.setFooterList = function(value) {
 
 
 /**
- * @param {!proto.ding4.Layout=} opt_value
+ * @param {!proto.ding4.Nav=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ding4.Layout}
+ * @return {!proto.ding4.Nav}
  */
 proto.ding4.Website.prototype.addFooter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.Layout, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.Nav, opt_index);
 };
 
 
