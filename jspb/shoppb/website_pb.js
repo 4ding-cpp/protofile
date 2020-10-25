@@ -50,7 +50,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Website.repeatedFields_ = [7,8,9,10,15,16];
+proto.ding4.Website.repeatedFields_ = [7,8,10,15,16];
 
 
 
@@ -93,8 +93,7 @@ proto.ding4.Website.toObject = function(includeInstance, msg) {
     a$submessage_pb.Nav.toObject, includeInstance),
     menuList: jspb.Message.toObjectList(msg.getMenuList(),
     a$submessage_pb.Nav.toObject, includeInstance),
-    footerList: jspb.Message.toObjectList(msg.getFooterList(),
-    a$submessage_pb.Nav.toObject, includeInstance),
+    footer: (f = msg.getFooter()) && a$submessage_pb.Footer.toObject(includeInstance, f),
     layoutList: jspb.Message.toObjectList(msg.getLayoutList(),
     a$submessage_pb.Layout.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -180,9 +179,9 @@ proto.ding4.Website.deserializeBinaryFromReader = function(msg, reader) {
       msg.addMenu(value);
       break;
     case 9:
-      var value = new a$submessage_pb.Nav;
-      reader.readMessage(value,a$submessage_pb.Nav.deserializeBinaryFromReader);
-      msg.addFooter(value);
+      var value = new a$submessage_pb.Footer;
+      reader.readMessage(value,a$submessage_pb.Footer.deserializeBinaryFromReader);
+      msg.setFooter(value);
       break;
     case 10:
       var value = new a$submessage_pb.Layout;
@@ -314,12 +313,12 @@ proto.ding4.Website.serializeBinaryToWriter = function(message, writer) {
       a$submessage_pb.Nav.serializeBinaryToWriter
     );
   }
-  f = message.getFooterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getFooter();
+  if (f != null) {
+    writer.writeMessage(
       9,
       f,
-      a$submessage_pb.Nav.serializeBinaryToWriter
+      a$submessage_pb.Footer.serializeBinaryToWriter
     );
   }
   f = message.getLayoutList();
@@ -644,40 +643,39 @@ proto.ding4.Website.prototype.clearMenuList = function() {
 
 
 /**
- * repeated Nav footer = 9;
- * @return {!Array<!proto.ding4.Nav>}
+ * optional Footer footer = 9;
+ * @return {?proto.ding4.Footer}
  */
-proto.ding4.Website.prototype.getFooterList = function() {
-  return /** @type{!Array<!proto.ding4.Nav>} */ (
-    jspb.Message.getRepeatedWrapperField(this, a$submessage_pb.Nav, 9));
+proto.ding4.Website.prototype.getFooter = function() {
+  return /** @type{?proto.ding4.Footer} */ (
+    jspb.Message.getWrapperField(this, a$submessage_pb.Footer, 9));
 };
 
 
 /**
- * @param {!Array<!proto.ding4.Nav>} value
+ * @param {?proto.ding4.Footer|undefined} value
  * @return {!proto.ding4.Website} returns this
 */
-proto.ding4.Website.prototype.setFooterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+proto.ding4.Website.prototype.setFooter = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * @param {!proto.ding4.Nav=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ding4.Nav}
- */
-proto.ding4.Website.prototype.addFooter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.Nav, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.ding4.Website} returns this
  */
-proto.ding4.Website.prototype.clearFooterList = function() {
-  return this.setFooterList([]);
+proto.ding4.Website.prototype.clearFooter = function() {
+  return this.setFooter(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Website.prototype.hasFooter = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

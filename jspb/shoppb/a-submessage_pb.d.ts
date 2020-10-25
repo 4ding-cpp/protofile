@@ -267,11 +267,6 @@ export class Nav extends jspb.Message {
   getCustomized(): string;
   setCustomized(value: string): void;
 
-  getTemplate(): seo_pb.Template | undefined;
-  setTemplate(value?: seo_pb.Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
-
   getNavsList(): Array<Nav>;
   setNavsList(value: Array<Nav>): void;
   clearNavsList(): void;
@@ -294,8 +289,33 @@ export namespace Nav {
     link: string,
     isBlank: boolean,
     customized: string,
-    template?: seo_pb.Template.AsObject,
     navsList: Array<Nav.AsObject>,
+  }
+}
+
+export class Footer extends jspb.Message {
+  getNavList(): Array<Nav>;
+  setNavList(value: Array<Nav>): void;
+  clearNavList(): void;
+  addNav(value?: Nav, index?: number): Nav;
+
+  getTemplate(): seo_pb.Template | undefined;
+  setTemplate(value?: seo_pb.Template): void;
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Footer.AsObject;
+  static toObject(includeInstance: boolean, msg: Footer): Footer.AsObject;
+  static serializeBinaryToWriter(message: Footer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Footer;
+  static deserializeBinaryFromReader(message: Footer, reader: jspb.BinaryReader): Footer;
+}
+
+export namespace Footer {
+  export type AsObject = {
+    navList: Array<Nav.AsObject>,
+    template?: seo_pb.Template.AsObject,
   }
 }
 
