@@ -244,9 +244,6 @@ export namespace Layout {
 }
 
 export class Nav extends jspb.Message {
-  getType(): number;
-  setType(value: number): void;
-
   getTitle(): google_protobuf_struct_pb.Value | undefined;
   setTitle(value?: google_protobuf_struct_pb.Value): void;
   hasTitle(): boolean;
@@ -270,6 +267,11 @@ export class Nav extends jspb.Message {
   getCustomized(): string;
   setCustomized(value: string): void;
 
+  getTemplate(): seo_pb.Template | undefined;
+  setTemplate(value?: seo_pb.Template): void;
+  hasTemplate(): boolean;
+  clearTemplate(): void;
+
   getNavsList(): Array<Nav>;
   setNavsList(value: Array<Nav>): void;
   clearNavsList(): void;
@@ -285,7 +287,6 @@ export class Nav extends jspb.Message {
 
 export namespace Nav {
   export type AsObject = {
-    type: number,
     title?: google_protobuf_struct_pb.Value.AsObject,
     activityId: string,
     classId: string,
@@ -293,6 +294,7 @@ export namespace Nav {
     link: string,
     isBlank: boolean,
     customized: string,
+    template?: seo_pb.Template.AsObject,
     navsList: Array<Nav.AsObject>,
   }
 }

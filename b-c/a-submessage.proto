@@ -80,14 +80,14 @@ message Layout {
 
 // Type 1:nav 2:menu 3:footer
 message Nav {
-    int32 type = 1;
-    google.protobuf.Value title = 2;
-    string activity_id = 3;
-    string class_id = 4;
-    string page_id = 5;
-    string link = 6;
-    bool is_blank = 7;
-    string customized = 8;
+    google.protobuf.Value title = 1;
+    string activity_id = 2;
+    string class_id = 3;
+    string page_id = 4;
+    string link = 5;
+    bool is_blank = 6;
+    string customized = 7;
+    Template template = 8;
     repeated Nav navs = 9;
 }
 
