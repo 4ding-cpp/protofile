@@ -19,7 +19,7 @@ message Website {
     SEO seo = 6;
     repeated Nav nav = 7;
     repeated Nav menu = 8;
-    Footer footer = 9;
+    repeated Nav footer = 9;
     repeated Layout layout = 10;
 
     map<string, int32> labelx = 11;

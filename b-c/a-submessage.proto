@@ -87,12 +87,8 @@ message Nav {
     string link = 5;
     bool is_blank = 6;
     string customized = 7;
-    repeated Nav navs = 8;
-}
-
-message Footer {
-    repeated Nav nav = 1;
-    Template template = 2;
+    Template template = 8;
+    repeated Nav navs = 9;
 }
 
 message StyleColor {
