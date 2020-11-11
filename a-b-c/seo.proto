@@ -13,23 +13,18 @@ message SEO {
     google.protobuf.Value description = 3;
 }
 
-message Block {
-    google.protobuf.Value title = 1;
-    string url = 2;
-    Template template = 3;
-}
-
 message Template {
     string template_id = 1;
     string store_id = 2;
     string name = 3;
-    bool is_html = 4;
-    string content = 5;
+    google.protobuf.Value title = 4;
+    bool is_html = 5;
+    string content = 6;
 
-    map<string, int32> labelx = 6;
-    string operator = 7;
-    google.protobuf.Timestamp create_at = 8;
-    google.protobuf.Timestamp update_at = 9;
-    repeated string cols = 10;
-    google.protobuf.Struct self = 11;  
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    google.protobuf.Struct self = 12;  
 }

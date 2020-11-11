@@ -15,7 +15,7 @@ message ProductGoods {
     string class_id = 3;
     int32 type = 4;
     SEO seo = 5;
-    repeated Block block = 6;
+    repeated Template block = 6;
     google.protobuf.Value name = 7;
     string urn = 8;
     string sku = 9;

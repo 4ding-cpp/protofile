@@ -35,36 +35,6 @@ export namespace SEO {
   }
 }
 
-export class Block extends jspb.Message {
-  getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): void;
-  hasTitle(): boolean;
-  clearTitle(): void;
-
-  getUrl(): string;
-  setUrl(value: string): void;
-
-  getTemplate(): Template | undefined;
-  setTemplate(value?: Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Block.AsObject;
-  static toObject(includeInstance: boolean, msg: Block): Block.AsObject;
-  static serializeBinaryToWriter(message: Block, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Block;
-  static deserializeBinaryFromReader(message: Block, reader: jspb.BinaryReader): Block;
-}
-
-export namespace Block {
-  export type AsObject = {
-    title?: google_protobuf_struct_pb.Value.AsObject,
-    url: string,
-    template?: Template.AsObject,
-  }
-}
-
 export class Template extends jspb.Message {
   getTemplateId(): string;
   setTemplateId(value: string): void;
@@ -74,6 +44,11 @@ export class Template extends jspb.Message {
 
   getName(): string;
   setName(value: string): void;
+
+  getTitle(): google_protobuf_struct_pb.Value | undefined;
+  setTitle(value?: google_protobuf_struct_pb.Value): void;
+  hasTitle(): boolean;
+  clearTitle(): void;
 
   getIsHtml(): boolean;
   setIsHtml(value: boolean): void;
@@ -120,6 +95,7 @@ export namespace Template {
     templateId: string,
     storeId: string,
     name: string,
+    title?: google_protobuf_struct_pb.Value.AsObject,
     isHtml: boolean,
     content: string,
     labelxMap: Array<[string, number]>,

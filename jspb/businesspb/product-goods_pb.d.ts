@@ -23,10 +23,10 @@ export class ProductGoods extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getBlockList(): Array<seo_pb.Block>;
-  setBlockList(value: Array<seo_pb.Block>): void;
+  getBlockList(): Array<seo_pb.Template>;
+  setBlockList(value: Array<seo_pb.Template>): void;
   clearBlockList(): void;
-  addBlock(value?: seo_pb.Block, index?: number): seo_pb.Block;
+  addBlock(value?: seo_pb.Template, index?: number): seo_pb.Template;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
@@ -93,7 +93,7 @@ export namespace ProductGoods {
     classId: string,
     type: number,
     seo?: seo_pb.SEO.AsObject,
-    blockList: Array<seo_pb.Block.AsObject>,
+    blockList: Array<seo_pb.Template.AsObject>,
     name?: google_protobuf_struct_pb.Value.AsObject,
     urn: string,
     sku: string,

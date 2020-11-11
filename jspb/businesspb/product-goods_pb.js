@@ -109,7 +109,7 @@ proto.ding4.ProductGoods.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     blockList: jspb.Message.toObjectList(msg.getBlockList(),
-    seo_pb.Block.toObject, includeInstance),
+    seo_pb.Template.toObject, includeInstance),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     urn: jspb.Message.getFieldWithDefault(msg, 8, ""),
     sku: jspb.Message.getFieldWithDefault(msg, 9, ""),
@@ -185,8 +185,8 @@ proto.ding4.ProductGoods.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSeo(value);
       break;
     case 6:
-      var value = new seo_pb.Block;
-      reader.readMessage(value,seo_pb.Block.deserializeBinaryFromReader);
+      var value = new seo_pb.Template;
+      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
       msg.addBlock(value);
       break;
     case 7:
@@ -319,7 +319,7 @@ proto.ding4.ProductGoods.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       6,
       f,
-      seo_pb.Block.serializeBinaryToWriter
+      seo_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getName();
@@ -537,17 +537,17 @@ proto.ding4.ProductGoods.prototype.hasSeo = function() {
 
 
 /**
- * repeated Block block = 6;
- * @return {!Array<!proto.ding4.Block>}
+ * repeated Template block = 6;
+ * @return {!Array<!proto.ding4.Template>}
  */
 proto.ding4.ProductGoods.prototype.getBlockList = function() {
-  return /** @type{!Array<!proto.ding4.Block>} */ (
-    jspb.Message.getRepeatedWrapperField(this, seo_pb.Block, 6));
+  return /** @type{!Array<!proto.ding4.Template>} */ (
+    jspb.Message.getRepeatedWrapperField(this, seo_pb.Template, 6));
 };
 
 
 /**
- * @param {!Array<!proto.ding4.Block>} value
+ * @param {!Array<!proto.ding4.Template>} value
  * @return {!proto.ding4.ProductGoods} returns this
 */
 proto.ding4.ProductGoods.prototype.setBlockList = function(value) {
@@ -556,12 +556,12 @@ proto.ding4.ProductGoods.prototype.setBlockList = function(value) {
 
 
 /**
- * @param {!proto.ding4.Block=} opt_value
+ * @param {!proto.ding4.Template=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ding4.Block}
+ * @return {!proto.ding4.Template}
  */
 proto.ding4.ProductGoods.prototype.addBlock = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ding4.Block, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ding4.Template, opt_index);
 };
 
 
