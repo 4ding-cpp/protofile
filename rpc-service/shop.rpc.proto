@@ -77,5 +77,7 @@ service ShopRPC {
     
 
     // 更新
-    rpc UpgradeIndexedDB(Upgrade) returns (Response);
+    rpc UpgradeWebsite(Upgrade) returns (Response);
+    rpc UpgradeProduct(Upgrade) returns (Response);
+    rpc UpgradeMember(Upgrade) returns (Response);
 }

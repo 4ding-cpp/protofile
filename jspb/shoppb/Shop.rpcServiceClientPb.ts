@@ -809,7 +809,7 @@ export class ShopRPCClient {
       callback);
   }
 
-  methodInfoUpgradeIndexedDB = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpgradeWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: log_pb.Upgrade) => {
       return request.serializeBinary();
@@ -817,17 +817,61 @@ export class ShopRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  upgradeIndexedDB(
+  upgradeWebsite(
     request: log_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.ShopRPC/UpgradeIndexedDB',
+        '/ding4.ShopRPC/UpgradeWebsite',
       request,
       metadata || {},
-      this.methodInfoUpgradeIndexedDB,
+      this.methodInfoUpgradeWebsite,
+      callback);
+  }
+
+  methodInfoUpgradeProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: log_pb.Upgrade) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeProduct(
+    request: log_pb.Upgrade,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UpgradeProduct',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeProduct,
+      callback);
+  }
+
+  methodInfoUpgradeMember = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: log_pb.Upgrade) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeMember(
+    request: log_pb.Upgrade,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UpgradeMember',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeMember,
       callback);
   }
 

@@ -15,8 +15,10 @@ export class CustomerLevel extends jspb.Message {
   getStatus(): number;
   setStatus(value: number): void;
 
-  getName(): string;
-  setName(value: string): void;
+  getName(): google_protobuf_struct_pb.Value | undefined;
+  setName(value?: google_protobuf_struct_pb.Value): void;
+  hasName(): boolean;
+  clearName(): void;
 
   getLevel(): number;
   setLevel(value: number): void;
@@ -85,7 +87,7 @@ export namespace CustomerLevel {
     levelId: string,
     storeId: string,
     status: number,
-    name: string,
+    name?: google_protobuf_struct_pb.Value.AsObject,
     level: number,
     payOnce: number,
     payAmount: number,

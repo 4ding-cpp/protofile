@@ -42,13 +42,13 @@ export namespace Log {
 }
 
 export class Upgrade extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  getLast(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLast(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasLast(): boolean;
+  clearLast(): void;
 
-  getResult(): google_protobuf_struct_pb.Value | undefined;
-  setResult(value?: google_protobuf_struct_pb.Value): void;
-  hasResult(): boolean;
-  clearResult(): void;
+  getPageIndex(): number;
+  setPageIndex(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Upgrade.AsObject;
@@ -60,8 +60,8 @@ export class Upgrade extends jspb.Message {
 
 export namespace Upgrade {
   export type AsObject = {
-    id: number,
-    result?: google_protobuf_struct_pb.Value.AsObject,
+    last?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pageIndex: number,
   }
 }
 

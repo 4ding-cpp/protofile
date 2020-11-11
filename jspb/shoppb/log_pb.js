@@ -384,8 +384,8 @@ proto.ding4.Upgrade.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Upgrade.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    result: (f = msg.getResult()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+    last: (f = msg.getLast()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    pageIndex: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -423,13 +423,13 @@ proto.ding4.Upgrade.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setId(value);
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLast(value);
       break;
     case 2:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setResult(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageIndex(value);
       break;
     default:
       reader.skipField();
@@ -460,58 +460,40 @@ proto.ding4.Upgrade.prototype.serializeBinary = function() {
  */
 proto.ding4.Upgrade.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getLast();
+  if (f != null) {
+    writer.writeMessage(
       1,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPageIndex();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
       f
     );
   }
-  f = message.getResult();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
-    );
-  }
 };
 
 
 /**
- * optional double id = 1;
- * @return {number}
+ * optional google.protobuf.Timestamp last = 1;
+ * @return {?proto.google.protobuf.Timestamp}
  */
-proto.ding4.Upgrade.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.ding4.Upgrade.prototype.getLast = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
 };
 
 
 /**
- * @param {number} value
- * @return {!proto.ding4.Upgrade} returns this
- */
-proto.ding4.Upgrade.prototype.setId = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.Value result = 2;
- * @return {?proto.google.protobuf.Value}
- */
-proto.ding4.Upgrade.prototype.getResult = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Value|undefined} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.ding4.Upgrade} returns this
 */
-proto.ding4.Upgrade.prototype.setResult = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.ding4.Upgrade.prototype.setLast = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -519,8 +501,8 @@ proto.ding4.Upgrade.prototype.setResult = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.Upgrade} returns this
  */
-proto.ding4.Upgrade.prototype.clearResult = function() {
-  return this.setResult(undefined);
+proto.ding4.Upgrade.prototype.clearLast = function() {
+  return this.setLast(undefined);
 };
 
 
@@ -528,8 +510,26 @@ proto.ding4.Upgrade.prototype.clearResult = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.Upgrade.prototype.hasResult = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.ding4.Upgrade.prototype.hasLast = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 page_index = 2;
+ * @return {number}
+ */
+proto.ding4.Upgrade.prototype.getPageIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Upgrade} returns this
+ */
+proto.ding4.Upgrade.prototype.setPageIndex = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

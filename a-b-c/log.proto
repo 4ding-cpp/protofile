@@ -16,6 +16,6 @@ message Log {
 }
 
 message Upgrade {
-    double id = 1;
-    google.protobuf.Value result = 2;
+    google.protobuf.Timestamp last = 1;
+    int32 page_index = 2;
 }

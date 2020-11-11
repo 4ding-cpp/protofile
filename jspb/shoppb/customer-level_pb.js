@@ -84,7 +84,7 @@ proto.ding4.CustomerLevel.toObject = function(includeInstance, msg) {
     levelId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     level: jspb.Message.getFieldWithDefault(msg, 5, 0),
     payOnce: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     payAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
@@ -150,7 +150,8 @@ proto.ding4.CustomerLevel.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStatus(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setName(value);
       break;
     case 5:
@@ -267,10 +268,11 @@ proto.ding4.CustomerLevel.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getLevel();
@@ -431,20 +433,39 @@ proto.ding4.CustomerLevel.prototype.setStatus = function(value) {
 
 
 /**
- * optional string name = 4;
- * @return {string}
+ * optional google.protobuf.Value name = 4;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.CustomerLevel.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.ding4.CustomerLevel} returns this
+*/
+proto.ding4.CustomerLevel.prototype.setName = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.ding4.CustomerLevel} returns this
  */
-proto.ding4.CustomerLevel.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.ding4.CustomerLevel.prototype.clearName = function() {
+  return this.setName(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.CustomerLevel.prototype.hasName = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
