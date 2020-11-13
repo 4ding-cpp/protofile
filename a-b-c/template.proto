@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Template {
+    string template_id = 1;
+    string store_id = 2;
+    string name = 3;
+    string group_id = 4;
+    string language = 5;
+    string title = 6;
+    bool is_html = 7;
+    string content = 8;
+    int32 idx = 9;
+
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    google.protobuf.Struct self = 14;  
+}

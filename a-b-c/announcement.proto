@@ -15,7 +15,7 @@ message Announcement {
     int32 area = 3;
     int32 type = 4;
     string title = 5;
-    Template template = 6;
+    repeated Template template_group = 6;
     
     map<string, int32> labelx = 7;
     string operator = 8;
