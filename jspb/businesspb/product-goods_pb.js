@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var a$submessage_pb = require('./a-submessage_pb.js');
 goog.object.extend(proto, a$submessage_pb);
 var product_pb = require('./product_pb.js');
@@ -109,7 +111,7 @@ proto.ding4.ProductGoods.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     blockList: jspb.Message.toObjectList(msg.getBlockList(),
-    seo_pb.Template.toObject, includeInstance),
+    template_pb.Template.toObject, includeInstance),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     urn: jspb.Message.getFieldWithDefault(msg, 8, ""),
     sku: jspb.Message.getFieldWithDefault(msg, 9, ""),
@@ -185,8 +187,8 @@ proto.ding4.ProductGoods.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSeo(value);
       break;
     case 6:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.addBlock(value);
       break;
     case 7:
@@ -319,7 +321,7 @@ proto.ding4.ProductGoods.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       6,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getName();
@@ -542,7 +544,7 @@ proto.ding4.ProductGoods.prototype.hasSeo = function() {
  */
 proto.ding4.ProductGoods.prototype.getBlockList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
-    jspb.Message.getRepeatedWrapperField(this, seo_pb.Template, 6));
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 6));
 };
 
 

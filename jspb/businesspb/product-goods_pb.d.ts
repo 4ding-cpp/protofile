@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as a$submessage_pb from './a-submessage_pb';
 import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
@@ -23,10 +24,10 @@ export class ProductGoods extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getBlockList(): Array<seo_pb.Template>;
-  setBlockList(value: Array<seo_pb.Template>): void;
+  getBlockList(): Array<template_pb.Template>;
+  setBlockList(value: Array<template_pb.Template>): void;
   clearBlockList(): void;
-  addBlock(value?: seo_pb.Template, index?: number): seo_pb.Template;
+  addBlock(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
   setName(value?: google_protobuf_struct_pb.Value): void;
@@ -93,7 +94,7 @@ export namespace ProductGoods {
     classId: string,
     type: number,
     seo?: seo_pb.SEO.AsObject,
-    blockList: Array<seo_pb.Template.AsObject>,
+    blockList: Array<template_pb.Template.AsObject>,
     name?: google_protobuf_struct_pb.Value.AsObject,
     urn: string,
     sku: string,

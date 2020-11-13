@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var seo_pb = require('./seo_pb.js');
-goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -87,7 +87,7 @@ proto.ding4.Remind.toObject = function(includeInstance, msg) {
     isEmail: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     isLetter: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
-    seo_pb.Template.toObject, includeInstance),
+    template_pb.Template.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 8, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -153,8 +153,8 @@ proto.ding4.Remind.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsLetter(value);
       break;
     case 6:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.addTemplateGroup(value);
       break;
     case 7:
@@ -260,7 +260,7 @@ proto.ding4.Remind.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       6,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -412,7 +412,7 @@ proto.ding4.Remind.prototype.setIsLetter = function(value) {
  */
 proto.ding4.Remind.prototype.getTemplateGroupList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
-    jspb.Message.getRepeatedWrapperField(this, seo_pb.Template, 6));
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 6));
 };
 
 

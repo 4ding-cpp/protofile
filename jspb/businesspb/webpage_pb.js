@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 var seo_pb = require('./seo_pb.js');
 goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
@@ -87,7 +89,7 @@ proto.ding4.WebPage.toObject = function(includeInstance, msg) {
     urn: jspb.Message.getFieldWithDefault(msg, 4, ""),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
-    seo_pb.Template.toObject, includeInstance),
+    template_pb.Template.toObject, includeInstance),
     defaultLanguage: jspb.Message.getFieldWithDefault(msg, 8, ""),
     isErrorHandle: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -156,8 +158,8 @@ proto.ding4.WebPage.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSeo(value);
       break;
     case 7:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.addTemplateGroup(value);
       break;
     case 8:
@@ -272,7 +274,7 @@ proto.ding4.WebPage.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       7,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getDefaultLanguage();
@@ -457,7 +459,7 @@ proto.ding4.WebPage.prototype.hasSeo = function() {
  */
 proto.ding4.WebPage.prototype.getTemplateGroupList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
-    jspb.Message.getRepeatedWrapperField(this, seo_pb.Template, 7));
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 7));
 };
 
 

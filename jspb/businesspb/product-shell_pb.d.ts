@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as sql_pb from './sql_pb';
 import * as product_pb from './product_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
@@ -30,10 +31,10 @@ export class ProductShell extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getTemplateGroupList(): Array<seo_pb.Template>;
-  setTemplateGroupList(value: Array<seo_pb.Template>): void;
+  getTemplateGroupList(): Array<template_pb.Template>;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
   clearTemplateGroupList(): void;
-  addTemplateGroup(value?: seo_pb.Template, index?: number): seo_pb.Template;
+  addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getReduce(): number;
   setReduce(value: number): void;
@@ -105,7 +106,7 @@ export namespace ProductShell {
     isDisplay: boolean,
     type: number,
     seo?: seo_pb.SEO.AsObject,
-    templateGroupList: Array<seo_pb.Template.AsObject>,
+    templateGroupList: Array<template_pb.Template.AsObject>,
     reduce: number,
     isPreorder: boolean,
     name?: google_protobuf_struct_pb.Value.AsObject,

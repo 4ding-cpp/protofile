@@ -1,7 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -21,10 +21,10 @@ export class Remind extends jspb.Message {
   getIsLetter(): boolean;
   setIsLetter(value: boolean): void;
 
-  getTemplateGroupList(): Array<seo_pb.Template>;
-  setTemplateGroupList(value: Array<seo_pb.Template>): void;
+  getTemplateGroupList(): Array<template_pb.Template>;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
   clearTemplateGroupList(): void;
-  addTemplateGroup(value?: seo_pb.Template, index?: number): seo_pb.Template;
+  addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -72,7 +72,7 @@ export namespace Remind {
     description: string,
     isEmail: boolean,
     isLetter: boolean,
-    templateGroupList: Array<seo_pb.Template.AsObject>,
+    templateGroupList: Array<template_pb.Template.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

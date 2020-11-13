@@ -1,6 +1,6 @@
 import * as jspb from "google-protobuf"
 
-import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
 export class Rule extends jspb.Message {
@@ -218,8 +218,8 @@ export class Layout extends jspb.Message {
   clearItemsList(): void;
   addItems(value: number, index?: number): void;
 
-  getTemplate(): seo_pb.Template | undefined;
-  setTemplate(value?: seo_pb.Template): void;
+  getTemplate(): template_pb.Template | undefined;
+  setTemplate(value?: template_pb.Template): void;
   hasTemplate(): boolean;
   clearTemplate(): void;
 
@@ -239,7 +239,7 @@ export namespace Layout {
     second: number,
     imageList: Array<Image.AsObject>,
     itemsList: Array<number>,
-    template?: seo_pb.Template.AsObject,
+    template?: template_pb.Template.AsObject,
   }
 }
 
@@ -267,8 +267,8 @@ export class Nav extends jspb.Message {
   getCustomized(): string;
   setCustomized(value: string): void;
 
-  getTemplate(): seo_pb.Template | undefined;
-  setTemplate(value?: seo_pb.Template): void;
+  getTemplate(): template_pb.Template | undefined;
+  setTemplate(value?: template_pb.Template): void;
   hasTemplate(): boolean;
   clearTemplate(): void;
 
@@ -294,7 +294,7 @@ export namespace Nav {
     link: string,
     isBlank: boolean,
     customized: string,
-    template?: seo_pb.Template.AsObject,
+    template?: template_pb.Template.AsObject,
     navsList: Array<Nav.AsObject>,
   }
 }

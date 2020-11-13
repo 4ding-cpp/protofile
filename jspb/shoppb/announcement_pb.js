@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var seo_pb = require('./seo_pb.js');
-goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -86,7 +86,7 @@ proto.ding4.Announcement.toObject = function(includeInstance, msg) {
     area: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     title: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    template: (f = msg.getTemplate()) && seo_pb.Template.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && template_pb.Template.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 8, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -153,8 +153,8 @@ proto.ding4.Announcement.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTitle(value);
       break;
     case 6:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     case 7:
@@ -261,7 +261,7 @@ proto.ding4.Announcement.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       6,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -432,7 +432,7 @@ proto.ding4.Announcement.prototype.setTitle = function(value) {
  */
 proto.ding4.Announcement.prototype.getTemplate = function() {
   return /** @type{?proto.ding4.Template} */ (
-    jspb.Message.getWrapperField(this, seo_pb.Template, 6));
+    jspb.Message.getWrapperField(this, template_pb.Template, 6));
 };
 
 

@@ -10,7 +10,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as pingpong_pb from './pingpong_pb';
-import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as business_pb from './business_pb';
@@ -1924,14 +1924,14 @@ export class BusinessRPCClient {
 
   methodInfoCreateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: seo_pb.Template) => {
+    (request: template_pb.Template) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createTemplate(
-    request: seo_pb.Template,
+    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1946,14 +1946,14 @@ export class BusinessRPCClient {
 
   methodInfoUpdateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: seo_pb.Template) => {
+    (request: template_pb.Template) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateTemplate(
-    request: seo_pb.Template,
+    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1968,14 +1968,14 @@ export class BusinessRPCClient {
 
   methodInfoDeleteTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: seo_pb.Template) => {
+    (request: template_pb.Template) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   deleteTemplate(
-    request: seo_pb.Template,
+    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

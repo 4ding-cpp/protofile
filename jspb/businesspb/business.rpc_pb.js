@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var pingpong_pb = require('./pingpong_pb.js');
 goog.object.extend(proto, pingpong_pb);
-var seo_pb = require('./seo_pb.js');
-goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
 var password_pb = require('./password_pb.js');

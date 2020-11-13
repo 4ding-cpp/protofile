@@ -6,7 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "pingpong.proto";
 import "sql.proto";
-import "seo.proto";
+import "template.proto";
 import "password.proto";
 import "label.proto";
 import "car.proto";

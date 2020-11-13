@@ -12,8 +12,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var seo_pb = require('./seo_pb.js');
-goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 goog.exportSymbol('proto.ding4.Active', null, global);
@@ -1759,7 +1759,7 @@ proto.ding4.Layout.toObject = function(includeInstance, msg) {
     imageList: jspb.Message.toObjectList(msg.getImageList(),
     proto.ding4.Image.toObject, includeInstance),
     itemsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    template: (f = msg.getTemplate()) && seo_pb.Template.toObject(includeInstance, f)
+    template: (f = msg.getTemplate()) && template_pb.Template.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1823,8 +1823,8 @@ proto.ding4.Layout.deserializeBinaryFromReader = function(msg, reader) {
       msg.setItemsList(value);
       break;
     case 7:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     default:
@@ -1905,7 +1905,7 @@ proto.ding4.Layout.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       7,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
 };
@@ -2083,7 +2083,7 @@ proto.ding4.Layout.prototype.clearItemsList = function() {
  */
 proto.ding4.Layout.prototype.getTemplate = function() {
   return /** @type{?proto.ding4.Template} */ (
-    jspb.Message.getWrapperField(this, seo_pb.Template, 7));
+    jspb.Message.getWrapperField(this, template_pb.Template, 7));
 };
 
 
@@ -2160,7 +2160,7 @@ proto.ding4.Nav.toObject = function(includeInstance, msg) {
     link: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isBlank: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     customized: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    template: (f = msg.getTemplate()) && seo_pb.Template.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && template_pb.Template.toObject(includeInstance, f),
     navsList: jspb.Message.toObjectList(msg.getNavsList(),
     proto.ding4.Nav.toObject, includeInstance)
   };
@@ -2229,8 +2229,8 @@ proto.ding4.Nav.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCustomized(value);
       break;
     case 8:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     case 9:
@@ -2322,7 +2322,7 @@ proto.ding4.Nav.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       8,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getNavsList();
@@ -2487,7 +2487,7 @@ proto.ding4.Nav.prototype.setCustomized = function(value) {
  */
 proto.ding4.Nav.prototype.getTemplate = function() {
   return /** @type{?proto.ding4.Template} */ (
-    jspb.Message.getWrapperField(this, seo_pb.Template, 8));
+    jspb.Message.getWrapperField(this, template_pb.Template, 8));
 };
 
 
