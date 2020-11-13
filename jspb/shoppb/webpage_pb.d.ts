@@ -23,8 +23,10 @@ export class WebPage extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getContent(): string;
-  setContent(value: string): void;
+  getTemplateGroupList(): Array<seo_pb.Template>;
+  setTemplateGroupList(value: Array<seo_pb.Template>): void;
+  clearTemplateGroupList(): void;
+  addTemplateGroup(value?: seo_pb.Template, index?: number): seo_pb.Template;
 
   getDefaultLanguage(): string;
   setDefaultLanguage(value: string): void;
@@ -78,7 +80,7 @@ export namespace WebPage {
     name: string,
     urn: string,
     seo?: seo_pb.SEO.AsObject,
-    content: string,
+    templateGroupList: Array<seo_pb.Template.AsObject>,
     defaultLanguage: string,
     isErrorHandle: boolean,
     labelxMap: Array<[string, number]>,

@@ -45,10 +45,14 @@ export class Template extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): void;
-  hasTitle(): boolean;
-  clearTitle(): void;
+  getGroupId(): string;
+  setGroupId(value: string): void;
+
+  getLanguage(): string;
+  setLanguage(value: string): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
 
   getIsHtml(): boolean;
   setIsHtml(value: boolean): void;
@@ -56,8 +60,8 @@ export class Template extends jspb.Message {
   getContent(): string;
   setContent(value: string): void;
 
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  getIdx(): number;
+  setIdx(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -95,10 +99,12 @@ export namespace Template {
     templateId: string,
     storeId: string,
     name: string,
-    title?: google_protobuf_struct_pb.Value.AsObject,
+    groupId: string,
+    language: string,
+    title: string,
     isHtml: boolean,
     content: string,
-    labelxMap: Array<[string, number]>,
+    idx: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

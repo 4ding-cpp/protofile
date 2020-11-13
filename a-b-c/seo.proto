@@ -17,14 +17,16 @@ message Template {
     string template_id = 1;
     string store_id = 2;
     string name = 3;
-    google.protobuf.Value title = 4;
-    bool is_html = 5;
-    string content = 6;
+    string group_id = 4;
+    string language = 5;
+    string title = 6;
+    bool is_html = 7;
+    string content = 8;
+    int32 idx = 9;
 
-    map<string, int32> labelx = 7;
-    string operator = 8;
-    google.protobuf.Timestamp create_at = 9;
-    google.protobuf.Timestamp update_at = 10;
-    repeated string cols = 11;
-    google.protobuf.Struct self = 12;  
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    google.protobuf.Struct self = 14;  
 }

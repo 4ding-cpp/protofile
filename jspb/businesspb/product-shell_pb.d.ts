@@ -30,10 +30,10 @@ export class ProductShell extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
-  getBlockList(): Array<seo_pb.Template>;
-  setBlockList(value: Array<seo_pb.Template>): void;
-  clearBlockList(): void;
-  addBlock(value?: seo_pb.Template, index?: number): seo_pb.Template;
+  getTemplateGroupList(): Array<seo_pb.Template>;
+  setTemplateGroupList(value: Array<seo_pb.Template>): void;
+  clearTemplateGroupList(): void;
+  addTemplateGroup(value?: seo_pb.Template, index?: number): seo_pb.Template;
 
   getReduce(): number;
   setReduce(value: number): void;
@@ -105,7 +105,7 @@ export namespace ProductShell {
     isDisplay: boolean,
     type: number,
     seo?: seo_pb.SEO.AsObject,
-    blockList: Array<seo_pb.Template.AsObject>,
+    templateGroupList: Array<seo_pb.Template.AsObject>,
     reduce: number,
     isPreorder: boolean,
     name?: google_protobuf_struct_pb.Value.AsObject,

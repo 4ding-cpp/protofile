@@ -19,7 +19,7 @@ message ProductShell {
     bool is_display = 5;
     int32 type = 6;
     SEO seo = 7;
-    repeated Template block = 8;
+    repeated Template template_group = 8;
     int32 reduce = 9;
     bool is_preorder = 10;
     // rewrite

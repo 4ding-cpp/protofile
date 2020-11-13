@@ -2,6 +2,7 @@ import * as jspb from "google-protobuf"
 
 import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
+import * as seo_pb from './seo_pb';
 import * as password_pb from './password_pb';
 import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';

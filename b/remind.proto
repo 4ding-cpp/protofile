@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "sql.proto";
+import "seo.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -13,17 +14,14 @@ message Remind {
     string item = 2;
     string description = 3;
     bool is_email = 4;
-    bool default_email = 5;
-    string email_template = 6;
-    bool is_letter = 7;
-    bool default_letter = 8;
-    string letter_template = 9;
+    bool is_letter = 5;
+    repeated Template template_group = 6;
 
-    map<string, int32> labelx = 10;
-    string operator = 11;
-    google.protobuf.Timestamp create_at = 12;
-    google.protobuf.Timestamp update_at = 13;
-    repeated string cols = 14;
-    repeated Condition condition = 15;
-    google.protobuf.Struct self = 16; 
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13; 
 }

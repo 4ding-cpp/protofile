@@ -11,6 +11,7 @@ import * as grpcWeb from 'grpc-web';
 
 import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
+import * as seo_pb from './seo_pb';
 import * as password_pb from './password_pb';
 import * as label_pb from './label_pb';
 import * as car_pb from './car_pb';
@@ -2248,6 +2249,94 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindDomain,
+      callback);
+  }
+
+  methodInfoCreateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seo_pb.Template) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createTemplate(
+    request: seo_pb.Template,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateTemplate',
+      request,
+      metadata || {},
+      this.methodInfoCreateTemplate,
+      callback);
+  }
+
+  methodInfoUpdateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seo_pb.Template) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateTemplate(
+    request: seo_pb.Template,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateTemplate',
+      request,
+      metadata || {},
+      this.methodInfoUpdateTemplate,
+      callback);
+  }
+
+  methodInfoDeleteTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: seo_pb.Template) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteTemplate(
+    request: seo_pb.Template,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteTemplate',
+      request,
+      metadata || {},
+      this.methodInfoDeleteTemplate,
+      callback);
+  }
+
+  methodInfoFindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findTemplate(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindTemplate',
+      request,
+      metadata || {},
+      this.methodInfoFindTemplate,
       callback);
   }
 

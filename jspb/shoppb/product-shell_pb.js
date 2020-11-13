@@ -90,7 +90,7 @@ proto.ding4.ProductShell.toObject = function(includeInstance, msg) {
     isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
-    blockList: jspb.Message.toObjectList(msg.getBlockList(),
+    templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
     seo_pb.Template.toObject, includeInstance),
     reduce: jspb.Message.getFieldWithDefault(msg, 9, 0),
     isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
@@ -174,7 +174,7 @@ proto.ding4.ProductShell.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = new seo_pb.Template;
       reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
-      msg.addBlock(value);
+      msg.addTemplateGroup(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt32());
@@ -315,7 +315,7 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
       seo_pb.SEO.serializeBinaryToWriter
     );
   }
-  f = message.getBlockList();
+  f = message.getTemplateGroupList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       8,
@@ -566,10 +566,10 @@ proto.ding4.ProductShell.prototype.hasSeo = function() {
 
 
 /**
- * repeated Template block = 8;
+ * repeated Template template_group = 8;
  * @return {!Array<!proto.ding4.Template>}
  */
-proto.ding4.ProductShell.prototype.getBlockList = function() {
+proto.ding4.ProductShell.prototype.getTemplateGroupList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
     jspb.Message.getRepeatedWrapperField(this, seo_pb.Template, 8));
 };
@@ -579,7 +579,7 @@ proto.ding4.ProductShell.prototype.getBlockList = function() {
  * @param {!Array<!proto.ding4.Template>} value
  * @return {!proto.ding4.ProductShell} returns this
 */
-proto.ding4.ProductShell.prototype.setBlockList = function(value) {
+proto.ding4.ProductShell.prototype.setTemplateGroupList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
@@ -589,7 +589,7 @@ proto.ding4.ProductShell.prototype.setBlockList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.Template}
  */
-proto.ding4.ProductShell.prototype.addBlock = function(opt_value, opt_index) {
+proto.ding4.ProductShell.prototype.addTemplateGroup = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.Template, opt_index);
 };
 
@@ -598,8 +598,8 @@ proto.ding4.ProductShell.prototype.addBlock = function(opt_value, opt_index) {
  * Clears the list making it empty but non-null.
  * @return {!proto.ding4.ProductShell} returns this
  */
-proto.ding4.ProductShell.prototype.clearBlockList = function() {
-  return this.setBlockList([]);
+proto.ding4.ProductShell.prototype.clearTemplateGroupList = function() {
+  return this.setTemplateGroupList([]);
 };
 
 

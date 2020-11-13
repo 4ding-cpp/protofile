@@ -6,6 +6,7 @@ option go_package = "github.com/4ding-cp/4dingsite/ptypes/drpc";
 
 import "pingpong.proto";
 import "sql.proto";
+import "seo.proto";
 import "password.proto";
 import "label.proto";
 import "car.proto";
@@ -175,6 +176,12 @@ service Store1RPC {
     rpc CreateDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
+
+    // 模板相關操作
+    rpc CreateTemplate(Template) returns (Response);
+    rpc UpdateTemplate(Template) returns (Response);
+    rpc DeleteTemplate(Template) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
 
     
 }
