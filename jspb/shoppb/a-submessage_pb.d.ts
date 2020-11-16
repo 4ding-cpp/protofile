@@ -194,6 +194,9 @@ export namespace Image {
 }
 
 export class Layout extends jspb.Message {
+  getLayoutId(): string;
+  setLayoutId(value: string): void;
+
   getType(): number;
   setType(value: number): void;
 
@@ -218,10 +221,10 @@ export class Layout extends jspb.Message {
   clearItemsList(): void;
   addItems(value: number, index?: number): void;
 
-  getTemplate(): template_pb.Template | undefined;
-  setTemplate(value?: template_pb.Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
+  getTemplateGroupList(): Array<template_pb.Template>;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
+  clearTemplateGroupList(): void;
+  addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Layout.AsObject;
@@ -233,17 +236,21 @@ export class Layout extends jspb.Message {
 
 export namespace Layout {
   export type AsObject = {
+    layoutId: string,
     type: number,
     title?: google_protobuf_struct_pb.Value.AsObject,
     quantity: number,
     second: number,
     imageList: Array<Image.AsObject>,
     itemsList: Array<number>,
-    template?: template_pb.Template.AsObject,
+    templateGroupList: Array<template_pb.Template.AsObject>,
   }
 }
 
 export class Nav extends jspb.Message {
+  getLayoutId(): string;
+  setLayoutId(value: string): void;
+
   getTitle(): google_protobuf_struct_pb.Value | undefined;
   setTitle(value?: google_protobuf_struct_pb.Value): void;
   hasTitle(): boolean;
@@ -267,10 +274,10 @@ export class Nav extends jspb.Message {
   getCustomized(): string;
   setCustomized(value: string): void;
 
-  getTemplate(): template_pb.Template | undefined;
-  setTemplate(value?: template_pb.Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
+  getTemplateGroupList(): Array<template_pb.Template>;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
+  clearTemplateGroupList(): void;
+  addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getNavsList(): Array<Nav>;
   setNavsList(value: Array<Nav>): void;
@@ -287,6 +294,7 @@ export class Nav extends jspb.Message {
 
 export namespace Nav {
   export type AsObject = {
+    layoutId: string,
     title?: google_protobuf_struct_pb.Value.AsObject,
     activityId: string,
     classId: string,
@@ -294,7 +302,7 @@ export namespace Nav {
     link: string,
     isBlank: boolean,
     customized: string,
-    template?: template_pb.Template.AsObject,
+    templateGroupList: Array<template_pb.Template.AsObject>,
     navsList: Array<Nav.AsObject>,
   }
 }

@@ -69,26 +69,28 @@ message Image {
 // Type 1:橫幅廣告 2:商品列表 3:左圖右文 4:左文右圖 5:圖片列表
 // Type 6:自訂內容
 message Layout {
-    int32 type = 1;
-    google.protobuf.Value title = 2;
-    int32 quantity = 3;
-    int32 second = 4;
-    repeated Image image = 5;
-    repeated int32 items = 6;
-    Template template = 7;
+    string layout_id = 1;
+    int32 type = 2;
+    google.protobuf.Value title = 3;
+    int32 quantity = 4;
+    int32 second = 5;
+    repeated Image image = 6;
+    repeated int32 items = 7;
+    repeated Template template_group = 8;
 }
 
 // Type 1:nav 2:menu 3:footer
 message Nav {
-    google.protobuf.Value title = 1;
-    string activity_id = 2;
-    string class_id = 3;
-    string page_id = 4;
-    string link = 5;
-    bool is_blank = 6;
-    string customized = 7;
-    Template template = 8;
-    repeated Nav navs = 9;
+    string layout_id = 1;
+    google.protobuf.Value title = 2;
+    string activity_id = 3;
+    string class_id = 4;
+    string page_id = 5;
+    string link = 6;
+    bool is_blank = 7;
+    string customized = 8;
+    repeated Template template_group = 9;
+    repeated Nav navs = 10;
 }
 
 message StyleColor {
