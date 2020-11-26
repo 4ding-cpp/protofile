@@ -875,5 +875,27 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoUpgradeOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: log_pb.Upgrade) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeOrder(
+    request: log_pb.Upgrade,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UpgradeOrder',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeOrder,
+      callback);
+  }
+
 }
 

@@ -80,4 +80,5 @@ service ShopRPC {
     rpc UpgradeWebsite(Upgrade) returns (Response);
     rpc UpgradeProduct(Upgrade) returns (Response);
     rpc UpgradeMember(Upgrade) returns (Response);
+    rpc UpgradeOrder(Upgrade) returns (Response);
 }
