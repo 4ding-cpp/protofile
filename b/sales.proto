@@ -18,12 +18,14 @@ message Sales {
     string phone = 7;
     string urn = 8;
     string password = 9;
+    string otp_token = 10;
+    string otp_code = 11;
 
-    map<string, int32> labelx = 10;
-    string operator = 11;
-    google.protobuf.Timestamp create_at = 12;
-    google.protobuf.Timestamp update_at = 13;
-    repeated string cols = 14;
-    repeated Condition condition = 15;
-    google.protobuf.Struct self = 16; 
+    map<string, int32> labelx = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18; 
 }

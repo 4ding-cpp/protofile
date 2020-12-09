@@ -59,6 +59,9 @@ export class Customer extends jspb.Message {
   getIsReceive(): boolean;
   setIsReceive(value: boolean): void;
 
+  getRegisterBy(): string;
+  setRegisterBy(value: string): void;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -117,6 +120,7 @@ export namespace Customer {
     sex: number,
     levelId: string,
     isReceive: boolean,
+    registerBy: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

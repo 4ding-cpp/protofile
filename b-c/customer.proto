@@ -30,14 +30,15 @@ message Customer {
     int32 sex = 15;
     string level_id = 16;
     bool is_receive = 17;
+    string register_by = 18;
     
-    map<string, int32> labelx = 18;
-    string operator = 19;
-    google.protobuf.Timestamp create_at = 20;
-    google.protobuf.Timestamp update_at = 21;
-    repeated string cols = 22;
-    repeated Condition condition = 23;
-    google.protobuf.Struct self = 24;
+    map<string, int32> labelx = 19;
+    string operator = 20;
+    google.protobuf.Timestamp create_at = 21;
+    google.protobuf.Timestamp update_at = 22;
+    repeated string cols = 23;
+    repeated Condition condition = 24;
+    google.protobuf.Struct self = 25;
 }
 
 message CustomerLink {

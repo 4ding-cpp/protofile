@@ -32,6 +32,12 @@ export class Sales extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
+  getOtpToken(): string;
+  setOtpToken(value: string): void;
+
+  getOtpCode(): string;
+  setOtpCode(value: string): void;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -82,6 +88,8 @@ export namespace Sales {
     phone: string,
     urn: string,
     password: string,
+    otpToken: string,
+    otpCode: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

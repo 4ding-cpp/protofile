@@ -46,6 +46,12 @@ export class Manager extends jspb.Message {
   clearWhiteList(): void;
   addWhite(value: string, index?: number): void;
 
+  getOtpToken(): string;
+  setOtpToken(value: string): void;
+
+  getOtpCode(): string;
+  setOtpCode(value: string): void;
+
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -99,6 +105,8 @@ export namespace Manager {
     emailVerify: boolean,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
+    otpToken: string,
+    otpCode: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
