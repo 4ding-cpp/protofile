@@ -39,7 +39,9 @@ service BusinessRPC {
     rpc FindRecord(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
-    
+
+    // 檢查存在否
+    rpc Duplicate(Query) returns (Response);
     // 查詢任何異動紀錄
     rpc FindLog(LogQuery) returns (Response);
 

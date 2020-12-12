@@ -40,6 +40,9 @@ service Store1RPC {
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
 
+    // 檢查存在否
+    rpc Duplicate(Query) returns (Response);
+
     rpc BrowseDashboard(StoreDashboard) returns (Response);
 
     // 子帳號相關
