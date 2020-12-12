@@ -54,7 +54,7 @@ service AdminRPC {
     rpc SignBusiness(Business) returns (Response);
 
     // 設定業主網域相關
-    rpc CreateDomain(Domain) returns (Response);
+    rpc UpgradeDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
     rpc RecordDomain(Domain) returns (Response);

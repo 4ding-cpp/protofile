@@ -5,6 +5,9 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Domain extends jspb.Message {
+  getId(): number;
+  setId(value: number): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -16,6 +19,9 @@ export class Domain extends jspb.Message {
 
   getStoreId(): string;
   setStoreId(value: string): void;
+
+  getCustom(): boolean;
+  setCustom(value: boolean): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -55,10 +61,12 @@ export class Domain extends jspb.Message {
 
 export namespace Domain {
   export type AsObject = {
+    id: number,
     name: string,
     state: number,
     businessId: string,
     storeId: string,
+    custom: boolean,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

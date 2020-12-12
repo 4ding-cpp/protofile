@@ -2186,7 +2186,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateDomain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpgradeDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: domain_pb.Domain) => {
       return request.serializeBinary();
@@ -2194,17 +2194,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  createDomain(
+  upgradeDomain(
     request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/CreateDomain',
+        '/ding4.Store1RPC/UpgradeDomain',
       request,
       metadata || {},
-      this.methodInfoCreateDomain,
+      this.methodInfoUpgradeDomain,
       callback);
   }
 
