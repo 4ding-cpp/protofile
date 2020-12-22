@@ -12,14 +12,17 @@ export class Remind extends jspb.Message {
   getItem(): string;
   setItem(value: string): void;
 
+  getMode(): string;
+  setMode(value: string): void;
+
   getDescription(): string;
   setDescription(value: string): void;
 
-  getIsEmail(): boolean;
-  setIsEmail(value: boolean): void;
+  getSubject(): string;
+  setSubject(value: string): void;
 
-  getIsLetter(): boolean;
-  setIsLetter(value: boolean): void;
+  getIsEnable(): boolean;
+  setIsEnable(value: boolean): void;
 
   getTemplateGroupList(): Array<template_pb.Template>;
   setTemplateGroupList(value: Array<template_pb.Template>): void;
@@ -69,9 +72,10 @@ export namespace Remind {
   export type AsObject = {
     remindId: string,
     item: string,
+    mode: string,
     description: string,
-    isEmail: boolean,
-    isLetter: boolean,
+    subject: string,
+    isEnable: boolean,
     templateGroupList: Array<template_pb.Template.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

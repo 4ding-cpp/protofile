@@ -294,28 +294,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoExistsManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: manager_pb.ManagerSub) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  existsManagerSub(
-    request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/ExistsManagerSub',
-      request,
-      metadata || {},
-      this.methodInfoExistsManagerSub,
-      callback);
-  }
-
   methodInfoCreateManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: manager_pb.ManagerSub) => {
@@ -756,28 +734,6 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoExistsSales = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sales_pb.Sales) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  existsSales(
-    request: sales_pb.Sales,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/ExistsSales',
-      request,
-      metadata || {},
-      this.methodInfoExistsSales,
-      callback);
-  }
-
   methodInfoCreateSales = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sales_pb.Sales) => {
@@ -841,28 +797,6 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoFindSales,
-      callback);
-  }
-
-  methodInfoExistsCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer_pb.Customer) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  existsCustomer(
-    request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/ExistsCustomer',
-      request,
-      metadata || {},
-      this.methodInfoExistsCustomer,
       callback);
   }
 

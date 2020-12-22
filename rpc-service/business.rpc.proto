@@ -62,7 +62,6 @@ service BusinessRPC {
     // 帳單明細
     rpc FindPointDetail(Query) returns (Response);
     
-    rpc ExistsBusinessSub(BusinessSub) returns (Response);
     // 新增子帳號
     rpc CreateBusinessSub(BusinessSub) returns (Response);
     // 更新子帳號
@@ -74,8 +73,6 @@ service BusinessRPC {
     // 子帳號登入紀錄
     rpc SignBusinessSub(BusinessSub) returns (Response);
 
-    // 檢查信箱及電話是否存在
-    // rpc ExistsManager(Manager) returns (Response);
     // 建立商店管理員
     // rpc CreateManager(Manager) returns (Response);
     // 更新商店管理員
@@ -102,8 +99,6 @@ service BusinessRPC {
     // 標籤修改紀錄
     rpc RecordLabel(Label) returns (Response);
 
-    // 檢查信箱及電話是否存在
-    rpc ExistsCustomer(Customer) returns (Response);
     // 建立會員
     rpc CreateCustomer(Customer) returns (Response);
     // 批次匯入
@@ -115,7 +110,6 @@ service BusinessRPC {
     rpc AddCustomerToLevel(CustomerLevel) returns (Response);
     rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
 
-    rpc ExistsSpec(ProductSpec) returns (Response);
     // 新增商品
     rpc CreateProduct(Product) returns (Response);
     // 批次匯入
@@ -227,7 +221,6 @@ service BusinessRPC {
     rpc FindDomain(Query) returns (Response);
 
     // 銷售員
-    rpc ExistsSales(Sales) returns (Response);
     rpc CreateSales(Sales) returns (Response);
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
