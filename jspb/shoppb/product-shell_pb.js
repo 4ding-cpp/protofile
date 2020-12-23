@@ -52,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.ProductShell.repeatedFields_ = [8,19,20];
+proto.ding4.ProductShell.repeatedFields_ = [8,9,20,21];
 
 
 
@@ -92,19 +92,21 @@ proto.ding4.ProductShell.toObject = function(includeInstance, msg) {
     isDisplay: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
     seo: (f = msg.getSeo()) && seo_pb.SEO.toObject(includeInstance, f),
+    descriptionList: jspb.Message.toObjectList(msg.getDescriptionList(),
+    template_pb.Template.toObject, includeInstance),
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
     template_pb.Template.toObject, includeInstance),
-    reduce: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    reduce: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    isPreorder: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    urn: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    urn: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 14, 0),
     product: (f = msg.getProduct()) && product_pb.Product.toObject(includeInstance, f),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
-    operator: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    operator: jspb.Message.getFieldWithDefault(msg, 17, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    colsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
+    colsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
     sql_pb.Condition.toObject, includeInstance),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
@@ -176,64 +178,69 @@ proto.ding4.ProductShell.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = new template_pb.Template;
       reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
-      msg.addTemplateGroup(value);
+      msg.addDescription(value);
       break;
     case 9:
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
+      msg.addTemplateGroup(value);
+      break;
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setReduce(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsPreorder(value);
       break;
-    case 11:
+    case 12:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setName(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrn(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
-    case 14:
+    case 15:
       var value = new product_pb.Product;
       reader.readMessage(value,product_pb.Product.deserializeBinaryFromReader);
       msg.setProduct(value);
       break;
-    case 15:
+    case 16:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
          });
       break;
-    case 16:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setOperator(value);
-      break;
-    case 17:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreateAt(value);
       break;
     case 18:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setUpdateAt(value);
+      msg.setCreateAt(value);
       break;
     case 19:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateAt(value);
+      break;
+    case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.addCols(value);
       break;
-    case 20:
+    case 21:
       var value = new sql_pb.Condition;
       reader.readMessage(value,sql_pb.Condition.deserializeBinaryFromReader);
       msg.addCondition(value);
       break;
-    case 21:
+    case 22:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -317,7 +324,7 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
       seo_pb.SEO.serializeBinaryToWriter
     );
   }
-  f = message.getTemplateGroupList();
+  f = message.getDescriptionList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       8,
@@ -325,24 +332,32 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
       template_pb.Template.serializeBinaryToWriter
     );
   }
+  f = message.getTemplateGroupList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      template_pb.Template.serializeBinaryToWriter
+    );
+  }
   f = message.getReduce();
   if (f !== 0) {
     writer.writeInt32(
-      9,
+      10,
       f
     );
   }
   f = message.getIsPreorder();
   if (f) {
     writer.writeBool(
-      10,
+      11,
       f
     );
   }
   f = message.getName();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
@@ -350,45 +365,37 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
   f = message.getUrn();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      13,
       f
     );
   }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
-      13,
+      14,
       f
     );
   }
   f = message.getProduct();
   if (f != null) {
     writer.writeMessage(
-      14,
+      15,
       f,
       product_pb.Product.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
     writer.writeString(
-      16,
+      17,
       f
     );
   }
   f = message.getCreateAt();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getUpdateAt();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -396,17 +403,25 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = message.getUpdateAt();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getColsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      19,
+      20,
       f
     );
   }
   f = message.getConditionList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      20,
+      21,
       f,
       sql_pb.Condition.serializeBinaryToWriter
     );
@@ -414,7 +429,7 @@ proto.ding4.ProductShell.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      21,
+      22,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -568,10 +583,10 @@ proto.ding4.ProductShell.prototype.hasSeo = function() {
 
 
 /**
- * repeated Template template_group = 8;
+ * repeated Template description = 8;
  * @return {!Array<!proto.ding4.Template>}
  */
-proto.ding4.ProductShell.prototype.getTemplateGroupList = function() {
+proto.ding4.ProductShell.prototype.getDescriptionList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
     jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 8));
 };
@@ -581,7 +596,7 @@ proto.ding4.ProductShell.prototype.getTemplateGroupList = function() {
  * @param {!Array<!proto.ding4.Template>} value
  * @return {!proto.ding4.ProductShell} returns this
 */
-proto.ding4.ProductShell.prototype.setTemplateGroupList = function(value) {
+proto.ding4.ProductShell.prototype.setDescriptionList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
@@ -591,8 +606,46 @@ proto.ding4.ProductShell.prototype.setTemplateGroupList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.Template}
  */
-proto.ding4.ProductShell.prototype.addTemplateGroup = function(opt_value, opt_index) {
+proto.ding4.ProductShell.prototype.addDescription = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.Template, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.ProductShell} returns this
+ */
+proto.ding4.ProductShell.prototype.clearDescriptionList = function() {
+  return this.setDescriptionList([]);
+};
+
+
+/**
+ * repeated Template template_group = 9;
+ * @return {!Array<!proto.ding4.Template>}
+ */
+proto.ding4.ProductShell.prototype.getTemplateGroupList = function() {
+  return /** @type{!Array<!proto.ding4.Template>} */ (
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.Template>} value
+ * @return {!proto.ding4.ProductShell} returns this
+*/
+proto.ding4.ProductShell.prototype.setTemplateGroupList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.ding4.Template=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Template}
+ */
+proto.ding4.ProductShell.prototype.addTemplateGroup = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.Template, opt_index);
 };
 
 
@@ -606,11 +659,11 @@ proto.ding4.ProductShell.prototype.clearTemplateGroupList = function() {
 
 
 /**
- * optional int32 reduce = 9;
+ * optional int32 reduce = 10;
  * @return {number}
  */
 proto.ding4.ProductShell.prototype.getReduce = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -619,16 +672,16 @@ proto.ding4.ProductShell.prototype.getReduce = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setReduce = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional bool is_preorder = 10;
+ * optional bool is_preorder = 11;
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.getIsPreorder = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -637,17 +690,17 @@ proto.ding4.ProductShell.prototype.getIsPreorder = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setIsPreorder = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * optional google.protobuf.Value name = 11;
+ * optional google.protobuf.Value name = 12;
  * @return {?proto.google.protobuf.Value}
  */
 proto.ding4.ProductShell.prototype.getName = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 11));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 12));
 };
 
 
@@ -656,7 +709,7 @@ proto.ding4.ProductShell.prototype.getName = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setName = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -674,16 +727,16 @@ proto.ding4.ProductShell.prototype.clearName = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasName = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string urn = 12;
+ * optional string urn = 13;
  * @return {string}
  */
 proto.ding4.ProductShell.prototype.getUrn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -692,16 +745,16 @@ proto.ding4.ProductShell.prototype.getUrn = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setUrn = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional int32 price = 13;
+ * optional int32 price = 14;
  * @return {number}
  */
 proto.ding4.ProductShell.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
@@ -710,17 +763,17 @@ proto.ding4.ProductShell.prototype.getPrice = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
 /**
- * optional Product product = 14;
+ * optional Product product = 15;
  * @return {?proto.ding4.Product}
  */
 proto.ding4.ProductShell.prototype.getProduct = function() {
   return /** @type{?proto.ding4.Product} */ (
-    jspb.Message.getWrapperField(this, product_pb.Product, 14));
+    jspb.Message.getWrapperField(this, product_pb.Product, 15));
 };
 
 
@@ -729,7 +782,7 @@ proto.ding4.ProductShell.prototype.getProduct = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setProduct = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -747,19 +800,19 @@ proto.ding4.ProductShell.prototype.clearProduct = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasProduct = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * map<string, int32> labelx = 15;
+ * map<string, int32> labelx = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.ding4.ProductShell.prototype.getLabelxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 
@@ -774,11 +827,11 @@ proto.ding4.ProductShell.prototype.clearLabelxMap = function() {
 
 
 /**
- * optional string operator = 16;
+ * optional string operator = 17;
  * @return {string}
  */
 proto.ding4.ProductShell.prototype.getOperator = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
@@ -787,17 +840,17 @@ proto.ding4.ProductShell.prototype.getOperator = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setOperator = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_at = 17;
+ * optional google.protobuf.Timestamp create_at = 18;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.ProductShell.prototype.getCreateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
 };
 
 
@@ -806,7 +859,7 @@ proto.ding4.ProductShell.prototype.getCreateAt = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setCreateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -824,17 +877,17 @@ proto.ding4.ProductShell.prototype.clearCreateAt = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasCreateAt = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_at = 18;
+ * optional google.protobuf.Timestamp update_at = 19;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.ProductShell.prototype.getUpdateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 19));
 };
 
 
@@ -843,7 +896,7 @@ proto.ding4.ProductShell.prototype.getUpdateAt = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setUpdateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -861,16 +914,16 @@ proto.ding4.ProductShell.prototype.clearUpdateAt = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasUpdateAt = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * repeated string cols = 19;
+ * repeated string cols = 20;
  * @return {!Array<string>}
  */
 proto.ding4.ProductShell.prototype.getColsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 19));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
 };
 
 
@@ -879,7 +932,7 @@ proto.ding4.ProductShell.prototype.getColsList = function() {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.setColsList = function(value) {
-  return jspb.Message.setField(this, 19, value || []);
+  return jspb.Message.setField(this, 20, value || []);
 };
 
 
@@ -889,7 +942,7 @@ proto.ding4.ProductShell.prototype.setColsList = function(value) {
  * @return {!proto.ding4.ProductShell} returns this
  */
 proto.ding4.ProductShell.prototype.addCols = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 19, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
 };
 
 
@@ -903,12 +956,12 @@ proto.ding4.ProductShell.prototype.clearColsList = function() {
 
 
 /**
- * repeated Condition condition = 20;
+ * repeated Condition condition = 21;
  * @return {!Array<!proto.ding4.Condition>}
  */
 proto.ding4.ProductShell.prototype.getConditionList = function() {
   return /** @type{!Array<!proto.ding4.Condition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 20));
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 21));
 };
 
 
@@ -917,7 +970,7 @@ proto.ding4.ProductShell.prototype.getConditionList = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setConditionList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 20, value);
+  return jspb.Message.setRepeatedWrapperField(this, 21, value);
 };
 
 
@@ -927,7 +980,7 @@ proto.ding4.ProductShell.prototype.setConditionList = function(value) {
  * @return {!proto.ding4.Condition}
  */
 proto.ding4.ProductShell.prototype.addCondition = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 20, opt_value, proto.ding4.Condition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 21, opt_value, proto.ding4.Condition, opt_index);
 };
 
 
@@ -941,12 +994,12 @@ proto.ding4.ProductShell.prototype.clearConditionList = function() {
 
 
 /**
- * optional google.protobuf.Struct self = 21;
+ * optional google.protobuf.Struct self = 22;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.ProductShell.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 21));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 22));
 };
 
 
@@ -955,7 +1008,7 @@ proto.ding4.ProductShell.prototype.getSelf = function() {
  * @return {!proto.ding4.ProductShell} returns this
 */
 proto.ding4.ProductShell.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -973,7 +1026,7 @@ proto.ding4.ProductShell.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.ProductShell.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

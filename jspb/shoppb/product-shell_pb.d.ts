@@ -31,6 +31,11 @@ export class ProductShell extends jspb.Message {
   hasSeo(): boolean;
   clearSeo(): void;
 
+  getDescriptionList(): Array<template_pb.Template>;
+  setDescriptionList(value: Array<template_pb.Template>): void;
+  clearDescriptionList(): void;
+  addDescription(value?: template_pb.Template, index?: number): template_pb.Template;
+
   getTemplateGroupList(): Array<template_pb.Template>;
   setTemplateGroupList(value: Array<template_pb.Template>): void;
   clearTemplateGroupList(): void;
@@ -106,6 +111,7 @@ export namespace ProductShell {
     isDisplay: boolean,
     type: number,
     seo?: seo_pb.SEO.AsObject,
+    descriptionList: Array<template_pb.Template.AsObject>,
     templateGroupList: Array<template_pb.Template.AsObject>,
     reduce: number,
     isPreorder: boolean,
