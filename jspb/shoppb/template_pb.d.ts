@@ -25,6 +25,9 @@ export class Template extends jspb.Message {
   getIsHtml(): boolean;
   setIsHtml(value: boolean): void;
 
+  getContent(): string;
+  setContent(value: string): void;
+
   getIdx(): number;
   setIdx(value: number): void;
 
@@ -68,6 +71,7 @@ export namespace Template {
     language: string,
     title: string,
     isHtml: boolean,
+    content: string,
     idx: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
