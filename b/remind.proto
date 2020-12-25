@@ -14,15 +14,14 @@ message Remind {
     string item = 2;
     string mode = 3;
     string description = 4;
-    string subject = 5;
-    bool is_enable = 6;
-    repeated Template template_group = 7;
+    bool is_enable = 5;
+    repeated Template template_group = 6;
 
-    map<string, int32> labelx = 8;
-    string operator = 9;
-    google.protobuf.Timestamp create_at = 10;
-    google.protobuf.Timestamp update_at = 11;
-    repeated string cols = 12;
-    repeated Condition condition = 13;
-    google.protobuf.Struct self = 14; 
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13; 
 }
