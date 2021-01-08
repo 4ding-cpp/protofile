@@ -19,6 +19,7 @@ import * as adapter_pb from './adapter_pb';
 import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
 import * as log_pb from './log_pb';
+import * as browse_pb from './browse_pb';
 
 export class ShopRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -806,6 +807,28 @@ export class ShopRPCClient {
       request,
       metadata || {},
       this.methodInfoFindFreeback,
+      callback);
+  }
+
+  methodInfoUploadBrowse = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: browse_pb.BrowseRecord) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  uploadBrowse(
+    request: browse_pb.BrowseRecord,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UploadBrowse',
+      request,
+      metadata || {},
+      this.methodInfoUploadBrowse,
       callback);
   }
 

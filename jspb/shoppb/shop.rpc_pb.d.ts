@@ -10,4 +10,5 @@ import * as adapter_pb from './adapter_pb';
 import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
 import * as log_pb from './log_pb';
+import * as browse_pb from './browse_pb';
 
