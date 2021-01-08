@@ -219,6 +219,9 @@ export namespace Order {
 }
 
 export class OrderGoods extends jspb.Message {
+  getId(): number;
+  setId(value: number): void;
+
   getOrderId(): string;
   setOrderId(value: string): void;
 
@@ -252,6 +255,11 @@ export class OrderGoods extends jspb.Message {
   getDiscount(): number;
   setDiscount(value: number): void;
 
+  getItemxList(): Array<google_protobuf_struct_pb.Value>;
+  setItemxList(value: Array<google_protobuf_struct_pb.Value>): void;
+  clearItemxList(): void;
+  addItemx(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderGoods.AsObject;
   static toObject(includeInstance: boolean, msg: OrderGoods): OrderGoods.AsObject;
@@ -262,6 +270,7 @@ export class OrderGoods extends jspb.Message {
 
 export namespace OrderGoods {
   export type AsObject = {
+    id: number,
     orderId: string,
     storeId: string,
     salesId: string,
@@ -273,6 +282,7 @@ export namespace OrderGoods {
     amount: number,
     price: number,
     discount: number,
+    itemxList: Array<google_protobuf_struct_pb.Value.AsObject>,
   }
 }
 

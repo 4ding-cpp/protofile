@@ -60,7 +60,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.ding4.OrderGoods = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ding4.OrderGoods.repeatedFields_, null);
 };
 goog.inherits(proto.ding4.OrderGoods, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1901,6 +1901,13 @@ proto.ding4.Order.prototype.hasSelf = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ding4.OrderGoods.repeatedFields_ = [13];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1932,17 +1939,20 @@ proto.ding4.OrderGoods.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.OrderGoods.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    salesId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    activityId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    productId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    sku: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    photoSrc: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    discount: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    orderId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    salesId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    activityId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    productId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    sku: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    photoSrc: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    amount: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    discount: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    itemxList: jspb.Message.toObjectList(msg.getItemxList(),
+    google_protobuf_struct_pb.Value.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1980,48 +1990,57 @@ proto.ding4.OrderGoods.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrderId(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setStoreId(value);
+      msg.setOrderId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSalesId(value);
+      msg.setStoreId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setActivityId(value);
+      msg.setSalesId(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProductId(value);
+      msg.setActivityId(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSku(value);
+      msg.setProductId(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPhotoSrc(value);
+      msg.setSku(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setPhotoSrc(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setAmount(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPrice(value);
+      msg.setAmount(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setDiscount(value);
+      break;
+    case 13:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.addItemx(value);
       break;
     default:
       reader.skipField();
@@ -2052,109 +2071,124 @@ proto.ding4.OrderGoods.prototype.serializeBinary = function() {
  */
 proto.ding4.OrderGoods.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrderId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getStoreId();
+  f = message.getOrderId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getSalesId();
+  f = message.getStoreId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getActivityId();
+  f = message.getSalesId();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getProductId();
+  f = message.getActivityId();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getSku();
+  f = message.getProductId();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getPhotoSrc();
+  f = message.getSku();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getName();
+  f = message.getPhotoSrc();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getAmount();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
       9,
       f
     );
   }
-  f = message.getPrice();
+  f = message.getAmount();
   if (f !== 0) {
     writer.writeInt32(
       10,
       f
     );
   }
-  f = message.getDiscount();
+  f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
       11,
       f
     );
   }
+  f = message.getDiscount();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
+      f
+    );
+  }
+  f = message.getItemxList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      13,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
 };
 
 
 /**
- * optional string order_id = 1;
+ * optional int32 id = 1;
+ * @return {number}
+ */
+proto.ding4.OrderGoods.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string order_id = 2;
  * @return {string}
  */
 proto.ding4.OrderGoods.prototype.getOrderId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.OrderGoods} returns this
- */
-proto.ding4.OrderGoods.prototype.setOrderId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string store_id = 2;
- * @return {string}
- */
-proto.ding4.OrderGoods.prototype.getStoreId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2163,16 +2197,16 @@ proto.ding4.OrderGoods.prototype.getStoreId = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setStoreId = function(value) {
+proto.ding4.OrderGoods.prototype.setOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string sales_id = 3;
+ * optional string store_id = 3;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getSalesId = function() {
+proto.ding4.OrderGoods.prototype.getStoreId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2181,16 +2215,16 @@ proto.ding4.OrderGoods.prototype.getSalesId = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setSalesId = function(value) {
+proto.ding4.OrderGoods.prototype.setStoreId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string activity_id = 4;
+ * optional string sales_id = 4;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getActivityId = function() {
+proto.ding4.OrderGoods.prototype.getSalesId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2199,16 +2233,16 @@ proto.ding4.OrderGoods.prototype.getActivityId = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setActivityId = function(value) {
+proto.ding4.OrderGoods.prototype.setSalesId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string product_id = 5;
+ * optional string activity_id = 5;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getProductId = function() {
+proto.ding4.OrderGoods.prototype.getActivityId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -2217,16 +2251,16 @@ proto.ding4.OrderGoods.prototype.getProductId = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setProductId = function(value) {
+proto.ding4.OrderGoods.prototype.setActivityId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string sku = 6;
+ * optional string product_id = 6;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getSku = function() {
+proto.ding4.OrderGoods.prototype.getProductId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -2235,16 +2269,16 @@ proto.ding4.OrderGoods.prototype.getSku = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setSku = function(value) {
+proto.ding4.OrderGoods.prototype.setProductId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string photo_src = 7;
+ * optional string sku = 7;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getPhotoSrc = function() {
+proto.ding4.OrderGoods.prototype.getSku = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -2253,16 +2287,16 @@ proto.ding4.OrderGoods.prototype.getPhotoSrc = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setPhotoSrc = function(value) {
+proto.ding4.OrderGoods.prototype.setSku = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string name = 8;
+ * optional string photo_src = 8;
  * @return {string}
  */
-proto.ding4.OrderGoods.prototype.getName = function() {
+proto.ding4.OrderGoods.prototype.getPhotoSrc = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -2271,34 +2305,34 @@ proto.ding4.OrderGoods.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setName = function(value) {
+proto.ding4.OrderGoods.prototype.setPhotoSrc = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional int32 amount = 9;
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.ding4.OrderGoods.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional int32 amount = 10;
  * @return {number}
  */
 proto.ding4.OrderGoods.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderGoods} returns this
- */
-proto.ding4.OrderGoods.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
-};
-
-
-/**
- * optional int32 price = 10;
- * @return {number}
- */
-proto.ding4.OrderGoods.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -2307,16 +2341,16 @@ proto.ding4.OrderGoods.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setPrice = function(value) {
+proto.ding4.OrderGoods.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional int32 discount = 11;
+ * optional int32 price = 11;
  * @return {number}
  */
-proto.ding4.OrderGoods.prototype.getDiscount = function() {
+proto.ding4.OrderGoods.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -2325,8 +2359,64 @@ proto.ding4.OrderGoods.prototype.getDiscount = function() {
  * @param {number} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setDiscount = function(value) {
+proto.ding4.OrderGoods.prototype.setPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional int32 discount = 12;
+ * @return {number}
+ */
+proto.ding4.OrderGoods.prototype.getDiscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setDiscount = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * repeated google.protobuf.Value itemx = 13;
+ * @return {!Array<!proto.google.protobuf.Value>}
+ */
+proto.ding4.OrderGoods.prototype.getItemxList = function() {
+  return /** @type{!Array<!proto.google.protobuf.Value>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_struct_pb.Value, 13));
+};
+
+
+/**
+ * @param {!Array<!proto.google.protobuf.Value>} value
+ * @return {!proto.ding4.OrderGoods} returns this
+*/
+proto.ding4.OrderGoods.prototype.setItemxList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+};
+
+
+/**
+ * @param {!proto.google.protobuf.Value=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.protobuf.Value}
+ */
+proto.ding4.OrderGoods.prototype.addItemx = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.google.protobuf.Value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.clearItemxList = function() {
+  return this.setItemxList([]);
 };
 
 

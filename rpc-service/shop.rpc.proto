@@ -79,6 +79,7 @@ service ShopRPC {
     // 更新
     rpc UpgradeWebsite(Upgrade) returns (Response);
     rpc UpgradeProduct(Upgrade) returns (Response);
+    rpc UpgradeSpec(Upgrade) returns (Response);
     rpc UpgradeMember(Upgrade) returns (Response);
     rpc UpgradeOrder(Upgrade) returns (Response);
 }

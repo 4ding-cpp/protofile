@@ -131,28 +131,6 @@ export namespace Customer {
   }
 }
 
-export class CustomerLink extends jspb.Message {
-  getLevelId(): string;
-  setLevelId(value: string): void;
-
-  getIsReceive(): boolean;
-  setIsReceive(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomerLink.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomerLink): CustomerLink.AsObject;
-  static serializeBinaryToWriter(message: CustomerLink, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomerLink;
-  static deserializeBinaryFromReader(message: CustomerLink, reader: jspb.BinaryReader): CustomerLink;
-}
-
-export namespace CustomerLink {
-  export type AsObject = {
-    levelId: string,
-    isReceive: boolean,
-  }
-}
-
 export class CustomerBatch extends jspb.Message {
   getCustomerList(): Array<Customer>;
   setCustomerList(value: Array<Customer>): void;

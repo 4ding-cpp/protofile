@@ -41,11 +41,6 @@ message Customer {
     google.protobuf.Struct self = 25;
 }
 
-message CustomerLink {
-    string level_id = 1;
-    bool is_receive = 2;
-}
-
 message CustomerBatch {
     repeated Customer customer = 1;
     google.protobuf.Struct self = 2;

@@ -71,17 +71,19 @@ message Order {
 }
 
 message OrderGoods {
-    string order_id = 1;
-    string store_id = 2;
-    string sales_id = 3;
-    string activity_id = 4;
-    string product_id = 5;
-    string sku = 6;
-    string photo_src = 7;
-    string name = 8;
-    int32 amount = 9;
-    int32 price = 10;
-    int32 discount = 11;
+    int32 id = 1;
+    string order_id = 2;
+    string store_id = 3;
+    string sales_id = 4;
+    string activity_id = 5;
+    string product_id = 6;
+    string sku = 7;
+    string photo_src = 8;
+    string name = 9;
+    int32 amount = 10;
+    int32 price = 11;
+    int32 discount = 12;
+    repeated google.protobuf.Value itemx = 13;
 }
 
 message OrderActivity {

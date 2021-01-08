@@ -853,6 +853,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoUpgradeSpec = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: log_pb.Upgrade) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeSpec(
+    request: log_pb.Upgrade,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/UpgradeSpec',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeSpec,
+      callback);
+  }
+
   methodInfoUpgradeMember = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: log_pb.Upgrade) => {
