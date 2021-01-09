@@ -1550,14 +1550,14 @@ export class BusinessRPCClient {
 
   methodInfoDetailOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: order_pb.Order) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   detailOrder(
-    request: sql_pb.Query,
+    request: order_pb.Order,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1567,6 +1567,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoDetailOrder,
+      callback);
+  }
+
+  methodInfoPickUpGoods = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  pickUpGoods(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/PickUpGoods',
+      request,
+      metadata || {},
+      this.methodInfoPickUpGoods,
       callback);
   }
 
