@@ -160,7 +160,7 @@ service BusinessRPC {
     rpc CancelOrder(Order) returns (Response);
     // 定單列表
     rpc FindOrder(Query) returns (Response);
-    rpc DetailOrder(Order) returns (Response);
+    rpc DetailOrder(Query) returns (Response);
     // 訂單修改紀錄
     rpc RecordOrder(Order) returns (Response);
 

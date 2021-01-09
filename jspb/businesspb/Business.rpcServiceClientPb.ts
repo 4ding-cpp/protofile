@@ -1550,14 +1550,14 @@ export class BusinessRPCClient {
 
   methodInfoDetailOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: order_pb.Order) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   detailOrder(
-    request: order_pb.Order,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
