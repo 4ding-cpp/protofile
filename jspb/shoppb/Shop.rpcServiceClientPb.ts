@@ -678,6 +678,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoReturnOrder = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  returnOrder(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/ReturnOrder',
+      request,
+      metadata || {},
+      this.methodInfoReturnOrder,
+      callback);
+  }
+
   methodInfoFindOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
