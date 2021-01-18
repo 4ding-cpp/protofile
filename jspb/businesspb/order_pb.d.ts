@@ -92,6 +92,15 @@ export class Order extends jspb.Message {
   getIsTimeout(): boolean;
   setIsTimeout(value: boolean): void;
 
+  getIsBack(): boolean;
+  setIsBack(value: boolean): void;
+
+  getIsExchange(): boolean;
+  setIsExchange(value: boolean): void;
+
+  getReason(): string;
+  setReason(value: string): void;
+
   getPickupAt(): string;
   setPickupAt(value: string): void;
 
@@ -198,6 +207,9 @@ export namespace Order {
     logisticsType: number,
     logisticsSubType: number,
     isTimeout: boolean,
+    isBack: boolean,
+    isExchange: boolean,
+    reason: string,
     pickupAt: string,
     closeAt: string,
     payAt: string,

@@ -49,25 +49,28 @@ message Order {
     int32 logistics_type = 27;
     int32 logistics_sub_type = 28;
     bool is_timeout = 29;
+    bool is_back = 30;
+    bool is_exchange  = 31;
+    string reason = 32;
 
-    string pickup_at = 30;
-    string close_at = 31;
-    string pay_at = 32;
-    string pay_ip = 33;
-    string city = 34;
-    string device = 35;
-    string remark = 36;
-    OrderOther other = 37;
-    repeated OrderGoods goods = 38;
-    repeated OrderActivity activity = 39;
+    string pickup_at = 33;
+    string close_at = 34;
+    string pay_at = 35;
+    string pay_ip = 36;
+    string city = 37;
+    string device = 38;
+    string remark = 39;
+    OrderOther other = 40;
+    repeated OrderGoods goods = 41;
+    repeated OrderActivity activity = 42;
 
-    map<string, int32> labelx = 40;
-    string operator = 41;
-    google.protobuf.Timestamp create_at = 42;
-    google.protobuf.Timestamp update_at = 43;
-    repeated string cols = 44;
-    repeated Condition condition = 45;
-    google.protobuf.Struct self = 46;
+    map<string, int32> labelx = 43;
+    string operator = 44;
+    google.protobuf.Timestamp create_at = 45;
+    google.protobuf.Timestamp update_at = 46;
+    repeated string cols = 47;
+    repeated Condition condition = 48;
+    google.protobuf.Struct self = 49;
 }
 
 message OrderGoods {
