@@ -9,6 +9,7 @@ import "sql.proto";
 import "message.proto";
 import "car.proto";
 import "purchase.proto";
+import "store.proto";
 import "order.proto";
 import "product.proto";
 import "b2b.proto";
@@ -32,6 +33,7 @@ service BkRPC {
     rpc LoadProduct(ProductBatch) returns (Response);
     rpc GetProduct(Product) returns (Product);
     rpc SkuProduct(ProductSpec) returns (Product);
+    rpc NewStore(Store) returns (Response);
 
     rpc ExportProduct(B2BProduct) returns (B2BProduct);
 }
