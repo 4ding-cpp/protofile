@@ -1,7 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
-import * as seo_pb from './seo_pb';
+import * as template_pb from './template_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
@@ -23,10 +23,10 @@ export class Announcement extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getTemplate(): seo_pb.Template | undefined;
-  setTemplate(value?: seo_pb.Template): void;
-  hasTemplate(): boolean;
-  clearTemplate(): void;
+  getTemplateGroupList(): Array<template_pb.Template>;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
+  clearTemplateGroupList(): void;
+  addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -74,7 +74,7 @@ export namespace Announcement {
     area: number,
     type: number,
     title: string,
-    template?: seo_pb.Template.AsObject,
+    templateGroupList: Array<template_pb.Template.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

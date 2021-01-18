@@ -524,7 +524,7 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoCreateDomain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpgradeDomain = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: domain_pb.Domain) => {
       return request.serializeBinary();
@@ -532,17 +532,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  createDomain(
+  upgradeDomain(
     request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/CreateDomain',
+        '/ding4.AdminRPC/UpgradeDomain',
       request,
       metadata || {},
-      this.methodInfoCreateDomain,
+      this.methodInfoUpgradeDomain,
       callback);
   }
 

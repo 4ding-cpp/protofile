@@ -14,8 +14,8 @@ var global = Function('return this')();
 
 var sql_pb = require('./sql_pb.js');
 goog.object.extend(proto, sql_pb);
-var seo_pb = require('./seo_pb.js');
-goog.object.extend(proto, seo_pb);
+var template_pb = require('./template_pb.js');
+goog.object.extend(proto, template_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -48,7 +48,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Announcement.repeatedFields_ = [11,12];
+proto.ding4.Announcement.repeatedFields_ = [6,11,12];
 
 
 
@@ -86,7 +86,8 @@ proto.ding4.Announcement.toObject = function(includeInstance, msg) {
     area: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     title: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    template: (f = msg.getTemplate()) && seo_pb.Template.toObject(includeInstance, f),
+    templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
+    template_pb.Template.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 8, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -153,9 +154,9 @@ proto.ding4.Announcement.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTitle(value);
       break;
     case 6:
-      var value = new seo_pb.Template;
-      reader.readMessage(value,seo_pb.Template.deserializeBinaryFromReader);
-      msg.setTemplate(value);
+      var value = new template_pb.Template;
+      reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
+      msg.addTemplateGroup(value);
       break;
     case 7:
       var value = msg.getLabelxMap();
@@ -256,12 +257,12 @@ proto.ding4.Announcement.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTemplate();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTemplateGroupList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       6,
       f,
-      seo_pb.Template.serializeBinaryToWriter
+      template_pb.Template.serializeBinaryToWriter
     );
   }
   f = message.getLabelxMap(true);
@@ -427,39 +428,40 @@ proto.ding4.Announcement.prototype.setTitle = function(value) {
 
 
 /**
- * optional Template template = 6;
- * @return {?proto.ding4.Template}
+ * repeated Template template_group = 6;
+ * @return {!Array<!proto.ding4.Template>}
  */
-proto.ding4.Announcement.prototype.getTemplate = function() {
-  return /** @type{?proto.ding4.Template} */ (
-    jspb.Message.getWrapperField(this, seo_pb.Template, 6));
+proto.ding4.Announcement.prototype.getTemplateGroupList = function() {
+  return /** @type{!Array<!proto.ding4.Template>} */ (
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 6));
 };
 
 
 /**
- * @param {?proto.ding4.Template|undefined} value
+ * @param {!Array<!proto.ding4.Template>} value
  * @return {!proto.ding4.Announcement} returns this
 */
-proto.ding4.Announcement.prototype.setTemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+proto.ding4.Announcement.prototype.setTemplateGroupList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.ding4.Template=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Template}
+ */
+proto.ding4.Announcement.prototype.addTemplateGroup = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ding4.Template, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.ding4.Announcement} returns this
  */
-proto.ding4.Announcement.prototype.clearTemplate = function() {
-  return this.setTemplate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.Announcement.prototype.hasTemplate = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.ding4.Announcement.prototype.clearTemplateGroupList = function() {
+  return this.setTemplateGroupList([]);
 };
 
 

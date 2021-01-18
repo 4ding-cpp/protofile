@@ -48,6 +48,12 @@ export class Business extends jspb.Message {
   getEmailVerify(): boolean;
   setEmailVerify(value: boolean): void;
 
+  getOtpToken(): string;
+  setOtpToken(value: string): void;
+
+  getOtpCode(): string;
+  setOtpCode(value: string): void;
+
   getLocation(): string;
   setLocation(value: string): void;
 
@@ -128,6 +134,8 @@ export namespace Business {
     phoneVerify: boolean,
     email: string,
     emailVerify: boolean,
+    otpToken: string,
+    otpCode: string,
     location: string,
     mgrType: number,
     turnover: number,
