@@ -14,16 +14,15 @@ export class Setting extends jspb.Message {
   getType(): string;
   setType(value: string): void;
 
-  getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
+  getData(): SetData | undefined;
+  setData(value?: SetData): void;
+  hasData(): boolean;
+  clearData(): void;
 
   getConf(): google_protobuf_struct_pb.Value | undefined;
   setConf(value?: google_protobuf_struct_pb.Value): void;
   hasConf(): boolean;
   clearConf(): void;
-
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -66,9 +65,8 @@ export namespace Setting {
     settingId: string,
     storeId: string,
     type: string,
-    isEnable: boolean,
+    data?: SetData.AsObject,
     conf?: google_protobuf_struct_pb.Value.AsObject,
-    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -78,102 +76,33 @@ export namespace Setting {
   }
 }
 
-export class ConfigMulti extends jspb.Message {
-  getLanguage(): google_protobuf_struct_pb.Value | undefined;
-  setLanguage(value?: google_protobuf_struct_pb.Value): void;
-  hasLanguage(): boolean;
-  clearLanguage(): void;
+export class SetData extends jspb.Message {
+  getStoreName(): string;
+  setStoreName(value: string): void;
 
-  getCurrency(): google_protobuf_struct_pb.Value | undefined;
-  setCurrency(value?: google_protobuf_struct_pb.Value): void;
-  hasCurrency(): boolean;
-  clearCurrency(): void;
+  getStoreEmail(): string;
+  setStoreEmail(value: string): void;
 
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigMulti.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigMulti): ConfigMulti.AsObject;
-  static serializeBinaryToWriter(message: ConfigMulti, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigMulti;
-  static deserializeBinaryFromReader(message: ConfigMulti, reader: jspb.BinaryReader): ConfigMulti;
-}
+  getStorePhone(): string;
+  setStorePhone(value: string): void;
 
-export namespace ConfigMulti {
-  export type AsObject = {
-    language?: google_protobuf_struct_pb.Value.AsObject,
-    currency?: google_protobuf_struct_pb.Value.AsObject,
-  }
-}
+  getStoreAddress(): string;
+  setStoreAddress(value: string): void;
 
-export class ConfigWebsite extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getSlogan(): string;
-  setSlogan(value: string): void;
+  getStoreOpen(): string;
+  setStoreOpen(value: string): void;
 
   getCopyright(): string;
   setCopyright(value: string): void;
 
-  getServiceTerms(): string;
-  setServiceTerms(value: string): void;
-
-  getOrganization(): string;
-  setOrganization(value: string): void;
-
-  getPhone(): string;
-  setPhone(value: string): void;
-
-  getEmail(): string;
-  setEmail(value: string): void;
-
-  getAddress(): string;
-  setAddress(value: string): void;
-
   getFacebook(): string;
   setFacebook(value: string): void;
 
-  getLineAt(): string;
-  setLineAt(value: string): void;
-
-  getInstagram(): string;
-  setInstagram(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigWebsite.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigWebsite): ConfigWebsite.AsObject;
-  static serializeBinaryToWriter(message: ConfigWebsite, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigWebsite;
-  static deserializeBinaryFromReader(message: ConfigWebsite, reader: jspb.BinaryReader): ConfigWebsite;
-}
-
-export namespace ConfigWebsite {
-  export type AsObject = {
-    name: string,
-    slogan: string,
-    copyright: string,
-    serviceTerms: string,
-    organization: string,
-    phone: string,
-    email: string,
-    address: string,
-    facebook: string,
-    lineAt: string,
-    instagram: string,
-  }
-}
-
-export class ConfigShop extends jspb.Message {
-  getLimitCount(): number;
-  setLimitCount(value: number): void;
-
-  getShopNotes(): string;
-  setShopNotes(value: string): void;
-
-  getOrderNotes(): string;
-  setOrderNotes(value: string): void;
-
   getSenderName(): string;
   setSenderName(value: string): void;
+
+  getSenderEmail(): string;
+  setSenderEmail(value: string): void;
 
   getSenderPhone(): string;
   setSenderPhone(value: string): void;
@@ -181,8 +110,8 @@ export class ConfigShop extends jspb.Message {
   getSenderCellPhone(): string;
   setSenderCellPhone(value: string): void;
 
-  getSenderZipCode(): string;
-  setSenderZipCode(value: string): void;
+  getSenderZipcode(): string;
+  setSenderZipcode(value: string): void;
 
   getSenderAddress(): string;
   setSenderAddress(value: string): void;
@@ -190,33 +119,78 @@ export class ConfigShop extends jspb.Message {
   getSenderRemark(): string;
   setSenderRemark(value: string): void;
 
-  getAllowCancelOrder(): number;
-  setAllowCancelOrder(value: number): void;
+  getCustomerCancel(): boolean;
+  setCustomerCancel(value: boolean): void;
 
-  getAllowReturnOrder(): number;
-  setAllowReturnOrder(value: number): void;
+  getCustomerReturn(): boolean;
+  setCustomerReturn(value: boolean): void;
+
+  getLimitCount(): number;
+  setLimitCount(value: number): void;
+
+  getMerchantId(): string;
+  setMerchantId(value: string): void;
+
+  getMerchantPassword(): string;
+  setMerchantPassword(value: string): void;
+
+  getMerchantType(): string;
+  setMerchantType(value: string): void;
+
+  getMerchantHashIv(): string;
+  setMerchantHashIv(value: string): void;
+
+  getMerchantHashKey(): string;
+  setMerchantHashKey(value: string): void;
+
+  getFromName(): string;
+  setFromName(value: string): void;
+
+  getFromEmail(): string;
+  setFromEmail(value: string): void;
+
+  getAppId(): string;
+  setAppId(value: string): void;
+
+  getAppSecret(): string;
+  setAppSecret(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigShop.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigShop): ConfigShop.AsObject;
-  static serializeBinaryToWriter(message: ConfigShop, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigShop;
-  static deserializeBinaryFromReader(message: ConfigShop, reader: jspb.BinaryReader): ConfigShop;
+  toObject(includeInstance?: boolean): SetData.AsObject;
+  static toObject(includeInstance: boolean, msg: SetData): SetData.AsObject;
+  static serializeBinaryToWriter(message: SetData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetData;
+  static deserializeBinaryFromReader(message: SetData, reader: jspb.BinaryReader): SetData;
 }
 
-export namespace ConfigShop {
+export namespace SetData {
   export type AsObject = {
-    limitCount: number,
-    shopNotes: string,
-    orderNotes: string,
+    storeName: string,
+    storeEmail: string,
+    storePhone: string,
+    storeAddress: string,
+    storeOpen: string,
+    copyright: string,
+    facebook: string,
     senderName: string,
+    senderEmail: string,
     senderPhone: string,
     senderCellPhone: string,
-    senderZipCode: string,
+    senderZipcode: string,
     senderAddress: string,
     senderRemark: string,
-    allowCancelOrder: number,
-    allowReturnOrder: number,
+    customerCancel: boolean,
+    customerReturn: boolean,
+    limitCount: number,
+    merchantId: string,
+    merchantPassword: string,
+    merchantType: string,
+    merchantHashIv: string,
+    merchantHashKey: string,
+    fromName: string,
+    fromEmail: string,
+    appId: string,
+    appSecret: string,
   }
 }
 
