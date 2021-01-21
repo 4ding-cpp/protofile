@@ -50,9 +50,9 @@ message SetData {
     string merchant_type = 20;
     string merchant_hash_iv = 21;
     string merchant_hash_key = 22;
-    string from_name = 23;
-    string from_email = 24;
-
-    string app_id = 25;
-    string app_secret = 26;
+    
+    string app_id = 23;
+    string app_secret = 24;
+    string from_name = 25;
+    string from_email = 26;
 }

@@ -700,10 +700,10 @@ proto.ding4.SetData.toObject = function(includeInstance, msg) {
     merchantType: jspb.Message.getFieldWithDefault(msg, 20, ""),
     merchantHashIv: jspb.Message.getFieldWithDefault(msg, 21, ""),
     merchantHashKey: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    fromName: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    fromEmail: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    appId: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    appSecret: jspb.Message.getFieldWithDefault(msg, 26, "")
+    appId: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    appSecret: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    fromName: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    fromEmail: jspb.Message.getFieldWithDefault(msg, 26, "")
   };
 
   if (includeInstance) {
@@ -830,19 +830,19 @@ proto.ding4.SetData.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 23:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFromName(value);
+      msg.setAppId(value);
       break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFromEmail(value);
+      msg.setAppSecret(value);
       break;
     case 25:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAppId(value);
+      msg.setFromName(value);
       break;
     case 26:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAppSecret(value);
+      msg.setFromEmail(value);
       break;
     default:
       reader.skipField();
@@ -1027,28 +1027,28 @@ proto.ding4.SetData.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getFromName();
+  f = message.getAppId();
   if (f.length > 0) {
     writer.writeString(
       23,
       f
     );
   }
-  f = message.getFromEmail();
+  f = message.getAppSecret();
   if (f.length > 0) {
     writer.writeString(
       24,
       f
     );
   }
-  f = message.getAppId();
+  f = message.getFromName();
   if (f.length > 0) {
     writer.writeString(
       25,
       f
     );
   }
-  f = message.getAppSecret();
+  f = message.getFromEmail();
   if (f.length > 0) {
     writer.writeString(
       26,
@@ -1455,10 +1455,10 @@ proto.ding4.SetData.prototype.setMerchantHashKey = function(value) {
 
 
 /**
- * optional string from_name = 23;
+ * optional string app_id = 23;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getFromName = function() {
+proto.ding4.SetData.prototype.getAppId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
@@ -1467,16 +1467,16 @@ proto.ding4.SetData.prototype.getFromName = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setFromName = function(value) {
+proto.ding4.SetData.prototype.setAppId = function(value) {
   return jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
 /**
- * optional string from_email = 24;
+ * optional string app_secret = 24;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getFromEmail = function() {
+proto.ding4.SetData.prototype.getAppSecret = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
@@ -1485,16 +1485,16 @@ proto.ding4.SetData.prototype.getFromEmail = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setFromEmail = function(value) {
+proto.ding4.SetData.prototype.setAppSecret = function(value) {
   return jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
 /**
- * optional string app_id = 25;
+ * optional string from_name = 25;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getAppId = function() {
+proto.ding4.SetData.prototype.getFromName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
@@ -1503,16 +1503,16 @@ proto.ding4.SetData.prototype.getAppId = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setAppId = function(value) {
+proto.ding4.SetData.prototype.setFromName = function(value) {
   return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * optional string app_secret = 26;
+ * optional string from_email = 26;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getAppSecret = function() {
+proto.ding4.SetData.prototype.getFromEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
 };
 
@@ -1521,7 +1521,7 @@ proto.ding4.SetData.prototype.getAppSecret = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setAppSecret = function(value) {
+proto.ding4.SetData.prototype.setFromEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 26, value);
 };
 

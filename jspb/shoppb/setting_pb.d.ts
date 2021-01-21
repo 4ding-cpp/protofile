@@ -143,17 +143,17 @@ export class SetData extends jspb.Message {
   getMerchantHashKey(): string;
   setMerchantHashKey(value: string): void;
 
-  getFromName(): string;
-  setFromName(value: string): void;
-
-  getFromEmail(): string;
-  setFromEmail(value: string): void;
-
   getAppId(): string;
   setAppId(value: string): void;
 
   getAppSecret(): string;
   setAppSecret(value: string): void;
+
+  getFromName(): string;
+  setFromName(value: string): void;
+
+  getFromEmail(): string;
+  setFromEmail(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetData.AsObject;
@@ -187,10 +187,10 @@ export namespace SetData {
     merchantType: string,
     merchantHashIv: string,
     merchantHashKey: string,
-    fromName: string,
-    fromEmail: string,
     appId: string,
     appSecret: string,
+    fromName: string,
+    fromEmail: string,
   }
 }
 
