@@ -133,13 +133,12 @@ service Store1RPC {
 
     // 系統參數刪修讀寫
     rpc CreateSetting(Setting) returns (Response);
+    rpc UpdateSetting(Setting) returns (Response);
+    rpc DeleteSetting(Setting) returns (Response);
     rpc FindSetting(Query) returns (Response);
 
     // 金物流街口開放
     rpc UpgradeAdapter(AdapterBatch) returns (Response);
-    rpc CreateAdapter(Adapter) returns (Response);
-    rpc UpdateAdapter(Adapter) returns (Response);
-    rpc DeleteAdapter(Adapter) returns (Response);
     rpc FindAdapter(Adapter) returns (Response);
 
     // 頁面刪修讀寫

@@ -1526,6 +1526,50 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoUpdateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: setting_pb.Setting) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateSetting(
+    request: setting_pb.Setting,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateSetting',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSetting,
+      callback);
+  }
+
+  methodInfoDeleteSetting = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: setting_pb.Setting) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  deleteSetting(
+    request: setting_pb.Setting,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteSetting',
+      request,
+      metadata || {},
+      this.methodInfoDeleteSetting,
+      callback);
+  }
+
   methodInfoFindSetting = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -1567,72 +1611,6 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoUpgradeAdapter,
-      callback);
-  }
-
-  methodInfoCreateAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: adapter_pb.Adapter) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createAdapter(
-    request: adapter_pb.Adapter,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/CreateAdapter',
-      request,
-      metadata || {},
-      this.methodInfoCreateAdapter,
-      callback);
-  }
-
-  methodInfoUpdateAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: adapter_pb.Adapter) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateAdapter(
-    request: adapter_pb.Adapter,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/UpdateAdapter',
-      request,
-      metadata || {},
-      this.methodInfoUpdateAdapter,
-      callback);
-  }
-
-  methodInfoDeleteAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: adapter_pb.Adapter) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  deleteAdapter(
-    request: adapter_pb.Adapter,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DeleteAdapter',
-      request,
-      metadata || {},
-      this.methodInfoDeleteAdapter,
       callback);
   }
 
