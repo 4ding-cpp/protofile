@@ -19,11 +19,6 @@ export class Setting extends jspb.Message {
   hasData(): boolean;
   clearData(): void;
 
-  getConf(): google_protobuf_struct_pb.Value | undefined;
-  setConf(value?: google_protobuf_struct_pb.Value): void;
-  hasConf(): boolean;
-  clearConf(): void;
-
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -66,7 +61,6 @@ export namespace Setting {
     storeId: string,
     type: string,
     data?: SetData.AsObject,
-    conf?: google_protobuf_struct_pb.Value.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

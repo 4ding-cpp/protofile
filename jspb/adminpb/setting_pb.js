@@ -105,7 +105,6 @@ proto.ding4.Setting.toObject = function(includeInstance, msg) {
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     type: jspb.Message.getFieldWithDefault(msg, 3, ""),
     data: (f = msg.getData()) && proto.ding4.SetData.toObject(includeInstance, f),
-    conf: (f = msg.getConf()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -165,11 +164,6 @@ proto.ding4.Setting.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.SetData;
       reader.readMessage(value,proto.ding4.SetData.deserializeBinaryFromReader);
       msg.setData(value);
-      break;
-    case 5:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setConf(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -255,14 +249,6 @@ proto.ding4.Setting.serializeBinaryToWriter = function(message, writer) {
       4,
       f,
       proto.ding4.SetData.serializeBinaryToWriter
-    );
-  }
-  f = message.getConf();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getOperator();
@@ -402,43 +388,6 @@ proto.ding4.Setting.prototype.clearData = function() {
  */
 proto.ding4.Setting.prototype.hasData = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Value conf = 5;
- * @return {?proto.google.protobuf.Value}
- */
-proto.ding4.Setting.prototype.getConf = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Value|undefined} value
- * @return {!proto.ding4.Setting} returns this
-*/
-proto.ding4.Setting.prototype.setConf = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.Setting} returns this
- */
-proto.ding4.Setting.prototype.clearConf = function() {
-  return this.setConf(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.Setting.prototype.hasConf = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

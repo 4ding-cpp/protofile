@@ -13,8 +13,7 @@ message Setting {
     string store_id = 2;
     string type = 3;
     SetData data = 4;
-    google.protobuf.Value conf = 5;
-    
+
     string operator = 6;
     google.protobuf.Timestamp create_at = 7;
     google.protobuf.Timestamp update_at = 8;
