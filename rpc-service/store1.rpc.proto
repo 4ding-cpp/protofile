@@ -138,10 +138,11 @@ service Store1RPC {
     rpc FindSetting(Query) returns (Response);
 
     // 金物流街口開放
+    rpc UpgradeAdapter(AdapterBatch) returns (Response);
     rpc CreateAdapter(Adapter) returns (Response);
     rpc UpdateAdapter(Adapter) returns (Response);
     rpc DeleteAdapter(Adapter) returns (Response);
-    rpc FindAdapter(Query) returns (Response);
+    rpc FindAdapter(Adapter) returns (Response);
 
     // 頁面刪修讀寫
     rpc CreateWebPage(WebPage) returns (Response);

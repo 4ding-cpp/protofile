@@ -10,7 +10,6 @@ import "customer.proto";
 import "product-goods.proto";
 import "car.proto";
 import "activity-coupon.proto";
-import "adapter.proto";
 import "order.proto";
 import "freeback.proto";
 import "log.proto";
@@ -54,11 +53,6 @@ service ShopRPC {
     rpc FindCoupon(Query) returns (Response);
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
-
-    rpc FindAdapter(Query) returns (Response);
-    rpc FindPayment(Query) returns (Response);
-    rpc FindLogistics(Query) returns (Response);
-    rpc ChooseCVSStore(Adapter) returns (Response);
 
     // 建立訂單
     rpc CreateOrder(Order) returns (Response);

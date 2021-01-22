@@ -1592,6 +1592,28 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoUpgradeAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: adapter_pb.AdapterBatch) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  upgradeAdapter(
+    request: adapter_pb.AdapterBatch,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpgradeAdapter',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeAdapter,
+      callback);
+  }
+
   methodInfoCreateAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: adapter_pb.Adapter) => {
@@ -1660,14 +1682,14 @@ export class Store1RPCClient {
 
   methodInfoFindAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.Query) => {
+    (request: adapter_pb.Adapter) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   findAdapter(
-    request: sql_pb.Query,
+    request: adapter_pb.Adapter,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

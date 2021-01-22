@@ -35,7 +35,6 @@ service AdminRPC {
     // 查詢任何異動紀錄
     rpc FindLog(LogQuery) returns (Response);
 
-
     // Admin 相關
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);

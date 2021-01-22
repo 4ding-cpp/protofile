@@ -11,11 +11,17 @@ export class Adapter extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getService(): string;
+  setService(value: string): void;
+
+  getClass(): number;
+  setClass(value: number): void;
+
   getType(): number;
   setType(value: number): void;
 
-  getService(): string;
-  setService(value: string): void;
+  getSubType(): number;
+  setSubType(value: number): void;
 
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
@@ -25,32 +31,14 @@ export class Adapter extends jspb.Message {
   hasName(): boolean;
   clearName(): void;
 
-  getPaymentType(): number;
-  setPaymentType(value: number): void;
+  getAddPrice(): number;
+  setAddPrice(value: number): void;
 
-  getPaymentAddAmount(): number;
-  setPaymentAddAmount(value: number): void;
-
-  getPaymentAddPercent(): number;
-  setPaymentAddPercent(value: number): void;
-
-  getExpireDay(): number;
-  setExpireDay(value: number): void;
-
-  getLogisticsType(): number;
-  setLogisticsType(value: number): void;
-
-  getLogisticsSubType(): number;
-  setLogisticsSubType(value: number): void;
-
-  getLogisticsFee(): number;
-  setLogisticsFee(value: number): void;
+  getAddPercent(): number;
+  setAddPercent(value: number): void;
 
   getRemark(): string;
   setRemark(value: string): void;
-
-  getRedirect(): string;
-  setRedirect(value: string): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -92,24 +80,46 @@ export namespace Adapter {
   export type AsObject = {
     adapterId: string,
     storeId: string,
-    type: number,
     service: string,
+    pb_class: number,
+    type: number,
+    subType: number,
     isEnable: boolean,
     name?: google_protobuf_struct_pb.Value.AsObject,
-    paymentType: number,
-    paymentAddAmount: number,
-    paymentAddPercent: number,
-    expireDay: number,
-    logisticsType: number,
-    logisticsSubType: number,
-    logisticsFee: number,
+    addPrice: number,
+    addPercent: number,
     remark: string,
-    redirect: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     colsList: Array<string>,
     conditionList: Array<sql_pb.Condition.AsObject>,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class AdapterBatch extends jspb.Message {
+  getAdapterList(): Array<Adapter>;
+  setAdapterList(value: Array<Adapter>): void;
+  clearAdapterList(): void;
+  addAdapter(value?: Adapter, index?: number): Adapter;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AdapterBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: AdapterBatch): AdapterBatch.AsObject;
+  static serializeBinaryToWriter(message: AdapterBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AdapterBatch;
+  static deserializeBinaryFromReader(message: AdapterBatch, reader: jspb.BinaryReader): AdapterBatch;
+}
+
+export namespace AdapterBatch {
+  export type AsObject = {
+    adapterList: Array<Adapter.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }

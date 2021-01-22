@@ -9,31 +9,35 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 
-// Type => 1:金流 2:物流
-// PaymentType => 1.信用卡 2.ATM 3.超商代碼 4.超商條碼 6.取貨付款 9.自訂
-// PaymentType => 1XX 信用卡分期 103:分三期 112:分12期
-// LogisticsType => 1.店到店 2.大宗物流 3.一般宅配 4.低溫宅配 5.自營門市 9.自訂
+// Class 1#Type=> 1:信用卡 1XX:信用卡分期 2:ATM 3:超商代碼 9:自訂
+// Class 2#Type=> 1:超商取貨 2:超商取貨付款 3:宅配 3:宅配取貨付款 5.自營門市 9.自訂
+// Class 2#SubType=> 11:7-11 12:全家 13:萊爾富 14:OK超商 21:黑貓 22:大嘴鳥
+// Class 3#Type=> 1:超商退貨 3:宅配退貨
+// Class 4#Type=> 1:SMS
+// Class 5#Type=> 1:Email
+// Class 6#Type=> 1:身分轉換
 message Adapter {
     string adapter_id = 1;
     string store_id = 2;
-    int32 type = 3;
     string service = 4;
-    bool is_enable = 5;
-    google.protobuf.Value name = 6;
-    int32 payment_type = 7;
-    double payment_add_amount = 8;
-    double payment_add_percent = 9;
-    int32 expire_day = 10;
-    int32 logistics_type = 11;
-    int32 logistics_sub_type = 12;
-    int32 logistics_fee = 13;
-    string remark = 14;
-    string redirect = 15;
-    string operator = 16;
-    google.protobuf.Timestamp create_at = 17;
-    google.protobuf.Timestamp update_at = 18;
-    repeated string cols = 19;
-    repeated Condition condition = 20;
-    google.protobuf.Struct self = 21;
+    int32 class = 5;
+    int32 type = 6;
+    int32 sub_type = 7;
+    bool is_enable = 3;
+    google.protobuf.Value name = 8;
+    int32 add_price = 9;
+    double add_percent = 10;
+    string remark = 11;
     
+    string operator = 12;
+    google.protobuf.Timestamp create_at = 13;
+    google.protobuf.Timestamp update_at = 14;
+    repeated string cols = 15;
+    repeated Condition condition = 16;
+    google.protobuf.Struct self = 17;
+}
+
+message AdapterBatch {
+    repeated Adapter adapter = 1;
+    google.protobuf.Struct self = 2;
 }
