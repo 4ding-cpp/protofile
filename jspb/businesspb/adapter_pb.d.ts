@@ -14,8 +14,8 @@ export class Adapter extends jspb.Message {
   getService(): string;
   setService(value: string): void;
 
-  getClass(): number;
-  setClass(value: number): void;
+  getCategory(): number;
+  setCategory(value: number): void;
 
   getType(): number;
   setType(value: number): void;
@@ -81,7 +81,7 @@ export namespace Adapter {
     adapterId: string,
     storeId: string,
     service: string,
-    pb_class: number,
+    category: number,
     type: number,
     subType: number,
     isEnable: boolean,

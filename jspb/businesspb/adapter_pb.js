@@ -104,7 +104,7 @@ proto.ding4.Adapter.toObject = function(includeInstance, msg) {
     adapterId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     service: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    pb_class: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    category: jspb.Message.getFieldWithDefault(msg, 5, 0),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0),
     subType: jspb.Message.getFieldWithDefault(msg, 7, 0),
     isEnable: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
@@ -169,7 +169,7 @@ proto.ding4.Adapter.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setClass(value);
+      msg.setCategory(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -278,7 +278,7 @@ proto.ding4.Adapter.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getClass();
+  f = message.getCategory();
   if (f !== 0) {
     writer.writeInt32(
       5,
@@ -439,10 +439,10 @@ proto.ding4.Adapter.prototype.setService = function(value) {
 
 
 /**
- * optional int32 class = 5;
+ * optional int32 category = 5;
  * @return {number}
  */
-proto.ding4.Adapter.prototype.getClass = function() {
+proto.ding4.Adapter.prototype.getCategory = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -451,7 +451,7 @@ proto.ding4.Adapter.prototype.getClass = function() {
  * @param {number} value
  * @return {!proto.ding4.Adapter} returns this
  */
-proto.ding4.Adapter.prototype.setClass = function(value) {
+proto.ding4.Adapter.prototype.setCategory = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 

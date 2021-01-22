@@ -9,18 +9,18 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 
-// Class 1#Type=> 1:信用卡 1XX:信用卡分期 2:ATM 3:超商代碼 9:自訂
-// Class 2#Type=> 1:超商取貨 2:超商取貨付款 3:宅配 3:宅配取貨付款 5.自營門市 9.自訂
-// Class 2#SubType=> 11:7-11 12:全家 13:萊爾富 14:OK超商 21:黑貓 22:大嘴鳥
-// Class 3#Type=> 1:超商退貨 3:宅配退貨
-// Class 4#Type=> 1:SMS
-// Class 5#Type=> 1:Email
-// Class 6#Type=> 1:身分轉換
+// Category 1#Type=> 1:信用卡 1XX:信用卡分期 2:ATM 3:超商代碼 9:自訂
+// Category 2#Type=> 1:超商取貨 2:超商取貨付款 3:宅配 3:宅配取貨付款 5.自營門市 9.自訂
+// Category 2#SubType=> 11:7-11 12:全家 13:萊爾富 14:OK超商 21:黑貓 22:大嘴鳥
+// Category 3#Type=> 1:超商退貨 3:宅配退貨
+// Category 4#Type=> 1:SMS
+// Category 5#Type=> 1:Email
+// Category 6#Type=> 1:身分轉換
 message Adapter {
     string adapter_id = 1;
     string store_id = 2;
     string service = 4;
-    int32 class = 5;
+    int32 category = 5;
     int32 type = 6;
     int32 sub_type = 7;
     bool is_enable = 3;
