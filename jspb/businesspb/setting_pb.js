@@ -103,7 +103,8 @@ proto.ding4.Setting.toObject = function(includeInstance, msg) {
   var f, obj = {
     settingId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    service: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    conf: jspb.Message.getFieldWithDefault(msg, 4, ""),
     data: (f = msg.getData()) && proto.ding4.SetData.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -158,9 +159,13 @@ proto.ding4.Setting.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setService(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConf(value);
+      break;
+    case 5:
       var value = new proto.ding4.SetData;
       reader.readMessage(value,proto.ding4.SetData.deserializeBinaryFromReader);
       msg.setData(value);
@@ -236,17 +241,24 @@ proto.ding4.Setting.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getType();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getConf();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getData();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.ding4.SetData.serializeBinaryToWriter
     );
@@ -337,10 +349,10 @@ proto.ding4.Setting.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string type = 3;
+ * optional string service = 3;
  * @return {string}
  */
-proto.ding4.Setting.prototype.getType = function() {
+proto.ding4.Setting.prototype.getService = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -349,18 +361,36 @@ proto.ding4.Setting.prototype.getType = function() {
  * @param {string} value
  * @return {!proto.ding4.Setting} returns this
  */
-proto.ding4.Setting.prototype.setType = function(value) {
+proto.ding4.Setting.prototype.setService = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional SetData data = 4;
+ * optional string conf = 4;
+ * @return {string}
+ */
+proto.ding4.Setting.prototype.getConf = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Setting} returns this
+ */
+proto.ding4.Setting.prototype.setConf = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional SetData data = 5;
  * @return {?proto.ding4.SetData}
  */
 proto.ding4.Setting.prototype.getData = function() {
   return /** @type{?proto.ding4.SetData} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.SetData, 4));
+    jspb.Message.getWrapperField(this, proto.ding4.SetData, 5));
 };
 
 
@@ -369,7 +399,7 @@ proto.ding4.Setting.prototype.getData = function() {
  * @return {!proto.ding4.Setting} returns this
 */
 proto.ding4.Setting.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -387,7 +417,7 @@ proto.ding4.Setting.prototype.clearData = function() {
  * @return {boolean}
  */
 proto.ding4.Setting.prototype.hasData = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

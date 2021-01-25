@@ -19,22 +19,23 @@ import "google/protobuf/timestamp.proto";
 message Adapter {
     string adapter_id = 1;
     string store_id = 2;
-    string service = 4;
+    string service = 3;
+    string conf = 4;
     int32 category = 5;
     int32 type = 6;
     int32 sub_type = 7;
-    bool is_enable = 3;
-    google.protobuf.Value name = 8;
-    int32 add_price = 9;
-    double add_percent = 10;
-    string remark = 11;
+    bool is_enable = 8;
+    google.protobuf.Value name = 9;
+    int32 add_price = 10;
+    double add_percent = 11;
+    string remark = 12;
     
-    string operator = 12;
-    google.protobuf.Timestamp create_at = 13;
-    google.protobuf.Timestamp update_at = 14;
-    repeated string cols = 15;
-    repeated Condition condition = 16;
-    google.protobuf.Struct self = 17;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }
 
 message AdapterBatch {

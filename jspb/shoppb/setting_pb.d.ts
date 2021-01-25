@@ -11,8 +11,11 @@ export class Setting extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getService(): string;
+  setService(value: string): void;
+
+  getConf(): string;
+  setConf(value: string): void;
 
   getData(): SetData | undefined;
   setData(value?: SetData): void;
@@ -59,7 +62,8 @@ export namespace Setting {
   export type AsObject = {
     settingId: string,
     storeId: string,
-    type: string,
+    service: string,
+    conf: string,
     data?: SetData.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

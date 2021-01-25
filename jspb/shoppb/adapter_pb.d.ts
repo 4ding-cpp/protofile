@@ -14,6 +14,9 @@ export class Adapter extends jspb.Message {
   getService(): string;
   setService(value: string): void;
 
+  getConf(): string;
+  setConf(value: string): void;
+
   getCategory(): number;
   setCategory(value: number): void;
 
@@ -81,6 +84,7 @@ export namespace Adapter {
     adapterId: string,
     storeId: string,
     service: string,
+    conf: string,
     category: number,
     type: number,
     subType: number,

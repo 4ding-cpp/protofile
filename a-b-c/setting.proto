@@ -11,8 +11,9 @@ import "google/protobuf/timestamp.proto";
 message Setting {
     string setting_id = 1;
     string store_id = 2;
-    string type = 3;
-    SetData data = 4;
+    string service = 3;
+    string conf = 4;
+    SetData data = 5;
 
     string operator = 6;
     google.protobuf.Timestamp create_at = 7;
