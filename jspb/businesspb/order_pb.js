@@ -2546,8 +2546,8 @@ proto.ding4.OrderActivity.toObject = function(includeInstance, msg) {
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     activityId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    giveaway: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    givename: (f = msg.getGivename()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    productId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    giveaway: jspb.Message.getFieldWithDefault(msg, 6, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 7, 0),
     discount: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
@@ -2603,13 +2603,12 @@ proto.ding4.OrderActivity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setGiveaway(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductId(value);
       break;
     case 6:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setGivename(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setGiveaway(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2676,19 +2675,18 @@ proto.ding4.OrderActivity.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getGiveaway();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getProductId();
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
   }
-  f = message.getGivename();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getGiveaway();
+  if (f !== 0) {
+    writer.writeInt32(
       6,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+      f
     );
   }
   f = message.getAmount();
@@ -2781,11 +2779,29 @@ proto.ding4.OrderActivity.prototype.setName = function(value) {
 
 
 /**
- * optional int32 giveaway = 5;
+ * optional string product_id = 5;
+ * @return {string}
+ */
+proto.ding4.OrderActivity.prototype.getProductId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setProductId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional int32 giveaway = 6;
  * @return {number}
  */
 proto.ding4.OrderActivity.prototype.getGiveaway = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -2794,44 +2810,7 @@ proto.ding4.OrderActivity.prototype.getGiveaway = function() {
  * @return {!proto.ding4.OrderActivity} returns this
  */
 proto.ding4.OrderActivity.prototype.setGiveaway = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional google.protobuf.Value givename = 6;
- * @return {?proto.google.protobuf.Value}
- */
-proto.ding4.OrderActivity.prototype.getGivename = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Value|undefined} value
- * @return {!proto.ding4.OrderActivity} returns this
-*/
-proto.ding4.OrderActivity.prototype.setGivename = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.OrderActivity} returns this
- */
-proto.ding4.OrderActivity.prototype.clearGivename = function() {
-  return this.setGivename(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.OrderActivity.prototype.hasGivename = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 

@@ -311,13 +311,11 @@ export class OrderActivity extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  getProductId(): string;
+  setProductId(value: string): void;
+
   getGiveaway(): number;
   setGiveaway(value: number): void;
-
-  getGivename(): google_protobuf_struct_pb.Value | undefined;
-  setGivename(value?: google_protobuf_struct_pb.Value): void;
-  hasGivename(): boolean;
-  clearGivename(): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -339,8 +337,8 @@ export namespace OrderActivity {
     storeId: string,
     activityId: string,
     name: string,
+    productId: string,
     giveaway: number,
-    givename?: google_protobuf_struct_pb.Value.AsObject,
     amount: number,
     discount: number,
   }
