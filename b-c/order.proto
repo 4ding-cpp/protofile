@@ -95,8 +95,9 @@ message OrderActivity {
     string activity_id = 3;
     string name = 4;
     int32 giveaway = 5;
-    int32 amount = 6;
-    int32 discount = 7;
+    google.protobuf.Value givename = 6;
+    int32 amount = 7;
+    int32 discount = 8;
 }
 
 message ContactInfo {

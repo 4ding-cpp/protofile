@@ -2547,8 +2547,9 @@ proto.ding4.OrderActivity.toObject = function(includeInstance, msg) {
     activityId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     giveaway: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    discount: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    givename: (f = msg.getGivename()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    amount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    discount: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -2606,10 +2607,15 @@ proto.ding4.OrderActivity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGiveaway(value);
       break;
     case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setGivename(value);
+      break;
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiscount(value);
       break;
@@ -2677,17 +2683,25 @@ proto.ding4.OrderActivity.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getGivename();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
   f = message.getAmount();
   if (f !== 0) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getDiscount();
   if (f !== 0) {
     writer.writeInt32(
-      7,
+      8,
       f
     );
   }
@@ -2785,28 +2799,47 @@ proto.ding4.OrderActivity.prototype.setGiveaway = function(value) {
 
 
 /**
- * optional int32 amount = 6;
+ * optional google.protobuf.Value givename = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.ding4.OrderActivity.prototype.getGivename = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.ding4.OrderActivity} returns this
+*/
+proto.ding4.OrderActivity.prototype.setGivename = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.clearGivename = function() {
+  return this.setGivename(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.OrderActivity.prototype.hasGivename = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 amount = 7;
  * @return {number}
  */
 proto.ding4.OrderActivity.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderActivity} returns this
- */
-proto.ding4.OrderActivity.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
-};
-
-
-/**
- * optional int32 discount = 7;
- * @return {number}
- */
-proto.ding4.OrderActivity.prototype.getDiscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -2815,8 +2848,26 @@ proto.ding4.OrderActivity.prototype.getDiscount = function() {
  * @param {number} value
  * @return {!proto.ding4.OrderActivity} returns this
  */
-proto.ding4.OrderActivity.prototype.setDiscount = function(value) {
+proto.ding4.OrderActivity.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 discount = 8;
+ * @return {number}
+ */
+proto.ding4.OrderActivity.prototype.getDiscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setDiscount = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
