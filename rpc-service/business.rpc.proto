@@ -125,6 +125,7 @@ service BusinessRPC {
     // 商品修改紀錄
     rpc RecordProduct(Product) returns (Response);
     rpc FindProductShell(Query) returns (Response);
+    rpc FindActivity(Query) returns (Response);
 
     // 註冊商店 (註冊須審核完成後預設為關閉)
     rpc RegisterStore(Store) returns (Response);
