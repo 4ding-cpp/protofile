@@ -97,6 +97,8 @@ message OrderActivity {
     int32 giveaway = 5;
     int32 amount = 6;
     int32 discount = 7;
+    int32 reduce = 8;
+    int32 coupon = 9;
 }
 
 message ContactInfo {

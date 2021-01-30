@@ -2548,7 +2548,9 @@ proto.ding4.OrderActivity.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     giveaway: jspb.Message.getFieldWithDefault(msg, 5, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    discount: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    discount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    reduce: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    coupon: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -2612,6 +2614,14 @@ proto.ding4.OrderActivity.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiscount(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setReduce(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCoupon(value);
       break;
     default:
       reader.skipField();
@@ -2688,6 +2698,20 @@ proto.ding4.OrderActivity.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       7,
+      f
+    );
+  }
+  f = message.getReduce();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getCoupon();
+  if (f !== 0) {
+    writer.writeInt32(
+      9,
       f
     );
   }
@@ -2817,6 +2841,42 @@ proto.ding4.OrderActivity.prototype.getDiscount = function() {
  */
 proto.ding4.OrderActivity.prototype.setDiscount = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 reduce = 8;
+ * @return {number}
+ */
+proto.ding4.OrderActivity.prototype.getReduce = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setReduce = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional int32 coupon = 9;
+ * @return {number}
+ */
+proto.ding4.OrderActivity.prototype.getCoupon = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setCoupon = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
