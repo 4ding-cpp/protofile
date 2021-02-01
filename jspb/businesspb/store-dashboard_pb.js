@@ -62,7 +62,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.StoreDashboard.repeatedFields_ = [8,9];
+proto.ding4.StoreDashboard.repeatedFields_ = [10,11,12,13];
 
 
 
@@ -100,11 +100,17 @@ proto.ding4.StoreDashboard.toObject = function(includeInstance, msg) {
     times: jspb.Message.getFieldWithDefault(msg, 3, ""),
     customer: jspb.Message.getFieldWithDefault(msg, 4, ""),
     orders: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    sales: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    profit: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    browseRankList: jspb.Message.toObjectList(msg.getBrowseRankList(),
+    amount: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    freight: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    profit: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    browseWeekRankList: jspb.Message.toObjectList(msg.getBrowseWeekRankList(),
     proto.ding4.ProductDashboard.toObject, includeInstance),
-    ordersRankList: jspb.Message.toObjectList(msg.getOrdersRankList(),
+    browseMonthRankList: jspb.Message.toObjectList(msg.getBrowseMonthRankList(),
+    proto.ding4.ProductDashboard.toObject, includeInstance),
+    ordersWeekRankList: jspb.Message.toObjectList(msg.getOrdersWeekRankList(),
+    proto.ding4.ProductDashboard.toObject, includeInstance),
+    ordersMonthRankList: jspb.Message.toObjectList(msg.getOrdersMonthRankList(),
     proto.ding4.ProductDashboard.toObject, includeInstance)
   };
 
@@ -164,21 +170,39 @@ proto.ding4.StoreDashboard.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSales(value);
+      msg.setAmount(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProfit(value);
+      msg.setPrice(value);
       break;
     case 8:
-      var value = new proto.ding4.ProductDashboard;
-      reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
-      msg.addBrowseRank(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFreight(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfit(value);
+      break;
+    case 10:
       var value = new proto.ding4.ProductDashboard;
       reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
-      msg.addOrdersRank(value);
+      msg.addBrowseWeekRank(value);
+      break;
+    case 11:
+      var value = new proto.ding4.ProductDashboard;
+      reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
+      msg.addBrowseMonthRank(value);
+      break;
+    case 12:
+      var value = new proto.ding4.ProductDashboard;
+      reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
+      msg.addOrdersWeekRank(value);
+      break;
+    case 13:
+      var value = new proto.ding4.ProductDashboard;
+      reader.readMessage(value,proto.ding4.ProductDashboard.deserializeBinaryFromReader);
+      msg.addOrdersMonthRank(value);
       break;
     default:
       reader.skipField();
@@ -244,32 +268,62 @@ proto.ding4.StoreDashboard.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSales();
+  f = message.getAmount();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getProfit();
+  f = message.getPrice();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getBrowseRankList();
+  f = message.getFreight();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getProfit();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getBrowseWeekRankList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      10,
       f,
       proto.ding4.ProductDashboard.serializeBinaryToWriter
     );
   }
-  f = message.getOrdersRankList();
+  f = message.getBrowseMonthRankList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      11,
+      f,
+      proto.ding4.ProductDashboard.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrdersWeekRankList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.ding4.ProductDashboard.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrdersMonthRankList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      13,
       f,
       proto.ding4.ProductDashboard.serializeBinaryToWriter
     );
@@ -368,10 +422,10 @@ proto.ding4.StoreDashboard.prototype.setOrders = function(value) {
 
 
 /**
- * optional string sales = 6;
+ * optional string amount = 6;
  * @return {string}
  */
-proto.ding4.StoreDashboard.prototype.getSales = function() {
+proto.ding4.StoreDashboard.prototype.getAmount = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -380,16 +434,16 @@ proto.ding4.StoreDashboard.prototype.getSales = function() {
  * @param {string} value
  * @return {!proto.ding4.StoreDashboard} returns this
  */
-proto.ding4.StoreDashboard.prototype.setSales = function(value) {
+proto.ding4.StoreDashboard.prototype.setAmount = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string profit = 7;
+ * optional string price = 7;
  * @return {string}
  */
-proto.ding4.StoreDashboard.prototype.getProfit = function() {
+proto.ding4.StoreDashboard.prototype.getPrice = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -398,18 +452,54 @@ proto.ding4.StoreDashboard.prototype.getProfit = function() {
  * @param {string} value
  * @return {!proto.ding4.StoreDashboard} returns this
  */
-proto.ding4.StoreDashboard.prototype.setProfit = function(value) {
+proto.ding4.StoreDashboard.prototype.setPrice = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * repeated ProductDashboard browse_rank = 8;
+ * optional string freight = 8;
+ * @return {string}
+ */
+proto.ding4.StoreDashboard.prototype.getFreight = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.StoreDashboard} returns this
+ */
+proto.ding4.StoreDashboard.prototype.setFreight = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string profit = 9;
+ * @return {string}
+ */
+proto.ding4.StoreDashboard.prototype.getProfit = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.StoreDashboard} returns this
+ */
+proto.ding4.StoreDashboard.prototype.setProfit = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * repeated ProductDashboard browse_week_rank = 10;
  * @return {!Array<!proto.ding4.ProductDashboard>}
  */
-proto.ding4.StoreDashboard.prototype.getBrowseRankList = function() {
+proto.ding4.StoreDashboard.prototype.getBrowseWeekRankList = function() {
   return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 10));
 };
 
 
@@ -417,8 +507,8 @@ proto.ding4.StoreDashboard.prototype.getBrowseRankList = function() {
  * @param {!Array<!proto.ding4.ProductDashboard>} value
  * @return {!proto.ding4.StoreDashboard} returns this
 */
-proto.ding4.StoreDashboard.prototype.setBrowseRankList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+proto.ding4.StoreDashboard.prototype.setBrowseWeekRankList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -427,8 +517,8 @@ proto.ding4.StoreDashboard.prototype.setBrowseRankList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.ProductDashboard}
  */
-proto.ding4.StoreDashboard.prototype.addBrowseRank = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.ProductDashboard, opt_index);
+proto.ding4.StoreDashboard.prototype.addBrowseWeekRank = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.ding4.ProductDashboard, opt_index);
 };
 
 
@@ -436,18 +526,18 @@ proto.ding4.StoreDashboard.prototype.addBrowseRank = function(opt_value, opt_ind
  * Clears the list making it empty but non-null.
  * @return {!proto.ding4.StoreDashboard} returns this
  */
-proto.ding4.StoreDashboard.prototype.clearBrowseRankList = function() {
-  return this.setBrowseRankList([]);
+proto.ding4.StoreDashboard.prototype.clearBrowseWeekRankList = function() {
+  return this.setBrowseWeekRankList([]);
 };
 
 
 /**
- * repeated ProductDashboard orders_rank = 9;
+ * repeated ProductDashboard browse_month_rank = 11;
  * @return {!Array<!proto.ding4.ProductDashboard>}
  */
-proto.ding4.StoreDashboard.prototype.getOrdersRankList = function() {
+proto.ding4.StoreDashboard.prototype.getBrowseMonthRankList = function() {
   return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 11));
 };
 
 
@@ -455,8 +545,8 @@ proto.ding4.StoreDashboard.prototype.getOrdersRankList = function() {
  * @param {!Array<!proto.ding4.ProductDashboard>} value
  * @return {!proto.ding4.StoreDashboard} returns this
 */
-proto.ding4.StoreDashboard.prototype.setOrdersRankList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+proto.ding4.StoreDashboard.prototype.setBrowseMonthRankList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -465,8 +555,8 @@ proto.ding4.StoreDashboard.prototype.setOrdersRankList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ding4.ProductDashboard}
  */
-proto.ding4.StoreDashboard.prototype.addOrdersRank = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ding4.ProductDashboard, opt_index);
+proto.ding4.StoreDashboard.prototype.addBrowseMonthRank = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.ding4.ProductDashboard, opt_index);
 };
 
 
@@ -474,8 +564,84 @@ proto.ding4.StoreDashboard.prototype.addOrdersRank = function(opt_value, opt_ind
  * Clears the list making it empty but non-null.
  * @return {!proto.ding4.StoreDashboard} returns this
  */
-proto.ding4.StoreDashboard.prototype.clearOrdersRankList = function() {
-  return this.setOrdersRankList([]);
+proto.ding4.StoreDashboard.prototype.clearBrowseMonthRankList = function() {
+  return this.setBrowseMonthRankList([]);
+};
+
+
+/**
+ * repeated ProductDashboard orders_week_rank = 12;
+ * @return {!Array<!proto.ding4.ProductDashboard>}
+ */
+proto.ding4.StoreDashboard.prototype.getOrdersWeekRankList = function() {
+  return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.ProductDashboard>} value
+ * @return {!proto.ding4.StoreDashboard} returns this
+*/
+proto.ding4.StoreDashboard.prototype.setOrdersWeekRankList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.ding4.ProductDashboard=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.ProductDashboard}
+ */
+proto.ding4.StoreDashboard.prototype.addOrdersWeekRank = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.ding4.ProductDashboard, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.StoreDashboard} returns this
+ */
+proto.ding4.StoreDashboard.prototype.clearOrdersWeekRankList = function() {
+  return this.setOrdersWeekRankList([]);
+};
+
+
+/**
+ * repeated ProductDashboard orders_month_rank = 13;
+ * @return {!Array<!proto.ding4.ProductDashboard>}
+ */
+proto.ding4.StoreDashboard.prototype.getOrdersMonthRankList = function() {
+  return /** @type{!Array<!proto.ding4.ProductDashboard>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.ProductDashboard, 13));
+};
+
+
+/**
+ * @param {!Array<!proto.ding4.ProductDashboard>} value
+ * @return {!proto.ding4.StoreDashboard} returns this
+*/
+proto.ding4.StoreDashboard.prototype.setOrdersMonthRankList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+};
+
+
+/**
+ * @param {!proto.ding4.ProductDashboard=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.ProductDashboard}
+ */
+proto.ding4.StoreDashboard.prototype.addOrdersMonthRank = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.ding4.ProductDashboard, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.StoreDashboard} returns this
+ */
+proto.ding4.StoreDashboard.prototype.clearOrdersMonthRankList = function() {
+  return this.setOrdersMonthRankList([]);
 };
 
 
@@ -515,10 +681,10 @@ proto.ding4.ProductDashboard.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     browse: jspb.Message.getFieldWithDefault(msg, 3, 0),
     browseWeek: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    orders: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    ordersWeek: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    sales: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    salasWeek: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    browseMonth: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    orders: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    ordersWeek: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    ordersMonth: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -573,19 +739,19 @@ proto.ding4.ProductDashboard.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setOrders(value);
+      msg.setBrowseMonth(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setOrdersWeek(value);
+      msg.setOrders(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSales(value);
+      msg.setOrdersWeek(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSalasWeek(value);
+      msg.setOrdersMonth(value);
       break;
     default:
       reader.skipField();
@@ -644,28 +810,28 @@ proto.ding4.ProductDashboard.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
-  f = message.getOrders();
+  f = message.getBrowseMonth();
   if (f !== 0) {
     writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getOrdersWeek();
+  f = message.getOrders();
   if (f !== 0) {
     writer.writeInt32(
       6,
       f
     );
   }
-  f = message.getSales();
+  f = message.getOrdersWeek();
   if (f !== 0) {
     writer.writeInt32(
       7,
       f
     );
   }
-  f = message.getSalasWeek();
+  f = message.getOrdersMonth();
   if (f !== 0) {
     writer.writeInt32(
       8,
@@ -748,10 +914,10 @@ proto.ding4.ProductDashboard.prototype.setBrowseWeek = function(value) {
 
 
 /**
- * optional int32 orders = 5;
+ * optional int32 browse_month = 5;
  * @return {number}
  */
-proto.ding4.ProductDashboard.prototype.getOrders = function() {
+proto.ding4.ProductDashboard.prototype.getBrowseMonth = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -760,16 +926,16 @@ proto.ding4.ProductDashboard.prototype.getOrders = function() {
  * @param {number} value
  * @return {!proto.ding4.ProductDashboard} returns this
  */
-proto.ding4.ProductDashboard.prototype.setOrders = function(value) {
+proto.ding4.ProductDashboard.prototype.setBrowseMonth = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional int32 orders_week = 6;
+ * optional int32 orders = 6;
  * @return {number}
  */
-proto.ding4.ProductDashboard.prototype.getOrdersWeek = function() {
+proto.ding4.ProductDashboard.prototype.getOrders = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -778,16 +944,16 @@ proto.ding4.ProductDashboard.prototype.getOrdersWeek = function() {
  * @param {number} value
  * @return {!proto.ding4.ProductDashboard} returns this
  */
-proto.ding4.ProductDashboard.prototype.setOrdersWeek = function(value) {
+proto.ding4.ProductDashboard.prototype.setOrders = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional int32 sales = 7;
+ * optional int32 orders_week = 7;
  * @return {number}
  */
-proto.ding4.ProductDashboard.prototype.getSales = function() {
+proto.ding4.ProductDashboard.prototype.getOrdersWeek = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -796,16 +962,16 @@ proto.ding4.ProductDashboard.prototype.getSales = function() {
  * @param {number} value
  * @return {!proto.ding4.ProductDashboard} returns this
  */
-proto.ding4.ProductDashboard.prototype.setSales = function(value) {
+proto.ding4.ProductDashboard.prototype.setOrdersWeek = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional int32 salas_week = 8;
+ * optional int32 orders_month = 8;
  * @return {number}
  */
-proto.ding4.ProductDashboard.prototype.getSalasWeek = function() {
+proto.ding4.ProductDashboard.prototype.getOrdersMonth = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -814,7 +980,7 @@ proto.ding4.ProductDashboard.prototype.getSalasWeek = function() {
  * @param {number} value
  * @return {!proto.ding4.ProductDashboard} returns this
  */
-proto.ding4.ProductDashboard.prototype.setSalasWeek = function(value) {
+proto.ding4.ProductDashboard.prototype.setOrdersMonth = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 

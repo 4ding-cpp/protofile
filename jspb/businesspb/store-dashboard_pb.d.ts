@@ -16,21 +16,37 @@ export class StoreDashboard extends jspb.Message {
   getOrders(): string;
   setOrders(value: string): void;
 
-  getSales(): string;
-  setSales(value: string): void;
+  getAmount(): string;
+  setAmount(value: string): void;
+
+  getPrice(): string;
+  setPrice(value: string): void;
+
+  getFreight(): string;
+  setFreight(value: string): void;
 
   getProfit(): string;
   setProfit(value: string): void;
 
-  getBrowseRankList(): Array<ProductDashboard>;
-  setBrowseRankList(value: Array<ProductDashboard>): void;
-  clearBrowseRankList(): void;
-  addBrowseRank(value?: ProductDashboard, index?: number): ProductDashboard;
+  getBrowseWeekRankList(): Array<ProductDashboard>;
+  setBrowseWeekRankList(value: Array<ProductDashboard>): void;
+  clearBrowseWeekRankList(): void;
+  addBrowseWeekRank(value?: ProductDashboard, index?: number): ProductDashboard;
 
-  getOrdersRankList(): Array<ProductDashboard>;
-  setOrdersRankList(value: Array<ProductDashboard>): void;
-  clearOrdersRankList(): void;
-  addOrdersRank(value?: ProductDashboard, index?: number): ProductDashboard;
+  getBrowseMonthRankList(): Array<ProductDashboard>;
+  setBrowseMonthRankList(value: Array<ProductDashboard>): void;
+  clearBrowseMonthRankList(): void;
+  addBrowseMonthRank(value?: ProductDashboard, index?: number): ProductDashboard;
+
+  getOrdersWeekRankList(): Array<ProductDashboard>;
+  setOrdersWeekRankList(value: Array<ProductDashboard>): void;
+  clearOrdersWeekRankList(): void;
+  addOrdersWeekRank(value?: ProductDashboard, index?: number): ProductDashboard;
+
+  getOrdersMonthRankList(): Array<ProductDashboard>;
+  setOrdersMonthRankList(value: Array<ProductDashboard>): void;
+  clearOrdersMonthRankList(): void;
+  addOrdersMonthRank(value?: ProductDashboard, index?: number): ProductDashboard;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StoreDashboard.AsObject;
@@ -47,10 +63,14 @@ export namespace StoreDashboard {
     times: string,
     customer: string,
     orders: string,
-    sales: string,
+    amount: string,
+    price: string,
+    freight: string,
     profit: string,
-    browseRankList: Array<ProductDashboard.AsObject>,
-    ordersRankList: Array<ProductDashboard.AsObject>,
+    browseWeekRankList: Array<ProductDashboard.AsObject>,
+    browseMonthRankList: Array<ProductDashboard.AsObject>,
+    ordersWeekRankList: Array<ProductDashboard.AsObject>,
+    ordersMonthRankList: Array<ProductDashboard.AsObject>,
   }
 }
 
@@ -67,17 +87,17 @@ export class ProductDashboard extends jspb.Message {
   getBrowseWeek(): number;
   setBrowseWeek(value: number): void;
 
+  getBrowseMonth(): number;
+  setBrowseMonth(value: number): void;
+
   getOrders(): number;
   setOrders(value: number): void;
 
   getOrdersWeek(): number;
   setOrdersWeek(value: number): void;
 
-  getSales(): number;
-  setSales(value: number): void;
-
-  getSalasWeek(): number;
-  setSalasWeek(value: number): void;
+  getOrdersMonth(): number;
+  setOrdersMonth(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductDashboard.AsObject;
@@ -93,10 +113,10 @@ export namespace ProductDashboard {
     name: string,
     browse: number,
     browseWeek: number,
+    browseMonth: number,
     orders: number,
     ordersWeek: number,
-    sales: number,
-    salasWeek: number,
+    ordersMonth: number,
   }
 }
 
