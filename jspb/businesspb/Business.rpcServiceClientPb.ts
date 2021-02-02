@@ -2032,6 +2032,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoFindRemindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: remind_pb.Remind) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findRemindTemplate(
+    request: remind_pb.Remind,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindRemindTemplate',
+      request,
+      metadata || {},
+      this.methodInfoFindRemindTemplate,
+      callback);
+  }
+
   methodInfoCreateFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: freeback_pb.Freeback) => {

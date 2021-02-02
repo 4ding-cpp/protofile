@@ -201,6 +201,7 @@ service BusinessRPC {
     rpc UpdateTemplate(Template) returns (Response);
     rpc DeleteTemplate(Template) returns (Response);
     rpc FindTemplate(Query) returns (Response);
+    rpc FindRemindTemplate(Remind) returns (Response);
 
     // 回饋相關操作
     rpc CreateFreeback(Freeback) returns (Response);

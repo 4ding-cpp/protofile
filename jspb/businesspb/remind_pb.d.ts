@@ -9,6 +9,9 @@ export class Remind extends jspb.Message {
   getRemindId(): string;
   setRemindId(value: string): void;
 
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
   getItem(): string;
   setItem(value: string): void;
 
@@ -68,6 +71,7 @@ export class Remind extends jspb.Message {
 export namespace Remind {
   export type AsObject = {
     remindId: string,
+    storeId: string,
     item: string,
     mode: string,
     description: string,
