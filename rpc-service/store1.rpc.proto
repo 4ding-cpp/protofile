@@ -180,7 +180,6 @@ service Store1RPC {
     rpc UpdateTemplate(Template) returns (Response);
     rpc DeleteTemplate(Template) returns (Response);
     rpc FindTemplate(Query) returns (Response);
-
-    
+    rpc FindRemindTemplate(Remind) returns (Response);
 }
 
