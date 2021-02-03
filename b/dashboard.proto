@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "browse.proto";
+
+
+message Businessboard {
+    Storeboard dashborad = 1;
+    repeated Storeboard stores = 2;
+}
+
+message Storeboard {
+    Browse total = 1;
+    repeated Browse recent = 2;
+}
+
+message Rankboard {
+    Rank today = 1;
+    Rank week = 2;
+    Rank month = 3;
+}
+
+message Rank {
+    repeated Browse browse = 1;
+    repeated Browse orders = 2;
+    repeated Browse amount = 3;
+    repeated Browse price = 4;
+    repeated Browse freight = 5;
+}
+

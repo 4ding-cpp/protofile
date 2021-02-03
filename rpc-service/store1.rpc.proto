@@ -26,7 +26,7 @@ import "website.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
-import "store-dashboard.proto";
+
 
 service Store1RPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -43,7 +43,8 @@ service Store1RPC {
     // 檢查存在否
     rpc Duplicate(Query) returns (Response);
 
-    rpc BrowseDashboard(StoreDashboard) returns (Response);
+    rpc Dashborad(Query) returns (Response);
+    rpc Rank(Query) returns (Response);
 
     // 子帳號相關
     rpc CreateManagerSub(ManagerSub) returns (Response);

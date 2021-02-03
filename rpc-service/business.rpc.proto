@@ -45,6 +45,9 @@ service BusinessRPC {
     // 查詢任何異動紀錄
     rpc FindLog(LogQuery) returns (Response);
 
+    rpc Dashborad(Query) returns (Response);
+    rpc Rank(Query) returns (Response);
+
     // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);
     // 取消未繳款訂單

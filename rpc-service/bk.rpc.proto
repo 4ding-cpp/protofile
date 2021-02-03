@@ -13,6 +13,7 @@ import "store.proto";
 import "order.proto";
 import "product.proto";
 import "b2b.proto";
+import "browse.proto";
 
 service BkRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -36,4 +37,10 @@ service BkRPC {
     rpc NewStore(Store) returns (Response);
 
     rpc ExportProduct(B2BProduct) returns (B2BProduct);
+
+    rpc Businessboard(Query) returns (Response);
+    rpc BusinessRank(Query) returns (Response);
+    rpc Storeboard(Query) returns (Response);
+    rpc StoreRank(Query) returns (Response);
+    rpc BrowseRecord(Browse) returns (Response);
 }

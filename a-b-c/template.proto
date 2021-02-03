@@ -15,12 +15,13 @@ message Template {
     string language = 5;
     string title = 6;
     bool is_html = 7;
-    string content = 8;
-    int32 idx = 9;
+    bool is_customer = 8;
+    string content = 9;
+    int32 idx = 10;
 
-    string operator = 10;
-    google.protobuf.Timestamp create_at = 11;
-    google.protobuf.Timestamp update_at = 12;
-    repeated string cols = 13;
-    google.protobuf.Struct self = 14;  
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    google.protobuf.Struct self = 15;  
 }

@@ -22,5 +22,4 @@ import * as website_pb from './website_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
-import * as store$dashboard_pb from './store-dashboard_pb';
 
