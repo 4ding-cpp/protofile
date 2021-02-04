@@ -29,20 +29,9 @@ service ShopRPC {
     rpc ChangeInfo(Customer) returns (Response);
     rpc FindSign(Query) returns (Response);
 
-    // 初始畫面 LOGO MENU FOOTER 首頁布局
-    rpc IndexWebsite(Query) returns (Response);
-    // 自訂頁面內容
-    rpc FindWebPage(Query) returns (Response);
-    // 一些店家資訊及功能開關
-    rpc AppConf(Query) returns (Response);
+    // 瀏覽回饋
+    rpc UploadBrowse(BrowseRecord) returns (Response);
 
-    // 商品類別
-    rpc FindProductClass(Query) returns (Response);
-    // 商品列表
-    rpc FindProductGoods(Query) returns (Response);
-    rpc FindProductGoodsOfActivity(Activity) returns (Response);
-    // 商品細項
-    rpc BrowseProductGoods(ProductGoods) returns (Response);
     rpc AddProductFavorite(ProductGoods) returns (Response);
     rpc DelProductFavorite(ProductGoods) returns (Response);
     rpc FindFavorite(Query) returns (Response);
@@ -71,9 +60,7 @@ service ShopRPC {
     rpc ReadFreeback(Freeback) returns (Response);
     rpc AppendFreeback(Dialogue) returns (Response);
     rpc FindFreeback(Query) returns (Response);
-    
-    // 瀏覽回饋
-    rpc UploadBrowse(BrowseRecord) returns (Response);
+
 
     // 更新
     rpc UpgradeWebsite(Upgrade) returns (Response);

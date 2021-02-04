@@ -88,9 +88,19 @@ proto.ding4.Browse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Browse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    target: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    targetId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    date: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    target: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    browse: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    times: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    profit: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    customer: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    orders: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    freight: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    isMobile: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -129,15 +139,55 @@ proto.ding4.Browse.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTarget(value);
+      msg.setDate(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetId(value);
+      msg.setStoreId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetName(value);
+      msg.setTarget(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTargetId(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBrowse(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTimes(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setProfit(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCustomer(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOrders(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAmount(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFreight(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsMobile(value);
       break;
     default:
       reader.skipField();
@@ -168,24 +218,94 @@ proto.ding4.Browse.prototype.serializeBinary = function() {
  */
 proto.ding4.Browse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTarget();
+  f = message.getDate();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getTargetId();
+  f = message.getStoreId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTargetName();
+  f = message.getTarget();
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getTargetId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getBrowse();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getTimes();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
+  f = message.getProfit();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = message.getCustomer();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getOrders();
+  if (f !== 0) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f !== 0) {
+    writer.writeInt32(
+      10,
+      f
+    );
+  }
+  f = message.getPrice();
+  if (f !== 0) {
+    writer.writeInt32(
+      11,
+      f
+    );
+  }
+  f = message.getFreight();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
+      f
+    );
+  }
+  f = message.getIsMobile();
+  if (f) {
+    writer.writeBool(
+      13,
       f
     );
   }
@@ -193,10 +313,10 @@ proto.ding4.Browse.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string target = 1;
+ * optional string date = 1;
  * @return {string}
  */
-proto.ding4.Browse.prototype.getTarget = function() {
+proto.ding4.Browse.prototype.getDate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -205,16 +325,16 @@ proto.ding4.Browse.prototype.getTarget = function() {
  * @param {string} value
  * @return {!proto.ding4.Browse} returns this
  */
-proto.ding4.Browse.prototype.setTarget = function(value) {
+proto.ding4.Browse.prototype.setDate = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string target_id = 2;
+ * optional string store_id = 2;
  * @return {string}
  */
-proto.ding4.Browse.prototype.getTargetId = function() {
+proto.ding4.Browse.prototype.getStoreId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -223,16 +343,16 @@ proto.ding4.Browse.prototype.getTargetId = function() {
  * @param {string} value
  * @return {!proto.ding4.Browse} returns this
  */
-proto.ding4.Browse.prototype.setTargetId = function(value) {
+proto.ding4.Browse.prototype.setStoreId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string target_name = 3;
+ * optional string target = 3;
  * @return {string}
  */
-proto.ding4.Browse.prototype.getTargetName = function() {
+proto.ding4.Browse.prototype.getTarget = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -241,8 +361,188 @@ proto.ding4.Browse.prototype.getTargetName = function() {
  * @param {string} value
  * @return {!proto.ding4.Browse} returns this
  */
-proto.ding4.Browse.prototype.setTargetName = function(value) {
+proto.ding4.Browse.prototype.setTarget = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string target_id = 4;
+ * @return {string}
+ */
+proto.ding4.Browse.prototype.getTargetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setTargetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int32 browse = 5;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getBrowse = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setBrowse = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int32 times = 6;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getTimes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setTimes = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional int32 profit = 7;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getProfit = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setProfit = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 customer = 8;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getCustomer = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setCustomer = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional int32 orders = 9;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getOrders = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setOrders = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional int32 amount = 10;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getAmount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setAmount = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional int32 price = 11;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional int32 freight = 12;
+ * @return {number}
+ */
+proto.ding4.Browse.prototype.getFreight = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setFreight = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional bool is_mobile = 13;
+ * @return {boolean}
+ */
+proto.ding4.Browse.prototype.getIsMobile = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.Browse} returns this
+ */
+proto.ding4.Browse.prototype.setIsMobile = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 

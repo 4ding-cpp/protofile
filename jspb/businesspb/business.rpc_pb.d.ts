@@ -23,4 +23,5 @@ import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
 import * as sales_pb from './sales_pb';
 import * as report_pb from './report_pb';
+import * as browse_pb from './browse_pb';
 

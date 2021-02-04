@@ -26,6 +26,7 @@ import "website.proto";
 import "freeback.proto";
 import "message.proto";
 import "domain.proto";
+import "browse.proto";
 
 
 service Store1RPC {
@@ -45,6 +46,7 @@ service Store1RPC {
 
     rpc Dashborad(Query) returns (Response);
     rpc Rank(Query) returns (Response);
+    rpc BrowseRecord(Browse) returns (Response);
 
     // 子帳號相關
     rpc CreateManagerSub(ManagerSub) returns (Response);

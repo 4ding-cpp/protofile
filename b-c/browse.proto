@@ -5,9 +5,19 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 message Browse {
-    string target = 1;
-    string target_id = 2;
-    string target_name = 3;
+    string date = 1;
+    string store_id = 2;
+    string target = 3;
+    string target_id = 4;
+    int32 browse = 5;
+    int32 times = 6;
+    int32 profit = 7;
+    int32 customer = 8;
+    int32 orders = 9;
+    int32 amount = 10;
+    int32 price = 11;
+    int32 freight = 12;
+    bool is_mobile = 13;
 }
 
 message BrowseRecord {

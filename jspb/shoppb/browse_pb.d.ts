@@ -1,14 +1,44 @@
 import * as jspb from "google-protobuf"
 
 export class Browse extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  getStoreId(): string;
+  setStoreId(value: string): void;
+
   getTarget(): string;
   setTarget(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
 
-  getTargetName(): string;
-  setTargetName(value: string): void;
+  getBrowse(): number;
+  setBrowse(value: number): void;
+
+  getTimes(): number;
+  setTimes(value: number): void;
+
+  getProfit(): number;
+  setProfit(value: number): void;
+
+  getCustomer(): number;
+  setCustomer(value: number): void;
+
+  getOrders(): number;
+  setOrders(value: number): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  getPrice(): number;
+  setPrice(value: number): void;
+
+  getFreight(): number;
+  setFreight(value: number): void;
+
+  getIsMobile(): boolean;
+  setIsMobile(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Browse.AsObject;
@@ -20,9 +50,19 @@ export class Browse extends jspb.Message {
 
 export namespace Browse {
   export type AsObject = {
+    date: string,
+    storeId: string,
     target: string,
     targetId: string,
-    targetName: string,
+    browse: number,
+    times: number,
+    profit: number,
+    customer: number,
+    orders: number,
+    amount: number,
+    price: number,
+    freight: number,
+    isMobile: boolean,
   }
 }
 

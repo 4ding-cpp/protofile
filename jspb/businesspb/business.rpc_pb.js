@@ -58,3 +58,5 @@ var sales_pb = require('./sales_pb.js');
 goog.object.extend(proto, sales_pb);
 var report_pb = require('./report_pb.js');
 goog.object.extend(proto, report_pb);
+var browse_pb = require('./browse_pb.js');
+goog.object.extend(proto, browse_pb);

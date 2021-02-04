@@ -32,6 +32,7 @@ import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
 import * as sales_pb from './sales_pb';
 import * as report_pb from './report_pb';
+import * as browse_pb from './browse_pb';
 
 export class BusinessRPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -335,6 +336,28 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRank,
+      callback);
+  }
+
+  methodInfoBrowseRecord = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: browse_pb.Browse) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  browseRecord(
+    request: browse_pb.Browse,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/BrowseRecord',
+      request,
+      metadata || {},
+      this.methodInfoBrowseRecord,
       callback);
   }
 

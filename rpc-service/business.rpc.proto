@@ -27,6 +27,7 @@ import "message.proto";
 import "domain.proto";
 import "sales.proto";
 import "report.proto";
+import "browse.proto";
 
 service BusinessRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -47,6 +48,7 @@ service BusinessRPC {
 
     rpc Dashborad(Query) returns (Response);
     rpc Rank(Query) returns (Response);
+    rpc BrowseRecord(Browse) returns (Response);
 
     // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);

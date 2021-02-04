@@ -56,3 +56,5 @@ var message_pb = require('./message_pb.js');
 goog.object.extend(proto, message_pb);
 var domain_pb = require('./domain_pb.js');
 goog.object.extend(proto, domain_pb);
+var browse_pb = require('./browse_pb.js');
+goog.object.extend(proto, browse_pb);

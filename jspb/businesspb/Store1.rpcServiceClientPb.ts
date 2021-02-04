@@ -31,6 +31,7 @@ import * as website_pb from './website_pb';
 import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
+import * as browse_pb from './browse_pb';
 
 export class Store1RPCClient {
   client_: grpcWeb.AbstractClientBase;
@@ -312,6 +313,28 @@ export class Store1RPCClient {
       request,
       metadata || {},
       this.methodInfoRank,
+      callback);
+  }
+
+  methodInfoBrowseRecord = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: browse_pb.Browse) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  browseRecord(
+    request: browse_pb.Browse,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/BrowseRecord',
+      request,
+      metadata || {},
+      this.methodInfoBrowseRecord,
       callback);
   }
 
