@@ -272,7 +272,7 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoDashborad = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDashboard = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -280,17 +280,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  dashborad(
+  dashboard(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/Dashborad',
+        '/ding4.Store1RPC/Dashboard',
       request,
       metadata || {},
-      this.methodInfoDashborad,
+      this.methodInfoDashboard,
       callback);
   }
 

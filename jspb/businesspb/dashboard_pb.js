@@ -141,7 +141,7 @@ proto.ding4.Businessboard.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Businessboard.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dashborad: (f = msg.getDashborad()) && proto.ding4.Storeboard.toObject(includeInstance, f),
+    dashboard: (f = msg.getDashboard()) && proto.ding4.Storeboard.toObject(includeInstance, f),
     storesList: jspb.Message.toObjectList(msg.getStoresList(),
     proto.ding4.Storeboard.toObject, includeInstance)
   };
@@ -183,7 +183,7 @@ proto.ding4.Businessboard.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.ding4.Storeboard;
       reader.readMessage(value,proto.ding4.Storeboard.deserializeBinaryFromReader);
-      msg.setDashborad(value);
+      msg.setDashboard(value);
       break;
     case 2:
       var value = new proto.ding4.Storeboard;
@@ -219,7 +219,7 @@ proto.ding4.Businessboard.prototype.serializeBinary = function() {
  */
 proto.ding4.Businessboard.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDashborad();
+  f = message.getDashboard();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -239,10 +239,10 @@ proto.ding4.Businessboard.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional Storeboard dashborad = 1;
+ * optional Storeboard dashboard = 1;
  * @return {?proto.ding4.Storeboard}
  */
-proto.ding4.Businessboard.prototype.getDashborad = function() {
+proto.ding4.Businessboard.prototype.getDashboard = function() {
   return /** @type{?proto.ding4.Storeboard} */ (
     jspb.Message.getWrapperField(this, proto.ding4.Storeboard, 1));
 };
@@ -252,7 +252,7 @@ proto.ding4.Businessboard.prototype.getDashborad = function() {
  * @param {?proto.ding4.Storeboard|undefined} value
  * @return {!proto.ding4.Businessboard} returns this
 */
-proto.ding4.Businessboard.prototype.setDashborad = function(value) {
+proto.ding4.Businessboard.prototype.setDashboard = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -261,8 +261,8 @@ proto.ding4.Businessboard.prototype.setDashborad = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.Businessboard} returns this
  */
-proto.ding4.Businessboard.prototype.clearDashborad = function() {
-  return this.setDashborad(undefined);
+proto.ding4.Businessboard.prototype.clearDashboard = function() {
+  return this.setDashboard(undefined);
 };
 
 
@@ -270,7 +270,7 @@ proto.ding4.Businessboard.prototype.clearDashborad = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.Businessboard.prototype.hasDashborad = function() {
+proto.ding4.Businessboard.prototype.hasDashboard = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

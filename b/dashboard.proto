@@ -8,7 +8,7 @@ import "browse.proto";
 
 
 message Businessboard {
-    Storeboard dashborad = 1;
+    Storeboard dashboard = 1;
     repeated Storeboard stores = 2;
 }
 

@@ -3,10 +3,10 @@ import * as jspb from "google-protobuf"
 import * as browse_pb from './browse_pb';
 
 export class Businessboard extends jspb.Message {
-  getDashborad(): Storeboard | undefined;
-  setDashborad(value?: Storeboard): void;
-  hasDashborad(): boolean;
-  clearDashborad(): void;
+  getDashboard(): Storeboard | undefined;
+  setDashboard(value?: Storeboard): void;
+  hasDashboard(): boolean;
+  clearDashboard(): void;
 
   getStoresList(): Array<Storeboard>;
   setStoresList(value: Array<Storeboard>): void;
@@ -23,7 +23,7 @@ export class Businessboard extends jspb.Message {
 
 export namespace Businessboard {
   export type AsObject = {
-    dashborad?: Storeboard.AsObject,
+    dashboard?: Storeboard.AsObject,
     storesList: Array<Storeboard.AsObject>,
   }
 }

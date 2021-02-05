@@ -295,7 +295,7 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoDashborad = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDashboard = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -303,17 +303,17 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  dashborad(
+  dashboard(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/Dashborad',
+        '/ding4.BusinessRPC/Dashboard',
       request,
       metadata || {},
-      this.methodInfoDashborad,
+      this.methodInfoDashboard,
       callback);
   }
 

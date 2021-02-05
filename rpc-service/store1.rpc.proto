@@ -44,7 +44,7 @@ service Store1RPC {
     // 檢查存在否
     rpc Duplicate(Query) returns (Response);
 
-    rpc Dashborad(Query) returns (Response);
+    rpc Dashboard(Query) returns (Response);
     rpc Rank(Query) returns (Response);
     rpc BrowseRecord(Browse) returns (Response);
 
