@@ -2297,47 +2297,25 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoReturnLogistics = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateReturn = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: order_pb.Order) => {
+    (request: order_pb.OrderBatch) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  returnLogistics(
-    request: order_pb.Order,
+  createReturn(
+    request: order_pb.OrderBatch,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/ReturnLogistics',
+        '/ding4.BusinessRPC/CreateReturn',
       request,
       metadata || {},
-      this.methodInfoReturnLogistics,
-      callback);
-  }
-
-  methodInfoSearchLogisticsOrder = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: order_pb.Order) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  searchLogisticsOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/SearchLogisticsOrder',
-      request,
-      metadata || {},
-      this.methodInfoSearchLogisticsOrder,
+      this.methodInfoCreateReturn,
       callback);
   }
 
