@@ -33,13 +33,13 @@ message SetData {
     string copyright = 6;
     string facebook = 7;
 
-    string sender_name = 8;
-    string sender_email = 9;
-    string sender_phone = 10;
-    string sender_cell_phone = 11;
-    string sender_zipcode = 12;
-    string sender_address = 13;
-    string sender_remark = 14;
+    string company_name = 8;
+    string company_email = 9;
+    string company_phone = 10;
+    string company_cell_phone = 11;
+    string company_zipcode = 12;
+    string company_address = 13;
+    string company_remark = 14;
 
     bool customer_cancel = 15;
     bool customer_return = 16;

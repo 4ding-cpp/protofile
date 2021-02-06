@@ -2299,14 +2299,14 @@ export class BusinessRPCClient {
 
   methodInfoCreateReturn = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: order_pb.OrderBatch) => {
+    (request: order_pb.Order) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createReturn(
-    request: order_pb.OrderBatch,
+    request: order_pb.Order,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
