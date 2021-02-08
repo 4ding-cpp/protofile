@@ -124,20 +124,22 @@ message ContactInfo {
 
 message OrderOther {
     string payment_no = 1;
-    string pay_ip = 2;
-    string pay_at = 3;
-    int32 expire_day = 4;
-    // ATM 付款資運
-    string bank_code = 5;
-    string bank_account = 6;
-    // CVS 付款資訊
-    string cvs_no = 7;
     
-    string logistics_no = 8;
-    string return_no = 9;
+    // ATM 付款資運
+    string bank_code = 2;
+    string bank_account = 3;
+    // CVS 付款資訊
+    string cvs_no = 4;
+    
+    int32 expire_day = 5;
 
-    ContactInfo sender = 10;
-    ContactInfo receiver = 11;
+    string logistics_no = 6;
+    string cvs_payment_no = 7;
+    
+    string return_no = 8;
+
+    ContactInfo sender = 9;
+    ContactInfo receiver = 10;
 }
 
 message OrderBatch {

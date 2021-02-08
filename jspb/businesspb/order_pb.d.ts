@@ -456,15 +456,6 @@ export class OrderOther extends jspb.Message {
   getPaymentNo(): string;
   setPaymentNo(value: string): void;
 
-  getPayIp(): string;
-  setPayIp(value: string): void;
-
-  getPayAt(): string;
-  setPayAt(value: string): void;
-
-  getExpireDay(): number;
-  setExpireDay(value: number): void;
-
   getBankCode(): string;
   setBankCode(value: string): void;
 
@@ -474,8 +465,14 @@ export class OrderOther extends jspb.Message {
   getCvsNo(): string;
   setCvsNo(value: string): void;
 
+  getExpireDay(): number;
+  setExpireDay(value: number): void;
+
   getLogisticsNo(): string;
   setLogisticsNo(value: string): void;
+
+  getCvsPaymentNo(): string;
+  setCvsPaymentNo(value: string): void;
 
   getReturnNo(): string;
   setReturnNo(value: string): void;
@@ -501,13 +498,12 @@ export class OrderOther extends jspb.Message {
 export namespace OrderOther {
   export type AsObject = {
     paymentNo: string,
-    payIp: string,
-    payAt: string,
-    expireDay: number,
     bankCode: string,
     bankAccount: string,
     cvsNo: string,
+    expireDay: number,
     logisticsNo: string,
+    cvsPaymentNo: string,
     returnNo: string,
     sender?: ContactInfo.AsObject,
     receiver?: ContactInfo.AsObject,

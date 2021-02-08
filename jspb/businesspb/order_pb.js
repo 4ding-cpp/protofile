@@ -3675,14 +3675,13 @@ proto.ding4.OrderOther.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.OrderOther.toObject = function(includeInstance, msg) {
   var f, obj = {
     paymentNo: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    payIp: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    payAt: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    expireDay: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    bankCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    bankAccount: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    cvsNo: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    logisticsNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    returnNo: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    bankCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    bankAccount: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    cvsNo: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    expireDay: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    logisticsNo: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    cvsPaymentNo: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    returnNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
     sender: (f = msg.getSender()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
     receiver: (f = msg.getReceiver()) && proto.ding4.ContactInfo.toObject(includeInstance, f)
   };
@@ -3727,42 +3726,38 @@ proto.ding4.OrderOther.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPayIp(value);
+      msg.setBankCode(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPayAt(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setExpireDay(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBankCode(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
       msg.setBankAccount(value);
       break;
-    case 7:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCvsNo(value);
       break;
-    case 8:
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setExpireDay(value);
+      break;
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setLogisticsNo(value);
       break;
-    case 9:
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCvsPaymentNo(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setReturnNo(value);
       break;
-    case 10:
+    case 9:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setSender(value);
       break;
-    case 11:
+    case 10:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setReceiver(value);
@@ -3803,66 +3798,59 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPayIp();
+  f = message.getBankCode();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getPayAt();
+  f = message.getBankAccount();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getExpireDay();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getCvsNo();
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
-  f = message.getBankCode();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getExpireDay();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
-      f
-    );
-  }
-  f = message.getBankAccount();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getCvsNo();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
       f
     );
   }
   f = message.getLogisticsNo();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      6,
+      f
+    );
+  }
+  f = message.getCvsPaymentNo();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
   f = message.getReturnNo();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      8,
       f
     );
   }
   f = message.getSender();
   if (f != null) {
     writer.writeMessage(
-      10,
+      9,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -3870,7 +3858,7 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
   f = message.getReceiver();
   if (f != null) {
     writer.writeMessage(
-      11,
+      10,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -3897,10 +3885,10 @@ proto.ding4.OrderOther.prototype.setPaymentNo = function(value) {
 
 
 /**
- * optional string pay_ip = 2;
+ * optional string bank_code = 2;
  * @return {string}
  */
-proto.ding4.OrderOther.prototype.getPayIp = function() {
+proto.ding4.OrderOther.prototype.getBankCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3909,16 +3897,16 @@ proto.ding4.OrderOther.prototype.getPayIp = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderOther} returns this
  */
-proto.ding4.OrderOther.prototype.setPayIp = function(value) {
+proto.ding4.OrderOther.prototype.setBankCode = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string pay_at = 3;
+ * optional string bank_account = 3;
  * @return {string}
  */
-proto.ding4.OrderOther.prototype.getPayAt = function() {
+proto.ding4.OrderOther.prototype.getBankAccount = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -3927,71 +3915,17 @@ proto.ding4.OrderOther.prototype.getPayAt = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderOther} returns this
  */
-proto.ding4.OrderOther.prototype.setPayAt = function(value) {
+proto.ding4.OrderOther.prototype.setBankAccount = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 expire_day = 4;
- * @return {number}
- */
-proto.ding4.OrderOther.prototype.getExpireDay = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderOther} returns this
- */
-proto.ding4.OrderOther.prototype.setExpireDay = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional string bank_code = 5;
- * @return {string}
- */
-proto.ding4.OrderOther.prototype.getBankCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.OrderOther} returns this
- */
-proto.ding4.OrderOther.prototype.setBankCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string bank_account = 6;
- * @return {string}
- */
-proto.ding4.OrderOther.prototype.getBankAccount = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.OrderOther} returns this
- */
-proto.ding4.OrderOther.prototype.setBankAccount = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string cvs_no = 7;
+ * optional string cvs_no = 4;
  * @return {string}
  */
 proto.ding4.OrderOther.prototype.getCvsNo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -4000,16 +3934,34 @@ proto.ding4.OrderOther.prototype.getCvsNo = function() {
  * @return {!proto.ding4.OrderOther} returns this
  */
 proto.ding4.OrderOther.prototype.setCvsNo = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string logistics_no = 8;
+ * optional int32 expire_day = 5;
+ * @return {number}
+ */
+proto.ding4.OrderOther.prototype.getExpireDay = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setExpireDay = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string logistics_no = 6;
  * @return {string}
  */
 proto.ding4.OrderOther.prototype.getLogisticsNo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -4018,16 +3970,34 @@ proto.ding4.OrderOther.prototype.getLogisticsNo = function() {
  * @return {!proto.ding4.OrderOther} returns this
  */
 proto.ding4.OrderOther.prototype.setLogisticsNo = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string return_no = 9;
+ * optional string cvs_payment_no = 7;
+ * @return {string}
+ */
+proto.ding4.OrderOther.prototype.getCvsPaymentNo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setCvsPaymentNo = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string return_no = 8;
  * @return {string}
  */
 proto.ding4.OrderOther.prototype.getReturnNo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -4036,17 +4006,17 @@ proto.ding4.OrderOther.prototype.getReturnNo = function() {
  * @return {!proto.ding4.OrderOther} returns this
  */
 proto.ding4.OrderOther.prototype.setReturnNo = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional ContactInfo sender = 10;
+ * optional ContactInfo sender = 9;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getSender = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 10));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 9));
 };
 
 
@@ -4055,7 +4025,7 @@ proto.ding4.OrderOther.prototype.getSender = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setSender = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -4073,17 +4043,17 @@ proto.ding4.OrderOther.prototype.clearSender = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasSender = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional ContactInfo receiver = 11;
+ * optional ContactInfo receiver = 10;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getReceiver = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 11));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 10));
 };
 
 
@@ -4092,7 +4062,7 @@ proto.ding4.OrderOther.prototype.getReceiver = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setReceiver = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -4110,7 +4080,7 @@ proto.ding4.OrderOther.prototype.clearReceiver = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasReceiver = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
