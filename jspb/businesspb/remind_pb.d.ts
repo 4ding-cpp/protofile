@@ -1,64 +1,65 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as sql_pb from './sql_pb';
 import * as template_pb from './template_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Remind extends jspb.Message {
   getRemindId(): string;
-  setRemindId(value: string): void;
+  setRemindId(value: string): Remind;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Remind;
 
   getItem(): string;
-  setItem(value: string): void;
+  setItem(value: string): Remind;
 
   getMode(): string;
-  setMode(value: string): void;
+  setMode(value: string): Remind;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Remind;
 
   getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
+  setIsEnable(value: boolean): Remind;
 
   getTemplateGroupList(): Array<template_pb.Template>;
-  setTemplateGroupList(value: Array<template_pb.Template>): void;
-  clearTemplateGroupList(): void;
+  setTemplateGroupList(value: Array<template_pb.Template>): Remind;
+  clearTemplateGroupList(): Remind;
   addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): Remind;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Remind;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Remind;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Remind;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Remind;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Remind;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Remind;
+  clearColsList(): Remind;
+  addCols(value: string, index?: number): Remind;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Remind;
+  clearConditionList(): Remind;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Remind;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Remind;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Remind.AsObject;

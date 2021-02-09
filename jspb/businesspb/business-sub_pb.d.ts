@@ -1,81 +1,82 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class BusinessSub extends jspb.Message {
   getSubId(): string;
-  setSubId(value: string): void;
+  setSubId(value: string): BusinessSub;
 
   getBusinessId(): string;
-  setBusinessId(value: string): void;
+  setBusinessId(value: string): BusinessSub;
 
   getStatus(): number;
-  setStatus(value: number): void;
+  setStatus(value: number): BusinessSub;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): BusinessSub;
 
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): BusinessSub;
 
   getPhone(): string;
-  setPhone(value: string): void;
+  setPhone(value: string): BusinessSub;
 
   getPassword(): string;
-  setPassword(value: string): void;
+  setPassword(value: string): BusinessSub;
 
   getIsLive(): boolean;
-  setIsLive(value: boolean): void;
+  setIsLive(value: boolean): BusinessSub;
 
   getPhoneVerify(): boolean;
-  setPhoneVerify(value: boolean): void;
+  setPhoneVerify(value: boolean): BusinessSub;
 
   getEmailVerify(): boolean;
-  setEmailVerify(value: boolean): void;
+  setEmailVerify(value: boolean): BusinessSub;
 
   getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): void;
-  clearPermissionList(): void;
+  setPermissionList(value: Array<permission_pb.Option>): BusinessSub;
+  clearPermissionList(): BusinessSub;
   addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
 
   getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): void;
-  clearWhiteList(): void;
-  addWhite(value: string, index?: number): void;
+  setWhiteList(value: Array<string>): BusinessSub;
+  clearWhiteList(): BusinessSub;
+  addWhite(value: string, index?: number): BusinessSub;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): BusinessSub;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): BusinessSub;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): BusinessSub;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): BusinessSub;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): BusinessSub;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): BusinessSub;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): BusinessSub;
+  clearColsList(): BusinessSub;
+  addCols(value: string, index?: number): BusinessSub;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): BusinessSub;
+  clearConditionList(): BusinessSub;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): BusinessSub;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): BusinessSub;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BusinessSub.AsObject;

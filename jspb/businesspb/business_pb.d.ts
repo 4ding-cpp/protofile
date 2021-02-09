@@ -1,114 +1,115 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Business extends jspb.Message {
   getBusinessId(): string;
-  setBusinessId(value: string): void;
+  setBusinessId(value: string): Business;
 
   getMainId(): string;
-  setMainId(value: string): void;
+  setMainId(value: string): Business;
 
   getStatus(): number;
-  setStatus(value: number): void;
+  setStatus(value: number): Business;
 
   getDomain(): string;
-  setDomain(value: string): void;
+  setDomain(value: string): Business;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Business;
 
   getPoint(): number;
-  setPoint(value: number): void;
+  setPoint(value: number): Business;
 
   getPassword(): string;
-  setPassword(value: string): void;
+  setPassword(value: string): Business;
 
   getFee(): number;
-  setFee(value: number): void;
+  setFee(value: number): Business;
 
   getType(): number;
-  setType(value: number): void;
+  setType(value: number): Business;
 
   getContacter(): string;
-  setContacter(value: string): void;
+  setContacter(value: string): Business;
 
   getPhone(): string;
-  setPhone(value: string): void;
+  setPhone(value: string): Business;
 
   getPhoneVerify(): boolean;
-  setPhoneVerify(value: boolean): void;
+  setPhoneVerify(value: boolean): Business;
 
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): Business;
 
   getEmailVerify(): boolean;
-  setEmailVerify(value: boolean): void;
+  setEmailVerify(value: boolean): Business;
 
   getOtpToken(): string;
-  setOtpToken(value: string): void;
+  setOtpToken(value: string): Business;
 
   getOtpCode(): string;
-  setOtpCode(value: string): void;
+  setOtpCode(value: string): Business;
 
   getLocation(): string;
-  setLocation(value: string): void;
+  setLocation(value: string): Business;
 
   getMgrType(): number;
-  setMgrType(value: number): void;
+  setMgrType(value: number): Business;
 
   getTurnover(): number;
-  setTurnover(value: number): void;
+  setTurnover(value: number): Business;
 
   getCompany(): string;
-  setCompany(value: string): void;
+  setCompany(value: string): Business;
 
   getIdentify(): string;
-  setIdentify(value: string): void;
+  setIdentify(value: string): Business;
 
   getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): void;
-  clearPermissionList(): void;
+  setPermissionList(value: Array<permission_pb.Option>): Business;
+  clearPermissionList(): Business;
   addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
 
   getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): void;
-  clearWhiteList(): void;
-  addWhite(value: string, index?: number): void;
+  setWhiteList(value: Array<string>): Business;
+  clearWhiteList(): Business;
+  addWhite(value: string, index?: number): Business;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): Business;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Business;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Business;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Business;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Business;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Business;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): Business;
+  clearColsList(): Business;
+  addCols(value: string, index?: number): Business;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): Business;
+  clearConditionList(): Business;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Business;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Business;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Business.AsObject;

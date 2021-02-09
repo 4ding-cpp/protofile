@@ -1,22 +1,23 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
+
 export class SEO extends jspb.Message {
   getTitle(): google_protobuf_struct_pb.Value | undefined;
-  setTitle(value?: google_protobuf_struct_pb.Value): void;
+  setTitle(value?: google_protobuf_struct_pb.Value): SEO;
   hasTitle(): boolean;
-  clearTitle(): void;
+  clearTitle(): SEO;
 
   getKeywords(): google_protobuf_struct_pb.Value | undefined;
-  setKeywords(value?: google_protobuf_struct_pb.Value): void;
+  setKeywords(value?: google_protobuf_struct_pb.Value): SEO;
   hasKeywords(): boolean;
-  clearKeywords(): void;
+  clearKeywords(): SEO;
 
   getDescription(): google_protobuf_struct_pb.Value | undefined;
-  setDescription(value?: google_protobuf_struct_pb.Value): void;
+  setDescription(value?: google_protobuf_struct_pb.Value): SEO;
   hasDescription(): boolean;
-  clearDescription(): void;
+  clearDescription(): SEO;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEO.AsObject;

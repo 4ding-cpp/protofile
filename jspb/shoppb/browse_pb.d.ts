@@ -1,44 +1,46 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
+
+
 
 export class Browse extends jspb.Message {
   getDate(): string;
-  setDate(value: string): void;
+  setDate(value: string): Browse;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Browse;
 
   getTarget(): string;
-  setTarget(value: string): void;
+  setTarget(value: string): Browse;
 
   getTargetId(): string;
-  setTargetId(value: string): void;
+  setTargetId(value: string): Browse;
 
   getBrowse(): number;
-  setBrowse(value: number): void;
+  setBrowse(value: number): Browse;
 
   getTimes(): number;
-  setTimes(value: number): void;
+  setTimes(value: number): Browse;
 
   getProfit(): number;
-  setProfit(value: number): void;
+  setProfit(value: number): Browse;
 
   getCustomer(): number;
-  setCustomer(value: number): void;
+  setCustomer(value: number): Browse;
 
   getOrders(): number;
-  setOrders(value: number): void;
+  setOrders(value: number): Browse;
 
   getAmount(): number;
-  setAmount(value: number): void;
+  setAmount(value: number): Browse;
 
   getPrice(): number;
-  setPrice(value: number): void;
+  setPrice(value: number): Browse;
 
   getFreight(): number;
-  setFreight(value: number): void;
+  setFreight(value: number): Browse;
 
   getIsMobile(): boolean;
-  setIsMobile(value: boolean): void;
+  setIsMobile(value: boolean): Browse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Browse.AsObject;
@@ -68,8 +70,8 @@ export namespace Browse {
 
 export class BrowseRecord extends jspb.Message {
   getBrowseList(): Array<Browse>;
-  setBrowseList(value: Array<Browse>): void;
-  clearBrowseList(): void;
+  setBrowseList(value: Array<Browse>): BrowseRecord;
+  clearBrowseList(): BrowseRecord;
   addBrowse(value?: Browse, index?: number): Browse;
 
   serializeBinary(): Uint8Array;

@@ -1,4 +1,4 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as pingpong_pb from './pingpong_pb';
 import * as template_pb from './template_pb';
@@ -24,4 +24,5 @@ import * as domain_pb from './domain_pb';
 import * as sales_pb from './sales_pb';
 import * as report_pb from './report_pb';
 import * as browse_pb from './browse_pb';
+
 

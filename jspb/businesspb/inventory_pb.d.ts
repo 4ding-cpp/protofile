@@ -1,53 +1,54 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Inventory extends jspb.Message {
   getId(): number;
-  setId(value: number): void;
+  setId(value: number): Inventory;
 
   getSku(): string;
-  setSku(value: string): void;
+  setSku(value: string): Inventory;
 
   getProductId(): string;
-  setProductId(value: string): void;
+  setProductId(value: string): Inventory;
 
   getOrderId(): string;
-  setOrderId(value: string): void;
+  setOrderId(value: string): Inventory;
 
   getStoreId(): string;
-  setStoreId(value: string): void;
+  setStoreId(value: string): Inventory;
 
   getStock(): number;
-  setStock(value: number): void;
+  setStock(value: number): Inventory;
 
   getSold(): number;
-  setSold(value: number): void;
+  setSold(value: number): Inventory;
 
   getCost(): number;
-  setCost(value: number): void;
+  setCost(value: number): Inventory;
 
   getProfit(): number;
-  setProfit(value: number): void;
+  setProfit(value: number): Inventory;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): Inventory;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Inventory;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): Inventory;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Inventory;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): Inventory;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Inventory;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Inventory;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Inventory.AsObject;
@@ -77,21 +78,21 @@ export namespace Inventory {
 
 export class SkuInfo extends jspb.Message {
   getSku(): string;
-  setSku(value: string): void;
+  setSku(value: string): SkuInfo;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): SkuInfo;
 
   getProductId(): string;
-  setProductId(value: string): void;
+  setProductId(value: string): SkuInfo;
 
   getStock(): number;
-  setStock(value: number): void;
+  setStock(value: number): SkuInfo;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): SkuInfo;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): SkuInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SkuInfo.AsObject;

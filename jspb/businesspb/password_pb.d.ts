@@ -1,18 +1,19 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
+
 export class Password extends jspb.Message {
   getOldP(): string;
-  setOldP(value: string): void;
+  setOldP(value: string): Password;
 
   getNewP(): string;
-  setNewP(value: string): void;
+  setNewP(value: string): Password;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Password;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Password;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Password.AsObject;
@@ -32,15 +33,15 @@ export namespace Password {
 
 export class Rename extends jspb.Message {
   getOldN(): string;
-  setOldN(value: string): void;
+  setOldN(value: string): Rename;
 
   getNewN(): string;
-  setNewN(value: string): void;
+  setNewN(value: string): Rename;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): Rename;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): Rename;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rename.AsObject;

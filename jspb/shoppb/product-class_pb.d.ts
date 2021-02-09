@@ -1,4 +1,4 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
@@ -7,69 +7,70 @@ import * as product$shell_pb from './product-shell_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class ProductClass extends jspb.Message {
   getClassId(): string;
-  setClassId(value: string): void;
+  setClassId(value: string): ProductClass;
 
   getActivityId(): string;
-  setActivityId(value: string): void;
+  setActivityId(value: string): ProductClass;
 
   getPath(): string;
-  setPath(value: string): void;
+  setPath(value: string): ProductClass;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): void;
+  setName(value?: google_protobuf_struct_pb.Value): ProductClass;
   hasName(): boolean;
-  clearName(): void;
+  clearName(): ProductClass;
 
   getUrn(): string;
-  setUrn(value: string): void;
+  setUrn(value: string): ProductClass;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): void;
+  setSeo(value?: seo_pb.SEO): ProductClass;
   hasSeo(): boolean;
-  clearSeo(): void;
+  clearSeo(): ProductClass;
 
   getPhoto(): a$submessage_pb.Image | undefined;
-  setPhoto(value?: a$submessage_pb.Image): void;
+  setPhoto(value?: a$submessage_pb.Image): ProductClass;
   hasPhoto(): boolean;
-  clearPhoto(): void;
+  clearPhoto(): ProductClass;
 
   getProductShellList(): Array<product$shell_pb.ProductShell>;
-  setProductShellList(value: Array<product$shell_pb.ProductShell>): void;
-  clearProductShellList(): void;
+  setProductShellList(value: Array<product$shell_pb.ProductShell>): ProductClass;
+  clearProductShellList(): ProductClass;
   addProductShell(value?: product$shell_pb.ProductShell, index?: number): product$shell_pb.ProductShell;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
+  clearLabelxMap(): ProductClass;
 
   getOperator(): string;
-  setOperator(value: string): void;
+  setOperator(value: string): ProductClass;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductClass;
   hasCreateAt(): boolean;
-  clearCreateAt(): void;
+  clearCreateAt(): ProductClass;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductClass;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): void;
+  clearUpdateAt(): ProductClass;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): void;
-  clearColsList(): void;
-  addCols(value: string, index?: number): void;
+  setColsList(value: Array<string>): ProductClass;
+  clearColsList(): ProductClass;
+  addCols(value: string, index?: number): ProductClass;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): void;
-  clearConditionList(): void;
+  setConditionList(value: Array<sql_pb.Condition>): ProductClass;
+  clearConditionList(): ProductClass;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  setSelf(value?: google_protobuf_struct_pb.Struct): ProductClass;
   hasSelf(): boolean;
-  clearSelf(): void;
+  clearSelf(): ProductClass;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductClass.AsObject;

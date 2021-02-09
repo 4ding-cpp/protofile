@@ -1,47 +1,48 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
+
 export class AppConf extends jspb.Message {
   getCurrency(): google_protobuf_struct_pb.Struct | undefined;
-  setCurrency(value?: google_protobuf_struct_pb.Struct): void;
+  setCurrency(value?: google_protobuf_struct_pb.Struct): AppConf;
   hasCurrency(): boolean;
-  clearCurrency(): void;
+  clearCurrency(): AppConf;
 
   getLanguage(): google_protobuf_struct_pb.Struct | undefined;
-  setLanguage(value?: google_protobuf_struct_pb.Struct): void;
+  setLanguage(value?: google_protobuf_struct_pb.Struct): AppConf;
   hasLanguage(): boolean;
-  clearLanguage(): void;
+  clearLanguage(): AppConf;
 
   getWebsite(): google_protobuf_struct_pb.Struct | undefined;
-  setWebsite(value?: google_protobuf_struct_pb.Struct): void;
+  setWebsite(value?: google_protobuf_struct_pb.Struct): AppConf;
   hasWebsite(): boolean;
-  clearWebsite(): void;
+  clearWebsite(): AppConf;
 
   getShop(): google_protobuf_struct_pb.Struct | undefined;
-  setShop(value?: google_protobuf_struct_pb.Struct): void;
+  setShop(value?: google_protobuf_struct_pb.Struct): AppConf;
   hasShop(): boolean;
-  clearShop(): void;
+  clearShop(): AppConf;
 
   getGoogleTagManager(): ExternalApp | undefined;
-  setGoogleTagManager(value?: ExternalApp): void;
+  setGoogleTagManager(value?: ExternalApp): AppConf;
   hasGoogleTagManager(): boolean;
-  clearGoogleTagManager(): void;
+  clearGoogleTagManager(): AppConf;
 
   getFacebookPixel(): ExternalApp | undefined;
-  setFacebookPixel(value?: ExternalApp): void;
+  setFacebookPixel(value?: ExternalApp): AppConf;
   hasFacebookPixel(): boolean;
-  clearFacebookPixel(): void;
+  clearFacebookPixel(): AppConf;
 
   getFacebookSign(): ExternalApp | undefined;
-  setFacebookSign(value?: ExternalApp): void;
+  setFacebookSign(value?: ExternalApp): AppConf;
   hasFacebookSign(): boolean;
-  clearFacebookSign(): void;
+  clearFacebookSign(): AppConf;
 
   getLineSign(): ExternalApp | undefined;
-  setLineSign(value?: ExternalApp): void;
+  setLineSign(value?: ExternalApp): AppConf;
   hasLineSign(): boolean;
-  clearLineSign(): void;
+  clearLineSign(): AppConf;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppConf.AsObject;
@@ -66,13 +67,13 @@ export namespace AppConf {
 
 export class ExternalApp extends jspb.Message {
   getIsEnable(): boolean;
-  setIsEnable(value: boolean): void;
+  setIsEnable(value: boolean): ExternalApp;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): ExternalApp;
 
   getAppSecret(): string;
-  setAppSecret(value: string): void;
+  setAppSecret(value: string): ExternalApp;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExternalApp.AsObject;
