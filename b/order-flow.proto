@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+import "google/protobuf/timestamp.proto";
+
+message OrderFlow {
+    int32 flow_id = 1;
+    string order_id = 2;
+    string service = 3;
+    string code = 4;
+    string message = 5;
+    google.protobuf.Timestamp create_at = 6;
+}
+
