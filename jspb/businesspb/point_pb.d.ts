@@ -1,72 +1,71 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class PointBonus extends jspb.Message {
   getPointBonusId(): string;
-  setPointBonusId(value: string): PointBonus;
+  setPointBonusId(value: string): void;
 
   getOnEvent(): number;
-  setOnEvent(value: number): PointBonus;
+  setOnEvent(value: number): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBonus;
+  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasBeginAt(): boolean;
-  clearBeginAt(): PointBonus;
+  clearBeginAt(): void;
 
   getEndAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBonus;
+  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasEndAt(): boolean;
-  clearEndAt(): PointBonus;
+  clearEndAt(): void;
 
   getItem(): string;
-  setItem(value: string): PointBonus;
+  setItem(value: string): void;
 
   getCond(): number;
-  setCond(value: number): PointBonus;
+  setCond(value: number): void;
 
   getPoint(): number;
-  setPoint(value: number): PointBonus;
+  setPoint(value: number): void;
 
   getPercent(): number;
-  setPercent(value: number): PointBonus;
+  setPercent(value: number): void;
 
   getIsRepeat(): boolean;
-  setIsRepeat(value: boolean): PointBonus;
+  setIsRepeat(value: boolean): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): PointBonus;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): PointBonus;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBonus;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): PointBonus;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBonus;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): PointBonus;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): PointBonus;
-  clearColsList(): PointBonus;
-  addCols(value: string, index?: number): PointBonus;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): PointBonus;
-  clearConditionList(): PointBonus;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): PointBonus;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): PointBonus;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PointBonus.AsObject;
@@ -99,56 +98,56 @@ export namespace PointBonus {
 
 export class Point extends jspb.Message {
   getPointId(): string;
-  setPointId(value: string): Point;
+  setPointId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): Point;
+  setBusinessId(value: string): void;
 
   getType(): number;
-  setType(value: number): Point;
+  setType(value: number): void;
 
   getState(): number;
-  setState(value: number): Point;
+  setState(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): Point;
+  setPrice(value: number): void;
 
   getBankCode(): string;
-  setBankCode(value: string): Point;
+  setBankCode(value: string): void;
 
   getLastCode(): string;
-  setLastCode(value: string): Point;
+  setLastCode(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Point;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Point;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Point;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Point;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Point;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Point;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Point;
-  clearColsList(): Point;
-  addCols(value: string, index?: number): Point;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Point;
-  clearConditionList(): Point;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Point;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Point;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Point.AsObject;
@@ -179,55 +178,55 @@ export namespace Point {
 
 export class PointBill extends jspb.Message {
   getPointBillId(): string;
-  setPointBillId(value: string): PointBill;
+  setPointBillId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): PointBill;
+  setBusinessId(value: string): void;
 
   getItem(): string;
-  setItem(value: string): PointBill;
+  setItem(value: string): void;
 
   getState(): number;
-  setState(value: number): PointBill;
+  setState(value: number): void;
 
   getAmount(): number;
-  setAmount(value: number): PointBill;
+  setAmount(value: number): void;
 
   getDetailList(): Array<PointDetail>;
-  setDetailList(value: Array<PointDetail>): PointBill;
-  clearDetailList(): PointBill;
+  setDetailList(value: Array<PointDetail>): void;
+  clearDetailList(): void;
   addDetail(value?: PointDetail, index?: number): PointDetail;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): PointBill;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): PointBill;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBill;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): PointBill;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointBill;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): PointBill;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): PointBill;
-  clearColsList(): PointBill;
-  addCols(value: string, index?: number): PointBill;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): PointBill;
-  clearConditionList(): PointBill;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): PointBill;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): PointBill;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PointBill.AsObject;
@@ -257,59 +256,59 @@ export namespace PointBill {
 
 export class PointDetail extends jspb.Message {
   getPointDetailId(): string;
-  setPointDetailId(value: string): PointDetail;
+  setPointDetailId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): PointDetail;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): PointDetail;
+  setStoreId(value: string): void;
 
   getPointFlowId(): string;
-  setPointFlowId(value: string): PointDetail;
+  setPointFlowId(value: string): void;
 
   getItem(): string;
-  setItem(value: string): PointDetail;
+  setItem(value: string): void;
 
   getUnitPrice(): number;
-  setUnitPrice(value: number): PointDetail;
+  setUnitPrice(value: number): void;
 
   getUseVal(): number;
-  setUseVal(value: number): PointDetail;
+  setUseVal(value: number): void;
 
   getSubTotal(): number;
-  setSubTotal(value: number): PointDetail;
+  setSubTotal(value: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): PointDetail;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): PointDetail;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointDetail;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): PointDetail;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointDetail;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): PointDetail;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): PointDetail;
-  clearColsList(): PointDetail;
-  addCols(value: string, index?: number): PointDetail;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): PointDetail;
-  clearConditionList(): PointDetail;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): PointDetail;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): PointDetail;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PointDetail.AsObject;
@@ -341,47 +340,47 @@ export namespace PointDetail {
 
 export class PointFlow extends jspb.Message {
   getPointFlowId(): string;
-  setPointFlowId(value: string): PointFlow;
+  setPointFlowId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): PointFlow;
+  setBusinessId(value: string): void;
 
   getItem(): string;
-  setItem(value: string): PointFlow;
+  setItem(value: string): void;
 
   getPoint(): number;
-  setPoint(value: number): PointFlow;
+  setPoint(value: number): void;
 
   getRelated(): string;
-  setRelated(value: string): PointFlow;
+  setRelated(value: string): void;
 
   getOperator(): string;
-  setOperator(value: string): PointFlow;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointFlow;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): PointFlow;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): PointFlow;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): PointFlow;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): PointFlow;
-  clearColsList(): PointFlow;
-  addCols(value: string, index?: number): PointFlow;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): PointFlow;
-  clearConditionList(): PointFlow;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): PointFlow;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): PointFlow;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PointFlow.AsObject;

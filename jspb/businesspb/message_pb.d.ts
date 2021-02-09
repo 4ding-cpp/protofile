@@ -1,96 +1,95 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 
-
 export class Message extends jspb.Message {
   getMessageId(): string;
-  setMessageId(value: string): Message;
+  setMessageId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): Message;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Message;
+  setStoreId(value: string): void;
 
   getState(): number;
-  setState(value: number): Message;
+  setState(value: number): void;
 
   getType(): number;
-  setType(value: number): Message;
+  setType(value: number): void;
 
   getService(): string;
-  setService(value: string): Message;
+  setService(value: string): void;
 
   getTotal(): number;
-  setTotal(value: number): Message;
+  setTotal(value: number): void;
 
   getSuccess(): number;
-  setSuccess(value: number): Message;
+  setSuccess(value: number): void;
 
   getCharge(): number;
-  setCharge(value: number): Message;
+  setCharge(value: number): void;
 
   getResponse(): google_protobuf_struct_pb.Value | undefined;
-  setResponse(value?: google_protobuf_struct_pb.Value): Message;
+  setResponse(value?: google_protobuf_struct_pb.Value): void;
   hasResponse(): boolean;
-  clearResponse(): Message;
+  clearResponse(): void;
 
   getSubject(): string;
-  setSubject(value: string): Message;
+  setSubject(value: string): void;
 
   getContent(): string;
-  setContent(value: string): Message;
+  setContent(value: string): void;
 
   getFromUser(): Message.User | undefined;
-  setFromUser(value?: Message.User): Message;
+  setFromUser(value?: Message.User): void;
   hasFromUser(): boolean;
-  clearFromUser(): Message;
+  clearFromUser(): void;
 
   getToUserList(): Array<Message.User>;
-  setToUserList(value: Array<Message.User>): Message;
-  clearToUserList(): Message;
+  setToUserList(value: Array<Message.User>): void;
+  clearToUserList(): void;
   addToUser(value?: Message.User, index?: number): Message.User;
 
   getScheduledTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setScheduledTime(value?: google_protobuf_timestamp_pb.Timestamp): Message;
+  setScheduledTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasScheduledTime(): boolean;
-  clearScheduledTime(): Message;
+  clearScheduledTime(): void;
 
   getGa(): Message.GA | undefined;
-  setGa(value?: Message.GA): Message;
+  setGa(value?: Message.GA): void;
   hasGa(): boolean;
-  clearGa(): Message;
+  clearGa(): void;
 
   getOpenedMap(): jspb.Map<string, number>;
-  clearOpenedMap(): Message;
+  clearOpenedMap(): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Message;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Message;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Message;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Message;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Message;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Message;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Message;
-  clearColsList(): Message;
-  addCols(value: string, index?: number): Message;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Message;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Message;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Message.AsObject;
@@ -129,16 +128,16 @@ export namespace Message {
 
   export class User extends jspb.Message {
     getName(): string;
-    setName(value: string): User;
+    setName(value: string): void;
 
     getSex(): string;
-    setSex(value: string): User;
+    setSex(value: string): void;
 
     getEmail(): string;
-    setEmail(value: string): User;
+    setEmail(value: string): void;
 
     getPhone(): string;
-    setPhone(value: string): User;
+    setPhone(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;
@@ -160,16 +159,16 @@ export namespace Message {
 
   export class GA extends jspb.Message {
     getEnable(): string;
-    setEnable(value: string): GA;
+    setEnable(value: string): void;
 
     getEcommerceenable(): string;
-    setEcommerceenable(value: string): GA;
+    setEcommerceenable(value: string): void;
 
     getUtmcampaign(): string;
-    setUtmcampaign(value: string): GA;
+    setUtmcampaign(value: string): void;
 
     getUtmcontent(): string;
-    setUtmcontent(value: string): GA;
+    setUtmcontent(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GA.AsObject;

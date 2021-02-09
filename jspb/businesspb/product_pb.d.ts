@@ -1,84 +1,83 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Product extends jspb.Message {
   getProductId(): string;
-  setProductId(value: string): Product;
+  setProductId(value: string): void;
 
   getStatus(): number;
-  setStatus(value: number): Product;
+  setStatus(value: number): void;
 
   getCode(): string;
-  setCode(value: string): Product;
+  setCode(value: string): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): Product;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): Product;
+  clearName(): void;
 
   getUrn(): string;
-  setUrn(value: string): Product;
+  setUrn(value: string): void;
 
   getCost(): number;
-  setCost(value: number): Product;
+  setCost(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): Product;
+  setPrice(value: number): void;
 
   getWeight(): number;
-  setWeight(value: number): Product;
+  setWeight(value: number): void;
 
   getVolume(): number;
-  setVolume(value: number): Product;
+  setVolume(value: number): void;
 
   getIsPickup(): boolean;
-  setIsPickup(value: boolean): Product;
+  setIsPickup(value: boolean): void;
 
   getSpecxList(): Array<ProductSpec>;
-  setSpecxList(value: Array<ProductSpec>): Product;
-  clearSpecxList(): Product;
+  setSpecxList(value: Array<ProductSpec>): void;
+  clearSpecxList(): void;
   addSpecx(value?: ProductSpec, index?: number): ProductSpec;
 
   getPhotoxList(): Array<a$submessage_pb.Image>;
-  setPhotoxList(value: Array<a$submessage_pb.Image>): Product;
-  clearPhotoxList(): Product;
+  setPhotoxList(value: Array<a$submessage_pb.Image>): void;
+  clearPhotoxList(): void;
   addPhotox(value?: a$submessage_pb.Image, index?: number): a$submessage_pb.Image;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Product;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Product;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Product;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Product;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Product;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Product;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Product;
-  clearColsList(): Product;
-  addCols(value: string, index?: number): Product;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Product;
-  clearConditionList(): Product;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Product;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Product;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Product.AsObject;
@@ -114,54 +113,54 @@ export namespace Product {
 
 export class ProductSpec extends jspb.Message {
   getSku(): string;
-  setSku(value: string): ProductSpec;
+  setSku(value: string): void;
 
   getProductId(): string;
-  setProductId(value: string): ProductSpec;
+  setProductId(value: string): void;
 
   getStock(): number;
-  setStock(value: number): ProductSpec;
+  setStock(value: number): void;
 
   getSold(): number;
-  setSold(value: number): ProductSpec;
+  setSold(value: number): void;
 
   getItemxList(): Array<google_protobuf_struct_pb.Value>;
-  setItemxList(value: Array<google_protobuf_struct_pb.Value>): ProductSpec;
-  clearItemxList(): ProductSpec;
+  setItemxList(value: Array<google_protobuf_struct_pb.Value>): void;
+  clearItemxList(): void;
   addItemx(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
 
   getPhoto(): a$submessage_pb.Image | undefined;
-  setPhoto(value?: a$submessage_pb.Image): ProductSpec;
+  setPhoto(value?: a$submessage_pb.Image): void;
   hasPhoto(): boolean;
-  clearPhoto(): ProductSpec;
+  clearPhoto(): void;
 
   getOperator(): string;
-  setOperator(value: string): ProductSpec;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductSpec;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): ProductSpec;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): ProductSpec;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): ProductSpec;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): ProductSpec;
-  clearColsList(): ProductSpec;
-  addCols(value: string, index?: number): ProductSpec;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): ProductSpec;
-  clearConditionList(): ProductSpec;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): ProductSpec;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): ProductSpec;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductSpec.AsObject;
@@ -190,14 +189,14 @@ export namespace ProductSpec {
 
 export class ProductBatch extends jspb.Message {
   getProductList(): Array<Product>;
-  setProductList(value: Array<Product>): ProductBatch;
-  clearProductList(): ProductBatch;
+  setProductList(value: Array<Product>): void;
+  clearProductList(): void;
   addProduct(value?: Product, index?: number): Product;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): ProductBatch;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): ProductBatch;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductBatch.AsObject;

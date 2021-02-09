@@ -1,28 +1,27 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class OrderFlow extends jspb.Message {
   getFlowId(): number;
-  setFlowId(value: number): OrderFlow;
+  setFlowId(value: number): void;
 
   getOrderId(): string;
-  setOrderId(value: string): OrderFlow;
+  setOrderId(value: string): void;
 
   getService(): string;
-  setService(value: string): OrderFlow;
+  setService(value: string): void;
 
   getCode(): string;
-  setCode(value: string): OrderFlow;
+  setCode(value: string): void;
 
   getMessage(): string;
-  setMessage(value: string): OrderFlow;
+  setMessage(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): OrderFlow;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): OrderFlow;
+  clearCreateAt(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderFlow.AsObject;

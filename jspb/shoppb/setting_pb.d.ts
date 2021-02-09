@@ -1,55 +1,54 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Setting extends jspb.Message {
   getSettingId(): string;
-  setSettingId(value: string): Setting;
+  setSettingId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Setting;
+  setStoreId(value: string): void;
 
   getService(): string;
-  setService(value: string): Setting;
+  setService(value: string): void;
 
   getConf(): string;
-  setConf(value: string): Setting;
+  setConf(value: string): void;
 
   getData(): SetData | undefined;
-  setData(value?: SetData): Setting;
+  setData(value?: SetData): void;
   hasData(): boolean;
-  clearData(): Setting;
+  clearData(): void;
 
   getOperator(): string;
-  setOperator(value: string): Setting;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Setting;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Setting;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Setting;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Setting;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Setting;
-  clearColsList(): Setting;
-  addCols(value: string, index?: number): Setting;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Setting;
-  clearConditionList(): Setting;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Setting;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Setting;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Setting.AsObject;
@@ -77,82 +76,82 @@ export namespace Setting {
 
 export class SetData extends jspb.Message {
   getStoreName(): string;
-  setStoreName(value: string): SetData;
+  setStoreName(value: string): void;
 
   getStoreEmail(): string;
-  setStoreEmail(value: string): SetData;
+  setStoreEmail(value: string): void;
 
   getStorePhone(): string;
-  setStorePhone(value: string): SetData;
+  setStorePhone(value: string): void;
 
   getStoreAddress(): string;
-  setStoreAddress(value: string): SetData;
+  setStoreAddress(value: string): void;
 
   getStoreOpen(): string;
-  setStoreOpen(value: string): SetData;
+  setStoreOpen(value: string): void;
 
   getCopyright(): string;
-  setCopyright(value: string): SetData;
+  setCopyright(value: string): void;
 
   getFacebook(): string;
-  setFacebook(value: string): SetData;
+  setFacebook(value: string): void;
 
   getCompanyName(): string;
-  setCompanyName(value: string): SetData;
+  setCompanyName(value: string): void;
 
   getCompanyEmail(): string;
-  setCompanyEmail(value: string): SetData;
+  setCompanyEmail(value: string): void;
 
   getCompanyPhone(): string;
-  setCompanyPhone(value: string): SetData;
+  setCompanyPhone(value: string): void;
 
   getCompanyCellPhone(): string;
-  setCompanyCellPhone(value: string): SetData;
+  setCompanyCellPhone(value: string): void;
 
   getCompanyZipcode(): string;
-  setCompanyZipcode(value: string): SetData;
+  setCompanyZipcode(value: string): void;
 
   getCompanyAddress(): string;
-  setCompanyAddress(value: string): SetData;
+  setCompanyAddress(value: string): void;
 
   getCompanyRemark(): string;
-  setCompanyRemark(value: string): SetData;
+  setCompanyRemark(value: string): void;
 
   getCustomerCancel(): boolean;
-  setCustomerCancel(value: boolean): SetData;
+  setCustomerCancel(value: boolean): void;
 
   getCustomerReturn(): boolean;
-  setCustomerReturn(value: boolean): SetData;
+  setCustomerReturn(value: boolean): void;
 
   getLimitCount(): number;
-  setLimitCount(value: number): SetData;
+  setLimitCount(value: number): void;
 
   getMerchantId(): string;
-  setMerchantId(value: string): SetData;
+  setMerchantId(value: string): void;
 
   getMerchantPassword(): string;
-  setMerchantPassword(value: string): SetData;
+  setMerchantPassword(value: string): void;
 
   getMerchantType(): string;
-  setMerchantType(value: string): SetData;
+  setMerchantType(value: string): void;
 
   getMerchantHashIv(): string;
-  setMerchantHashIv(value: string): SetData;
+  setMerchantHashIv(value: string): void;
 
   getMerchantHashKey(): string;
-  setMerchantHashKey(value: string): SetData;
+  setMerchantHashKey(value: string): void;
 
   getAppId(): string;
-  setAppId(value: string): SetData;
+  setAppId(value: string): void;
 
   getAppSecret(): string;
-  setAppSecret(value: string): SetData;
+  setAppSecret(value: string): void;
 
   getFromName(): string;
-  setFromName(value: string): SetData;
+  setFromName(value: string): void;
 
   getFromEmail(): string;
-  setFromEmail(value: string): SetData;
+  setFromEmail(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetData.AsObject;

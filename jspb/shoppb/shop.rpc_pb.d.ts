@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as password_pb from './password_pb';
 import * as sql_pb from './sql_pb';
@@ -10,5 +10,4 @@ import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
 import * as log_pb from './log_pb';
 import * as browse_pb from './browse_pb';
-
 

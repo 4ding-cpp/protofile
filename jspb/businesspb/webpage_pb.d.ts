@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as template_pb from './template_pb';
@@ -6,66 +6,65 @@ import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class WebPage extends jspb.Message {
   getPageId(): string;
-  setPageId(value: string): WebPage;
+  setPageId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): WebPage;
+  setStoreId(value: string): void;
 
   getName(): string;
-  setName(value: string): WebPage;
+  setName(value: string): void;
 
   getUrn(): string;
-  setUrn(value: string): WebPage;
+  setUrn(value: string): void;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): WebPage;
+  setSeo(value?: seo_pb.SEO): void;
   hasSeo(): boolean;
-  clearSeo(): WebPage;
+  clearSeo(): void;
 
   getTemplateGroupList(): Array<template_pb.Template>;
-  setTemplateGroupList(value: Array<template_pb.Template>): WebPage;
-  clearTemplateGroupList(): WebPage;
+  setTemplateGroupList(value: Array<template_pb.Template>): void;
+  clearTemplateGroupList(): void;
   addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
 
   getDefaultLanguage(): string;
-  setDefaultLanguage(value: string): WebPage;
+  setDefaultLanguage(value: string): void;
 
   getIsErrorHandle(): boolean;
-  setIsErrorHandle(value: boolean): WebPage;
+  setIsErrorHandle(value: boolean): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): WebPage;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): WebPage;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): WebPage;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): WebPage;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): WebPage;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): WebPage;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): WebPage;
-  clearColsList(): WebPage;
-  addCols(value: string, index?: number): WebPage;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): WebPage;
-  clearConditionList(): WebPage;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): WebPage;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): WebPage;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebPage.AsObject;

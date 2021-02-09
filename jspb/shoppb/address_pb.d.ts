@@ -1,22 +1,20 @@
-import * as jspb from 'google-protobuf'
-
-
+import * as jspb from "google-protobuf"
 
 export class Address extends jspb.Message {
   getCountry(): string;
-  setCountry(value: string): Address;
+  setCountry(value: string): void;
 
   getCity(): string;
-  setCity(value: string): Address;
+  setCity(value: string): void;
 
   getTownship(): string;
-  setTownship(value: string): Address;
+  setTownship(value: string): void;
 
   getZipcode(): string;
-  setZipcode(value: string): Address;
+  setZipcode(value: string): void;
 
   getDetail(): string;
-  setDetail(value: string): Address;
+  setDetail(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Address.AsObject;

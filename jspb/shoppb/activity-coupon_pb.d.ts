@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
@@ -6,107 +6,106 @@ import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Activity extends jspb.Message {
   getActivityId(): string;
-  setActivityId(value: string): Activity;
+  setActivityId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Activity;
+  setStoreId(value: string): void;
 
   getType(): number;
-  setType(value: number): Activity;
+  setType(value: number): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): Activity;
+  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasBeginAt(): boolean;
-  clearBeginAt(): Activity;
+  clearBeginAt(): void;
 
   getEndAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): Activity;
+  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasEndAt(): boolean;
-  clearEndAt(): Activity;
+  clearEndAt(): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): Activity;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): Activity;
+  clearName(): void;
 
   getUrn(): string;
-  setUrn(value: string): Activity;
+  setUrn(value: string): void;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): Activity;
+  setSeo(value?: seo_pb.SEO): void;
   hasSeo(): boolean;
-  clearSeo(): Activity;
+  clearSeo(): void;
 
   getPhoto(): a$submessage_pb.Image | undefined;
-  setPhoto(value?: a$submessage_pb.Image): Activity;
+  setPhoto(value?: a$submessage_pb.Image): void;
   hasPhoto(): boolean;
-  clearPhoto(): Activity;
+  clearPhoto(): void;
 
   getRule(): a$submessage_pb.Rule | undefined;
-  setRule(value?: a$submessage_pb.Rule): Activity;
+  setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
-  clearRule(): Activity;
+  clearRule(): void;
 
   getNow(): a$submessage_pb.Rule | undefined;
-  setNow(value?: a$submessage_pb.Rule): Activity;
+  setNow(value?: a$submessage_pb.Rule): void;
   hasNow(): boolean;
-  clearNow(): Activity;
+  clearNow(): void;
 
   getActive(): a$submessage_pb.Active | undefined;
-  setActive(value?: a$submessage_pb.Active): Activity;
+  setActive(value?: a$submessage_pb.Active): void;
   hasActive(): boolean;
-  clearActive(): Activity;
+  clearActive(): void;
 
   getTarget(): a$submessage_pb.ProductTarget | undefined;
-  setTarget(value?: a$submessage_pb.ProductTarget): Activity;
+  setTarget(value?: a$submessage_pb.ProductTarget): void;
   hasTarget(): boolean;
-  clearTarget(): Activity;
+  clearTarget(): void;
 
   getReached(): boolean;
-  setReached(value: boolean): Activity;
+  setReached(value: boolean): void;
 
   getUsedMap(): jspb.Map<string, number>;
-  clearUsedMap(): Activity;
+  clearUsedMap(): void;
 
   getUseByCustomer(): number;
-  setUseByCustomer(value: number): Activity;
+  setUseByCustomer(value: number): void;
 
   getUseByOrder(): number;
-  setUseByOrder(value: number): Activity;
+  setUseByOrder(value: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Activity;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Activity;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Activity;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Activity;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Activity;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Activity;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Activity;
-  clearColsList(): Activity;
-  addCols(value: string, index?: number): Activity;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Activity;
-  clearConditionList(): Activity;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Activity;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Activity;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Activity.AsObject;
@@ -147,89 +146,89 @@ export namespace Activity {
 
 export class Coupon extends jspb.Message {
   getCouponId(): string;
-  setCouponId(value: string): Coupon;
+  setCouponId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Coupon;
+  setStoreId(value: string): void;
 
   getBeginAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): Coupon;
+  setBeginAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasBeginAt(): boolean;
-  clearBeginAt(): Coupon;
+  clearBeginAt(): void;
 
   getEndAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): Coupon;
+  setEndAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasEndAt(): boolean;
-  clearEndAt(): Coupon;
+  clearEndAt(): void;
 
   getName(): google_protobuf_struct_pb.Value | undefined;
-  setName(value?: google_protobuf_struct_pb.Value): Coupon;
+  setName(value?: google_protobuf_struct_pb.Value): void;
   hasName(): boolean;
-  clearName(): Coupon;
+  clearName(): void;
 
   getIsAuto(): boolean;
-  setIsAuto(value: boolean): Coupon;
+  setIsAuto(value: boolean): void;
 
   getCode(): string;
-  setCode(value: string): Coupon;
+  setCode(value: string): void;
 
   getRule(): a$submessage_pb.Rule | undefined;
-  setRule(value?: a$submessage_pb.Rule): Coupon;
+  setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
-  clearRule(): Coupon;
+  clearRule(): void;
 
   getActive(): a$submessage_pb.Active | undefined;
-  setActive(value?: a$submessage_pb.Active): Coupon;
+  setActive(value?: a$submessage_pb.Active): void;
   hasActive(): boolean;
-  clearActive(): Coupon;
+  clearActive(): void;
 
   getTarget(): a$submessage_pb.CustomerTarget | undefined;
-  setTarget(value?: a$submessage_pb.CustomerTarget): Coupon;
+  setTarget(value?: a$submessage_pb.CustomerTarget): void;
   hasTarget(): boolean;
-  clearTarget(): Coupon;
+  clearTarget(): void;
 
   getUsedMap(): jspb.Map<string, number>;
-  clearUsedMap(): Coupon;
+  clearUsedMap(): void;
 
   getIsUse(): number;
-  setIsUse(value: number): Coupon;
+  setIsUse(value: number): void;
 
   getOrderId(): string;
-  setOrderId(value: string): Coupon;
+  setOrderId(value: string): void;
 
   getOrderAt(): string;
-  setOrderAt(value: string): Coupon;
+  setOrderAt(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Coupon;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Coupon;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Coupon;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Coupon;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Coupon;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Coupon;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Coupon;
-  clearColsList(): Coupon;
-  addCols(value: string, index?: number): Coupon;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Coupon;
-  clearConditionList(): Coupon;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Coupon;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Coupon;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Coupon.AsObject;

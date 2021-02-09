@@ -7,46 +7,41 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 
-/* eslint-disable */
-// @ts-nocheck
-
-
 import * as grpcWeb from 'grpc-web';
 
-import * as sql_pb from './sql_pb';
 import * as pingpong_pb from './pingpong_pb';
+import * as sql_pb from './sql_pb';
 import * as template_pb from './template_pb';
+import * as password_pb from './password_pb';
+import * as label_pb from './label_pb';
+import * as car_pb from './car_pb';
+import * as manager_pb from './manager_pb';
+import * as sales_pb from './sales_pb';
+import * as customer_pb from './customer_pb';
+import * as customer$level_pb from './customer-level_pb';
+import * as product$shell_pb from './product-shell_pb';
+import * as product$class_pb from './product-class_pb';
+import * as activity$coupon_pb from './activity-coupon_pb';
+import * as order_pb from './order_pb';
+import * as remind_pb from './remind_pb';
+import * as setting_pb from './setting_pb';
+import * as adapter_pb from './adapter_pb';
+import * as webpage_pb from './webpage_pb';
+import * as website_pb from './website_pb';
+import * as freeback_pb from './freeback_pb';
 import * as message_pb from './message_pb';
 import * as domain_pb from './domain_pb';
-import * as label_pb from './label_pb';
-import * as setting_pb from './setting_pb';
 import * as browse_pb from './browse_pb';
-import * as password_pb from './password_pb';
-import * as manager_pb from './manager_pb';
-import * as activity$coupon_pb from './activity-coupon_pb';
-import * as customer_pb from './customer_pb';
-import * as car_pb from './car_pb';
-import * as adapter_pb from './adapter_pb';
-import * as freeback_pb from './freeback_pb';
-import * as product$shell_pb from './product-shell_pb';
-import * as customer$level_pb from './customer-level_pb';
-import * as product$class_pb from './product-class_pb';
-import * as sales_pb from './sales_pb';
-import * as website_pb from './website_pb';
-import * as remind_pb from './remind_pb';
-import * as webpage_pb from './webpage_pb';
-import * as order_pb from './order_pb';
-
 
 export class Store1RPCClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: any; };
+  options_: null | { [index: string]: string; };
 
   constructor (hostname: string,
                credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: any; }) {
+               options?: null | { [index: string]: string; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
     options['format'] = 'binary';
@@ -67,34 +62,16 @@ export class Store1RPCClient {
 
   ping(
     request: pingpong_pb.PingPong,
-    metadata: grpcWeb.Metadata | null): Promise<pingpong_pb.PingPong>;
-
-  ping(
-    request: pingpong_pb.PingPong,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: pingpong_pb.PingPong) => void): grpcWeb.ClientReadableStream<pingpong_pb.PingPong>;
-
-  ping(
-    request: pingpong_pb.PingPong,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: pingpong_pb.PingPong) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/Ping',
-        request,
-        metadata || {},
-        this.methodInfoPing,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/Ping',
-    request,
-    metadata || {},
-    this.methodInfoPing);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/Ping',
+      request,
+      metadata || {},
+      this.methodInfoPing,
+      callback);
   }
 
   methodInfoWhoAmI = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -107,34 +84,16 @@ export class Store1RPCClient {
 
   whoAmI(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  whoAmI(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  whoAmI(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/WhoAmI',
-        request,
-        metadata || {},
-        this.methodInfoWhoAmI,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/WhoAmI',
-    request,
-    metadata || {},
-    this.methodInfoWhoAmI);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/WhoAmI',
+      request,
+      metadata || {},
+      this.methodInfoWhoAmI,
+      callback);
   }
 
   methodInfoChangePassword = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -147,34 +106,16 @@ export class Store1RPCClient {
 
   changePassword(
     request: password_pb.Password,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  changePassword(
-    request: password_pb.Password,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  changePassword(
-    request: password_pb.Password,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/ChangePassword',
-        request,
-        metadata || {},
-        this.methodInfoChangePassword,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/ChangePassword',
-    request,
-    metadata || {},
-    this.methodInfoChangePassword);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ChangePassword',
+      request,
+      metadata || {},
+      this.methodInfoChangePassword,
+      callback);
   }
 
   methodInfoChangeInfo = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -187,34 +128,16 @@ export class Store1RPCClient {
 
   changeInfo(
     request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  changeInfo(
-    request: manager_pb.Manager,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  changeInfo(
-    request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/ChangeInfo',
-        request,
-        metadata || {},
-        this.methodInfoChangeInfo,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/ChangeInfo',
-    request,
-    metadata || {},
-    this.methodInfoChangeInfo);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ChangeInfo',
+      request,
+      metadata || {},
+      this.methodInfoChangeInfo,
+      callback);
   }
 
   methodInfoChangeWhitelist = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -227,34 +150,16 @@ export class Store1RPCClient {
 
   changeWhitelist(
     request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  changeWhitelist(
-    request: manager_pb.Manager,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  changeWhitelist(
-    request: manager_pb.Manager,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/ChangeWhitelist',
-        request,
-        metadata || {},
-        this.methodInfoChangeWhitelist,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/ChangeWhitelist',
-    request,
-    metadata || {},
-    this.methodInfoChangeWhitelist);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ChangeWhitelist',
+      request,
+      metadata || {},
+      this.methodInfoChangeWhitelist,
+      callback);
   }
 
   methodInfoFindPermission = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -267,34 +172,16 @@ export class Store1RPCClient {
 
   findPermission(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findPermission(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findPermission(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindPermission',
-        request,
-        metadata || {},
-        this.methodInfoFindPermission,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindPermission',
-    request,
-    metadata || {},
-    this.methodInfoFindPermission);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindPermission',
+      request,
+      metadata || {},
+      this.methodInfoFindPermission,
+      callback);
   }
 
   methodInfoFindRecord = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -307,34 +194,16 @@ export class Store1RPCClient {
 
   findRecord(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findRecord(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findRecord(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindRecord',
-        request,
-        metadata || {},
-        this.methodInfoFindRecord,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindRecord',
-    request,
-    metadata || {},
-    this.methodInfoFindRecord);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindRecord',
+      request,
+      metadata || {},
+      this.methodInfoFindRecord,
+      callback);
   }
 
   methodInfoFindSign = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -347,34 +216,16 @@ export class Store1RPCClient {
 
   findSign(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findSign(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findSign(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindSign',
-        request,
-        metadata || {},
-        this.methodInfoFindSign,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindSign',
-    request,
-    metadata || {},
-    this.methodInfoFindSign);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindSign',
+      request,
+      metadata || {},
+      this.methodInfoFindSign,
+      callback);
   }
 
   methodInfoFindAnnouncement = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -387,34 +238,16 @@ export class Store1RPCClient {
 
   findAnnouncement(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findAnnouncement(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findAnnouncement(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindAnnouncement',
-        request,
-        metadata || {},
-        this.methodInfoFindAnnouncement,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindAnnouncement',
-    request,
-    metadata || {},
-    this.methodInfoFindAnnouncement);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindAnnouncement',
+      request,
+      metadata || {},
+      this.methodInfoFindAnnouncement,
+      callback);
   }
 
   methodInfoDuplicate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -427,34 +260,16 @@ export class Store1RPCClient {
 
   duplicate(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  duplicate(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  duplicate(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/Duplicate',
-        request,
-        metadata || {},
-        this.methodInfoDuplicate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/Duplicate',
-    request,
-    metadata || {},
-    this.methodInfoDuplicate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/Duplicate',
+      request,
+      metadata || {},
+      this.methodInfoDuplicate,
+      callback);
   }
 
   methodInfoDashboard = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -467,34 +282,16 @@ export class Store1RPCClient {
 
   dashboard(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  dashboard(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  dashboard(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/Dashboard',
-        request,
-        metadata || {},
-        this.methodInfoDashboard,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/Dashboard',
-    request,
-    metadata || {},
-    this.methodInfoDashboard);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/Dashboard',
+      request,
+      metadata || {},
+      this.methodInfoDashboard,
+      callback);
   }
 
   methodInfoRank = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -507,34 +304,16 @@ export class Store1RPCClient {
 
   rank(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  rank(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  rank(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/Rank',
-        request,
-        metadata || {},
-        this.methodInfoRank,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/Rank',
-    request,
-    metadata || {},
-    this.methodInfoRank);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/Rank',
+      request,
+      metadata || {},
+      this.methodInfoRank,
+      callback);
   }
 
   methodInfoBrowseRecord = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -547,34 +326,16 @@ export class Store1RPCClient {
 
   browseRecord(
     request: browse_pb.Browse,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  browseRecord(
-    request: browse_pb.Browse,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  browseRecord(
-    request: browse_pb.Browse,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/BrowseRecord',
-        request,
-        metadata || {},
-        this.methodInfoBrowseRecord,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/BrowseRecord',
-    request,
-    metadata || {},
-    this.methodInfoBrowseRecord);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/BrowseRecord',
+      request,
+      metadata || {},
+      this.methodInfoBrowseRecord,
+      callback);
   }
 
   methodInfoCreateManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -587,34 +348,16 @@ export class Store1RPCClient {
 
   createManagerSub(
     request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createManagerSub(
-    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createManagerSub(
-    request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateManagerSub',
-        request,
-        metadata || {},
-        this.methodInfoCreateManagerSub,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateManagerSub',
-    request,
-    metadata || {},
-    this.methodInfoCreateManagerSub);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateManagerSub',
+      request,
+      metadata || {},
+      this.methodInfoCreateManagerSub,
+      callback);
   }
 
   methodInfoUpdateManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -627,34 +370,16 @@ export class Store1RPCClient {
 
   updateManagerSub(
     request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateManagerSub(
-    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateManagerSub(
-    request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateManagerSub',
-        request,
-        metadata || {},
-        this.methodInfoUpdateManagerSub,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateManagerSub',
-    request,
-    metadata || {},
-    this.methodInfoUpdateManagerSub);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateManagerSub',
+      request,
+      metadata || {},
+      this.methodInfoUpdateManagerSub,
+      callback);
   }
 
   methodInfoFindManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -667,34 +392,16 @@ export class Store1RPCClient {
 
   findManagerSub(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findManagerSub(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findManagerSub(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindManagerSub',
-        request,
-        metadata || {},
-        this.methodInfoFindManagerSub,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindManagerSub',
-    request,
-    metadata || {},
-    this.methodInfoFindManagerSub);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindManagerSub',
+      request,
+      metadata || {},
+      this.methodInfoFindManagerSub,
+      callback);
   }
 
   methodInfoRecordManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -707,34 +414,16 @@ export class Store1RPCClient {
 
   recordManagerSub(
     request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  recordManagerSub(
-    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  recordManagerSub(
-    request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/RecordManagerSub',
-        request,
-        metadata || {},
-        this.methodInfoRecordManagerSub,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/RecordManagerSub',
-    request,
-    metadata || {},
-    this.methodInfoRecordManagerSub);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/RecordManagerSub',
+      request,
+      metadata || {},
+      this.methodInfoRecordManagerSub,
+      callback);
   }
 
   methodInfoSignManagerSub = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -747,34 +436,16 @@ export class Store1RPCClient {
 
   signManagerSub(
     request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  signManagerSub(
-    request: manager_pb.ManagerSub,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  signManagerSub(
-    request: manager_pb.ManagerSub,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/SignManagerSub',
-        request,
-        metadata || {},
-        this.methodInfoSignManagerSub,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/SignManagerSub',
-    request,
-    metadata || {},
-    this.methodInfoSignManagerSub);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/SignManagerSub',
+      request,
+      metadata || {},
+      this.methodInfoSignManagerSub,
+      callback);
   }
 
   methodInfoCreateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -787,34 +458,16 @@ export class Store1RPCClient {
 
   createLabel(
     request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createLabel(
-    request: label_pb.Label,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createLabel(
-    request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateLabel',
-        request,
-        metadata || {},
-        this.methodInfoCreateLabel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateLabel',
-    request,
-    metadata || {},
-    this.methodInfoCreateLabel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateLabel',
+      request,
+      metadata || {},
+      this.methodInfoCreateLabel,
+      callback);
   }
 
   methodInfoUpdateLabel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -827,34 +480,16 @@ export class Store1RPCClient {
 
   updateLabel(
     request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateLabel(
-    request: label_pb.Label,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateLabel(
-    request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateLabel',
-        request,
-        metadata || {},
-        this.methodInfoUpdateLabel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateLabel',
-    request,
-    metadata || {},
-    this.methodInfoUpdateLabel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateLabel',
+      request,
+      metadata || {},
+      this.methodInfoUpdateLabel,
+      callback);
   }
 
   methodInfoAppendLabel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -867,34 +502,16 @@ export class Store1RPCClient {
 
   appendLabel(
     request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  appendLabel(
-    request: label_pb.Label,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  appendLabel(
-    request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/AppendLabel',
-        request,
-        metadata || {},
-        this.methodInfoAppendLabel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/AppendLabel',
-    request,
-    metadata || {},
-    this.methodInfoAppendLabel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/AppendLabel',
+      request,
+      metadata || {},
+      this.methodInfoAppendLabel,
+      callback);
   }
 
   methodInfoSubtractLabel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -907,34 +524,16 @@ export class Store1RPCClient {
 
   subtractLabel(
     request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  subtractLabel(
-    request: label_pb.Label,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  subtractLabel(
-    request: label_pb.Label,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/SubtractLabel',
-        request,
-        metadata || {},
-        this.methodInfoSubtractLabel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/SubtractLabel',
-    request,
-    metadata || {},
-    this.methodInfoSubtractLabel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/SubtractLabel',
+      request,
+      metadata || {},
+      this.methodInfoSubtractLabel,
+      callback);
   }
 
   methodInfoFindLabel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -947,34 +546,16 @@ export class Store1RPCClient {
 
   findLabel(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findLabel(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findLabel(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindLabel',
-        request,
-        metadata || {},
-        this.methodInfoFindLabel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindLabel',
-    request,
-    metadata || {},
-    this.methodInfoFindLabel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindLabel',
+      request,
+      metadata || {},
+      this.methodInfoFindLabel,
+      callback);
   }
 
   methodInfoCreateActivity = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -987,34 +568,16 @@ export class Store1RPCClient {
 
   createActivity(
     request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createActivity(
-    request: activity$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createActivity(
-    request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateActivity',
-        request,
-        metadata || {},
-        this.methodInfoCreateActivity,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateActivity',
-    request,
-    metadata || {},
-    this.methodInfoCreateActivity);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateActivity',
+      request,
+      metadata || {},
+      this.methodInfoCreateActivity,
+      callback);
   }
 
   methodInfoUpdateActivity = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1027,34 +590,16 @@ export class Store1RPCClient {
 
   updateActivity(
     request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateActivity(
-    request: activity$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateActivity(
-    request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateActivity',
-        request,
-        metadata || {},
-        this.methodInfoUpdateActivity,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateActivity',
-    request,
-    metadata || {},
-    this.methodInfoUpdateActivity);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateActivity',
+      request,
+      metadata || {},
+      this.methodInfoUpdateActivity,
+      callback);
   }
 
   methodInfoCancelActivity = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1067,34 +612,16 @@ export class Store1RPCClient {
 
   cancelActivity(
     request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  cancelActivity(
-    request: activity$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  cancelActivity(
-    request: activity$coupon_pb.Activity,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CancelActivity',
-        request,
-        metadata || {},
-        this.methodInfoCancelActivity,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CancelActivity',
-    request,
-    metadata || {},
-    this.methodInfoCancelActivity);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CancelActivity',
+      request,
+      metadata || {},
+      this.methodInfoCancelActivity,
+      callback);
   }
 
   methodInfoFindActivity = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1107,34 +634,16 @@ export class Store1RPCClient {
 
   findActivity(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findActivity(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findActivity(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindActivity',
-        request,
-        metadata || {},
-        this.methodInfoFindActivity,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindActivity',
-    request,
-    metadata || {},
-    this.methodInfoFindActivity);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindActivity',
+      request,
+      metadata || {},
+      this.methodInfoFindActivity,
+      callback);
   }
 
   methodInfoCreateCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1147,34 +656,16 @@ export class Store1RPCClient {
 
   createCoupon(
     request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createCoupon(
-    request: activity$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createCoupon(
-    request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateCoupon',
-        request,
-        metadata || {},
-        this.methodInfoCreateCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateCoupon',
-    request,
-    metadata || {},
-    this.methodInfoCreateCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateCoupon',
+      request,
+      metadata || {},
+      this.methodInfoCreateCoupon,
+      callback);
   }
 
   methodInfoDistributeCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1187,34 +678,16 @@ export class Store1RPCClient {
 
   distributeCoupon(
     request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  distributeCoupon(
-    request: activity$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  distributeCoupon(
-    request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DistributeCoupon',
-        request,
-        metadata || {},
-        this.methodInfoDistributeCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DistributeCoupon',
-    request,
-    metadata || {},
-    this.methodInfoDistributeCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DistributeCoupon',
+      request,
+      metadata || {},
+      this.methodInfoDistributeCoupon,
+      callback);
   }
 
   methodInfoUpdateCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1227,34 +700,16 @@ export class Store1RPCClient {
 
   updateCoupon(
     request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateCoupon(
-    request: activity$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateCoupon(
-    request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateCoupon',
-        request,
-        metadata || {},
-        this.methodInfoUpdateCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateCoupon',
-    request,
-    metadata || {},
-    this.methodInfoUpdateCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateCoupon',
+      request,
+      metadata || {},
+      this.methodInfoUpdateCoupon,
+      callback);
   }
 
   methodInfoCancelCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1267,34 +722,16 @@ export class Store1RPCClient {
 
   cancelCoupon(
     request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  cancelCoupon(
-    request: activity$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  cancelCoupon(
-    request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CancelCoupon',
-        request,
-        metadata || {},
-        this.methodInfoCancelCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CancelCoupon',
-    request,
-    metadata || {},
-    this.methodInfoCancelCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CancelCoupon',
+      request,
+      metadata || {},
+      this.methodInfoCancelCoupon,
+      callback);
   }
 
   methodInfoExchangeCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1307,34 +744,16 @@ export class Store1RPCClient {
 
   exchangeCoupon(
     request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  exchangeCoupon(
-    request: activity$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  exchangeCoupon(
-    request: activity$coupon_pb.Coupon,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/ExchangeCoupon',
-        request,
-        metadata || {},
-        this.methodInfoExchangeCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/ExchangeCoupon',
-    request,
-    metadata || {},
-    this.methodInfoExchangeCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ExchangeCoupon',
+      request,
+      metadata || {},
+      this.methodInfoExchangeCoupon,
+      callback);
   }
 
   methodInfoFindCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1347,34 +766,16 @@ export class Store1RPCClient {
 
   findCoupon(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCoupon(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCoupon(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCoupon',
-        request,
-        metadata || {},
-        this.methodInfoFindCoupon,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCoupon',
-    request,
-    metadata || {},
-    this.methodInfoFindCoupon);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCoupon',
+      request,
+      metadata || {},
+      this.methodInfoFindCoupon,
+      callback);
   }
 
   methodInfoCreateSales = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1387,34 +788,16 @@ export class Store1RPCClient {
 
   createSales(
     request: sales_pb.Sales,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createSales(
-    request: sales_pb.Sales,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createSales(
-    request: sales_pb.Sales,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateSales',
-        request,
-        metadata || {},
-        this.methodInfoCreateSales,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateSales',
-    request,
-    metadata || {},
-    this.methodInfoCreateSales);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateSales',
+      request,
+      metadata || {},
+      this.methodInfoCreateSales,
+      callback);
   }
 
   methodInfoUpdateSales = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1427,34 +810,16 @@ export class Store1RPCClient {
 
   updateSales(
     request: sales_pb.Sales,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateSales(
-    request: sales_pb.Sales,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateSales(
-    request: sales_pb.Sales,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateSales',
-        request,
-        metadata || {},
-        this.methodInfoUpdateSales,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateSales',
-    request,
-    metadata || {},
-    this.methodInfoUpdateSales);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateSales',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSales,
+      callback);
   }
 
   methodInfoFindSales = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1467,34 +832,16 @@ export class Store1RPCClient {
 
   findSales(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findSales(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findSales(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindSales',
-        request,
-        metadata || {},
-        this.methodInfoFindSales,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindSales',
-    request,
-    metadata || {},
-    this.methodInfoFindSales);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindSales',
+      request,
+      metadata || {},
+      this.methodInfoFindSales,
+      callback);
   }
 
   methodInfoCreateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1507,34 +854,16 @@ export class Store1RPCClient {
 
   createCustomer(
     request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createCustomer(
-    request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createCustomer(
-    request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateCustomer',
-        request,
-        metadata || {},
-        this.methodInfoCreateCustomer,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateCustomer',
-    request,
-    metadata || {},
-    this.methodInfoCreateCustomer);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateCustomer',
+      request,
+      metadata || {},
+      this.methodInfoCreateCustomer,
+      callback);
   }
 
   methodInfoUpdateCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1547,34 +876,16 @@ export class Store1RPCClient {
 
   updateCustomer(
     request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateCustomer(
-    request: customer_pb.Customer,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateCustomer(
-    request: customer_pb.Customer,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateCustomer',
-        request,
-        metadata || {},
-        this.methodInfoUpdateCustomer,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateCustomer',
-    request,
-    metadata || {},
-    this.methodInfoUpdateCustomer);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateCustomer',
+      request,
+      metadata || {},
+      this.methodInfoUpdateCustomer,
+      callback);
   }
 
   methodInfoFindCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1587,34 +898,16 @@ export class Store1RPCClient {
 
   findCustomer(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCustomer(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCustomer(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCustomer',
-        request,
-        metadata || {},
-        this.methodInfoFindCustomer,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCustomer',
-    request,
-    metadata || {},
-    this.methodInfoFindCustomer);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCustomer',
+      request,
+      metadata || {},
+      this.methodInfoFindCustomer,
+      callback);
   }
 
   methodInfoCreateCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1627,34 +920,16 @@ export class Store1RPCClient {
 
   createCustomerLevel(
     request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateCustomerLevel',
-        request,
-        metadata || {},
-        this.methodInfoCreateCustomerLevel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateCustomerLevel',
-    request,
-    metadata || {},
-    this.methodInfoCreateCustomerLevel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateCustomerLevel',
+      request,
+      metadata || {},
+      this.methodInfoCreateCustomerLevel,
+      callback);
   }
 
   methodInfoUpdateCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1667,34 +942,16 @@ export class Store1RPCClient {
 
   updateCustomerLevel(
     request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateCustomerLevel',
-        request,
-        metadata || {},
-        this.methodInfoUpdateCustomerLevel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateCustomerLevel',
-    request,
-    metadata || {},
-    this.methodInfoUpdateCustomerLevel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateCustomerLevel',
+      request,
+      metadata || {},
+      this.methodInfoUpdateCustomerLevel,
+      callback);
   }
 
   methodInfoAddCustomerToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1707,34 +964,16 @@ export class Store1RPCClient {
 
   addCustomerToLevel(
     request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  addCustomerToLevel(
-    request: customer$level_pb.CustomerLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  addCustomerToLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/AddCustomerToLevel',
-        request,
-        metadata || {},
-        this.methodInfoAddCustomerToLevel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/AddCustomerToLevel',
-    request,
-    metadata || {},
-    this.methodInfoAddCustomerToLevel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/AddCustomerToLevel',
+      request,
+      metadata || {},
+      this.methodInfoAddCustomerToLevel,
+      callback);
   }
 
   methodInfoDelCustomerFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1747,34 +986,16 @@ export class Store1RPCClient {
 
   delCustomerFromLevel(
     request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  delCustomerFromLevel(
-    request: customer$level_pb.CustomerLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  delCustomerFromLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DelCustomerFromLevel',
-        request,
-        metadata || {},
-        this.methodInfoDelCustomerFromLevel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DelCustomerFromLevel',
-    request,
-    metadata || {},
-    this.methodInfoDelCustomerFromLevel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DelCustomerFromLevel',
+      request,
+      metadata || {},
+      this.methodInfoDelCustomerFromLevel,
+      callback);
   }
 
   methodInfoFindCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1787,34 +1008,16 @@ export class Store1RPCClient {
 
   findCustomerLevel(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCustomerLevel(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCustomerLevel(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCustomerLevel',
-        request,
-        metadata || {},
-        this.methodInfoFindCustomerLevel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCustomerLevel',
-    request,
-    metadata || {},
-    this.methodInfoFindCustomerLevel);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCustomerLevel',
+      request,
+      metadata || {},
+      this.methodInfoFindCustomerLevel,
+      callback);
   }
 
   methodInfoFindProduct = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1827,34 +1030,16 @@ export class Store1RPCClient {
 
   findProduct(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findProduct(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findProduct(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindProduct',
-        request,
-        metadata || {},
-        this.methodInfoFindProduct,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindProduct',
-    request,
-    metadata || {},
-    this.methodInfoFindProduct);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProduct',
+      request,
+      metadata || {},
+      this.methodInfoFindProduct,
+      callback);
   }
 
   methodInfoFindCansetAdditional = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1867,34 +1052,16 @@ export class Store1RPCClient {
 
   findCansetAdditional(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCansetAdditional(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCansetAdditional(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCansetAdditional',
-        request,
-        metadata || {},
-        this.methodInfoFindCansetAdditional,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCansetAdditional',
-    request,
-    metadata || {},
-    this.methodInfoFindCansetAdditional);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCansetAdditional',
+      request,
+      metadata || {},
+      this.methodInfoFindCansetAdditional,
+      callback);
   }
 
   methodInfoFindCansetGiveaway = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1907,34 +1074,16 @@ export class Store1RPCClient {
 
   findCansetGiveaway(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCansetGiveaway(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCansetGiveaway(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCansetGiveaway',
-        request,
-        metadata || {},
-        this.methodInfoFindCansetGiveaway,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCansetGiveaway',
-    request,
-    metadata || {},
-    this.methodInfoFindCansetGiveaway);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCansetGiveaway',
+      request,
+      metadata || {},
+      this.methodInfoFindCansetGiveaway,
+      callback);
   }
 
   methodInfoDisplayProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1947,34 +1096,16 @@ export class Store1RPCClient {
 
   displayProductShell(
     request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  displayProductShell(
-    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  displayProductShell(
-    request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DisplayProductShell',
-        request,
-        metadata || {},
-        this.methodInfoDisplayProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DisplayProductShell',
-    request,
-    metadata || {},
-    this.methodInfoDisplayProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DisplayProductShell',
+      request,
+      metadata || {},
+      this.methodInfoDisplayProductShell,
+      callback);
   }
 
   methodInfoCreateProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -1987,34 +1118,16 @@ export class Store1RPCClient {
 
   createProductShell(
     request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createProductShell(
-    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createProductShell(
-    request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateProductShell',
-        request,
-        metadata || {},
-        this.methodInfoCreateProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateProductShell',
-    request,
-    metadata || {},
-    this.methodInfoCreateProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateProductShell',
+      request,
+      metadata || {},
+      this.methodInfoCreateProductShell,
+      callback);
   }
 
   methodInfoUpdateProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2027,34 +1140,16 @@ export class Store1RPCClient {
 
   updateProductShell(
     request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateProductShell(
-    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateProductShell(
-    request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateProductShell',
-        request,
-        metadata || {},
-        this.methodInfoUpdateProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateProductShell',
-    request,
-    metadata || {},
-    this.methodInfoUpdateProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateProductShell',
+      request,
+      metadata || {},
+      this.methodInfoUpdateProductShell,
+      callback);
   }
 
   methodInfoDeleteProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2067,34 +1162,16 @@ export class Store1RPCClient {
 
   deleteProductShell(
     request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteProductShell(
-    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteProductShell(
-    request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteProductShell',
-        request,
-        metadata || {},
-        this.methodInfoDeleteProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteProductShell',
-    request,
-    metadata || {},
-    this.methodInfoDeleteProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteProductShell',
+      request,
+      metadata || {},
+      this.methodInfoDeleteProductShell,
+      callback);
   }
 
   methodInfoFindProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2107,34 +1184,16 @@ export class Store1RPCClient {
 
   findProductShell(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findProductShell(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findProductShell(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindProductShell',
-        request,
-        metadata || {},
-        this.methodInfoFindProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindProductShell',
-    request,
-    metadata || {},
-    this.methodInfoFindProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProductShell',
+      request,
+      metadata || {},
+      this.methodInfoFindProductShell,
+      callback);
   }
 
   methodInfoQuickProductShell = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2147,34 +1206,16 @@ export class Store1RPCClient {
 
   quickProductShell(
     request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null): Promise<product$shell_pb.ProductShell>;
-
-  quickProductShell(
-    request: product$shell_pb.ProductShell,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: product$shell_pb.ProductShell) => void): grpcWeb.ClientReadableStream<product$shell_pb.ProductShell>;
-
-  quickProductShell(
-    request: product$shell_pb.ProductShell,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: product$shell_pb.ProductShell) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/QuickProductShell',
-        request,
-        metadata || {},
-        this.methodInfoQuickProductShell,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/QuickProductShell',
-    request,
-    metadata || {},
-    this.methodInfoQuickProductShell);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/QuickProductShell',
+      request,
+      metadata || {},
+      this.methodInfoQuickProductShell,
+      callback);
   }
 
   methodInfoCreateProductClass = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2187,34 +1228,16 @@ export class Store1RPCClient {
 
   createProductClass(
     request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createProductClass(
-    request: product$class_pb.ProductClass,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createProductClass(
-    request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateProductClass',
-        request,
-        metadata || {},
-        this.methodInfoCreateProductClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateProductClass',
-    request,
-    metadata || {},
-    this.methodInfoCreateProductClass);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateProductClass',
+      request,
+      metadata || {},
+      this.methodInfoCreateProductClass,
+      callback);
   }
 
   methodInfoUpdateProductClass = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2227,34 +1250,16 @@ export class Store1RPCClient {
 
   updateProductClass(
     request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateProductClass(
-    request: product$class_pb.ProductClass,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateProductClass(
-    request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateProductClass',
-        request,
-        metadata || {},
-        this.methodInfoUpdateProductClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateProductClass',
-    request,
-    metadata || {},
-    this.methodInfoUpdateProductClass);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateProductClass',
+      request,
+      metadata || {},
+      this.methodInfoUpdateProductClass,
+      callback);
   }
 
   methodInfoFindProductClass = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2267,34 +1272,16 @@ export class Store1RPCClient {
 
   findProductClass(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findProductClass(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findProductClass(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindProductClass',
-        request,
-        metadata || {},
-        this.methodInfoFindProductClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindProductClass',
-    request,
-    metadata || {},
-    this.methodInfoFindProductClass);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindProductClass',
+      request,
+      metadata || {},
+      this.methodInfoFindProductClass,
+      callback);
   }
 
   methodInfoAddProductToClass = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2307,34 +1294,16 @@ export class Store1RPCClient {
 
   addProductToClass(
     request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  addProductToClass(
-    request: product$class_pb.ProductClass,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  addProductToClass(
-    request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/AddProductToClass',
-        request,
-        metadata || {},
-        this.methodInfoAddProductToClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/AddProductToClass',
-    request,
-    metadata || {},
-    this.methodInfoAddProductToClass);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/AddProductToClass',
+      request,
+      metadata || {},
+      this.methodInfoAddProductToClass,
+      callback);
   }
 
   methodInfoDelProductFromClass = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2347,34 +1316,16 @@ export class Store1RPCClient {
 
   delProductFromClass(
     request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  delProductFromClass(
-    request: product$class_pb.ProductClass,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  delProductFromClass(
-    request: product$class_pb.ProductClass,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DelProductFromClass',
-        request,
-        metadata || {},
-        this.methodInfoDelProductFromClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DelProductFromClass',
-    request,
-    metadata || {},
-    this.methodInfoDelProductFromClass);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DelProductFromClass',
+      request,
+      metadata || {},
+      this.methodInfoDelProductFromClass,
+      callback);
   }
 
   methodInfoCompleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2387,34 +1338,16 @@ export class Store1RPCClient {
 
   completeCar(
     request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  completeCar(
-    request: car_pb.Car,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  completeCar(
-    request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CompleteCar',
-        request,
-        metadata || {},
-        this.methodInfoCompleteCar,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CompleteCar',
-    request,
-    metadata || {},
-    this.methodInfoCompleteCar);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CompleteCar',
+      request,
+      metadata || {},
+      this.methodInfoCompleteCar,
+      callback);
   }
 
   methodInfoDeleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2427,34 +1360,16 @@ export class Store1RPCClient {
 
   deleteCar(
     request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteCar(
-    request: car_pb.Car,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteCar(
-    request: car_pb.Car,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteCar',
-        request,
-        metadata || {},
-        this.methodInfoDeleteCar,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteCar',
-    request,
-    metadata || {},
-    this.methodInfoDeleteCar);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteCar',
+      request,
+      metadata || {},
+      this.methodInfoDeleteCar,
+      callback);
   }
 
   methodInfoFindCar = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2467,34 +1382,16 @@ export class Store1RPCClient {
 
   findCar(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findCar(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findCar(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindCar',
-        request,
-        metadata || {},
-        this.methodInfoFindCar,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindCar',
-    request,
-    metadata || {},
-    this.methodInfoFindCar);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindCar',
+      request,
+      metadata || {},
+      this.methodInfoFindCar,
+      callback);
   }
 
   methodInfoCreateOrder = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2507,34 +1404,16 @@ export class Store1RPCClient {
 
   createOrder(
     request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createOrder(
-    request: order_pb.Order,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateOrder',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrder,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateOrder',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrder);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateOrder',
+      request,
+      metadata || {},
+      this.methodInfoCreateOrder,
+      callback);
   }
 
   methodInfoStateOrder = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2547,34 +1426,16 @@ export class Store1RPCClient {
 
   stateOrder(
     request: order_pb.OrderBatch,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  stateOrder(
-    request: order_pb.OrderBatch,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  stateOrder(
-    request: order_pb.OrderBatch,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/StateOrder',
-        request,
-        metadata || {},
-        this.methodInfoStateOrder,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/StateOrder',
-    request,
-    metadata || {},
-    this.methodInfoStateOrder);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/StateOrder',
+      request,
+      metadata || {},
+      this.methodInfoStateOrder,
+      callback);
   }
 
   methodInfoCancelOrder = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2587,34 +1448,16 @@ export class Store1RPCClient {
 
   cancelOrder(
     request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  cancelOrder(
-    request: order_pb.Order,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  cancelOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CancelOrder',
-        request,
-        metadata || {},
-        this.methodInfoCancelOrder,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CancelOrder',
-    request,
-    metadata || {},
-    this.methodInfoCancelOrder);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CancelOrder',
+      request,
+      metadata || {},
+      this.methodInfoCancelOrder,
+      callback);
   }
 
   methodInfoFindOrder = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2627,34 +1470,16 @@ export class Store1RPCClient {
 
   findOrder(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findOrder(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findOrder(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindOrder',
-        request,
-        metadata || {},
-        this.methodInfoFindOrder,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindOrder',
-    request,
-    metadata || {},
-    this.methodInfoFindOrder);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindOrder',
+      request,
+      metadata || {},
+      this.methodInfoFindOrder,
+      callback);
   }
 
   methodInfoDetailOrder = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2667,34 +1492,16 @@ export class Store1RPCClient {
 
   detailOrder(
     request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  detailOrder(
-    request: order_pb.Order,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  detailOrder(
-    request: order_pb.Order,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DetailOrder',
-        request,
-        metadata || {},
-        this.methodInfoDetailOrder,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DetailOrder',
-    request,
-    metadata || {},
-    this.methodInfoDetailOrder);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DetailOrder',
+      request,
+      metadata || {},
+      this.methodInfoDetailOrder,
+      callback);
   }
 
   methodInfoUpdateRemind = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2707,34 +1514,16 @@ export class Store1RPCClient {
 
   updateRemind(
     request: remind_pb.Remind,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateRemind(
-    request: remind_pb.Remind,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateRemind(
-    request: remind_pb.Remind,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateRemind',
-        request,
-        metadata || {},
-        this.methodInfoUpdateRemind,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateRemind',
-    request,
-    metadata || {},
-    this.methodInfoUpdateRemind);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateRemind',
+      request,
+      metadata || {},
+      this.methodInfoUpdateRemind,
+      callback);
   }
 
   methodInfoFindRemind = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2747,34 +1536,16 @@ export class Store1RPCClient {
 
   findRemind(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findRemind(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findRemind(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindRemind',
-        request,
-        metadata || {},
-        this.methodInfoFindRemind,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindRemind',
-    request,
-    metadata || {},
-    this.methodInfoFindRemind);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindRemind',
+      request,
+      metadata || {},
+      this.methodInfoFindRemind,
+      callback);
   }
 
   methodInfoCreateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2787,34 +1558,16 @@ export class Store1RPCClient {
 
   createSetting(
     request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createSetting(
-    request: setting_pb.Setting,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createSetting(
-    request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateSetting',
-        request,
-        metadata || {},
-        this.methodInfoCreateSetting,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateSetting',
-    request,
-    metadata || {},
-    this.methodInfoCreateSetting);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateSetting',
+      request,
+      metadata || {},
+      this.methodInfoCreateSetting,
+      callback);
   }
 
   methodInfoUpdateSetting = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2827,34 +1580,16 @@ export class Store1RPCClient {
 
   updateSetting(
     request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateSetting(
-    request: setting_pb.Setting,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateSetting(
-    request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateSetting',
-        request,
-        metadata || {},
-        this.methodInfoUpdateSetting,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateSetting',
-    request,
-    metadata || {},
-    this.methodInfoUpdateSetting);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateSetting',
+      request,
+      metadata || {},
+      this.methodInfoUpdateSetting,
+      callback);
   }
 
   methodInfoDeleteSetting = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2867,34 +1602,16 @@ export class Store1RPCClient {
 
   deleteSetting(
     request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteSetting(
-    request: setting_pb.Setting,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteSetting(
-    request: setting_pb.Setting,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteSetting',
-        request,
-        metadata || {},
-        this.methodInfoDeleteSetting,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteSetting',
-    request,
-    metadata || {},
-    this.methodInfoDeleteSetting);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteSetting',
+      request,
+      metadata || {},
+      this.methodInfoDeleteSetting,
+      callback);
   }
 
   methodInfoFindSetting = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2907,34 +1624,16 @@ export class Store1RPCClient {
 
   findSetting(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findSetting(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findSetting(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindSetting',
-        request,
-        metadata || {},
-        this.methodInfoFindSetting,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindSetting',
-    request,
-    metadata || {},
-    this.methodInfoFindSetting);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindSetting',
+      request,
+      metadata || {},
+      this.methodInfoFindSetting,
+      callback);
   }
 
   methodInfoUpgradeAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2947,34 +1646,16 @@ export class Store1RPCClient {
 
   upgradeAdapter(
     request: adapter_pb.AdapterBatch,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  upgradeAdapter(
-    request: adapter_pb.AdapterBatch,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  upgradeAdapter(
-    request: adapter_pb.AdapterBatch,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpgradeAdapter',
-        request,
-        metadata || {},
-        this.methodInfoUpgradeAdapter,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpgradeAdapter',
-    request,
-    metadata || {},
-    this.methodInfoUpgradeAdapter);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpgradeAdapter',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeAdapter,
+      callback);
   }
 
   methodInfoFindAdapter = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -2987,34 +1668,16 @@ export class Store1RPCClient {
 
   findAdapter(
     request: adapter_pb.Adapter,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findAdapter(
-    request: adapter_pb.Adapter,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findAdapter(
-    request: adapter_pb.Adapter,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindAdapter',
-        request,
-        metadata || {},
-        this.methodInfoFindAdapter,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindAdapter',
-    request,
-    metadata || {},
-    this.methodInfoFindAdapter);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindAdapter',
+      request,
+      metadata || {},
+      this.methodInfoFindAdapter,
+      callback);
   }
 
   methodInfoCreateWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3027,34 +1690,16 @@ export class Store1RPCClient {
 
   createWebPage(
     request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createWebPage(
-    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createWebPage(
-    request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateWebPage',
-        request,
-        metadata || {},
-        this.methodInfoCreateWebPage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateWebPage',
-    request,
-    metadata || {},
-    this.methodInfoCreateWebPage);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateWebPage',
+      request,
+      metadata || {},
+      this.methodInfoCreateWebPage,
+      callback);
   }
 
   methodInfoUpdateWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3067,34 +1712,16 @@ export class Store1RPCClient {
 
   updateWebPage(
     request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateWebPage(
-    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateWebPage(
-    request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateWebPage',
-        request,
-        metadata || {},
-        this.methodInfoUpdateWebPage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateWebPage',
-    request,
-    metadata || {},
-    this.methodInfoUpdateWebPage);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateWebPage',
+      request,
+      metadata || {},
+      this.methodInfoUpdateWebPage,
+      callback);
   }
 
   methodInfoDeleteWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3107,34 +1734,16 @@ export class Store1RPCClient {
 
   deleteWebPage(
     request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteWebPage(
-    request: webpage_pb.WebPage,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteWebPage(
-    request: webpage_pb.WebPage,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteWebPage',
-        request,
-        metadata || {},
-        this.methodInfoDeleteWebPage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteWebPage',
-    request,
-    metadata || {},
-    this.methodInfoDeleteWebPage);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteWebPage',
+      request,
+      metadata || {},
+      this.methodInfoDeleteWebPage,
+      callback);
   }
 
   methodInfoFindWebPage = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3147,34 +1756,16 @@ export class Store1RPCClient {
 
   findWebPage(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findWebPage(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findWebPage(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindWebPage',
-        request,
-        metadata || {},
-        this.methodInfoFindWebPage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindWebPage',
-    request,
-    metadata || {},
-    this.methodInfoFindWebPage);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindWebPage',
+      request,
+      metadata || {},
+      this.methodInfoFindWebPage,
+      callback);
   }
 
   methodInfoFindWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3187,34 +1778,16 @@ export class Store1RPCClient {
 
   findWebsite(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findWebsite(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findWebsite(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindWebsite',
-        request,
-        metadata || {},
-        this.methodInfoFindWebsite,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindWebsite',
-    request,
-    metadata || {},
-    this.methodInfoFindWebsite);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindWebsite',
+      request,
+      metadata || {},
+      this.methodInfoFindWebsite,
+      callback);
   }
 
   methodInfoUpdateWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3227,34 +1800,16 @@ export class Store1RPCClient {
 
   updateWebsite(
     request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateWebsite(
-    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateWebsite(
-    request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateWebsite',
-        request,
-        metadata || {},
-        this.methodInfoUpdateWebsite,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateWebsite',
-    request,
-    metadata || {},
-    this.methodInfoUpdateWebsite);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateWebsite',
+      request,
+      metadata || {},
+      this.methodInfoUpdateWebsite,
+      callback);
   }
 
   methodInfoFindNav = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3267,34 +1822,16 @@ export class Store1RPCClient {
 
   findNav(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findNav(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findNav(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindNav',
-        request,
-        metadata || {},
-        this.methodInfoFindNav,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindNav',
-    request,
-    metadata || {},
-    this.methodInfoFindNav);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindNav',
+      request,
+      metadata || {},
+      this.methodInfoFindNav,
+      callback);
   }
 
   methodInfoUpdateNav = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3307,34 +1844,16 @@ export class Store1RPCClient {
 
   updateNav(
     request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateNav(
-    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateNav(
-    request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateNav',
-        request,
-        metadata || {},
-        this.methodInfoUpdateNav,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateNav',
-    request,
-    metadata || {},
-    this.methodInfoUpdateNav);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateNav',
+      request,
+      metadata || {},
+      this.methodInfoUpdateNav,
+      callback);
   }
 
   methodInfoFindFooter = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3347,34 +1866,16 @@ export class Store1RPCClient {
 
   findFooter(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findFooter(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findFooter(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindFooter',
-        request,
-        metadata || {},
-        this.methodInfoFindFooter,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindFooter',
-    request,
-    metadata || {},
-    this.methodInfoFindFooter);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindFooter',
+      request,
+      metadata || {},
+      this.methodInfoFindFooter,
+      callback);
   }
 
   methodInfoUpdateFooter = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3387,34 +1888,16 @@ export class Store1RPCClient {
 
   updateFooter(
     request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateFooter(
-    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateFooter(
-    request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateFooter',
-        request,
-        metadata || {},
-        this.methodInfoUpdateFooter,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateFooter',
-    request,
-    metadata || {},
-    this.methodInfoUpdateFooter);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateFooter',
+      request,
+      metadata || {},
+      this.methodInfoUpdateFooter,
+      callback);
   }
 
   methodInfoFindLayout = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3427,34 +1910,16 @@ export class Store1RPCClient {
 
   findLayout(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findLayout(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findLayout(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindLayout',
-        request,
-        metadata || {},
-        this.methodInfoFindLayout,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindLayout',
-    request,
-    metadata || {},
-    this.methodInfoFindLayout);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindLayout',
+      request,
+      metadata || {},
+      this.methodInfoFindLayout,
+      callback);
   }
 
   methodInfoUpdateLayout = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3467,34 +1932,16 @@ export class Store1RPCClient {
 
   updateLayout(
     request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateLayout(
-    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateLayout(
-    request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateLayout',
-        request,
-        metadata || {},
-        this.methodInfoUpdateLayout,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateLayout',
-    request,
-    metadata || {},
-    this.methodInfoUpdateLayout);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateLayout',
+      request,
+      metadata || {},
+      this.methodInfoUpdateLayout,
+      callback);
   }
 
   methodInfoFindMenu = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3507,34 +1954,16 @@ export class Store1RPCClient {
 
   findMenu(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findMenu(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findMenu(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindMenu',
-        request,
-        metadata || {},
-        this.methodInfoFindMenu,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindMenu',
-    request,
-    metadata || {},
-    this.methodInfoFindMenu);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindMenu',
+      request,
+      metadata || {},
+      this.methodInfoFindMenu,
+      callback);
   }
 
   methodInfoUpdateMenu = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3547,34 +1976,16 @@ export class Store1RPCClient {
 
   updateMenu(
     request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateMenu(
-    request: website_pb.Website,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateMenu(
-    request: website_pb.Website,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateMenu',
-        request,
-        metadata || {},
-        this.methodInfoUpdateMenu,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateMenu',
-    request,
-    metadata || {},
-    this.methodInfoUpdateMenu);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateMenu',
+      request,
+      metadata || {},
+      this.methodInfoUpdateMenu,
+      callback);
   }
 
   methodInfoCreateFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3587,34 +1998,16 @@ export class Store1RPCClient {
 
   createFreeback(
     request: freeback_pb.Freeback,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createFreeback(
-    request: freeback_pb.Freeback,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createFreeback(
-    request: freeback_pb.Freeback,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateFreeback',
-        request,
-        metadata || {},
-        this.methodInfoCreateFreeback,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateFreeback',
-    request,
-    metadata || {},
-    this.methodInfoCreateFreeback);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateFreeback',
+      request,
+      metadata || {},
+      this.methodInfoCreateFreeback,
+      callback);
   }
 
   methodInfoReadFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3627,34 +2020,16 @@ export class Store1RPCClient {
 
   readFreeback(
     request: freeback_pb.Freeback,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  readFreeback(
-    request: freeback_pb.Freeback,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  readFreeback(
-    request: freeback_pb.Freeback,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/ReadFreeback',
-        request,
-        metadata || {},
-        this.methodInfoReadFreeback,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/ReadFreeback',
-    request,
-    metadata || {},
-    this.methodInfoReadFreeback);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/ReadFreeback',
+      request,
+      metadata || {},
+      this.methodInfoReadFreeback,
+      callback);
   }
 
   methodInfoAppendFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3667,34 +2042,16 @@ export class Store1RPCClient {
 
   appendFreeback(
     request: freeback_pb.Dialogue,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  appendFreeback(
-    request: freeback_pb.Dialogue,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  appendFreeback(
-    request: freeback_pb.Dialogue,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/AppendFreeback',
-        request,
-        metadata || {},
-        this.methodInfoAppendFreeback,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/AppendFreeback',
-    request,
-    metadata || {},
-    this.methodInfoAppendFreeback);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/AppendFreeback',
+      request,
+      metadata || {},
+      this.methodInfoAppendFreeback,
+      callback);
   }
 
   methodInfoFindFreeback = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3707,34 +2064,16 @@ export class Store1RPCClient {
 
   findFreeback(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findFreeback(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findFreeback(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindFreeback',
-        request,
-        metadata || {},
-        this.methodInfoFindFreeback,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindFreeback',
-    request,
-    metadata || {},
-    this.methodInfoFindFreeback);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindFreeback',
+      request,
+      metadata || {},
+      this.methodInfoFindFreeback,
+      callback);
   }
 
   methodInfoSMS = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3747,34 +2086,16 @@ export class Store1RPCClient {
 
   sMS(
     request: message_pb.Message,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  sMS(
-    request: message_pb.Message,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  sMS(
-    request: message_pb.Message,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/SMS',
-        request,
-        metadata || {},
-        this.methodInfoSMS,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/SMS',
-    request,
-    metadata || {},
-    this.methodInfoSMS);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/SMS',
+      request,
+      metadata || {},
+      this.methodInfoSMS,
+      callback);
   }
 
   methodInfoEDM = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3787,34 +2108,16 @@ export class Store1RPCClient {
 
   eDM(
     request: message_pb.Message,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  eDM(
-    request: message_pb.Message,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  eDM(
-    request: message_pb.Message,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/EDM',
-        request,
-        metadata || {},
-        this.methodInfoEDM,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/EDM',
-    request,
-    metadata || {},
-    this.methodInfoEDM);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/EDM',
+      request,
+      metadata || {},
+      this.methodInfoEDM,
+      callback);
   }
 
   methodInfoFindMessage = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3827,34 +2130,16 @@ export class Store1RPCClient {
 
   findMessage(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findMessage(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findMessage(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindMessage',
-        request,
-        metadata || {},
-        this.methodInfoFindMessage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindMessage',
-    request,
-    metadata || {},
-    this.methodInfoFindMessage);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindMessage',
+      request,
+      metadata || {},
+      this.methodInfoFindMessage,
+      callback);
   }
 
   methodInfoUpgradeDomain = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3867,34 +2152,16 @@ export class Store1RPCClient {
 
   upgradeDomain(
     request: domain_pb.Domain,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  upgradeDomain(
-    request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  upgradeDomain(
-    request: domain_pb.Domain,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpgradeDomain',
-        request,
-        metadata || {},
-        this.methodInfoUpgradeDomain,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpgradeDomain',
-    request,
-    metadata || {},
-    this.methodInfoUpgradeDomain);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpgradeDomain',
+      request,
+      metadata || {},
+      this.methodInfoUpgradeDomain,
+      callback);
   }
 
   methodInfoDeleteDomain = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3907,34 +2174,16 @@ export class Store1RPCClient {
 
   deleteDomain(
     request: domain_pb.Domain,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteDomain(
-    request: domain_pb.Domain,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteDomain(
-    request: domain_pb.Domain,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteDomain',
-        request,
-        metadata || {},
-        this.methodInfoDeleteDomain,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteDomain',
-    request,
-    metadata || {},
-    this.methodInfoDeleteDomain);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteDomain',
+      request,
+      metadata || {},
+      this.methodInfoDeleteDomain,
+      callback);
   }
 
   methodInfoFindDomain = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3947,34 +2196,16 @@ export class Store1RPCClient {
 
   findDomain(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findDomain(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findDomain(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindDomain',
-        request,
-        metadata || {},
-        this.methodInfoFindDomain,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindDomain',
-    request,
-    metadata || {},
-    this.methodInfoFindDomain);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindDomain',
+      request,
+      metadata || {},
+      this.methodInfoFindDomain,
+      callback);
   }
 
   methodInfoCreateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -3987,34 +2218,16 @@ export class Store1RPCClient {
 
   createTemplate(
     request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  createTemplate(
-    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  createTemplate(
-    request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/CreateTemplate',
-        request,
-        metadata || {},
-        this.methodInfoCreateTemplate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/CreateTemplate',
-    request,
-    metadata || {},
-    this.methodInfoCreateTemplate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreateTemplate',
+      request,
+      metadata || {},
+      this.methodInfoCreateTemplate,
+      callback);
   }
 
   methodInfoUpdateTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -4027,34 +2240,16 @@ export class Store1RPCClient {
 
   updateTemplate(
     request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  updateTemplate(
-    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  updateTemplate(
-    request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/UpdateTemplate',
-        request,
-        metadata || {},
-        this.methodInfoUpdateTemplate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/UpdateTemplate',
-    request,
-    metadata || {},
-    this.methodInfoUpdateTemplate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdateTemplate',
+      request,
+      metadata || {},
+      this.methodInfoUpdateTemplate,
+      callback);
   }
 
   methodInfoDeleteTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -4067,34 +2262,16 @@ export class Store1RPCClient {
 
   deleteTemplate(
     request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  deleteTemplate(
-    request: template_pb.Template,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  deleteTemplate(
-    request: template_pb.Template,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/DeleteTemplate',
-        request,
-        metadata || {},
-        this.methodInfoDeleteTemplate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/DeleteTemplate',
-    request,
-    metadata || {},
-    this.methodInfoDeleteTemplate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/DeleteTemplate',
+      request,
+      metadata || {},
+      this.methodInfoDeleteTemplate,
+      callback);
   }
 
   methodInfoFindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -4107,34 +2284,16 @@ export class Store1RPCClient {
 
   findTemplate(
     request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findTemplate(
-    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findTemplate(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindTemplate',
-        request,
-        metadata || {},
-        this.methodInfoFindTemplate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindTemplate',
-    request,
-    metadata || {},
-    this.methodInfoFindTemplate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindTemplate',
+      request,
+      metadata || {},
+      this.methodInfoFindTemplate,
+      callback);
   }
 
   methodInfoFindRemindTemplate = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -4147,34 +2306,16 @@ export class Store1RPCClient {
 
   findRemindTemplate(
     request: remind_pb.Remind,
-    metadata: grpcWeb.Metadata | null): Promise<sql_pb.Response>;
-
-  findRemindTemplate(
-    request: remind_pb.Remind,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void): grpcWeb.ClientReadableStream<sql_pb.Response>;
-
-  findRemindTemplate(
-    request: remind_pb.Remind,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/ding4.Store1RPC/FindRemindTemplate',
-        request,
-        metadata || {},
-        this.methodInfoFindRemindTemplate,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/ding4.Store1RPC/FindRemindTemplate',
-    request,
-    metadata || {},
-    this.methodInfoFindRemindTemplate);
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindRemindTemplate',
+      request,
+      metadata || {},
+      this.methodInfoFindRemindTemplate,
+      callback);
   }
 
 }

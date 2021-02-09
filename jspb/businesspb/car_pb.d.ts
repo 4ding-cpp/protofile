@@ -1,81 +1,80 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as product$goods_pb from './product-goods_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Car extends jspb.Message {
   getCarId(): string;
-  setCarId(value: string): Car;
+  setCarId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Car;
+  setStoreId(value: string): void;
 
   getCustomerId(): string;
-  setCustomerId(value: string): Car;
+  setCustomerId(value: string): void;
 
   getCouponId(): string;
-  setCouponId(value: string): Car;
+  setCouponId(value: string): void;
 
   getState(): number;
-  setState(value: number): Car;
+  setState(value: number): void;
 
   getBuyList(): Array<Buy>;
-  setBuyList(value: Array<Buy>): Car;
-  clearBuyList(): Car;
+  setBuyList(value: Array<Buy>): void;
+  clearBuyList(): void;
   addBuy(value?: Buy, index?: number): Buy;
 
   getActivityList(): Array<product$goods_pb.ActivityGoods>;
-  setActivityList(value: Array<product$goods_pb.ActivityGoods>): Car;
-  clearActivityList(): Car;
+  setActivityList(value: Array<product$goods_pb.ActivityGoods>): void;
+  clearActivityList(): void;
   addActivity(value?: product$goods_pb.ActivityGoods, index?: number): product$goods_pb.ActivityGoods;
 
   getGoodsList(): Array<product$goods_pb.ProductGoods>;
-  setGoodsList(value: Array<product$goods_pb.ProductGoods>): Car;
-  clearGoodsList(): Car;
+  setGoodsList(value: Array<product$goods_pb.ProductGoods>): void;
+  clearGoodsList(): void;
   addGoods(value?: product$goods_pb.ProductGoods, index?: number): product$goods_pb.ProductGoods;
 
   getIsFreeShipping(): boolean;
-  setIsFreeShipping(value: boolean): Car;
+  setIsFreeShipping(value: boolean): void;
 
   getAmount(): number;
-  setAmount(value: number): Car;
+  setAmount(value: number): void;
 
   getPrice(): number;
-  setPrice(value: number): Car;
+  setPrice(value: number): void;
 
   getDiscount(): number;
-  setDiscount(value: number): Car;
+  setDiscount(value: number): void;
 
   getOperator(): string;
-  setOperator(value: string): Car;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Car;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Car;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Car;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Car;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Car;
-  clearColsList(): Car;
-  addCols(value: string, index?: number): Car;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Car;
-  clearConditionList(): Car;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Car;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Car;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Car.AsObject;
@@ -110,13 +109,13 @@ export namespace Car {
 
 export class Buy extends jspb.Message {
   getShellId(): number;
-  setShellId(value: number): Buy;
+  setShellId(value: number): void;
 
   getSku(): string;
-  setSku(value: string): Buy;
+  setSku(value: string): void;
 
   getAmount(): number;
-  setAmount(value: number): Buy;
+  setAmount(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Buy.AsObject;

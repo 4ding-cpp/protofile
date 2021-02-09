@@ -7,8 +7,6 @@
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -1020,10 +1018,8 @@ proto.ding4.ProductTarget.deserializeBinaryFromReader = function(msg, reader) {
       msg.addClass(value);
       break;
     case 2:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addItems(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+      msg.setItemsList(value);
       break;
     default:
       reader.skipField();
@@ -1829,10 +1825,8 @@ proto.ding4.Layout.deserializeBinaryFromReader = function(msg, reader) {
       msg.addImage(value);
       break;
     case 7:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addItems(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+      msg.setItemsList(value);
       break;
     case 8:
       var value = new template_pb.Template;

@@ -1,56 +1,55 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Domain extends jspb.Message {
   getId(): number;
-  setId(value: number): Domain;
+  setId(value: number): void;
 
   getName(): string;
-  setName(value: string): Domain;
+  setName(value: string): void;
 
   getState(): number;
-  setState(value: number): Domain;
+  setState(value: number): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): Domain;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Domain;
+  setStoreId(value: string): void;
 
   getCustom(): boolean;
-  setCustom(value: boolean): Domain;
+  setCustom(value: boolean): void;
 
   getOperator(): string;
-  setOperator(value: string): Domain;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Domain;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Domain;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Domain;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Domain;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Domain;
-  clearColsList(): Domain;
-  addCols(value: string, index?: number): Domain;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Domain;
-  clearConditionList(): Domain;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Domain;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Domain;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Domain.AsObject;

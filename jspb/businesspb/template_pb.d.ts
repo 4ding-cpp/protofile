@@ -1,62 +1,61 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Template extends jspb.Message {
   getTemplateId(): string;
-  setTemplateId(value: string): Template;
+  setTemplateId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Template;
+  setStoreId(value: string): void;
 
   getName(): string;
-  setName(value: string): Template;
+  setName(value: string): void;
 
   getGroupId(): string;
-  setGroupId(value: string): Template;
+  setGroupId(value: string): void;
 
   getLanguage(): string;
-  setLanguage(value: string): Template;
+  setLanguage(value: string): void;
 
   getTitle(): string;
-  setTitle(value: string): Template;
+  setTitle(value: string): void;
 
   getIsHtml(): boolean;
-  setIsHtml(value: boolean): Template;
+  setIsHtml(value: boolean): void;
 
   getIsCustomer(): boolean;
-  setIsCustomer(value: boolean): Template;
+  setIsCustomer(value: boolean): void;
 
   getContent(): string;
-  setContent(value: string): Template;
+  setContent(value: string): void;
 
   getIdx(): number;
-  setIdx(value: number): Template;
+  setIdx(value: number): void;
 
   getOperator(): string;
-  setOperator(value: string): Template;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Template;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Template;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Template;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Template;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Template;
-  clearColsList(): Template;
-  addCols(value: string, index?: number): Template;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Template;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Template;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Template.AsObject;

@@ -1,88 +1,87 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as permission_pb from './permission_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Manager extends jspb.Message {
   getManagerId(): string;
-  setManagerId(value: string): Manager;
+  setManagerId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): Manager;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): Manager;
+  setStoreId(value: string): void;
 
   getStatus(): number;
-  setStatus(value: number): Manager;
+  setStatus(value: number): void;
 
   getName(): string;
-  setName(value: string): Manager;
+  setName(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): Manager;
+  setEmail(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): Manager;
+  setPhone(value: string): void;
 
   getPassword(): string;
-  setPassword(value: string): Manager;
+  setPassword(value: string): void;
 
   getPhoneVerify(): boolean;
-  setPhoneVerify(value: boolean): Manager;
+  setPhoneVerify(value: boolean): void;
 
   getEmailVerify(): boolean;
-  setEmailVerify(value: boolean): Manager;
+  setEmailVerify(value: boolean): void;
 
   getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): Manager;
-  clearPermissionList(): Manager;
+  setPermissionList(value: Array<permission_pb.Option>): void;
+  clearPermissionList(): void;
   addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
 
   getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): Manager;
-  clearWhiteList(): Manager;
-  addWhite(value: string, index?: number): Manager;
+  setWhiteList(value: Array<string>): void;
+  clearWhiteList(): void;
+  addWhite(value: string, index?: number): void;
 
   getOtpToken(): string;
-  setOtpToken(value: string): Manager;
+  setOtpToken(value: string): void;
 
   getOtpCode(): string;
-  setOtpCode(value: string): Manager;
+  setOtpCode(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Manager;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Manager;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Manager;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Manager;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Manager;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Manager;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Manager;
-  clearColsList(): Manager;
-  addCols(value: string, index?: number): Manager;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Manager;
-  clearConditionList(): Manager;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Manager;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Manager;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Manager.AsObject;
@@ -120,78 +119,78 @@ export namespace Manager {
 
 export class ManagerSub extends jspb.Message {
   getSubId(): string;
-  setSubId(value: string): ManagerSub;
+  setSubId(value: string): void;
 
   getManagerId(): string;
-  setManagerId(value: string): ManagerSub;
+  setManagerId(value: string): void;
 
   getBusinessId(): string;
-  setBusinessId(value: string): ManagerSub;
+  setBusinessId(value: string): void;
 
   getStoreId(): string;
-  setStoreId(value: string): ManagerSub;
+  setStoreId(value: string): void;
 
   getStatus(): number;
-  setStatus(value: number): ManagerSub;
+  setStatus(value: number): void;
 
   getName(): string;
-  setName(value: string): ManagerSub;
+  setName(value: string): void;
 
   getEmail(): string;
-  setEmail(value: string): ManagerSub;
+  setEmail(value: string): void;
 
   getPhone(): string;
-  setPhone(value: string): ManagerSub;
+  setPhone(value: string): void;
 
   getPassword(): string;
-  setPassword(value: string): ManagerSub;
+  setPassword(value: string): void;
 
   getPhoneVerify(): boolean;
-  setPhoneVerify(value: boolean): ManagerSub;
+  setPhoneVerify(value: boolean): void;
 
   getEmailVerify(): boolean;
-  setEmailVerify(value: boolean): ManagerSub;
+  setEmailVerify(value: boolean): void;
 
   getPermissionList(): Array<permission_pb.Option>;
-  setPermissionList(value: Array<permission_pb.Option>): ManagerSub;
-  clearPermissionList(): ManagerSub;
+  setPermissionList(value: Array<permission_pb.Option>): void;
+  clearPermissionList(): void;
   addPermission(value?: permission_pb.Option, index?: number): permission_pb.Option;
 
   getWhiteList(): Array<string>;
-  setWhiteList(value: Array<string>): ManagerSub;
-  clearWhiteList(): ManagerSub;
-  addWhite(value: string, index?: number): ManagerSub;
+  setWhiteList(value: Array<string>): void;
+  clearWhiteList(): void;
+  addWhite(value: string, index?: number): void;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): ManagerSub;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): ManagerSub;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): ManagerSub;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): ManagerSub;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): ManagerSub;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): ManagerSub;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): ManagerSub;
-  clearColsList(): ManagerSub;
-  addCols(value: string, index?: number): ManagerSub;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): ManagerSub;
-  clearConditionList(): ManagerSub;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): ManagerSub;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): ManagerSub;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagerSub.AsObject;

@@ -1,4 +1,4 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as seo_pb from './seo_pb';
 import * as sql_pb from './sql_pb';
@@ -6,84 +6,83 @@ import * as a$submessage_pb from './a-submessage_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
-
 export class Website extends jspb.Message {
   getStoreId(): string;
-  setStoreId(value: string): Website;
+  setStoreId(value: string): void;
 
   getStyle(): number;
-  setStyle(value: number): Website;
+  setStyle(value: number): void;
 
   getLogo(): a$submessage_pb.Image | undefined;
-  setLogo(value?: a$submessage_pb.Image): Website;
+  setLogo(value?: a$submessage_pb.Image): void;
   hasLogo(): boolean;
-  clearLogo(): Website;
+  clearLogo(): void;
 
   getStyleColor(): a$submessage_pb.StyleColor | undefined;
-  setStyleColor(value?: a$submessage_pb.StyleColor): Website;
+  setStyleColor(value?: a$submessage_pb.StyleColor): void;
   hasStyleColor(): boolean;
-  clearStyleColor(): Website;
+  clearStyleColor(): void;
 
   getFavicon(): a$submessage_pb.Image | undefined;
-  setFavicon(value?: a$submessage_pb.Image): Website;
+  setFavicon(value?: a$submessage_pb.Image): void;
   hasFavicon(): boolean;
-  clearFavicon(): Website;
+  clearFavicon(): void;
 
   getSeo(): seo_pb.SEO | undefined;
-  setSeo(value?: seo_pb.SEO): Website;
+  setSeo(value?: seo_pb.SEO): void;
   hasSeo(): boolean;
-  clearSeo(): Website;
+  clearSeo(): void;
 
   getNavList(): Array<a$submessage_pb.Nav>;
-  setNavList(value: Array<a$submessage_pb.Nav>): Website;
-  clearNavList(): Website;
+  setNavList(value: Array<a$submessage_pb.Nav>): void;
+  clearNavList(): void;
   addNav(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
   getMenuList(): Array<a$submessage_pb.Nav>;
-  setMenuList(value: Array<a$submessage_pb.Nav>): Website;
-  clearMenuList(): Website;
+  setMenuList(value: Array<a$submessage_pb.Nav>): void;
+  clearMenuList(): void;
   addMenu(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
   getFooterList(): Array<a$submessage_pb.Nav>;
-  setFooterList(value: Array<a$submessage_pb.Nav>): Website;
-  clearFooterList(): Website;
+  setFooterList(value: Array<a$submessage_pb.Nav>): void;
+  clearFooterList(): void;
   addFooter(value?: a$submessage_pb.Nav, index?: number): a$submessage_pb.Nav;
 
   getLayoutList(): Array<a$submessage_pb.Layout>;
-  setLayoutList(value: Array<a$submessage_pb.Layout>): Website;
-  clearLayoutList(): Website;
+  setLayoutList(value: Array<a$submessage_pb.Layout>): void;
+  clearLayoutList(): void;
   addLayout(value?: a$submessage_pb.Layout, index?: number): a$submessage_pb.Layout;
 
   getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): Website;
+  clearLabelxMap(): void;
 
   getOperator(): string;
-  setOperator(value: string): Website;
+  setOperator(value: string): void;
 
   getCreateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): Website;
+  setCreateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasCreateAt(): boolean;
-  clearCreateAt(): Website;
+  clearCreateAt(): void;
 
   getUpdateAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): Website;
+  setUpdateAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
   hasUpdateAt(): boolean;
-  clearUpdateAt(): Website;
+  clearUpdateAt(): void;
 
   getColsList(): Array<string>;
-  setColsList(value: Array<string>): Website;
-  clearColsList(): Website;
-  addCols(value: string, index?: number): Website;
+  setColsList(value: Array<string>): void;
+  clearColsList(): void;
+  addCols(value: string, index?: number): void;
 
   getConditionList(): Array<sql_pb.Condition>;
-  setConditionList(value: Array<sql_pb.Condition>): Website;
-  clearConditionList(): Website;
+  setConditionList(value: Array<sql_pb.Condition>): void;
+  clearConditionList(): void;
   addCondition(value?: sql_pb.Condition, index?: number): sql_pb.Condition;
 
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
-  setSelf(value?: google_protobuf_struct_pb.Struct): Website;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
-  clearSelf(): Website;
+  clearSelf(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Website.AsObject;

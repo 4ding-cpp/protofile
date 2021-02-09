@@ -1,17 +1,16 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf"
 
 import * as browse_pb from './browse_pb';
 
-
 export class Businessboard extends jspb.Message {
   getDashboard(): Storeboard | undefined;
-  setDashboard(value?: Storeboard): Businessboard;
+  setDashboard(value?: Storeboard): void;
   hasDashboard(): boolean;
-  clearDashboard(): Businessboard;
+  clearDashboard(): void;
 
   getStoresList(): Array<Storeboard>;
-  setStoresList(value: Array<Storeboard>): Businessboard;
-  clearStoresList(): Businessboard;
+  setStoresList(value: Array<Storeboard>): void;
+  clearStoresList(): void;
   addStores(value?: Storeboard, index?: number): Storeboard;
 
   serializeBinary(): Uint8Array;
@@ -31,13 +30,13 @@ export namespace Businessboard {
 
 export class Storeboard extends jspb.Message {
   getTotal(): browse_pb.Browse | undefined;
-  setTotal(value?: browse_pb.Browse): Storeboard;
+  setTotal(value?: browse_pb.Browse): void;
   hasTotal(): boolean;
-  clearTotal(): Storeboard;
+  clearTotal(): void;
 
   getRecentList(): Array<browse_pb.Browse>;
-  setRecentList(value: Array<browse_pb.Browse>): Storeboard;
-  clearRecentList(): Storeboard;
+  setRecentList(value: Array<browse_pb.Browse>): void;
+  clearRecentList(): void;
   addRecent(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   serializeBinary(): Uint8Array;
@@ -57,19 +56,19 @@ export namespace Storeboard {
 
 export class Rankboard extends jspb.Message {
   getToday(): Rank | undefined;
-  setToday(value?: Rank): Rankboard;
+  setToday(value?: Rank): void;
   hasToday(): boolean;
-  clearToday(): Rankboard;
+  clearToday(): void;
 
   getWeek(): Rank | undefined;
-  setWeek(value?: Rank): Rankboard;
+  setWeek(value?: Rank): void;
   hasWeek(): boolean;
-  clearWeek(): Rankboard;
+  clearWeek(): void;
 
   getMonth(): Rank | undefined;
-  setMonth(value?: Rank): Rankboard;
+  setMonth(value?: Rank): void;
   hasMonth(): boolean;
-  clearMonth(): Rankboard;
+  clearMonth(): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rankboard.AsObject;
@@ -89,28 +88,28 @@ export namespace Rankboard {
 
 export class Rank extends jspb.Message {
   getBrowseList(): Array<browse_pb.Browse>;
-  setBrowseList(value: Array<browse_pb.Browse>): Rank;
-  clearBrowseList(): Rank;
+  setBrowseList(value: Array<browse_pb.Browse>): void;
+  clearBrowseList(): void;
   addBrowse(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   getOrdersList(): Array<browse_pb.Browse>;
-  setOrdersList(value: Array<browse_pb.Browse>): Rank;
-  clearOrdersList(): Rank;
+  setOrdersList(value: Array<browse_pb.Browse>): void;
+  clearOrdersList(): void;
   addOrders(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   getAmountList(): Array<browse_pb.Browse>;
-  setAmountList(value: Array<browse_pb.Browse>): Rank;
-  clearAmountList(): Rank;
+  setAmountList(value: Array<browse_pb.Browse>): void;
+  clearAmountList(): void;
   addAmount(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   getPriceList(): Array<browse_pb.Browse>;
-  setPriceList(value: Array<browse_pb.Browse>): Rank;
-  clearPriceList(): Rank;
+  setPriceList(value: Array<browse_pb.Browse>): void;
+  clearPriceList(): void;
   addPrice(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   getFreightList(): Array<browse_pb.Browse>;
-  setFreightList(value: Array<browse_pb.Browse>): Rank;
-  clearFreightList(): Rank;
+  setFreightList(value: Array<browse_pb.Browse>): void;
+  clearFreightList(): void;
   addFreight(value?: browse_pb.Browse, index?: number): browse_pb.Browse;
 
   serializeBinary(): Uint8Array;
