@@ -222,6 +222,7 @@ service BusinessRPC {
     // 物流相關
     rpc CreateLogistics(OrderBatch) returns (Response);
     rpc CreateReturn(Order) returns (Response);
+    rpc FindOrderFlow(Query) returns (Response);
 
     // 網域相關
     rpc UpgradeDomain(Domain) returns (Response);
