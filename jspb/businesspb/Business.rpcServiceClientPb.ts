@@ -1681,6 +1681,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoUpdateOrderOther = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateOrderOther(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateOrderOther',
+      request,
+      metadata || {},
+      this.methodInfoUpdateOrderOther,
+      callback);
+  }
+
   methodInfoPickUpGoods = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
