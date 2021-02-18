@@ -2914,7 +2914,8 @@ proto.ding4.ContactInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    cellPhone: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     cvs: (f = msg.getCvs()) && proto.ding4.ContactInfo.CVS.toObject(includeInstance, f),
     address: (f = msg.getAddress()) && proto.ding4.ContactInfo.Address.toObject(includeInstance, f)
   };
@@ -2963,14 +2964,18 @@ proto.ding4.ContactInfo.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setCellPhone(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
+      break;
+    case 5:
       var value = new proto.ding4.ContactInfo.CVS;
       reader.readMessage(value,proto.ding4.ContactInfo.CVS.deserializeBinaryFromReader);
       msg.setCvs(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.ding4.ContactInfo.Address;
       reader.readMessage(value,proto.ding4.ContactInfo.Address.deserializeBinaryFromReader);
       msg.setAddress(value);
@@ -3018,17 +3023,24 @@ proto.ding4.ContactInfo.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEmail();
+  f = message.getCellPhone();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getCvs();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.ding4.ContactInfo.CVS.serializeBinaryToWriter
     );
@@ -3036,7 +3048,7 @@ proto.ding4.ContactInfo.serializeBinaryToWriter = function(message, writer) {
   f = message.getAddress();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.ding4.ContactInfo.Address.serializeBinaryToWriter
     );
@@ -3551,10 +3563,10 @@ proto.ding4.ContactInfo.prototype.setPhone = function(value) {
 
 
 /**
- * optional string email = 3;
+ * optional string cell_phone = 3;
  * @return {string}
  */
-proto.ding4.ContactInfo.prototype.getEmail = function() {
+proto.ding4.ContactInfo.prototype.getCellPhone = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -3563,18 +3575,36 @@ proto.ding4.ContactInfo.prototype.getEmail = function() {
  * @param {string} value
  * @return {!proto.ding4.ContactInfo} returns this
  */
-proto.ding4.ContactInfo.prototype.setEmail = function(value) {
+proto.ding4.ContactInfo.prototype.setCellPhone = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional CVS cvs = 4;
+ * optional string email = 4;
+ * @return {string}
+ */
+proto.ding4.ContactInfo.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.ContactInfo} returns this
+ */
+proto.ding4.ContactInfo.prototype.setEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional CVS cvs = 5;
  * @return {?proto.ding4.ContactInfo.CVS}
  */
 proto.ding4.ContactInfo.prototype.getCvs = function() {
   return /** @type{?proto.ding4.ContactInfo.CVS} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo.CVS, 4));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo.CVS, 5));
 };
 
 
@@ -3583,7 +3613,7 @@ proto.ding4.ContactInfo.prototype.getCvs = function() {
  * @return {!proto.ding4.ContactInfo} returns this
 */
 proto.ding4.ContactInfo.prototype.setCvs = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -3601,17 +3631,17 @@ proto.ding4.ContactInfo.prototype.clearCvs = function() {
  * @return {boolean}
  */
 proto.ding4.ContactInfo.prototype.hasCvs = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional Address address = 5;
+ * optional Address address = 6;
  * @return {?proto.ding4.ContactInfo.Address}
  */
 proto.ding4.ContactInfo.prototype.getAddress = function() {
   return /** @type{?proto.ding4.ContactInfo.Address} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo.Address, 5));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo.Address, 6));
 };
 
 
@@ -3620,7 +3650,7 @@ proto.ding4.ContactInfo.prototype.getAddress = function() {
  * @return {!proto.ding4.ContactInfo} returns this
 */
 proto.ding4.ContactInfo.prototype.setAddress = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -3638,7 +3668,7 @@ proto.ding4.ContactInfo.prototype.clearAddress = function() {
  * @return {boolean}
  */
 proto.ding4.ContactInfo.prototype.hasAddress = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

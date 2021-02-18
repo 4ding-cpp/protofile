@@ -355,6 +355,9 @@ export class ContactInfo extends jspb.Message {
   getPhone(): string;
   setPhone(value: string): void;
 
+  getCellPhone(): string;
+  setCellPhone(value: string): void;
+
   getEmail(): string;
   setEmail(value: string): void;
 
@@ -380,6 +383,7 @@ export namespace ContactInfo {
   export type AsObject = {
     name: string,
     phone: string,
+    cellPhone: string,
     email: string,
     cvs?: ContactInfo.CVS.AsObject,
     address?: ContactInfo.Address.AsObject,
