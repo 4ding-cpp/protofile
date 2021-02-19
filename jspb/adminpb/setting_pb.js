@@ -103,7 +103,8 @@ proto.ding4.Setting.toObject = function(includeInstance, msg) {
   var f, obj = {
     settingId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    service: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    conf: jspb.Message.getFieldWithDefault(msg, 4, ""),
     data: (f = msg.getData()) && proto.ding4.SetData.toObject(includeInstance, f),
     operator: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -158,9 +159,13 @@ proto.ding4.Setting.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setService(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConf(value);
+      break;
+    case 5:
       var value = new proto.ding4.SetData;
       reader.readMessage(value,proto.ding4.SetData.deserializeBinaryFromReader);
       msg.setData(value);
@@ -236,17 +241,24 @@ proto.ding4.Setting.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getType();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getConf();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getData();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.ding4.SetData.serializeBinaryToWriter
     );
@@ -337,10 +349,10 @@ proto.ding4.Setting.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string type = 3;
+ * optional string service = 3;
  * @return {string}
  */
-proto.ding4.Setting.prototype.getType = function() {
+proto.ding4.Setting.prototype.getService = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -349,18 +361,36 @@ proto.ding4.Setting.prototype.getType = function() {
  * @param {string} value
  * @return {!proto.ding4.Setting} returns this
  */
-proto.ding4.Setting.prototype.setType = function(value) {
+proto.ding4.Setting.prototype.setService = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional SetData data = 4;
+ * optional string conf = 4;
+ * @return {string}
+ */
+proto.ding4.Setting.prototype.getConf = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Setting} returns this
+ */
+proto.ding4.Setting.prototype.setConf = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional SetData data = 5;
  * @return {?proto.ding4.SetData}
  */
 proto.ding4.Setting.prototype.getData = function() {
   return /** @type{?proto.ding4.SetData} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.SetData, 4));
+    jspb.Message.getWrapperField(this, proto.ding4.SetData, 5));
 };
 
 
@@ -369,7 +399,7 @@ proto.ding4.Setting.prototype.getData = function() {
  * @return {!proto.ding4.Setting} returns this
 */
 proto.ding4.Setting.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -387,7 +417,7 @@ proto.ding4.Setting.prototype.clearData = function() {
  * @return {boolean}
  */
 proto.ding4.Setting.prototype.hasData = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -634,13 +664,13 @@ proto.ding4.SetData.toObject = function(includeInstance, msg) {
     storeOpen: jspb.Message.getFieldWithDefault(msg, 5, ""),
     copyright: jspb.Message.getFieldWithDefault(msg, 6, ""),
     facebook: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    senderName: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    senderEmail: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    senderPhone: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    senderCellPhone: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    senderZipcode: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    senderAddress: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    senderRemark: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    companyName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    companyEmail: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    companyPhone: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    companyCellPhone: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    companyZipcode: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    companyAddress: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    companyRemark: jspb.Message.getFieldWithDefault(msg, 14, ""),
     customerCancel: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
     customerReturn: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     limitCount: jspb.Message.getFieldWithDefault(msg, 17, 0),
@@ -719,31 +749,31 @@ proto.ding4.SetData.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderName(value);
+      msg.setCompanyName(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderEmail(value);
+      msg.setCompanyEmail(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderPhone(value);
+      msg.setCompanyPhone(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderCellPhone(value);
+      msg.setCompanyCellPhone(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderZipcode(value);
+      msg.setCompanyZipcode(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderAddress(value);
+      msg.setCompanyAddress(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSenderRemark(value);
+      msg.setCompanyRemark(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -871,49 +901,49 @@ proto.ding4.SetData.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSenderName();
+  f = message.getCompanyName();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getSenderEmail();
+  f = message.getCompanyEmail();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getSenderPhone();
+  f = message.getCompanyPhone();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getSenderCellPhone();
+  f = message.getCompanyCellPhone();
   if (f.length > 0) {
     writer.writeString(
       11,
       f
     );
   }
-  f = message.getSenderZipcode();
+  f = message.getCompanyZipcode();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getSenderAddress();
+  f = message.getCompanyAddress();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
-  f = message.getSenderRemark();
+  f = message.getCompanyRemark();
   if (f.length > 0) {
     writer.writeString(
       14,
@@ -1134,10 +1164,10 @@ proto.ding4.SetData.prototype.setFacebook = function(value) {
 
 
 /**
- * optional string sender_name = 8;
+ * optional string company_name = 8;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderName = function() {
+proto.ding4.SetData.prototype.getCompanyName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -1146,16 +1176,16 @@ proto.ding4.SetData.prototype.getSenderName = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderName = function(value) {
+proto.ding4.SetData.prototype.setCompanyName = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string sender_email = 9;
+ * optional string company_email = 9;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderEmail = function() {
+proto.ding4.SetData.prototype.getCompanyEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -1164,16 +1194,16 @@ proto.ding4.SetData.prototype.getSenderEmail = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderEmail = function(value) {
+proto.ding4.SetData.prototype.setCompanyEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional string sender_phone = 10;
+ * optional string company_phone = 10;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderPhone = function() {
+proto.ding4.SetData.prototype.getCompanyPhone = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -1182,16 +1212,16 @@ proto.ding4.SetData.prototype.getSenderPhone = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderPhone = function(value) {
+proto.ding4.SetData.prototype.setCompanyPhone = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string sender_cell_phone = 11;
+ * optional string company_cell_phone = 11;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderCellPhone = function() {
+proto.ding4.SetData.prototype.getCompanyCellPhone = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -1200,16 +1230,16 @@ proto.ding4.SetData.prototype.getSenderCellPhone = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderCellPhone = function(value) {
+proto.ding4.SetData.prototype.setCompanyCellPhone = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string sender_zipcode = 12;
+ * optional string company_zipcode = 12;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderZipcode = function() {
+proto.ding4.SetData.prototype.getCompanyZipcode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -1218,16 +1248,16 @@ proto.ding4.SetData.prototype.getSenderZipcode = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderZipcode = function(value) {
+proto.ding4.SetData.prototype.setCompanyZipcode = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string sender_address = 13;
+ * optional string company_address = 13;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderAddress = function() {
+proto.ding4.SetData.prototype.getCompanyAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -1236,16 +1266,16 @@ proto.ding4.SetData.prototype.getSenderAddress = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderAddress = function(value) {
+proto.ding4.SetData.prototype.setCompanyAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional string sender_remark = 14;
+ * optional string company_remark = 14;
  * @return {string}
  */
-proto.ding4.SetData.prototype.getSenderRemark = function() {
+proto.ding4.SetData.prototype.getCompanyRemark = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -1254,7 +1284,7 @@ proto.ding4.SetData.prototype.getSenderRemark = function() {
  * @param {string} value
  * @return {!proto.ding4.SetData} returns this
  */
-proto.ding4.SetData.prototype.setSenderRemark = function(value) {
+proto.ding4.SetData.prototype.setCompanyRemark = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
 

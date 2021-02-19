@@ -102,10 +102,6 @@ message OrderActivity {
 }
 
 message ContactInfo {
-    string name = 1;
-    string phone = 2;
-    string cell_phone = 3;
-    string email = 4;
     message CVS {
         string code = 1;
         string type = 2;
@@ -119,6 +115,10 @@ message ContactInfo {
         string township = 4;
         string detail = 5;
     }
+    string name = 1;
+    string phone = 2;
+    string cell_phone = 3;
+    string email = 4;
     CVS cvs = 5;
     Address address = 6;
 }

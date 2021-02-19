@@ -11,8 +11,11 @@ export class Setting extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getService(): string;
+  setService(value: string): void;
+
+  getConf(): string;
+  setConf(value: string): void;
 
   getData(): SetData | undefined;
   setData(value?: SetData): void;
@@ -59,7 +62,8 @@ export namespace Setting {
   export type AsObject = {
     settingId: string,
     storeId: string,
-    type: string,
+    service: string,
+    conf: string,
     data?: SetData.AsObject,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -92,26 +96,26 @@ export class SetData extends jspb.Message {
   getFacebook(): string;
   setFacebook(value: string): void;
 
-  getSenderName(): string;
-  setSenderName(value: string): void;
+  getCompanyName(): string;
+  setCompanyName(value: string): void;
 
-  getSenderEmail(): string;
-  setSenderEmail(value: string): void;
+  getCompanyEmail(): string;
+  setCompanyEmail(value: string): void;
 
-  getSenderPhone(): string;
-  setSenderPhone(value: string): void;
+  getCompanyPhone(): string;
+  setCompanyPhone(value: string): void;
 
-  getSenderCellPhone(): string;
-  setSenderCellPhone(value: string): void;
+  getCompanyCellPhone(): string;
+  setCompanyCellPhone(value: string): void;
 
-  getSenderZipcode(): string;
-  setSenderZipcode(value: string): void;
+  getCompanyZipcode(): string;
+  setCompanyZipcode(value: string): void;
 
-  getSenderAddress(): string;
-  setSenderAddress(value: string): void;
+  getCompanyAddress(): string;
+  setCompanyAddress(value: string): void;
 
-  getSenderRemark(): string;
-  setSenderRemark(value: string): void;
+  getCompanyRemark(): string;
+  setCompanyRemark(value: string): void;
 
   getCustomerCancel(): boolean;
   setCustomerCancel(value: boolean): void;
@@ -166,13 +170,13 @@ export namespace SetData {
     storeOpen: string,
     copyright: string,
     facebook: string,
-    senderName: string,
-    senderEmail: string,
-    senderPhone: string,
-    senderCellPhone: string,
-    senderZipcode: string,
-    senderAddress: string,
-    senderRemark: string,
+    companyName: string,
+    companyEmail: string,
+    companyPhone: string,
+    companyCellPhone: string,
+    companyZipcode: string,
+    companyAddress: string,
+    companyRemark: string,
     customerCancel: boolean,
     customerReturn: boolean,
     limitCount: number,
