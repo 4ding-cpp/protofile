@@ -52,7 +52,7 @@ message PointBill {
     string business_id = 2;
     string item = 3;
     int32 state = 4;
-    int32 amount = 5;
+    int32 price = 5;
     repeated PointDetail detail = 6;
 
     map<string, int32> labelx = 69;

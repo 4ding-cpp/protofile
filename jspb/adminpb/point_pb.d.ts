@@ -189,8 +189,8 @@ export class PointBill extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
-  getAmount(): number;
-  setAmount(value: number): void;
+  getPrice(): number;
+  setPrice(value: number): void;
 
   getDetailList(): Array<PointDetail>;
   setDetailList(value: Array<PointDetail>): void;
@@ -242,7 +242,7 @@ export namespace PointBill {
     businessId: string,
     item: string,
     state: number,
-    amount: number,
+    price: number,
     detailList: Array<PointDetail.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

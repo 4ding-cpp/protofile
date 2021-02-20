@@ -1543,7 +1543,7 @@ proto.ding4.PointBill.toObject = function(includeInstance, msg) {
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
     state: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
     detailList: jspb.Message.toObjectList(msg.getDetailList(),
     proto.ding4.PointDetail.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -1608,7 +1608,7 @@ proto.ding4.PointBill.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setAmount(value);
+      msg.setPrice(value);
       break;
     case 6:
       var value = new proto.ding4.PointDetail;
@@ -1706,7 +1706,7 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAmount();
+  f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
       5,
@@ -1847,10 +1847,10 @@ proto.ding4.PointBill.prototype.setState = function(value) {
 
 
 /**
- * optional int32 amount = 5;
+ * optional int32 price = 5;
  * @return {number}
  */
-proto.ding4.PointBill.prototype.getAmount = function() {
+proto.ding4.PointBill.prototype.getPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -1859,7 +1859,7 @@ proto.ding4.PointBill.prototype.getAmount = function() {
  * @param {number} value
  * @return {!proto.ding4.PointBill} returns this
  */
-proto.ding4.PointBill.prototype.setAmount = function(value) {
+proto.ding4.PointBill.prototype.setPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
