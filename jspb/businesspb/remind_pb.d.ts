@@ -15,11 +15,14 @@ export class Remind extends jspb.Message {
   getItem(): string;
   setItem(value: string): void;
 
-  getMode(): string;
-  setMode(value: string): void;
+  getCategory(): number;
+  setCategory(value: number): void;
 
   getDescription(): string;
   setDescription(value: string): void;
+
+  getSubject(): string;
+  setSubject(value: string): void;
 
   getIsEnable(): boolean;
   setIsEnable(value: boolean): void;
@@ -28,9 +31,6 @@ export class Remind extends jspb.Message {
   setTemplateGroupList(value: Array<template_pb.Template>): void;
   clearTemplateGroupList(): void;
   addTemplateGroup(value?: template_pb.Template, index?: number): template_pb.Template;
-
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -73,11 +73,11 @@ export namespace Remind {
     remindId: string,
     storeId: string,
     item: string,
-    mode: string,
+    category: number,
     description: string,
+    subject: string,
     isEnable: boolean,
     templateGroupList: Array<template_pb.Template.AsObject>,
-    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

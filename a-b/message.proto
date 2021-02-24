@@ -11,25 +11,18 @@ import "google/protobuf/struct.proto";
 // State => 1:預約寄送 2:發送中 3:發送完成 9:取消
 message Message {
     string message_id = 1;
-    // 1:預約發送 2.發送中 3.發送完成
     string business_id = 2;
     string store_id = 3;
     int32 state = 4; 
-    int32 type = 5;
+    int32 category = 5;
     string service = 6;
-    // 寄件總量
-    int32 total = 7;
-    // 寄件成功數量
-    int32 success = 8;
-    // 本次寄送收費
-    double charge = 9;
-    // 外部廠商寄送回應
-    google.protobuf.Value response = 10;
-
-    // 主旨
-    string subject = 11;
-    // 內容
-    string content = 12;
+    string remind_event = 7;
+    int32 total = 8;
+    int32 success = 9;
+    double charge = 10;
+    google.protobuf.Value response = 11;
+    string subject = 12;
+    string content = 13;
     // 收發訊息人員資訊
     message User {
         string name = 1;
@@ -37,27 +30,13 @@ message Message {
         string email = 3;
         string phone = 4;
     }
-    // email 寄件者
-    User from_user = 13;
-    // 要寄的人員列表
-    repeated User to_user = 14;
-    // 預定發送時間
-    google.protobuf.Timestamp scheduled_time = 15;
-
-    // newsleopard 能設定GTM
-    message GA {
-        string Enable = 1;
-        string EcommerceEnable = 2;
-        string UtmCampaign = 3;
-        string UtmContent = 4;
-    }
-    GA ga = 16;
+    User from_user = 14;
+    repeated User to_user = 15;
+    google.protobuf.Timestamp scheduled_time = 16;
     map<string, int32> opened = 17;
-    
-    map<string, int32> labelx = 18;
-    string operator = 19;
-    google.protobuf.Timestamp create_at = 20;
-    google.protobuf.Timestamp update_at = 21;
-    repeated string cols = 22;
-    google.protobuf.Struct self = 23;  
+    string operator = 18;
+    google.protobuf.Timestamp create_at = 19;
+    google.protobuf.Timestamp update_at = 20;
+    repeated string cols = 21;
+    google.protobuf.Struct self = 22;  
 }

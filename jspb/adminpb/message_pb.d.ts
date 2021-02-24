@@ -16,11 +16,14 @@ export class Message extends jspb.Message {
   getState(): number;
   setState(value: number): void;
 
-  getType(): number;
-  setType(value: number): void;
+  getCategory(): number;
+  setCategory(value: number): void;
 
   getService(): string;
   setService(value: string): void;
+
+  getRemindEvent(): string;
+  setRemindEvent(value: string): void;
 
   getTotal(): number;
   setTotal(value: number): void;
@@ -57,16 +60,8 @@ export class Message extends jspb.Message {
   hasScheduledTime(): boolean;
   clearScheduledTime(): void;
 
-  getGa(): Message.GA | undefined;
-  setGa(value?: Message.GA): void;
-  hasGa(): boolean;
-  clearGa(): void;
-
   getOpenedMap(): jspb.Map<string, number>;
   clearOpenedMap(): void;
-
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -105,8 +100,9 @@ export namespace Message {
     businessId: string,
     storeId: string,
     state: number,
-    type: number,
+    category: number,
     service: string,
+    remindEvent: string,
     total: number,
     success: number,
     charge: number,
@@ -116,9 +112,7 @@ export namespace Message {
     fromUser?: Message.User.AsObject,
     toUserList: Array<Message.User.AsObject>,
     scheduledTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    ga?: Message.GA.AsObject,
     openedMap: Array<[string, number]>,
-    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -153,37 +147,6 @@ export namespace Message {
       sex: string,
       email: string,
       phone: string,
-    }
-  }
-
-
-  export class GA extends jspb.Message {
-    getEnable(): string;
-    setEnable(value: string): void;
-
-    getEcommerceenable(): string;
-    setEcommerceenable(value: string): void;
-
-    getUtmcampaign(): string;
-    setUtmcampaign(value: string): void;
-
-    getUtmcontent(): string;
-    setUtmcontent(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): GA.AsObject;
-    static toObject(includeInstance: boolean, msg: GA): GA.AsObject;
-    static serializeBinaryToWriter(message: GA, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): GA;
-    static deserializeBinaryFromReader(message: GA, reader: jspb.BinaryReader): GA;
-  }
-
-  export namespace GA {
-    export type AsObject = {
-      enable: string,
-      ecommerceenable: string,
-      utmcampaign: string,
-      utmcontent: string,
     }
   }
 

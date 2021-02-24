@@ -48,7 +48,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.Remind.repeatedFields_ = [7,12,13];
+proto.ding4.Remind.repeatedFields_ = [8,12,13];
 
 
 
@@ -84,12 +84,12 @@ proto.ding4.Remind.toObject = function(includeInstance, msg) {
     remindId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    mode: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    category: jspb.Message.getFieldWithDefault(msg, 4, 0),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    isEnable: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    subject: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    isEnable: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
     template_pb.Template.toObject, includeInstance),
-    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 9, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -146,27 +146,25 @@ proto.ding4.Remind.deserializeBinaryFromReader = function(msg, reader) {
       msg.setItem(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMode(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCategory(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubject(value);
+      break;
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsEnable(value);
       break;
-    case 7:
+    case 8:
       var value = new template_pb.Template;
       reader.readMessage(value,template_pb.Template.deserializeBinaryFromReader);
       msg.addTemplateGroup(value);
-      break;
-    case 8:
-      var value = msg.getLabelxMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
-         });
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -246,9 +244,9 @@ proto.ding4.Remind.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMode();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCategory();
+  if (f !== 0) {
+    writer.writeInt32(
       4,
       f
     );
@@ -260,24 +258,27 @@ proto.ding4.Remind.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSubject();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getIsEnable();
   if (f) {
     writer.writeBool(
-      6,
+      7,
       f
     );
   }
   f = message.getTemplateGroupList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       template_pb.Template.serializeBinaryToWriter
     );
-  }
-  f = message.getLabelxMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -383,20 +384,20 @@ proto.ding4.Remind.prototype.setItem = function(value) {
 
 
 /**
- * optional string mode = 4;
- * @return {string}
+ * optional int32 category = 4;
+ * @return {number}
  */
-proto.ding4.Remind.prototype.getMode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.ding4.Remind.prototype.getCategory = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.ding4.Remind} returns this
  */
-proto.ding4.Remind.prototype.setMode = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.ding4.Remind.prototype.setCategory = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -419,11 +420,29 @@ proto.ding4.Remind.prototype.setDescription = function(value) {
 
 
 /**
- * optional bool is_enable = 6;
+ * optional string subject = 6;
+ * @return {string}
+ */
+proto.ding4.Remind.prototype.getSubject = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Remind} returns this
+ */
+proto.ding4.Remind.prototype.setSubject = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional bool is_enable = 7;
  * @return {boolean}
  */
 proto.ding4.Remind.prototype.getIsEnable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -432,17 +451,17 @@ proto.ding4.Remind.prototype.getIsEnable = function() {
  * @return {!proto.ding4.Remind} returns this
  */
 proto.ding4.Remind.prototype.setIsEnable = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
 /**
- * repeated Template template_group = 7;
+ * repeated Template template_group = 8;
  * @return {!Array<!proto.ding4.Template>}
  */
 proto.ding4.Remind.prototype.getTemplateGroupList = function() {
   return /** @type{!Array<!proto.ding4.Template>} */ (
-    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 7));
+    jspb.Message.getRepeatedWrapperField(this, template_pb.Template, 8));
 };
 
 
@@ -451,7 +470,7 @@ proto.ding4.Remind.prototype.getTemplateGroupList = function() {
  * @return {!proto.ding4.Remind} returns this
 */
 proto.ding4.Remind.prototype.setTemplateGroupList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -461,7 +480,7 @@ proto.ding4.Remind.prototype.setTemplateGroupList = function(value) {
  * @return {!proto.ding4.Template}
  */
 proto.ding4.Remind.prototype.addTemplateGroup = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.ding4.Template, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ding4.Template, opt_index);
 };
 
 
@@ -472,28 +491,6 @@ proto.ding4.Remind.prototype.addTemplateGroup = function(opt_value, opt_index) {
 proto.ding4.Remind.prototype.clearTemplateGroupList = function() {
   return this.setTemplateGroupList([]);
 };
-
-
-/**
- * map<string, int32> labelx = 8;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
- */
-proto.ding4.Remind.prototype.getLabelxMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.ding4.Remind} returns this
- */
-proto.ding4.Remind.prototype.clearLabelxMap = function() {
-  this.getLabelxMap().clear();
-  return this;};
 
 
 /**

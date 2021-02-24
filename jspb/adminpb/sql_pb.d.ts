@@ -35,6 +35,9 @@ export class Response extends jspb.Message {
   hasResult(): boolean;
   clearResult(): void;
 
+  getLastSql(): string;
+  setLastSql(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Response.AsObject;
   static toObject(includeInstance: boolean, msg: Response): Response.AsObject;
@@ -53,6 +56,7 @@ export namespace Response {
     sortList: Array<Sort.AsObject>,
     conditionList: Array<Condition.AsObject>,
     result?: google_protobuf_struct_pb.Value.AsObject,
+    lastSql: string,
   }
 }
 

@@ -15,6 +15,7 @@ message Response {
     repeated Sort sort = 6;
     repeated Condition condition = 7;
     google.protobuf.Value result = 8;
+    string last_sql = 9;
 }
 
 message DBMessage {

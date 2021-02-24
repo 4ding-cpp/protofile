@@ -239,7 +239,8 @@ proto.ding4.Response.toObject = function(includeInstance, msg) {
     proto.ding4.Sort.toObject, includeInstance),
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
     proto.ding4.Condition.toObject, includeInstance),
-    result: (f = msg.getResult()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+    result: (f = msg.getResult()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    lastSql: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -311,6 +312,10 @@ proto.ding4.Response.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setResult(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastSql(value);
       break;
     default:
       reader.skipField();
@@ -399,6 +404,13 @@ proto.ding4.Response.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastSql();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -623,6 +635,24 @@ proto.ding4.Response.prototype.clearResult = function() {
  */
 proto.ding4.Response.prototype.hasResult = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string last_sql = 9;
+ * @return {string}
+ */
+proto.ding4.Response.prototype.getLastSql = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.Response} returns this
+ */
+proto.ding4.Response.prototype.setLastSql = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
