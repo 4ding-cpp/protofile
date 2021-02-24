@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "manager.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Store {
+    string store_id = 1;
+    string business_id = 2; // 要賣誰的商品 b2b
+    int32 model = 3;
+    int32 type = 4;
+    string name = 5;
+    string urn = 6;
+    bool is_open = 7;
+    Manager manager = 8;
+    
+    map<string, int32> labelx = 9;
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;
+}
