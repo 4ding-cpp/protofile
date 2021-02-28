@@ -48,7 +48,8 @@ service ShopRPC {
     rpc CompleteOrder(Order) returns (Response);
     // 取消訂單 logistics_state < 4 出貨之前都可以取消
     rpc CancelOrder(Order) returns (Response);
-    // 退貨申請 state = 6 訂單完成才能取消
+    // 退貨申請 logistics_state = 6 已取貨才可退貨
+    rpc ReturnApplication(Order) returns (Response);
     rpc ReturnOrder(Order) returns (Response);
     // 消費紀錄
     rpc FindOrder(Query) returns (Response);

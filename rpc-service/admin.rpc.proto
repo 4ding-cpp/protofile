@@ -39,8 +39,8 @@ service AdminRPC {
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);
     rpc FindAdmin(Query) returns (Response);
-    rpc RecordAdmin(Admin) returns (Response);
-    rpc SignAdmin(Admin) returns (Response);
+    rpc RecordAdmin(Query) returns (Response);
+    rpc SignAdmin(Query) returns (Response);
 
     // Business 相關
     rpc CreateBusiness(Business) returns (Response);
