@@ -89,6 +89,18 @@ export class Order extends jspb.Message {
   getLogisticsSubType(): number;
   setLogisticsSubType(value: number): void;
 
+  getReturnAdapter(): string;
+  setReturnAdapter(value: string): void;
+
+  getReturnService(): string;
+  setReturnService(value: string): void;
+
+  getReturnType(): number;
+  setReturnType(value: number): void;
+
+  getReturnSubType(): number;
+  setReturnSubType(value: number): void;
+
   getIsTimeout(): boolean;
   setIsTimeout(value: boolean): void;
 
@@ -206,6 +218,10 @@ export namespace Order {
     logisticsService: string,
     logisticsType: number,
     logisticsSubType: number,
+    returnAdapter: string,
+    returnService: string,
+    returnType: number,
+    returnSubType: number,
     isTimeout: boolean,
     isBack: boolean,
     isExchange: boolean,
