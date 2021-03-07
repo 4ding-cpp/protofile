@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "sql.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message UserGroup {
+    string GroupID = 1;
+    string Name = 2;
+
+    string operator = 3;
+    google.protobuf.Timestamp create_at = 4;
+    google.protobuf.Timestamp update_at = 5;
+    repeated string cols = 6;
+    repeated Condition condition = 7;
+    google.protobuf.Struct self = 8; 
+}
