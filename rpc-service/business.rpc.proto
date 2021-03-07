@@ -12,7 +12,6 @@ import "business.proto";
 import "business-sub.proto";
 import "point.proto";
 import "manager.proto";
-import "b2b.proto";
 import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
@@ -142,13 +141,6 @@ service BusinessRPC {
     rpc FindStore(Query) returns (Response);
     // 商店修改紀錄
     rpc RecordStore(Store) returns (Response);
-
-    // B2B 相關
-    rpc ExposeB2B(B2B) returns (Response);
-    rpc RequestB2B(B2B) returns (Response);
-    rpc UpdateB2BExport(B2B) returns (Response);
-    rpc UpdateB2BImport(B2B) returns (Response);
-    rpc FindB2B(Query) returns (Response);
 
     // 購物狀態提醒
     rpc CreateRemind(Remind) returns (Response);

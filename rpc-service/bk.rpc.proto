@@ -12,7 +12,6 @@ import "purchase.proto";
 import "store.proto";
 import "order.proto";
 import "product.proto";
-import "b2b.proto";
 import "browse.proto";
 
 service BkRPC {
@@ -35,8 +34,6 @@ service BkRPC {
     rpc GetProduct(Product) returns (Product);
     rpc SkuProduct(ProductSpec) returns (Product);
     rpc NewStore(Store) returns (Response);
-
-    rpc ExportProduct(B2BProduct) returns (B2BProduct);
 
     rpc Businessboard(Query) returns (Response);
     rpc BusinessRank(Query) returns (Response);
