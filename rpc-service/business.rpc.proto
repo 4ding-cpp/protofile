@@ -16,6 +16,7 @@ import "customer.proto";
 import "customer-level.proto";
 import "product.proto";
 import "label.proto";
+import "user-group.proto";
 import "store.proto";
 import "remind.proto";
 import "order.proto";
@@ -130,6 +131,10 @@ service BusinessRPC {
     rpc RecordProduct(Product) returns (Response);
     rpc FindProductShell(Query) returns (Response);
     rpc FindActivity(Query) returns (Response);
+
+    rpc CreateUserGroup(UserGroup) returns (Response);
+    rpc UpdateUserGroup(UserGroup) returns (Response);
+    rpc FindUserGroup(Query) returns (Response);
 
     // 註冊商店 (註冊須審核完成後預設為關閉)
     rpc RegisterStore(Store) returns (Response);
