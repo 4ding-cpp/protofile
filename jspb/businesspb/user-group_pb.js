@@ -79,7 +79,7 @@ proto.ding4.UserGroup.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.UserGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    groupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -126,7 +126,7 @@ proto.ding4.UserGroup.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGroupid(value);
+      msg.setGroupId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -189,7 +189,7 @@ proto.ding4.UserGroup.prototype.serializeBinary = function() {
  */
 proto.ding4.UserGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getGroupid();
+  f = message.getGroupId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -253,10 +253,10 @@ proto.ding4.UserGroup.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string GroupID = 1;
+ * optional string group_id = 1;
  * @return {string}
  */
-proto.ding4.UserGroup.prototype.getGroupid = function() {
+proto.ding4.UserGroup.prototype.getGroupId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -265,13 +265,13 @@ proto.ding4.UserGroup.prototype.getGroupid = function() {
  * @param {string} value
  * @return {!proto.ding4.UserGroup} returns this
  */
-proto.ding4.UserGroup.prototype.setGroupid = function(value) {
+proto.ding4.UserGroup.prototype.setGroupId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string Name = 2;
+ * optional string name = 2;
  * @return {string}
  */
 proto.ding4.UserGroup.prototype.getName = function() {

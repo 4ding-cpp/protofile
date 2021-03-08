@@ -5,8 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class UserGroup extends jspb.Message {
-  getGroupid(): string;
-  setGroupid(value: string): void;
+  getGroupId(): string;
+  setGroupId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -49,7 +49,7 @@ export class UserGroup extends jspb.Message {
 
 export namespace UserGroup {
   export type AsObject = {
-    groupid: string,
+    groupId: string,
     name: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
