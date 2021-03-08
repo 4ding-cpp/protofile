@@ -12,8 +12,8 @@ export class Store extends jspb.Message {
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
-  getUserGroup(): string;
-  setUserGroup(value: string): void;
+  getGroupId(): string;
+  setGroupId(value: string): void;
 
   getModel(): number;
   setModel(value: number): void;
@@ -78,7 +78,7 @@ export namespace Store {
   export type AsObject = {
     storeId: string,
     businessId: string,
-    userGroup: string,
+    groupId: string,
     model: number,
     type: number,
     name: string,

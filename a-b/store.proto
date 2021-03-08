@@ -12,7 +12,7 @@ import "google/protobuf/timestamp.proto";
 message Store {
     string store_id = 1;
     string business_id = 2; // 要賣誰的商品 b2b
-    string user_group = 3;
+    string group_id = 3;
     int32 model = 4;
     int32 type = 5;
     string name = 6;

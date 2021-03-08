@@ -83,7 +83,7 @@ proto.ding4.Store.toObject = function(includeInstance, msg) {
   var f, obj = {
     storeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userGroup: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    groupId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     model: jspb.Message.getFieldWithDefault(msg, 4, 0),
     type: jspb.Message.getFieldWithDefault(msg, 5, 0),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -144,7 +144,7 @@ proto.ding4.Store.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserGroup(value);
+      msg.setGroupId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -248,7 +248,7 @@ proto.ding4.Store.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getUserGroup();
+  f = message.getGroupId();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -388,10 +388,10 @@ proto.ding4.Store.prototype.setBusinessId = function(value) {
 
 
 /**
- * optional string user_group = 3;
+ * optional string group_id = 3;
  * @return {string}
  */
-proto.ding4.Store.prototype.getUserGroup = function() {
+proto.ding4.Store.prototype.getGroupId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -400,7 +400,7 @@ proto.ding4.Store.prototype.getUserGroup = function() {
  * @param {string} value
  * @return {!proto.ding4.Store} returns this
  */
-proto.ding4.Store.prototype.setUserGroup = function(value) {
+proto.ding4.Store.prototype.setGroupId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

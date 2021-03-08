@@ -106,7 +106,7 @@ proto.ding4.Customer.toObject = function(includeInstance, msg) {
     customerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    userGroup: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    groupId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     fbAccesstoken: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -180,7 +180,7 @@ proto.ding4.Customer.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserGroup(value);
+      msg.setGroupId(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -327,7 +327,7 @@ proto.ding4.Customer.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getUserGroup();
+  f = message.getGroupId();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -548,10 +548,10 @@ proto.ding4.Customer.prototype.setStoreId = function(value) {
 
 
 /**
- * optional string user_group = 4;
+ * optional string group_id = 4;
  * @return {string}
  */
-proto.ding4.Customer.prototype.getUserGroup = function() {
+proto.ding4.Customer.prototype.getGroupId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -560,7 +560,7 @@ proto.ding4.Customer.prototype.getUserGroup = function() {
  * @param {string} value
  * @return {!proto.ding4.Customer} returns this
  */
-proto.ding4.Customer.prototype.setUserGroup = function(value) {
+proto.ding4.Customer.prototype.setGroupId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
