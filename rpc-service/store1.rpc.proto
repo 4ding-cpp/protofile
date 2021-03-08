@@ -13,7 +13,7 @@ import "car.proto";
 import "manager.proto";
 import "sales.proto";
 import "customer.proto";
-import "customer-level.proto";
+import "user-level.proto";
 import "product-shell.proto";
 import "product-class.proto";
 import "activity-coupon.proto";
@@ -87,11 +87,9 @@ service Store1RPC {
     rpc FindCustomer(Query) returns (Response);
 
     // 會員等級
-    rpc CreateCustomerLevel(CustomerLevel) returns (Response);
-    rpc UpdateCustomerLevel(CustomerLevel) returns (Response);
-    rpc AddCustomerToLevel(CustomerLevel) returns (Response);
-    rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
-    rpc FindCustomerLevel(Query) returns (Response);
+    rpc AddUserToLevel(UserLevel) returns (Response);
+    rpc DelUserFromLevel(UserLevel) returns (Response);
+    rpc FindUserLevel(Query) returns (Response);
 
     // 連結商品
     rpc FindProduct(Query) returns (Response);

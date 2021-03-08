@@ -13,32 +13,33 @@ message Customer {
     string customer_id = 1;
     string business_id = 2;
     string store_id = 3;
+    string user_group = 4;
 
-    int32 status = 4;
-    string name = 5;
-    string fb_accesstoken = 6;
-    string email = 7;
-    string phone = 8;
-    string password = 9;
-    bool phone_verify = 10;
-    bool email_verify = 11;
-    Address address = 12;
-    string recaptcha = 13;
+    int32 status = 5;
+    string name = 6;
+    string fb_accesstoken = 7;
+    string email = 8;
+    string phone = 9;
+    string password = 10;
+    bool phone_verify = 11;
+    bool email_verify = 12;
+    Address address = 13;
+    string recaptcha = 14;
 
     
-    string birthday = 14;
-    int32 sex = 15;
-    string level_id = 16;
-    bool is_receive = 17;
-    string register_by = 18;
+    string birthday = 15;
+    int32 sex = 16;
+    string level_id = 17;
+    bool is_receive = 18;
+    string register_by = 19;
     
-    map<string, int32> labelx = 19;
-    string operator = 20;
-    google.protobuf.Timestamp create_at = 21;
-    google.protobuf.Timestamp update_at = 22;
-    repeated string cols = 23;
-    repeated Condition condition = 24;
-    google.protobuf.Struct self = 25;
+    map<string, int32> labelx = 20;
+    string operator = 21;
+    google.protobuf.Timestamp create_at = 22;
+    google.protobuf.Timestamp update_at = 23;
+    repeated string cols = 24;
+    repeated Condition condition = 25;
+    google.protobuf.Struct self = 26;
 }
 
 message CustomerBatch {

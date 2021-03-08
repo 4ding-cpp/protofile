@@ -13,7 +13,7 @@ import "business-sub.proto";
 import "point.proto";
 import "manager.proto";
 import "customer.proto";
-import "customer-level.proto";
+import "user-level.proto";
 import "product.proto";
 import "label.proto";
 import "user-group.proto";
@@ -112,8 +112,16 @@ service BusinessRPC {
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Customer) returns (Response);
     rpc SignCustomer(Customer) returns (Response);
-    rpc AddCustomerToLevel(CustomerLevel) returns (Response);
-    rpc DelCustomerFromLevel(CustomerLevel) returns (Response);
+    // 會員群相關
+    rpc CreateUserGroup(UserGroup) returns (Response);
+    rpc UpdateUserGroup(UserGroup) returns (Response);
+    rpc FindUserGroup(Query) returns (Response);
+    // 會員等級相關
+    rpc CreateUserLevel(UserLevel) returns (Response);
+    rpc UpdateUserLevel(UserLevel) returns (Response);
+    rpc AddUserToLevel(UserLevel) returns (Response);
+    rpc DelUserFromLevel(UserLevel) returns (Response);
+    rpc FindUserLevel(Query) returns (Response);
 
     // 新增商品
     rpc CreateProduct(Product) returns (Response);
@@ -131,10 +139,6 @@ service BusinessRPC {
     rpc RecordProduct(Product) returns (Response);
     rpc FindProductShell(Query) returns (Response);
     rpc FindActivity(Query) returns (Response);
-
-    rpc CreateUserGroup(UserGroup) returns (Response);
-    rpc UpdateUserGroup(UserGroup) returns (Response);
-    rpc FindUserGroup(Query) returns (Response);
 
     // 註冊商店 (註冊須審核完成後預設為關閉)
     rpc RegisterStore(Store) returns (Response);

@@ -17,11 +17,11 @@ import * as business_pb from './business_pb';
 import * as business$sub_pb from './business-sub_pb';
 import * as point_pb from './point_pb';
 import * as manager_pb from './manager_pb';
-import * as b2b_pb from './b2b_pb';
 import * as customer_pb from './customer_pb';
-import * as customer$level_pb from './customer-level_pb';
+import * as user$level_pb from './user-level_pb';
 import * as product_pb from './product_pb';
 import * as label_pb from './label_pb';
+import * as user$group_pb from './user-group_pb';
 import * as store_pb from './store_pb';
 import * as remind_pb from './remind_pb';
 import * as order_pb from './order_pb';
@@ -1021,47 +1021,179 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoAddCustomerToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateUserGroup = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
+    (request: user$group_pb.UserGroup) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  addCustomerToLevel(
-    request: customer$level_pb.CustomerLevel,
+  createUserGroup(
+    request: user$group_pb.UserGroup,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/AddCustomerToLevel',
+        '/ding4.BusinessRPC/CreateUserGroup',
       request,
       metadata || {},
-      this.methodInfoAddCustomerToLevel,
+      this.methodInfoCreateUserGroup,
       callback);
   }
 
-  methodInfoDelCustomerFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateUserGroup = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
+    (request: user$group_pb.UserGroup) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  delCustomerFromLevel(
-    request: customer$level_pb.CustomerLevel,
+  updateUserGroup(
+    request: user$group_pb.UserGroup,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/DelCustomerFromLevel',
+        '/ding4.BusinessRPC/UpdateUserGroup',
       request,
       metadata || {},
-      this.methodInfoDelCustomerFromLevel,
+      this.methodInfoUpdateUserGroup,
+      callback);
+  }
+
+  methodInfoFindUserGroup = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findUserGroup(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindUserGroup',
+      request,
+      metadata || {},
+      this.methodInfoFindUserGroup,
+      callback);
+  }
+
+  methodInfoCreateUserLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: user$level_pb.UserLevel) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createUserLevel(
+    request: user$level_pb.UserLevel,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/CreateUserLevel',
+      request,
+      metadata || {},
+      this.methodInfoCreateUserLevel,
+      callback);
+  }
+
+  methodInfoUpdateUserLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: user$level_pb.UserLevel) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updateUserLevel(
+    request: user$level_pb.UserLevel,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/UpdateUserLevel',
+      request,
+      metadata || {},
+      this.methodInfoUpdateUserLevel,
+      callback);
+  }
+
+  methodInfoAddUserToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: user$level_pb.UserLevel) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  addUserToLevel(
+    request: user$level_pb.UserLevel,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/AddUserToLevel',
+      request,
+      metadata || {},
+      this.methodInfoAddUserToLevel,
+      callback);
+  }
+
+  methodInfoDelUserFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: user$level_pb.UserLevel) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  delUserFromLevel(
+    request: user$level_pb.UserLevel,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/DelUserFromLevel',
+      request,
+      metadata || {},
+      this.methodInfoDelUserFromLevel,
+      callback);
+  }
+
+  methodInfoFindUserLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findUserLevel(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/FindUserLevel',
+      request,
+      metadata || {},
+      this.methodInfoFindUserLevel,
       callback);
   }
 
@@ -1370,116 +1502,6 @@ export class BusinessRPCClient {
       request,
       metadata || {},
       this.methodInfoRecordStore,
-      callback);
-  }
-
-  methodInfoExposeB2B = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: b2b_pb.B2B) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  exposeB2B(
-    request: b2b_pb.B2B,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/ExposeB2B',
-      request,
-      metadata || {},
-      this.methodInfoExposeB2B,
-      callback);
-  }
-
-  methodInfoRequestB2B = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: b2b_pb.B2B) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  requestB2B(
-    request: b2b_pb.B2B,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/RequestB2B',
-      request,
-      metadata || {},
-      this.methodInfoRequestB2B,
-      callback);
-  }
-
-  methodInfoUpdateB2BExport = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: b2b_pb.B2B) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateB2BExport(
-    request: b2b_pb.B2B,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/UpdateB2BExport',
-      request,
-      metadata || {},
-      this.methodInfoUpdateB2BExport,
-      callback);
-  }
-
-  methodInfoUpdateB2BImport = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: b2b_pb.B2B) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateB2BImport(
-    request: b2b_pb.B2B,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/UpdateB2BImport',
-      request,
-      metadata || {},
-      this.methodInfoUpdateB2BImport,
-      callback);
-  }
-
-  methodInfoFindB2B = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findB2B(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.BusinessRPC/FindB2B',
-      request,
-      metadata || {},
-      this.methodInfoFindB2B,
       callback);
   }
 

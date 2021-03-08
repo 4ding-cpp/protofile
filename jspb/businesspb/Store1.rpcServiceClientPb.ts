@@ -18,7 +18,7 @@ import * as car_pb from './car_pb';
 import * as manager_pb from './manager_pb';
 import * as sales_pb from './sales_pb';
 import * as customer_pb from './customer_pb';
-import * as customer$level_pb from './customer-level_pb';
+import * as user$level_pb from './user-level_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
@@ -910,95 +910,51 @@ export class Store1RPCClient {
       callback);
   }
 
-  methodInfoCreateCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAddUserToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
+    (request: user$level_pb.UserLevel) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  createCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
+  addUserToLevel(
+    request: user$level_pb.UserLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/CreateCustomerLevel',
+        '/ding4.Store1RPC/AddUserToLevel',
       request,
       metadata || {},
-      this.methodInfoCreateCustomerLevel,
+      this.methodInfoAddUserToLevel,
       callback);
   }
 
-  methodInfoUpdateCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDelUserFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
+    (request: user$level_pb.UserLevel) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  updateCustomerLevel(
-    request: customer$level_pb.CustomerLevel,
+  delUserFromLevel(
+    request: user$level_pb.UserLevel,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/UpdateCustomerLevel',
+        '/ding4.Store1RPC/DelUserFromLevel',
       request,
       metadata || {},
-      this.methodInfoUpdateCustomerLevel,
+      this.methodInfoDelUserFromLevel,
       callback);
   }
 
-  methodInfoAddCustomerToLevel = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  addCustomerToLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/AddCustomerToLevel',
-      request,
-      metadata || {},
-      this.methodInfoAddCustomerToLevel,
-      callback);
-  }
-
-  methodInfoDelCustomerFromLevel = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: customer$level_pb.CustomerLevel) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  delCustomerFromLevel(
-    request: customer$level_pb.CustomerLevel,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.Store1RPC/DelCustomerFromLevel',
-      request,
-      metadata || {},
-      this.methodInfoDelCustomerFromLevel,
-      callback);
-  }
-
-  methodInfoFindCustomerLevel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindUserLevel = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -1006,17 +962,17 @@ export class Store1RPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findCustomerLevel(
+  findUserLevel(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.Store1RPC/FindCustomerLevel',
+        '/ding4.Store1RPC/FindUserLevel',
       request,
       metadata || {},
-      this.methodInfoFindCustomerLevel,
+      this.methodInfoFindUserLevel,
       callback);
   }
 

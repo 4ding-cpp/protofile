@@ -15,6 +15,9 @@ export class Customer extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getUserGroup(): string;
+  setUserGroup(value: string): void;
+
   getStatus(): number;
   setStatus(value: number): void;
 
@@ -106,6 +109,7 @@ export namespace Customer {
     customerId: string,
     businessId: string,
     storeId: string,
+    userGroup: string,
     status: number,
     name: string,
     fbAccesstoken: string,
