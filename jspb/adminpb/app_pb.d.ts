@@ -26,8 +26,10 @@ export class App extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;
 
-  getLocation(): string;
-  setLocation(value: string): void;
+  getAddress(): App.Address | undefined;
+  setAddress(value?: App.Address): void;
+  hasAddress(): boolean;
+  clearAddress(): void;
 
   getMgrType(): number;
   setMgrType(value: number): void;
@@ -40,15 +42,6 @@ export class App extends jspb.Message {
 
   getIdentify(): string;
   setIdentify(value: string): void;
-
-  getBankCode(): string;
-  setBankCode(value: string): void;
-
-  getLastCode(): string;
-  setLastCode(value: string): void;
-
-  getPrice(): number;
-  setPrice(value: number): void;
 
   getOperator(): string;
   setOperator(value: string): void;
@@ -95,14 +88,11 @@ export namespace App {
     contacter: string,
     phone: string,
     email: string,
-    location: string,
+    address?: App.Address.AsObject,
     mgrType: number,
     turnover: number,
     company: string,
     identify: string,
-    bankCode: string,
-    lastCode: string,
-    price: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -110,5 +100,40 @@ export namespace App {
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
+
+  export class Address extends jspb.Message {
+    getZipcode(): string;
+    setZipcode(value: string): void;
+
+    getCountry(): string;
+    setCountry(value: string): void;
+
+    getCity(): string;
+    setCity(value: string): void;
+
+    getTownship(): string;
+    setTownship(value: string): void;
+
+    getDetail(): string;
+    setDetail(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Address.AsObject;
+    static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
+    static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Address;
+    static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
+  }
+
+  export namespace Address {
+    export type AsObject = {
+      zipcode: string,
+      country: string,
+      city: string,
+      township: string,
+      detail: string,
+    }
+  }
+
 }
 
