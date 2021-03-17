@@ -91,6 +91,7 @@ message Nav {
     string customized = 8;
     repeated Template template_group = 9;
     repeated Nav navs = 10;
+    google.protobuf.Value style = 11;
 }
 
 message StyleColor {

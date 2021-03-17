@@ -2196,7 +2196,8 @@ proto.ding4.Nav.toObject = function(includeInstance, msg) {
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
     template_pb.Template.toObject, includeInstance),
     navsList: jspb.Message.toObjectList(msg.getNavsList(),
-    proto.ding4.Nav.toObject, includeInstance)
+    proto.ding4.Nav.toObject, includeInstance),
+    style: (f = msg.getStyle()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2275,6 +2276,11 @@ proto.ding4.Nav.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.Nav;
       reader.readMessage(value,proto.ding4.Nav.deserializeBinaryFromReader);
       msg.addNavs(value);
+      break;
+    case 11:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStyle(value);
       break;
     default:
       reader.skipField();
@@ -2376,6 +2382,14 @@ proto.ding4.Nav.serializeBinaryToWriter = function(message, writer) {
       10,
       f,
       proto.ding4.Nav.serializeBinaryToWriter
+    );
+  }
+  f = message.getStyle();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
 };
@@ -2617,6 +2631,43 @@ proto.ding4.Nav.prototype.addNavs = function(opt_value, opt_index) {
  */
 proto.ding4.Nav.prototype.clearNavsList = function() {
   return this.setNavsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Value style = 11;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.ding4.Nav.prototype.getStyle = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 11));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.ding4.Nav} returns this
+*/
+proto.ding4.Nav.prototype.setStyle = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.Nav} returns this
+ */
+proto.ding4.Nav.prototype.clearStyle = function() {
+  return this.setStyle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.Nav.prototype.hasStyle = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

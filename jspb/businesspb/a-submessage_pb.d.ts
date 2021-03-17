@@ -284,6 +284,11 @@ export class Nav extends jspb.Message {
   clearNavsList(): void;
   addNavs(value?: Nav, index?: number): Nav;
 
+  getStyle(): google_protobuf_struct_pb.Value | undefined;
+  setStyle(value?: google_protobuf_struct_pb.Value): void;
+  hasStyle(): boolean;
+  clearStyle(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Nav.AsObject;
   static toObject(includeInstance: boolean, msg: Nav): Nav.AsObject;
@@ -304,6 +309,7 @@ export namespace Nav {
     customized: string,
     templateGroupList: Array<template_pb.Template.AsObject>,
     navsList: Array<Nav.AsObject>,
+    style?: google_protobuf_struct_pb.Value.AsObject,
   }
 }
 
