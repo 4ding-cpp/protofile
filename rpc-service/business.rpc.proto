@@ -235,7 +235,7 @@ service BusinessRPC {
     rpc CreateSales(Sales) returns (Response);
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
-    rpc RecordSales(Sales) returns (Response);
+    rpc RecordSales(Query) returns (Response);
 
     // 報表
     rpc ReportPayment(PaymentRp) returns (PaymentRp);

@@ -2519,14 +2519,14 @@ export class BusinessRPCClient {
 
   methodInfoRecordSales = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sales_pb.Sales) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   recordSales(
-    request: sales_pb.Sales,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
