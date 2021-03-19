@@ -4,6 +4,7 @@ package ding4;
 
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
+import "address.proto";
 import "sql.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
@@ -113,13 +114,6 @@ message ContactInfo {
         string type = 2;
         string name = 3;
         string address = 4;
-    }
-    message Address {
-        string zipcode = 1;
-        string country = 2;
-        string city = 3;
-        string township = 4;
-        string detail = 5;
     }
     string name = 1;
     string phone = 2;

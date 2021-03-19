@@ -5,9 +5,9 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 message Address {
-    string country = 1;
-    string city = 2;
-    string township = 3;
-    string zipcode = 4;
+    string zipcode = 1;
+    string country = 2;
+    string city = 3;
+    string township = 4;
     string detail = 5;
 }

@@ -627,14 +627,14 @@ export class BusinessRPCClient {
 
   methodInfoSignBusinessSub = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: business$sub_pb.BusinessSub) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   signBusinessSub(
-    request: business$sub_pb.BusinessSub,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -715,14 +715,14 @@ export class BusinessRPCClient {
 
   methodInfoSignManager = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   signManager(
-    request: manager_pb.Manager,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -1001,14 +1001,14 @@ export class BusinessRPCClient {
 
   methodInfoSignCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: customer_pb.Customer) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   signCustomer(
-    request: customer_pb.Customer,
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

@@ -50,7 +50,7 @@ service AdminRPC {
     rpc FindBusiness(Query) returns (Response);
     rpc FindStore(Business) returns (Response);
     rpc RecordBusiness(Business) returns (Response);
-    rpc SignBusiness(Business) returns (Response);
+    rpc SignBusiness(Query) returns (Response);
 
     // 設定業主網域相關
     rpc UpgradeDomain(Domain) returns (Response);

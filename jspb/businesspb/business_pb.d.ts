@@ -1,6 +1,7 @@
 import * as jspb from "google-protobuf"
 
 import * as permission_pb from './permission_pb';
+import * as address_pb from './address_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
@@ -54,8 +55,8 @@ export class Business extends jspb.Message {
   getOtpCode(): string;
   setOtpCode(value: string): void;
 
-  getAddress(): Business.Address | undefined;
-  setAddress(value?: Business.Address): void;
+  getAddress(): address_pb.Address | undefined;
+  setAddress(value?: address_pb.Address): void;
   hasAddress(): boolean;
   clearAddress(): void;
 
@@ -138,7 +139,7 @@ export namespace Business {
     emailVerify: boolean,
     otpToken: string,
     otpCode: string,
-    address?: Business.Address.AsObject,
+    address?: address_pb.Address.AsObject,
     mgrType: number,
     turnover: number,
     company: string,
@@ -153,40 +154,5 @@ export namespace Business {
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
-
-  export class Address extends jspb.Message {
-    getZipcode(): string;
-    setZipcode(value: string): void;
-
-    getCountry(): string;
-    setCountry(value: string): void;
-
-    getCity(): string;
-    setCity(value: string): void;
-
-    getTownship(): string;
-    setTownship(value: string): void;
-
-    getDetail(): string;
-    setDetail(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Address.AsObject;
-    static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
-    static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Address;
-    static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
-  }
-
-  export namespace Address {
-    export type AsObject = {
-      zipcode: string,
-      country: string,
-      city: string,
-      township: string,
-      detail: string,
-    }
-  }
-
 }
 

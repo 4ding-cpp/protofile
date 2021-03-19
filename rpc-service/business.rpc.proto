@@ -76,7 +76,7 @@ service BusinessRPC {
     // 子帳號修改紀錄
     rpc RecordBusinessSub(BusinessSub) returns (Response);
     // 子帳號登入紀錄
-    rpc SignBusinessSub(BusinessSub) returns (Response);
+    rpc SignBusinessSub(Query) returns (Response);
 
     // 建立商店管理員
     // rpc CreateManager(Manager) returns (Response);
@@ -87,7 +87,7 @@ service BusinessRPC {
     // 商店管理員修改紀錄
     rpc RecordManager(Manager) returns (Response);
     // 商店管理員登入紀錄
-    rpc SignManager(Manager) returns (Response);
+    rpc SignManager(Query) returns (Response);
 
     // 新增標籤
     rpc CreateLabel(Label) returns (Response);
@@ -111,7 +111,7 @@ service BusinessRPC {
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
     rpc RecordCustomer(Customer) returns (Response);
-    rpc SignCustomer(Customer) returns (Response);
+    rpc SignCustomer(Query) returns (Response);
     // 會員群相關
     rpc CreateUserGroup(UserGroup) returns (Response);
     rpc UpdateUserGroup(UserGroup) returns (Response);

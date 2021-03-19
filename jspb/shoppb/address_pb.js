@@ -66,10 +66,10 @@ proto.ding4.Address.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.Address.toObject = function(includeInstance, msg) {
   var f, obj = {
-    country: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    city: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    township: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    zipcode: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    zipcode: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    city: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    township: jspb.Message.getFieldWithDefault(msg, 4, ""),
     detail: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
@@ -109,19 +109,19 @@ proto.ding4.Address.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
+      msg.setZipcode(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCity(value);
+      msg.setCountry(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTownship(value);
+      msg.setCity(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setZipcode(value);
+      msg.setTownship(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -156,28 +156,28 @@ proto.ding4.Address.prototype.serializeBinary = function() {
  */
 proto.ding4.Address.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCountry();
+  f = message.getZipcode();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getCity();
+  f = message.getCountry();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTownship();
+  f = message.getCity();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getZipcode();
+  f = message.getTownship();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -195,10 +195,10 @@ proto.ding4.Address.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string country = 1;
+ * optional string zipcode = 1;
  * @return {string}
  */
-proto.ding4.Address.prototype.getCountry = function() {
+proto.ding4.Address.prototype.getZipcode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -207,16 +207,16 @@ proto.ding4.Address.prototype.getCountry = function() {
  * @param {string} value
  * @return {!proto.ding4.Address} returns this
  */
-proto.ding4.Address.prototype.setCountry = function(value) {
+proto.ding4.Address.prototype.setZipcode = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string city = 2;
+ * optional string country = 2;
  * @return {string}
  */
-proto.ding4.Address.prototype.getCity = function() {
+proto.ding4.Address.prototype.getCountry = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -225,16 +225,16 @@ proto.ding4.Address.prototype.getCity = function() {
  * @param {string} value
  * @return {!proto.ding4.Address} returns this
  */
-proto.ding4.Address.prototype.setCity = function(value) {
+proto.ding4.Address.prototype.setCountry = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string township = 3;
+ * optional string city = 3;
  * @return {string}
  */
-proto.ding4.Address.prototype.getTownship = function() {
+proto.ding4.Address.prototype.getCity = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -243,16 +243,16 @@ proto.ding4.Address.prototype.getTownship = function() {
  * @param {string} value
  * @return {!proto.ding4.Address} returns this
  */
-proto.ding4.Address.prototype.setTownship = function(value) {
+proto.ding4.Address.prototype.setCity = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string zipcode = 4;
+ * optional string township = 4;
  * @return {string}
  */
-proto.ding4.Address.prototype.getZipcode = function() {
+proto.ding4.Address.prototype.getTownship = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -261,7 +261,7 @@ proto.ding4.Address.prototype.getZipcode = function() {
  * @param {string} value
  * @return {!proto.ding4.Address} returns this
  */
-proto.ding4.Address.prototype.setZipcode = function(value) {
+proto.ding4.Address.prototype.setTownship = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

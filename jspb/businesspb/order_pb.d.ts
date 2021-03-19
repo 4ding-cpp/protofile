@@ -1,5 +1,6 @@
 import * as jspb from "google-protobuf"
 
+import * as address_pb from './address_pb';
 import * as sql_pb from './sql_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
@@ -382,8 +383,8 @@ export class ContactInfo extends jspb.Message {
   hasCvs(): boolean;
   clearCvs(): void;
 
-  getAddress(): ContactInfo.Address | undefined;
-  setAddress(value?: ContactInfo.Address): void;
+  getAddress(): address_pb.Address | undefined;
+  setAddress(value?: address_pb.Address): void;
   hasAddress(): boolean;
   clearAddress(): void;
 
@@ -402,7 +403,7 @@ export namespace ContactInfo {
     cellPhone: string,
     email: string,
     cvs?: ContactInfo.CVS.AsObject,
-    address?: ContactInfo.Address.AsObject,
+    address?: address_pb.Address.AsObject,
   }
 
   export class CVS extends jspb.Message {
@@ -432,41 +433,6 @@ export namespace ContactInfo {
       type: string,
       name: string,
       address: string,
-    }
-  }
-
-
-  export class Address extends jspb.Message {
-    getZipcode(): string;
-    setZipcode(value: string): void;
-
-    getCountry(): string;
-    setCountry(value: string): void;
-
-    getCity(): string;
-    setCity(value: string): void;
-
-    getTownship(): string;
-    setTownship(value: string): void;
-
-    getDetail(): string;
-    setDetail(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Address.AsObject;
-    static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
-    static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Address;
-    static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
-  }
-
-  export namespace Address {
-    export type AsObject = {
-      zipcode: string,
-      country: string,
-      city: string,
-      township: string,
-      detail: string,
     }
   }
 

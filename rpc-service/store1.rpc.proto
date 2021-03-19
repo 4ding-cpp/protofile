@@ -53,7 +53,7 @@ service Store1RPC {
     rpc UpdateManagerSub(ManagerSub) returns (Response);
     rpc FindManagerSub(Query) returns (Response);
     rpc RecordManagerSub(ManagerSub) returns (Response);
-    rpc SignManagerSub(ManagerSub) returns (Response);
+    rpc SignManagerSub(Query) returns (Response);
 
     // 標籤增減刪修讀寫
     rpc CreateLabel(Label) returns (Response);

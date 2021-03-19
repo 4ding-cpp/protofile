@@ -1,6 +1,9 @@
 import * as jspb from "google-protobuf"
 
 export class Address extends jspb.Message {
+  getZipcode(): string;
+  setZipcode(value: string): void;
+
   getCountry(): string;
   setCountry(value: string): void;
 
@@ -9,9 +12,6 @@ export class Address extends jspb.Message {
 
   getTownship(): string;
   setTownship(value: string): void;
-
-  getZipcode(): string;
-  setZipcode(value: string): void;
 
   getDetail(): string;
   setDetail(value: string): void;
@@ -26,10 +26,10 @@ export class Address extends jspb.Message {
 
 export namespace Address {
   export type AsObject = {
+    zipcode: string,
     country: string,
     city: string,
     township: string,
-    zipcode: string,
     detail: string,
   }
 }
