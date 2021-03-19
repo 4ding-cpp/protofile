@@ -54,8 +54,10 @@ export class Business extends jspb.Message {
   getOtpCode(): string;
   setOtpCode(value: string): void;
 
-  getLocation(): string;
-  setLocation(value: string): void;
+  getAddress(): Business.Address | undefined;
+  setAddress(value?: Business.Address): void;
+  hasAddress(): boolean;
+  clearAddress(): void;
 
   getMgrType(): number;
   setMgrType(value: number): void;
@@ -136,7 +138,7 @@ export namespace Business {
     emailVerify: boolean,
     otpToken: string,
     otpCode: string,
-    location: string,
+    address?: Business.Address.AsObject,
     mgrType: number,
     turnover: number,
     company: string,
@@ -151,5 +153,40 @@ export namespace Business {
     conditionList: Array<sql_pb.Condition.AsObject>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
+
+  export class Address extends jspb.Message {
+    getZipcode(): string;
+    setZipcode(value: string): void;
+
+    getCountry(): string;
+    setCountry(value: string): void;
+
+    getCity(): string;
+    setCity(value: string): void;
+
+    getTownship(): string;
+    setTownship(value: string): void;
+
+    getDetail(): string;
+    setDetail(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Address.AsObject;
+    static toObject(includeInstance: boolean, msg: Address): Address.AsObject;
+    static serializeBinaryToWriter(message: Address, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Address;
+    static deserializeBinaryFromReader(message: Address, reader: jspb.BinaryReader): Address;
+  }
+
+  export namespace Address {
+    export type AsObject = {
+      zipcode: string,
+      country: string,
+      city: string,
+      township: string,
+      detail: string,
+    }
+  }
+
 }
 
