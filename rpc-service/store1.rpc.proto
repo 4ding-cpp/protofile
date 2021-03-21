@@ -80,6 +80,7 @@ service Store1RPC {
     rpc CreateSales(Sales) returns (Response);
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
+    rpc SignSales(Query) returns (Response);
 
     // 會員
     rpc CreateCustomer(Customer) returns (Response);
