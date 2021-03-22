@@ -145,4 +145,5 @@ service AdminRPC {
     rpc SMS(Message) returns (Response);
     rpc EDM(Message) returns (Response);
     rpc FindMessage(Query) returns (Response);
+    rpc FindTemplate(Query) returns (Response);
 }
