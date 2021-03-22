@@ -73,8 +73,6 @@ service BusinessRPC {
     rpc UpdateBusinessSub(BusinessSub) returns (Response);
     // 子帳號列表
     rpc FindBusinessSub(Query) returns (Response);
-    // 子帳號修改紀錄
-    rpc RecordBusinessSub(BusinessSub) returns (Response);
     // 子帳號登入紀錄
     rpc SignBusinessSub(Query) returns (Response);
 
@@ -84,8 +82,6 @@ service BusinessRPC {
     rpc UpdateManager(Manager) returns (Response);
     // 商店管理員列表
     rpc FindManager(Query) returns (Response);
-    // 商店管理員修改紀錄
-    rpc RecordManager(Manager) returns (Response);
     // 商店管理員登入紀錄
     rpc SignManager(Query) returns (Response);
 
@@ -101,8 +97,6 @@ service BusinessRPC {
     rpc SubtractLabel(Label) returns (Response);
     // 標籤列表
     rpc FindLabel(Query) returns (Response);
-    // 標籤修改紀錄
-    rpc RecordLabel(Label) returns (Response);
 
     // 建立會員
     rpc CreateCustomer(Customer) returns (Response);
@@ -110,7 +104,6 @@ service BusinessRPC {
     rpc UploadCustomer(CustomerBatch) returns (Response);
     rpc UpdateCustomer(Customer) returns (Response);
     rpc FindCustomer(Query) returns (Response);
-    rpc RecordCustomer(Customer) returns (Response);
     rpc SignCustomer(Query) returns (Response);
     // 會員群相關
     rpc CreateUserGroup(UserGroup) returns (Response);
@@ -135,8 +128,6 @@ service BusinessRPC {
     rpc FindProduct(Query) returns (Response);
     // 快速取得一個商品
     rpc QuickProduct(Product) returns (Product);
-    // 商品修改紀錄
-    rpc RecordProduct(Product) returns (Response);
     rpc FindProductShell(Query) returns (Response);
     rpc FindActivity(Query) returns (Response);
 
@@ -148,8 +139,6 @@ service BusinessRPC {
     rpc UpdateStore(Store) returns (Response);
     // 商店列表
     rpc FindStore(Query) returns (Response);
-    // 商店修改紀錄
-    rpc RecordStore(Store) returns (Response);
 
     // 購物狀態提醒
     rpc CreateRemind(Remind) returns (Response);
@@ -157,51 +146,31 @@ service BusinessRPC {
     rpc UpdateRemind(Remind) returns (Response);
     // 購物狀態提醒列表
     rpc FindRemind(Query) returns (Response);
-    // 購物狀態提醒修改紀錄
-    rpc RecordRemind(Remind) returns (Response);
 
     // 新增訂單(包含繳費單及物流單)
     rpc CreateOrder(Order) returns (Response);
     // 修改訂單狀態 3.處理中
     rpc StateOrder(OrderBatch) returns (Response);
-    // 取消訂單
     rpc CancelOrder(Order) returns (Response);
-    // 定單列表
     rpc FindOrder(Query) returns (Response);
     rpc DetailOrder(Order) returns (Response);
     rpc UpdateOrderOther(Order) returns (Response);
     rpc PickUpGoods(Query) returns (Response);
-    // 訂單修改紀錄
-    rpc RecordOrder(Order) returns (Response);
 
-    // 建立供應商資訊
     rpc CreateSupplier(Supplier) returns (Response);
-    // 更新供應商資訊
     rpc UpdateSupplier(Supplier) returns (Response);
-    // 供應商列表
     rpc FindSupplier(Query) returns (Response);
-    // 供應商修改紀錄
-    rpc RecordSupplier(Supplier) returns (Response);
 
-    // 新增進貨單
     rpc CreatePurchase(Purchase) returns (Response);
-    // 刪除進貨單
     rpc DeletePurchase(Purchase) returns (Response);
-    // 進貨單列表
     rpc FindPurchase(Query) returns (Response);
-    // 庫存記錄列表
     rpc FindInventory(Query) returns (Response);
 
-    // 新增系統參數
     rpc CreateSetting(Setting) returns (Response);
-    // 修改系統參數
     rpc UpdateSetting(Setting) returns (Response);
-    // 移除系統參數
     rpc DeleteSetting(Setting) returns (Response);
-    // 系統參數列表
     rpc FindSetting(Query) returns (Response);
-    // 系統參數修改紀錄
-    rpc RecordSetting(Setting) returns (Response);
+    
 
     // 模板相關操作
     rpc CreateTemplate(Template) returns (Response);
@@ -235,7 +204,6 @@ service BusinessRPC {
     rpc CreateSales(Sales) returns (Response);
     rpc UpdateSales(Sales) returns (Response);
     rpc FindSales(Query) returns (Response);
-    rpc RecordSales(Query) returns (Response);
 
     // 報表
     rpc ReportPayment(PaymentRp) returns (PaymentRp);

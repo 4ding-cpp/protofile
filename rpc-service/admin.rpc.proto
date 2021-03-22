@@ -39,7 +39,6 @@ service AdminRPC {
     rpc CreateAdmin(Admin) returns (Response);
     rpc UpdateAdmin(Admin) returns (Response);
     rpc FindAdmin(Query) returns (Response);
-    rpc RecordAdmin(Query) returns (Response);
     rpc SignAdmin(Query) returns (Response);
 
     // Business 相關
@@ -49,14 +48,12 @@ service AdminRPC {
     rpc UpdateBusiness(Business) returns (Response);
     rpc FindBusiness(Query) returns (Response);
     rpc FindStore(Business) returns (Response);
-    rpc RecordBusiness(Business) returns (Response);
     rpc SignBusiness(Query) returns (Response);
 
     // 設定業主網域相關
     rpc UpgradeDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
-    rpc RecordDomain(Domain) returns (Response);
     rpc FlushDomain(Query) returns (Response);
 
     // 標籤相關
@@ -66,21 +63,18 @@ service AdminRPC {
     rpc AppendLabel(Label) returns (Response);
     rpc SubtractLabel(Label) returns (Response);
     rpc FindLabel(Query) returns (Response);
-    rpc RecordLabel(Label) returns (Response);
     
     // 公司資訊相關
     rpc CreateInfo(Info) returns (Response);
     rpc UpdateInfo(Info) returns (Response);
     rpc DeleteInfo(Info) returns (Response);
     rpc FindInfo(Query) returns (Response);
-    rpc RecordInfo(Info) returns (Response);
 
     // 公告相關
     rpc CreateAnnouncement(Announcement) returns (Response);
     rpc UpdateAnnouncement(Announcement) returns (Response);
     rpc DeleteAnnouncement(Announcement) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
-    rpc RecordAnnouncement(Announcement) returns (Response);
 
     // 點數活動相關
     rpc CreatePointBonus(PointBonus) returns (Response);
@@ -88,7 +82,6 @@ service AdminRPC {
     rpc StopPointBonus(PointBonus) returns (Response);
     rpc CancelPointBonus(PointBonus) returns (Response);
     rpc FindPointBonus(Query) returns (Response);
-    rpc RecordPointBonus(PointBonus) returns (Response);
 
     // 儲值相關 State 1:未審核 2:已審核 3:已取消
     rpc CreatePoint(Point) returns (Response);
@@ -97,7 +90,6 @@ service AdminRPC {
     rpc CancelPoint(Point) returns (Response);
     rpc UpdatePoint(Point) returns (Response);
     rpc FindPoint(Query) returns (Response);
-    rpc RecordPoint(Point) returns (Response);
 
     // 帳單相關 State 1:未繳 2:自動扣繳失敗 3:扣繳完成 9:註銷
     rpc CreatePointBill(PointBill) returns (Response);
@@ -106,27 +98,22 @@ service AdminRPC {
     rpc ConfirmPointBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
     rpc FindPointDetail(Query) returns (Response);
-    rpc RecordPointBill(PointBill) returns (Response);
-    rpc RecordPointDetail(PointDetail) returns (Response);
 
     // 點數流水紀錄
     rpc CreatePointFlow(PointFlow) returns (Response);
     rpc FindPointFlow(Query) returns (Response);
-    rpc RecordPointFlow(PointFlow) returns (Response);
 
     // 諮詢單 State 1.等待預約 2.等待面談 3.待跟進 5.已轉換 6.已取消
     rpc CreateAdv(Adv) returns (Response);
     rpc UpdateAdv(Adv) returns (Response);
     rpc ExchangeAdv(Adv) returns (Response);
     rpc FindAdv(Query) returns (Response);
-    rpc RecordAdv(Adv) returns (Response);
 
     // 諮詢單客服紀錄
     rpc CreateAdvItem(AdvItem) returns (Response);
     rpc UpdateAdvItem(AdvItem) returns (Response);
     rpc DeleteAdvItem(AdvItem) returns (Response);
     rpc FindAdvItem(Query) returns (Response);
-    rpc RecordAdvItem(AdvItem) returns (Response);
 
     // State => 1.成立 2.審核中 3.已完成 4.取消
     rpc CreateApp(App) returns (Response);
@@ -134,12 +121,10 @@ service AdminRPC {
     rpc CancelApp(App) returns (Response);
     rpc UpdateApp(App) returns (Response);
     rpc FindApp(Query) returns (Response);
-    rpc RecordApp(App) returns (Response);
 
     rpc CreateSystemSet(SystemSet) returns (Response);
     rpc UpdateSystemSet(SystemSet) returns (Response);
     rpc FindSystemSet(Query) returns (Response);
-    rpc RecordSystemSet(SystemSet) returns (Response);
 
     // 訊息相關資訊
     rpc SMS(Message) returns (Response);
