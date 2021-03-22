@@ -5,6 +5,7 @@ package ding4;
 option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
 
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 message Response {
     uint32 code = 1;
@@ -63,17 +64,15 @@ message Query {
     google.protobuf.Struct self = 7;
 };
 
-message LogQuery {
-    PageLimit page_limit = 1;
-    string origin = 2;
-    string target_id = 3;
-    string start_at = 4;
-    string end_at = 5;
-    google.protobuf.Struct self = 6;
-}
+message Record {
+    double id = 1;
+    google.protobuf.Timestamp log_at = 2;
+    string operator = 3;
+    string target_id = 4;
+    google.protobuf.Struct different = 5;
+};
 
-message Result {
-    PageLimit page_limit = 1;
-    repeated Sort sort = 2;
-    google.protobuf.Value result = 3;
+message Upgrade {
+    google.protobuf.Timestamp last = 1;
+    int32 page_index = 2;
 }

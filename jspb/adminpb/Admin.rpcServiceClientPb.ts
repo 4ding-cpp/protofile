@@ -194,7 +194,7 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoFindRecord = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindRecordSelf = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
       return request.serializeBinary();
@@ -202,17 +202,17 @@ export class AdminRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  findRecord(
+  findRecordSelf(
     request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FindRecord',
+        '/ding4.AdminRPC/FindRecordSelf',
       request,
       metadata || {},
-      this.methodInfoFindRecord,
+      this.methodInfoFindRecordSelf,
       callback);
   }
 
@@ -238,25 +238,25 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoFindLog = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoFindRecord = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: sql_pb.LogQuery) => {
+    (request: sql_pb.Query) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
-  findLog(
-    request: sql_pb.LogQuery,
+  findRecord(
+    request: sql_pb.Query,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.AdminRPC/FindLog',
+        '/ding4.AdminRPC/FindRecord',
       request,
       metadata || {},
-      this.methodInfoFindLog,
+      this.methodInfoFindRecord,
       callback);
   }
 

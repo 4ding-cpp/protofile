@@ -37,14 +37,14 @@ service BusinessRPC {
     rpc ChangeInfo(Business) returns (Response);
     rpc ChangeWhitelist(Business) returns (Response);
     rpc FindPermission(Query) returns (Response);
-    rpc FindRecord(Query) returns (Response);
+    rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
 
     // 檢查存在否
     rpc Duplicate(Query) returns (Response);
     // 查詢任何異動紀錄
-    rpc FindLog(LogQuery) returns (Response);
+    rpc FindRecord(Query) returns (Response);
 
     rpc Dashboard(Query) returns (Response);
     rpc Rank(Query) returns (Response);

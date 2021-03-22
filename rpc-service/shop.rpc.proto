@@ -12,7 +12,6 @@ import "car.proto";
 import "activity-coupon.proto";
 import "order.proto";
 import "freeback.proto";
-import "log.proto";
 import "browse.proto";
 
 

@@ -17,7 +17,6 @@ import * as car_pb from './car_pb';
 import * as activity$coupon_pb from './activity-coupon_pb';
 import * as order_pb from './order_pb';
 import * as freeback_pb from './freeback_pb';
-import * as log_pb from './log_pb';
 import * as browse_pb from './browse_pb';
 
 export class ShopRPCClient {
@@ -635,14 +634,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeWebsite = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: log_pb.Upgrade) => {
+    (request: sql_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeWebsite(
-    request: log_pb.Upgrade,
+    request: sql_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -657,14 +656,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: log_pb.Upgrade) => {
+    (request: sql_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeProduct(
-    request: log_pb.Upgrade,
+    request: sql_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -679,14 +678,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeSpec = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: log_pb.Upgrade) => {
+    (request: sql_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeSpec(
-    request: log_pb.Upgrade,
+    request: sql_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -701,14 +700,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeMember = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: log_pb.Upgrade) => {
+    (request: sql_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeMember(
-    request: log_pb.Upgrade,
+    request: sql_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -723,14 +722,14 @@ export class ShopRPCClient {
 
   methodInfoUpgradeOrder = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: log_pb.Upgrade) => {
+    (request: sql_pb.Upgrade) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   upgradeOrder(
-    request: log_pb.Upgrade,
+    request: sql_pb.Upgrade,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
