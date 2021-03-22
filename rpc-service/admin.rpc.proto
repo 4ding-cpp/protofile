@@ -15,7 +15,6 @@ import "info.proto";
 import "announcement.proto";
 import "point.proto";
 import "adv.proto";
-import "app.proto";
 import "system-set.proto";
 import "message.proto";
 
@@ -106,7 +105,6 @@ service AdminRPC {
     // 諮詢單 State 1.等待預約 2.等待面談 3.待跟進 5.已轉換 6.已取消
     rpc CreateAdv(Adv) returns (Response);
     rpc UpdateAdv(Adv) returns (Response);
-    rpc ExchangeAdv(Adv) returns (Response);
     rpc FindAdv(Query) returns (Response);
 
     // 諮詢單客服紀錄
@@ -114,13 +112,6 @@ service AdminRPC {
     rpc UpdateAdvItem(AdvItem) returns (Response);
     rpc DeleteAdvItem(AdvItem) returns (Response);
     rpc FindAdvItem(Query) returns (Response);
-
-    // State => 1.成立 2.審核中 3.已完成 4.取消
-    rpc CreateApp(App) returns (Response);
-    rpc ApproveApp(App) returns (Response);
-    rpc CancelApp(App) returns (Response);
-    rpc UpdateApp(App) returns (Response);
-    rpc FindApp(Query) returns (Response);
 
     rpc CreateSystemSet(SystemSet) returns (Response);
     rpc UpdateSystemSet(SystemSet) returns (Response);

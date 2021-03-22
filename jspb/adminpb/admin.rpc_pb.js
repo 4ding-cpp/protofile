@@ -34,8 +34,6 @@ var point_pb = require('./point_pb.js');
 goog.object.extend(proto, point_pb);
 var adv_pb = require('./adv_pb.js');
 goog.object.extend(proto, adv_pb);
-var app_pb = require('./app_pb.js');
-goog.object.extend(proto, app_pb);
 var system$set_pb = require('./system-set_pb.js');
 goog.object.extend(proto, system$set_pb);
 var message_pb = require('./message_pb.js');

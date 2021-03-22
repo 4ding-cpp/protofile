@@ -20,7 +20,6 @@ import * as info_pb from './info_pb';
 import * as announcement_pb from './announcement_pb';
 import * as point_pb from './point_pb';
 import * as adv_pb from './adv_pb';
-import * as app_pb from './app_pb';
 import * as system$set_pb from './system-set_pb';
 import * as message_pb from './message_pb';
 
@@ -1338,28 +1337,6 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoExchangeAdv = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: adv_pb.Adv) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  exchangeAdv(
-    request: adv_pb.Adv,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/ExchangeAdv',
-      request,
-      metadata || {},
-      this.methodInfoExchangeAdv,
-      callback);
-  }
-
   methodInfoFindAdv = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
@@ -1467,116 +1444,6 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoFindAdvItem,
-      callback);
-  }
-
-  methodInfoCreateApp = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: app_pb.App) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  createApp(
-    request: app_pb.App,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/CreateApp',
-      request,
-      metadata || {},
-      this.methodInfoCreateApp,
-      callback);
-  }
-
-  methodInfoApproveApp = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: app_pb.App) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  approveApp(
-    request: app_pb.App,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/ApproveApp',
-      request,
-      metadata || {},
-      this.methodInfoApproveApp,
-      callback);
-  }
-
-  methodInfoCancelApp = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: app_pb.App) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  cancelApp(
-    request: app_pb.App,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/CancelApp',
-      request,
-      metadata || {},
-      this.methodInfoCancelApp,
-      callback);
-  }
-
-  methodInfoUpdateApp = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: app_pb.App) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  updateApp(
-    request: app_pb.App,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/UpdateApp',
-      request,
-      metadata || {},
-      this.methodInfoUpdateApp,
-      callback);
-  }
-
-  methodInfoFindApp = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: sql_pb.Query) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  findApp(
-    request: sql_pb.Query,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/FindApp',
-      request,
-      metadata || {},
-      this.methodInfoFindApp,
       callback);
   }
 

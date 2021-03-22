@@ -8,6 +8,9 @@ export class Adv extends jspb.Message {
   getAdvId(): string;
   setAdvId(value: string): void;
 
+  getBusinessId(): string;
+  setBusinessId(value: string): void;
+
   getState(): number;
   setState(value: number): void;
 
@@ -91,6 +94,7 @@ export class Adv extends jspb.Message {
 export namespace Adv {
   export type AsObject = {
     advId: string,
+    businessId: string,
     state: number,
     type: number,
     contacter: string,
