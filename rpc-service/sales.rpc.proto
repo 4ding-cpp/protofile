@@ -18,6 +18,7 @@ service SalesRPC {
     rpc ChangeInfo(Sales) returns (Response);
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
+    rpc FindInfo(Query) returns (Response);
 
     // 定單列表
     rpc FindOrder(Query) returns (Response);
