@@ -85,7 +85,6 @@ proto.ding4.Announcement.toObject = function(includeInstance, msg) {
     enableAt: (f = msg.getEnableAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     area: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    title: jspb.Message.getFieldWithDefault(msg, 5, ""),
     templateGroupList: jspb.Message.toObjectList(msg.getTemplateGroupList(),
     template_pb.Template.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -148,10 +147,6 @@ proto.ding4.Announcement.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setType(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTitle(value);
       break;
     case 6:
       var value = new template_pb.Template;
@@ -247,13 +242,6 @@ proto.ding4.Announcement.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       4,
-      f
-    );
-  }
-  f = message.getTitle();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -406,24 +394,6 @@ proto.ding4.Announcement.prototype.getType = function() {
  */
 proto.ding4.Announcement.prototype.setType = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional string title = 5;
- * @return {string}
- */
-proto.ding4.Announcement.prototype.getTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ding4.Announcement} returns this
- */
-proto.ding4.Announcement.prototype.setTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

@@ -20,9 +20,6 @@ export class Announcement extends jspb.Message {
   getType(): number;
   setType(value: number): void;
 
-  getTitle(): string;
-  setTitle(value: string): void;
-
   getTemplateGroupList(): Array<template_pb.Template>;
   setTemplateGroupList(value: Array<template_pb.Template>): void;
   clearTemplateGroupList(): void;
@@ -73,7 +70,6 @@ export namespace Announcement {
     enableAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     area: number,
     type: number,
-    title: string,
     templateGroupList: Array<template_pb.Template.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

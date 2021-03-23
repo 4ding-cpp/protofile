@@ -14,7 +14,6 @@ message Announcement {
     google.protobuf.Timestamp enable_at = 2;
     int32 area = 3;
     int32 type = 4;
-    string title = 5;
     repeated Template template_group = 6;
     
     map<string, int32> labelx = 7;
