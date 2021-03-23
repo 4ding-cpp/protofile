@@ -33,6 +33,8 @@ service AdminRPC {
 
     // 查詢任何異動紀錄
     rpc FindRecord(Query) returns (Response);
+    // 檢查存在否
+    rpc Duplicate(Query) returns (Response);
 
     // Admin 相關
     rpc CreateAdmin(Admin) returns (Response);
