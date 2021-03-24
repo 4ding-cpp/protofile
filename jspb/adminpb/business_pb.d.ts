@@ -37,9 +37,6 @@ export class Business extends jspb.Message {
   getContact(): number;
   setContact(value: number): void;
 
-  getContacter(): string;
-  setContacter(value: string): void;
-
   getPhone(): string;
   setPhone(value: string): void;
 
@@ -130,7 +127,6 @@ export namespace Business {
     fee: number,
     type: number,
     contact: number,
-    contacter: string,
     phone: string,
     phoneVerify: boolean,
     email: string,
