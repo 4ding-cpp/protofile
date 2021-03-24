@@ -109,7 +109,7 @@ proto.ding4.Adv.toObject = function(includeInstance, msg) {
     phone: jspb.Message.getFieldWithDefault(msg, 6, ""),
     email: jspb.Message.getFieldWithDefault(msg, 7, ""),
     location: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    contact: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    contact: jspb.Message.getFieldWithDefault(msg, 9, ""),
     title: jspb.Message.getFieldWithDefault(msg, 10, ""),
     mgrType: jspb.Message.getFieldWithDefault(msg, 11, 0),
     turnover: jspb.Message.getFieldWithDefault(msg, 12, 0),
@@ -193,7 +193,7 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLocation(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setContact(value);
       break;
     case 10:
@@ -339,8 +339,8 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getContact();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       9,
       f
     );
@@ -589,20 +589,20 @@ proto.ding4.Adv.prototype.setLocation = function(value) {
 
 
 /**
- * optional int32 contact = 9;
- * @return {number}
+ * optional string contact = 9;
+ * @return {string}
  */
 proto.ding4.Adv.prototype.getContact = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Adv} returns this
  */
 proto.ding4.Adv.prototype.setContact = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
