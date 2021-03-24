@@ -92,7 +92,7 @@ proto.ding4.Business.toObject = function(includeInstance, msg) {
     password: jspb.Message.getFieldWithDefault(msg, 7, ""),
     fee: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     type: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    contact: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    contact: jspb.Message.getFieldWithDefault(msg, 10, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 12, ""),
     phoneVerify: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     email: jspb.Message.getFieldWithDefault(msg, 14, ""),
@@ -186,7 +186,7 @@ proto.ding4.Business.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setContact(value);
       break;
     case 12:
@@ -362,8 +362,8 @@ proto.ding4.Business.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getContact();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       10,
       f
     );
@@ -663,20 +663,20 @@ proto.ding4.Business.prototype.setType = function(value) {
 
 
 /**
- * optional int32 contact = 10;
- * @return {number}
+ * optional string contact = 10;
+ * @return {string}
  */
 proto.ding4.Business.prototype.getContact = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ding4.Business} returns this
  */
 proto.ding4.Business.prototype.setContact = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

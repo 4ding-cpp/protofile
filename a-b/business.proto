@@ -20,7 +20,7 @@ message Business {
     string password = 7;
     double fee = 8;
     int32 type = 9;
-    int32 contact = 10;
+    string contact = 10;
 
     string phone = 12;
     bool phone_verify = 13;
