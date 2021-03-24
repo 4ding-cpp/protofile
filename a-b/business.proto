@@ -20,29 +20,28 @@ message Business {
     string password = 7;
     double fee = 8;
     int32 type = 9;
-    string contacter = 10;
+    int32 contact = 10;
+    string contacter = 11;
 
-    string phone = 11;
-    bool phone_verify = 12;
-    string email = 13;
-    bool email_verify = 14;
-    string otp_token = 15;
-    string otp_code = 16;
-    Address address = 17;
-    int32 mgr_type = 18;
-    int32 turnover = 19;
+    string phone = 12;
+    bool phone_verify = 13;
+    string email = 14;
+    bool email_verify = 15;
+    string otp_token = 16;
+    string otp_code = 17;
+    Address address = 18;
 
-    string company = 20;
-    string identify = 21;
-    repeated Option permission = 22;
-    repeated string white = 23;
+    string company = 19;
+    string identify = 20;
+    repeated Option permission = 21;
+    repeated string white = 22;
     
-    map<string, int32> labelx = 24;
-    string operator = 25;
-    google.protobuf.Timestamp create_at = 26;
-    google.protobuf.Timestamp update_at = 27;
-    repeated string cols = 28;
-    repeated Condition condition = 29;
-    google.protobuf.Struct self = 30;
+    map<string, int32> labelx = 23;
+    string operator = 24;
+    google.protobuf.Timestamp create_at = 25;
+    google.protobuf.Timestamp update_at = 26;
+    repeated string cols = 27;
+    repeated Condition condition = 28;
+    google.protobuf.Struct self = 29;
 }
 

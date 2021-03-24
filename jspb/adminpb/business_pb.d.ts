@@ -34,6 +34,9 @@ export class Business extends jspb.Message {
   getType(): number;
   setType(value: number): void;
 
+  getContact(): number;
+  setContact(value: number): void;
+
   getContacter(): string;
   setContacter(value: string): void;
 
@@ -59,12 +62,6 @@ export class Business extends jspb.Message {
   setAddress(value?: address_pb.Address): void;
   hasAddress(): boolean;
   clearAddress(): void;
-
-  getMgrType(): number;
-  setMgrType(value: number): void;
-
-  getTurnover(): number;
-  setTurnover(value: number): void;
 
   getCompany(): string;
   setCompany(value: string): void;
@@ -132,6 +129,7 @@ export namespace Business {
     password: string,
     fee: number,
     type: number,
+    contact: number,
     contacter: string,
     phone: string,
     phoneVerify: boolean,
@@ -140,8 +138,6 @@ export namespace Business {
     otpToken: string,
     otpCode: string,
     address?: address_pb.Address.AsObject,
-    mgrType: number,
-    turnover: number,
     company: string,
     identify: string,
     permissionList: Array<permission_pb.Option.AsObject>,
