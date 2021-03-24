@@ -105,7 +105,7 @@ proto.ding4.Adv.toObject = function(includeInstance, msg) {
     businessId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     state: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    contacter: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 6, ""),
     email: jspb.Message.getFieldWithDefault(msg, 7, ""),
     location: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -178,7 +178,7 @@ proto.ding4.Adv.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setContacter(value);
+      msg.setName(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -310,7 +310,7 @@ proto.ding4.Adv.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getContacter();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -517,10 +517,10 @@ proto.ding4.Adv.prototype.setType = function(value) {
 
 
 /**
- * optional string contacter = 5;
+ * optional string name = 5;
  * @return {string}
  */
-proto.ding4.Adv.prototype.getContacter = function() {
+proto.ding4.Adv.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -529,7 +529,7 @@ proto.ding4.Adv.prototype.getContacter = function() {
  * @param {string} value
  * @return {!proto.ding4.Adv} returns this
  */
-proto.ding4.Adv.prototype.setContacter = function(value) {
+proto.ding4.Adv.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
