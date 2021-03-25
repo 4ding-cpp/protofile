@@ -8,6 +8,7 @@ import "pingpong.proto";
 import "sql.proto";
 import "password.proto";
 import "admin.proto";
+import "command.proto";
 import "business.proto";
 import "domain.proto";
 import "label.proto";
@@ -56,6 +57,10 @@ service AdminRPC {
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
     rpc FlushDomain(Query) returns (Response);
+
+    // 重開指令
+    rpc CreateCommand(Command) returns (Response);
+    rpc FindCommand(Query) returns (Response);
 
     // 標籤相關
     rpc CreateLabel(Label) returns (Response);

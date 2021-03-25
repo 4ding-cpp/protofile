@@ -20,6 +20,8 @@ var password_pb = require('./password_pb.js');
 goog.object.extend(proto, password_pb);
 var admin_pb = require('./admin_pb.js');
 goog.object.extend(proto, admin_pb);
+var command_pb = require('./command_pb.js');
+goog.object.extend(proto, command_pb);
 var business_pb = require('./business_pb.js');
 goog.object.extend(proto, business_pb);
 var domain_pb = require('./domain_pb.js');

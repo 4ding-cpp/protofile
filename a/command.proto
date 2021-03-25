@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+message Command {
+    int32 id = 1;
+    string exec = 2;
+    bool execed = 3;
+    string namespace = 4;
+    string business_id = 5;
+
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    google.protobuf.Struct self = 11;
+}

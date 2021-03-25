@@ -13,6 +13,7 @@ import * as pingpong_pb from './pingpong_pb';
 import * as sql_pb from './sql_pb';
 import * as password_pb from './password_pb';
 import * as admin_pb from './admin_pb';
+import * as command_pb from './command_pb';
 import * as business_pb from './business_pb';
 import * as domain_pb from './domain_pb';
 import * as label_pb from './label_pb';
@@ -586,6 +587,50 @@ export class AdminRPCClient {
       request,
       metadata || {},
       this.methodInfoFlushDomain,
+      callback);
+  }
+
+  methodInfoCreateCommand = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: command_pb.Command) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createCommand(
+    request: command_pb.Command,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/CreateCommand',
+      request,
+      metadata || {},
+      this.methodInfoCreateCommand,
+      callback);
+  }
+
+  methodInfoFindCommand = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findCommand(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/FindCommand',
+      request,
+      metadata || {},
+      this.methodInfoFindCommand,
       callback);
   }
 
