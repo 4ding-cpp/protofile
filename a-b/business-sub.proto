@@ -24,11 +24,12 @@ message BusinessSub {
     repeated string white = 12;
     
     map<string, int32> labelx = 13;
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19;
+    string power = 14;
+    string operator = 15;
+    google.protobuf.Timestamp create_at = 16;
+    google.protobuf.Timestamp update_at = 17;
+    repeated string cols = 18;
+    repeated Condition condition = 19;
+    google.protobuf.Struct self = 20;
 }
 

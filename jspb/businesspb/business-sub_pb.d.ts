@@ -49,6 +49,9 @@ export class BusinessSub extends jspb.Message {
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
+  getPower(): string;
+  setPower(value: string): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -100,6 +103,7 @@ export namespace BusinessSub {
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
     labelxMap: Array<[string, number]>,
+    power: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

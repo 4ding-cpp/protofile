@@ -22,20 +22,21 @@ message Business {
     int32 type = 9;
     string contact = 10;
 
-    string phone = 12;
-    bool phone_verify = 13;
-    string email = 14;
-    bool email_verify = 15;
-    string otp_token = 16;
-    string otp_code = 17;
-    Address address = 18;
+    string phone = 11;
+    bool phone_verify = 12;
+    string email = 13;
+    bool email_verify = 14;
+    string otp_token = 15;
+    string otp_code = 16;
+    Address address = 17;
 
-    string company = 19;
-    string identify = 20;
-    repeated Option permission = 21;
-    repeated string white = 22;
+    string company = 18;
+    string identify = 19;
+    repeated Option permission = 20;
+    repeated string white = 21;
     
-    map<string, int32> labelx = 23;
+    map<string, int32> labelx = 22;
+    string power = 23;
     string operator = 24;
     google.protobuf.Timestamp create_at = 25;
     google.protobuf.Timestamp update_at = 26;

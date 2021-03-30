@@ -41,6 +41,9 @@ export class Sales extends jspb.Message {
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
+  getPower(): string;
+  setPower(value: string): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -91,6 +94,7 @@ export namespace Sales {
     otpToken: string,
     otpCode: string,
     labelxMap: Array<[string, number]>,
+    power: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
