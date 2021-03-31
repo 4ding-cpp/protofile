@@ -152,14 +152,14 @@ export class AdminRPCClient {
 
   methodInfoChangeWhitelist = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: admin_pb.Admin) => {
+    (request: password_pb.OTP) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   changeWhitelist(
-    request: admin_pb.Admin,
+    request: password_pb.OTP,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -174,14 +174,14 @@ export class AdminRPCClient {
 
   methodInfoChangeOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: admin_pb.Admin) => {
+    (request: password_pb.OTP) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   changeOTPToken(
-    request: admin_pb.Admin,
+    request: password_pb.OTP,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

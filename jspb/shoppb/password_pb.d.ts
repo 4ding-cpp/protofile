@@ -58,3 +58,29 @@ export namespace Rename {
   }
 }
 
+export class OTP extends jspb.Message {
+  getMode(): string;
+  setMode(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OTP.AsObject;
+  static toObject(includeInstance: boolean, msg: OTP): OTP.AsObject;
+  static serializeBinaryToWriter(message: OTP, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OTP;
+  static deserializeBinaryFromReader(message: OTP, reader: jspb.BinaryReader): OTP;
+}
+
+export namespace OTP {
+  export type AsObject = {
+    mode: string,
+    userId: string,
+    password: string,
+  }
+}
+

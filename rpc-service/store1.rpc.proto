@@ -36,8 +36,8 @@ service Store1RPC {
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Manager) returns (Response);
     rpc ChangeWhitelist(Manager) returns (Response);
-    rpc ChangeOTPToken(Manager) returns (Response);
-    rpc ComfirmOTPToken(Manager) returns (Response);
+    rpc ChangeOTPToken(OTP) returns (Response);
+    rpc ComfirmOTPToken(OTP) returns (Response);
     rpc FindPermission(Query) returns (Response);
     rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);

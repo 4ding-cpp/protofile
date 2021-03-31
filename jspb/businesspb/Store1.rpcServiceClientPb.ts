@@ -164,14 +164,14 @@ export class Store1RPCClient {
 
   methodInfoChangeOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: password_pb.OTP) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   changeOTPToken(
-    request: manager_pb.Manager,
+    request: password_pb.OTP,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -186,14 +186,14 @@ export class Store1RPCClient {
 
   methodInfoComfirmOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: manager_pb.Manager) => {
+    (request: password_pb.OTP) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   comfirmOTPToken(
-    request: manager_pb.Manager,
+    request: password_pb.OTP,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
