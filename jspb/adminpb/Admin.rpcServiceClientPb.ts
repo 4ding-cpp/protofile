@@ -194,6 +194,28 @@ export class AdminRPCClient {
       callback);
   }
 
+  methodInfoComfirmOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: admin_pb.Admin) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  comfirmOTPToken(
+    request: admin_pb.Admin,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.AdminRPC/ComfirmOTPToken',
+      request,
+      metadata || {},
+      this.methodInfoComfirmOTPToken,
+      callback);
+  }
+
   methodInfoFindPermission = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {

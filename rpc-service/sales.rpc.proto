@@ -17,6 +17,7 @@ service SalesRPC {
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Sales) returns (Response);
     rpc ChangeOTPToken(Sales) returns (Response);
+    rpc ComfirmOTPToken(Sales) returns (Response);
     rpc FindSign(Query) returns (Response);
     rpc FindAnnouncement(Query) returns (Response);
     rpc FindAnnouncementTemplate(Query) returns (Response);
