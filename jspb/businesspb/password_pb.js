@@ -536,7 +536,8 @@ proto.ding4.OTP.toObject = function(includeInstance, msg) {
   var f, obj = {
     mode: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 3, "")
+    password: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -584,6 +585,11 @@ proto.ding4.OTP.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setSelf(value);
       break;
     default:
       reader.skipField();
@@ -633,6 +639,14 @@ proto.ding4.OTP.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getSelf();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
   }
 };
@@ -689,6 +703,43 @@ proto.ding4.OTP.prototype.getPassword = function() {
  */
 proto.ding4.OTP.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Struct self = 4;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ding4.OTP.prototype.getSelf = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ding4.OTP} returns this
+*/
+proto.ding4.OTP.prototype.setSelf = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.OTP} returns this
+ */
+proto.ding4.OTP.prototype.clearSelf = function() {
+  return this.setSelf(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.OTP.prototype.hasSelf = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

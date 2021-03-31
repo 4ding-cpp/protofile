@@ -27,9 +27,9 @@ service AdminRPC {
     rpc WhoAmI(Query) returns (Response);
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Admin) returns (Response);
-    rpc ChangeWhitelist(OTP) returns (Response);
+    rpc ChangeWhitelist(Admin) returns (Response);
     rpc ChangeOTPToken(OTP) returns (Response);
-    rpc ComfirmOTPToken(Admin) returns (Response);
+    rpc ComfirmOTPToken(OTP) returns (Response);
     rpc FindPermission(Query) returns (Response);
     rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
