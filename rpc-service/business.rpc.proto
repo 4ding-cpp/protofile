@@ -36,6 +36,7 @@ service BusinessRPC {
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Business) returns (Response);
     rpc ChangeWhitelist(Business) returns (Response);
+    rpc ChangeOTPToken(Business) returns (Response);
     rpc FindPermission(Query) returns (Response);
     rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);

@@ -28,6 +28,7 @@ service AdminRPC {
     rpc ChangePassword(Password) returns (Response);
     rpc ChangeInfo(Admin) returns (Response);
     rpc ChangeWhitelist(Admin) returns (Response);
+    rpc ChangeOTPToken(Admin) returns (Response);
     rpc FindPermission(Query) returns (Response);
     rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);
