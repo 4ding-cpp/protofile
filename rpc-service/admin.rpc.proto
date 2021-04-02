@@ -29,7 +29,7 @@ service AdminRPC {
     rpc ChangeInfo(Admin) returns (Response);
     rpc ChangeWhitelist(Admin) returns (Response);
     rpc ChangeOTPToken(OTP) returns (Response);
-    rpc ComfirmOTPToken(OTP) returns (Response);
+    rpc ConfirmOTPToken(OTP) returns (Response);
     rpc FindPermission(Query) returns (Response);
     rpc FindRecordSelf(Query) returns (Response);
     rpc FindSign(Query) returns (Response);

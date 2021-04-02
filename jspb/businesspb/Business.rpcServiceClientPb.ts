@@ -185,7 +185,7 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoComfirmOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoConfirmOTPToken = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: password_pb.OTP) => {
       return request.serializeBinary();
@@ -193,17 +193,17 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  comfirmOTPToken(
+  confirmOTPToken(
     request: password_pb.OTP,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/ComfirmOTPToken',
+        '/ding4.BusinessRPC/ConfirmOTPToken',
       request,
       metadata || {},
-      this.methodInfoComfirmOTPToken,
+      this.methodInfoConfirmOTPToken,
       callback);
   }
 
