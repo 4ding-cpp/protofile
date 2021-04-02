@@ -536,7 +536,8 @@ proto.ding4.OTP.toObject = function(includeInstance, msg) {
   var f, obj = {
     mode: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    token: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 4, ""),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
@@ -584,9 +585,13 @@ proto.ding4.OTP.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
+      msg.setToken(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 5:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -634,17 +639,24 @@ proto.ding4.OTP.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPassword();
+  f = message.getToken();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getPassword();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -689,10 +701,10 @@ proto.ding4.OTP.prototype.setUserId = function(value) {
 
 
 /**
- * optional string password = 3;
+ * optional string token = 3;
  * @return {string}
  */
-proto.ding4.OTP.prototype.getPassword = function() {
+proto.ding4.OTP.prototype.getToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -701,18 +713,36 @@ proto.ding4.OTP.prototype.getPassword = function() {
  * @param {string} value
  * @return {!proto.ding4.OTP} returns this
  */
-proto.ding4.OTP.prototype.setPassword = function(value) {
+proto.ding4.OTP.prototype.setToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Struct self = 4;
+ * optional string password = 4;
+ * @return {string}
+ */
+proto.ding4.OTP.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OTP} returns this
+ */
+proto.ding4.OTP.prototype.setPassword = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Struct self = 5;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.OTP.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 5));
 };
 
 
@@ -721,7 +751,7 @@ proto.ding4.OTP.prototype.getSelf = function() {
  * @return {!proto.ding4.OTP} returns this
 */
 proto.ding4.OTP.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -739,7 +769,7 @@ proto.ding4.OTP.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.OTP.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

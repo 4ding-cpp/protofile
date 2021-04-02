@@ -65,6 +65,9 @@ export class OTP extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
+  getToken(): string;
+  setToken(value: string): void;
+
   getPassword(): string;
   setPassword(value: string): void;
 
@@ -85,6 +88,7 @@ export namespace OTP {
   export type AsObject = {
     mode: string,
     userId: string,
+    token: string,
     password: string,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
