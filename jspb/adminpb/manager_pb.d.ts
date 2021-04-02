@@ -49,9 +49,6 @@ export class Manager extends jspb.Message {
   getOtpToken(): string;
   setOtpToken(value: string): void;
 
-  getOtpCode(): string;
-  setOtpCode(value: string): void;
-
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -109,7 +106,6 @@ export namespace Manager {
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
     otpToken: string,
-    otpCode: string,
     labelxMap: Array<[string, number]>,
     power: string,
     operator: string,
@@ -164,6 +160,9 @@ export class ManagerSub extends jspb.Message {
   setWhiteList(value: Array<string>): void;
   clearWhiteList(): void;
   addWhite(value: string, index?: number): void;
+
+  getOptToken(): string;
+  setOptToken(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -222,6 +221,7 @@ export namespace ManagerSub {
     emailVerify: boolean,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
+    optToken: string,
     labelxMap: Array<[string, number]>,
     power: string,
     operator: string,

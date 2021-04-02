@@ -34,14 +34,15 @@ message Business {
     string identify = 19;
     repeated Option permission = 20;
     repeated string white = 21;
+    string opt_token = 22;
     
-    map<string, int32> labelx = 22;
-    string power = 23;
-    string operator = 24;
-    google.protobuf.Timestamp create_at = 25;
-    google.protobuf.Timestamp update_at = 26;
-    repeated string cols = 27;
-    repeated Condition condition = 28;
-    google.protobuf.Struct self = 29;
+    map<string, int32> labelx = 23;
+    string power = 24;
+    string operator = 25;
+    google.protobuf.Timestamp create_at = 26;
+    google.protobuf.Timestamp update_at = 27;
+    repeated string cols = 28;
+    repeated Condition condition = 29;
+    google.protobuf.Struct self = 30;
 }
 

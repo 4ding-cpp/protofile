@@ -22,14 +22,15 @@ message BusinessSub {
     bool email_verify = 10;    
     repeated Option permission = 11;
     repeated string white = 12;
+    string opt_token = 13;
     
-    map<string, int32> labelx = 13;
-    string power = 14;
-    string operator = 15;
-    google.protobuf.Timestamp create_at = 16;
-    google.protobuf.Timestamp update_at = 17;
-    repeated string cols = 18;
-    repeated Condition condition = 19;
-    google.protobuf.Struct self = 20;
+    map<string, int32> labelx = 14;
+    string power = 15;
+    string operator = 16;
+    google.protobuf.Timestamp create_at = 17;
+    google.protobuf.Timestamp update_at = 18;
+    repeated string cols = 19;
+    repeated Condition condition = 20;
+    google.protobuf.Struct self = 21;
 }
 

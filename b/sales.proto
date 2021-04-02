@@ -19,14 +19,13 @@ message Sales {
     string urn = 8;
     string password = 9;
     string otp_token = 10;
-    string otp_code = 11;
 
-    map<string, int32> labelx = 12;
-    string power = 13;
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19; 
+    map<string, int32> labelx = 11;
+    string power = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18; 
 }

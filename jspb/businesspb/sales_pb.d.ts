@@ -35,9 +35,6 @@ export class Sales extends jspb.Message {
   getOtpToken(): string;
   setOtpToken(value: string): void;
 
-  getOtpCode(): string;
-  setOtpCode(value: string): void;
-
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
 
@@ -92,7 +89,6 @@ export namespace Sales {
     urn: string,
     password: string,
     otpToken: string,
-    otpCode: string,
     labelxMap: Array<[string, number]>,
     power: string,
     operator: string,
