@@ -1004,7 +1004,7 @@ proto.ding4.ManagerSub.toObject = function(includeInstance, msg) {
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     permission_pb.Option.toObject, includeInstance),
     whiteList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
-    optToken: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    otpToken: jspb.Message.getFieldWithDefault(msg, 14, ""),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     power: jspb.Message.getFieldWithDefault(msg, 16, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -1105,7 +1105,7 @@ proto.ding4.ManagerSub.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOptToken(value);
+      msg.setOtpToken(value);
       break;
     case 15:
       var value = msg.getLabelxMap();
@@ -1266,7 +1266,7 @@ proto.ding4.ManagerSub.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOptToken();
+  f = message.getOtpToken();
   if (f.length > 0) {
     writer.writeString(
       14,
@@ -1607,10 +1607,10 @@ proto.ding4.ManagerSub.prototype.clearWhiteList = function() {
 
 
 /**
- * optional string opt_token = 14;
+ * optional string otp_token = 14;
  * @return {string}
  */
-proto.ding4.ManagerSub.prototype.getOptToken = function() {
+proto.ding4.ManagerSub.prototype.getOtpToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -1619,7 +1619,7 @@ proto.ding4.ManagerSub.prototype.getOptToken = function() {
  * @param {string} value
  * @return {!proto.ding4.ManagerSub} returns this
  */
-proto.ding4.ManagerSub.prototype.setOptToken = function(value) {
+proto.ding4.ManagerSub.prototype.setOtpToken = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
 

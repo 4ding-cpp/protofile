@@ -94,7 +94,7 @@ proto.ding4.BusinessSub.toObject = function(includeInstance, msg) {
     permissionList: jspb.Message.toObjectList(msg.getPermissionList(),
     permission_pb.Option.toObject, includeInstance),
     whiteList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-    optToken: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    otpToken: jspb.Message.getFieldWithDefault(msg, 13, ""),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     power: jspb.Message.getFieldWithDefault(msg, 15, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 16, ""),
@@ -191,7 +191,7 @@ proto.ding4.BusinessSub.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOptToken(value);
+      msg.setOtpToken(value);
       break;
     case 14:
       var value = msg.getLabelxMap();
@@ -345,7 +345,7 @@ proto.ding4.BusinessSub.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOptToken();
+  f = message.getOtpToken();
   if (f.length > 0) {
     writer.writeString(
       13,
@@ -668,10 +668,10 @@ proto.ding4.BusinessSub.prototype.clearWhiteList = function() {
 
 
 /**
- * optional string opt_token = 13;
+ * optional string otp_token = 13;
  * @return {string}
  */
-proto.ding4.BusinessSub.prototype.getOptToken = function() {
+proto.ding4.BusinessSub.prototype.getOtpToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -680,7 +680,7 @@ proto.ding4.BusinessSub.prototype.getOptToken = function() {
  * @param {string} value
  * @return {!proto.ding4.BusinessSub} returns this
  */
-proto.ding4.BusinessSub.prototype.setOptToken = function(value) {
+proto.ding4.BusinessSub.prototype.setOtpToken = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 

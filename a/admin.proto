@@ -21,7 +21,7 @@ message Admin {
     bool is_live = 9;
     repeated Option permission = 10;
     repeated string white = 11;
-    string opt_token = 12;
+    string otp_token = 12;
 
     map<string, int32> labelx = 13;
     string power = 14;

@@ -49,12 +49,6 @@ export class Business extends jspb.Message {
   getEmailVerify(): boolean;
   setEmailVerify(value: boolean): void;
 
-  getOtpToken(): string;
-  setOtpToken(value: string): void;
-
-  getOtpCode(): string;
-  setOtpCode(value: string): void;
-
   getAddress(): address_pb.Address | undefined;
   setAddress(value?: address_pb.Address): void;
   hasAddress(): boolean;
@@ -76,8 +70,8 @@ export class Business extends jspb.Message {
   clearWhiteList(): void;
   addWhite(value: string, index?: number): void;
 
-  getOptToken(): string;
-  setOptToken(value: string): void;
+  getOtpToken(): string;
+  setOtpToken(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -137,14 +131,12 @@ export namespace Business {
     phoneVerify: boolean,
     email: string,
     emailVerify: boolean,
-    otpToken: string,
-    otpCode: string,
     address?: address_pb.Address.AsObject,
     company: string,
     identify: string,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
-    optToken: string,
+    otpToken: string,
     labelxMap: Array<[string, number]>,
     power: string,
     operator: string,

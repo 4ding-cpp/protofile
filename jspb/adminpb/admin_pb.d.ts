@@ -43,8 +43,8 @@ export class Admin extends jspb.Message {
   clearWhiteList(): void;
   addWhite(value: string, index?: number): void;
 
-  getOptToken(): string;
-  setOptToken(value: string): void;
+  getOtpToken(): string;
+  setOtpToken(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -101,7 +101,7 @@ export namespace Admin {
     isLive: boolean,
     permissionList: Array<permission_pb.Option.AsObject>,
     whiteList: Array<string>,
-    optToken: string,
+    otpToken: string,
     labelxMap: Array<[string, number]>,
     power: string,
     operator: string,

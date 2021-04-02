@@ -48,7 +48,7 @@ message ManagerSub {
     bool email_verify = 11;
     repeated Option permission = 12;
     repeated string white = 13;
-    string opt_token = 14;
+    string otp_token = 14;
 
     map<string, int32> labelx = 15;
     string power = 16;
