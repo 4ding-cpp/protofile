@@ -28,6 +28,9 @@ service ShopRPC {
     rpc ChangeInfo(Customer) returns (Response);
     rpc FindSign(Query) returns (Response);
 
+    // 查詢任何異動紀錄
+    rpc FindRecord(Query) returns (Response);
+
     // 瀏覽回饋
     rpc UploadBrowse(BrowseRecord) returns (Response);
 
