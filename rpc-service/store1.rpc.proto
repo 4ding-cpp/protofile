@@ -47,6 +47,8 @@ service Store1RPC {
 
     // 檢查存在否
     rpc Duplicate(Query) returns (Response);
+    // 查詢任何異動紀錄
+    rpc FindRecord(Query) returns (Response);
 
     rpc Dashboard(Query) returns (Response);
     rpc Rank(Query) returns (Response);
