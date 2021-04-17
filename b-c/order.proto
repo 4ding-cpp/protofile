@@ -135,12 +135,15 @@ message OrderOther {
     int32 expire_day = 5;
 
     string logistics_no = 6;
-    string cvs_payment_no = 7;
+    string arrival_at = 7;
+    string cvs_payment_no = 8;
     
-    string return_no = 8;
+    string return_no = 9;
+    string return_code = 10;
+    string reutrn_remark = 11;
 
-    ContactInfo sender = 9;
-    ContactInfo receiver = 10;
+    ContactInfo sender = 12;
+    ContactInfo receiver = 13;
 }
 
 message OrderBatch {
