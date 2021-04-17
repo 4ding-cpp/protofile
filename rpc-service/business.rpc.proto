@@ -160,7 +160,7 @@ service BusinessRPC {
     rpc DetailOrder(Order) returns (Response);
     rpc UpdateOrderOther(Order) returns (Response);
     rpc PickUpGoods(Query) returns (Response);
-    rpc ClearReturn(Order) returns (Response);
+    
 
     rpc CreateSupplier(Supplier) returns (Response);
     rpc UpdateSupplier(Supplier) returns (Response);
@@ -198,6 +198,7 @@ service BusinessRPC {
     // 物流相關
     rpc CreateLogistics(OrderBatch) returns (Response);
     rpc CreateReturn(Order) returns (Response);
+    rpc ClearReturn(Order) returns (Response);
     rpc FindOrderFlow(Query) returns (Response);
 
     // 網域相關
