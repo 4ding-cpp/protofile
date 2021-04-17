@@ -160,6 +160,7 @@ service BusinessRPC {
     rpc DetailOrder(Order) returns (Response);
     rpc UpdateOrderOther(Order) returns (Response);
     rpc PickUpGoods(Query) returns (Response);
+    rpc ClearReturn(Order) returns (Response);
 
     rpc CreateSupplier(Supplier) returns (Response);
     rpc UpdateSupplier(Supplier) returns (Response);

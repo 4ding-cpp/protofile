@@ -1681,6 +1681,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoClearReturn = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: order_pb.Order) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  clearReturn(
+    request: order_pb.Order,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ClearReturn',
+      request,
+      metadata || {},
+      this.methodInfoClearReturn,
+      callback);
+  }
+
   methodInfoCreateSupplier = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: purchase_pb.Supplier) => {
