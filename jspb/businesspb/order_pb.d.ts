@@ -457,11 +457,20 @@ export class OrderOther extends jspb.Message {
   getLogisticsNo(): string;
   setLogisticsNo(value: string): void;
 
+  getArrivalAt(): string;
+  setArrivalAt(value: string): void;
+
   getCvsPaymentNo(): string;
   setCvsPaymentNo(value: string): void;
 
   getReturnNo(): string;
   setReturnNo(value: string): void;
+
+  getReturnCode(): string;
+  setReturnCode(value: string): void;
+
+  getReutrnRemark(): string;
+  setReutrnRemark(value: string): void;
 
   getSender(): ContactInfo | undefined;
   setSender(value?: ContactInfo): void;
@@ -489,8 +498,11 @@ export namespace OrderOther {
     cvsNo: string,
     expireDay: number,
     logisticsNo: string,
+    arrivalAt: string,
     cvsPaymentNo: string,
     returnNo: string,
+    returnCode: string,
+    reutrnRemark: string,
     sender?: ContactInfo.AsObject,
     receiver?: ContactInfo.AsObject,
   }

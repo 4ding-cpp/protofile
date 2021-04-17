@@ -3560,8 +3560,11 @@ proto.ding4.OrderOther.toObject = function(includeInstance, msg) {
     cvsNo: jspb.Message.getFieldWithDefault(msg, 4, ""),
     expireDay: jspb.Message.getFieldWithDefault(msg, 5, 0),
     logisticsNo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    cvsPaymentNo: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    returnNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    arrivalAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    cvsPaymentNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    returnNo: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    returnCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    reutrnRemark: jspb.Message.getFieldWithDefault(msg, 11, ""),
     sender: (f = msg.getSender()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
     receiver: (f = msg.getReceiver()) && proto.ding4.ContactInfo.toObject(includeInstance, f)
   };
@@ -3626,18 +3629,30 @@ proto.ding4.OrderOther.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCvsPaymentNo(value);
+      msg.setArrivalAt(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReturnNo(value);
+      msg.setCvsPaymentNo(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReturnNo(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReturnCode(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReutrnRemark(value);
+      break;
+    case 12:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setSender(value);
       break;
-    case 10:
+    case 13:
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setReceiver(value);
@@ -3713,24 +3728,45 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCvsPaymentNo();
+  f = message.getArrivalAt();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getReturnNo();
+  f = message.getCvsPaymentNo();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
+  f = message.getReturnNo();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getReturnCode();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getReutrnRemark();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
   f = message.getSender();
   if (f != null) {
     writer.writeMessage(
-      9,
+      12,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -3738,7 +3774,7 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
   f = message.getReceiver();
   if (f != null) {
     writer.writeMessage(
-      10,
+      13,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -3855,10 +3891,10 @@ proto.ding4.OrderOther.prototype.setLogisticsNo = function(value) {
 
 
 /**
- * optional string cvs_payment_no = 7;
+ * optional string arrival_at = 7;
  * @return {string}
  */
-proto.ding4.OrderOther.prototype.getCvsPaymentNo = function() {
+proto.ding4.OrderOther.prototype.getArrivalAt = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -3867,16 +3903,16 @@ proto.ding4.OrderOther.prototype.getCvsPaymentNo = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderOther} returns this
  */
-proto.ding4.OrderOther.prototype.setCvsPaymentNo = function(value) {
+proto.ding4.OrderOther.prototype.setArrivalAt = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string return_no = 8;
+ * optional string cvs_payment_no = 8;
  * @return {string}
  */
-proto.ding4.OrderOther.prototype.getReturnNo = function() {
+proto.ding4.OrderOther.prototype.getCvsPaymentNo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -3885,18 +3921,72 @@ proto.ding4.OrderOther.prototype.getReturnNo = function() {
  * @param {string} value
  * @return {!proto.ding4.OrderOther} returns this
  */
-proto.ding4.OrderOther.prototype.setReturnNo = function(value) {
+proto.ding4.OrderOther.prototype.setCvsPaymentNo = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional ContactInfo sender = 9;
+ * optional string return_no = 9;
+ * @return {string}
+ */
+proto.ding4.OrderOther.prototype.getReturnNo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setReturnNo = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string return_code = 10;
+ * @return {string}
+ */
+proto.ding4.OrderOther.prototype.getReturnCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setReturnCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string reutrn_remark = 11;
+ * @return {string}
+ */
+proto.ding4.OrderOther.prototype.getReutrnRemark = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.setReutrnRemark = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional ContactInfo sender = 12;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getSender = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 9));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 12));
 };
 
 
@@ -3905,7 +3995,7 @@ proto.ding4.OrderOther.prototype.getSender = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setSender = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -3923,17 +4013,17 @@ proto.ding4.OrderOther.prototype.clearSender = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasSender = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional ContactInfo receiver = 10;
+ * optional ContactInfo receiver = 13;
  * @return {?proto.ding4.ContactInfo}
  */
 proto.ding4.OrderOther.prototype.getReceiver = function() {
   return /** @type{?proto.ding4.ContactInfo} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 10));
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 13));
 };
 
 
@@ -3942,7 +4032,7 @@ proto.ding4.OrderOther.prototype.getReceiver = function() {
  * @return {!proto.ding4.OrderOther} returns this
 */
 proto.ding4.OrderOther.prototype.setReceiver = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -3960,7 +4050,7 @@ proto.ding4.OrderOther.prototype.clearReceiver = function() {
  * @return {boolean}
  */
 proto.ding4.OrderOther.prototype.hasReceiver = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
