@@ -2408,18 +2408,18 @@ export class BusinessRPCClient {
   }
 
   methodInfoReportPayment = new grpcWeb.AbstractClientBase.MethodInfo(
-    report_pb.PaymentRp,
+    sql_pb.Response,
     (request: report_pb.PaymentRp) => {
       return request.serializeBinary();
     },
-    report_pb.PaymentRp.deserializeBinary
+    sql_pb.Response.deserializeBinary
   );
 
   reportPayment(
     request: report_pb.PaymentRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: report_pb.PaymentRp) => void) {
+               response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.BusinessRPC/ReportPayment',
@@ -2430,18 +2430,18 @@ export class BusinessRPCClient {
   }
 
   methodInfoReportCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
-    report_pb.CustomerRp,
+    sql_pb.Response,
     (request: report_pb.CustomerRp) => {
       return request.serializeBinary();
     },
-    report_pb.CustomerRp.deserializeBinary
+    sql_pb.Response.deserializeBinary
   );
 
   reportCustomer(
     request: report_pb.CustomerRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: report_pb.CustomerRp) => void) {
+               response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.BusinessRPC/ReportCustomer',
@@ -2452,18 +2452,18 @@ export class BusinessRPCClient {
   }
 
   methodInfoReportProduct = new grpcWeb.AbstractClientBase.MethodInfo(
-    report_pb.ProductRp,
+    sql_pb.Response,
     (request: report_pb.ProductRp) => {
       return request.serializeBinary();
     },
-    report_pb.ProductRp.deserializeBinary
+    sql_pb.Response.deserializeBinary
   );
 
   reportProduct(
     request: report_pb.ProductRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: report_pb.ProductRp) => void) {
+               response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.BusinessRPC/ReportProduct',
@@ -2474,18 +2474,18 @@ export class BusinessRPCClient {
   }
 
   methodInfoReportFavorite = new grpcWeb.AbstractClientBase.MethodInfo(
-    report_pb.FavoriteRp,
+    sql_pb.Response,
     (request: report_pb.FavoriteRp) => {
       return request.serializeBinary();
     },
-    report_pb.FavoriteRp.deserializeBinary
+    sql_pb.Response.deserializeBinary
   );
 
   reportFavorite(
     request: report_pb.FavoriteRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: report_pb.FavoriteRp) => void) {
+               response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.BusinessRPC/ReportFavorite',
@@ -2496,18 +2496,18 @@ export class BusinessRPCClient {
   }
 
   methodInfoReportCar = new grpcWeb.AbstractClientBase.MethodInfo(
-    report_pb.CarRp,
+    sql_pb.Response,
     (request: report_pb.CarRp) => {
       return request.serializeBinary();
     },
-    report_pb.CarRp.deserializeBinary
+    sql_pb.Response.deserializeBinary
   );
 
   reportCar(
     request: report_pb.CarRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: report_pb.CarRp) => void) {
+               response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
         '/ding4.BusinessRPC/ReportCar',

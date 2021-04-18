@@ -212,9 +212,9 @@ service BusinessRPC {
     rpc FindSales(Query) returns (Response);
 
     // 報表
-    rpc ReportPayment(PaymentRp) returns (PaymentRp);
-    rpc ReportCustomer(CustomerRp) returns (CustomerRp);
-    rpc ReportProduct(ProductRp) returns (ProductRp);
-    rpc ReportFavorite(FavoriteRp) returns (FavoriteRp);
-    rpc ReportCar(CarRp) returns (CarRp);
+    rpc ReportPayment(PaymentRp) returns (Response);
+    rpc ReportCustomer(CustomerRp) returns (Response);
+    rpc ReportProduct(ProductRp) returns (Response);
+    rpc ReportFavorite(FavoriteRp) returns (Response);
+    rpc ReportCar(CarRp) returns (Response);
 }
