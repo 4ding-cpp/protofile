@@ -173,6 +173,7 @@ export namespace Condition {
     LABEL = 7,
     UNLABEL = 8,
     NOTIN = 9,
+    NE = 10,
   }
 }
 

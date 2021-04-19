@@ -1336,7 +1336,8 @@ proto.ding4.Condition.Operand = {
   LIKE: 6,
   LABEL: 7,
   UNLABEL: 8,
-  NOTIN: 9
+  NOTIN: 9,
+  NE: 10
 };
 
 /**
