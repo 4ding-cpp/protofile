@@ -179,16 +179,18 @@ message FavoriteRp {
 message CarRp {
     message Data {
         string store_id = 1;
-        string product_id = 2;
-        string sku = 3;
-        string photo_src = 4;
-        int32 count = 5;
-        int32 amount = 6;
-        ReportTotal total = 7;
+        string group_id = 2;
+        string product_id = 3;
+        string sku = 4;
+        string photo_src = 5;
+        int32 count = 6;
+        int32 amount = 7;
+        ReportTotal total = 8;
     }
     message Query {
         QueryRp store_id = 1;
         QueryRp customer_id = 2;
+        QueryRp group_id = 3;
     }
     // group [ product_id store_id sku ]
     repeated string group = 1;

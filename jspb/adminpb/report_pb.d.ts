@@ -931,6 +931,9 @@ export namespace CarRp {
     getStoreId(): string;
     setStoreId(value: string): void;
 
+    getGroupId(): string;
+    setGroupId(value: string): void;
+
     getProductId(): string;
     setProductId(value: string): void;
 
@@ -962,6 +965,7 @@ export namespace CarRp {
   export namespace Data {
     export type AsObject = {
       storeId: string,
+      groupId: string,
       productId: string,
       sku: string,
       photoSrc: string,
@@ -983,6 +987,11 @@ export namespace CarRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
+    getGroupId(): QueryRp | undefined;
+    setGroupId(value?: QueryRp): void;
+    hasGroupId(): boolean;
+    clearGroupId(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -995,6 +1004,7 @@ export namespace CarRp {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
+      groupId?: QueryRp.AsObject,
     }
   }
 
