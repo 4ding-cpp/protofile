@@ -408,9 +408,6 @@ export namespace CustomerRp {
     getLabelxMap(): jspb.Map<string, number>;
     clearLabelxMap(): void;
 
-    getRegisterAt(): string;
-    setRegisterAt(value: string): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -433,7 +430,6 @@ export namespace CustomerRp {
       status: number,
       levelId: string,
       labelxMap: Array<[string, number]>,
-      registerAt: string,
     }
   }
 
@@ -1005,6 +1001,140 @@ export namespace CarRp {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
+    }
+  }
+
+}
+
+export class RegisterRp extends jspb.Message {
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
+
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
+  getQuery(): RegisterRp.Query | undefined;
+  setQuery(value?: RegisterRp.Query): void;
+  hasQuery(): boolean;
+  clearQuery(): void;
+
+  getDataList(): Array<RegisterRp.Data>;
+  setDataList(value: Array<RegisterRp.Data>): void;
+  clearDataList(): void;
+  addData(value?: RegisterRp.Data, index?: number): RegisterRp.Data;
+
+  getPageLimit(): sql_pb.PageLimit | undefined;
+  setPageLimit(value?: sql_pb.PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RegisterRp.AsObject;
+  static toObject(includeInstance: boolean, msg: RegisterRp): RegisterRp.AsObject;
+  static serializeBinaryToWriter(message: RegisterRp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RegisterRp;
+  static deserializeBinaryFromReader(message: RegisterRp, reader: jspb.BinaryReader): RegisterRp;
+}
+
+export namespace RegisterRp {
+  export type AsObject = {
+    groupList: Array<string>,
+    sortList: Array<sql_pb.Sort.AsObject>,
+    query?: RegisterRp.Query.AsObject,
+    dataList: Array<RegisterRp.Data.AsObject>,
+    pageLimit?: sql_pb.PageLimit.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export class Data extends jspb.Message {
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getGroupId(): string;
+    setGroupId(value: string): void;
+
+    getLevelId(): string;
+    setLevelId(value: string): void;
+
+    getCreateAtDate(): string;
+    setCreateAtDate(value: string): void;
+
+    getCreateAtHour(): string;
+    setCreateAtHour(value: string): void;
+
+    getCount(): number;
+    setCount(value: number): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      storeId: string,
+      groupId: string,
+      levelId: string,
+      createAtDate: string,
+      createAtHour: string,
+      count: number,
+    }
+  }
+
+
+  export class Query extends jspb.Message {
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
+
+    getGroupId(): QueryRp | undefined;
+    setGroupId(value?: QueryRp): void;
+    hasGroupId(): boolean;
+    clearGroupId(): void;
+
+    getLevelId(): QueryRp | undefined;
+    setLevelId(value?: QueryRp): void;
+    hasLevelId(): boolean;
+    clearLevelId(): void;
+
+    getCreateAt(): QueryRp | undefined;
+    setCreateAt(value?: QueryRp): void;
+    hasCreateAt(): boolean;
+    clearCreateAt(): void;
+
+    getCount(): QueryRp | undefined;
+    setCount(value?: QueryRp): void;
+    hasCount(): boolean;
+    clearCount(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Query.AsObject;
+    static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+    static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Query;
+    static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  }
+
+  export namespace Query {
+    export type AsObject = {
+      storeId?: QueryRp.AsObject,
+      groupId?: QueryRp.AsObject,
+      levelId?: QueryRp.AsObject,
+      createAt?: QueryRp.AsObject,
+      count?: QueryRp.AsObject,
     }
   }
 

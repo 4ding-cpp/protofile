@@ -86,7 +86,6 @@ message CustomerRp {
         int32 status = 10;
         string level_id = 11;
         map<string, int32> labelx = 12;
-        string register_at = 13;
     }
     message Query {
         QueryRp create_at = 1;
@@ -193,6 +192,30 @@ message CarRp {
         QueryRp customer_id = 2;
     }
     // group [ product_id store_id sku ]
+    repeated string group = 1;
+    repeated Sort sort = 2;
+    Query query = 3;
+    repeated Data data = 4;
+    PageLimit page_limit = 5;
+    google.protobuf.Struct self = 6;
+}
+
+message RegisterRp {
+    message Data {
+        string store_id = 1;
+        string group_id = 2;
+        string level_id = 3;
+        string create_at_date = 4;
+        string create_at_hour = 5;
+        int32 count = 6;
+    }
+    message Query {
+        QueryRp store_id = 1;
+        QueryRp group_id = 2;
+        QueryRp level_id = 3;
+        QueryRp create_at = 4;
+        QueryRp count = 5;
+    }
     repeated string group = 1;
     repeated Sort sort = 2;
     Query query = 3;

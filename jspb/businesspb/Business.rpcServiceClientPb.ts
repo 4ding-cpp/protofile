@@ -2517,5 +2517,27 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoReportRegister = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: report_pb.RegisterRp) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  reportRegister(
+    request: report_pb.RegisterRp,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ReportRegister',
+      request,
+      metadata || {},
+      this.methodInfoReportRegister,
+      callback);
+  }
+
 }
 

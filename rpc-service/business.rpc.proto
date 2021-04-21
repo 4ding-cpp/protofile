@@ -217,4 +217,5 @@ service BusinessRPC {
     rpc ReportProduct(ProductRp) returns (Response);
     rpc ReportFavorite(FavoriteRp) returns (Response);
     rpc ReportCar(CarRp) returns (Response);
+    rpc ReportRegister(RegisterRp) returns (Response);
 }
