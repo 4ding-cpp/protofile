@@ -373,6 +373,9 @@ export namespace CustomerRp {
     getCustomerId(): string;
     setCustomerId(value: string): void;
 
+    getGroupId(): string;
+    setGroupId(value: string): void;
+
     getName(): string;
     setName(value: string): void;
 
@@ -419,6 +422,7 @@ export namespace CustomerRp {
   export namespace Data {
     export type AsObject = {
       customerId: string,
+      groupId: string,
       name: string,
       email: string,
       phone: string,
@@ -454,6 +458,11 @@ export namespace CustomerRp {
     setBusinessId(value?: QueryRp): void;
     hasBusinessId(): boolean;
     clearBusinessId(): void;
+
+    getGroupId(): QueryRp | undefined;
+    setGroupId(value?: QueryRp): void;
+    hasGroupId(): boolean;
+    clearGroupId(): void;
 
     getStoreId(): QueryRp | undefined;
     setStoreId(value?: QueryRp): void;
@@ -522,6 +531,7 @@ export namespace CustomerRp {
       closeAt?: QueryRp.AsObject,
       state?: QueryRp.AsObject,
       businessId?: QueryRp.AsObject,
+      groupId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
@@ -931,9 +941,6 @@ export namespace CarRp {
     getStoreId(): string;
     setStoreId(value: string): void;
 
-    getGroupId(): string;
-    setGroupId(value: string): void;
-
     getProductId(): string;
     setProductId(value: string): void;
 
@@ -965,7 +972,6 @@ export namespace CarRp {
   export namespace Data {
     export type AsObject = {
       storeId: string,
-      groupId: string,
       productId: string,
       sku: string,
       photoSrc: string,
@@ -987,11 +993,6 @@ export namespace CarRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
-    getGroupId(): QueryRp | undefined;
-    setGroupId(value?: QueryRp): void;
-    hasGroupId(): boolean;
-    clearGroupId(): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -1004,7 +1005,6 @@ export namespace CarRp {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
-      groupId?: QueryRp.AsObject,
     }
   }
 

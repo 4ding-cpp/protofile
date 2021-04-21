@@ -75,34 +75,36 @@ message PaymentRp {
 message CustomerRp {
     message Data {
         string customer_id = 1;
-        string name = 2;
-        string email = 3;
-        string phone = 4;
-        int32 count = 5;
-        int32 amount = 6;
-        int32 price = 7;
-        ReportTotal total = 8;
-        int32 status = 9;
-        string level_id = 10;
-        map<string, int32> labelx = 11;
-        string register_at = 12;
+        string group_id = 2;
+        string name = 3;
+        string email = 4;
+        string phone = 5;
+        int32 count = 6;
+        int32 amount = 7;
+        int32 price = 8;
+        ReportTotal total = 9;
+        int32 status = 10;
+        string level_id = 11;
+        map<string, int32> labelx = 12;
+        string register_at = 13;
     }
     message Query {
         QueryRp create_at = 1;
         QueryRp close_at = 2;
         QueryRp state = 3;
         QueryRp business_id = 4;
-        QueryRp store_id = 5;
-        QueryRp order_id = 6;
-        QueryRp customer_id = 7;
-        QueryRp email = 8;
-        QueryRp phone = 9;
-        QueryRp count = 10;
-        QueryRp amount = 11;
-        QueryRp price = 12;
-        QueryRp status = 13;
-        QueryRp level_id = 14;
-        string label_id = 15;
+        QueryRp group_id = 5;
+        QueryRp store_id = 6;
+        QueryRp order_id = 7;
+        QueryRp customer_id = 8;
+        QueryRp email = 9;
+        QueryRp phone = 10;
+        QueryRp count = 11;
+        QueryRp amount = 12;
+        QueryRp price = 13;
+        QueryRp status = 14;
+        QueryRp level_id = 15;
+        string label_id = 16;
     } 
     // group [ email phone customer_id store_id ]
     repeated string group = 1;
@@ -179,18 +181,16 @@ message FavoriteRp {
 message CarRp {
     message Data {
         string store_id = 1;
-        string group_id = 2;
-        string product_id = 3;
-        string sku = 4;
-        string photo_src = 5;
-        int32 count = 6;
-        int32 amount = 7;
-        ReportTotal total = 8;
+        string product_id = 2;
+        string sku = 3;
+        string photo_src = 4;
+        int32 count = 5;
+        int32 amount = 6;
+        ReportTotal total = 7;
     }
     message Query {
         QueryRp store_id = 1;
         QueryRp customer_id = 2;
-        QueryRp group_id = 3;
     }
     // group [ product_id store_id sku ]
     repeated string group = 1;
