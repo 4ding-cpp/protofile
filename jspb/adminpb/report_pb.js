@@ -6490,7 +6490,8 @@ proto.ding4.FavoriteRp.Data.toObject = function(includeInstance, msg) {
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 3, ""),
     shellId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    count: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6546,6 +6547,11 @@ proto.ding4.FavoriteRp.Data.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCount(value);
+      break;
+    case 6:
+      var value = new proto.ding4.ReportTotal;
+      reader.readMessage(value,proto.ding4.ReportTotal.deserializeBinaryFromReader);
+      msg.setTotal(value);
       break;
     default:
       reader.skipField();
@@ -6609,6 +6615,14 @@ proto.ding4.FavoriteRp.Data.serializeBinaryToWriter = function(message, writer) 
     writer.writeInt32(
       5,
       f
+    );
+  }
+  f = message.getTotal();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.ding4.ReportTotal.serializeBinaryToWriter
     );
   }
 };
@@ -6701,6 +6715,43 @@ proto.ding4.FavoriteRp.Data.prototype.getCount = function() {
  */
 proto.ding4.FavoriteRp.Data.prototype.setCount = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional ReportTotal total = 6;
+ * @return {?proto.ding4.ReportTotal}
+ */
+proto.ding4.FavoriteRp.Data.prototype.getTotal = function() {
+  return /** @type{?proto.ding4.ReportTotal} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 6));
+};
+
+
+/**
+ * @param {?proto.ding4.ReportTotal|undefined} value
+ * @return {!proto.ding4.FavoriteRp.Data} returns this
+*/
+proto.ding4.FavoriteRp.Data.prototype.setTotal = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.FavoriteRp.Data} returns this
+ */
+proto.ding4.FavoriteRp.Data.prototype.clearTotal = function() {
+  return this.setTotal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.FavoriteRp.Data.prototype.hasTotal = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -7511,7 +7562,8 @@ proto.ding4.CarRp.Data.toObject = function(includeInstance, msg) {
     sku: jspb.Message.getFieldWithDefault(msg, 3, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 4, ""),
     count: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    amount: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7571,6 +7623,11 @@ proto.ding4.CarRp.Data.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
+      break;
+    case 7:
+      var value = new proto.ding4.ReportTotal;
+      reader.readMessage(value,proto.ding4.ReportTotal.deserializeBinaryFromReader);
+      msg.setTotal(value);
       break;
     default:
       reader.skipField();
@@ -7641,6 +7698,14 @@ proto.ding4.CarRp.Data.serializeBinaryToWriter = function(message, writer) {
     writer.writeInt32(
       6,
       f
+    );
+  }
+  f = message.getTotal();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.ding4.ReportTotal.serializeBinaryToWriter
     );
   }
 };
@@ -7751,6 +7816,43 @@ proto.ding4.CarRp.Data.prototype.getAmount = function() {
  */
 proto.ding4.CarRp.Data.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional ReportTotal total = 7;
+ * @return {?proto.ding4.ReportTotal}
+ */
+proto.ding4.CarRp.Data.prototype.getTotal = function() {
+  return /** @type{?proto.ding4.ReportTotal} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 7));
+};
+
+
+/**
+ * @param {?proto.ding4.ReportTotal|undefined} value
+ * @return {!proto.ding4.CarRp.Data} returns this
+*/
+proto.ding4.CarRp.Data.prototype.setTotal = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.CarRp.Data} returns this
+ */
+proto.ding4.CarRp.Data.prototype.clearTotal = function() {
+  return this.setTotal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.CarRp.Data.prototype.hasTotal = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

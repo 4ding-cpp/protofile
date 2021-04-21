@@ -158,6 +158,7 @@ message FavoriteRp {
         string photo_src = 3;
         string shell_id = 4;
         int32 count = 5;
+        ReportTotal total = 6;
     }
     message Query {
         QueryRp store_id = 1;
@@ -183,6 +184,7 @@ message CarRp {
         string photo_src = 4;
         int32 count = 5;
         int32 amount = 6;
+        ReportTotal total = 7;
     }
     message Query {
         QueryRp store_id = 1;

@@ -807,6 +807,11 @@ export namespace FavoriteRp {
     getCount(): number;
     setCount(value: number): void;
 
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -822,6 +827,7 @@ export namespace FavoriteRp {
       photoSrc: string,
       shellId: string,
       count: number,
+      total?: ReportTotal.AsObject,
     }
   }
 
@@ -940,6 +946,11 @@ export namespace CarRp {
     getAmount(): number;
     setAmount(value: number): void;
 
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -956,6 +967,7 @@ export namespace CarRp {
       photoSrc: string,
       count: number,
       amount: number,
+      total?: ReportTotal.AsObject,
     }
   }
 
