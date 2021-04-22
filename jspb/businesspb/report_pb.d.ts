@@ -74,8 +74,10 @@ export namespace ReportTotal {
 }
 
 export class PaymentRp extends jspb.Message {
-  getGetAnalysis(): boolean;
-  setGetAnalysis(value: boolean): void;
+  getGroupList(): Array<string>;
+  setGroupList(value: Array<string>): void;
+  clearGroupList(): void;
+  addGroup(value: string, index?: number): void;
 
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
@@ -91,6 +93,9 @@ export class PaymentRp extends jspb.Message {
   setDataList(value: Array<PaymentRp.Data>): void;
   clearDataList(): void;
   addData(value?: PaymentRp.Data, index?: number): PaymentRp.Data;
+
+  getGetAnalysis(): boolean;
+  setGetAnalysis(value: boolean): void;
 
   getAs(): PaymentRp.Analysis | undefined;
   setAs(value?: PaymentRp.Analysis): void;
@@ -117,10 +122,11 @@ export class PaymentRp extends jspb.Message {
 
 export namespace PaymentRp {
   export type AsObject = {
-    getAnalysis: boolean,
+    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: PaymentRp.Query.AsObject,
     dataList: Array<PaymentRp.Data.AsObject>,
+    getAnalysis: boolean,
     as?: PaymentRp.Analysis.AsObject,
     pageLimit?: sql_pb.PageLimit.AsObject,
     self?: google_protobuf_struct_pb.Struct.AsObject,
@@ -1027,6 +1033,14 @@ export class RegisterRp extends jspb.Message {
   clearDataList(): void;
   addData(value?: RegisterRp.Data, index?: number): RegisterRp.Data;
 
+  getGetAnalysis(): boolean;
+  setGetAnalysis(value: boolean): void;
+
+  getAs(): RegisterRp.Analysis | undefined;
+  setAs(value?: RegisterRp.Analysis): void;
+  hasAs(): boolean;
+  clearAs(): void;
+
   getPageLimit(): sql_pb.PageLimit | undefined;
   setPageLimit(value?: sql_pb.PageLimit): void;
   hasPageLimit(): boolean;
@@ -1051,6 +1065,8 @@ export namespace RegisterRp {
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: RegisterRp.Query.AsObject,
     dataList: Array<RegisterRp.Data.AsObject>,
+    getAnalysis: boolean,
+    as?: RegisterRp.Analysis.AsObject,
     pageLimit?: sql_pb.PageLimit.AsObject,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
@@ -1135,6 +1151,45 @@ export namespace RegisterRp {
       levelId?: QueryRp.AsObject,
       createAt?: QueryRp.AsObject,
       count?: QueryRp.AsObject,
+    }
+  }
+
+
+  export class Analysis extends jspb.Message {
+    getTotal(): number;
+    setTotal(value: number): void;
+
+    getGroupIdMap(): jspb.Map<string, number>;
+    clearGroupIdMap(): void;
+
+    getStoreIdMap(): jspb.Map<string, number>;
+    clearStoreIdMap(): void;
+
+    getLevelIdMap(): jspb.Map<string, number>;
+    clearLevelIdMap(): void;
+
+    getCreateAtDateMap(): jspb.Map<string, number>;
+    clearCreateAtDateMap(): void;
+
+    getCreateAtHourMap(): jspb.Map<string, number>;
+    clearCreateAtHourMap(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Analysis.AsObject;
+    static toObject(includeInstance: boolean, msg: Analysis): Analysis.AsObject;
+    static serializeBinaryToWriter(message: Analysis, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Analysis;
+    static deserializeBinaryFromReader(message: Analysis, reader: jspb.BinaryReader): Analysis;
+  }
+
+  export namespace Analysis {
+    export type AsObject = {
+      total: number,
+      groupIdMap: Array<[string, number]>,
+      storeIdMap: Array<[string, number]>,
+      levelIdMap: Array<[string, number]>,
+      createAtDateMap: Array<[string, number]>,
+      createAtHourMap: Array<[string, number]>,
     }
   }
 

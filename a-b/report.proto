@@ -62,13 +62,14 @@ message PaymentRp {
         map<string, int32> city = 7;
         map<string, int32> device = 8;
     }
-    bool get_analysis = 1;
+    repeated string group = 1;
     repeated Sort sort = 2;
     Query query = 3;
     repeated Data data = 4;
-    Analysis as = 5;
-    PageLimit page_limit = 6;
-    google.protobuf.Struct self = 7;
+    bool get_analysis = 5;
+    Analysis as = 6;
+    PageLimit page_limit = 7;
+    google.protobuf.Struct self = 8;
 }
 
 
@@ -216,10 +217,20 @@ message RegisterRp {
         QueryRp create_at = 4;
         QueryRp count = 5;
     }
+    message Analysis {
+        int32 total = 1;
+        map<string, int32> group_id = 2;
+        map<string, int32> store_id = 3;
+        map<string, int32> level_id = 4;
+        map<string, int32> create_at_date = 5;
+        map<string, int32> create_at_hour = 6;
+    }
     repeated string group = 1;
     repeated Sort sort = 2;
     Query query = 3;
     repeated Data data = 4;
-    PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    bool get_analysis = 5;
+    Analysis as = 6;
+    PageLimit page_limit = 7;
+    google.protobuf.Struct self = 8;
 }
