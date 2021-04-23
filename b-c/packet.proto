@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ding4;
+
+option go_package = "github.com/4ding-cp/4dingsite/ptypes/m4g";
+
+import "google/protobuf/struct.proto";
+
+message Packet {
+    uint32 no = 1;
+    uint32 start_at = 2;
+    uint32 done_at = 3;
+    string method = 4;
+    google.protobuf.Value in = 5;
+    google.protobuf.Value out = 6;
+    uint32 code = 7;
+    string message = 8;
+}
+
