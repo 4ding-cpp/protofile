@@ -69,7 +69,8 @@ message PaymentRp {
     bool get_analysis = 5;
     Analysis as = 6;
     PageLimit page_limit = 7;
-    google.protobuf.Struct self = 8;
+    repeated string exports = 8;
+    google.protobuf.Struct self = 9;
 }
 
 
@@ -112,7 +113,8 @@ message CustomerRp {
     Query query = 3;
     repeated Data data = 4;
     PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    repeated string exports = 6;
+    google.protobuf.Struct self = 7;
 }
 
 message ProductRp {
