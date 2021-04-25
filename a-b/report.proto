@@ -19,7 +19,7 @@ message QueryRp {
 }
 
 message ReportTotal {
-    double count = 1;
+    double times = 1;
     double amount = 2;
     double price = 3;
 }
@@ -81,7 +81,7 @@ message CustomerRp {
         string name = 3;
         string email = 4;
         string phone = 5;
-        int32 count = 6;
+        int32 times = 6;
         int32 amount = 7;
         int32 price = 8;
         ReportTotal total = 9;
@@ -92,7 +92,7 @@ message CustomerRp {
         QueryRp group_id = 5;
         QueryRp store_id = 6;
         QueryRp customer_id = 8;
-        QueryRp count = 11;
+        QueryRp times = 11;
         QueryRp amount = 12;
         QueryRp price = 13;
         string label_id = 16;
@@ -113,7 +113,7 @@ message ProductRp {
         string photo_src = 2;
         string name = 3;
         string sku = 4;
-        int32 count = 5;
+        int32 times = 5;
         int32 amount = 6;
         int32 price = 7;
         ReportTotal total = 8;
@@ -130,7 +130,7 @@ message ProductRp {
         QueryRp customer_id = 7;
         QueryRp product_id = 8;
         QueryRp sku = 9;
-        QueryRp count = 10;
+        QueryRp times = 10;
         QueryRp amount = 11;
         QueryRp price = 12;
         QueryRp status = 13;
@@ -151,7 +151,7 @@ message FavoriteRp {
         string product_id = 2;
         string photo_src = 3;
         string shell_id = 4;
-        int32 count = 5;
+        int32 times = 5;
         ReportTotal total = 6;
     }
     message Query {
@@ -159,7 +159,7 @@ message FavoriteRp {
         QueryRp product_id = 2;
         QueryRp shell_id = 3;
         QueryRp customer_id = 4;
-        QueryRp count = 5;
+        QueryRp times = 5;
     }
     // group [ product_id store_id shell_id ]
     repeated string group = 1;
@@ -176,7 +176,7 @@ message CarRp {
         string product_id = 2;
         string sku = 3;
         string photo_src = 4;
-        int32 count = 5;
+        int32 times = 5;
         int32 amount = 6;
         ReportTotal total = 7;
     }
@@ -200,14 +200,14 @@ message RegisterRp {
         string level_id = 3;
         string create_at_date = 4;
         string create_at_hour = 5;
-        int32 count = 6;
+        int32 times = 6;
     }
     message Query {
         QueryRp store_id = 1;
         QueryRp group_id = 2;
         QueryRp level_id = 3;
         QueryRp create_at = 4;
-        QueryRp count = 5;
+        QueryRp times = 5;
     }
     message Analysis {
         int32 total = 1;

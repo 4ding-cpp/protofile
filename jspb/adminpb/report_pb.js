@@ -868,7 +868,7 @@ proto.ding4.ReportTotal.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.ReportTotal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    times: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     price: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
   };
@@ -909,7 +909,7 @@ proto.ding4.ReportTotal.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readDouble());
@@ -948,7 +948,7 @@ proto.ding4.ReportTotal.prototype.serializeBinary = function() {
  */
 proto.ding4.ReportTotal.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0.0) {
     writer.writeDouble(
       1,
@@ -973,10 +973,10 @@ proto.ding4.ReportTotal.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional double count = 1;
+ * optional double times = 1;
  * @return {number}
  */
-proto.ding4.ReportTotal.prototype.getCount = function() {
+proto.ding4.ReportTotal.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
 };
 
@@ -985,7 +985,7 @@ proto.ding4.ReportTotal.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.ReportTotal} returns this
  */
-proto.ding4.ReportTotal.prototype.setCount = function(value) {
+proto.ding4.ReportTotal.prototype.setTimes = function(value) {
   return jspb.Message.setProto3FloatField(this, 1, value);
 };
 
@@ -3314,7 +3314,7 @@ proto.ding4.CustomerRp.Data.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    times: jspb.Message.getFieldWithDefault(msg, 6, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 7, 0),
     price: jspb.Message.getFieldWithDefault(msg, 8, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
@@ -3377,7 +3377,7 @@ proto.ding4.CustomerRp.Data.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3462,7 +3462,7 @@ proto.ding4.CustomerRp.Data.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       6,
@@ -3589,10 +3589,10 @@ proto.ding4.CustomerRp.Data.prototype.setPhone = function(value) {
 
 
 /**
- * optional int32 count = 6;
+ * optional int32 times = 6;
  * @return {number}
  */
-proto.ding4.CustomerRp.Data.prototype.getCount = function() {
+proto.ding4.CustomerRp.Data.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -3601,7 +3601,7 @@ proto.ding4.CustomerRp.Data.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.CustomerRp.Data} returns this
  */
-proto.ding4.CustomerRp.Data.prototype.setCount = function(value) {
+proto.ding4.CustomerRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -3737,7 +3737,7 @@ proto.ding4.CustomerRp.Query.toObject = function(includeInstance, msg) {
     groupId: (f = msg.getGroupId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     storeId: (f = msg.getStoreId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     customerId: (f = msg.getCustomerId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    times: (f = msg.getTimes()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     amount: (f = msg.getAmount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     labelId: jspb.Message.getFieldWithDefault(msg, 16, "")
@@ -3800,7 +3800,7 @@ proto.ding4.CustomerRp.Query.deserializeBinaryFromReader = function(msg, reader)
     case 11:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 12:
       var value = new proto.ding4.QueryRp;
@@ -3877,7 +3877,7 @@ proto.ding4.CustomerRp.Query.serializeBinaryToWriter = function(message, writer)
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f != null) {
     writer.writeMessage(
       11,
@@ -4060,10 +4060,10 @@ proto.ding4.CustomerRp.Query.prototype.hasCustomerId = function() {
 
 
 /**
- * optional QueryRp count = 11;
+ * optional QueryRp times = 11;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.CustomerRp.Query.prototype.getCount = function() {
+proto.ding4.CustomerRp.Query.prototype.getTimes = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 11));
 };
@@ -4073,7 +4073,7 @@ proto.ding4.CustomerRp.Query.prototype.getCount = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.CustomerRp.Query} returns this
 */
-proto.ding4.CustomerRp.Query.prototype.setCount = function(value) {
+proto.ding4.CustomerRp.Query.prototype.setTimes = function(value) {
   return jspb.Message.setWrapperField(this, 11, value);
 };
 
@@ -4082,8 +4082,8 @@ proto.ding4.CustomerRp.Query.prototype.setCount = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.CustomerRp.Query} returns this
  */
-proto.ding4.CustomerRp.Query.prototype.clearCount = function() {
-  return this.setCount(undefined);
+proto.ding4.CustomerRp.Query.prototype.clearTimes = function() {
+  return this.setTimes(undefined);
 };
 
 
@@ -4091,7 +4091,7 @@ proto.ding4.CustomerRp.Query.prototype.clearCount = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.CustomerRp.Query.prototype.hasCount = function() {
+proto.ding4.CustomerRp.Query.prototype.hasTimes = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
@@ -4676,7 +4676,7 @@ proto.ding4.ProductRp.Data.toObject = function(includeInstance, msg) {
     photoSrc: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sku: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    times: jspb.Message.getFieldWithDefault(msg, 5, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     price: jspb.Message.getFieldWithDefault(msg, 7, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
@@ -4736,7 +4736,7 @@ proto.ding4.ProductRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -4818,7 +4818,7 @@ proto.ding4.ProductRp.Data.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       5,
@@ -4934,10 +4934,10 @@ proto.ding4.ProductRp.Data.prototype.setSku = function(value) {
 
 
 /**
- * optional int32 count = 5;
+ * optional int32 times = 5;
  * @return {number}
  */
-proto.ding4.ProductRp.Data.prototype.getCount = function() {
+proto.ding4.ProductRp.Data.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -4946,7 +4946,7 @@ proto.ding4.ProductRp.Data.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.ProductRp.Data} returns this
  */
-proto.ding4.ProductRp.Data.prototype.setCount = function(value) {
+proto.ding4.ProductRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -5105,7 +5105,7 @@ proto.ding4.ProductRp.Query.toObject = function(includeInstance, msg) {
     customerId: (f = msg.getCustomerId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     productId: (f = msg.getProductId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     sku: (f = msg.getSku()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    times: (f = msg.getTimes()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     amount: (f = msg.getAmount()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     status: (f = msg.getStatus()) && proto.ding4.QueryRp.toObject(includeInstance, f),
@@ -5194,7 +5194,7 @@ proto.ding4.ProductRp.Query.deserializeBinaryFromReader = function(msg, reader) 
     case 10:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 11:
       var value = new proto.ding4.QueryRp;
@@ -5316,7 +5316,7 @@ proto.ding4.ProductRp.Query.serializeBinaryToWriter = function(message, writer) 
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -5692,10 +5692,10 @@ proto.ding4.ProductRp.Query.prototype.hasSku = function() {
 
 
 /**
- * optional QueryRp count = 10;
+ * optional QueryRp times = 10;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.ProductRp.Query.prototype.getCount = function() {
+proto.ding4.ProductRp.Query.prototype.getTimes = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 10));
 };
@@ -5705,7 +5705,7 @@ proto.ding4.ProductRp.Query.prototype.getCount = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.ProductRp.Query} returns this
 */
-proto.ding4.ProductRp.Query.prototype.setCount = function(value) {
+proto.ding4.ProductRp.Query.prototype.setTimes = function(value) {
   return jspb.Message.setWrapperField(this, 10, value);
 };
 
@@ -5714,8 +5714,8 @@ proto.ding4.ProductRp.Query.prototype.setCount = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.ProductRp.Query} returns this
  */
-proto.ding4.ProductRp.Query.prototype.clearCount = function() {
-  return this.setCount(undefined);
+proto.ding4.ProductRp.Query.prototype.clearTimes = function() {
+  return this.setTimes(undefined);
 };
 
 
@@ -5723,7 +5723,7 @@ proto.ding4.ProductRp.Query.prototype.clearCount = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.ProductRp.Query.prototype.hasCount = function() {
+proto.ding4.ProductRp.Query.prototype.hasTimes = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -6308,7 +6308,7 @@ proto.ding4.FavoriteRp.Data.toObject = function(includeInstance, msg) {
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 3, ""),
     shellId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    times: jspb.Message.getFieldWithDefault(msg, 5, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
 
@@ -6364,7 +6364,7 @@ proto.ding4.FavoriteRp.Data.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 6:
       var value = new proto.ding4.ReportTotal;
@@ -6428,7 +6428,7 @@ proto.ding4.FavoriteRp.Data.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       5,
@@ -6519,10 +6519,10 @@ proto.ding4.FavoriteRp.Data.prototype.setShellId = function(value) {
 
 
 /**
- * optional int32 count = 5;
+ * optional int32 times = 5;
  * @return {number}
  */
-proto.ding4.FavoriteRp.Data.prototype.getCount = function() {
+proto.ding4.FavoriteRp.Data.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -6531,7 +6531,7 @@ proto.ding4.FavoriteRp.Data.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.FavoriteRp.Data} returns this
  */
-proto.ding4.FavoriteRp.Data.prototype.setCount = function(value) {
+proto.ding4.FavoriteRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -6609,7 +6609,7 @@ proto.ding4.FavoriteRp.Query.toObject = function(includeInstance, msg) {
     productId: (f = msg.getProductId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     shellId: (f = msg.getShellId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     customerId: (f = msg.getCustomerId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f)
+    times: (f = msg.getTimes()) && proto.ding4.QueryRp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6669,7 +6669,7 @@ proto.ding4.FavoriteRp.Query.deserializeBinaryFromReader = function(msg, reader)
     case 5:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     default:
       reader.skipField();
@@ -6732,7 +6732,7 @@ proto.ding4.FavoriteRp.Query.serializeBinaryToWriter = function(message, writer)
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -6892,10 +6892,10 @@ proto.ding4.FavoriteRp.Query.prototype.hasCustomerId = function() {
 
 
 /**
- * optional QueryRp count = 5;
+ * optional QueryRp times = 5;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.FavoriteRp.Query.prototype.getCount = function() {
+proto.ding4.FavoriteRp.Query.prototype.getTimes = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
 };
@@ -6905,7 +6905,7 @@ proto.ding4.FavoriteRp.Query.prototype.getCount = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.FavoriteRp.Query} returns this
 */
-proto.ding4.FavoriteRp.Query.prototype.setCount = function(value) {
+proto.ding4.FavoriteRp.Query.prototype.setTimes = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -6914,8 +6914,8 @@ proto.ding4.FavoriteRp.Query.prototype.setCount = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.FavoriteRp.Query} returns this
  */
-proto.ding4.FavoriteRp.Query.prototype.clearCount = function() {
-  return this.setCount(undefined);
+proto.ding4.FavoriteRp.Query.prototype.clearTimes = function() {
+  return this.setTimes(undefined);
 };
 
 
@@ -6923,7 +6923,7 @@ proto.ding4.FavoriteRp.Query.prototype.clearCount = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.FavoriteRp.Query.prototype.hasCount = function() {
+proto.ding4.FavoriteRp.Query.prototype.hasTimes = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -7379,7 +7379,7 @@ proto.ding4.CarRp.Data.toObject = function(includeInstance, msg) {
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     sku: jspb.Message.getFieldWithDefault(msg, 3, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    times: jspb.Message.getFieldWithDefault(msg, 5, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
@@ -7436,7 +7436,7 @@ proto.ding4.CarRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -7504,7 +7504,7 @@ proto.ding4.CarRp.Data.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       5,
@@ -7602,10 +7602,10 @@ proto.ding4.CarRp.Data.prototype.setPhotoSrc = function(value) {
 
 
 /**
- * optional int32 count = 5;
+ * optional int32 times = 5;
  * @return {number}
  */
-proto.ding4.CarRp.Data.prototype.getCount = function() {
+proto.ding4.CarRp.Data.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -7614,7 +7614,7 @@ proto.ding4.CarRp.Data.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.CarRp.Data} returns this
  */
-proto.ding4.CarRp.Data.prototype.setCount = function(value) {
+proto.ding4.CarRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -8354,7 +8354,7 @@ proto.ding4.RegisterRp.Data.toObject = function(includeInstance, msg) {
     levelId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createAtDate: jspb.Message.getFieldWithDefault(msg, 4, ""),
     createAtHour: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    times: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -8413,7 +8413,7 @@ proto.ding4.RegisterRp.Data.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     default:
       reader.skipField();
@@ -8479,7 +8479,7 @@ proto.ding4.RegisterRp.Data.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       6,
@@ -8580,10 +8580,10 @@ proto.ding4.RegisterRp.Data.prototype.setCreateAtHour = function(value) {
 
 
 /**
- * optional int32 count = 6;
+ * optional int32 times = 6;
  * @return {number}
  */
-proto.ding4.RegisterRp.Data.prototype.getCount = function() {
+proto.ding4.RegisterRp.Data.prototype.getTimes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -8592,7 +8592,7 @@ proto.ding4.RegisterRp.Data.prototype.getCount = function() {
  * @param {number} value
  * @return {!proto.ding4.RegisterRp.Data} returns this
  */
-proto.ding4.RegisterRp.Data.prototype.setCount = function(value) {
+proto.ding4.RegisterRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -8633,7 +8633,7 @@ proto.ding4.RegisterRp.Query.toObject = function(includeInstance, msg) {
     groupId: (f = msg.getGroupId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     levelId: (f = msg.getLevelId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     createAt: (f = msg.getCreateAt()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    count: (f = msg.getCount()) && proto.ding4.QueryRp.toObject(includeInstance, f)
+    times: (f = msg.getTimes()) && proto.ding4.QueryRp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8693,7 +8693,7 @@ proto.ding4.RegisterRp.Query.deserializeBinaryFromReader = function(msg, reader)
     case 5:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setCount(value);
+      msg.setTimes(value);
       break;
     default:
       reader.skipField();
@@ -8756,7 +8756,7 @@ proto.ding4.RegisterRp.Query.serializeBinaryToWriter = function(message, writer)
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getCount();
+  f = message.getTimes();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -8916,10 +8916,10 @@ proto.ding4.RegisterRp.Query.prototype.hasCreateAt = function() {
 
 
 /**
- * optional QueryRp count = 5;
+ * optional QueryRp times = 5;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.RegisterRp.Query.prototype.getCount = function() {
+proto.ding4.RegisterRp.Query.prototype.getTimes = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
 };
@@ -8929,7 +8929,7 @@ proto.ding4.RegisterRp.Query.prototype.getCount = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.RegisterRp.Query} returns this
 */
-proto.ding4.RegisterRp.Query.prototype.setCount = function(value) {
+proto.ding4.RegisterRp.Query.prototype.setTimes = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -8938,8 +8938,8 @@ proto.ding4.RegisterRp.Query.prototype.setCount = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ding4.RegisterRp.Query} returns this
  */
-proto.ding4.RegisterRp.Query.prototype.clearCount = function() {
-  return this.setCount(undefined);
+proto.ding4.RegisterRp.Query.prototype.clearTimes = function() {
+  return this.setTimes(undefined);
 };
 
 
@@ -8947,7 +8947,7 @@ proto.ding4.RegisterRp.Query.prototype.clearCount = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ding4.RegisterRp.Query.prototype.hasCount = function() {
+proto.ding4.RegisterRp.Query.prototype.hasTimes = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

@@ -48,8 +48,8 @@ export namespace QueryRp {
 }
 
 export class ReportTotal extends jspb.Message {
-  getCount(): number;
-  setCount(value: number): void;
+  getTimes(): number;
+  setTimes(value: number): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -67,7 +67,7 @@ export class ReportTotal extends jspb.Message {
 
 export namespace ReportTotal {
   export type AsObject = {
-    count: number,
+    times: number,
     amount: number,
     price: number,
   }
@@ -403,8 +403,8 @@ export namespace CustomerRp {
     getPhone(): string;
     setPhone(value: string): void;
 
-    getCount(): number;
-    setCount(value: number): void;
+    getTimes(): number;
+    setTimes(value: number): void;
 
     getAmount(): number;
     setAmount(value: number): void;
@@ -435,7 +435,7 @@ export namespace CustomerRp {
       name: string,
       email: string,
       phone: string,
-      count: number,
+      times: number,
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
@@ -465,10 +465,10 @@ export namespace CustomerRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
-    getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): void;
-    hasCount(): boolean;
-    clearCount(): void;
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
 
     getAmount(): QueryRp | undefined;
     setAmount(value?: QueryRp): void;
@@ -497,7 +497,7 @@ export namespace CustomerRp {
       groupId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
-      count?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
       labelId: string,
@@ -568,8 +568,8 @@ export namespace ProductRp {
     getSku(): string;
     setSku(value: string): void;
 
-    getCount(): number;
-    setCount(value: number): void;
+    getTimes(): number;
+    setTimes(value: number): void;
 
     getAmount(): number;
     setAmount(value: number): void;
@@ -602,7 +602,7 @@ export namespace ProductRp {
       photoSrc: string,
       name: string,
       sku: string,
-      count: number,
+      times: number,
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
@@ -658,10 +658,10 @@ export namespace ProductRp {
     hasSku(): boolean;
     clearSku(): void;
 
-    getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): void;
-    hasCount(): boolean;
-    clearCount(): void;
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
 
     getAmount(): QueryRp | undefined;
     setAmount(value?: QueryRp): void;
@@ -700,7 +700,7 @@ export namespace ProductRp {
       customerId?: QueryRp.AsObject,
       productId?: QueryRp.AsObject,
       sku?: QueryRp.AsObject,
-      count?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
       status?: QueryRp.AsObject,
@@ -772,8 +772,8 @@ export namespace FavoriteRp {
     getShellId(): string;
     setShellId(value: string): void;
 
-    getCount(): number;
-    setCount(value: number): void;
+    getTimes(): number;
+    setTimes(value: number): void;
 
     getTotal(): ReportTotal | undefined;
     setTotal(value?: ReportTotal): void;
@@ -794,7 +794,7 @@ export namespace FavoriteRp {
       productId: string,
       photoSrc: string,
       shellId: string,
-      count: number,
+      times: number,
       total?: ReportTotal.AsObject,
     }
   }
@@ -821,10 +821,10 @@ export namespace FavoriteRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
-    getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): void;
-    hasCount(): boolean;
-    clearCount(): void;
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -840,7 +840,7 @@ export namespace FavoriteRp {
       productId?: QueryRp.AsObject,
       shellId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
-      count?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
     }
   }
 
@@ -908,8 +908,8 @@ export namespace CarRp {
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
 
-    getCount(): number;
-    setCount(value: number): void;
+    getTimes(): number;
+    setTimes(value: number): void;
 
     getAmount(): number;
     setAmount(value: number): void;
@@ -933,7 +933,7 @@ export namespace CarRp {
       productId: string,
       sku: string,
       photoSrc: string,
-      count: number,
+      times: number,
       amount: number,
       total?: ReportTotal.AsObject,
     }
@@ -1043,8 +1043,8 @@ export namespace RegisterRp {
     getCreateAtHour(): string;
     setCreateAtHour(value: string): void;
 
-    getCount(): number;
-    setCount(value: number): void;
+    getTimes(): number;
+    setTimes(value: number): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -1061,7 +1061,7 @@ export namespace RegisterRp {
       levelId: string,
       createAtDate: string,
       createAtHour: string,
-      count: number,
+      times: number,
     }
   }
 
@@ -1087,10 +1087,10 @@ export namespace RegisterRp {
     hasCreateAt(): boolean;
     clearCreateAt(): void;
 
-    getCount(): QueryRp | undefined;
-    setCount(value?: QueryRp): void;
-    hasCount(): boolean;
-    clearCount(): void;
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -1106,7 +1106,7 @@ export namespace RegisterRp {
       groupId?: QueryRp.AsObject,
       levelId?: QueryRp.AsObject,
       createAt?: QueryRp.AsObject,
-      count?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
     }
   }
 
