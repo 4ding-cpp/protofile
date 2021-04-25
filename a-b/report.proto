@@ -85,26 +85,16 @@ message CustomerRp {
         int32 amount = 7;
         int32 price = 8;
         ReportTotal total = 9;
-        int32 status = 10;
-        string level_id = 11;
         map<string, int32> labelx = 12;
     }
     message Query {
-        QueryRp create_at = 1;
         QueryRp close_at = 2;
-        QueryRp state = 3;
-        QueryRp business_id = 4;
         QueryRp group_id = 5;
         QueryRp store_id = 6;
-        QueryRp order_id = 7;
         QueryRp customer_id = 8;
-        QueryRp email = 9;
-        QueryRp phone = 10;
         QueryRp count = 11;
         QueryRp amount = 12;
         QueryRp price = 13;
-        QueryRp status = 14;
-        QueryRp level_id = 15;
         string label_id = 16;
     } 
     // group [ email phone customer_id store_id ]

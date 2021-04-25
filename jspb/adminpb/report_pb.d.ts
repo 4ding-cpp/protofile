@@ -417,12 +417,6 @@ export namespace CustomerRp {
     hasTotal(): boolean;
     clearTotal(): void;
 
-    getStatus(): number;
-    setStatus(value: number): void;
-
-    getLevelId(): string;
-    setLevelId(value: string): void;
-
     getLabelxMap(): jspb.Map<string, number>;
     clearLabelxMap(): void;
 
@@ -445,33 +439,16 @@ export namespace CustomerRp {
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
-      status: number,
-      levelId: string,
       labelxMap: Array<[string, number]>,
     }
   }
 
 
   export class Query extends jspb.Message {
-    getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): void;
-    hasCreateAt(): boolean;
-    clearCreateAt(): void;
-
     getCloseAt(): QueryRp | undefined;
     setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
     clearCloseAt(): void;
-
-    getState(): QueryRp | undefined;
-    setState(value?: QueryRp): void;
-    hasState(): boolean;
-    clearState(): void;
-
-    getBusinessId(): QueryRp | undefined;
-    setBusinessId(value?: QueryRp): void;
-    hasBusinessId(): boolean;
-    clearBusinessId(): void;
 
     getGroupId(): QueryRp | undefined;
     setGroupId(value?: QueryRp): void;
@@ -483,25 +460,10 @@ export namespace CustomerRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
-    getOrderId(): QueryRp | undefined;
-    setOrderId(value?: QueryRp): void;
-    hasOrderId(): boolean;
-    clearOrderId(): void;
-
     getCustomerId(): QueryRp | undefined;
     setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
     clearCustomerId(): void;
-
-    getEmail(): QueryRp | undefined;
-    setEmail(value?: QueryRp): void;
-    hasEmail(): boolean;
-    clearEmail(): void;
-
-    getPhone(): QueryRp | undefined;
-    setPhone(value?: QueryRp): void;
-    hasPhone(): boolean;
-    clearPhone(): void;
 
     getCount(): QueryRp | undefined;
     setCount(value?: QueryRp): void;
@@ -518,16 +480,6 @@ export namespace CustomerRp {
     hasPrice(): boolean;
     clearPrice(): void;
 
-    getStatus(): QueryRp | undefined;
-    setStatus(value?: QueryRp): void;
-    hasStatus(): boolean;
-    clearStatus(): void;
-
-    getLevelId(): QueryRp | undefined;
-    setLevelId(value?: QueryRp): void;
-    hasLevelId(): boolean;
-    clearLevelId(): void;
-
     getLabelId(): string;
     setLabelId(value: string): void;
 
@@ -541,21 +493,13 @@ export namespace CustomerRp {
 
   export namespace Query {
     export type AsObject = {
-      createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
-      state?: QueryRp.AsObject,
-      businessId?: QueryRp.AsObject,
       groupId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
-      orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
-      email?: QueryRp.AsObject,
-      phone?: QueryRp.AsObject,
       count?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
-      status?: QueryRp.AsObject,
-      levelId?: QueryRp.AsObject,
       labelId: string,
     }
   }
