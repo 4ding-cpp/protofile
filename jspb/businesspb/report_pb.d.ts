@@ -174,9 +174,6 @@ export namespace PaymentRp {
     getDevice(): string;
     setDevice(value: string): void;
 
-    getPercentage(): number;
-    setPercentage(value: number): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -198,26 +195,15 @@ export namespace PaymentRp {
       logisticsService: string,
       logisticsType: number,
       device: string,
-      percentage: number,
     }
   }
 
 
   export class Query extends jspb.Message {
-    getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): void;
-    hasCreateAt(): boolean;
-    clearCreateAt(): void;
-
     getCloseAt(): QueryRp | undefined;
     setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
     clearCloseAt(): void;
-
-    getState(): QueryRp | undefined;
-    setState(value?: QueryRp): void;
-    hasState(): boolean;
-    clearState(): void;
 
     getStoreId(): QueryRp | undefined;
     setStoreId(value?: QueryRp): void;
@@ -234,31 +220,6 @@ export namespace PaymentRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
-    getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): void;
-    hasProductId(): boolean;
-    clearProductId(): void;
-
-    getPaymentService(): QueryRp | undefined;
-    setPaymentService(value?: QueryRp): void;
-    hasPaymentService(): boolean;
-    clearPaymentService(): void;
-
-    getPaymentType(): QueryRp | undefined;
-    setPaymentType(value?: QueryRp): void;
-    hasPaymentType(): boolean;
-    clearPaymentType(): void;
-
-    getLogisticsService(): QueryRp | undefined;
-    setLogisticsService(value?: QueryRp): void;
-    hasLogisticsService(): boolean;
-    clearLogisticsService(): void;
-
-    getLogisticsType(): QueryRp | undefined;
-    setLogisticsType(value?: QueryRp): void;
-    hasLogisticsType(): boolean;
-    clearLogisticsType(): void;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -269,17 +230,10 @@ export namespace PaymentRp {
 
   export namespace Query {
     export type AsObject = {
-      createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
-      state?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
-      productId?: QueryRp.AsObject,
-      paymentService?: QueryRp.AsObject,
-      paymentType?: QueryRp.AsObject,
-      logisticsService?: QueryRp.AsObject,
-      logisticsType?: QueryRp.AsObject,
     }
   }
 
@@ -465,6 +419,11 @@ export namespace CustomerRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
+    getOrderId(): QueryRp | undefined;
+    setOrderId(value?: QueryRp): void;
+    hasOrderId(): boolean;
+    clearOrderId(): void;
+
     getTimes(): QueryRp | undefined;
     setTimes(value?: QueryRp): void;
     hasTimes(): boolean;
@@ -497,6 +456,7 @@ export namespace CustomerRp {
       groupId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
+      orderId?: QueryRp.AsObject,
       times?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
@@ -582,9 +542,6 @@ export namespace ProductRp {
     hasTotal(): boolean;
     clearTotal(): void;
 
-    getStatus(): number;
-    setStatus(value: number): void;
-
     getLabelxMap(): jspb.Map<string, number>;
     clearLabelxMap(): void;
 
@@ -606,32 +563,16 @@ export namespace ProductRp {
       amount: number,
       price: number,
       total?: ReportTotal.AsObject,
-      status: number,
       labelxMap: Array<[string, number]>,
     }
   }
 
 
   export class Query extends jspb.Message {
-    getCreateAt(): QueryRp | undefined;
-    setCreateAt(value?: QueryRp): void;
-    hasCreateAt(): boolean;
-    clearCreateAt(): void;
-
     getCloseAt(): QueryRp | undefined;
     setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
     clearCloseAt(): void;
-
-    getClosed(): QueryRp | undefined;
-    setClosed(value?: QueryRp): void;
-    hasClosed(): boolean;
-    clearClosed(): void;
-
-    getBusinessId(): QueryRp | undefined;
-    setBusinessId(value?: QueryRp): void;
-    hasBusinessId(): boolean;
-    clearBusinessId(): void;
 
     getStoreId(): QueryRp | undefined;
     setStoreId(value?: QueryRp): void;
@@ -673,11 +614,6 @@ export namespace ProductRp {
     hasPrice(): boolean;
     clearPrice(): void;
 
-    getStatus(): QueryRp | undefined;
-    setStatus(value?: QueryRp): void;
-    hasStatus(): boolean;
-    clearStatus(): void;
-
     getLabelId(): string;
     setLabelId(value: string): void;
 
@@ -691,10 +627,7 @@ export namespace ProductRp {
 
   export namespace Query {
     export type AsObject = {
-      createAt?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
-      closed?: QueryRp.AsObject,
-      businessId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
@@ -703,7 +636,6 @@ export namespace ProductRp {
       times?: QueryRp.AsObject,
       amount?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
-      status?: QueryRp.AsObject,
       labelId: string,
     }
   }

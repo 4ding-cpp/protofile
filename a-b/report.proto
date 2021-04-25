@@ -37,20 +37,12 @@ message PaymentRp {
         string logistics_service = 9;
         int32 logistics_type = 10;
         string device = 11;
-        double percentage = 12;    
     }
     message Query {
-        QueryRp create_at = 1;
-        QueryRp close_at = 2;
-        QueryRp state = 3;
-        QueryRp store_id = 4;
-        QueryRp order_id = 5;
-        QueryRp customer_id = 6;
-        QueryRp product_id = 7;
-        QueryRp payment_service = 8;
-        QueryRp payment_type = 9;
-        QueryRp logistics_service = 10;
-        QueryRp logistics_type = 11;    
+        QueryRp close_at = 1;
+        QueryRp store_id = 2;
+        QueryRp order_id = 3;
+        QueryRp customer_id = 4;
     }
     message Analysis {
         int32 total = 1;
@@ -85,17 +77,18 @@ message CustomerRp {
         int32 amount = 7;
         int32 price = 8;
         ReportTotal total = 9;
-        map<string, int32> labelx = 12;
+        map<string, int32> labelx = 10;
     }
     message Query {
-        QueryRp close_at = 2;
-        QueryRp group_id = 5;
-        QueryRp store_id = 6;
-        QueryRp customer_id = 8;
-        QueryRp times = 11;
-        QueryRp amount = 12;
-        QueryRp price = 13;
-        string label_id = 16;
+        QueryRp close_at = 1;
+        QueryRp group_id = 2;
+        QueryRp store_id = 3;
+        QueryRp customer_id = 4;
+        QueryRp order_id = 5;
+        QueryRp times = 6;
+        QueryRp amount = 7;
+        QueryRp price = 8;
+        string label_id = 9;
     } 
     // group [ email phone customer_id store_id ]
     repeated string group = 1;
@@ -117,24 +110,19 @@ message ProductRp {
         int32 amount = 6;
         int32 price = 7;
         ReportTotal total = 8;
-        int32 status = 9;
-        map<string, int32> labelx = 10;
+        map<string, int32> labelx = 9;
     }
     message Query {
-        QueryRp create_at = 1;
-        QueryRp close_at = 2;
-        QueryRp closed = 3;
-        QueryRp business_id = 4;
-        QueryRp store_id = 5;
-        QueryRp order_id = 6;
-        QueryRp customer_id = 7;
-        QueryRp product_id = 8;
-        QueryRp sku = 9;
-        QueryRp times = 10;
-        QueryRp amount = 11;
-        QueryRp price = 12;
-        QueryRp status = 13;
-        string label_id = 14;
+        QueryRp close_at = 1;
+        QueryRp store_id = 2;
+        QueryRp order_id = 3;
+        QueryRp customer_id = 4;
+        QueryRp product_id = 5;
+        QueryRp sku = 6;
+        QueryRp times = 7;
+        QueryRp amount = 8;
+        QueryRp price = 9;
+        string label_id = 10;
     }
     // group [ product_id store_id sku ]
     repeated string group = 1;
