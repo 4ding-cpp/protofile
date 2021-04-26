@@ -1741,7 +1741,8 @@ proto.ding4.PaymentRp.Query.toObject = function(includeInstance, msg) {
     closeAt: (f = msg.getCloseAt()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     storeId: (f = msg.getStoreId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     orderId: (f = msg.getOrderId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
-    customerId: (f = msg.getCustomerId()) && proto.ding4.QueryRp.toObject(includeInstance, f)
+    customerId: (f = msg.getCustomerId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
+    price: (f = msg.getPrice()) && proto.ding4.QueryRp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1797,6 +1798,11 @@ proto.ding4.PaymentRp.Query.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
       msg.setCustomerId(value);
+      break;
+    case 5:
+      var value = new proto.ding4.QueryRp;
+      reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
+      msg.setPrice(value);
       break;
     default:
       reader.skipField();
@@ -1855,6 +1861,14 @@ proto.ding4.PaymentRp.Query.serializeBinaryToWriter = function(message, writer) 
   if (f != null) {
     writer.writeMessage(
       4,
+      f,
+      proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrice();
+  if (f != null) {
+    writer.writeMessage(
+      5,
       f,
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
@@ -2007,6 +2021,43 @@ proto.ding4.PaymentRp.Query.prototype.clearCustomerId = function() {
  */
 proto.ding4.PaymentRp.Query.prototype.hasCustomerId = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional QueryRp price = 5;
+ * @return {?proto.ding4.QueryRp}
+ */
+proto.ding4.PaymentRp.Query.prototype.getPrice = function() {
+  return /** @type{?proto.ding4.QueryRp} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
+};
+
+
+/**
+ * @param {?proto.ding4.QueryRp|undefined} value
+ * @return {!proto.ding4.PaymentRp.Query} returns this
+*/
+proto.ding4.PaymentRp.Query.prototype.setPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.PaymentRp.Query} returns this
+ */
+proto.ding4.PaymentRp.Query.prototype.clearPrice = function() {
+  return this.setPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.PaymentRp.Query.prototype.hasPrice = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

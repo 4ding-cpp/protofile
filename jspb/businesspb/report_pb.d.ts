@@ -220,6 +220,11 @@ export namespace PaymentRp {
     hasCustomerId(): boolean;
     clearCustomerId(): void;
 
+    getPrice(): QueryRp | undefined;
+    setPrice(value?: QueryRp): void;
+    hasPrice(): boolean;
+    clearPrice(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
     static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
@@ -234,6 +239,7 @@ export namespace PaymentRp {
       storeId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
+      price?: QueryRp.AsObject,
     }
   }
 

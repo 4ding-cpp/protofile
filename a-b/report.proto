@@ -43,6 +43,7 @@ message PaymentRp {
         QueryRp store_id = 2;
         QueryRp order_id = 3;
         QueryRp customer_id = 4;
+        QueryRp price = 5;
     }
     message Analysis {
         int32 total = 1;
