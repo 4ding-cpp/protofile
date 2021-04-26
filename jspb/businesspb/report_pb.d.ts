@@ -74,11 +74,6 @@ export namespace ReportTotal {
 }
 
 export class PaymentRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
-
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -127,7 +122,6 @@ export class PaymentRp extends jspb.Message {
 
 export namespace PaymentRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: PaymentRp.Query.AsObject,
     dataList: Array<PaymentRp.Data.AsObject>,
@@ -142,11 +136,8 @@ export namespace PaymentRp {
     getOrderId(): string;
     setOrderId(value: string): void;
 
-    getCreateAt(): string;
-    setCreateAt(value: string): void;
-
-    getPickupAt(): string;
-    setPickupAt(value: string): void;
+    getStoreId(): string;
+    setStoreId(value: string): void;
 
     getCloseAt(): string;
     setCloseAt(value: string): void;
@@ -158,6 +149,12 @@ export namespace PaymentRp {
     setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
     clearTotal(): void;
+
+    getCreateAtData(): string;
+    setCreateAtData(value: string): void;
+
+    getCreateAtHour(): string;
+    setCreateAtHour(value: string): void;
 
     getPaymentService(): string;
     setPaymentService(value: string): void;
@@ -185,11 +182,12 @@ export namespace PaymentRp {
   export namespace Data {
     export type AsObject = {
       orderId: string,
-      createAt: string,
-      pickupAt: string,
+      storeId: string,
       closeAt: string,
       price: number,
       total?: ReportTotal.AsObject,
+      createAtData: string,
+      createAtHour: string,
       paymentService: string,
       paymentType: number,
       logisticsService: string,
@@ -292,12 +290,137 @@ export namespace PaymentRp {
 
 }
 
-export class CustomerRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
+export class StoreRp extends jspb.Message {
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
 
+  getQuery(): StoreRp.Query | undefined;
+  setQuery(value?: StoreRp.Query): void;
+  hasQuery(): boolean;
+  clearQuery(): void;
+
+  getDataList(): Array<StoreRp.Data>;
+  setDataList(value: Array<StoreRp.Data>): void;
+  clearDataList(): void;
+  addData(value?: StoreRp.Data, index?: number): StoreRp.Data;
+
+  getPageLimit(): sql_pb.PageLimit | undefined;
+  setPageLimit(value?: sql_pb.PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StoreRp.AsObject;
+  static toObject(includeInstance: boolean, msg: StoreRp): StoreRp.AsObject;
+  static serializeBinaryToWriter(message: StoreRp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StoreRp;
+  static deserializeBinaryFromReader(message: StoreRp, reader: jspb.BinaryReader): StoreRp;
+}
+
+export namespace StoreRp {
+  export type AsObject = {
+    sortList: Array<sql_pb.Sort.AsObject>,
+    query?: StoreRp.Query.AsObject,
+    dataList: Array<StoreRp.Data.AsObject>,
+    pageLimit?: sql_pb.PageLimit.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export class Data extends jspb.Message {
+    getGroupId(): string;
+    setGroupId(value: string): void;
+
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getTimes(): number;
+    setTimes(value: number): void;
+
+    getAmount(): number;
+    setAmount(value: number): void;
+
+    getPrice(): number;
+    setPrice(value: number): void;
+
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      groupId: string,
+      storeId: string,
+      times: number,
+      amount: number,
+      price: number,
+      total?: ReportTotal.AsObject,
+    }
+  }
+
+
+  export class Query extends jspb.Message {
+    getCloseAt(): QueryRp | undefined;
+    setCloseAt(value?: QueryRp): void;
+    hasCloseAt(): boolean;
+    clearCloseAt(): void;
+
+    getGroupId(): QueryRp | undefined;
+    setGroupId(value?: QueryRp): void;
+    hasGroupId(): boolean;
+    clearGroupId(): void;
+
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
+
+    getAmount(): QueryRp | undefined;
+    setAmount(value?: QueryRp): void;
+    hasAmount(): boolean;
+    clearAmount(): void;
+
+    getPrice(): QueryRp | undefined;
+    setPrice(value?: QueryRp): void;
+    hasPrice(): boolean;
+    clearPrice(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Query.AsObject;
+    static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+    static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Query;
+    static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  }
+
+  export namespace Query {
+    export type AsObject = {
+      closeAt?: QueryRp.AsObject,
+      groupId?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
+      amount?: QueryRp.AsObject,
+      price?: QueryRp.AsObject,
+    }
+  }
+
+}
+
+export class CustomerRp extends jspb.Message {
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -338,7 +461,6 @@ export class CustomerRp extends jspb.Message {
 
 export namespace CustomerRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: CustomerRp.Query.AsObject,
     dataList: Array<CustomerRp.Data.AsObject>,
@@ -473,11 +595,6 @@ export namespace CustomerRp {
 }
 
 export class ProductRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
-
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -513,7 +630,6 @@ export class ProductRp extends jspb.Message {
 
 export namespace ProductRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: ProductRp.Query.AsObject,
     dataList: Array<ProductRp.Data.AsObject>,
@@ -649,11 +765,6 @@ export namespace ProductRp {
 }
 
 export class FavoriteRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
-
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -689,7 +800,6 @@ export class FavoriteRp extends jspb.Message {
 
 export namespace FavoriteRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: FavoriteRp.Query.AsObject,
     dataList: Array<FavoriteRp.Data.AsObject>,
@@ -773,11 +883,6 @@ export namespace FavoriteRp {
 }
 
 export class CarRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
-
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -813,7 +918,6 @@ export class CarRp extends jspb.Message {
 
 export namespace CarRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: CarRp.Query.AsObject,
     dataList: Array<CarRp.Data.AsObject>,
@@ -907,11 +1011,6 @@ export namespace CarRp {
 }
 
 export class RegisterRp extends jspb.Message {
-  getGroupList(): Array<string>;
-  setGroupList(value: Array<string>): void;
-  clearGroupList(): void;
-  addGroup(value: string, index?: number): void;
-
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
   clearSortList(): void;
@@ -955,7 +1054,6 @@ export class RegisterRp extends jspb.Message {
 
 export namespace RegisterRp {
   export type AsObject = {
-    groupList: Array<string>,
     sortList: Array<sql_pb.Sort.AsObject>,
     query?: RegisterRp.Query.AsObject,
     dataList: Array<RegisterRp.Data.AsObject>,
@@ -968,9 +1066,6 @@ export namespace RegisterRp {
   export class Data extends jspb.Message {
     getStoreId(): string;
     setStoreId(value: string): void;
-
-    getGroupId(): string;
-    setGroupId(value: string): void;
 
     getCreateAtDate(): string;
     setCreateAtDate(value: string): void;
@@ -992,7 +1087,6 @@ export namespace RegisterRp {
   export namespace Data {
     export type AsObject = {
       storeId: string,
-      groupId: string,
       createAtDate: string,
       createAtHour: string,
       times: number,

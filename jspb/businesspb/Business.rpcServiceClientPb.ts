@@ -2429,6 +2429,28 @@ export class BusinessRPCClient {
       callback);
   }
 
+  methodInfoReportStore = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: report_pb.StoreRp) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  reportStore(
+    request: report_pb.StoreRp,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.BusinessRPC/ReportStore',
+      request,
+      metadata || {},
+      this.methodInfoReportStore,
+      callback);
+  }
+
   methodInfoReportCustomer = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: report_pb.CustomerRp) => {

@@ -27,16 +27,17 @@ message ReportTotal {
 message PaymentRp {
     message Data {
         string order_id = 1;
-        string create_at = 2;
-        string pickup_at = 3;
-        string close_at = 4;
-        int32 price = 5;
-        ReportTotal total = 6;
-        string payment_service = 7;
-        int32 payment_type = 8;
-        string logistics_service = 9;
-        int32 logistics_type = 10;
-        string device = 11;
+        string store_id = 2;
+        string close_at = 3;
+        int32 price = 4;
+        ReportTotal total = 5;
+        string create_at_data = 6;
+        string create_at_hour = 7;
+        string payment_service = 8;
+        int32 payment_type = 9;
+        string logistics_service = 10;
+        int32 logistics_type = 11;
+        string device = 12;
     }
     message Query {
         QueryRp close_at = 1;
@@ -55,17 +56,38 @@ message PaymentRp {
         map<string, int32> city = 7;
         map<string, int32> device = 8;
     }
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    bool get_analysis = 5;
-    Analysis as = 6;
-    PageLimit page_limit = 7;
-    repeated string exports = 8;
-    google.protobuf.Struct self = 9;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    bool get_analysis = 4;
+    Analysis as = 5;
+    PageLimit page_limit = 6;
+    repeated string exports = 7;
+    google.protobuf.Struct self = 8;
 }
 
+message StoreRp {
+    message Data {
+        string group_id = 1;
+        string store_id = 2;
+        int32 times = 3;
+        int32 amount = 4;
+        int32 price = 5;
+        ReportTotal total = 6;
+    }
+    message Query {
+        QueryRp close_at = 1;
+        QueryRp group_id = 2;
+        QueryRp times = 3;
+        QueryRp amount = 4;
+        QueryRp price = 5;
+    } 
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
+}
 
 message CustomerRp {
     message Data {
@@ -91,14 +113,12 @@ message CustomerRp {
         QueryRp price = 8;
         string label_id = 9;
     } 
-    // group [ email phone customer_id store_id ]
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    PageLimit page_limit = 5;
-    repeated string exports = 6;
-    google.protobuf.Struct self = 7;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    repeated string exports = 5;
+    google.protobuf.Struct self = 6;
 }
 
 message ProductRp {
@@ -125,13 +145,11 @@ message ProductRp {
         QueryRp price = 9;
         string label_id = 10;
     }
-    // group [ product_id store_id sku ]
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
 }
 
 message FavoriteRp {
@@ -148,13 +166,11 @@ message FavoriteRp {
         QueryRp store_id = 1;
         QueryRp times = 2;
     }
-    // group [ product_id store_id shell_id ]
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
 }
 
 message CarRp {
@@ -173,22 +189,19 @@ message CarRp {
         QueryRp times = 2;
         QueryRp amount = 3;
     }
-    // group [ product_id store_id sku ]
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    PageLimit page_limit = 5;
-    google.protobuf.Struct self = 6;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
 }
 
 message RegisterRp {
     message Data {
         string store_id = 1;
-        string group_id = 2;
-        string create_at_date = 3;
-        string create_at_hour = 4;
-        int32 times = 5;
+        string create_at_date = 2;
+        string create_at_hour = 3;
+        int32 times = 4;
     }
     message Query {
         QueryRp store_id = 1;
@@ -203,12 +216,11 @@ message RegisterRp {
         map<string, int32> create_at_date = 4;
         map<string, int32> create_at_hour = 5;
     }
-    repeated string group = 1;
-    repeated Sort sort = 2;
-    Query query = 3;
-    repeated Data data = 4;
-    bool get_analysis = 5;
-    Analysis as = 6;
-    PageLimit page_limit = 7;
-    google.protobuf.Struct self = 8;
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    bool get_analysis = 4;
+    Analysis as = 5;
+    PageLimit page_limit = 6;
+    google.protobuf.Struct self = 7;
 }
