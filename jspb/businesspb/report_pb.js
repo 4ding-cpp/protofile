@@ -2998,9 +2998,10 @@ proto.ding4.StoreRp.Data.toObject = function(includeInstance, msg) {
   var f, obj = {
     groupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     storeId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    times: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    amount: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    times: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 6, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
 
@@ -3047,18 +3048,22 @@ proto.ding4.StoreRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStoreId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTimes(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setAmount(value);
+      msg.setTimes(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPrice(value);
+      msg.setAmount(value);
       break;
     case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrice(value);
+      break;
+    case 7:
       var value = new proto.ding4.ReportTotal;
       reader.readMessage(value,proto.ding4.ReportTotal.deserializeBinaryFromReader);
       msg.setTotal(value);
@@ -3106,31 +3111,38 @@ proto.ding4.StoreRp.Data.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimes();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getAmount();
+  f = message.getTimes();
   if (f !== 0) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getPrice();
+  f = message.getAmount();
   if (f !== 0) {
     writer.writeInt32(
       5,
       f
     );
   }
+  f = message.getPrice();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
+      f
+    );
+  }
   f = message.getTotal();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.ding4.ReportTotal.serializeBinaryToWriter
     );
@@ -3175,28 +3187,28 @@ proto.ding4.StoreRp.Data.prototype.setStoreId = function(value) {
 
 
 /**
- * optional int32 times = 3;
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.ding4.StoreRp.Data.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.StoreRp.Data} returns this
+ */
+proto.ding4.StoreRp.Data.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 times = 4;
  * @return {number}
  */
 proto.ding4.StoreRp.Data.prototype.getTimes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.StoreRp.Data} returns this
- */
-proto.ding4.StoreRp.Data.prototype.setTimes = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional int32 amount = 4;
- * @return {number}
- */
-proto.ding4.StoreRp.Data.prototype.getAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -3205,16 +3217,16 @@ proto.ding4.StoreRp.Data.prototype.getAmount = function() {
  * @param {number} value
  * @return {!proto.ding4.StoreRp.Data} returns this
  */
-proto.ding4.StoreRp.Data.prototype.setAmount = function(value) {
+proto.ding4.StoreRp.Data.prototype.setTimes = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional int32 price = 5;
+ * optional int32 amount = 5;
  * @return {number}
  */
-proto.ding4.StoreRp.Data.prototype.getPrice = function() {
+proto.ding4.StoreRp.Data.prototype.getAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -3223,18 +3235,36 @@ proto.ding4.StoreRp.Data.prototype.getPrice = function() {
  * @param {number} value
  * @return {!proto.ding4.StoreRp.Data} returns this
  */
-proto.ding4.StoreRp.Data.prototype.setPrice = function(value) {
+proto.ding4.StoreRp.Data.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional ReportTotal total = 6;
+ * optional int32 price = 6;
+ * @return {number}
+ */
+proto.ding4.StoreRp.Data.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.StoreRp.Data} returns this
+ */
+proto.ding4.StoreRp.Data.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional ReportTotal total = 7;
  * @return {?proto.ding4.ReportTotal}
  */
 proto.ding4.StoreRp.Data.prototype.getTotal = function() {
   return /** @type{?proto.ding4.ReportTotal} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 6));
+    jspb.Message.getWrapperField(this, proto.ding4.ReportTotal, 7));
 };
 
 
@@ -3243,7 +3273,7 @@ proto.ding4.StoreRp.Data.prototype.getTotal = function() {
  * @return {!proto.ding4.StoreRp.Data} returns this
 */
 proto.ding4.StoreRp.Data.prototype.setTotal = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -3261,7 +3291,7 @@ proto.ding4.StoreRp.Data.prototype.clearTotal = function() {
  * @return {boolean}
  */
 proto.ding4.StoreRp.Data.prototype.hasTotal = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

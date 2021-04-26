@@ -340,6 +340,9 @@ export namespace StoreRp {
     getStoreId(): string;
     setStoreId(value: string): void;
 
+    getName(): string;
+    setName(value: string): void;
+
     getTimes(): number;
     setTimes(value: number): void;
 
@@ -366,6 +369,7 @@ export namespace StoreRp {
     export type AsObject = {
       groupId: string,
       storeId: string,
+      name: string,
       times: number,
       amount: number,
       price: number,

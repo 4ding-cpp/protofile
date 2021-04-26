@@ -70,10 +70,11 @@ message StoreRp {
     message Data {
         string group_id = 1;
         string store_id = 2;
-        int32 times = 3;
-        int32 amount = 4;
-        int32 price = 5;
-        ReportTotal total = 6;
+        string name = 3;
+        int32 times = 4;
+        int32 amount = 5;
+        int32 price = 6;
+        ReportTotal total = 7;
     }
     message Query {
         QueryRp close_at = 1;
