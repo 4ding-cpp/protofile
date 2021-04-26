@@ -138,17 +138,15 @@ message FavoriteRp {
     message Data {
         string store_id = 1;
         string product_id = 2;
-        string photo_src = 3;
-        string shell_id = 4;
+        google.protobuf.Value name = 3;
+        string photo_src = 4;
         int32 times = 5;
         ReportTotal total = 6;
+        map<string, int32> labelx = 7;
     }
     message Query {
         QueryRp store_id = 1;
-        QueryRp product_id = 2;
-        QueryRp shell_id = 3;
-        QueryRp customer_id = 4;
-        QueryRp times = 5;
+        QueryRp times = 2;
     }
     // group [ product_id store_id shell_id ]
     repeated string group = 1;
@@ -163,15 +161,17 @@ message CarRp {
     message Data {
         string store_id = 1;
         string product_id = 2;
-        string sku = 3;
+        google.protobuf.Value name = 3;
         string photo_src = 4;
         int32 times = 5;
         int32 amount = 6;
         ReportTotal total = 7;
+        map<string, int32> labelx = 8;
     }
     message Query {
         QueryRp store_id = 1;
-        QueryRp customer_id = 2;
+        QueryRp times = 2;
+        QueryRp amount = 3;
     }
     // group [ product_id store_id sku ]
     repeated string group = 1;
@@ -186,25 +186,22 @@ message RegisterRp {
     message Data {
         string store_id = 1;
         string group_id = 2;
-        string level_id = 3;
-        string create_at_date = 4;
-        string create_at_hour = 5;
-        int32 times = 6;
+        string create_at_date = 3;
+        string create_at_hour = 4;
+        int32 times = 5;
     }
     message Query {
         QueryRp store_id = 1;
         QueryRp group_id = 2;
-        QueryRp level_id = 3;
-        QueryRp create_at = 4;
-        QueryRp times = 5;
+        QueryRp create_at = 3;
+        QueryRp times = 4;
     }
     message Analysis {
         int32 total = 1;
         map<string, int32> group_id = 2;
         map<string, int32> store_id = 3;
-        map<string, int32> level_id = 4;
-        map<string, int32> create_at_date = 5;
-        map<string, int32> create_at_hour = 6;
+        map<string, int32> create_at_date = 4;
+        map<string, int32> create_at_hour = 5;
     }
     repeated string group = 1;
     repeated Sort sort = 2;

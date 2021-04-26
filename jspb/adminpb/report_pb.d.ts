@@ -704,11 +704,13 @@ export namespace FavoriteRp {
     getProductId(): string;
     setProductId(value: string): void;
 
+    getName(): google_protobuf_struct_pb.Value | undefined;
+    setName(value?: google_protobuf_struct_pb.Value): void;
+    hasName(): boolean;
+    clearName(): void;
+
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
-
-    getShellId(): string;
-    setShellId(value: string): void;
 
     getTimes(): number;
     setTimes(value: number): void;
@@ -717,6 +719,9 @@ export namespace FavoriteRp {
     setTotal(value?: ReportTotal): void;
     hasTotal(): boolean;
     clearTotal(): void;
+
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
@@ -730,10 +735,11 @@ export namespace FavoriteRp {
     export type AsObject = {
       storeId: string,
       productId: string,
+      name?: google_protobuf_struct_pb.Value.AsObject,
       photoSrc: string,
-      shellId: string,
       times: number,
       total?: ReportTotal.AsObject,
+      labelxMap: Array<[string, number]>,
     }
   }
 
@@ -743,21 +749,6 @@ export namespace FavoriteRp {
     setStoreId(value?: QueryRp): void;
     hasStoreId(): boolean;
     clearStoreId(): void;
-
-    getProductId(): QueryRp | undefined;
-    setProductId(value?: QueryRp): void;
-    hasProductId(): boolean;
-    clearProductId(): void;
-
-    getShellId(): QueryRp | undefined;
-    setShellId(value?: QueryRp): void;
-    hasShellId(): boolean;
-    clearShellId(): void;
-
-    getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): void;
-    hasCustomerId(): boolean;
-    clearCustomerId(): void;
 
     getTimes(): QueryRp | undefined;
     setTimes(value?: QueryRp): void;
@@ -775,9 +766,6 @@ export namespace FavoriteRp {
   export namespace Query {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
-      productId?: QueryRp.AsObject,
-      shellId?: QueryRp.AsObject,
-      customerId?: QueryRp.AsObject,
       times?: QueryRp.AsObject,
     }
   }
@@ -840,8 +828,10 @@ export namespace CarRp {
     getProductId(): string;
     setProductId(value: string): void;
 
-    getSku(): string;
-    setSku(value: string): void;
+    getName(): google_protobuf_struct_pb.Value | undefined;
+    setName(value?: google_protobuf_struct_pb.Value): void;
+    hasName(): boolean;
+    clearName(): void;
 
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
@@ -857,6 +847,9 @@ export namespace CarRp {
     hasTotal(): boolean;
     clearTotal(): void;
 
+    getLabelxMap(): jspb.Map<string, number>;
+    clearLabelxMap(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Data.AsObject;
     static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -869,11 +862,12 @@ export namespace CarRp {
     export type AsObject = {
       storeId: string,
       productId: string,
-      sku: string,
+      name?: google_protobuf_struct_pb.Value.AsObject,
       photoSrc: string,
       times: number,
       amount: number,
       total?: ReportTotal.AsObject,
+      labelxMap: Array<[string, number]>,
     }
   }
 
@@ -884,10 +878,15 @@ export namespace CarRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
-    getCustomerId(): QueryRp | undefined;
-    setCustomerId(value?: QueryRp): void;
-    hasCustomerId(): boolean;
-    clearCustomerId(): void;
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
+
+    getAmount(): QueryRp | undefined;
+    setAmount(value?: QueryRp): void;
+    hasAmount(): boolean;
+    clearAmount(): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Query.AsObject;
@@ -900,7 +899,8 @@ export namespace CarRp {
   export namespace Query {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
-      customerId?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
+      amount?: QueryRp.AsObject,
     }
   }
 
@@ -972,9 +972,6 @@ export namespace RegisterRp {
     getGroupId(): string;
     setGroupId(value: string): void;
 
-    getLevelId(): string;
-    setLevelId(value: string): void;
-
     getCreateAtDate(): string;
     setCreateAtDate(value: string): void;
 
@@ -996,7 +993,6 @@ export namespace RegisterRp {
     export type AsObject = {
       storeId: string,
       groupId: string,
-      levelId: string,
       createAtDate: string,
       createAtHour: string,
       times: number,
@@ -1014,11 +1010,6 @@ export namespace RegisterRp {
     setGroupId(value?: QueryRp): void;
     hasGroupId(): boolean;
     clearGroupId(): void;
-
-    getLevelId(): QueryRp | undefined;
-    setLevelId(value?: QueryRp): void;
-    hasLevelId(): boolean;
-    clearLevelId(): void;
 
     getCreateAt(): QueryRp | undefined;
     setCreateAt(value?: QueryRp): void;
@@ -1042,7 +1033,6 @@ export namespace RegisterRp {
     export type AsObject = {
       storeId?: QueryRp.AsObject,
       groupId?: QueryRp.AsObject,
-      levelId?: QueryRp.AsObject,
       createAt?: QueryRp.AsObject,
       times?: QueryRp.AsObject,
     }
@@ -1058,9 +1048,6 @@ export namespace RegisterRp {
 
     getStoreIdMap(): jspb.Map<string, number>;
     clearStoreIdMap(): void;
-
-    getLevelIdMap(): jspb.Map<string, number>;
-    clearLevelIdMap(): void;
 
     getCreateAtDateMap(): jspb.Map<string, number>;
     clearCreateAtDateMap(): void;
@@ -1081,7 +1068,6 @@ export namespace RegisterRp {
       total: number,
       groupIdMap: Array<[string, number]>,
       storeIdMap: Array<[string, number]>,
-      levelIdMap: Array<[string, number]>,
       createAtDateMap: Array<[string, number]>,
       createAtHourMap: Array<[string, number]>,
     }
