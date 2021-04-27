@@ -6776,7 +6776,7 @@ proto.ding4.FavoriteRp.Data.toObject = function(includeInstance, msg) {
   var f, obj = {
     storeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 4, ""),
     times: jspb.Message.getFieldWithDefault(msg, 5, 0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f),
@@ -6826,8 +6826,7 @@ proto.ding4.FavoriteRp.Data.deserializeBinaryFromReader = function(msg, reader) 
       msg.setProductId(value);
       break;
     case 3:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     case 4:
@@ -6893,11 +6892,10 @@ proto.ding4.FavoriteRp.Data.serializeBinaryToWriter = function(message, writer) 
     );
   }
   f = message.getName();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       3,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+      f
     );
   }
   f = message.getPhotoSrc();
@@ -6966,39 +6964,20 @@ proto.ding4.FavoriteRp.Data.prototype.setProductId = function(value) {
 
 
 /**
- * optional google.protobuf.Value name = 3;
- * @return {?proto.google.protobuf.Value}
+ * optional string name = 3;
+ * @return {string}
  */
 proto.ding4.FavoriteRp.Data.prototype.getName = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Value|undefined} value
+ * @param {string} value
  * @return {!proto.ding4.FavoriteRp.Data} returns this
-*/
+ */
 proto.ding4.FavoriteRp.Data.prototype.setName = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.FavoriteRp.Data} returns this
- */
-proto.ding4.FavoriteRp.Data.prototype.clearName = function() {
-  return this.setName(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.FavoriteRp.Data.prototype.hasName = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7699,7 +7678,7 @@ proto.ding4.CarRp.Data.toObject = function(includeInstance, msg) {
   var f, obj = {
     storeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     productId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: (f = msg.getName()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     photoSrc: jspb.Message.getFieldWithDefault(msg, 4, ""),
     times: jspb.Message.getFieldWithDefault(msg, 5, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -7750,8 +7729,7 @@ proto.ding4.CarRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       msg.setProductId(value);
       break;
     case 3:
-      var value = new google_protobuf_struct_pb.Value;
-      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     case 4:
@@ -7821,11 +7799,10 @@ proto.ding4.CarRp.Data.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getName();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       3,
-      f,
-      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+      f
     );
   }
   f = message.getPhotoSrc();
@@ -7901,39 +7878,20 @@ proto.ding4.CarRp.Data.prototype.setProductId = function(value) {
 
 
 /**
- * optional google.protobuf.Value name = 3;
- * @return {?proto.google.protobuf.Value}
+ * optional string name = 3;
+ * @return {string}
  */
 proto.ding4.CarRp.Data.prototype.getName = function() {
-  return /** @type{?proto.google.protobuf.Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Value|undefined} value
+ * @param {string} value
  * @return {!proto.ding4.CarRp.Data} returns this
-*/
+ */
 proto.ding4.CarRp.Data.prototype.setName = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ding4.CarRp.Data} returns this
- */
-proto.ding4.CarRp.Data.prototype.clearName = function() {
-  return this.setName(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ding4.CarRp.Data.prototype.hasName = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -157,7 +157,7 @@ message FavoriteRp {
     message Data {
         string store_id = 1;
         string product_id = 2;
-        google.protobuf.Value name = 3;
+        string name = 3;
         string photo_src = 4;
         int32 times = 5;
         ReportTotal total = 6;
@@ -178,7 +178,7 @@ message CarRp {
     message Data {
         string store_id = 1;
         string product_id = 2;
-        google.protobuf.Value name = 3;
+        string name = 3;
         string photo_src = 4;
         int32 times = 5;
         int32 amount = 6;

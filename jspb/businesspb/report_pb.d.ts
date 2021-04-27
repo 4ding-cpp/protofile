@@ -818,10 +818,8 @@ export namespace FavoriteRp {
     getProductId(): string;
     setProductId(value: string): void;
 
-    getName(): google_protobuf_struct_pb.Value | undefined;
-    setName(value?: google_protobuf_struct_pb.Value): void;
-    hasName(): boolean;
-    clearName(): void;
+    getName(): string;
+    setName(value: string): void;
 
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
@@ -849,7 +847,7 @@ export namespace FavoriteRp {
     export type AsObject = {
       storeId: string,
       productId: string,
-      name?: google_protobuf_struct_pb.Value.AsObject,
+      name: string,
       photoSrc: string,
       times: number,
       total?: ReportTotal.AsObject,
@@ -936,10 +934,8 @@ export namespace CarRp {
     getProductId(): string;
     setProductId(value: string): void;
 
-    getName(): google_protobuf_struct_pb.Value | undefined;
-    setName(value?: google_protobuf_struct_pb.Value): void;
-    hasName(): boolean;
-    clearName(): void;
+    getName(): string;
+    setName(value: string): void;
 
     getPhotoSrc(): string;
     setPhotoSrc(value: string): void;
@@ -970,7 +966,7 @@ export namespace CarRp {
     export type AsObject = {
       storeId: string,
       productId: string,
-      name?: google_protobuf_struct_pb.Value.AsObject,
+      name: string,
       photoSrc: string,
       times: number,
       amount: number,
