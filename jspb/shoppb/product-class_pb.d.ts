@@ -40,9 +40,6 @@ export class ProductClass extends jspb.Message {
   clearProductShellList(): void;
   addProductShell(value?: product$shell_pb.ProductShell, index?: number): product$shell_pb.ProductShell;
 
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
-
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -89,7 +86,6 @@ export namespace ProductClass {
     seo?: seo_pb.SEO.AsObject,
     photo?: a$submessage_pb.Image.AsObject,
     productShellList: Array<product$shell_pb.ProductShell.AsObject>,
-    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

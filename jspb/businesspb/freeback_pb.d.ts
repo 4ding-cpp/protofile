@@ -28,9 +28,6 @@ export class Freeback extends jspb.Message {
   clearDialogueList(): void;
   addDialogue(value?: Dialogue, index?: number): Dialogue;
 
-  getLabelxMap(): jspb.Map<string, number>;
-  clearLabelxMap(): void;
-
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -76,7 +73,6 @@ export namespace Freeback {
     orderId: string,
     description: string,
     dialogueList: Array<Dialogue.AsObject>,
-    labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

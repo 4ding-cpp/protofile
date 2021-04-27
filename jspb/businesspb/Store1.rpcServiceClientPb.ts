@@ -21,7 +21,7 @@ import * as customer_pb from './customer_pb';
 import * as user$level_pb from './user-level_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
-import * as activity$coupon_pb from './activity-coupon_pb';
+import * as activity$promote$coupon_pb from './activity-promote-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
@@ -648,14 +648,14 @@ export class Store1RPCClient {
 
   methodInfoCreateActivity = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Activity) => {
+    (request: activity$promote$coupon_pb.Activity) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createActivity(
-    request: activity$coupon_pb.Activity,
+    request: activity$promote$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -670,14 +670,14 @@ export class Store1RPCClient {
 
   methodInfoUpdateActivity = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Activity) => {
+    (request: activity$promote$coupon_pb.Activity) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateActivity(
-    request: activity$coupon_pb.Activity,
+    request: activity$promote$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -692,14 +692,14 @@ export class Store1RPCClient {
 
   methodInfoCancelActivity = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Activity) => {
+    (request: activity$promote$coupon_pb.Activity) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   cancelActivity(
-    request: activity$coupon_pb.Activity,
+    request: activity$promote$coupon_pb.Activity,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -734,16 +734,104 @@ export class Store1RPCClient {
       callback);
   }
 
+  methodInfoCreatePromote = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: activity$promote$coupon_pb.Promote) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  createPromote(
+    request: activity$promote$coupon_pb.Promote,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CreatePromote',
+      request,
+      metadata || {},
+      this.methodInfoCreatePromote,
+      callback);
+  }
+
+  methodInfoUpdatePromote = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: activity$promote$coupon_pb.Promote) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  updatePromote(
+    request: activity$promote$coupon_pb.Promote,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/UpdatePromote',
+      request,
+      metadata || {},
+      this.methodInfoUpdatePromote,
+      callback);
+  }
+
+  methodInfoCancelPromote = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: activity$promote$coupon_pb.Promote) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  cancelPromote(
+    request: activity$promote$coupon_pb.Promote,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/CancelPromote',
+      request,
+      metadata || {},
+      this.methodInfoCancelPromote,
+      callback);
+  }
+
+  methodInfoFindPromote = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: sql_pb.Query) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  findPromote(
+    request: sql_pb.Query,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.Store1RPC/FindPromote',
+      request,
+      metadata || {},
+      this.methodInfoFindPromote,
+      callback);
+  }
+
   methodInfoCreateCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Coupon) => {
+    (request: activity$promote$coupon_pb.Coupon) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   createCoupon(
-    request: activity$coupon_pb.Coupon,
+    request: activity$promote$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -758,14 +846,14 @@ export class Store1RPCClient {
 
   methodInfoDistributeCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Coupon) => {
+    (request: activity$promote$coupon_pb.Coupon) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   distributeCoupon(
-    request: activity$coupon_pb.Coupon,
+    request: activity$promote$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -780,14 +868,14 @@ export class Store1RPCClient {
 
   methodInfoUpdateCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Coupon) => {
+    (request: activity$promote$coupon_pb.Coupon) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   updateCoupon(
-    request: activity$coupon_pb.Coupon,
+    request: activity$promote$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -802,14 +890,14 @@ export class Store1RPCClient {
 
   methodInfoCancelCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Coupon) => {
+    (request: activity$promote$coupon_pb.Coupon) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   cancelCoupon(
-    request: activity$coupon_pb.Coupon,
+    request: activity$promote$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
@@ -824,14 +912,14 @@ export class Store1RPCClient {
 
   methodInfoExchangeCoupon = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
-    (request: activity$coupon_pb.Coupon) => {
+    (request: activity$promote$coupon_pb.Coupon) => {
       return request.serializeBinary();
     },
     sql_pb.Response.deserializeBinary
   );
 
   exchangeCoupon(
-    request: activity$coupon_pb.Coupon,
+    request: activity$promote$coupon_pb.Coupon,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {

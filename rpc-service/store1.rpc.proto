@@ -16,7 +16,7 @@ import "customer.proto";
 import "user-level.proto";
 import "product-shell.proto";
 import "product-class.proto";
-import "activity-coupon.proto";
+import "activity-promote-coupon.proto";
 import "order.proto";
 import "remind.proto";
 import "setting.proto";
@@ -72,6 +72,12 @@ service Store1RPC {
     rpc UpdateActivity(Activity) returns (Response);
     rpc CancelActivity(Activity) returns (Response);
     rpc FindActivity(Query) returns (Response);
+
+    // 建立推廣活動
+    rpc CreatePromote(Promote) returns (Response);
+    rpc UpdatePromote(Promote) returns (Response);
+    rpc CancelPromote(Promote) returns (Response);
+    rpc FindPromote(Query) returns (Response);
 
     // 建立折價券及配發及兌換
     rpc CreateCoupon(Coupon) returns (Response);

@@ -94,7 +94,6 @@ proto.ding4.ProductClass.toObject = function(includeInstance, msg) {
     photo: (f = msg.getPhoto()) && a$submessage_pb.Image.toObject(includeInstance, f),
     productShellList: jspb.Message.toObjectList(msg.getProductShellList(),
     product$shell_pb.ProductShell.toObject, includeInstance),
-    labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
     operator: jspb.Message.getFieldWithDefault(msg, 10, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -173,12 +172,6 @@ proto.ding4.ProductClass.deserializeBinaryFromReader = function(msg, reader) {
       var value = new product$shell_pb.ProductShell;
       reader.readMessage(value,product$shell_pb.ProductShell.deserializeBinaryFromReader);
       msg.addProductShell(value);
-      break;
-    case 9:
-      var value = msg.getLabelxMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
-         });
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -296,10 +289,6 @@ proto.ding4.ProductClass.serializeBinaryToWriter = function(message, writer) {
       f,
       product$shell_pb.ProductShell.serializeBinaryToWriter
     );
-  }
-  f = message.getLabelxMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
   f = message.getOperator();
   if (f.length > 0) {
@@ -569,28 +558,6 @@ proto.ding4.ProductClass.prototype.addProductShell = function(opt_value, opt_ind
 proto.ding4.ProductClass.prototype.clearProductShellList = function() {
   return this.setProductShellList([]);
 };
-
-
-/**
- * map<string, int32> labelx = 9;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
- */
-proto.ding4.ProductClass.prototype.getLabelxMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.ding4.ProductClass} returns this
- */
-proto.ding4.ProductClass.prototype.clearLabelxMap = function() {
-  this.getLabelxMap().clear();
-  return this;};
 
 
 /**

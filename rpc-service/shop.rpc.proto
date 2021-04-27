@@ -9,7 +9,7 @@ import "sql.proto";
 import "customer.proto";
 import "product-goods.proto";
 import "car.proto";
-import "activity-coupon.proto";
+import "activity-promote-coupon.proto";
 import "order.proto";
 import "freeback.proto";
 import "browse.proto";

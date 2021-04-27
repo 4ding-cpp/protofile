@@ -32,14 +32,36 @@ message Activity {
     int32 use_by_customer = 16;
     int32 use_by_order = 17;
     
-    map<string, int32> labelx = 18;
-    string operator = 19;
-    google.protobuf.Timestamp create_at = 20;
-    google.protobuf.Timestamp update_at = 21;
-    repeated string cols = 22;
-    repeated Condition condition = 23;
-    google.protobuf.Struct self = 24;
+    string operator = 18;
+    google.protobuf.Timestamp create_at = 19;
+    google.protobuf.Timestamp update_at = 20;
+    repeated string cols = 21;
+    repeated Condition condition = 22;
+    google.protobuf.Struct self = 23;
 }
+
+message Promote {
+    string promote_id = 1;
+    string store_id = 2;
+    string sales_id = 3;
+    double commission = 4;
+    google.protobuf.Timestamp begin_at = 5;
+    google.protobuf.Timestamp end_at = 6;
+    google.protobuf.Value name = 7;
+    Rule rule = 8;
+    Rule now = 9;
+    Active active = 10;
+    ProductTarget target = 11;
+    bool reached = 12;
+    
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
+}
+
 
 // Used => map[CustomerID]已使用
 // is_use > 0 會員的額外欄位 看自己是否已使用
@@ -59,11 +81,10 @@ message Coupon {
     string order_id = 13;
     string order_at = 14;
 
-    map<string, int32> labelx = 15;
-    string operator = 16;
-    google.protobuf.Timestamp create_at = 17;
-    google.protobuf.Timestamp update_at = 18;
-    repeated string cols = 19;
-    repeated Condition condition = 20;
-    google.protobuf.Struct self = 21;
+    string operator = 15;
+    google.protobuf.Timestamp create_at = 16;
+    google.protobuf.Timestamp update_at = 17;
+    repeated string cols = 18;
+    repeated Condition condition = 19;
+    google.protobuf.Struct self = 20;
 }

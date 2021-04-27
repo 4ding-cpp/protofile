@@ -12,7 +12,7 @@ import * as customer_pb from './customer_pb';
 import * as user$level_pb from './user-level_pb';
 import * as product$shell_pb from './product-shell_pb';
 import * as product$class_pb from './product-class_pb';
-import * as activity$coupon_pb from './activity-coupon_pb';
+import * as activity$promote$coupon_pb from './activity-promote-coupon_pb';
 import * as order_pb from './order_pb';
 import * as remind_pb from './remind_pb';
 import * as setting_pb from './setting_pb';
