@@ -12,11 +12,17 @@ export class Car extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
+  getSalesId(): string;
+  setSalesId(value: string): void;
+
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
   getCouponId(): string;
   setCouponId(value: string): void;
+
+  getPromoteId(): string;
+  setPromoteId(value: string): void;
 
   getState(): number;
   setState(value: number): void;
@@ -88,8 +94,10 @@ export namespace Car {
   export type AsObject = {
     carId: string,
     storeId: string,
+    salesId: string,
     customerId: string,
     couponId: string,
+    promoteId: string,
     state: number,
     buyList: Array<Buy.AsObject>,
     activityList: Array<product$goods_pb.ActivityGoods.AsObject>,

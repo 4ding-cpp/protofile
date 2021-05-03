@@ -13,23 +13,25 @@ import "google/protobuf/timestamp.proto";
 message Car {
     string car_id = 1;
     string store_id = 2;
-    string customer_id = 3;
-    string coupon_id = 4;
-    int32 state = 5;
-    repeated Buy buy = 6;
-    repeated ActivityGoods activity = 8;
-    repeated ProductGoods goods = 9;
-    bool is_free_shipping = 10;
-    int32 amount = 11;
-    int32 price = 12;
-    int32 discount = 13;
+    string sales_id = 3;
+    string customer_id = 4;
+    string coupon_id = 5;
+    string promote_id = 6;
+    int32 state = 7;
+    repeated Buy buy = 8;
+    repeated ActivityGoods activity = 9;
+    repeated ProductGoods goods = 10;
+    bool is_free_shipping = 11;
+    int32 amount = 12;
+    int32 price = 13;
+    int32 discount = 14;
     
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19;
+    string operator = 15;
+    google.protobuf.Timestamp create_at = 16;
+    google.protobuf.Timestamp update_at = 17;
+    repeated string cols = 18;
+    repeated Condition condition = 19;
+    google.protobuf.Struct self = 20;
 }
 
 message Buy {
