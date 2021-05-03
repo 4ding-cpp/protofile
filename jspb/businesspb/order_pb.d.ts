@@ -12,20 +12,8 @@ export class Order extends jspb.Message {
   getStoreId(): string;
   setStoreId(value: string): void;
 
-  getSalesId(): string;
-  setSalesId(value: string): void;
-
   getCustomerId(): string;
   setCustomerId(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getEmail(): string;
-  setEmail(value: string): void;
-
-  getPhone(): string;
-  setPhone(value: string): void;
 
   getIsCustomer(): boolean;
   setIsCustomer(value: boolean): void;
@@ -35,6 +23,21 @@ export class Order extends jspb.Message {
 
   getCouponId(): string;
   setCouponId(value: string): void;
+
+  getSalesId(): string;
+  setSalesId(value: string): void;
+
+  getPromoteId(): string;
+  setPromoteId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getPhone(): string;
+  setPhone(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -193,14 +196,15 @@ export namespace Order {
   export type AsObject = {
     orderId: string,
     storeId: string,
-    salesId: string,
     customerId: string,
-    name: string,
-    email: string,
-    phone: string,
     isCustomer: boolean,
     carId: string,
     couponId: string,
+    salesId: string,
+    promoteId: string,
+    name: string,
+    email: string,
+    phone: string,
     amount: number,
     freight: number,
     price: number,

@@ -19,65 +19,69 @@ import "google/protobuf/timestamp.proto";
 message Order {
     string order_id = 1; 
     string store_id = 2;
-    string sales_id = 3;
-    string customer_id = 4;
-    string name = 5;
-    string email = 6;
-    string phone = 7;
-    bool is_customer = 8;
-    string car_id = 9;
-    string coupon_id = 10;
-    int32 amount = 11;
-    int32 freight = 12;
-    int32 price = 13;
+    string customer_id = 3;
+    bool is_customer = 4;
 
-    double order_charge = 14;
-    double business_charge = 15;
-    double sales_charge = 16;
-    int32 payment_charge = 17;
-    int32 logistics_charge = 18;
+    string car_id = 5;
+    string coupon_id = 6;
+    string sales_id = 7;
+    string promote_id = 8;
 
-    int32 state = 19;
-    int32 payment_state = 20;
-    int32 logistics_state = 21;
-
-    string payment_adapter = 22;
-    string payment_service = 23;
-    int32 payment_type = 24;
+    string name = 9;
+    string email = 10;
+    string phone = 11;
     
-    string logistics_adapter = 25;
-    string logistics_service = 26;
-    int32 logistics_type = 27;
-    int32 logistics_sub_type = 28;
+    int32 amount = 12;
+    int32 freight = 13;
+    int32 price = 14;
 
-    string return_adapter = 29;
-    string return_service = 30;
-    int32 return_type = 31;
-    int32 return_sub_type = 32;
+    double order_charge = 15;
+    double business_charge = 16;
+    double sales_charge = 17;
+    int32 payment_charge = 18;
+    int32 logistics_charge = 19;
 
-    bool is_timeout = 33;
-    bool is_back = 34;
-    bool is_exchange  = 35;
-    string reason = 36;
+    int32 state = 20;
+    int32 payment_state = 21;
+    int32 logistics_state = 22;
 
-    string pickup_at = 37;
-    string close_at = 38;
-    string pay_at = 39;
-    string pay_ip = 40;
-    string city = 41;
-    string device = 42;
-    string remark = 43;
-    OrderOther other = 44;
-    repeated OrderGoods goods = 45;
-    repeated OrderActivity activity = 46;
+    string payment_adapter = 23;
+    string payment_service = 24;
+    int32 payment_type = 25;
+    
+    string logistics_adapter = 26;
+    string logistics_service = 27;
+    int32 logistics_type = 28;
+    int32 logistics_sub_type = 29;
 
-    map<string, int32> labelx = 47;
-    string operator = 48;
-    google.protobuf.Timestamp create_at = 49;
-    google.protobuf.Timestamp update_at = 50;
-    repeated string cols = 51;
-    repeated Condition condition = 52;
-    google.protobuf.Struct self = 53;
+    string return_adapter = 30;
+    string return_service = 31;
+    int32 return_type = 32;
+    int32 return_sub_type = 33;
+
+    bool is_timeout = 34;
+    bool is_back = 35;
+    bool is_exchange  = 36;
+    string reason = 37;
+
+    string pickup_at = 38;
+    string close_at = 39;
+    string pay_at = 40;
+    string pay_ip = 41;
+    string city = 42;
+    string device = 43;
+    string remark = 44;
+    OrderOther other = 45;
+    repeated OrderGoods goods = 46;
+    repeated OrderActivity activity = 47;
+
+    map<string, int32> labelx = 48;
+    string operator = 49;
+    google.protobuf.Timestamp create_at = 50;
+    google.protobuf.Timestamp update_at = 51;
+    repeated string cols = 52;
+    repeated Condition condition = 53;
+    google.protobuf.Struct self = 54;
 }
 
 message OrderGoods {
