@@ -150,6 +150,9 @@ export class Promote extends jspb.Message {
   getSalesId(): string;
   setSalesId(value: string): void;
 
+  getSalesName(): string;
+  setSalesName(value: string): void;
+
   getCommission(): number;
   setCommission(value: number): void;
 
@@ -232,6 +235,7 @@ export namespace Promote {
     promoteId: string,
     storeId: string,
     salesId: string,
+    salesName: string,
     commission: number,
     beginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     endAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
