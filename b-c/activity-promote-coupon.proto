@@ -44,23 +44,22 @@ message Promote {
     string promote_id = 1;
     string store_id = 2;
     string sales_id = 3;
-    string sales_name = 4;
-    double commission = 5;
-    google.protobuf.Timestamp begin_at = 6;
-    google.protobuf.Timestamp end_at = 7;
-    google.protobuf.Value name = 8;
-    Rule rule = 9;
-    Rule now = 10;
-    Active active = 11;
-    ProductTarget target = 12;
-    bool reached = 13;
+    double commission = 4;
+    google.protobuf.Timestamp begin_at = 5;
+    google.protobuf.Timestamp end_at = 6;
+    google.protobuf.Value name = 7;
+    Rule rule = 8;
+    Rule now = 9;
+    Active active = 10;
+    ProductTarget target = 11;
+    bool reached = 12;
     
-    string operator = 14;
-    google.protobuf.Timestamp create_at = 15;
-    google.protobuf.Timestamp update_at = 16;
-    repeated string cols = 17;
-    repeated Condition condition = 18;
-    google.protobuf.Struct self = 19;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }
 
 
