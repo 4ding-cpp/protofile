@@ -368,6 +368,28 @@ export class ShopRPCClient {
       callback);
   }
 
+  methodInfoLoadPromote = new grpcWeb.AbstractClientBase.MethodInfo(
+    sql_pb.Response,
+    (request: activity$promote$coupon_pb.Promote) => {
+      return request.serializeBinary();
+    },
+    sql_pb.Response.deserializeBinary
+  );
+
+  loadPromote(
+    request: activity$promote$coupon_pb.Promote,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: sql_pb.Response) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/ding4.ShopRPC/LoadPromote',
+      request,
+      metadata || {},
+      this.methodInfoLoadPromote,
+      callback);
+  }
+
   methodInfoCompleteCar = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: car_pb.Car) => {

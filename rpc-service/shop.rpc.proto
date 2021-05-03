@@ -39,6 +39,7 @@ service ShopRPC {
     rpc FindLevel(Query) returns (Response);
     rpc ExchangeCoupon(Coupon) returns (Response);
     rpc FindCoupon(Query) returns (Response);
+    rpc LoadPromote(Promote) returns (Response);
     // 計算購物車內容 *包含活動及折價券*
     rpc CompleteCar(Car) returns (Response);
 
