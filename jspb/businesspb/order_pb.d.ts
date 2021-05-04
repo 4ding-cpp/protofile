@@ -347,6 +347,9 @@ export class OrderActivity extends jspb.Message {
   getCoupon(): number;
   setCoupon(value: number): void;
 
+  getPromote(): number;
+  setPromote(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderActivity.AsObject;
   static toObject(includeInstance: boolean, msg: OrderActivity): OrderActivity.AsObject;
@@ -366,6 +369,7 @@ export namespace OrderActivity {
     discount: number,
     reduce: number,
     coupon: number,
+    promote: number,
   }
 }
 

@@ -110,6 +110,7 @@ message OrderActivity {
     int32 discount = 7;
     int32 reduce = 8;
     int32 coupon = 9;
+    int32 promote = 10;
 }
 
 message ContactInfo {

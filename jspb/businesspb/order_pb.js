@@ -2680,7 +2680,8 @@ proto.ding4.OrderActivity.toObject = function(includeInstance, msg) {
     amount: jspb.Message.getFieldWithDefault(msg, 6, 0),
     discount: jspb.Message.getFieldWithDefault(msg, 7, 0),
     reduce: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    coupon: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    coupon: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    promote: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -2752,6 +2753,10 @@ proto.ding4.OrderActivity.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCoupon(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPromote(value);
       break;
     default:
       reader.skipField();
@@ -2842,6 +2847,13 @@ proto.ding4.OrderActivity.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       9,
+      f
+    );
+  }
+  f = message.getPromote();
+  if (f !== 0) {
+    writer.writeInt32(
+      10,
       f
     );
   }
@@ -3007,6 +3019,24 @@ proto.ding4.OrderActivity.prototype.getCoupon = function() {
  */
 proto.ding4.OrderActivity.prototype.setCoupon = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional int32 promote = 10;
+ * @return {number}
+ */
+proto.ding4.OrderActivity.prototype.getPromote = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setPromote = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
