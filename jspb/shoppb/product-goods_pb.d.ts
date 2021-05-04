@@ -133,6 +133,12 @@ export class ActivityGoods extends jspb.Message {
   getDiscount(): number;
   setDiscount(value: number): void;
 
+  getCoupon(): number;
+  setCoupon(value: number): void;
+
+  getPromote(): number;
+  setPromote(value: number): void;
+
   getRule(): a$submessage_pb.Rule | undefined;
   setRule(value?: a$submessage_pb.Rule): void;
   hasRule(): boolean;
@@ -159,6 +165,8 @@ export namespace ActivityGoods {
     reached: boolean,
     amount: number,
     discount: number,
+    coupon: number,
+    promote: number,
     rule?: a$submessage_pb.Rule.AsObject,
     now?: a$submessage_pb.Rule.AsObject,
   }

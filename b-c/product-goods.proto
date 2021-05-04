@@ -40,6 +40,8 @@ message ActivityGoods {
     bool reached = 4;
     int32 amount = 5;
     int32 discount = 6;
-    Rule rule = 7;
-    Rule now = 8;
+    int32 coupon = 7;
+    int32 promote = 8;
+    Rule rule = 9;
+    Rule now = 10;
 }

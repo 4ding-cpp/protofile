@@ -945,6 +945,8 @@ proto.ding4.ActivityGoods.toObject = function(includeInstance, msg) {
     reached: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
     discount: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    coupon: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    promote: jspb.Message.getFieldWithDefault(msg, 8, 0),
     rule: (f = msg.getRule()) && a$submessage_pb.Rule.toObject(includeInstance, f),
     now: (f = msg.getNow()) && a$submessage_pb.Rule.toObject(includeInstance, f)
   };
@@ -1009,11 +1011,19 @@ proto.ding4.ActivityGoods.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDiscount(value);
       break;
     case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCoupon(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPromote(value);
+      break;
+    case 9:
       var value = new a$submessage_pb.Rule;
       reader.readMessage(value,a$submessage_pb.Rule.deserializeBinaryFromReader);
       msg.setRule(value);
       break;
-    case 8:
+    case 10:
       var value = new a$submessage_pb.Rule;
       reader.readMessage(value,a$submessage_pb.Rule.deserializeBinaryFromReader);
       msg.setNow(value);
@@ -1090,10 +1100,24 @@ proto.ding4.ActivityGoods.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getCoupon();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = message.getPromote();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
   f = message.getRule();
   if (f != null) {
     writer.writeMessage(
-      7,
+      9,
       f,
       a$submessage_pb.Rule.serializeBinaryToWriter
     );
@@ -1101,7 +1125,7 @@ proto.ding4.ActivityGoods.serializeBinaryToWriter = function(message, writer) {
   f = message.getNow();
   if (f != null) {
     writer.writeMessage(
-      8,
+      10,
       f,
       a$submessage_pb.Rule.serializeBinaryToWriter
     );
@@ -1237,12 +1261,48 @@ proto.ding4.ActivityGoods.prototype.setDiscount = function(value) {
 
 
 /**
- * optional Rule rule = 7;
+ * optional int32 coupon = 7;
+ * @return {number}
+ */
+proto.ding4.ActivityGoods.prototype.getCoupon = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.ActivityGoods} returns this
+ */
+proto.ding4.ActivityGoods.prototype.setCoupon = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 promote = 8;
+ * @return {number}
+ */
+proto.ding4.ActivityGoods.prototype.getPromote = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.ActivityGoods} returns this
+ */
+proto.ding4.ActivityGoods.prototype.setPromote = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional Rule rule = 9;
  * @return {?proto.ding4.Rule}
  */
 proto.ding4.ActivityGoods.prototype.getRule = function() {
   return /** @type{?proto.ding4.Rule} */ (
-    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 7));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 9));
 };
 
 
@@ -1251,7 +1311,7 @@ proto.ding4.ActivityGoods.prototype.getRule = function() {
  * @return {!proto.ding4.ActivityGoods} returns this
 */
 proto.ding4.ActivityGoods.prototype.setRule = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -1269,17 +1329,17 @@ proto.ding4.ActivityGoods.prototype.clearRule = function() {
  * @return {boolean}
  */
 proto.ding4.ActivityGoods.prototype.hasRule = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional Rule now = 8;
+ * optional Rule now = 10;
  * @return {?proto.ding4.Rule}
  */
 proto.ding4.ActivityGoods.prototype.getNow = function() {
   return /** @type{?proto.ding4.Rule} */ (
-    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 8));
+    jspb.Message.getWrapperField(this, a$submessage_pb.Rule, 10));
 };
 
 
@@ -1288,7 +1348,7 @@ proto.ding4.ActivityGoods.prototype.getNow = function() {
  * @return {!proto.ding4.ActivityGoods} returns this
 */
 proto.ding4.ActivityGoods.prototype.setNow = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -1306,7 +1366,7 @@ proto.ding4.ActivityGoods.prototype.clearNow = function() {
  * @return {boolean}
  */
 proto.ding4.ActivityGoods.prototype.hasNow = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
