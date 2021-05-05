@@ -122,6 +122,32 @@ message CustomerRp {
     google.protobuf.Struct self = 6;
 }
 
+
+message SalesRp {
+    message Data {
+        string sales_id = 1;
+        string store_id = 2;
+        int32 times = 3;
+        int32 amount = 4;
+        int32 price = 5;
+        int32 commission = 6;
+        ReportTotal total = 7;
+    }
+    message Query {
+        QueryRp close_at = 1;
+        QueryRp store_id = 2;
+        QueryRp times = 3;
+        QueryRp amount = 4;
+        QueryRp price = 5;
+    }
+    repeated Sort sort = 1;
+    Query query = 2;
+    repeated Data data = 3;
+    PageLimit page_limit = 4;
+    google.protobuf.Struct self = 5;
+}
+
+
 message ProductRp {
     message Data {
         string product_id = 1;

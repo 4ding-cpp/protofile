@@ -214,6 +214,7 @@ service BusinessRPC {
     // 報表
     rpc ReportPayment(PaymentRp) returns (Response);
     rpc ReportStore(StoreRp) returns (Response);
+    rpc ReportSalse(SalesRp) returns (Response);
     rpc ReportCustomer(CustomerRp) returns (Response);
     rpc ReportProduct(ProductRp) returns (Response);
     rpc ReportFavorite(FavoriteRp) returns (Response);

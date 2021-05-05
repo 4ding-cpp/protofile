@@ -598,6 +598,140 @@ export namespace CustomerRp {
 
 }
 
+export class SalesRp extends jspb.Message {
+  getSortList(): Array<sql_pb.Sort>;
+  setSortList(value: Array<sql_pb.Sort>): void;
+  clearSortList(): void;
+  addSort(value?: sql_pb.Sort, index?: number): sql_pb.Sort;
+
+  getQuery(): SalesRp.Query | undefined;
+  setQuery(value?: SalesRp.Query): void;
+  hasQuery(): boolean;
+  clearQuery(): void;
+
+  getDataList(): Array<SalesRp.Data>;
+  setDataList(value: Array<SalesRp.Data>): void;
+  clearDataList(): void;
+  addData(value?: SalesRp.Data, index?: number): SalesRp.Data;
+
+  getPageLimit(): sql_pb.PageLimit | undefined;
+  setPageLimit(value?: sql_pb.PageLimit): void;
+  hasPageLimit(): boolean;
+  clearPageLimit(): void;
+
+  getSelf(): google_protobuf_struct_pb.Struct | undefined;
+  setSelf(value?: google_protobuf_struct_pb.Struct): void;
+  hasSelf(): boolean;
+  clearSelf(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SalesRp.AsObject;
+  static toObject(includeInstance: boolean, msg: SalesRp): SalesRp.AsObject;
+  static serializeBinaryToWriter(message: SalesRp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SalesRp;
+  static deserializeBinaryFromReader(message: SalesRp, reader: jspb.BinaryReader): SalesRp;
+}
+
+export namespace SalesRp {
+  export type AsObject = {
+    sortList: Array<sql_pb.Sort.AsObject>,
+    query?: SalesRp.Query.AsObject,
+    dataList: Array<SalesRp.Data.AsObject>,
+    pageLimit?: sql_pb.PageLimit.AsObject,
+    self?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export class Data extends jspb.Message {
+    getSalesId(): string;
+    setSalesId(value: string): void;
+
+    getStoreId(): string;
+    setStoreId(value: string): void;
+
+    getTimes(): number;
+    setTimes(value: number): void;
+
+    getAmount(): number;
+    setAmount(value: number): void;
+
+    getPrice(): number;
+    setPrice(value: number): void;
+
+    getCommission(): number;
+    setCommission(value: number): void;
+
+    getTotal(): ReportTotal | undefined;
+    setTotal(value?: ReportTotal): void;
+    hasTotal(): boolean;
+    clearTotal(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Data.AsObject;
+    static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
+    static serializeBinaryToWriter(message: Data, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Data;
+    static deserializeBinaryFromReader(message: Data, reader: jspb.BinaryReader): Data;
+  }
+
+  export namespace Data {
+    export type AsObject = {
+      salesId: string,
+      storeId: string,
+      times: number,
+      amount: number,
+      price: number,
+      commission: number,
+      total?: ReportTotal.AsObject,
+    }
+  }
+
+
+  export class Query extends jspb.Message {
+    getCloseAt(): QueryRp | undefined;
+    setCloseAt(value?: QueryRp): void;
+    hasCloseAt(): boolean;
+    clearCloseAt(): void;
+
+    getStoreId(): QueryRp | undefined;
+    setStoreId(value?: QueryRp): void;
+    hasStoreId(): boolean;
+    clearStoreId(): void;
+
+    getTimes(): QueryRp | undefined;
+    setTimes(value?: QueryRp): void;
+    hasTimes(): boolean;
+    clearTimes(): void;
+
+    getAmount(): QueryRp | undefined;
+    setAmount(value?: QueryRp): void;
+    hasAmount(): boolean;
+    clearAmount(): void;
+
+    getPrice(): QueryRp | undefined;
+    setPrice(value?: QueryRp): void;
+    hasPrice(): boolean;
+    clearPrice(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Query.AsObject;
+    static toObject(includeInstance: boolean, msg: Query): Query.AsObject;
+    static serializeBinaryToWriter(message: Query, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Query;
+    static deserializeBinaryFromReader(message: Query, reader: jspb.BinaryReader): Query;
+  }
+
+  export namespace Query {
+    export type AsObject = {
+      closeAt?: QueryRp.AsObject,
+      storeId?: QueryRp.AsObject,
+      times?: QueryRp.AsObject,
+      amount?: QueryRp.AsObject,
+      price?: QueryRp.AsObject,
+    }
+  }
+
+}
+
 export class ProductRp extends jspb.Message {
   getSortList(): Array<sql_pb.Sort>;
   setSortList(value: Array<sql_pb.Sort>): void;
