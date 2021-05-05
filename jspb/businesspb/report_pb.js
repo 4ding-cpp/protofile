@@ -5496,7 +5496,7 @@ proto.ding4.SalesRp.Data.toObject = function(includeInstance, msg) {
     times: jspb.Message.getFieldWithDefault(msg, 3, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 4, 0),
     price: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    commission: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    commission: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
     total: (f = msg.getTotal()) && proto.ding4.ReportTotal.toObject(includeInstance, f)
   };
 
@@ -5555,7 +5555,7 @@ proto.ding4.SalesRp.Data.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPrice(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setCommission(value);
       break;
     case 7:
@@ -5628,8 +5628,8 @@ proto.ding4.SalesRp.Data.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getCommission();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeDouble(
       6,
       f
     );
@@ -5736,11 +5736,11 @@ proto.ding4.SalesRp.Data.prototype.setPrice = function(value) {
 
 
 /**
- * optional int32 commission = 6;
+ * optional double commission = 6;
  * @return {number}
  */
 proto.ding4.SalesRp.Data.prototype.getCommission = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
@@ -5749,7 +5749,7 @@ proto.ding4.SalesRp.Data.prototype.getCommission = function() {
  * @return {!proto.ding4.SalesRp.Data} returns this
  */
 proto.ding4.SalesRp.Data.prototype.setCommission = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 

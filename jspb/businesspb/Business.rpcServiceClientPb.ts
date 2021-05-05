@@ -2451,7 +2451,7 @@ export class BusinessRPCClient {
       callback);
   }
 
-  methodInfoReportSalse = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoReportSales = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: report_pb.SalesRp) => {
       return request.serializeBinary();
@@ -2459,17 +2459,17 @@ export class BusinessRPCClient {
     sql_pb.Response.deserializeBinary
   );
 
-  reportSalse(
+  reportSales(
     request: report_pb.SalesRp,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: sql_pb.Response) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ding4.BusinessRPC/ReportSalse',
+        '/ding4.BusinessRPC/ReportSales',
       request,
       metadata || {},
-      this.methodInfoReportSalse,
+      this.methodInfoReportSales,
       callback);
   }
 

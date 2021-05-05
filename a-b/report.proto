@@ -130,7 +130,7 @@ message SalesRp {
         int32 times = 3;
         int32 amount = 4;
         int32 price = 5;
-        int32 commission = 6;
+        double commission = 6;
         ReportTotal total = 7;
     }
     message Query {
