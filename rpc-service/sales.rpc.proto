@@ -25,6 +25,8 @@ service SalesRPC {
     rpc FindInfo(Query) returns (Response);
 
     // 定單列表
+    rpc FindActivity(Query) returns (Response);
+    rpc FindProductShell(Query) returns (Response);
     rpc FindOrder(Query) returns (Response);
     rpc DetailOrder(Order) returns (Response);
     rpc FindPromote(Query) returns (Response);
