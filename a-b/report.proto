@@ -134,11 +134,12 @@ message SalesRp {
         ReportTotal total = 7;
     }
     message Query {
-        QueryRp close_at = 1;
-        QueryRp store_id = 2;
-        QueryRp times = 3;
-        QueryRp amount = 4;
-        QueryRp price = 5;
+        QueryRp sales_id = 1;
+        QueryRp close_at = 2;
+        QueryRp store_id = 3;
+        QueryRp times = 4;
+        QueryRp amount = 5;
+        QueryRp price = 6;
     }
     repeated Sort sort = 1;
     Query query = 2;

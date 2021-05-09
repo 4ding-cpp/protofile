@@ -5822,6 +5822,7 @@ proto.ding4.SalesRp.Query.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ding4.SalesRp.Query.toObject = function(includeInstance, msg) {
   var f, obj = {
+    salesId: (f = msg.getSalesId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     closeAt: (f = msg.getCloseAt()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     storeId: (f = msg.getStoreId()) && proto.ding4.QueryRp.toObject(includeInstance, f),
     times: (f = msg.getTimes()) && proto.ding4.QueryRp.toObject(includeInstance, f),
@@ -5866,24 +5867,29 @@ proto.ding4.SalesRp.Query.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setCloseAt(value);
+      msg.setSalesId(value);
       break;
     case 2:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setStoreId(value);
+      msg.setCloseAt(value);
       break;
     case 3:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setTimes(value);
+      msg.setStoreId(value);
       break;
     case 4:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
-      msg.setAmount(value);
+      msg.setTimes(value);
       break;
     case 5:
+      var value = new proto.ding4.QueryRp;
+      reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 6:
       var value = new proto.ding4.QueryRp;
       reader.readMessage(value,proto.ding4.QueryRp.deserializeBinaryFromReader);
       msg.setPrice(value);
@@ -5917,7 +5923,7 @@ proto.ding4.SalesRp.Query.prototype.serializeBinary = function() {
  */
 proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCloseAt();
+  f = message.getSalesId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -5925,7 +5931,7 @@ proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getStoreId();
+  f = message.getCloseAt();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -5933,7 +5939,7 @@ proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getTimes();
+  f = message.getStoreId();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -5941,7 +5947,7 @@ proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getAmount();
+  f = message.getTimes();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -5949,10 +5955,18 @@ proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
   }
-  f = message.getPrice();
+  f = message.getAmount();
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      proto.ding4.QueryRp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrice();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       proto.ding4.QueryRp.serializeBinaryToWriter
     );
@@ -5961,10 +5975,10 @@ proto.ding4.SalesRp.Query.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional QueryRp close_at = 1;
+ * optional QueryRp sales_id = 1;
  * @return {?proto.ding4.QueryRp}
  */
-proto.ding4.SalesRp.Query.prototype.getCloseAt = function() {
+proto.ding4.SalesRp.Query.prototype.getSalesId = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
     jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 1));
 };
@@ -5974,8 +5988,45 @@ proto.ding4.SalesRp.Query.prototype.getCloseAt = function() {
  * @param {?proto.ding4.QueryRp|undefined} value
  * @return {!proto.ding4.SalesRp.Query} returns this
 */
-proto.ding4.SalesRp.Query.prototype.setCloseAt = function(value) {
+proto.ding4.SalesRp.Query.prototype.setSalesId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.SalesRp.Query} returns this
+ */
+proto.ding4.SalesRp.Query.prototype.clearSalesId = function() {
+  return this.setSalesId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.SalesRp.Query.prototype.hasSalesId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional QueryRp close_at = 2;
+ * @return {?proto.ding4.QueryRp}
+ */
+proto.ding4.SalesRp.Query.prototype.getCloseAt = function() {
+  return /** @type{?proto.ding4.QueryRp} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 2));
+};
+
+
+/**
+ * @param {?proto.ding4.QueryRp|undefined} value
+ * @return {!proto.ding4.SalesRp.Query} returns this
+*/
+proto.ding4.SalesRp.Query.prototype.setCloseAt = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -5993,17 +6044,17 @@ proto.ding4.SalesRp.Query.prototype.clearCloseAt = function() {
  * @return {boolean}
  */
 proto.ding4.SalesRp.Query.prototype.hasCloseAt = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional QueryRp store_id = 2;
+ * optional QueryRp store_id = 3;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.SalesRp.Query.prototype.getStoreId = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 2));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 3));
 };
 
 
@@ -6012,7 +6063,7 @@ proto.ding4.SalesRp.Query.prototype.getStoreId = function() {
  * @return {!proto.ding4.SalesRp.Query} returns this
 */
 proto.ding4.SalesRp.Query.prototype.setStoreId = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -6030,17 +6081,17 @@ proto.ding4.SalesRp.Query.prototype.clearStoreId = function() {
  * @return {boolean}
  */
 proto.ding4.SalesRp.Query.prototype.hasStoreId = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional QueryRp times = 3;
+ * optional QueryRp times = 4;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.SalesRp.Query.prototype.getTimes = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 3));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 4));
 };
 
 
@@ -6049,7 +6100,7 @@ proto.ding4.SalesRp.Query.prototype.getTimes = function() {
  * @return {!proto.ding4.SalesRp.Query} returns this
 */
 proto.ding4.SalesRp.Query.prototype.setTimes = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -6067,17 +6118,17 @@ proto.ding4.SalesRp.Query.prototype.clearTimes = function() {
  * @return {boolean}
  */
 proto.ding4.SalesRp.Query.prototype.hasTimes = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional QueryRp amount = 4;
+ * optional QueryRp amount = 5;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.SalesRp.Query.prototype.getAmount = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 4));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
 };
 
 
@@ -6086,7 +6137,7 @@ proto.ding4.SalesRp.Query.prototype.getAmount = function() {
  * @return {!proto.ding4.SalesRp.Query} returns this
 */
 proto.ding4.SalesRp.Query.prototype.setAmount = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -6104,17 +6155,17 @@ proto.ding4.SalesRp.Query.prototype.clearAmount = function() {
  * @return {boolean}
  */
 proto.ding4.SalesRp.Query.prototype.hasAmount = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional QueryRp price = 5;
+ * optional QueryRp price = 6;
  * @return {?proto.ding4.QueryRp}
  */
 proto.ding4.SalesRp.Query.prototype.getPrice = function() {
   return /** @type{?proto.ding4.QueryRp} */ (
-    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 5));
+    jspb.Message.getWrapperField(this, proto.ding4.QueryRp, 6));
 };
 
 
@@ -6123,7 +6174,7 @@ proto.ding4.SalesRp.Query.prototype.getPrice = function() {
  * @return {!proto.ding4.SalesRp.Query} returns this
 */
 proto.ding4.SalesRp.Query.prototype.setPrice = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -6141,7 +6192,7 @@ proto.ding4.SalesRp.Query.prototype.clearPrice = function() {
  * @return {boolean}
  */
 proto.ding4.SalesRp.Query.prototype.hasPrice = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

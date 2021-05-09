@@ -687,6 +687,11 @@ export namespace SalesRp {
 
 
   export class Query extends jspb.Message {
+    getSalesId(): QueryRp | undefined;
+    setSalesId(value?: QueryRp): void;
+    hasSalesId(): boolean;
+    clearSalesId(): void;
+
     getCloseAt(): QueryRp | undefined;
     setCloseAt(value?: QueryRp): void;
     hasCloseAt(): boolean;
@@ -722,6 +727,7 @@ export namespace SalesRp {
 
   export namespace Query {
     export type AsObject = {
+      salesId?: QueryRp.AsObject,
       closeAt?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
       times?: QueryRp.AsObject,
