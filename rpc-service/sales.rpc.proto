@@ -9,6 +9,7 @@ import "sql.proto";
 import "password.proto";
 import "sales.proto";
 import "order.proto";
+import "report.proto";
 
 service SalesRPC {
     rpc Ping(PingPong) returns (PingPong);
@@ -26,7 +27,7 @@ service SalesRPC {
     // 定單列表
     rpc FindOrder(Query) returns (Response);
     rpc DetailOrder(Order) returns (Response);
-
     rpc FindPromote(Query) returns (Response);
+    rpc ReportSales(SalesRp) returns (Response);
 }
 
