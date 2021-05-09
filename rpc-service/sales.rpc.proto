@@ -25,6 +25,8 @@ service SalesRPC {
 
     // 定單列表
     rpc FindOrder(Query) returns (Response);
-    rpc DetailOrder(Order) returns (Response);    
+    rpc DetailOrder(Order) returns (Response);
+
+    rpc FindPromote(Query) returns (Response);
 }
 
