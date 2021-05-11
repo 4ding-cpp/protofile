@@ -147,7 +147,8 @@ message SalesRp {
     Query query = 2;
     repeated Data data = 3;
     PageLimit page_limit = 4;
-    google.protobuf.Struct self = 5;
+    repeated string exports = 5;
+    google.protobuf.Struct self = 6;
 }
 
 

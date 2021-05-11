@@ -631,6 +631,11 @@ export class SalesRp extends jspb.Message {
   hasPageLimit(): boolean;
   clearPageLimit(): void;
 
+  getExportsList(): Array<string>;
+  setExportsList(value: Array<string>): void;
+  clearExportsList(): void;
+  addExports(value: string, index?: number): void;
+
   getSelf(): google_protobuf_struct_pb.Struct | undefined;
   setSelf(value?: google_protobuf_struct_pb.Struct): void;
   hasSelf(): boolean;
@@ -650,6 +655,7 @@ export namespace SalesRp {
     query?: SalesRp.Query.AsObject,
     dataList: Array<SalesRp.Data.AsObject>,
     pageLimit?: sql_pb.PageLimit.AsObject,
+    exportsList: Array<string>,
     self?: google_protobuf_struct_pb.Struct.AsObject,
   }
 
