@@ -208,6 +208,11 @@ export namespace PaymentRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
+    getSalesId(): QueryRp | undefined;
+    setSalesId(value?: QueryRp): void;
+    hasSalesId(): boolean;
+    clearSalesId(): void;
+
     getOrderId(): QueryRp | undefined;
     setOrderId(value?: QueryRp): void;
     hasOrderId(): boolean;
@@ -235,6 +240,7 @@ export namespace PaymentRp {
     export type AsObject = {
       closeAt?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
+      salesId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
       price?: QueryRp.AsObject,
@@ -546,6 +552,11 @@ export namespace CustomerRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
+    getSalesId(): QueryRp | undefined;
+    setSalesId(value?: QueryRp): void;
+    hasSalesId(): boolean;
+    clearSalesId(): void;
+
     getCustomerId(): QueryRp | undefined;
     setCustomerId(value?: QueryRp): void;
     hasCustomerId(): boolean;
@@ -587,6 +598,7 @@ export namespace CustomerRp {
       closeAt?: QueryRp.AsObject,
       groupId?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
+      salesId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       times?: QueryRp.AsObject,
@@ -845,6 +857,11 @@ export namespace ProductRp {
     hasStoreId(): boolean;
     clearStoreId(): void;
 
+    getSalesId(): QueryRp | undefined;
+    setSalesId(value?: QueryRp): void;
+    hasSalesId(): boolean;
+    clearSalesId(): void;
+
     getOrderId(): QueryRp | undefined;
     setOrderId(value?: QueryRp): void;
     hasOrderId(): boolean;
@@ -895,6 +912,7 @@ export namespace ProductRp {
     export type AsObject = {
       closeAt?: QueryRp.AsObject,
       storeId?: QueryRp.AsObject,
+      salesId?: QueryRp.AsObject,
       orderId?: QueryRp.AsObject,
       customerId?: QueryRp.AsObject,
       productId?: QueryRp.AsObject,

@@ -42,9 +42,10 @@ message PaymentRp {
     message Query {
         QueryRp close_at = 1;
         QueryRp store_id = 2;
-        QueryRp order_id = 3;
-        QueryRp customer_id = 4;
-        QueryRp price = 5;
+        QueryRp sales_id = 3;
+        QueryRp order_id = 4;
+        QueryRp customer_id = 5;
+        QueryRp price = 6;
     }
     message Analysis {
         int32 total = 1;
@@ -107,12 +108,13 @@ message CustomerRp {
         QueryRp close_at = 1;
         QueryRp group_id = 2;
         QueryRp store_id = 3;
-        QueryRp customer_id = 4;
-        QueryRp order_id = 5;
-        QueryRp times = 6;
-        QueryRp amount = 7;
-        QueryRp price = 8;
-        string label_id = 9;
+        QueryRp sales_id  = 4;
+        QueryRp customer_id = 5;
+        QueryRp order_id = 6;
+        QueryRp times = 7;
+        QueryRp amount = 8;
+        QueryRp price = 9;
+        string label_id = 10;
     } 
     repeated Sort sort = 1;
     Query query = 2;
@@ -164,14 +166,15 @@ message ProductRp {
     message Query {
         QueryRp close_at = 1;
         QueryRp store_id = 2;
-        QueryRp order_id = 3;
-        QueryRp customer_id = 4;
-        QueryRp product_id = 5;
-        QueryRp sku = 6;
-        QueryRp times = 7;
-        QueryRp amount = 8;
-        QueryRp price = 9;
-        string label_id = 10;
+        QueryRp sales_id = 3;
+        QueryRp order_id = 4;
+        QueryRp customer_id = 5;
+        QueryRp product_id = 6;
+        QueryRp sku = 7;
+        QueryRp times = 8;
+        QueryRp amount = 9;
+        QueryRp price = 10;
+        string label_id = 11;
     }
     repeated Sort sort = 1;
     Query query = 2;
