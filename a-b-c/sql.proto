@@ -76,4 +76,5 @@ message Record {
 message Upgrade {
     google.protobuf.Timestamp last = 1;
     int32 page_index = 2;
+    repeated string catch = 3;
 }

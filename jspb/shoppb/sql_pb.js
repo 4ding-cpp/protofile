@@ -183,7 +183,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.ding4.Upgrade = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ding4.Upgrade.repeatedFields_, null);
 };
 goog.inherits(proto.ding4.Upgrade, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2171,6 +2171,13 @@ proto.ding4.Record.prototype.hasDifferent = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ding4.Upgrade.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2203,7 +2210,8 @@ proto.ding4.Upgrade.prototype.toObject = function(opt_includeInstance) {
 proto.ding4.Upgrade.toObject = function(includeInstance, msg) {
   var f, obj = {
     last: (f = msg.getLast()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    pageIndex: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    pageIndex: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    catchList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2249,6 +2257,10 @@ proto.ding4.Upgrade.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageIndex(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addCatch(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2290,6 +2302,13 @@ proto.ding4.Upgrade.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       2,
+      f
+    );
+  }
+  f = message.getCatchList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
       f
     );
   }
@@ -2348,6 +2367,43 @@ proto.ding4.Upgrade.prototype.getPageIndex = function() {
  */
 proto.ding4.Upgrade.prototype.setPageIndex = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * repeated string catch = 3;
+ * @return {!Array<string>}
+ */
+proto.ding4.Upgrade.prototype.getCatchList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ding4.Upgrade} returns this
+ */
+proto.ding4.Upgrade.prototype.setCatchList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ding4.Upgrade} returns this
+ */
+proto.ding4.Upgrade.prototype.addCatch = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ding4.Upgrade} returns this
+ */
+proto.ding4.Upgrade.prototype.clearCatchList = function() {
+  return this.setCatchList([]);
 };
 
 

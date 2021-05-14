@@ -278,6 +278,11 @@ export class Upgrade extends jspb.Message {
   getPageIndex(): number;
   setPageIndex(value: number): void;
 
+  getCatchList(): Array<string>;
+  setCatchList(value: Array<string>): void;
+  clearCatchList(): void;
+  addCatch(value: string, index?: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Upgrade.AsObject;
   static toObject(includeInstance: boolean, msg: Upgrade): Upgrade.AsObject;
@@ -290,6 +295,7 @@ export namespace Upgrade {
   export type AsObject = {
     last?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     pageIndex: number,
+    catchList: Array<string>,
   }
 }
 
