@@ -19,19 +19,18 @@ message Adv {
     string location = 8;
     string contact = 9;
     string title = 10;
-    int32 mgr_type = 11;
-    int32 turnover = 12;
-    string company = 13;
-    string identify = 14;
-    int32 motive = 15;
-    google.protobuf.Value other = 16;
+    int32 turnover = 11;
+    string company = 12;
+    string identify = 13;
+    int32 motive = 14;
+    google.protobuf.Value other = 15;
 
-    string operator = 17;
-    google.protobuf.Timestamp create_at = 18;
-    google.protobuf.Timestamp update_at = 19;
-    repeated string cols = 20;
-    repeated Condition condition = 21;
-    google.protobuf.Struct self = 22;
+    string operator = 16;
+    google.protobuf.Timestamp create_at = 17;
+    google.protobuf.Timestamp update_at = 18;
+    repeated string cols = 19;
+    repeated Condition condition = 20;
+    google.protobuf.Struct self = 21;
 }
 
 message AdvItem {

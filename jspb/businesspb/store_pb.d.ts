@@ -18,9 +18,6 @@ export class Store extends jspb.Message {
   getModel(): number;
   setModel(value: number): void;
 
-  getType(): number;
-  setType(value: number): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -80,7 +77,6 @@ export namespace Store {
     businessId: string,
     groupId: string,
     model: number,
-    type: number,
     name: string,
     urn: string,
     isOpen: boolean,

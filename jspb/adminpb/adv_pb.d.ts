@@ -35,9 +35,6 @@ export class Adv extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getMgrType(): number;
-  setMgrType(value: number): void;
-
   getTurnover(): number;
   setTurnover(value: number): void;
 
@@ -103,7 +100,6 @@ export namespace Adv {
     location: string,
     contact: string,
     title: string,
-    mgrType: number,
     turnover: number,
     company: string,
     identify: string,
