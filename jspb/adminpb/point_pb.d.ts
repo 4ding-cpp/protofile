@@ -115,8 +115,20 @@ export class Point extends jspb.Message {
   getBankCode(): string;
   setBankCode(value: string): void;
 
-  getLastCode(): string;
-  setLastCode(value: string): void;
+  getBankAccount(): string;
+  setBankAccount(value: string): void;
+
+  getPayCode(): string;
+  setPayCode(value: string): void;
+
+  getPayAccount(): string;
+  setPayAccount(value: string): void;
+
+  getPayAt(): string;
+  setPayAt(value: string): void;
+
+  getPayIp(): string;
+  setPayIp(value: string): void;
 
   getLabelxMap(): jspb.Map<string, number>;
   clearLabelxMap(): void;
@@ -165,7 +177,11 @@ export namespace Point {
     state: number,
     price: number,
     bankCode: string,
-    lastCode: string,
+    bankAccount: string,
+    payCode: string,
+    payAccount: string,
+    payAt: string,
+    payIp: string,
     labelxMap: Array<[string, number]>,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

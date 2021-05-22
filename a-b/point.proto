@@ -14,19 +14,19 @@ message PointBonus {
     int32 on_event = 2;     // 1:首儲 2:一般儲
     google.protobuf.Timestamp begin_at = 3;
     google.protobuf.Timestamp end_at = 4;
-    string item = 6;
-    int32 cond = 7;
-    int32 point = 8;
-    int32 percent = 9;
-    bool is_repeat = 10;
+    string item = 5;
+    int32 cond = 6;
+    int32 point = 7;
+    int32 percent = 8;
+    bool is_repeat = 9;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 10;
+    string operator = 11;
+    google.protobuf.Timestamp create_at = 12;
+    google.protobuf.Timestamp update_at = 13;
+    repeated string cols = 14;
+    repeated Condition condition = 15;
+    google.protobuf.Struct self = 16;
 }
 
 message Point {
@@ -36,15 +36,18 @@ message Point {
     int32 state = 4;
     int32 price = 5;
     string bank_code = 6;
-    string last_code = 7;
-
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    string bank_account = 7;
+    string pay_code = 8;
+    string pay_account = 9;
+    string pay_at = 10;
+    string pay_ip = 11;
+    map<string, int32> labelx = 12;
+    string operator = 13;
+    google.protobuf.Timestamp create_at = 14;
+    google.protobuf.Timestamp update_at = 15;
+    repeated string cols = 16;
+    repeated Condition condition = 17;
+    google.protobuf.Struct self = 18;
 }
 
 message PointBill {
@@ -55,13 +58,13 @@ message PointBill {
     int32 price = 5;
     repeated PointDetail detail = 6;
 
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 7;
+    string operator = 8;
+    google.protobuf.Timestamp create_at = 9;
+    google.protobuf.Timestamp update_at = 10;
+    repeated string cols = 11;
+    repeated Condition condition = 12;
+    google.protobuf.Struct self = 13;
 }
 
 message PointDetail {
@@ -74,13 +77,13 @@ message PointDetail {
     int32 use_val = 7;
     int32 sub_total = 8;
     
-    map<string, int32> labelx = 69;
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    map<string, int32> labelx = 9;
+    string operator = 10;
+    google.protobuf.Timestamp create_at = 11;
+    google.protobuf.Timestamp update_at = 12;
+    repeated string cols = 13;
+    repeated Condition condition = 14;
+    google.protobuf.Struct self = 15;
 }
 
 message PointFlow {
@@ -90,10 +93,10 @@ message PointFlow {
     int32 point = 4;
     string related = 5;
 
-    string operator = 70;
-    google.protobuf.Timestamp create_at = 71;
-    google.protobuf.Timestamp update_at = 72;
-    repeated string cols = 73;
-    repeated Condition condition = 74;
-    google.protobuf.Struct self = 75;
+    string operator = 6;
+    google.protobuf.Timestamp create_at = 7;
+    google.protobuf.Timestamp update_at = 8;
+    repeated string cols = 9;
+    repeated Condition condition = 10;
+    google.protobuf.Struct self = 11;
 }
