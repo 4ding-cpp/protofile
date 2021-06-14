@@ -23,6 +23,15 @@ export class Domain extends jspb.Message {
   getCustom(): boolean;
   setCustom(value: boolean): void;
 
+  getIsEntrust(): boolean;
+  setIsEntrust(value: boolean): void;
+
+  getCertFile(): string;
+  setCertFile(value: string): void;
+
+  getKeyFile(): string;
+  setKeyFile(value: string): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -67,6 +76,9 @@ export namespace Domain {
     businessId: string,
     storeId: string,
     custom: boolean,
+    isEntrust: boolean,
+    certFile: string,
+    keyFile: string,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,

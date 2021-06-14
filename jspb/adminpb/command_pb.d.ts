@@ -19,6 +19,9 @@ export class Command extends jspb.Message {
   getBusinessId(): string;
   setBusinessId(value: string): void;
 
+  getReplicas(): number;
+  setReplicas(value: number): void;
+
   getOperator(): string;
   setOperator(value: string): void;
 
@@ -52,6 +55,7 @@ export namespace Command {
     execed: boolean,
     namespace: string,
     businessId: string,
+    replicas: number,
     operator: string,
     createAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
