@@ -202,6 +202,7 @@ service BusinessRPC {
     rpc FindOrderFlow(Query) returns (Response);
 
     // 網域相關
+    rpc FindPublicIP(Query) returns (Response);
     rpc UpgradeDomain(Domain) returns (Response);
     rpc DeleteDomain(Domain) returns (Response);
     rpc FindDomain(Query) returns (Response);
