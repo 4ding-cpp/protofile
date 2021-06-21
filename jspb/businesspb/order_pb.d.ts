@@ -490,6 +490,16 @@ export class OrderOther extends jspb.Message {
   hasReceiver(): boolean;
   clearReceiver(): void;
 
+  getReturner(): ContactInfo | undefined;
+  setReturner(value?: ContactInfo): void;
+  hasReturner(): boolean;
+  clearReturner(): void;
+
+  getBacker(): ContactInfo | undefined;
+  setBacker(value?: ContactInfo): void;
+  hasBacker(): boolean;
+  clearBacker(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderOther.AsObject;
   static toObject(includeInstance: boolean, msg: OrderOther): OrderOther.AsObject;
@@ -513,6 +523,8 @@ export namespace OrderOther {
     reutrnRemark: string,
     sender?: ContactInfo.AsObject,
     receiver?: ContactInfo.AsObject,
+    returner?: ContactInfo.AsObject,
+    backer?: ContactInfo.AsObject,
   }
 }
 

@@ -149,6 +149,9 @@ message OrderOther {
 
     ContactInfo sender = 12;
     ContactInfo receiver = 13;
+    
+    ContactInfo returner = 14;
+    ContactInfo backer = 15;
 }
 
 message OrderBatch {

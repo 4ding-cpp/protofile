@@ -3626,7 +3626,9 @@ proto.ding4.OrderOther.toObject = function(includeInstance, msg) {
     returnCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
     reutrnRemark: jspb.Message.getFieldWithDefault(msg, 11, ""),
     sender: (f = msg.getSender()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
-    receiver: (f = msg.getReceiver()) && proto.ding4.ContactInfo.toObject(includeInstance, f)
+    receiver: (f = msg.getReceiver()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
+    returner: (f = msg.getReturner()) && proto.ding4.ContactInfo.toObject(includeInstance, f),
+    backer: (f = msg.getBacker()) && proto.ding4.ContactInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3716,6 +3718,16 @@ proto.ding4.OrderOther.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.ding4.ContactInfo;
       reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
       msg.setReceiver(value);
+      break;
+    case 14:
+      var value = new proto.ding4.ContactInfo;
+      reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
+      msg.setReturner(value);
+      break;
+    case 15:
+      var value = new proto.ding4.ContactInfo;
+      reader.readMessage(value,proto.ding4.ContactInfo.deserializeBinaryFromReader);
+      msg.setBacker(value);
       break;
     default:
       reader.skipField();
@@ -3835,6 +3847,22 @@ proto.ding4.OrderOther.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       13,
+      f,
+      proto.ding4.ContactInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getReturner();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      proto.ding4.ContactInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getBacker();
+  if (f != null) {
+    writer.writeMessage(
+      15,
       f,
       proto.ding4.ContactInfo.serializeBinaryToWriter
     );
@@ -4111,6 +4139,80 @@ proto.ding4.OrderOther.prototype.clearReceiver = function() {
  */
 proto.ding4.OrderOther.prototype.hasReceiver = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional ContactInfo returner = 14;
+ * @return {?proto.ding4.ContactInfo}
+ */
+proto.ding4.OrderOther.prototype.getReturner = function() {
+  return /** @type{?proto.ding4.ContactInfo} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 14));
+};
+
+
+/**
+ * @param {?proto.ding4.ContactInfo|undefined} value
+ * @return {!proto.ding4.OrderOther} returns this
+*/
+proto.ding4.OrderOther.prototype.setReturner = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.clearReturner = function() {
+  return this.setReturner(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.OrderOther.prototype.hasReturner = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional ContactInfo backer = 15;
+ * @return {?proto.ding4.ContactInfo}
+ */
+proto.ding4.OrderOther.prototype.getBacker = function() {
+  return /** @type{?proto.ding4.ContactInfo} */ (
+    jspb.Message.getWrapperField(this, proto.ding4.ContactInfo, 15));
+};
+
+
+/**
+ * @param {?proto.ding4.ContactInfo|undefined} value
+ * @return {!proto.ding4.OrderOther} returns this
+*/
+proto.ding4.OrderOther.prototype.setBacker = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ding4.OrderOther} returns this
+ */
+proto.ding4.OrderOther.prototype.clearBacker = function() {
+  return this.setBacker(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ding4.OrderOther.prototype.hasBacker = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
