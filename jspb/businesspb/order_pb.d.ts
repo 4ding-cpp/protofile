@@ -273,6 +273,12 @@ export class OrderGoods extends jspb.Message {
   getSku(): string;
   setSku(value: string): void;
 
+  getClosed(): boolean;
+  setClosed(value: boolean): void;
+
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
+
   getPhotoSrc(): string;
   setPhotoSrc(value: string): void;
 
@@ -310,6 +316,8 @@ export namespace OrderGoods {
     activityId: string,
     productId: string,
     sku: string,
+    closed: boolean,
+    deleted: boolean,
     photoSrc: string,
     name: string,
     amount: number,
@@ -350,6 +358,9 @@ export class OrderActivity extends jspb.Message {
   getPromote(): number;
   setPromote(value: number): void;
 
+  getDeleted(): boolean;
+  setDeleted(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderActivity.AsObject;
   static toObject(includeInstance: boolean, msg: OrderActivity): OrderActivity.AsObject;
@@ -370,6 +381,7 @@ export namespace OrderActivity {
     reduce: number,
     coupon: number,
     promote: number,
+    deleted: boolean,
   }
 }
 

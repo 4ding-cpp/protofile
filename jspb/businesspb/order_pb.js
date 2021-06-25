@@ -2126,7 +2126,7 @@ proto.ding4.Order.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.OrderGoods.repeatedFields_ = [13];
+proto.ding4.OrderGoods.repeatedFields_ = [15];
 
 
 
@@ -2166,11 +2166,13 @@ proto.ding4.OrderGoods.toObject = function(includeInstance, msg) {
     activityId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     productId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     sku: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    photoSrc: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    discount: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    closed: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    photoSrc: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    amount: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    discount: jspb.Message.getFieldWithDefault(msg, 14, 0),
     itemxList: jspb.Message.toObjectList(msg.getItemxList(),
     google_protobuf_struct_pb.Value.toObject, includeInstance)
   };
@@ -2238,26 +2240,34 @@ proto.ding4.OrderGoods.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSku(value);
       break;
     case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setClosed(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleted(value);
+      break;
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhotoSrc(value);
       break;
-    case 9:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 10:
+    case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAmount(value);
       break;
-    case 11:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPrice(value);
       break;
-    case 12:
+    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDiscount(value);
       break;
-    case 13:
+    case 15:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.addItemx(value);
@@ -2340,45 +2350,59 @@ proto.ding4.OrderGoods.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getClosed();
+  if (f) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
+  f = message.getDeleted();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
   f = message.getPhotoSrc();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      10,
       f
     );
   }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      11,
       f
     );
   }
   f = message.getAmount();
   if (f !== 0) {
     writer.writeInt32(
-      10,
+      12,
       f
     );
   }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeInt32(
-      11,
+      13,
       f
     );
   }
   f = message.getDiscount();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      14,
       f
     );
   }
   f = message.getItemxList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      13,
+      15,
       f,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
@@ -2513,11 +2537,47 @@ proto.ding4.OrderGoods.prototype.setSku = function(value) {
 
 
 /**
- * optional string photo_src = 8;
+ * optional bool closed = 8;
+ * @return {boolean}
+ */
+proto.ding4.OrderGoods.prototype.getClosed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setClosed = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional bool deleted = 9;
+ * @return {boolean}
+ */
+proto.ding4.OrderGoods.prototype.getDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional string photo_src = 10;
  * @return {string}
  */
 proto.ding4.OrderGoods.prototype.getPhotoSrc = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -2526,16 +2586,16 @@ proto.ding4.OrderGoods.prototype.getPhotoSrc = function() {
  * @return {!proto.ding4.OrderGoods} returns this
  */
 proto.ding4.OrderGoods.prototype.setPhotoSrc = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string name = 9;
+ * optional string name = 11;
  * @return {string}
  */
 proto.ding4.OrderGoods.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -2544,51 +2604,15 @@ proto.ding4.OrderGoods.prototype.getName = function() {
  * @return {!proto.ding4.OrderGoods} returns this
  */
 proto.ding4.OrderGoods.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional int32 amount = 10;
+ * optional int32 amount = 12;
  * @return {number}
  */
 proto.ding4.OrderGoods.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderGoods} returns this
- */
-proto.ding4.OrderGoods.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
-};
-
-
-/**
- * optional int32 price = 11;
- * @return {number}
- */
-proto.ding4.OrderGoods.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ding4.OrderGoods} returns this
- */
-proto.ding4.OrderGoods.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
-};
-
-
-/**
- * optional int32 discount = 12;
- * @return {number}
- */
-proto.ding4.OrderGoods.prototype.getDiscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
@@ -2597,18 +2621,54 @@ proto.ding4.OrderGoods.prototype.getDiscount = function() {
  * @param {number} value
  * @return {!proto.ding4.OrderGoods} returns this
  */
-proto.ding4.OrderGoods.prototype.setDiscount = function(value) {
+proto.ding4.OrderGoods.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
 /**
- * repeated google.protobuf.Value itemx = 13;
+ * optional int32 price = 13;
+ * @return {number}
+ */
+proto.ding4.OrderGoods.prototype.getPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setPrice = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional int32 discount = 14;
+ * @return {number}
+ */
+proto.ding4.OrderGoods.prototype.getDiscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ding4.OrderGoods} returns this
+ */
+proto.ding4.OrderGoods.prototype.setDiscount = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * repeated google.protobuf.Value itemx = 15;
  * @return {!Array<!proto.google.protobuf.Value>}
  */
 proto.ding4.OrderGoods.prototype.getItemxList = function() {
   return /** @type{!Array<!proto.google.protobuf.Value>} */ (
-    jspb.Message.getRepeatedWrapperField(this, google_protobuf_struct_pb.Value, 13));
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_struct_pb.Value, 15));
 };
 
 
@@ -2617,7 +2677,7 @@ proto.ding4.OrderGoods.prototype.getItemxList = function() {
  * @return {!proto.ding4.OrderGoods} returns this
 */
 proto.ding4.OrderGoods.prototype.setItemxList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+  return jspb.Message.setRepeatedWrapperField(this, 15, value);
 };
 
 
@@ -2627,7 +2687,7 @@ proto.ding4.OrderGoods.prototype.setItemxList = function(value) {
  * @return {!proto.google.protobuf.Value}
  */
 proto.ding4.OrderGoods.prototype.addItemx = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.google.protobuf.Value, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.google.protobuf.Value, opt_index);
 };
 
 
@@ -2681,7 +2741,8 @@ proto.ding4.OrderActivity.toObject = function(includeInstance, msg) {
     discount: jspb.Message.getFieldWithDefault(msg, 7, 0),
     reduce: jspb.Message.getFieldWithDefault(msg, 8, 0),
     coupon: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    promote: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    promote: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -2757,6 +2818,10 @@ proto.ding4.OrderActivity.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPromote(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeleted(value);
       break;
     default:
       reader.skipField();
@@ -2854,6 +2919,13 @@ proto.ding4.OrderActivity.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       10,
+      f
+    );
+  }
+  f = message.getDeleted();
+  if (f) {
+    writer.writeBool(
+      11,
       f
     );
   }
@@ -3037,6 +3109,24 @@ proto.ding4.OrderActivity.prototype.getPromote = function() {
  */
 proto.ding4.OrderActivity.prototype.setPromote = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional bool deleted = 11;
+ * @return {boolean}
+ */
+proto.ding4.OrderActivity.prototype.getDeleted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ding4.OrderActivity} returns this
+ */
+proto.ding4.OrderActivity.prototype.setDeleted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
