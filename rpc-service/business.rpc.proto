@@ -54,6 +54,9 @@ service BusinessRPC {
     rpc Rank(Query) returns (Response);
     rpc BrowseRecord(Browse) returns (Response);
 
+    // 帳單直接取繳款號
+    rpc TakeBill(PointBill) returns (Response);
+
     // 新增儲值訂單
     rpc CreatePoint(Point) returns (Response);
     // 取消未繳款訂單
