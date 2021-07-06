@@ -208,6 +208,24 @@ export class PointBill extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): void;
 
+  getBankCode(): string;
+  setBankCode(value: string): void;
+
+  getBankAccount(): string;
+  setBankAccount(value: string): void;
+
+  getPayCode(): string;
+  setPayCode(value: string): void;
+
+  getPayAccount(): string;
+  setPayAccount(value: string): void;
+
+  getPayAt(): string;
+  setPayAt(value: string): void;
+
+  getPayIp(): string;
+  setPayIp(value: string): void;
+
   getDetailList(): Array<PointDetail>;
   setDetailList(value: Array<PointDetail>): void;
   clearDetailList(): void;
@@ -259,6 +277,12 @@ export namespace PointBill {
     item: string,
     state: number,
     price: number,
+    bankCode: string,
+    bankAccount: string,
+    payCode: string,
+    payAccount: string,
+    payAt: string,
+    payIp: string,
     detailList: Array<PointDetail.AsObject>,
     labelxMap: Array<[string, number]>,
     operator: string,

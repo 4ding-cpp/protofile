@@ -1626,7 +1626,7 @@ proto.ding4.Point.prototype.hasSelf = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.ding4.PointBill.repeatedFields_ = [6,11,12];
+proto.ding4.PointBill.repeatedFields_ = [12,17,18];
 
 
 
@@ -1664,13 +1664,19 @@ proto.ding4.PointBill.toObject = function(includeInstance, msg) {
     item: jspb.Message.getFieldWithDefault(msg, 3, ""),
     state: jspb.Message.getFieldWithDefault(msg, 4, 0),
     price: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    bankCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    bankAccount: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    payCode: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    payAccount: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    payAt: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    payIp: jspb.Message.getFieldWithDefault(msg, 11, ""),
     detailList: jspb.Message.toObjectList(msg.getDetailList(),
     proto.ding4.PointDetail.toObject, includeInstance),
     labelxMap: (f = msg.getLabelxMap()) ? f.toObject(includeInstance, undefined) : [],
-    operator: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    operator: jspb.Message.getFieldWithDefault(msg, 14, ""),
     createAt: (f = msg.getCreateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateAt: (f = msg.getUpdateAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    colsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
+    colsList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
     conditionList: jspb.Message.toObjectList(msg.getConditionList(),
     sql_pb.Condition.toObject, includeInstance),
     self: (f = msg.getSelf()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
@@ -1731,40 +1737,64 @@ proto.ding4.PointBill.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPrice(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBankCode(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBankAccount(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPayCode(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPayAccount(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPayAt(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPayIp(value);
+      break;
+    case 12:
       var value = new proto.ding4.PointDetail;
       reader.readMessage(value,proto.ding4.PointDetail.deserializeBinaryFromReader);
       msg.addDetail(value);
       break;
-    case 7:
+    case 13:
       var value = msg.getLabelxMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
          });
       break;
-    case 8:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setOperator(value);
       break;
-    case 9:
+    case 15:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateAt(value);
       break;
-    case 10:
+    case 16:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateAt(value);
       break;
-    case 11:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.addCols(value);
       break;
-    case 12:
+    case 18:
       var value = new sql_pb.Condition;
       reader.readMessage(value,sql_pb.Condition.deserializeBinaryFromReader);
       msg.addCondition(value);
       break;
-    case 13:
+    case 19:
       var value = new google_protobuf_struct_pb.Struct;
       reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
       msg.setSelf(value);
@@ -1833,29 +1863,71 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDetailList();
+  f = message.getBankCode();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeString(
       6,
-      f,
-      proto.ding4.PointDetail.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getLabelxMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+  f = message.getBankAccount();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
   }
-  f = message.getOperator();
+  f = message.getPayCode();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
+  f = message.getPayAccount();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getPayAt();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getPayIp();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getDetailList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.ding4.PointDetail.serializeBinaryToWriter
+    );
+  }
+  f = message.getLabelxMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+  }
+  f = message.getOperator();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
   f = message.getCreateAt();
   if (f != null) {
     writer.writeMessage(
-      9,
+      15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1863,7 +1935,7 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdateAt();
   if (f != null) {
     writer.writeMessage(
-      10,
+      16,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1871,14 +1943,14 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
   f = message.getColsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      11,
+      17,
       f
     );
   }
   f = message.getConditionList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      12,
+      18,
       f,
       sql_pb.Condition.serializeBinaryToWriter
     );
@@ -1886,7 +1958,7 @@ proto.ding4.PointBill.serializeBinaryToWriter = function(message, writer) {
   f = message.getSelf();
   if (f != null) {
     writer.writeMessage(
-      13,
+      19,
       f,
       google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
@@ -1985,12 +2057,120 @@ proto.ding4.PointBill.prototype.setPrice = function(value) {
 
 
 /**
- * repeated PointDetail detail = 6;
+ * optional string bank_code = 6;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getBankCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setBankCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string bank_account = 7;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getBankAccount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setBankAccount = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string pay_code = 8;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getPayCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setPayCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string pay_account = 9;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getPayAccount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setPayAccount = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string pay_at = 10;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getPayAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setPayAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string pay_ip = 11;
+ * @return {string}
+ */
+proto.ding4.PointBill.prototype.getPayIp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ding4.PointBill} returns this
+ */
+proto.ding4.PointBill.prototype.setPayIp = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * repeated PointDetail detail = 12;
  * @return {!Array<!proto.ding4.PointDetail>}
  */
 proto.ding4.PointBill.prototype.getDetailList = function() {
   return /** @type{!Array<!proto.ding4.PointDetail>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ding4.PointDetail, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.ding4.PointDetail, 12));
 };
 
 
@@ -1999,7 +2179,7 @@ proto.ding4.PointBill.prototype.getDetailList = function() {
  * @return {!proto.ding4.PointBill} returns this
 */
 proto.ding4.PointBill.prototype.setDetailList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
 };
 
 
@@ -2009,7 +2189,7 @@ proto.ding4.PointBill.prototype.setDetailList = function(value) {
  * @return {!proto.ding4.PointDetail}
  */
 proto.ding4.PointBill.prototype.addDetail = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ding4.PointDetail, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.ding4.PointDetail, opt_index);
 };
 
 
@@ -2023,14 +2203,14 @@ proto.ding4.PointBill.prototype.clearDetailList = function() {
 
 
 /**
- * map<string, int32> labelx = 7;
+ * map<string, int32> labelx = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.ding4.PointBill.prototype.getLabelxMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
 };
 
@@ -2045,11 +2225,11 @@ proto.ding4.PointBill.prototype.clearLabelxMap = function() {
 
 
 /**
- * optional string operator = 8;
+ * optional string operator = 14;
  * @return {string}
  */
 proto.ding4.PointBill.prototype.getOperator = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
@@ -2058,17 +2238,17 @@ proto.ding4.PointBill.prototype.getOperator = function() {
  * @return {!proto.ding4.PointBill} returns this
  */
 proto.ding4.PointBill.prototype.setOperator = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp create_at = 9;
+ * optional google.protobuf.Timestamp create_at = 15;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.PointBill.prototype.getCreateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
 };
 
 
@@ -2077,7 +2257,7 @@ proto.ding4.PointBill.prototype.getCreateAt = function() {
  * @return {!proto.ding4.PointBill} returns this
 */
 proto.ding4.PointBill.prototype.setCreateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -2095,17 +2275,17 @@ proto.ding4.PointBill.prototype.clearCreateAt = function() {
  * @return {boolean}
  */
 proto.ding4.PointBill.prototype.hasCreateAt = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp update_at = 10;
+ * optional google.protobuf.Timestamp update_at = 16;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.ding4.PointBill.prototype.getUpdateAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
 };
 
 
@@ -2114,7 +2294,7 @@ proto.ding4.PointBill.prototype.getUpdateAt = function() {
  * @return {!proto.ding4.PointBill} returns this
 */
 proto.ding4.PointBill.prototype.setUpdateAt = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -2132,16 +2312,16 @@ proto.ding4.PointBill.prototype.clearUpdateAt = function() {
  * @return {boolean}
  */
 proto.ding4.PointBill.prototype.hasUpdateAt = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * repeated string cols = 11;
+ * repeated string cols = 17;
  * @return {!Array<string>}
  */
 proto.ding4.PointBill.prototype.getColsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 17));
 };
 
 
@@ -2150,7 +2330,7 @@ proto.ding4.PointBill.prototype.getColsList = function() {
  * @return {!proto.ding4.PointBill} returns this
  */
 proto.ding4.PointBill.prototype.setColsList = function(value) {
-  return jspb.Message.setField(this, 11, value || []);
+  return jspb.Message.setField(this, 17, value || []);
 };
 
 
@@ -2160,7 +2340,7 @@ proto.ding4.PointBill.prototype.setColsList = function(value) {
  * @return {!proto.ding4.PointBill} returns this
  */
 proto.ding4.PointBill.prototype.addCols = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
 };
 
 
@@ -2174,12 +2354,12 @@ proto.ding4.PointBill.prototype.clearColsList = function() {
 
 
 /**
- * repeated Condition condition = 12;
+ * repeated Condition condition = 18;
  * @return {!Array<!proto.ding4.Condition>}
  */
 proto.ding4.PointBill.prototype.getConditionList = function() {
   return /** @type{!Array<!proto.ding4.Condition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 12));
+    jspb.Message.getRepeatedWrapperField(this, sql_pb.Condition, 18));
 };
 
 
@@ -2188,7 +2368,7 @@ proto.ding4.PointBill.prototype.getConditionList = function() {
  * @return {!proto.ding4.PointBill} returns this
 */
 proto.ding4.PointBill.prototype.setConditionList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+  return jspb.Message.setRepeatedWrapperField(this, 18, value);
 };
 
 
@@ -2198,7 +2378,7 @@ proto.ding4.PointBill.prototype.setConditionList = function(value) {
  * @return {!proto.ding4.Condition}
  */
 proto.ding4.PointBill.prototype.addCondition = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.ding4.Condition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 18, opt_value, proto.ding4.Condition, opt_index);
 };
 
 
@@ -2212,12 +2392,12 @@ proto.ding4.PointBill.prototype.clearConditionList = function() {
 
 
 /**
- * optional google.protobuf.Struct self = 13;
+ * optional google.protobuf.Struct self = 19;
  * @return {?proto.google.protobuf.Struct}
  */
 proto.ding4.PointBill.prototype.getSelf = function() {
   return /** @type{?proto.google.protobuf.Struct} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 13));
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 19));
 };
 
 
@@ -2226,7 +2406,7 @@ proto.ding4.PointBill.prototype.getSelf = function() {
  * @return {!proto.ding4.PointBill} returns this
 */
 proto.ding4.PointBill.prototype.setSelf = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -2244,7 +2424,7 @@ proto.ding4.PointBill.prototype.clearSelf = function() {
  * @return {boolean}
  */
 proto.ding4.PointBill.prototype.hasSelf = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
