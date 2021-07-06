@@ -104,7 +104,6 @@ service AdminRPC {
     rpc UpdatePointBill(PointBill) returns (Response);
     rpc CancelPointBill(PointBill) returns (Response);
     rpc ConfirmPointBill(PointBill) returns (Response);
-    rpc TakeBill(PointBill) returns (Response);
     rpc FindPointBill(Query) returns (Response);
     rpc FindPointDetail(Query) returns (Response);
 

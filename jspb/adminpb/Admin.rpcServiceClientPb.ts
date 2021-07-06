@@ -1316,28 +1316,6 @@ export class AdminRPCClient {
       callback);
   }
 
-  methodInfoTakeBill = new grpcWeb.AbstractClientBase.MethodInfo(
-    sql_pb.Response,
-    (request: point_pb.PointBill) => {
-      return request.serializeBinary();
-    },
-    sql_pb.Response.deserializeBinary
-  );
-
-  takeBill(
-    request: point_pb.PointBill,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: sql_pb.Response) => void) {
-    return this.client_.rpcCall(
-      this.hostname_ +
-        '/ding4.AdminRPC/TakeBill',
-      request,
-      metadata || {},
-      this.methodInfoTakeBill,
-      callback);
-  }
-
   methodInfoFindPointBill = new grpcWeb.AbstractClientBase.MethodInfo(
     sql_pb.Response,
     (request: sql_pb.Query) => {
